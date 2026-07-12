@@ -1,0 +1,508 @@
+<?xml version="1.0" ?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Turizm Okulum Ses Kutuphanesi</title>
+    <link>https://erolmertyurdakul.github.io/turizmokulum-podcasts/</link>
+    <language>tr</language>
+    <description>Turizm Okulum, Konaklama ve Seyahat Hizmetleri alanı öğretmeni Erol Mert YURDAKUL tarafından hazırlanmış olan, Turizm Mesleki ve Teknik Anadolu Lisesi öğrencilerinin mesleki gelişimlerinde öğrenme süreçlerini desteklemek için hazırlanmış sesli eğitim içerikleri kütüphanesidir.</description>
+    <itunes:author>Erol Mert Yurdakul</itunes:author>
+    <itunes:owner>
+      <itunes:name>Erol Mert Yurdakul</itunes:name>
+      <itunes:email>erolmertyurdakul.turizm@gmail.com</itunes:email>
+    </itunes:owner>
+    <managingEditor>erolmertyurdakul.turizm@gmail.com (Erol Mert Yurdakul)</managingEditor>
+    <itunes:image href="https://erolmertyurdakul.github.io/turizmokulum-podcasts/app_logo.png"/>
+    <itunes:category text="Education"/>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>1. Öğrenme Birimi: Rezervasyon Alma</title>
+      <description>1. Öğrenme Birimi: Rezervasyon Alma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-0</guid>
+      <pubDate>Tue, 01 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10rez1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Rezervasyon Kayıt Etme</title>
+      <description>2. Öğrenme Birimi: Rezervasyon Kayıt Etme - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-1</guid>
+      <pubDate>Tue, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10rez2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Rezervasyon Durum Analizi</title>
+      <description>3. Öğrenme Birimi: Rezervasyon Durum Analizi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-2</guid>
+      <pubDate>Tue, 03 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10rez3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Diğer Hizmetler için Rezervasyon Yapma</title>
+      <description>4. Öğrenme Birimi: Diğer Hizmetler için Rezervasyon Yapma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-3</guid>
+      <pubDate>Tue, 04 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10rez4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Kat Ofisi İşlemleri</title>
+      <description>1. Öğrenme Birimi: Kat Ofisi İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-4</guid>
+      <pubDate>Tue, 05 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10kat1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Oda Temizlik İşlemleri</title>
+      <description>2. Öğrenme Birimi: Oda Temizlik İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-5</guid>
+      <pubDate>Tue, 06 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10kat2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Yatak Hazırlama İşlemleri</title>
+      <description>3. Öğrenme Birimi: Yatak Hazırlama İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-6</guid>
+      <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10kat3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Banyo Temizlik İşlemleri</title>
+      <description>4. Öğrenme Birimi: Banyo Temizlik İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-7</guid>
+      <pubDate>Tue, 08 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10kat4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Genel Alan Temizliği</title>
+      <description>5. Öğrenme Birimi: Genel Alan Temizliği - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-8</guid>
+      <pubDate>Tue, 09 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10kat5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Oda Satış Teknikleri</title>
+      <description>1. Öğrenme Birimi: Oda Satış Teknikleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-9</guid>
+      <pubDate>Tue, 10 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10konuk1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Konuk Giriş Hazırlığı</title>
+      <description>2. Öğrenme Birimi: Konuk Giriş Hazırlığı - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-10</guid>
+      <pubDate>Tue, 11 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10konuk2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Konuk Giriş (Check In) İşlemleri</title>
+      <description>3. Öğrenme Birimi: Konuk Giriş (Check In) İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-11</guid>
+      <pubDate>Tue, 12 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10konuk3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Konuk Çıkış (Check Out) İşlemleri</title>
+      <description>4. Öğrenme Birimi: Konuk Çıkış (Check Out) İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-12</guid>
+      <pubDate>Tue, 13 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni10konuk4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Tefrişat Temizliği</title>
+      <description>1. Öğrenme Birimi: Tefrişat Temizliği - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-13</guid>
+      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11kat1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Çeşitli Yüzeylerin Bakımı ve Yüzeyleri Cilalama İşlemleri</title>
+      <description>2. Öğrenme Birimi: Çeşitli Yüzeylerin Bakımı ve Yüzeyleri Cilalama İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-14</guid>
+      <pubDate>Tue, 15 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11kat2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Malzeme Takibini Yapma</title>
+      <description>3. Öğrenme Birimi: Malzeme Takibini Yapma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-15</guid>
+      <pubDate>Tue, 16 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11kat3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Dekorasyon Hizmetlerini Yürütme</title>
+      <description>4. Öğrenme Birimi: Dekorasyon Hizmetlerini Yürütme - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-16</guid>
+      <pubDate>Tue, 17 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11kat4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Çamaşırhane İşlemleri</title>
+      <description>5. Öğrenme Birimi: Çamaşırhane İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-17</guid>
+      <pubDate>Tue, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11kat5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>6. Öğrenme Birimi: Kuru Temizleme İşlemleri</title>
+      <description>6. Öğrenme Birimi: Kuru Temizleme İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-18</guid>
+      <pubDate>Tue, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11kat6.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Konaklama Endüstrisi</title>
+      <description>1. Öğrenme Birimi: Konaklama Endüstrisi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-19</guid>
+      <pubDate>Tue, 20 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11konaklama1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Konaklama İşletmelerinin Departmanları</title>
+      <description>2. Öğrenme Birimi: Konaklama İşletmelerinin Departmanları - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-20</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11konaklama2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Konaklama İşletmelerinde İnsan Kaynakları Yönetimi</title>
+      <description>3. Öğrenme Birimi: Konaklama İşletmelerinde İnsan Kaynakları Yönetimi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-21</guid>
+      <pubDate>Tue, 22 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11konaklama3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Konaklama İşletmelerinde Pazarlama</title>
+      <description>4. Öğrenme Birimi: Konaklama İşletmelerinde Pazarlama - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-22</guid>
+      <pubDate>Tue, 23 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11konaklama4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Konaklama İşletmelerinde Yeni Teknolojiler ve Çalışma Hayatı</title>
+      <description>5. Öğrenme Birimi: Konaklama İşletmelerinde Yeni Teknolojiler ve Çalışma Hayatı - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-23</guid>
+      <pubDate>Tue, 24 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11konaklama5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Sürdürülebilir Turizm Kavramı</title>
+      <description>1. Öğrenme Birimi: Sürdürülebilir Turizm Kavramı - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-24</guid>
+      <pubDate>Tue, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11sürdürülebilir1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Sürdürülebilir Turizm Pazarı</title>
+      <description>2. Öğrenme Birimi: Sürdürülebilir Turizm Pazarı - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-25</guid>
+      <pubDate>Tue, 26 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11sürdürülebilir2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Sürdürülebilir Turizm Süreci</title>
+      <description>3. Öğrenme Birimi: Sürdürülebilir Turizm Süreci - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-26</guid>
+      <pubDate>Tue, 27 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni11sürdürülebilir3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Alternatif Turizme Giriş</title>
+      <description>1. Öğrenme Birimi: Alternatif Turizme Giriş - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-27</guid>
+      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Alternatif1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Alternatif Turizm Çeşitleri</title>
+      <description>2. Öğrenme Birimi: Alternatif Turizm Çeşitleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-28</guid>
+      <pubDate>Tue, 01 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Alternatif2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: İş Organizasyonu</title>
+      <description>1. Öğrenme Birimi: İş Organizasyonu - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-29</guid>
+      <pubDate>Tue, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Çamaşır1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Yıkama İşlemi</title>
+      <description>2. Öğrenme Birimi: Yıkama İşlemi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-30</guid>
+      <pubDate>Tue, 03 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Çamaşır2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Ütüleme İşlemi</title>
+      <description>3. Öğrenme Birimi: Ütüleme İşlemi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-31</guid>
+      <pubDate>Tue, 04 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Çamaşır3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Depolama İşlemi</title>
+      <description>4. Öğrenme Birimi: Depolama İşlemi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-32</guid>
+      <pubDate>Tue, 05 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Çamaşır4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Coğrafya ve Turizm</title>
+      <description>1. Öğrenme Birimi: Coğrafya ve Turizm - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-33</guid>
+      <pubDate>Tue, 06 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Su Kaynaklarına Dayalı Turizm Merkezleri</title>
+      <description>2. Öğrenme Birimi: Su Kaynaklarına Dayalı Turizm Merkezleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-34</guid>
+      <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Manzara ve Doğal Yaşam Kaynaklarına Dayalı Turizm Merkezleri</title>
+      <description>3. Öğrenme Birimi: Manzara ve Doğal Yaşam Kaynaklarına Dayalı Turizm Merkezleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-35</guid>
+      <pubDate>Tue, 08 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Tarihi Kaynaklara Dayalı Turizm Merkezleri</title>
+      <description>4. Öğrenme Birimi: Tarihi Kaynaklara Dayalı Turizm Merkezleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-36</guid>
+      <pubDate>Tue, 09 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Şehir ve Kruvaziyer Turizmi Merkezleri</title>
+      <description>5. Öğrenme Birimi: Şehir ve Kruvaziyer Turizmi Merkezleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-37</guid>
+      <pubDate>Tue, 10 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>6. Öğrenme Birimi: Kültür ve İnanç Turizmi Merkezleri</title>
+      <description>6. Öğrenme Birimi: Kültür ve İnanç Turizmi Merkezleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-38</guid>
+      <pubDate>Tue, 11 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey6.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>7. Öğrenme Birimi: Sağlık ve Spor Turizmi Merkezleri</title>
+      <description>7. Öğrenme Birimi: Sağlık ve Spor Turizmi Merkezleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-39</guid>
+      <pubDate>Tue, 12 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyasey7.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Dünya Kültürlerine Giriş</title>
+      <description>1. Öğrenme Birimi: Dünya Kültürlerine Giriş - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-40</guid>
+      <pubDate>Tue, 13 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyakültür1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Dünya Kültür Çeşitleri</title>
+      <description>2. Öğrenme Birimi: Dünya Kültür Çeşitleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-41</guid>
+      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Dünyakültür2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Gastronomi Turizmine Giriş</title>
+      <description>1. Öğrenme Birimi: Gastronomi Turizmine Giriş - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-42</guid>
+      <pubDate>Tue, 15 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Gastronomi1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Türkiye'de ve Dünyada Gastronomi Turizmi</title>
+      <description>2. Öğrenme Birimi: Türkiye'de ve Dünyada Gastronomi Turizmi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-43</guid>
+      <pubDate>Tue, 16 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Gastronomi2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Kongre ve Etkinlik Yönetimine Giriş</title>
+      <description>1. Öğrenme Birimi: Kongre ve Etkinlik Yönetimine Giriş - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-44</guid>
+      <pubDate>Tue, 17 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Kongre1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Konaklama İşletmelerinde Toplantı ve Etkinlik Hizmetleri</title>
+      <description>2. Öğrenme Birimi: Konaklama İşletmelerinde Toplantı ve Etkinlik Hizmetleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-45</guid>
+      <pubDate>Tue, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Kongre2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: İş Organizasyonu</title>
+      <description>1. Öğrenme Birimi: İş Organizasyonu - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-46</guid>
+      <pubDate>Tue, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Kuru1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Kuru Temizleme Öncesi Hazırlık İşlemleri</title>
+      <description>2. Öğrenme Birimi: Kuru Temizleme Öncesi Hazırlık İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-47</guid>
+      <pubDate>Tue, 20 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Kuru2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Kuru Temizleme İşlemleri</title>
+      <description>3. Öğrenme Birimi: Kuru Temizleme İşlemleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-48</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Kuru3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Günlük/Periyodik Kontrol ve Bakımların Takibi</title>
+      <description>4. Öğrenme Birimi: Günlük/Periyodik Kontrol ve Bakımların Takibi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-49</guid>
+      <pubDate>Tue, 22 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Kuru4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Kuru Temizleme Gerektirmeyen Tekstil Ürünleri İçin Yıkama İşlemi</title>
+      <description>5. Öğrenme Birimi: Kuru Temizleme Gerektirmeyen Tekstil Ürünleri İçin Yıkama İşlemi - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-50</guid>
+      <pubDate>Tue, 23 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni12Kuru5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: E-Ticaret</title>
+      <description>1. Öğrenme Birimi: E-Ticaret - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-51</guid>
+      <pubDate>Tue, 24 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12SosyalMedya1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Sosyal Medya</title>
+      <description>2. Öğrenme Birimi: Sosyal Medya - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-52</guid>
+      <pubDate>Tue, 25 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12SosyalMedya2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Veri Analizi ve Grafikler</title>
+      <description>3. Öğrenme Birimi: Veri Analizi ve Grafikler - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-53</guid>
+      <pubDate>Tue, 26 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12SosyalMedya3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: İş Organizasyonu</title>
+      <description>1. Öğrenme Birimi: İş Organizasyonu - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-54</guid>
+      <pubDate>Tue, 27 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Transfer1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Misafiri Karşılama</title>
+      <description>2. Öğrenme Birimi: Misafiri Karşılama - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-55</guid>
+      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Transfer2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Misafirin Ulaşımını Sağlama</title>
+      <description>3. Öğrenme Birimi: Misafirin Ulaşımını Sağlama - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-56</guid>
+      <pubDate>Tue, 01 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Transfer3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Transferi Sonlandırma</title>
+      <description>4. Öğrenme Birimi: Transferi Sonlandırma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-57</guid>
+      <pubDate>Tue, 02 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Transfer4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Turizm ve Rehberlik</title>
+      <description>1. Öğrenme Birimi: Turizm ve Rehberlik - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-58</guid>
+      <pubDate>Tue, 03 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Turoperasyonu1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: Rehberlik Hizmetleri</title>
+      <description>2. Öğrenme Birimi: Rehberlik Hizmetleri - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-59</guid>
+      <pubDate>Tue, 04 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Turoperasyonu2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Paket Tur Hazırlama</title>
+      <description>3. Öğrenme Birimi: Paket Tur Hazırlama - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-60</guid>
+      <pubDate>Tue, 05 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Turoperasyonu3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Tur Operasyonu için Hazırlık Yapma</title>
+      <description>4. Öğrenme Birimi: Tur Operasyonu için Hazırlık Yapma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-61</guid>
+      <pubDate>Tue, 06 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Turoperasyonu4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Tur Operasyonu Yapma</title>
+      <description>5. Öğrenme Birimi: Tur Operasyonu Yapma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-62</guid>
+      <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Turoperasyonu5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>6. Öğrenme Birimi: Acente Operasyonlarını Gerçekleştirme</title>
+      <description>6. Öğrenme Birimi: Acente Operasyonlarını Gerçekleştirme - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-63</guid>
+      <pubDate>Tue, 08 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/Yeni12Turoperasyonu6.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>1. Öğrenme Birimi: Meslek Etiği ve Ahilik</title>
+      <description>1. Öğrenme Birimi: Meslek Etiği ve Ahilik - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-64</guid>
+      <pubDate>Tue, 09 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni9meslekigel1.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>2. Öğrenme Birimi: İş Sağlığı ve Güvenliği</title>
+      <description>2. Öğrenme Birimi: İş Sağlığı ve Güvenliği - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-65</guid>
+      <pubDate>Tue, 10 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni9meslekigel2.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>3. Öğrenme Birimi: Teknolojik Gelişmeler ve Endüstriyel Dönüşüm</title>
+      <description>3. Öğrenme Birimi: Teknolojik Gelişmeler ve Endüstriyel Dönüşüm - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-66</guid>
+      <pubDate>Tue, 11 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni9meslekigel3.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>4. Öğrenme Birimi: Çevre Koruma</title>
+      <description>4. Öğrenme Birimi: Çevre Koruma - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-67</guid>
+      <pubDate>Tue, 12 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni9meslekigel4.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>5. Öğrenme Birimi: Girişimci Fikirler, İş Kurma ve Yürütme</title>
+      <description>5. Öğrenme Birimi: Girişimci Fikirler, İş Kurma ve Yürütme - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-68</guid>
+      <pubDate>Tue, 13 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni9meslekigel5.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+    <item>
+      <title>6. Öğrenme Birimi: Fikri ve Sınai Mülkiyet Hakları</title>
+      <description>6. Öğrenme Birimi: Fikri ve Sınai Mülkiyet Hakları - Turizm Okulum Sesli Eğitim İçeriği.</description>
+      <guid>turizm-okulum-edu-ep-69</guid>
+      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://erolmertyurdakul.github.io/turizmokulum-podcasts/yeni9meslekigel6.mp3" length="10000000" type="audio/mpeg"/>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+An unexpected error was encountered by the Dart CLI.
+Please file an issue at https://github.com/dart-lang/sdk/issues/new with the following details:
+
+Invocation: 'dart analyze'
+Exception: 'type 'Null' is not a subtype of type 'String''
+Stack Trace:
+#0      _Platform.resolvedExecutable (dart:io/platform_impl.dart:39)
+#1      Sdk._createSingleton (package:dart2native/sdk.dart)
+#2      Sdk._instance (package:dart2native/sdk.dart:13)
+#3      sdk (package:dart2native/sdk.dart)
+#4      _pubspec (package:dartdev/src/templates/cli.dart)
+#5      new CliGenerator (package:dartdev/src/templates/cli.dart)
+#6      generators (package:dartdev/src/templates.dart:22)
+#7      CreateCommand.legalTemplateIds (package:dartdev/src/commands/create.dart)
+#8      new CreateCommand (package:dartdev/src/commands/create.dart:38)
+#9      new DartdevRunner (package:dartdev/dartdev.dart:125)
+#10     runDartdev (package:dartdev/dartdev.dart:50)
+#11     main (file:///C:/b/s/w/ir/x/w/sdk/pkg/dartdev/bin/dartdev.dart:13)
+#12     _delayEntrypointInvocation.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:309)
+#13     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:192)
+
