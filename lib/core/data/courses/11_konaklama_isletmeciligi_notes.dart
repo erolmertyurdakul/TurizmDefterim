@@ -125,7 +125,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           ]
         },
         {
-          "name": "Bell Boy (Komi) Hizmeti",
+          "name": "Bellboy Hizmeti",
           "desc": "Misafirlerin giriş ve çıkış anında bavullarını taşıyan, odaya eşlik eden, oda donanımlarını tanıtan ve valet hizmeti veren ön büro destek personelidir.",
           "examples": [
             "Örnekle Pekiştirelim: Kapıya yanaşan araçtan 4 büyük valizi alan bell boy Murat'ın, misafiri 703 nolu odaya kadar refakat edip klimanın ve TV uzaktan kumandasının kullanımını göstermesidir."
