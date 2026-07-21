@@ -79,13 +79,6 @@ const Map<String, dynamic> meslekEtigiVeAhilik = {
           ]
         },
         {
-          "name": "Peştemal Kuşanma Töreni",
-          "desc": "Kalfalıktan ustalığa geçiş törenidir. Mesleki eğitimini ve ahlaki olgunluğunu tamamlayan kalfanın beline, ustalar kurulu tarafından peştemal bağlanır ve artık kendi dükkanını açma izni verilirdi.",
-          "examples": [
-            "Örnekle Pekiştirelim: Günümüzde aşçılık okullarından mezun olan öğrencilere şef şapkalarının takılması ve önlüklerinin törenle giydirilmesi, peştemal kuşanmanın modern bir yansımasıdır."
-          ]
-        },
-        {
           "name": "Pabucunu Dama Atmak",
           "desc": "Hatalı, çürük veya fahiş fiyatla mal satan esnafın pabucunun, ibret-i alem olsun diye dükkanının damına atılması cezasıdır. Bu ceza esnafın itibarını sıfırlar ve kimse ondan alışveriş yapmazdı.",
           "examples": [
