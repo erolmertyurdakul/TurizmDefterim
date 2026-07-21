@@ -18,6 +18,7 @@ Uygulamayı 18 yaş altı öğrenciler ve çocuklar yoğun olarak kullandığı 
 * **Sıfır Kişisel Veri Toplama:** Uygulamamız hiçbir şekilde ad, soyad, e-posta, telefon numarası, T.C. kimlik numarası, okul bilgisi, konum/IP adresi veya cihaz kimliği (ID) **TOPLAMAZ, SAKLAMAZ, İŞLEMEZ VE ÜÇÜNCÜ TARAFLARLA PAYLAŞMAZ**.
 * **Hesap Oluşturma / Kayıt Zorunluluğu Yoktur:** Öğrencilerin veya öğretmenlerin uygulamayı kullanmak için hesap açması, şifre belirlemesi veya kişisel bilgi vermesi **gerekmez**.
 * **Uygulama İçi Profil:** Uygulama kullanıcılarının uygulamanın içerisinde spesifik olarak kendilerini tanımlamalarına izin veren (kullanıcı adı, yaş vb.) detaylı ayarlar bulunmamaktadır. Kullanıcılar sadece "Öğrenci" veya "Öğretmen" olarak tanımlanmaktadırlar. Uygulamaya ilk girişte seçilen sınıf bilgisi hiçbir şekilde depolanmaz. Sınıf bilgisi yalnızca uygulamaya ilk giriş yapan kullanıcının başlangıçtaki rehber adımları için sorulmuştur.
+
 ---
 
 ### 3. YEREL VERİ DEPOLAMA (LOCAL STORAGE)
