@@ -107,46 +107,34 @@ class CourseDetailScreen extends ConsumerWidget {
                 child: Stack(
                   children: [
                     Positioned(
-                      right: -20,
-                      bottom: -20,
+                      right: 12,
+                      bottom: 12,
                       child: Container(
-                        padding: const EdgeInsets.all(3),
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Colors.white.withValues(alpha: 0.12), width: 1.0),
+                          borderRadius: BorderRadius.circular(24),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.15),
+                              blurRadius: 20,
+                              offset: const Offset(0, 8),
+                            ),
+                            BoxShadow(
+                              color: AppColors.primarySeed.withValues(alpha: 0.2),
+                              blurRadius: 30,
+                              spreadRadius: 5,
+                            ),
+                          ],
                         ),
-                        child: Container(
-                          padding: const EdgeInsets.all(14),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.08),
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white.withValues(alpha: 0.25), width: 1.5),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.15),
-                                blurRadius: 20,
-                                offset: const Offset(0, 8),
-                              ),
-                              BoxShadow(
-                                color: AppColors.primarySeed.withValues(alpha: 0.2),
-                                blurRadius: 30,
-                                spreadRadius: 5,
-                              ),
-                            ],
-                          ),
-                          child: SizedBox(
-                            width: 100,
-                            height: 100,
-                            child: ClipOval(
-                              child: Transform.scale(
-                                scale: 1.09,
-                                child: Image.asset(
-                                  'assets/images/app_logo.png',
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                        child: SizedBox(
+                          width: 90,
+                          height: 90,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(22),
+                            child: Image.asset(
+                              'assets/images/app_logo.png',
+                              width: 90,
+                              height: 90,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -278,34 +266,26 @@ class CourseDetailScreen extends ConsumerWidget {
                     child: Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white.withOpacity(0.12), width: 1.0),
+                            borderRadius: BorderRadius.circular(8),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.15),
+                                blurRadius: 10,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
                           ),
-                          child: Container(
-                            padding: const EdgeInsets.all(6),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.08),
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white.withOpacity(0.25), width: 1.5),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.15),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 4),
-                                ),
-                              ],
-                            ),
-                            child: ClipOval(
-                              child: Transform.scale(
-                                scale: 1.09,
-                                child: Image.asset(
-                                  'assets/images/app_logo.png',
-                                  width: 24,
-                                  height: 24,
-                                  fit: BoxFit.cover,
-                                ),
+                          child: SizedBox(
+                            width: 28,
+                            height: 28,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(6),
+                              child: Image.asset(
+                                'assets/images/app_logo.png',
+                                width: 28,
+                                height: 28,
+                                fit: BoxFit.contain,
                               ),
                             ),
                           ),

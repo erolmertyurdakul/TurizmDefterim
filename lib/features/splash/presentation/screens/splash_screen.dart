@@ -389,14 +389,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                               border: Border.all(color: Colors.white.withOpacity(0.05), width: 1.0), // Dış ince orbital halka
                             ),
                             child: Container(
-                              padding: const EdgeInsets.all(20),
                               decoration: BoxDecoration(
-                                color: const Color(0xFF0F172A).withOpacity(0.60), // Koyu uzay camı
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.white.withOpacity(0.18), width: 1.5), // Çerçeve halkası
+                                borderRadius: BorderRadius.circular(28),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.40),
+                                    color: Colors.black.withOpacity(0.35),
                                     blurRadius: 30,
                                     offset: const Offset(0, 15),
                                   ),
@@ -411,7 +408,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                               child: SizedBox(
                                 width: 120, // Boyut %10 büyütüldü (110 -> 120)
                                 height: 120,
-                                child: ClipOval(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(26),
                                   child: AnimatedBuilder(
                                     animation: _controller,
                                     builder: (context, child) {
@@ -443,14 +441,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                                         ),
                                       );
                                     },
-                                    child: Transform.scale(
-                                      scale: 1.09,
-                                      child: Image.asset(
-                                        'assets/images/app_logo.png',
-                                        width: 120, // Boyut %10 büyütüldü (110 -> 120)
-                                        height: 120,
-                                        fit: BoxFit.cover,
-                                      ),
+                                    child: Image.asset(
+                                      'assets/images/app_logo.png',
+                                      width: 120,
+                                      height: 120,
+                                      fit: BoxFit.contain,
                                     ),
                                   ),
                                 ),

@@ -418,15 +418,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                       Container(
                         padding: const EdgeInsets.all(2),
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Colors.white.withValues(alpha: 0.12), width: 0.8), // Dış ince orbital halka
+                          borderRadius: BorderRadius.circular(9),
+                          border: Border.all(color: Colors.white.withValues(alpha: 0.12), width: 0.8),
                         ),
                         child: Container(
-                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.08),
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Colors.white.withValues(alpha: 0.25), width: 1.0), // Çerçeve halkası
+                            borderRadius: BorderRadius.circular(8),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black.withValues(alpha: 0.12),
@@ -448,15 +445,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                           child: SizedBox(
                             width: 32,
                             height: 32,
-                            child: ClipOval(
-                              child: Transform.scale(
-                                scale: 1.09,
-                                child: Image.asset(
-                                  'assets/images/app_logo.png',
-                                  width: 32,
-                                  height: 32,
-                                  fit: BoxFit.cover,
-                                ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(7),
+                              child: Image.asset(
+                                'assets/images/app_logo.png',
+                                width: 32,
+                                height: 32,
+                                fit: BoxFit.contain,
                               ),
                             ),
                           ),

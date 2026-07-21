@@ -274,11 +274,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                       border: Border.all(color: Colors.white.withOpacity(0.05), width: 1.0),
                     ),
                     child: Container(
-                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: const Color(0xFF0F172A).withOpacity(0.60),
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white.withOpacity(0.18), width: 1.5),
+                        borderRadius: BorderRadius.circular(28),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.40),
@@ -296,15 +293,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                       child: SizedBox(
                         width: 120,
                         height: 120,
-                        child: ClipOval(
-                          child: Transform.scale(
-                            scale: 1.05,
-                            child: Image.asset(
-                              'assets/images/app_logo.png',
-                              width: 120,
-                              height: 120,
-                              fit: BoxFit.cover,
-                            ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(26),
+                          child: Image.asset(
+                            'assets/images/app_logo.png',
+                            width: 120,
+                            height: 120,
+                            fit: BoxFit.contain,
                           ),
                         ),
                       ),
