@@ -8,7 +8,7 @@
 ---
 
 ### 1. KAPSAM VE AMACIMIZ
-Bu Gizlilik Politikası, **Turizm Defterim** mobil uygulamasını kullanan meslek lisesi öğrencileri (13-19 yaş grubu), öğretmenler, akademisyenler ve turizm sektörü çalışanlarının gizlilik haklarını korumak amacıyla hazırlanmıştır. Uygulamamız tamamen kamu yararı ve eğitim odaklı olup, Milli Eğitim Bakanlığı (MEB) müfredatını ve kamu etik ilkelerini destekleyecek şekilde tasarlanmıştır.
+Bu Gizlilik Politikası, **Turizm Defterim** mobil uygulamasını kullanan meslek lisesi öğrencileri (13-19 yaş grubu), öğretmenler, akademisyenler ve turizm sektörü çalışanları başta olmak üzere uygulamaya ilgi duyabilecek diğer tarafların gizlilik haklarını korumak amacıyla hazırlanmıştır. Uygulamamız tamamen kamu yararı için yapılmış ve eğitim odaklı olup, Milli Eğitim Bakanlığı (MEB) müfredatı içeriklerine uyumlu şekilde tasarlanmış bir eğitim materyalidir.
 
 ---
 
@@ -17,12 +17,12 @@ Uygulamayı 18 yaş altı öğrenciler ve çocuklar yoğun olarak kullandığı 
 
 * **Sıfır Kişisel Veri Toplama:** Uygulamamız hiçbir şekilde ad, soyad, e-posta, telefon numarası, T.C. kimlik numarası, okul bilgisi, konum/IP adresi veya cihaz kimliği (ID) **TOPLAMAZ, SAKLAMAZ, İŞLEMEZ VE ÜÇÜNCÜ TARAFLARLA PAYLAŞMAZ**.
 * **Hesap Oluşturma / Kayıt Zorunluluğu Yoktur:** Öğrencilerin veya öğretmenlerin uygulamayı kullanmak için hesap açması, şifre belirlemesi veya kişisel bilgi vermesi **gerekmez**.
-
+* **Uygulama İçi Profil:** Uygulama kullanıcılarının uygulamanın içerisinde spesifik olarak kendilerini tanımlamalarına izin veren (kullanıcı adı, yaş vb.) detaylı ayarlar bulunmamaktadır. Kullanıcılar sadece "Öğrenci" veya "Öğretmen" olarak tanımlanmaktadırlar. Uygulamaya ilk girişte seçilen sınıf bilgisi hiçbir şekilde depolanmaz. Sınıf bilgisi yalnızca uygulamaya ilk giriş yapan kullanıcının başlangıçtaki rehber adımları için sorulmuştur.
 ---
 
 ### 3. YEREL VERİ DEPOLAMA (LOCAL STORAGE)
 * Öğrencilerin ders çalışma sürecinde kazandıkları XP puanları, tamamladıkları soru bankası seviyeleri, açılan rozetler ve uygulama içi tercihler **yalnızca kullanıcının kendi mobil cihazının dahili hafızasında (`shared_preferences`) saklanır**.
-* Bu veriler hiçbir harici sunucuya veya veritabanına aktarılmaz. Uygulama cihazdan silindiğinde tüm yerel gelişim kayıtları cihazdan otomatik olarak temizlenir.
+* Bu veriler hiçbir harici sunucuya veya veritabanına aktarılmamaktadır.
 
 ---
 
@@ -43,4 +43,4 @@ Uygulamayı 18 yaş altı öğrenciler ve çocuklar yoğun olarak kullandığı 
 Gizlilik politikamız ile ilgili her türlü soru ve taleplerinizi doğrudan geliştirici e-posta adresimize iletebilirsiniz:
 
 * **Geliştirici:** Erol Mert YURDAKUL
-* **E-Posta:** erolmertyurdakul@gmail.com
+* **E-Posta:** erolmertyurdakul.turizm@gmail.com
