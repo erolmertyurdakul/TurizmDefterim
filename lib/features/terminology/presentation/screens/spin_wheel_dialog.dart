@@ -1,16 +1,21 @@
+import 'dart:io';
+import 'dart:convert';
 import 'dart:math' as math;
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:path_provider/path_provider.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/data/terminology_data.dart';
 import '../../../../core/providers/sound_provider.dart';
 import '../../../../core/utils/sfx_synthesizer.dart';
 
-class SpinWheelDialog extends StatefulWidget {
+class SpinWheelDialog extends ConsumerStatefulWidget {
   const SpinWheelDialog({super.key});
 
   static void show(BuildContext context) {
@@ -22,10 +27,10 @@ class SpinWheelDialog extends StatefulWidget {
   }
 
   @override
-  State<SpinWheelDialog> createState() => _SpinWheelDialogState();
+  ConsumerState<SpinWheelDialog> createState() => _SpinWheelDialogState();
 }
 
-class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProviderStateMixin {
+class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late Animation<double> _animation;
   
@@ -34,13 +39,17 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
   Term? _selectedTerm;
   double _currentRotation = 0.0;
 
-  // ── Ses Efekti Sistemi ──
-  final AudioPlayer _tickPlayer = AudioPlayer();
+  // ── Ses Sistemi (Tek Seferlik Tınlama Mimarisi) ──
+  // Kullanıcının kasmadan çalışan kesin çözüm isteği üzerine:
+  // Her dilimde değil, çark dönmeye başlarken tek bir büyülü uzun ses çalar.
+  final AudioPlayer _spinPlayer = AudioPlayer();
   final AudioPlayer _resultPlayer = AudioPlayer();
-  late final Uint8List _tickBytes;
-  late final Uint8List _resultBytes;
-  int _lastSliceIndex = -1; // Son geçilen dilim indeksi
   
+  late final Uint8List _spinBytes;
+  late final Uint8List _resultBytes;
+  bool _isAudioReady = false;
+  bool _isDisposed = false;
+
   // Çark dilimlerindeki eğitim kelimeleri (T.C. ahlaki ve eğitim değerlerine uygun, turizm odaklı)
   static const List<String> _wheelWords = [
     'Konaklama',
@@ -69,9 +78,11 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
   void initState() {
     super.initState();
     
-    // Ses verilerini önceden sentezle (performans için)
-    _tickBytes = SfxSynthesizer.getWheelTick();
+    // Sesleri önceden sentezle
+    _spinBytes = SfxSynthesizer.getWheelSpinResonance();
     _resultBytes = SfxSynthesizer.getWheelResult();
+
+    _initAudio();
     
     _controller = AnimationController(
       vsync: this,
@@ -83,15 +94,9 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
       curve: Curves.easeOutCubic,
     );
 
-    // Çark her karede dönerken dilim sınırı geçişini dinle
-    _controller.addListener(_onWheelTick);
-
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        // Son dilim geçişi için son bir tık sesi çal
-        _playTickSound();
-        // Kısa bir bekleme ardından sonuç sesini çal
-        Future.delayed(const Duration(milliseconds: 150), () {
+        Future.delayed(const Duration(milliseconds: 100), () {
           if (mounted) _playResultSound();
         });
         setState(() {
@@ -102,47 +107,69 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
     });
   }
 
-  /// Her animasyon karesinde çağrılır.
-  /// Mevcut dönüş açısından hangi dilimde olduğumuzu hesaplar.
-  /// Dilim değiştiğinde (pointer yeni bir dilime geçtiğinde) tick sesi çalar.
-  void _onWheelTick() {
-    final double currentAngle = _animation.value;
-    final int sliceCount = _wheelWords.length;
-    final double sweepAngle = 2 * math.pi / sliceCount;
-    
-    // Mevcut açıyı 0..2π aralığına normalize et
-    final double normalizedAngle = currentAngle % (2 * math.pi);
-    // Hangi dilim sınırındayız
-    final int currentSlice = (normalizedAngle / sweepAngle).floor();
-    
-    if (currentSlice != _lastSliceIndex) {
-      _lastSliceIndex = currentSlice;
-      _playTickSound();
+  Future<void> _initAudio() async {
+    try {
+      await _spinPlayer.setVolume(0.5);
+      await _resultPlayer.setVolume(0.7);
+
+      final tempDir = await getTemporaryDirectory();
+      final spinFilePath = '${tempDir.path}/wheel_spin_resonance.wav';
+      final resultFilePath = '${tempDir.path}/wheel_result_opt.wav';
+
+      final sFile = File(spinFilePath);
+      final rFile = File(resultFilePath);
+
+      await sFile.writeAsBytes(_spinBytes, flush: true);
+      await rFile.writeAsBytes(_resultBytes, flush: true);
+
+      if (_isDisposed) return;
+      
+      await _spinPlayer.setReleaseMode(ReleaseMode.stop);
+      await _resultPlayer.setReleaseMode(ReleaseMode.stop);
+
+      await _spinPlayer.setSourceDeviceFile(spinFilePath);
+      await _resultPlayer.setSourceDeviceFile(resultFilePath);
+      
+      if (mounted) setState(() { _isAudioReady = true; });
+    } catch (e) {
+      debugPrint('Audio init error: $e');
     }
   }
 
-  Future<void> _playTickSound() async {
+  void _playSpinSound() async {
+    if (_isDisposed || !_isAudioReady) return;
+    if (!ref.read(soundSettingsProvider)) return;
     try {
-      await _tickPlayer.stop();
-      await _tickPlayer.setVolume(0.5);
-      await _tickPlayer.play(BytesSource(_tickBytes));
-    } catch (_) {}
+      await _spinPlayer.stop();
+      await _spinPlayer.seek(Duration.zero);
+      if (_isDisposed) return;
+      await _spinPlayer.resume();
+    } catch (e) {
+      debugPrint('Play spin error: $e');
+    }
   }
 
-  Future<void> _playResultSound() async {
+  void _playResultSound() async {
+    if (_isDisposed || !_isAudioReady) return;
+    if (!ref.read(soundSettingsProvider)) return;
     try {
       await _resultPlayer.stop();
-      await _resultPlayer.setVolume(0.6);
-      await _resultPlayer.play(BytesSource(_resultBytes));
-    } catch (_) {}
+      await _resultPlayer.seek(Duration.zero);
+      if (_isDisposed) return;
+      await _resultPlayer.resume();
+    } catch (e) {
+      debugPrint('Play result error: $e');
+    }
   }
 
   @override
   void dispose() {
-    _controller.removeListener(_onWheelTick);
+    _isDisposed = true;
     _controller.dispose();
-    _tickPlayer.dispose();
-    _resultPlayer.dispose();
+    try {
+      _spinPlayer.dispose();
+      _resultPlayer.dispose();
+    } catch (_) {}
     super.dispose();
   }
 
@@ -169,7 +196,7 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
     }
   }
 
-  void _spinWheel() {
+  void _spinWheel() async {
     if (_state == 'spinning') return;
 
     final random = math.Random();
@@ -198,17 +225,17 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
     }
     final double targetRotation = _currentRotation + extraSpins + angleDiff;
 
-    _animation = Tween<double>(
-      begin: _currentRotation,
-      end: targetRotation,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOutCubic,
-    ));
+    _playSpinSound();
 
     setState(() {
       _state = 'spinning';
-      _lastSliceIndex = -1; // Dilim izleyicisini sıfırla
+      _animation = Tween<double>(
+        begin: _currentRotation,
+        end: targetRotation,
+      ).animate(CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOutCubic,
+      ));
     });
 
     _controller.reset();
@@ -274,21 +301,20 @@ class _SpinWheelDialogState extends State<SpinWheelDialog> with SingleTickerProv
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      // Çarkın Kendisi
+                      // Çarkın Kendisi (GPU Ön Belleklenmiş 60 FPS Akıcı Mimarisi)
                       AnimatedBuilder(
                         animation: _animation,
+                        child: const CustomPaint(
+                          size: Size(200, 200),
+                          painter: _WheelPainter(
+                            words: _wheelWords,
+                            colors: _sliceColors,
+                          ),
+                        ),
                         builder: (context, child) {
                           return Transform.rotate(
                             angle: _animation.value,
-                            child: const RepaintBoundary(
-                              child: CustomPaint(
-                                size: Size(200, 200),
-                                painter: _WheelPainter(
-                                  words: _wheelWords,
-                                  colors: _sliceColors,
-                                ),
-                              ),
-                            ),
+                            child: child,
                           );
                         },
                       ),

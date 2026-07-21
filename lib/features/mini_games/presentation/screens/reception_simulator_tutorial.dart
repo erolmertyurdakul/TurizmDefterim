@@ -44,42 +44,43 @@ class _ReceptionSimulatorTutorialState
       title: 'Doğru Odayı Seçin',
       description:
           'Otelde 9 farklı oda tipi bulunur:\n\n'
-          '🏠 Standart Oda — En çok tercih edilen\n'
-          '📐 Köşe Oda — Köşede yer alan, daha geniş\n'
-          '👨‍👩‍👧‍👦 Aile Odası — Çok kişilik, geniş\n'
-          '🚪 Bağlantılı Oda — Geçiş kapılı iki oda\n'
-          '🧱 Bitişik Oda — Yan yana iki oda\n'
-          '🏨 Suite Oda — Ayrı oturma alanı\n'
-          '👑 Kral Dairesi — En prestijli oda\n\n'
-          'Seviye ilerledikçe yeni oda tipleri açılır!',
+          '🏠 Standart Room\n'
+          '📐 Corner Room\n'
+          '👔 Executive Room\n'
+          '👨‍👩‍👧‍👦 Family Room\n'
+          '♿ Handicapped Room\n'
+          '🚪 Connecting Room\n'
+          '🧱 Adjoining Room\n'
+          '🏨 Suite Room\n'
+          '👑 Presidential Suite\n\n'
+          'Seviye ilerledikçe yeni oda tipleri açılır.',
       gradient: [Color(0xFF8B5CF6), Color(0xFFA78BFA)],
     ),
     _TutorialPage(
       icon: Icons.restaurant_outlined,
       title: 'Pansiyon Durumunu\nBelirleyin',
       description:
-          'Misafirin yemek talebine göre pansiyon seçin:\n\n'
-          '🚫 Sadece Oda (RO) — Yemek yok\n'
-          '☕ Oda + Kahvaltı (B&B) — Kahvaltı dahil\n'
-          '🍽️ Yarım Pansiyon (HP) — Kahvaltı + akşam\n'
-          '🍴 Tam Pansiyon (FB) — 3 öğün\n'
-          '🌟 Her Şey Dahil (AI) — Yemek + içecek\n'
-          '👑 Ultra Her Şey Dahil (UAI) — Premium paket\n\n'
-          'Kısaltmaları öğrenmek mesleğinizde işe yarar!',
+          'Misafirin yemek talebine göre uygun pansiyon tipini seçin:\n\n'
+          '🚫 Room Only (RO)\n'
+          '☕ Bed & Breakfast (BB)\n'
+          '🍽️ Half Board (HB)\n'
+          '🍴 Full Board (FB)\n'
+          '🌟 All Inclusive (AI)\n'
+          '👑 Ultra All Inclusive (UAI)\n\n'
+          'Bu kısaltmaları öğrenmek mesleki kariyerinizde size kolaylık sağlayacaktır.',
       gradient: [Color(0xFFE07A3A), Color(0xFFE8AA42)],
     ),
     _TutorialPage(
       icon: Icons.workspace_premium_outlined,
-      title: 'İtibarınızı Koruyun!',
+      title: 'İtibarınızı Koruyun',
       description:
           'Her doğru check-in puanınızı ve otelinizin itibarını artırır.\n\n'
-          '✅ Doğru eşleşme → +100 puan\n'
-          '✨ Mükemmel eşleşme → +150 puan\n'
-          '🔥 Combo yapın → x1.5, x2, x2.5, x3 çarpan\n'
-          '⚠️ Yanlış → Puan ve itibar kaybı\n'
-          '😡 Misafir bekler → -20 itibar\n\n'
-          'İtibar sıfıra düşerse otel kapanır!\n\n'
-          '⏸️ Güç-up\'ları stratejik kullanın.',
+          '✅ Doğru Eşleşme → +100 puan\n'
+          '⚠️ Kısmi Eşleşme → +30 puan\n'
+          '❌ Yanlış Eşleşme → -50 puan ve itibar kaybı\n'
+          '😡 Misafir Bekler → -20 itibar\n\n'
+          '🔥 Kombo Yapın → Üst üste doğru cevaplar verdikçe artan puan çarpanı\n\n'
+          'İtibar sıfıra düşerse otel kapanır!',
       gradient: [Color(0xFFFF6B6B), Color(0xFFFF8E8E)],
     ),
   ];

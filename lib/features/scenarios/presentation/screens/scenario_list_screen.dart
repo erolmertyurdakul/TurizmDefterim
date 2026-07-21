@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../data/scenario_database.dart';
 import '../../domain/models/scenario_models.dart';
 import '../providers/scenario_provider.dart';
@@ -15,8 +16,6 @@ class ScenarioListScreen extends ConsumerStatefulWidget {
 }
 
 class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
-  String selectedDepartment = 'Hepsi';
-
   // Renk önbelleği — withOpacity her seferinde yeni nesne yaratmaz
   static const _cardBg = Color(0x0FFFFFFF);       // white 0.06
   static const _cardBorder = Color(0x19FFFFFF);   // white 0.1
@@ -24,36 +23,20 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
   static const _errorBg = Color(0x0DFFFFFF);      // white 0.05
   static const _imageGradientEnd = Color(0xCC000000); // black 0.8
   static const _descColor = Color(0xB3FFFFFF);    // white 0.7
-  static const _blackOverlay = Color(0x99000000);  // black 0.6
   static const _deptBlue = Color(0xD92196F3);     // blueAccent 0.85
-  static const _deptPurple = Color(0xD9AA00FF);   // purpleAccent 0.85
-  static const _deptAmber = Color(0xD9FFD740);    // amberAccent 0.85
-  static const _difficultyBorder = Color(0x80FFFFFF); // white 0.5
   static const _selectedBg = Color(0x3300BCD4);    // cyan 0.2
   static const _selectedBorder = Color(0x6600BCD4); // cyan 0.4
-  static const _hintColor = Color(0x99FFFFFF);     // white 0.6
   static const _btnShadowCyan = Color(0x4D00E5FF); // cyanAccent 0.3
-
-  final List<String> departments = [
-    'Hepsi',
-    'Ön Büro',
-    'Kat Hizmetleri'
-  ];
 
   @override
   Widget build(BuildContext context) {
-    // Filter scenarios based on selection
-    final filteredScenarios = selectedDepartment == 'Hepsi'
-        ? ScenarioDatabase.scenarios
-        : ScenarioDatabase.scenarios
-            .where((s) => s.department == selectedDepartment)
-            .toList();
+    final filteredScenarios = ScenarioDatabase.scenarios;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text(
-          'Kriz Yönetim Lobisi',
+          'Vaka Analizi Lobisi',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -103,7 +86,7 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
                           Icon(Icons.waves, color: Colors.cyanAccent, size: 16),
                           SizedBox(width: 6),
                           Text(
-                            'Karar Anı Simülasyonu',
+                            'Kriz Yönetimi Simülasyonu',
                             style: TextStyle(
                               color: Colors.cyanAccent,
                               fontSize: 12,
@@ -111,16 +94,6 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Gerçek Turizm Krizleri',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 26,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: -0.5,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -147,10 +120,10 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
                             ),
                           ),
                           TextSpan(
-                            text: ' Gençler, bu bölümde tek bir net cevap aramıyoruz; amacımız olaylara yönelik tahminlerde bulunmak ve sonrasında gözden kaçırdığımız detayları fark etmektir. Krizleri en uygun şekilde yönettikten sonra senaryolar üzerinde düşünüp mevcut seçeneklerden daha iyi çözüm önerileri üretebilmek için çabalarsanız, bu bölümden alacağınız faydayı artırabilirsiniz. ',
+                            text: ' Buradaki amacımız, tek bir net cevap aramaktan ziyade olaylara yönelik tahminlerde bulunmak, gözden kaçırdıklarımızı farketmek ve daha iyi çözüm önerileri bulmak için olaylar üzerinde düşünerek kendimizi geliştirmektir. ',
                             style: GoogleFonts.inter(
                               fontSize: 12.5,
-                              fontStyle: FontStyle.italic,
+                              fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w500,
                               color: const Color(0xFFF3E8FF),
                               height: 1.6,
@@ -191,68 +164,15 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
                 ),
               ),
 
-              // Horizontal Category Filter
-              SizedBox(
-                height: 48,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemCount: departments.length,
-                  itemBuilder: (context, index) {
-                    final dept = departments[index];
-                    final isSelected = selectedDepartment == dept;
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedDepartment = dept;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                          decoration: BoxDecoration(
-                            color: isSelected ? Colors.cyanAccent : const Color(0xFF102A35),
-                            borderRadius: BorderRadius.circular(25),
-                            border: Border.all(
-                              color: isSelected ? Colors.cyanAccent : Colors.white.withValues(alpha: 0.15),
-                              width: 1.2,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: isSelected
-                                    ? Colors.cyanAccent.withValues(alpha: 0.3)
-                                    : Colors.transparent,
-                                blurRadius: isSelected ? 8.0 : 0.0,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Text(
-                            dept,
-                            style: GoogleFonts.inter(
-                              color: isSelected ? Colors.black87 : Colors.white70,
-                              fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
-                              fontSize: 13,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              const SizedBox(height: 16),
 
               // Scenarios Grid/List
               Expanded(
                 child: filteredScenarios.isEmpty
-                    ? Center(
+                    ? const Center(
                         child: Text(
-                          'Bu departmana ait kriz senaryosu bulunamadı.',
-                          style: const TextStyle(
-                            color: _hintColor,
+                          'Senaryo bulunamadı.',
+                          style: TextStyle(
+                            color: Color(0x99FFFFFF),
                             fontSize: 14,
                           ),
                         ),
@@ -275,30 +195,6 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
   }
 
   Widget _buildScenarioCard(BuildContext context, Scenario scenario) {
-    Color difficultyColor;
-    switch (scenario.difficulty) {
-      case 'Kolay':
-        difficultyColor = Colors.greenAccent;
-        break;
-      case 'Orta':
-        difficultyColor = Colors.orangeAccent;
-        break;
-      default:
-        difficultyColor = Colors.redAccent;
-    }
-
-    Color deptColorBg;
-    switch (scenario.department) {
-      case 'Ön Büro':
-        deptColorBg = _deptBlue;
-        break;
-      case 'Kat Hizmetleri':
-        deptColorBg = _deptPurple;
-        break;
-      default:
-        deptColorBg = _deptAmber;
-    }
-
     return RepaintBoundary(
       child: Container(
         margin: const EdgeInsets.only(bottom: 20),
@@ -366,30 +262,13 @@ class _ScenarioListScreenState extends ConsumerState<ScenarioListScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4.0),
                         decoration: BoxDecoration(
-                          color: deptColorBg,
+                          color: _deptBlue,
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
                           scenario.department,
                           style: const TextStyle(
                             color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 4.0),
-                        decoration: BoxDecoration(
-                          color: _blackOverlay,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: _difficultyBorder),
-                        ),
-                        child: Text(
-                          scenario.difficulty,
-                          style: TextStyle(
-                            color: difficultyColor,
                             fontSize: 10,
                             fontWeight: FontWeight.bold,
                           ),

@@ -1,38 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html style="background-color: #030F26 !important; height: 100%;">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Turizm Defterim - Mesleki Eğitim ve Simülasyon Platformu">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Turizm Defterim">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png?v=4">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png?v=4"/>
 
   <title>Turizm Defterim</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json?v=4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      background-color: #030F26 !important;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    flutter-view, flt-glass-pane, flt-scene-host {
+      background-color: #030F26 !important;
+    }
+
+    /* Custom Dark-Neon Loading Screen Style */
+    #app-splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(180deg, #030F26 0%, #0A192F 100%) !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .splash-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-family: 'Outfit', -apple-system, sans-serif;
+    }
+
+    .splash-logo-glow {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      background: #030F26;
+      border: 1.5px solid rgba(0, 229, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2);
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    .splash-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2);
+      }
+      50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 50px rgba(0, 229, 255, 0.7), inset 0 0 25px rgba(0, 229, 255, 0.4);
+      }
+    }
+
+    .splash-loader-bar {
+      width: 150px;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .splash-loader-progress {
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, #00E5FF, #00FFCC);
+      border-radius: 10px;
+      position: absolute;
+      animation: indeterminateBar 1.4s infinite ease-in-out;
+    }
+
+    @keyframes indeterminateBar {
+      0% { left: -40%; width: 40%; }
+      50% { left: 30%; width: 60%; }
+      100% { left: 100%; width: 40%; }
+    }
+  </style>
 </head>
-<body>
+<body style="background-color: #030F26 !important; margin: 0; padding: 0; overflow: hidden;">
+  <!-- Custom Dark-Neon Splash Loading Screen -->
+  <div id="app-splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo-glow">
+        <img src="icons/Icon-192.png?v=4" alt="Turizm Defterim" class="splash-logo-img">
+      </div>
+      <div class="splash-loader-bar">
+        <div class="splash-loader-progress"></div>
+      </div>
+    </div>
+  </div>
+  <!-- PWA Install Banner -->
+  <div id="pwa-install-banner">
+    <div class="pwa-header">
+      <div class="pwa-icon">🛎️</div>
+      <div class="pwa-title">Uygulamayı Telefonunuza Yükleyin</div>
+    </div>
+    <div class="pwa-desc">
+      Ders notlarına, mini oyunlara ve podcast'lere telefonunuzun menüsünden çok daha hızlı ve pratik bir şekilde erişmek için uygulamayı ana ekranınıza ekleyin.
+    </div>
+    <div class="pwa-buttons">
+      <button class="pwa-btn pwa-btn-cancel" id="pwa-cancel-btn">Daha Sonra</button>
+      <button class="pwa-btn pwa-btn-install" id="pwa-install-btn">Evet, Yükle</button>
+    </div>
+  </div>
+
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -41,6 +151,87 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
+  <script>
+    window.flutterWebRenderer = "canvaskit";
+  </script>
   <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    let deferredPrompt;
+    const installBanner = document.getElementById('pwa-install-banner');
+    const installBtn = document.getElementById('pwa-install-btn');
+    const cancelBtn = document.getElementById('pwa-cancel-btn');
+
+    // Platform Detection
+    const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test(userAgent);
+    };
+
+    const isInStandaloneMode = () => {
+      return ('standalone' in window.navigator) && (window.navigator.standalone);
+    };
+
+    // iOS/Safari Guide (Since Apple blocks automatic prompt API)
+    if (isIos() && !isInStandaloneMode()) {
+      const pwaTitle = document.querySelector('.pwa-title');
+      const pwaDesc = document.querySelector('.pwa-desc');
+      const pwaIcon = document.querySelector('.pwa-icon');
+      
+      pwaIcon.innerHTML = '🍎';
+      pwaTitle.innerHTML = "iPhone'a Yükleyin";
+      pwaDesc.innerHTML = 'Bu uygulamayı ana ekranınıza eklemek için tarayıcınızın altındaki <strong>Paylaş (Yukarı Ok 📤)</strong> simgesine dokunun ve açılan listeden <strong>Ana Ekrana Ekle</strong> seçeneğini seçin.';
+      
+      installBtn.style.display = 'none';
+      cancelBtn.innerHTML = 'Anladım';
+      
+      setTimeout(() => {
+        installBanner.classList.add('show');
+      }, 1500);
+    }
+
+    // Android/Chrome event listener for beforeinstallprompt
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      if (!isInStandaloneMode() && !isIos()) {
+        setTimeout(() => {
+          installBanner.classList.add('show');
+        }, 1500);
+      }
+    });
+
+    installBtn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('App successfully installed by user');
+        }
+        deferredPrompt = null;
+        installBanner.classList.remove('show');
+      }
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      installBanner.classList.remove('show');
+    });
+
+    // Smooth Splash Screen Dismissal when Flutter Web initializes
+    const splashObserver = new MutationObserver((mutations) => {
+      const flutterApp = document.querySelector('flutter-view') || document.querySelector('flt-glass-pane') || document.querySelector('flt-scene-host');
+      if (flutterApp) {
+        const splash = document.getElementById('app-splash-screen');
+        if (splash) {
+          splash.style.opacity = '0';
+          splash.style.visibility = 'hidden';
+          setTimeout(() => splash.remove(), 500);
+        }
+        splashObserver.disconnect();
+      }
+    });
+    splashObserver.observe(document.body, { childList: true, subtree: true });
+  </script>
 </body>
 </html>

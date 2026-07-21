@@ -52,6 +52,20 @@ const Map<String, dynamic> dunyaCografyasiUnit1 = {
           "examples": [
             "Örnekle Pekiştirelim: Yağmurlu ve soğuk bir havaya sahip olan İngiltere ve Almanya'daki insanların, her yaz tatili için sıcak güneşli Antalya veya Ege kıyılarına gelmesi klasik bir turist akışıdır."
           ]
+        },
+        {
+          "name": "Aktarma Merkezi (Hub Havalimanı)",
+          "desc": "Kıtalar arası uçuşların düğüm noktası niteliğinde olan, çok sayıda havayolu şirketinin bağlantı merkezi olarak kullandığı dev aktarma havalimanlarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Amerika'dan yola çıkan bir turistin Tayland'a giderken coğrafi konumu sebebiyle İstanbul Havalimanı'nda aktarma yapıp seyahatine devam etmesidir."
+          ]
+        },
+        {
+          "name": "Kruvaziyer (Gemi) Limanı",
+          "desc": "Devasa yolcu gemilerinin (kruvaziyer) yanaştığı, pasaport kontrolü, alışveriş ve yerel turların organize edildiği büyük deniz turizm kapılarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Akdeniz turuna çıkan 5000 yolculu bir kruvaziyer gemisinin Ege'de Kuşadası Limanı'na yanaşması ve yolcuların Efes Antik Kenti'ne günübirlik tura çıkmasıdır."
+          ]
         }
       ],
       "tip": "Dünyada en büyük turist akışı 'Kuzeyden Güneye' (soğuktan sıcağa) doğru gerçekleşir."

@@ -214,29 +214,29 @@ const Map<String, dynamic> kongreEtkinlikUnit2 = {
       "microSummary": "Etkinliğin amacına ve katılımcı sayısına göre salonun sandalyelerinin ve masalarının yerleştirilme geometrisidir.",
       "definitions": [
         {
-          "name": "Tiyatro (Classroom/Auditorium) Düzeni",
-          "desc": "Sadece sandalyelerin sahneye doğru yan yana dizildiği, masa bulunmayan düzendir. Salondan maksimum kişi kapasitesi almak için (not tutma gerekmeyen durumlarda) tercih edilir.",
+          "name": "Tiyatro (Auditorium) Düzeni",
+          "desc": "Sadece sandalyelerin sahneye doğru yan yana dizildiği, masa bulunmayan düzendir. Salondan maksimum kişi kapasitesi almak için tercih edilir. Kapasite hesabında kişi başı 1-1.2 m² alan hesaplanır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir genel müdürün 300 şirket çalışanına sadece 45 dakikalık bir bilgilendirme yapacağı toplantıda, not alma masaları kurulmadan sandalyelerin sahneye dizilmesidir."
+            "Örnekle Pekiştirelim: 300 kişilik bir bilgilendirme toplantısında, not alma masaları kurulmadan sandalyelerin sahneye dizilerek salon alanının en verimli şekilde kullanılmasıdır."
           ]
         },
         {
-          "name": "Sınıf (Schoolroom) Düzeni",
-          "desc": "Sandalyelerin önünde not tutmaya ve laptop koymaya uygun uzun çalışma masalarının bulunduğu düzendir. Eğitimler ve teknik kongreler için idealdir.",
+          "name": "Sınıf (Classroom) Düzeni",
+          "desc": "Sandalyelerin önünde not tutmaya ve laptop koymaya uygun uzun çalışma masalarının bulunduğu düzendir. Eğitimler için idealdir. Kapasite hesabında kişi başı 1.5-2 m² alan ayrılır.",
           "examples": [
-            "Örnekle Pekiştirelim: Tıp kongresindeki bilimsel sunumlar için delegelerin önünde not almaları amacıyla masalı 'Sınıf Düzeni'; sadece 1 saatlik protokol açılış konuşması için ise masasıza 'Tiyatro Düzeni' kurulur."
+            "Örnekle Pekiştirelim: Tıp kongresindeki teknik sunumlar için delegelerin önünde not almaları amacıyla masalı sınıf düzeninin kurulmasıdır."
           ]
         },
         {
           "name": "U-Masa Düzeni",
-          "desc": "Masaların 'U' harfi şeklinde dizildiği, sandalyelerin dış kısma yerleştirildiği düzendir. Katılımcıların birbirini gördüğü interaktif yönetim kurulu veya eğitim toplantıları için uygundur (Maksimum 25-30 kişi).",
+          "desc": "Masaların 'U' harfi şeklinde dizildiği, sandalyelerin dış kısma yerleştirildiği düzendir. Katılımcıların birbirini gördüğü yönetim kurulu toplantıları için uygundur. Kapasite hesabında kişi başı 3.5-4 m² alan (en geniş alan tüketen düzen) ayrılmalıdır.",
           "examples": [
             "Örnekle Pekiştirelim: 12 kişilik yönetim kurulunun, projeksiyon ekranını rahatça görebilmek ve birbirleriyle göz teması kurarak kararlar alabilmek için U-şeklinde bir masa etrafına oturmasıdır."
           ]
         },
         {
           "name": "Banket (Banquet / Yuvarlak Masa) Düzeni",
-          "desc": "10'ar kişilik yuvarlak masaların salona dağıtıldığı yerleşimdir. Gala yemekleri, ödül törenleri ve grup çalışması (workshop) toplantıları için kullanılır.",
+          "desc": "10'ar kişilik yuvarlak masaların salona dağıtıldığı yerleşimdir. Gala yemekleri ve ödül törenleri için kullanılır. Kapasite hesabında kişi başı 2-2.5 m² alan ve masalar arası en az 1.5 m geçiş koridoru hesaplanır.",
           "examples": [
             "Örnekle Pekiştirelim: Kongrenin kapanış gecesinde düzenlenen ve şık kumaşlarla süslenmiş 10 kişilik yuvarlak masaların etrafında delegelerin oturduğu gala yemeği düzenidir."
           ]

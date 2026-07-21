@@ -22,6 +22,20 @@ const Map<String, dynamic> kuruTemizlemeUnit1 = {
           "examples": [
             "Örnekle Pekiştirelim: Atölyede havalandırma sisteminin bozuk olması nedeniyle havaya karışan PERC gazını soluyan ustanın, bir süre sonra baş dönmesi ve mide bulantısı şikayetiyle açık havaya çıkmak zorunda kalmasıdır."
           ]
+        },
+        {
+          "name": "Hidrokarbon Çözücüler (HC)",
+          "desc": "PERC çözücüsüne alternatif olarak kullanılan, parlama noktası yüksek ve yanıcı özelliği bulunan ancak toksik etkisi daha az olan, yün ve hassas elyaflarda çekme riskini minimize eden petrol bazlı kuru temizleme solventidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Çok narin boncuklu bir abiye elbisenin, liflerinin zarar görmemesi için perkloroetilen yerine hidrokarbon bazlı solvent kullanan bir makinede hassas devirde temizlenmesidir."
+          ]
+        },
+        {
+          "name": "GreenEarth (Silikon Çözücü)",
+          "desc": "Sıvı silikon (D5) bazlı, tamamen toksik olmayan, kokusuz, çevre dostu ve doğada kum, su ve karbondioksite dönüşebilen yeni nesil biyobozunur kuru temizleme solventidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Ekolojik otelimizin çamaşırhanesinde, çevre standartlarına uyum sağlamak için yeşil etiketli silikon bazlı solvent makinesinin tercih edilmesidir."
+          ]
         }
       ],
       "extraDetails": [
@@ -204,6 +218,20 @@ const Map<String, dynamic> kuruTemizlemeUnit3 = {
           "desc": "Zaman ve enerji tasarrufu için önce düşük ısı gerektiren ipek ve sentetikler, sonra yüksek ısı gerektiren pamuklular ütülenmelidir.",
           "examples": [
             "Örnekle Pekiştirelim: Ütünün taban sıcaklığı henüz düşükken ipek elbiseleri ütüleyip, ütü ısındıktan sonra keten pantolonların ütülenmesine geçilmesidir."
+          ]
+        },
+        {
+          "name": "Pres Ütü (Steam Press)",
+          "desc": "Pantolon, ceket ve düz kumaşları yüksek buhar gücüyle iki plaka arasında sıkıştırarak saniyeler içinde jilet gibi ütüleyen, endüstriyel kuru temizleme presidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Kumaş pantolonun ütü çizgilerini bozmadan saniyeler içinde düzeltmek için pres ütünün alt plakasına pantolonu serip üst plakayı üzerine kapatarak buhar şoku verilmesidir."
+          ]
+        },
+        {
+          "name": "Manken Ütü (Form Finisher)",
+          "desc": "Palto, ceket, kaban ve abiye gibi elbiselerin içine sıcak hava ve buhar üflenerek manken kalıbı üzerinde kırışıklıklarının düzeltilmesini ve orijinal formuna kavuşmasını sağlayan şişme manken sistemidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: VIP misafirin kaşe montunu el ütüsüyle ezmek yerine, manken ütüye giydirip içeriden sıcak buhar ve hava vererek montun kırışıklıklarının havada açılmasını sağlamaktır."
           ]
         },
         {

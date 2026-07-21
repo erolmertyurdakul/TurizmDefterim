@@ -196,6 +196,68 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
       ],
       "caseStudy": "Sektörden Vaka: Antalya'daki büyük bir resort otelde yaşanan asansör arızası, 20 misafirin 1 saat mahsur kalmasına yol açtı. Teknik servisin günlük bakım protokollerine uyulmamasının bir sonucu olan bu olay, otele ciddi tazminat davası ve olumsuz basın haberleri getirdi. Önleyici bakım sistemi (Preventive Maintenance) bu vakaların yaşanmasını engeller.",
       "tip": "Otelin departmanları bir orkestra gibi çalışır. Her biri kendi sesini çıkarır ama hepsi aynı anda uyum içinde çalıştığında mükemmel bir senfoni oluşur."
+    },
+    {
+      "id": 4,
+      "tag": "GÜVENCE & ACİL",
+      "title": "OTEL GÜVENLİĞİ VE ACİL DURUM EYLEM PLANLARI",
+      "microSummary": "Otellerde can ve mal güvenliği her şeyden önce gelir; acil durum eylem planları ve yasal tahliye protokolleri hayat kurtarır.",
+      "definitions": [
+        {
+          "name": "Acil Durum Eylem Planı",
+          "desc": "Deprem, yangın, sel veya doğal afet gibi acil durumlarda hangi personelin hangi görevi yapacağını ve misafirlerin nasıl güvenle tahliye edileceğini gösteren yasal eylem planıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Yangın alarmı çaldığında ön büro şefinin misafir listesini (in-house list) alarak acil çıkış kapısına yönelmesi ve bellboyların katlardaki odaları kontrol edip misafirleri tahliye etmesidir."
+          ]
+        },
+        {
+          "name": "Acil Durum Toplanma Alanı",
+          "desc": "Tahliye edilen konukların ve personelin güvenli bir şekilde bir araya gelmesi için otel bahçesinde veya dışarısında belirlenen, özel tabela ile işaretlenmiş yasal alandır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Olası bir deprem tahliyesinde, resepsiyonistlerin konukları lobi yerine otelin ön bahçesinde bulunan 'Acil Durum Toplanma Alanı' tabelasının altına yönlendirmesidir."
+          ]
+        },
+        {
+          "name": "Yangın Algılama ve Söndürme Sistemleri",
+          "desc": "Odalar ve ortak alanlarda yer alan duman dedektörleri, sprinkler (yağmurlama) başlıkları, yangın dolapları ve koridorlardaki tüplerin 6 ayda bir periyodik olarak denetlenmesi sürecidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Her ay teknik servisin tüm katlardaki yangın tüplerinin basınç ibrelerini kontrol edip onay etiketini imzalaması ve duman sensörlerini test etmesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Ege bölgesinde büyük bir otelde mutfakta elektrik kontağından dolayı yangın çıktı. Ancak otel personelinin düzenli aralıklarla katıldığı acil durum tahliye tatbikatları sayesinde, lobi ekibi 3 dakika içinde 200 konuğu asansörleri kullanmadan acil çıkış merdivenlerine yönlendirdi. Tüm konuklar toplanma alanında güvenle bir araya geldi. Hiçbir can kaybı veya yaralanma yaşanmadı. Bu olay, teorik eylem planlarının pratik eğitimle birleşmesinin önemini kanıtladı.",
+      "tip": "Odalardaki yangın tahliye krokilerinin kapı arkasında eksiksiz bulunmasını ve acil çıkış yönlendirme tabelalarının (Exit) pillerinin her zaman şarjlı olduğunu periyodik olarak kontrol edin."
+    },
+    {
+      "id": 5,
+      "tag": "MÜHENDİSLİK",
+      "title": "KORUYUCU BAKIM (PREVENTIVE MAINTENANCE) VE ENERJİ SİSTEMLERİ",
+      "microSummary": "Cihazlar bozulmadan önce müdahale etmek, işletme maliyetlerini düşürür ve misafir şikayetlerini sıfıra indirir.",
+      "definitions": [
+        {
+          "name": "Koruyucu Bakım (Preventive Maintenance)",
+          "desc": "Klimaların, asansörlerin, jeneratörlerin ve kazan dairelerinin bozulmasını beklemeden, belirli takvimlere göre (haftalık, aylık, yıllık) yapılan temizlik, yağlama ve parça değişim süreçleridir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Yaz sezonu başlamadan önce nisan ayında teknik servisin tüm odalardaki klimaların filtrelerini temizleyip gaz kaçaklarını kontrol ederek sezona hazır etmesidir."
+          ]
+        },
+        {
+          "name": "Kazan Dairesi ve Chiller Sistemi",
+          "desc": "Oteldeki sıcak su ve merkezi soğutma (klima) sistemlerini üreten ana mekanik merkezdir. Bu sistemlerin verimliliği otel konforunu doğrudan belirler.",
+          "examples": [
+            "Örnekle Pekiştirelim: Teknik servis müdürünün, merkezi chiller soğutma ünitesinin su derecelerini her sabah kontrol ederek sistemin stabil çalıştığından emin olmasıdır."
+          ]
+        },
+        {
+          "name": "Enerji Otomasyonu (Energy Saver)",
+          "desc": "Odada misafir olmadığında kartlı enerji tasarruf anahtarının elektriği otomatik kesmesi ve merkezi klima sisteminin pencere açıldığında otomatik kapanmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Oda balkon kapısı açıldığında, odadaki sensörün bunu algılayıp klima motorunun çalışmasını otomatik olarak durdurması ve enerji israfını önlemesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Akdeniz'de 5 yıldızlı bir otelde, sezonun en sıcak gününde merkezi soğutma sistemi (Chiller) arızalandı. 300 odanın tamamı klimasız kaldı. Misafirlerin %40'ı oteli terk ederek paralarını geri talep etti. Yapılan incelemede, chiller filtrelerinin 3 aydır temizlenmediği ve kompresörün aşırı ısınmadan yandığı anlaşıldı. Otel, bakım ihmali yüzünden 400.000 TL'lik teknik hasarın yanında milyonlarca liralık ciro ve itibar kaybı yaşadı.",
+      "tip": "Oda kontrollerinde Energy Saver prizlerinin içine kağıt veya sahte kart sokularak devre dışı bırakılıp bırakılmadığını mutlaka denetleyin. Bu durum otel enerji tüketimini gereksiz yere ikiye katlar."
     }
   ]
 };
@@ -297,6 +359,37 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit3 = {
       ],
       "caseStudy": "Sektörden Vaka: Türkiye'nin Ege kıyısındaki büyük bir otelde, sezon işçilerine çalışma saatlerinin üzerinde mesai yaptırıldığı ancak yasal fazla mesai ücretinin ödenmediği tespit edildi. İş Mahkemesi'nin verdiği karar sonucunda otel, 42 çalışana toplamda 1.2 milyon TL tazminat ödemek zorunda kaldı.",
       "tip": "İş kanunundan doğan hakları bilmeyen çalışan, haklarını kaybetme riskiyle karşı karşıya kalır. Haklarını bilen çalışan ise daha motive ve verimli çalışır."
+    },
+    {
+      "id": 4,
+      "tag": "İSG & ERGONOMETRİ",
+      "title": "OTELCİLİKTE İŞ SAĞLIĞI VE GÜVENLİĞİ (İSG) VE ERGONOMETRİ",
+      "microSummary": "Otel operasyonlarında çalışanların fiziksel sağlığını koruması, yasal İSG kurallarına ve ergonomik duruş ilkelerine uymasıyla mümkündür.",
+      "definitions": [
+        {
+          "name": "Ergonomik Yük Taşıma",
+          "desc": "Bellboy veya kat görevlilerinin sırt ve bel yaralanmalarını önlemek için yük taşırken bel yerine dizlerden güç alarak eğilmesi ve yükü vücuda yakın tutmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Bellboyun ağır bir valizi kaldırırken belini bükmek yerine dizlerini kırarak çömelmesi, valizi kucaklayarak bacak kaslarıyla yukarı kalkması doğru taşımadır."
+          ]
+        },
+        {
+          "name": "KKD (Kişisel Koruyucu Donanım)",
+          "desc": "Temizlik kimyasalları kullanılırken eldiven/maske/gözlük, kaygan zeminlerde ise kaymaz tabanlı özel iş ayakkabısı gibi yasal olarak kullanılması zorunlu koruyucu ekipmanlardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Kat görevlisinin banyoda kireç çözücü kimyasal sıkarken maskesini takması ve ellerini tahrişten korumak için kalın nitril temizlik eldiveni kullanmasıdır."
+          ]
+        },
+        {
+          "name": "Meslek Hastalıkları ve Önlemler",
+          "desc": "Sürekli ayakta durma, ağır kaldırma veya tekrarlı hareketlerden kaynaklanan kas-iskelet sistemi rahatsızlıklarını önlemek için vardiya aralarında germe-esnetme egzersizleri yapılmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Resepsiyonistlerin uzun süreli dik duruştan dolayı varis oluşumunu engellemek için her saat başı banko arkasında 2 dakika bacak esnetme hareketleri yapmasıdır."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Antalya'da bir otelde kat görevlisi olarak çalışan Fatma Hanım, yatakları düzeltirken belini bükerek ağır yatakları kaldırdığı için bel fıtığı rahatsızlığı yaşadı ve 2 ay iş göremezlik raporu aldı. Otel yönetimi, bu olaydan sonra tüm kat hizmetleri ve bellboy ekibine İSG uzmanları eşliğinde 'Ergonomik Yük Taşıma ve Doğru Duruş Teknikleri' eğitimi vererek uygulamalı takibini başlattı. Sonraki yıl mesleki sakatlanma vakaları %80 azaldı.",
+      "tip": "Temizlik yapılan ıslak zeminlerde mutlaka 'Kaygan Zemin / Caution Wet Floor' sarı uyarı tabelasını konumlandırın. Bu tabela hem misafirleri hem de personeli korur."
     }
   ]
 };

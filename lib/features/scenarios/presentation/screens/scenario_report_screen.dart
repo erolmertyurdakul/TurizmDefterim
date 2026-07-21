@@ -156,7 +156,7 @@ class ScenarioReportScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 16),
           const Text(
-            'Tebrikler!',
+            'Vaka Analizi Tamamlandı',
             style: TextStyle(
               color: Colors.cyanAccent,
               fontSize: 22,
@@ -187,27 +187,9 @@ class ScenarioReportScreen extends ConsumerWidget {
     );
   }
 
-  // Final mentoring letter by Erol Hoca
+  // Final mentoring letter by Erol Hoca — path-based (statik, yola göre)
   Widget _buildErolHocaLetter(ScenarioState state) {
-    String finalQuote;
-    final ds = state.dimensionScores;
-
-    if (ds.guestCentricity >= 8 && ds.financialDiscipline >= 4) {
-      finalQuote =
-          'Evlat, senden tam bir genel müdür olur! Hem misafiri saraylarda ağırladın hem de otelin kasasını deldirmedin. Sektör senin gibi dengeli ve basiretli yöneticiler arıyor. Yanaklarından öpüyorum, yolun açık!';
-    } else if (ds.guestCentricity >= 8) {
-      finalQuote =
-          'Misafirperverliğine şapka çıkartırım evlat. Ama unutma, otel hayır kurumu değil ticarethanedir! Bu cömertlikle ay sonu maaşları ödeyemeyiz. Bir dahaki sefere cüzdanı biraz daha sıkı tut, tamam mı?';
-    } else if (ds.financialDiscipline >= 8) {
-      finalQuote =
-          'Parayı kasaya kilitledin, harika! Ama misafirleri de kapı dışarı ettin be evlat. O memnuniyetsizlikle otelde bir dahaki ay kim kalacak? Turizmde önce insan gelir. Biraz daha empati şart!';
-    } else if (ds.riskManagement <= -8) {
-      finalQuote =
-          'Operasyonda aldığın riskler saçımı başımı ağrıttı! Ajan filmi gibi temizlik bezi aşırmalar, VIP misafirin odasını kumar oynamalar... Gerçek hayatta bu risklerin biri patlarsa sektörel ömrün biter. Tedbiri elden bırakma!';
-    } else {
-      finalQuote =
-          'Kriz yönetimini geliştirmen gerekiyor evlat. Eksiklerin var ama tecrübe kazandıkça hepsi çözülür. Hatalarından ders al ve simülasyonu tekrar oyna. Gerçek hayatta bu tecrübeler altın değerindedir!';
-    }
+    final report = _getReportForPath(state);
 
     return Container(
       padding: const EdgeInsets.all(20),
@@ -224,7 +206,7 @@ class ScenarioReportScreen extends ConsumerWidget {
               Text('⚓', style: TextStyle(fontSize: 22)),
               SizedBox(width: 8),
               Text(
-                'Erol Hoca Yönetici Özeti',
+                'Operasyonel Değerlendirme',
                 style: TextStyle(
                   color: Colors.cyanAccent,
                   fontSize: 14,
@@ -235,7 +217,7 @@ class ScenarioReportScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            finalQuote,
+            report,
             textAlign: TextAlign.justify,
             style: TextStyle(
               color: Colors.white.withOpacity(0.9),
@@ -248,6 +230,81 @@ class ScenarioReportScreen extends ConsumerWidget {
       ),
     );
   }
+
+  /// Seçilen seçeneklerin sırasına göre değerlendirme raporunu döndürür.
+  /// Her adımdaki seçenek 1 → indeks 0, seçenek 2 → indeks 1 olarak kodlanmıştır.
+  String _getReportForPath(ScenarioState state) {
+    final options = state.selectedOptions;
+    if (options.isEmpty) return 'Değerlendirme raporu oluşturulamadı.';
+
+    final scenarioId = state.currentScenario?.id ?? '';
+
+    // Her senaryoya ait değerlendirme raporları, seçim indeksleri eşleştirilerek
+    // reports[yol_anahtarı] = rapor metni şeklinde saklanmıştır.
+    // Yol anahtarı: her adımda seçilen seçeneğin o adımdaki index'i "," ile birleştirilir.
+    final path = _buildPath(state);
+
+    final Map<String, Map<String, String>> allReports = {
+      'bellboy_baggage_mixup': {
+        '0,0,0': 'Gösterdiğiniz performans, bir yönetici vizyonunu yansıtmaktadır. Misafir memnuniyetini üst seviyede tuttunuz. Turizm sektörü, sizin gibi yöneticilere ihtiyaç duymaktadır. Olay oldukça rahatsız edici olduğundan dolayı ikram düşüncesi gerçekten bir incelikti. Ancak ikramlar konusunda tedbirli olmanız gerektiğini unutmamalısınız.',
+        '0,0,1': 'Gösterdiğiniz performans sayesinde misafirler memnun kaldılar, ancak misafirlerin bu tatsız bekleyişine değecek bir içecek ikramı için şefinize danışmanız daha uygun olabilirdi.',
+        '0,1,0': 'Gösterdiğiniz performansla misafir memnuniyetini sağladınız. Olay oldukça rahatsız edici olduğundan dolayı ikram düşüncesi gerçekten bir incelikti. Ancak sağlık konusunda hekim kontrolü yapılmasını sağlamanız daha uygun olurdu. İkramlar konusunda da tedbirli olmanız gerektiğini unutmamalısınız.',
+        '0,1,1': 'Gösterdiğiniz performans sayesinde misafirler memnun kaldılar, ancak misafirlerin bu tatsız bekleyişine değecek bir içecek ikramı için şefinize danışmanız ve sağlık konusunda hekim kontrolü yapılmasını sağlamanız daha uygun olurdu.',
+        '1,0,0': 'Kriz yönetimi becerilerinizi daha da geliştirmeniz yararlı olacaktır. İkram, misafirleri biraz sakinleştirdi ancak durumu tam olarak çözmedi. Karşılaştığınız durumlarda daha dengeli ve dürüst kararlar alarak işletme performansını artırabilirsiniz. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+        '1,0,1': 'Kriz yönetimi becerilerinizi daha da geliştirmeniz yararlı olacaktır. Misafirler memnun kalmadı ve otele düşük puan verdiler. Karşılaştığınız durumlarda daha dengeli ve dürüst kararlar alarak işletme performansını artırabilirsiniz. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+        '1,1,0': 'Kriz yönetimi becerileriniz üzerinde çok daha fazla durmanız ve kendinizi geliştirmeniz gerekiyor. Misafirler memnun kalmadı ve otele düşük puan verdiler. Dürüstlük ve çözüm odaklılık bir turizm personeli için vazgeçilmez iki değerdir. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+        '1,1,1': 'Kriz yönetimi becerileriniz üzerinde çok daha fazla durmanız ve kendinizi geliştirmeniz gerekiyor. Olay kameralardan kontrol edildi ve işinizi kaybettiniz. Misafirler otele düşük puan verdiler ve kötü yorum yazdılar. Dürüstlük ve çözüm odaklılık bir turizm personeli için vazgeçilmez iki değerdir. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+      },
+      'reservation_overbooking': {
+        '0,0,0': 'Gösterdiğiniz performans, bir yönetici vizyonunu yansıtmaktadır. Overbooking krizini sadık bir misafir kazanarak kapattınız. İndirim çekleri ve promosyonlar konusunda şefinize danıştınız. Ancak ikramlar konusunda tedbirli olmanız gerektiğini unutmamalısınız.',
+        '0,0,1': 'Gösterdiğiniz performans sayesinde misafirler memnun kaldılar, ancak krizin tatsızlığını tamamen gidermek için şefinize danışarak misafirlere küçük bir indirim çeki veya jest sunmanız daha uygun olabilirdi.',
+        '0,1,0': 'Gösterdiğiniz performansla misafir memnuniyetini sağladınız. Ancak ilk önce size gelmiş bir misafirin diğer otelin eksikliklerinden dolayı yaşadığı sıkıntıyı kendi ekibinizle çözmeyip topu onlara atmak profesyonelliğe sığmaz. Neyse ki misafirler indirimden etkilenip yine de kötü yorum yazmadılar.',
+        '0,1,1': 'Olamaz! İlk önce size gelmiş bir misafirin diğer otelin eksikliklerinden dolayı yaşadığı sıkıntıyı kendi ekibinizle çözmeyip topu onlara atmak profesyonelliğe sığmaz. Unutmayın misafirlerin bir kere gelmesi değil, sürekli misafirler (repeat guests) olmaları bir otel için çok önemlidir. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+        '1,0,0': 'Aileyi 4 yıldızlı otele masraflarını otelce karşılayarak göndermek krizi çözdü. İtalyan grup ise ikramdan sonra biraz daha yatıştı ve kötü yorum yazmadılar. Karşılaştığınız durumlarda daha dengeli ve dürüst kararlar alarak işletme performansını korumalısınız. Ayrıca yaptığınız ikramlar konusunda tedbirli olmanızı öneririm.',
+        '1,0,1': 'Kriz yönetimi becerilerinizi daha da geliştirmeniz yararlı olacaktır. İtalyan gruptaki o misafirleri görmezden gelmek misafirlerin tatsız bir şekilde odaya yerleşmesine sebep oldu ve misafirler otele düşük puan verdiler. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+        '1,1,0': 'Kriz yönetimi becerileriniz üzerinde çok daha fazla durmanız ve kendinizi geliştirmeniz gerekiyor. Gayriresmi teklifler sunmak yerine dürüstçe hareket etmeliydiniz. Dürüstlük ve çözüm odaklılık bir turizm personeli için vazgeçilmez iki değerdir. Bu değerlere uymamak işinizi kaybetmenize sebep oldu.',
+        '1,1,1': 'Kriz yönetimi becerileriniz üzerinde çok daha fazla durmanız ve kendinizi geliştirmeniz gerekiyor. Olay tamamen sizin rüşvet girişiminiz yüzünden kontrolden çıktı ve sadece işinizi değil, otelcilik kariyerinizi de kaybettiniz. Dürüstlük ve çözüm odaklılık bir turizm personeli için vazgeçilmez iki değerdir.',
+      },
+      'receptionist_safe_theft': {
+        '0,0,0': 'Gösterdiğiniz performans, bir yönetici vizyonunu yansıtmaktadır. Personeli haksız ithamlardan korudunuz ve otelin güvenilir imajını sağlam tuttunuz. Personel motivasyonunu düşünmeniz ve dosya uyarısı gibi idari adımlar için şefinizle görüşmeniz de oldukça uygundu.',
+        '0,0,1': 'Gösterdiğiniz performans sayesinde kriz çözüldü ve personeliniz aklandı. Ancak haksız yere suçlanan kat görevlisini motive edecek bir takdir jesti için şefinize danışmanız daha uygun olabilirdi. Ayrıca asılsız iddiayı misafir dosyasına kaydetmeniz, ileriki dönemlerde oluşabilecek aynı misafir kaynaklı benzer sorunlarda yardımcı olabilir.',
+        '0,1,0': 'Log raporu elimizdeyken bütçeden haksız ödeme teklif etmeniz hataydı. Şefinize danışarak teşekkür yemeği düzenlemeniz en azından personelin kırgınlığını biraz giderdi. Bu tür finansal kararlarda dikkatli olmanızı ve çıkardığınız dersler doğrultusunda krizi tekrar yönetmenizi öneririm.',
+        '0,1,1': 'Gösterdiğiniz performans yetersiz kaldı. Log raporuna rağmen haksız ödeme teklif ettiniz. Personeller otelin can damarıdır. Ama siz personelin yaşadığı moral bozukluğunu gidermek için hiçbir adım atmadınız. Bu tür finansal kararlarda dikkatli olmanızı öneririm.',
+        '1,0,0': 'Kriz yönetimi becerilerinizi daha da geliştirmeniz yararlı olacaktır. Personelinizi misafirin önünde tehdit etmek büyük bir hatadır. Şefinize danışarak teşekkür yemeği organize etmeniz durumu yatıştırsa da otel bütçesine büyük zarar verdi. Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.',
+        '1,0,1': 'Kriz yönetimi becerilerinizi daha da geliştirmeniz yararlı olacaktır. Personelin rencide olmasına sebep oldunuz ve şefinizden sert bir uyarı aldınız. Ayrıca durumu düzeltmek için personele hiçbir telafi sunmayıp özür dilemekle yetindiniz. Ekip içi güven sarsıldı ve kat personelleri artık huzursuz çalışıyor.',
+        '1,1,0': 'Kriz yönetimi becerileriniz üzerinde çok daha fazla durmanız ve kendinizi geliştirmeniz gerekiyor. Kendi personelinizi suçlayıp istifaya zorlamak ve hatanızı telafi etmeye çalışmamak hem otel itibarını zedeler hem de kariyerinizi. Dürüstlük, kibarlık ve çözüm odaklılık bir turizm personeli için vazgeçilmez üç değerdir.',
+        '1,1,1': 'Kriz yönetimi becerileriniz üzerinde çok daha fazla durmanız ve kendinizi geliştirmeniz gerekiyor. Kendi personelinizi suçlayıp istifaya zorlamak, hatanızı telafi etmeye çalışmamak ve üstüne dik başlılık yapmak hem otel itibarını zedeler hem de kariyerinizi. Bu seçimler sonucunda hem işinizden oldunuz hem de başka bir otelde çalışma imkanını tamamen kaybederek kariyerinize son verdiniz.',
+      },
+    };
+
+    final scenarioReports = allReports[scenarioId];
+    if (scenarioReports == null) {
+      return 'Bu senaryo için değerlendirme raporu bulunamadı.';
+    }
+
+    return scenarioReports[path] ??
+        'Bu vakadaki tecrübelerinizden ders çıkararak krizi tekrar yönetmenizi öneririm.';
+  }
+
+  /// Seçilen seçeneklerin her adımdaki index'ini "," ile birleştirir.
+  /// Örn: step_1 → seçenek 1 (0), step_2_good → seçenek 2 (1), step_3_excellent → seçenek 1 (0) → "0,1,0"
+  String _buildPath(ScenarioState state) {
+    final scenario = state.currentScenario;
+    if (scenario == null) return '';
+
+    final List<String> indices = [];
+    String? currentStepId = 'step_1';
+
+    for (final option in state.selectedOptions) {
+      final step = scenario.steps[currentStepId];
+      if (step == null) break;
+
+      final idx = step.options.indexOf(option);
+      indices.add(idx.toString());
+
+      currentStepId = option.nextStepId;
+    }
+
+    return indices.join(',');
+  }
 }
-
-

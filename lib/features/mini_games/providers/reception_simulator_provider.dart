@@ -366,18 +366,19 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
     int newCombo = state.comboCount;
     int newVipSuccess = state.vipSuccessCount;
 
-    if (roomCorrect && boardCorrect) {
+    final isFullMatch = roomCorrect && boardCorrect && requestsMatch;
+    final isPartialMatch = !isFullMatch && (roomCorrect || boardCorrect || playerRequests.isNotEmpty);
+
+    if (isFullMatch) {
       pointsEarned = 100;
       feedbackType = FeedbackType.correct;
       
-      // Kısmi istek bonusu
+      // Özel istek bonusları
       for (final req in guest.specialRequests) {
-        if (playerRequests.contains(req)) {
-          pointsEarned += req.bonusPoints;
-        }
+        pointsEarned += req.bonusPoints;
       }
 
-      // Combo ve çarpan uygula
+      // Kombo ve çarpan uygula
       pointsEarned = (pointsEarned * state.comboMultiplier * guest.type.pointMultiplier).round();
       reputationChange = 2;
       newCombo = state.comboCount + 1;
@@ -385,18 +386,44 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
       if (guest.type == GuestType.vip) newVipSuccess++;
 
       final tip = ReceptionSimulatorData.getRandomTip(_random);
-      feedbackMessage = '✅ Doğru! +$pointsEarned\n$tip';
+      feedbackMessage = '✅ Mükemmel Eşleşme! +$pointsEarned\n$tip';
 
-    } else if (roomCorrect || boardCorrect) {
+    } else if (isPartialMatch) {
       pointsEarned = 30;
       feedbackType = FeedbackType.partial;
       reputationChange = -5;
       newCombo = 0;
       if (guest.type == GuestType.vip) newVipSuccess = 0;
 
-      feedbackMessage = !roomCorrect
-          ? '⚠️ Kısmi doğru! +30\nDoğru oda: ${guest.correctRoom.displayName}\n${guest.correctRoom.tip}'
-          : '⚠️ Kısmi doğru! +30\nDoğru pansiyon: ${guest.correctBoard.displayName}\n${guest.correctBoard.tip}';
+      final msgLines = <String>['⚠️ Kısmi Doğru! (+30 XP)'];
+
+      // Oda bildirimi
+      if (roomCorrect) {
+        msgLines.add('✅ Oda Doğru: ${guest.correctRoom.displayName}');
+      } else {
+        msgLines.add('❌ Doğru Oda: ${guest.correctRoom.displayName}');
+        msgLines.add('💡 ${guest.correctRoom.tip}');
+      }
+
+      // Pansiyon bildirimi
+      if (boardCorrect) {
+        msgLines.add('✅ Pansiyon Doğru: ${guest.correctBoard.displayName}');
+      } else {
+        msgLines.add('❌ Doğru Pansiyon: ${guest.correctBoard.displayName}');
+        msgLines.add('💡 ${guest.correctBoard.tip}');
+      }
+
+      // Özel istekler bildirimi
+      if (guest.specialRequests.isNotEmpty) {
+        if (requestsMatch) {
+          msgLines.add('✅ Özel İstekler Doğru!');
+        } else {
+          final reqNames = guest.specialRequests.map((r) => '${r.emoji} ${r.displayName}').join(', ');
+          msgLines.add('❌ Doğru Özel İstekler: $reqNames');
+        }
+      }
+
+      feedbackMessage = msgLines.join('\n');
 
     } else {
       pointsEarned = -50;
@@ -411,9 +438,20 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
         reputationChange = -20;
       }
 
-      feedbackMessage = '❌ Yanlış! $pointsEarned\n'
-          'Doğru: ${guest.correctRoom.displayName} + ${guest.correctBoard.shortName}\n'
-          '${guest.correctRoom.tip}';
+      final msgLines = <String>[
+        '❌ Yanlış Eşleşme! (-50 Puan)',
+        '🏠 Doğru Oda: ${guest.correctRoom.displayName}',
+        '💡 ${guest.correctRoom.tip}',
+        '☕ Doğru Pansiyon: ${guest.correctBoard.displayName}',
+        '💡 ${guest.correctBoard.tip}',
+      ];
+
+      if (guest.specialRequests.isNotEmpty) {
+        final reqNames = guest.specialRequests.map((r) => '${r.emoji} ${r.displayName}').join(', ');
+        msgLines.add('📋 Doğru Özel İstekler: $reqNames');
+      }
+
+      feedbackMessage = msgLines.join('\n');
     }
 
     // Combo çarpanı güncelle
@@ -573,6 +611,7 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
     }
     if (state.totalRevenue >= 30000) achievements.add(Achievement.gelirKrali);
     if (state.currentLevel >= 7) achievements.add(Achievement.genelMudur);
+    if (state.vipSuccessCount >= 3) achievements.add(Achievement.vipHizmeti);
 
     state = state.copyWith(earnedAchievements: achievements);
   }

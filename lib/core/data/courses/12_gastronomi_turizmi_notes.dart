@@ -54,6 +54,20 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
           ]
         },
         {
+          "name": "Menşe Adı",
+          "desc": "Coğrafi sınırları belirlenmiş bir yöre, bölge veya istisnai durumlarda ülkeden kaynaklanan, tüm üretim, işleme ve hazırlama aşamaları tamamen bu coğrafi sınır içinde gerçekleşen ürün tescilidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: 'Malatya Kayısısı' tescilinin alınabilmesi için kayısının Malatya'da yetiştirilmesi, hasat edilmesi ve kurutulması aşamalarının tamamının Malatya sınırları içinde yapılmasının zorunlu olmasıdır."
+          ]
+        },
+        {
+          "name": "Mahreç İşareti",
+          "desc": "Belirli bir coğrafi sınır içinde üretilmesi şart olmayan ancak o yöreye has geleneksel hammadde veya üretim tekniklerine göre üretilen, en az bir aşaması o sınırda gerçekleşen tescildir.",
+          "examples": [
+            "Örnekle Pekiştirelim: 'Kahramanmaraş Dondurması' tescilinde, dondurmada kullanılan keçi sütünün dışarıdan gelebilmesi ancak Maraş dondurma ustalarının geleneksel dövme ve hazırlama tekniğinin Maraş'ta uygulanmasının şart olmasıdır."
+          ]
+        },
+        {
           "name": "Gastronomik Çekim Gücü",
           "desc": "Bir yiyeceğin veya içeceğin, tek başına bir şehri veya ülkeyi milyonlarca turist için çekim merkezi haline getirebilme yeteneğidir.",
           "examples": [

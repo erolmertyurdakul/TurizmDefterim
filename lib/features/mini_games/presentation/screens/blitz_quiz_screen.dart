@@ -348,9 +348,9 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
               children: [
                 _buildRuleRow('⏱️', 'Süre sınırı 60 saniyedir.'),
                 const SizedBox(height: 12),
-                _buildRuleRow('🔥', 'Doğru cevap serileri (Combo) puan çarpanını artırır ve alev efekti açar!'),
+                _buildRuleRow('🔥', 'Doğru cevap serileri (Kombo) puan çarpanını artırır ve alev efekti açar!'),
                 const SizedBox(height: 12),
-                _buildRuleRow('🎁', 'Her 5 doğru combox\'ta +3 saniye bonus süre kazanırsın.'),
+                _buildRuleRow('🎁', 'Her 5 doğru komboda +3 saniye bonus süre kazanırsın.'),
                 const SizedBox(height: 12),
                 _buildRuleRow('⏩', 'Zorlandığında "Pas Geç" jokerini kullanabilirsin.'),
                 const SizedBox(height: 12),
@@ -816,145 +816,148 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     }
 
     return Center(
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: AppSizes.xl),
-        child: Column(
-          children: [
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.05),
-                shape: BoxShape.circle,
-                border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.15),
-                    blurRadius: 30,
-                    spreadRadius: 5,
-                  ),
-                ],
-              ),
-              child: Icon(badgeIcon, size: 80, color: color),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Süre Doldu!',
-              style: GoogleFonts.outfit(
-                fontSize: 32,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-              ),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              rankTitle,
-              style: GoogleFonts.outfit(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
-            ),
-            const SizedBox(height: 24),
-
-            // Genel İstatistikler Kutusu
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.04),
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
-              ),
-              child: Column(
-                children: [
-                  _buildStatRow('Toplam Skor', '${state.score} Puan', const Color(0xFFFFD000)),
-                  const Divider(color: Colors.white10),
-                  _buildStatRow('Toplam Doğru', '${state.correctCount}', Colors.greenAccent),
-                  const Divider(color: Colors.white10),
-                  _buildStatRow('Toplam Yanlış', '${state.wrongCount}', Colors.redAccent),
-                  const Divider(color: Colors.white10),
-                  _buildStatRow('En Yüksek Seri (Combo)', '${state.maxCombo}', Colors.orangeAccent),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-
-            // Ders Bazlı Doğru-Yanlış Analiz Tablosu
-            _buildCourseStatsTable(state),
-            const SizedBox(height: 24),
-
-            // Puan Ekleme Bildirimi
-            if (state.score > 0)
+      child: Transform.scale(
+        scale: 0.95,
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: AppSizes.lg),
+          child: Column(
+            children: [
+              const SizedBox(height: 8),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.green.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(Icons.stars_rounded, color: Colors.greenAccent),
-                    const SizedBox(width: 8),
-                    Text(
-                      '+${state.score} Genel Puan Hesabına Eklendi!',
-                      style: GoogleFonts.inter(
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.greenAccent,
-                      ),
+                  color: Colors.white.withValues(alpha: 0.05),
+                  shape: BoxShape.circle,
+                  border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.15),
+                      blurRadius: 30,
+                      spreadRadius: 5,
                     ),
                   ],
                 ),
+                child: Icon(badgeIcon, size: 64, color: color),
               ),
+              const SizedBox(height: 12),
+              Text(
+                'Süre Doldu!',
+                style: GoogleFonts.outfit(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                rankTitle,
+                style: GoogleFonts.outfit(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
+              ),
+              const SizedBox(height: 14),
 
-            const SizedBox(height: 32),
-            // Butonlar
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () => Navigator.pop(context),
-                    style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.white30),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                    ),
-                    child: Text(
-                      'Kapat',
-                      style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
+              // Genel İstatistikler Kutusu
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.04),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
+                ),
+                child: Column(
+                  children: [
+                    _buildStatRow('Toplam Skor', '${state.score} Puan', const Color(0xFFFFD000)),
+                    const Divider(color: Colors.white10, height: 12),
+                    _buildStatRow('Toplam Doğru', '${state.correctCount}', Colors.greenAccent),
+                    const Divider(color: Colors.white10, height: 12),
+                    _buildStatRow('Toplam Yanlış', '${state.wrongCount}', Colors.redAccent),
+                    const Divider(color: Colors.white10, height: 12),
+                    _buildStatRow('En Yüksek Seri (Kombo)', '${state.maxCombo}', Colors.orangeAccent),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+
+              // Ders Bazlı Doğru-Yanlış Analiz Tablosu
+              _buildCourseStatsTable(state),
+              const SizedBox(height: 14),
+
+              // Puan Ekleme Bildirimi
+              if (state.score > 0)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.green.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.stars_rounded, color: Colors.greenAccent, size: 20),
+                      const SizedBox(width: 8),
+                      Text(
+                        '+${state.score} Genel Puan Hesabına Eklendi!',
+                        style: GoogleFonts.inter(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.greenAccent,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () => _startGameWithSound(notifier),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFFF5252),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                    ),
-                    child: Text(
-                      'Tekrar Dene 🔄',
-                      style: GoogleFonts.inter(fontSize: 15, fontWeight: FontWeight.bold),
+
+              const SizedBox(height: 18),
+              // Butonlar
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () => Navigator.pop(context),
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(color: Colors.white30),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                      ),
+                      child: Text(
+                        'Kapat',
+                        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 32),
-          ],
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => _startGameWithSound(notifier),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFFFF5252),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                      ),
+                      child: Text(
+                        'Tekrar Dene 🔄',
+                        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget _buildStatRow(String label, String value, Color valueColor) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6.0),
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -986,10 +989,10 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     if (!hasAnyStats) return const SizedBox.shrink();
 
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.04),
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.white.withValues(alpha: 0.08)),
       ),
       child: Column(
@@ -997,19 +1000,19 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
         children: [
           Row(
             children: [
-              const Icon(Icons.analytics_outlined, color: Colors.purpleAccent, size: 20),
-              const SizedBox(width: 8),
+              const Icon(Icons.analytics_outlined, color: Colors.purpleAccent, size: 18),
+              const SizedBox(width: 6),
               Text(
                 'Ders Bazlı Soru Analizi',
                 style: GoogleFonts.outfit(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 10),
           ...courseIds.map((courseId) {
             final correct = state.correctByCourse[courseId] ?? 0;
             final wrong = state.wrongByCourse[courseId] ?? 0;
@@ -1019,7 +1022,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
             final courseName = _getCourseDisplayName(courseId);
 
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
               child: Row(
                 children: [
                   Expanded(

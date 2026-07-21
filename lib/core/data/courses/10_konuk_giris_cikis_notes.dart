@@ -95,6 +95,206 @@ const Map<String, dynamic> konukGirisCikisUnit1 = {
       ],
       "caseStudy": "Sektörden Vaka: İstanbul'da bir iş otelinde, resepsiyona gelen walk-in misafir oda fiyatını çok pahalı bularak yandaki otele gideceğini söyledi. Resepsiyonist Melis, 'Otelimiz kongre merkezine yürüme mesafesinde, ayrıca oda fiyatımıza yüksek hızlı fiber internet ve zengin sabah kahvaltısı dahildir. Yandaki otelde internet ve kahvaltı ekstradır' diyerek fiyata nelerin dahil olduğunu netleştirdi. Misafir faydayı anlayarak satışı onayladı.",
       "tip": "Fiyat itirazı aslında bir satın alma sinyalidir. Misafir fiyatı sorguluyorsa, değerini daha iyi anlamak istiyordur. Değer katın, indirim değil."
+    },
+    {
+      "id": 4,
+      "tag": "GELİR METRİKLERİ",
+      "title": "GELİR YÖNETİMİ VE METRİKLER (ADR, RevPAR, B2B, B2C, ALTIN ORAN)",
+      "microSummary": "Otelcilikte finansal başarıyı ölçmek ve dijital satışların verimliliğini takip etmek için belirli oranlar kullanılır.",
+      "definitions": [
+        {
+          "name": "Average Daily Room Rate (ADR - Ortalama Günlük Oda Fiyatı)",
+          "desc": "Bir otelin belirli bir günde satılan odalarından elde ettiği toplam oda gelirinin, o gün satılan oda sayısına bölünmesiyle bulunan ortalama fiyattır. Boş odalar hesaba katılmaz; sadece satılan odaların kazanç durumunu gösterir.",
+          "examples": [
+            "Örnekle Pekiştirelim: 100 odalı bir otelde dün gece 50 oda satılmış ve toplam 100.000 TL gelir elde edilmiş olsun. ADR = 100.000 / 50 = 2.000 TL olarak hesaplanır."
+          ]
+        },
+        {
+          "name": "RevPAR (Revenue Per Available Room - Oda Başına Düşen Gelir)",
+          "desc": "Otelin satışa hazır durumda olan toplam oda sayısı başına düşen günlük gelirini gösteren metriktir. Toplam oda gelirinin, satılan-satılmayan ayrımı yapılmaksızın oteldeki tüm mevcut oda sayısına bölünmesiyle bulunur. Doluluk ve fiyatı bir arada ölçer.",
+          "examples": [
+            "Örnekle Pekiştirelim: 100 odalı otelimizde dün gece 50 oda satıldı ve 100.000 TL kazanıldı. RevPAR = 100.000 / 100 = 1.000 TL'dir. Bu oran, satılmayan odaların da genel kârlılığa etkisini görmemizi sağlar."
+          ]
+        },
+        {
+          "name": "B2B ve B2C Satış Modelleri",
+          "desc": "B2B (İşletmeden İşletmeye), otelin seyahat acenteleri ve tur operatörleri gibi diğer ticari kuruluşlarla yaptığı satışları ifade eder. B2C (İşletmeden Tüketiciye) ise otelin kendi web sitesi veya kapıdan doğrudan gelen (walk-in) son tüketici misafirlerle yaptığı doğrudan satışları temsil eder.",
+          "examples": [
+            "Örnekle Pekiştirelim: Bir acentenin otelimizden sezonluk oda kiralayıp sözleşme yapması B2B modelidir. Bir misafirin otelin web sitesine girip kendi kredi kartıyla oda rezervasyonu yapması ise B2C modelidir."
+          ]
+        },
+        {
+          "name": "Altın Oran (Çevrim İçi Satış Dönüşüm Oranı)",
+          "desc": "Ders kitabımızdaki tanımıyla Altın Oran; çevrim içi bir satış sitesine (örneğin otelin kendi web sitesine veya anlaştığı online acentelere) yapılan ziyaretlerin, gerçek oda satışı olarak sonuçlanma oranıdır. Eğer bu oran düşük kalırsa, siteye çekilen ziyaretçiler oda almadan çıkıyor demektir ve bu durum otel için reklam gideri zararı oluşturur.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otelimizin web sitesini dün 100 kişi ziyaret etmiş olsun. Bu ziyaretçilerden sadece 5 tanesi oda satın alarak rezervasyon yaptıysa, dün için 'Altın Oran'ımız %5 olarak gerçekleşmiş demektir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Antalya'da bir şehir oteli, web sitesine ziyaretçi çekmek için arama motorlarına yüksek miktarda reklam bütçesi ayırdı. Siteye günde 1000 kişi girmeye başladı ancak girenlerin neredeyse tamamı oda satın almadan siteden çıktı (Altın Oran %0.2 seviyesinde kaldı). Bu durum otel için ciddi bir zarar oluşturdu. Ön Büro ve Pazarlama ekibi sitenin tasarımını sadeleştirip fiyatları daha net gösterince, aynı 1000 kişiden 30'u oda satın aldı ve Altın Oran %3'e yükseldi. Böylece reklam masrafı çıkmış ve otel yüksek gelir elde etmiş oldu.",
+      "tip": "Altın Oran kuralı: İnternet sitenizi sadece ziyaret ettirmek yetmez. Önemli olan, gelen ziyaretçileri doğru bilgi, güvenilir tasarım ve kolay ödeme adımlarıyla gerçek birer konuğa dönüştürebilmektir."
+    },
+    {
+      "id": 5,
+      "tag": "KONTENJAN VE REZERVASYON",
+      "title": "KONTENJAN ANLAŞMASI ÇEŞİTLERİ VE BLOK REZERVASYONUN FARKLARI",
+      "microSummary": "Seyahat acenteleri ve tur operatörleri ile yapılan kontenjan anlaşmaları ve grup rezervasyonları otel satışlarının temel iskeletidir.",
+      "definitions": [
+        {
+          "name": "Tamamen Garantili Kontenjanlar",
+          "desc": "Acentelerin kesin rezervasyonla yaptığı anlaşmalardır. Tur operatörü veya acente, odayı satsa da satmasa da anlaşılan oda fiyatını konaklama işletmesine ödemek zorundadır. Risk tamamen acentededir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Acente otelimizden yaz için günlük 10 odayı tamamen garantili kiraladıysa; o gece o odalara hiç konuk gelmese bile acente o 10 odanın parasını otele tıkır tıkır öder."
+          ]
+        },
+        {
+          "name": "Kısmen Garantili ve Garantisiz Kontenjanlar",
+          "desc": "Kısmen Garantili Kontenjanda, acente kiraladığı odalardan sadece kesin satabileceğini düşündüğü belirli bir kısmının parasını önceden ödemeyi taahhüt eder. Garantisiz Kontenjanda ise en yaygın sözleşme türüdür; acentenin satış garantisi yoktur, sattıkça otele bildirir ve satılmayan odaları belirli bir süre (opsiyon tarihi) öncesinde otele geri iade eder.",
+          "examples": [
+            "Örnekle Pekiştirelim: Acente elindeki 5 odayı satamazsa, giriş gününe 3 gün kala bu odaları cezasız şekilde otele geri verebilir. Bu durum Garantisiz Kontenjan modeline bir örnektir."
+          ]
+        },
+        {
+          "name": "İsteğe Bağlı Rezervasyonlar (On-Request) ve Serbest Satış (Free Sale)",
+          "desc": "İsteğe Bağlı (On-Request) rezervasyon, acentenin elinde kontenjanı olmadığında her satış öncesi otelden uygunluk onayı istemesidir. Serbest Satış (Free Sale) ise otel boş olduğu sürece acentenin otele sormadan doğrudan oda satabilmesi yetkisidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Acentenin bir müşteriye oda satmadan önce oteli arayıp '3 nolu oda boş mu, satabilir miyim?' diye onay istemesi İsteğe Bağlı rezervasyondur. Acentenin sisteme bakıp doğrudan onay vermesi ise Serbest Satıştır."
+          ]
+        },
+        {
+          "name": "Blok Rezervasyon ve Kontenjan Arasındaki Temel Farklar",
+          "desc": "Kitapta anlatıldığı üzere; Kontenjan acentelerin sezon boyunca oda satabilmesi için onlara uzun vadeli ayrılan oda havuzudur. Blok Rezervasyon ise seyahat acentesi veya tur operatörünün, oteldeki odaların bir kısmını sadece kendi belirledikleri özel bir grup veya tek seferlik etkinlik için geçici olarak ayırmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Bir acentenin yaz boyunca satmak üzere elinde sürekli 5 oda bulundurması KONTENJAN'dır. Ancak aynı acentenin 15-18 Ekim tarihlerindeki bir kongre grubu veya düğün davetlileri için 30 odayı toplu olarak kapatması BLOK REZERVASYON'dur."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Bir otel, büyük bir acenteye sezon boyunca günlük 5 oda Serbest Satış (Free Sale) kontenjanı verdi. Ancak yüksek sezonda otele doğrudan (B2C) çok fazla talep geldi ve odalar daha yüksek fiyattan satılabilecek hale geldi. Acente serbest satış hakkını kullanarak odaları eski düşük fiyattan satmaya devam edince otel kârlılığı düştü. Otel yönetimi sonraki sezonda yoğun dönemler için kontenjan sözleşmelerine 'Serbest Satışı Durdurma (Stop-Sale)' hakkı ekledi.",
+      "tip": "Grup veya blok rezervasyon yaparken mutlaka katı bir iptal/iade opsiyon tarihi (cut-off) belirleyin ki grubun gelmekten vazgeçtiği odalar zamanında sisteme geri dönsün ve boş kalmasın."
+    },
+    {
+      "id": 6,
+      "tag": "ODA TİPLERİ",
+      "title": "YATAK VE FİZİKİ YAPILARINA GÖRE ODA TÜRLERİNİN TAMAMI",
+      "microSummary": "Ön büro personeli, misafirlerin konaklama ihtiyaçlarını en doğru şekilde karşılamak için oteldeki tüm oda tiplerini ve yatak yapılarını avucunun içi gibi bilmelidir.",
+      "definitions": [
+        {
+          "name": "Yatak Türüne Göre Oda Çeşitleri",
+          "desc": "Odadaki yatak kapasitesi ve biçimine göre yapılan sınıflandırmadır. Single Room tek kişiliktir. Double Room iki kişiliktir (iki ayrı yataklı twin bed veya tek büyük yataklı french bed olabilir). Triple Room üç kişiliktir (üç tek kişilik yatak veya bir çift + bir tek yatak). Quadruple Room (Quad) ise dört kişilik odalardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otele gelen iki iş arkadaşı için 'double room (twin bed)' yani iki ayrı yataklı oda verilirken; balayı çifti için 'double room (french bed)' yani tek büyük yataklı oda atanmalıdır."
+          ]
+        },
+        {
+          "name": "Fiziki Yapılarına Göre Oda Çeşitleri",
+          "desc": "Odaların büyüklüğü, bölümleri ve mimari amaçlarına göre ayrımıdır. Standart Room klasik tek odalı yapıdır. Suite odalar oturma odası ve yatak odası kapıyla ayrılmış geniş odalardır. Junior Suite ise oturma alanı yatak alanından paravan veya mobilyayla bölünmüş daha küçük süitlerdir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Geniş bir aileye rahat etmeleri için oturma grubu ve ayrı yatak odası olan bir 'Suite' oda önerilirken; bütçesi daha sınırlı ama süit konforu isteyen konuğa 'Junior Suite' oda sunulur."
+          ]
+        },
+        {
+          "name": "Connected, Presidential ve Handicapped Odalar",
+          "desc": "Connected Room (Bağlantılı Oda), yan yana olan ve içerideki bir kapıyla birbirine açılan iki bağımsız odadır. Presidential Suite (Kral Dairesi), oteldeki en lüks, en büyük ve özel hizmetli süittir. Handicapped Room ise bedensel engelli konuklar için geniş kapılar, tutunma barları ve özel banyolarla donatılmış odalardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Çocuklarıyla gelen ve çocuklarının gözünün önünde olmasını isteyen ailelere yan yana iki odayı birleştiren 'Connected Room' atanır. Tekerlekli sandalye kullanan bir konuk geldiğinde ise yatak ve banyo yüksekliği özel ayarlanmış 'Handicapped Room' bloke edilir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Bir kongre oteline giriş yapan iki iş ortağına yanlışlıkla tek büyük yataklı (french bed) bir oda verildi. Konuklar bu duruma itiraz ederek iki ayrı yataklı (twin bed) oda talep ettiler. Otel o gece tamamen dolu olduğu için oda değişimi hemen yapılamadı ve misafirler lobide bekletildi. Bu hata, rezervasyon kartındaki yatak tipinin (bedding type) check-in sırasında ön büro personeli tarafından dikkatlice kontrol edilmemesinden kaynaklandı. Sonrasında misafirlerden özür dilenerek sonraki gün oda değişimi yapıldı ve telafi amaçlı akşam yemeği ikram edildi.",
+      "tip": "Misafir otele giriş yapmadan önce mutlaka yatak tercihlerini (tek büyük yatak / iki ayrı yatak) kontrol edin. Özellikle iş amaçlı seyahat eden konuklara tek büyük yataklı oda vermek büyük bir hizmet hatasıdır."
+    },
+    {
+      "id": 7,
+      "tag": "MİMARİ ODALAR",
+      "title": "MİMARİ YAPILARINA GÖRE ÖZEL ODA ÇEŞİTLERİ",
+      "microSummary": "Doğal çevreye, iklime ve özel konseptlere göre inşa edilen mimari odalar misafirlere unutulmaz deneyimler sunar.",
+      "definitions": [
+        {
+          "name": "Bungalow (Bungalov) ve Chale (Şale)",
+          "desc": "Bungalow, genellikle doğa içinde konumlanmış tek katlı, bağımsız ahşap veya taş evlerdir. Chale (Şale) ise özellikle dağlık ve kar yağışlı bölgelerde inşa edilen, dik çatılı müstakil kır evleri tarzındaki lüks odalardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Olympos'ta portakal bahçeleri içinde ahşap bir evde kalmak Bungalow deneyimidir. Uludağ'da şömineli, dik çatılı karlı bir dağ evinde kalmak ise Chale (Şale) deneyimidir."
+          ]
+        },
+        {
+          "name": "Su Bungalow (Water Bungalow) ve Cabana (Kabana)",
+          "desc": "Su Bungalow, tropik denizlerin üzerine çakılan kazıklar yardımıyla suyun hemen üzerinde duran ultra lüks bağımsız odalardır. Cabana (Kabana) ise otel ana binasından ayrı, plajda veya havuz kenarında yer alan, günübirlik dinlenme veya lüks konaklama imkanı sunan bungalov tarzı özel kabinlerdir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Maldivler'de balkondan doğrudan okyanusa atlanabilen odalar Su Bungalow'dur. Otelin plajında gün boyu özel garson hizmeti olan perdeli lüks dinlenme locaları ise Cabana'dır."
+          ]
+        },
+        {
+          "name": "Mağara Oda (Cave Room) ve İglo (Igloo)",
+          "desc": "Mağara Oda, coğrafi dokuya uygun olarak kayaların içine oyulan, kışın sıcak yazın serin kalan otantik odalardır. İglo ise kutup bölgelerinde buzdan yapılan veya gökyüzündeki kuzey ışıklarını izlemek amacıyla tavanı tamamen camdan tasarlanmış egzotik kubbe odalardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Kapadokya'da tüf kayaların içine oyulmuş bir odada konaklamak Mağara Oda örneğidir. Finlandiya'da yattığınız yerden gökyüzündeki yıldızları ve kuzey ışıklarını izlediğiniz cam tasarımlı oda ise İglo örneğidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Kapadokya'da kaya oyma konseptli butik bir otel, internet sitesinde odalarını 'Mağara Oda' olarak tanıttı. Ancak odaların bazıları sonradan betonarme duvarlarla genişletilmişti. Doğal mağara dokusu arayan yabancı bir turist grubu odaya girdiğinde hayal kırıklığı yaşadı ve şikayetçi oldu. Otel yönetimi, misafirlerin beklentisini karşılamak adına onları tamamen el oyması olan orijinal taş odalara transfer etti ve web sitesindeki görselleri 'Kısmen Kaya / Tamamen Kaya' olarak güncelledi.",
+      "tip": "Mimari odaları satarken konuğa odanın iklimsel ve fiziksel yapısını iyi anlatın. Örneğin mağara odaların nem durumunu veya igloların cam tavan özelliklerini bilmek misafir memnuniyetini doğrudan etkiler."
+    },
+    {
+      "id": 8,
+      "tag": "ODA DURUMLARI",
+      "title": "ODA SATILABİLİRLİĞİNİ ETKİLEYEN DURUMLARIN TAMAMI",
+      "microSummary": "Otelin anlık satabileceği oda sayısını belirlemek için odaların doluluk, arıza ve iptal durumları anlık takip edilmelidir.",
+      "definitions": [
+        {
+          "name": "Satılabilir Oda Sayısını Azaltan Etkenler (In House, Out of Order, Extension)",
+          "desc": "In House o gece otelde kalan dolu odaları temsil eder. Out of Order (OOO) arıza, tadilat veya boya nedeniyle satışa kapatılan odalardır. Extension (Uzatma) ise misafirin çıkış tarihini uzatıp kalmaya devam etmesidir. Bu üç durum otelin o gün satabileceği boş oda sayısını doğrudan düşürür.",
+          "examples": [
+            "Örnekle Pekiştirelim: 100 odalı otelde 80 oda dolu (In House), 2 oda banyo arızalı (Out of Order) ve 3 oda çıkışını uzatmışsa (Extension), otelin satabileceği oda sayısı düşer."
+          ]
+        },
+        {
+          "name": "Satılabilir Oda Sayısını Artıran Etkenler (Cancellation, No Show, Early Check Out)",
+          "desc": "Cancellation, kesinleşmiş rezervasyonun iptal edilmesidir. No Show, rezervasyonlu konuğun otele hiç gelmemesi durumudur. Early Check Out (Erken Çıkış) ise konuğun gününden önce otelden ayrılmasıdır. Bu durumlar odayı boşa çıkararak satılabilir oda sayısını artırır.",
+          "examples": [
+            "Örnekle Pekiştirelim: O gün dolu olan bir odanın misafiri işi bittiği için 2 gün erken çıkış (Early Check Out) yaparsa veya bir rezervasyon son anda iptal (Cancellation) olursa, o odalar tekrar satılabilir hale gelir."
+          ]
+        },
+        {
+          "name": "House Use (Personel Kullanımı) Etkisi",
+          "desc": "Otelin genel müdürü, şefleri veya nöbetçi personeli gibi çalışanların konaklaması için ayrılan odalardır. Ticari olarak satılmazlar ancak operasyonel duruma göre gerektiğinde satışa açılabilirler.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otel tamamen dolduğunda ve acil oda ihtiyacı doğduğunda, nöbetçi müdürün kaldığı 'House Use' odasının boşaltılıp genel satışa sunulması operasyonu kurtarabilir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Bayram yoğunluğunda 200 odalı bir tatil köyünde, Ön Büro ekibi 5 odanın banyo tesisatı arızası nedeniyle 'Out of Order' (arıza) durumunda olduğunu sisteme işlemeyi unuttu. Bu 5 oda boş göründüğü için sisteme satış yapıldı. Konuklar geldiğinde odalar verilemedi ve büyük kriz çıktı. Otel, konukları çevre otellere göndermek zorunda kalarak ciddi tazminat ödedi. Bu olaydan sonra teknik servis ile ön büro arasındaki arızalı oda bildirim sistemi tamamen dijitalleştirildi.",
+      "tip": "Oda durumlarını (özellikle arıza ve erken çıkışları) sisteme anında işleyin. Geciken her bilgi, oteli fazla oda satma (overbooking) veya boş oda kaçırma riskiyle karşı karşıya bırakır."
+    },
+    {
+      "id": 9,
+      "tag": "KRİZ YÖNETİMİ",
+      "title": "OVERBOOKING VE SHORTA DÜŞME DURUMLARI",
+      "microSummary": "Aşırı satış otel gelirlerini korumak için yapılır ancak doğru yönetilmezse büyük bir prestij kaybına yol açar.",
+      "definitions": [
+        {
+          "name": "Overbooking (Fazla Rezervasyon) Nedir?",
+          "desc": "Otellerin son andaki iptalleri (cancellation) ve gelmeyen konukları (no show) hesaba katarak, toplam oda kapasitelerinden daha fazla sayıda rezervasyon kabul etmesi sürecidir. Amacı otelde boş oda kalmasını engellemektir.",
+          "examples": [
+            "Örnekle Pekiştirelim: 100 odası olan otelimizin geçmiş istatistiklerine göre her gün ortalama 5 oda iptal oluyorsa, o gün için sisteme 105 oda satışı tanımlamak bir Overbooking (fazla rezervasyon) uygulamasıdır."
+          ]
+        },
+        {
+          "name": "Shorta (Şorta) Düşmek Nedir?",
+          "desc": "Overbooking (aşırı satış) yapılan rezervasyonların tamamının otele gelmesi veya beklenmedik oda arızaları sonucu, kapıdan giren misafire verecek boş oda kalmaması durumudur. Otelcilikte en kritik kriz anlarından biridir.",
+          "examples": [
+            "Örnekle Pekiştirelim: 100 odalı otelimize o gün satılan 102 rezervasyonun tamamı giriş yapmak üzere bankoya geldiğinde, son gelen 2 aileye oda verilemez. Otel bu durumda 'şorta düşmüş' olur."
+          ]
+        },
+        {
+          "name": "Short (Şort) Durumunda Kurtarma Adımları",
+          "desc": "Şorta düşen otel, misafiri mağdur etmemek için şu adımları izler: Sakin kalıp durum kibarca açıklanır. Hemen komşu eşdeğer bir otelde yer ayarlanır. Misafirin yeni otele transferi sağlanır, ilk gece ücreti kendi otelimizce ödenir. Yer açılır açılmaz misafir geri getirilir ve odası ücretsiz üst kategoriye (upgrade) yükseltilerek jestler yapılır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Gelen konuğumuza yer kalmadığını fark ettiğimiz an onu sakinleştirip; yan taraftaki 5 yıldızlı ortak otelimizde onun için harika bir oda hazırlattığımızı söylemek, transfer taksi ücretini ödemek ve akşam yemeğini hediye etmektir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: İzmir'de uluslararası bir fuar döneminde 120 odalı bir iş oteli overbooking nedeniyle 3 oda şorta düştü. Ön Büro Şefi, şorta düşen 3 iş insanını lobide bekletmeden hemen yakındaki anlaşmalı lüks otele kendi makam aracıyla transfer ettirdi. Ertesi gün otelde oda boşalınca konukları geri davet etti, odalarını Suit odaya yükseltti ve odalarına özel meyve sepeti bıraktı. Konuklar bu profesyonel kriz yönetiminden o kadar memnun kaldılar ki sonraki seyahatlerinde de aynı oteli tercih etmeye devam ettiler.",
+      "tip": "Şorta düşen misafire asla 'sistem hatası' veya 'yerimiz kalmadı' diyerek kapıyı göstermeyin. Sorun otelden kaynaklıdır; çözümün hazır olduğunu, onu daha lüks ağırlayacağınızı belirterek krizi bir sadakat fırsatına çevirin."
     }
   ]
 };
@@ -196,6 +396,68 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
       ],
       "caseStudy": "Sektörden Vaka: Ankara'da bir otelde, resepsiyonist sistemde 'VC' (Boş Temiz) görünen 402 nolu odayı yeni giriş yapan aileye sattı. Misafir kapıyı açtığında odada uyuyan başka bir misafirle karşılaştı. Ortaya çıkan büyük güvenlik ve gizlilik krizi sonrası otel yönetimi misafirden özür diledi. Hatanın, çıkış yapan misafirin odasının Kat Hizmetleri tarafından temizlenip sisteme girilmesine rağmen Ön Büro'da çıkış işleminin (check-out) gecikmesinden kaynaklandığı belirlendi.",
       "tip": "Sistemde 'VC' (Boş Temiz) görünse bile, oda durum uyuşmazlığı listesinde yer alan şüpheli odalara misafir göndermeden önce mutlaka kat görevlisinden teyit alın veya odayı fiziksel kontrol ettirin."
+    },
+    {
+      "id": 4,
+      "tag": "GRUP OPERASYONU",
+      "title": "GRUP KONUK GİRİŞ HAZIRLIKLARI VE İÇ YAZIŞMALAR (ROOMING LIST, MEMORANDUM)",
+      "microSummary": "Grupların check-in işlemlerinin pürüzsüz tamamlanması, acente listelerinin ve departmanlar arası koordinasyonun eksiksiz olmasına bağlıdır.",
+      "definitions": [
+        {
+          "name": "Rooming List (Oda Dağılım Listesi)",
+          "desc": "Acentenin veya organizasyon şirketinin otele grup gelmeden en az bir hafta önce gönderdiği, gruptaki misafirlerin isimlerini, oda arkadaşı eşleşmelerini, giriş-çıkış tarihlerini ve varsa özel taleplerini içeren resmi listedir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otele gelecek 20 kişilik bir spor kafilesinin hangi odalarda ikişer kişi kalacağını gösteren isim listesinin önceden rezervasyon departmanına iletilmesidir."
+          ]
+        },
+        {
+          "name": "Grup Memorandumu (İç Yazışma)",
+          "desc": "Ön büronun, gruba verilecek tüm hizmetleri (oda blokaj detayları, ortak yemek saatleri, bagaj taşıma planlaması) Kat Hizmetleri ve Yiyecek-İçecek gibi diğer operasyonel departmanlara duyurduğu resmi iç yazışma belgesidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Ön Büro Müdürünün sisteme; 'Cumartesi günü saat 14:00'te 30 odalık bir kongre grubu gelecektir, bagajlar için bellboy sayısı artırılsın ve akşam yemeği saat 19:00'da hazır edilsin' yazılı memorandumunu ilgili departmanlara göndermesidir."
+          ]
+        },
+        {
+          "name": "Grup Zarflarının Hazırlanması",
+          "desc": "Grup giriş yaptığı an resepsiyon bankosunda yığılma ve kargaşa olmasını önlemek amacıyla, her oda için önceden hazırlanan; içinde oda anahtar kartı, oda numarası yazılı kartvizit ve konaklama belgesinin (registration card) bulunduğu zarflardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Kafile otobüsten inmeden önce resepsiyonistlerin her odanın zarfını hazırlayıp, üzerine misafirlerin isimlerini yazarak alfabetik sırayla grup liderine teslim etmek üzere jilet gibi dizmesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Antalya'da bir kongre oteline 100 kişilik bir şirket grubu giriş yapacaktı. Ön büro, acentenin gönderdiği 'Rooming List'e göre tüm oda numaralarını ve anahtarları önceden hazırlayıp 'Grup Zarfları' içine koydu. Grup otobüslerle otele geldiğinde, lobide tek tek check-in yapmak yerine liderlerine bu zarflar 5 dakikada teslim edildi. Bu profesyonel operasyon sayesinde lobide hiç yığılma olmadı ve misafirler doğrudan odalarına geçti.",
+      "tip": "Grup girişlerinde kargaşayı önlemek için bellboyları ve resepsiyon ekibini önceden bilgilendirin. Grup zarflarının üzerine oda numarası, misafir adı ve çıkış tarihini mutlaka net şekilde yazın."
+    },
+    {
+      "id": 5,
+      "tag": "ÖZEL HİZMETLER",
+      "title": "ÖZEL GEREKSİNİMLİ KONUKLAR (SPATT) VE SADAKAT KART AYRICALIKLARI",
+      "microSummary": "Otellerde her konuk özeldir ancak özel gereksinimi olan konuklar ve sadakat programı üyeleri ekstra özen ve operasyonel hazırlık gerektirir.",
+      "definitions": [
+        {
+          "name": "Special Attention Guests (SPATT - Özel Gereksinimi Olan Konuklar)",
+          "desc": "Yaşlı, hareket kısıtlılığı olan, bebekli aileler veya alerjik durumları olan konuklar gibi hizmet alırken ekstra ilgi, fiziksel kolaylık ve operasyonel düzenleme gerektiren özel konuk grubudur.",
+          "examples": [
+            "Örnekle Pekiştirelim: Rezervasyonda 'tekerlekli sandalye kullanıyor' notu olan misafir için Ön Büro'nun odayı asansöre en yakın katta bloke etmesi ve banyodaki güvenlik aparatlarını kontrol ettirmesidir."
+          ]
+        },
+        {
+          "name": "VIP ve CIP Karşılama Standartları",
+          "desc": "VIP (Çok Önemli Kişi) ve CIP (Ticari Olarak Önemli Kişi) misafirlerin önem derecelerine (VIP 1 - VIP 5) göre odalarına özel meyve sepetleri, taze soğuk ikram setleri yerleştirilmesi, genel müdürün hoş geldiniz mektubu ve üst düzey yöneticilerce karşılanma sürecidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: VIP 1 statüsündeki bir iş insanının odasına girişinden yarım saat önce taze çilekler, kuruyemiş tabağı ve dezenfekte edilmiş özel bornoz setinin yerleştirilmesidir."
+          ]
+        },
+        {
+          "name": "Sadakat Programı Kademeleri (Loyalty Programs)",
+          "desc": "Misafirlerin otel zincirinde konaklama sıklığına göre kazandıkları kart seviyeleridir (Klasik, Gümüş, Altın, Platinyum, Elmas). Kademeye göre ücretsiz oda yükseltme (upgrade), geç çıkış (late check-out) veya erken giriş gibi haklar sunulur.",
+          "examples": [
+            "Örnekle Pekiştirelim: Altın Kart sahibi bir misafir otele geldiğinde, standart oda fiyatı ödemiş olmasına rağmen hakkı olan 'ücretsiz oda yükseltme' standardı gereği ona Suite oda anahtarı verilmesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Tekerlekli sandalye kullanan bir konuk otele rezervasyon yaptırdı. Rezervasyon ekibi durumu sisteme 'SPATT' koduyla işledi. Ön Büro, konuk gelmeden önce engelli odasını (Handicapped Room) asansöre en yakın katta bloke etti. Kat Hizmetleri odadaki tutunma barlarını ve özel banyo ekipmanlarını kontrol etti. Misafir otele geldiğinde hiçbir engel yaşamadan odasına yerleşti ve otelin duyarlılığı için teşekkür mektubu bıraktı.",
+      "tip": "Özel gereksinimi olan bir konuk uğurlanırken veya karşılanırken mutlaka yardıma ihtiyacı olup olmadığını nazikçe sorun ve ona refakat ederken onun yürüme hızına ayak uydurarak yürüyün."
     }
   ]
 };
@@ -244,16 +506,16 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
       "definitions": [
         {
           "name": "Giriş Ödemesi ve Depozito",
-          "desc": "Özellikle walk-in veya garantisiz rezervasyonlu konuklardan oda ücreti giriş anında tahsil edilir. Ekstra harcamalar (minibar, restoran) için belirli tutarda nakit depozito alınır ve makbuz kesilir.",
+          "desc": "Özellikle walk-in veya garantisiz rezervasyonlu konuklardan oda ücreti giriş anında tahsil edilir. Ekstra harcamalar (oda içi yiyecek-içecek ikramları, restoran) için belirli tutarda nakit depozito alınır ve makbuz kesilir.",
           "examples": [
-            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve minibar harcamaları için 1000 TL nakit depozito alınarak kasaya konmasıdır."
+            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve ek harcamalar için 1000 TL nakit depozito alınarak kasaya konmasıdır."
           ]
         },
         {
           "name": "Pre-Authorization (Ön Provizyon)",
           "desc": "Giriş anında misafirin kredi kartından, konaklama bedeli ve tahmini ekstra harcamaları kapsayacak bir tutarın banka kanalıyla geçici olarak bloke edilmesidir. Çıkışta bu bloke çözülür.",
           "examples": [
-            "Örnekle Pekiştirelim: Pos cihazından misafirin kartına 'Ön Provizyon' işlemi uygulanarak 5000 TL'lik limitin otel lehine bloke edilmesi; misafir kaçarsa veya ödeme yapmazsa bu tutarın otel tarafından çekilebilmesidir."
+            "Örnekle Pekiştirelim: Pos cihazından misafirin kartına 'Ön Provizyon' işlemi uygulanarak 5000 TL'lik limitin otel lehine bloke edilmesi; misafir ödeme yapmadan ayrılırsa bu tutarın otel tarafından çekilebilmesidir."
           ]
         },
         {
@@ -297,6 +559,61 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
       ],
       "caseStudy": "Sektörden Vaka: Trabzon'daki 5 yıldızlı bir otelde, bellboy misafire odasına kadar refakat etti. Odaya girdiklerinde klima kumandasının çalışmadığını ve kasada bir önceki misafirin şifresinin kilitli kaldığını fark etti. Bellboy hemen resepsiyona haber vererek teknik servisi yönlendirdi ve kriz büyümeden çözüldü. Bellboy'un bu dikkati ve anında müdahalesi olmasaydı, misafir odaya tek başına girip büyük bir şikayet oluşturacaktı.",
       "tip": "Oda numarasını lobide yüksek sesle asla telaffuz etmeyin. Bu durum misafirin can ve mal güvenliği (gizlilik hakkı) açısından büyük bir güvenlik ihlalidir. Her zaman kart zarfının içine yazıp parmağınızla gösterin."
+    },
+    {
+      "id": 4,
+      "tag": "KARŞILAMA & VALE",
+      "title": "VALE, CONCIERGE VE BAGAJ GÜVENLİĞİ STANDARTLARI",
+      "microSummary": "Misafirin otelle ilk teması kapıda başlar; araç karşılama ve bagaj teslim operasyonları güvenlik protokollerine uygun yürütülmelidir.",
+      "definitions": [
+        {
+          "name": "Doorman (Kapı Görevlisi) Karşılama Standardı",
+          "desc": "Otele araçla gelen misafirlerin kapılarının güler yüzle açılması (protokol gereği önce hanımefendilerin kapısı açılır) ve günün saatine uygun şekilde selamlanmasıdır. Misafirin kendini güvende ve değerli hissetmesini sağlar.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otele gelen bir konuğun arabasının kapısını açan doorman'in; 'Hoş geldiniz efendim, yolculuğunuz nasıl geçti? Sizleri ağırlamaktan mutluluk duyuyoruz' diyerek selamlamasıdır."
+          ]
+        },
+        {
+          "name": "Vale Otopark ve Güvenlik Fişi",
+          "desc": "Konuğun aracı teslim alınırken, araçta herhangi bir çizik/hasar kontrolü yapılması, otopark fişinin kesilip bir nüshasının konuğa verilmesi ve anahtarın kilitli vale dolabına konmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Vale personelinin, anahtarı teslim alırken otopark fişini iki nüsha doldurup birini misafire vermesi ve 'Aracınız güvenli otoparkımıza çekilecektir, buyurun bu fişiniz efendim' demesidir."
+          ]
+        },
+        {
+          "name": "Bagaj Etiketleme (Luggage Tag)",
+          "desc": "Giriş anında misafirin valizlerine oda numarası ve bagaj kartı numarasının yazılı olduğu etiketlerin asılmasıdır. Valizlerin karışmasını veya kaybolmasını önler.",
+          "examples": [
+            "Örnekle Pekiştirelim: Giriş yapan misafirin 3 parça valizine de 'Oda 405' yazılı etiketleri takıp, bagaj odasındaki ilgili rafa yerleştirmek ve çıkışta bu etiket numaralarıyla teslim etmektir."
+          ]
+        }
+      ],
+      "caseStudy": "5 yıldızlı bir otelde gelen bir ailenin valizleri giriş anında etiketlenmeden bagaj odasına alındı. Çıkış gününde ailenin valizlerinden biri başka bir gruba ait otobüse yüklendi. Misafirler havalimanında valizlerinin olmadığını fark edince büyük bir kriz yaşandı. Otel yönetimi, bu olaydan sonra 'Giriş anında bagaj etiketleme standardı uygulanmayan hiçbir valiz bagaj odasına kabul edilmeyecektir' kuralını getirdi.",
+      "tip": "Aracı park etmeden önce, camların ve kapıların kapalı olduğundan emin olun. Araçta görünür bir yerde değerli eşya varsa, misafiri 'Eşyalarınızı yanınıza alabilir veya elmas kasaya teslim edebilirsiniz' diye nazikçe uyarın."
+    },
+    {
+      "id": 5,
+      "tag": "HESAP YÖNETİMİ",
+      "title": "FOLİO VE GECE ÖN KASA (NIGHT AUDIT) MATEMATİĞİ",
+      "microSummary": "Ön büro finansal kayıtlarının temeli olan folio hesapları, borç ve alacak dengesiyle çalışır.",
+      "definitions": [
+        {
+          "name": "Folio Borç ve Alacak Dengesi",
+          "desc": "Folio, misafirin oda hesabıdır. Misafirin yaptığı oda servisi veya ek hizmet harcamaları 'Borç (Debit)' sütununa; yaptığı ön ödemeler ve depozitolar ise 'Alacak (Credit)' sütununa (+) ve (-) olarak yazılır. Hesap kapatılırken bu iki dengenin sıfır olması şarttır.",
+          "examples": [
+            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve ek hizmet harcamaları için 1000 TL nakit depozito alınarak kasaya konmasıdır."
+          ]
+        },
+        {
+          "name": "Night Audit (Gece Ön Kasa Raporu) ve Room Charge",
+          "desc": "Gece yarısından sonra otel gününü kapatan gece ön kasa görevlisinin, o gün konaklayan tüm odaların günlük oda bedellerini (Room Charge) sisteme işlemesi ve mali hesapları doğrulamasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Gece ön kasa görevlisinin saat 02:00'de sistem üzerinden gün kapatma işlemini başlatarak o günkü oda konaklama bedellerini misafirlerin foliolarına borç olarak yansıtmasıdır."
+          ]
+        }
+      ],
+      "caseStudy": "Bir iş otelinde, gece ön kasa görevlisi (Night Auditor) oda ücretlerini sisteme yansıtmayı unuttu. Sabah erken saatte check-out yapmak isteyen bir misafir, faturasında oda ücretinin görünmediğini fark etti. Resepsiyonist sistemi kontrol edip faturayı düzeltirken misafir uçağını kaçırma riski yaşadı. Otel, bu hatayı önlemek için her gece saat 02:00'de otomatik olarak oda ücretlerinin foliolara yansıtılmasını sağlayan bir yazılım güncellemesi yaptı.",
+      "tip": "Check-out sırasında faturayı basmadan önce misafire ekrandan veya proforma fatura dökümünden harcama detaylarını gösterip 'Hesabınızda herhangi bir hata var mı?' teyidini alın. Hatalı kesilen resmi faturayı iptal etmek büyük bürokratik iş yükü getirir."
     }
   ]
 };
@@ -398,6 +715,61 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
       ],
       "caseStudy": "Sektörden Vaka: Kuşadası'nda butik bir otelde, resepsiyonist çıkış yapan misafiri uğurlarken 'Yolculuğunuz nereye? Ulaşım için taksi veya transfer ihtiyacınız var mı?' diye sordu. Misafir uçağı kaçırmak üzere olduğunu ve acil taksi lazım olduğunu belirtti. Görevli 2 dakikada kapıya taksi çağırdı ve bellboy eşliğinde misafiri yetiştirdi. Misafir, bu uğurlama jesti üzerine otele Booking.com'da 10 tam puan vererek 'Kusursuz uğurlama ve hızlı çözüm' yazdı.",
       "tip": "Çıkış anı, misafirin otelinizde yaşadığı son deneyimdir. Giriş anı ne kadar mükemmel olursa olsun, kaba veya ilgisiz bir uğurlama tüm tatili lekeleyebilir. Uğurlamayı otelinizin imzası yapın."
+    },
+    {
+      "id": 4,
+      "tag": "YASAL & MALİ",
+      "title": "AÇIK VE KAPALI FATURA FARKLARI VE YASAL VERGİLENDİRME",
+      "microSummary": "Ön büro görevlileri mali konularda hatasız olmalıdır; açık/kapalı fatura yasal ayrımları ve konaklama vergisi hesapları Ön Büro matematiğidir.",
+      "definitions": [
+        {
+          "name": "Açık Fatura Düzenleme",
+          "desc": "Satılan konaklama hizmeti bedelinin peşin tahsil edilmeyip acenteye veya şirkete kredili/vadeli olarak fatura edildiği fatura türüdür. İmza ve kaşe faturanın üst kısmında yer alır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Seyahat acentesinin konaklama bedelini 30 gün sonra ödeyeceği bir rezervasyon için çıkışta acente adına açık fatura kesilerek gönderilmesidir."
+          ]
+        },
+        {
+          "name": "Kapalı Fatura Düzenleme",
+          "desc": "Oda ücretinin peşin veya kredi kartıyla tahsil edilerek anında kapatıldığı durumlarda kesilen fatura türüdür. İmza ve kaşe faturanın alt kısmında yer alır (bedeli tahsil edilmiştir anlamındadır).",
+          "examples": [
+            "Örnekle Pekiştirelim: Misafirin oda borcunu kredi kartından çekip, faturanın alt kısmını kaşeleyip imzalayarak misafire 'ödendi' durumundaki kapalı faturayı teslim etmektir."
+          ]
+        },
+        {
+          "name": "Konaklama Vergisi Hesaplama",
+          "desc": "Yasal düzenlemelere göre, otelde konaklayan konukların fatura matrahına (KDV hariç oda bedeli) yansıtılan %2 oranındaki yasal vergidir. Faturada ayrıca gösterilmek zorundadır.",
+          "examples": [
+            "Örnekle Pekiştirelim: 1000 TL KDV hariç oda bedeline %2 oranında yani 20 TL konaklama vergisi eklenmesi ve faturanın KDV (%10) ve konaklama vergisiyle birlikte toplam 1120 TL olarak basılmasıdır."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Bir otel, check-out sırasında misafirden nakit ödeme aldı. Ancak resepsiyonist yanlışlıkla 'Açık Fatura' kesti. Muhasebe denetiminde faturanın bedeli ödenmemiş göründüğü için vergi dökümünde uyuşmazlık çıktı. Otel bu hata yüzünden mali incelemeye tabi kaldı. Bu olaydan sonra ön büro ekibine peşin tahsilatlarda mutlaka 'Kapalı Fatura' kesilmesi standardı ve imza/kaşe konumunun önemi uygulamalı olarak gösterildi.",
+      "tip": "Konaklama vergisini hesaplarken, KDV dahil toplam tutar üzerinden değil, KDV hariç matrah üzerinden %2 vergi hesaplanması gerektiğini unutmayın."
+    },
+    {
+      "id": 5,
+      "tag": "OPERASYONEL DAĞITIM",
+      "title": "CİTY LEDGER (KREDİLİ DEFTER) VE AYRILIŞ LİSTESİ (DEPARTURE LIST) DAĞITIMI",
+      "microSummary": "Ön bürodaki çıkış işlemleri, otelin muhasebe departmanı ve diğer operasyonel birimleriyle eş zamanlı koordine edilmelidir.",
+      "definitions": [
+        {
+          "name": "City Ledger (Kredili Defter)",
+          "desc": "Acente veya şirket anlaşmalı misafirlerin oda bedellerinin, çıkış anında misafir tarafından ödenmeyip şirketin oteldeki vadeli cari hesabına borç olarak kaydedilmesi işlemidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: X şirketinin misafirinin sadece oda bedelinin şirketin City Ledger hesabına aktarılması, misafirin kendi yaptığı ek harcamaların ise misafirden nakit alınmasıdır."
+          ]
+        },
+        {
+          "name": "Expected Departure List (Ayrılış Listesi) İletimi",
+          "desc": "O gün otelden çıkış yapacak odaların listesidir. Bu listenin Kat Hizmetlerine (odaların temizlenip yeni misafire hazırlanması için) ve restoranlara (ekstra harcama kontrolü için) zamanında iletilmesidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Sabah saat 08:00'de o gün çıkış yapacak 15 odanın listesinin Kat Hizmetlerine bildirilmesi ve bu odaların temizliğine öncelik verilmesinin istenmesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Bodrum'da büyük bir kongre oteli, ayrılış listesini (departure list) Kat Hizmetlerine vaktinde iletmedi. Kat görevlileri o gün çıkış yapacak odaları bilmedikleri için temizlik sıralamasını yanlış yaptılar. Öğlen saat 14:00'te otele gelen yeni 50 kişilik grup, odaları temizlenmediği için 2 saat lobide beklemek zorunda kaldı. Bu olay Ön Büro ile Kat Hizmetleri arasındaki liste paylaşımının hayati önemini gösterdi.",
+      "tip": "Departure List'i her sabah saat 08:00'de güncelleyerek Kat Hizmetleri şefine ve restoran şeflerine mutlaka iletin. Böylece çıkış yapacak odaların kontrolleri ve temizlik planı en hızlı şekilde tamamlanır."
     }
   ]
 };

@@ -62,20 +62,30 @@ class OnboardingTourScreen extends ConsumerStatefulWidget {
 
   /// Rehberi global OverlayEntry olarak ekranda en üstte başlatır.
   static void show(BuildContext context, GlobalKey gradeGridKey, GlobalKey modulesKey) {
-    if (_entry != null) return;
+    if (_entry != null) {
+      try {
+        _entry?.remove();
+      } catch (_) {}
+      _entry = null;
+    }
+
+    final overlay = Overlay.maybeOf(context);
+    if (overlay == null) return;
     
     _entry = OverlayEntry(
       builder: (context) => OnboardingTourScreen(
         gradeGridKey: gradeGridKey,
         modulesKey: modulesKey,
         onDismiss: () {
-          _entry?.remove();
+          try {
+            _entry?.remove();
+          } catch (_) {}
           _entry = null;
         },
       ),
     );
     
-    Overlay.of(context).insert(_entry!);
+    overlay.insert(_entry!);
   }
 
   @override
@@ -206,6 +216,14 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
               size.height,
             );
           }
+          if (activeKey == ShellKeys.navKeys[1]) {
+            return Rect.fromLTWH(
+              offset.dx - 2,
+              offset.dy - 2,
+              size.width + 4,
+              size.height + 4,
+            );
+          }
           return Rect.fromLTWH(
             offset.dx - 8,
             offset.dy - 8,
@@ -269,7 +287,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
   late final List<_TourStep> _steps = [
     _TourStep(
       title: 'Turizm Defterim\'e Hoş Geldiniz!',
-      description: 'Turizm eğitimi yolculuğunuzda en yakın yardımcınız olacak bu interaktif uygulamayı keşfetmeye hazır mısınız? Size kısaca rehberlik edelim.',
+      description: 'Turizm eğitimi yolculuğunuzdaki yardımcınız olacak bu interaktif uygulamayı keşfetmeye hazır mısınız? Uygulamayı tanımanız için size kısaca rehberlik edeceğim.',
       buttonText: 'Hadi Başlayalım!',
       icon: Icons.auto_awesome_rounded,
       tabIndex: 0,
@@ -461,7 +479,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       gradient: AppColors.grade9Gradient,
       accentColor: Colors.cyanAccent,
       cardPosition: CardPosition.top,
-      showOverlay: true,
+      showOverlay: false,
       developerName: 'Erol Mert YURDAKUL',
     ),
   ];
@@ -674,6 +692,15 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
               size.height,
             );
           }
+          if (activeKey == ShellKeys.navKeys[1]) {
+            // Tight-fit for navigation bar item (Applications button)
+            return Rect.fromLTWH(
+              offset.dx - 2,
+              offset.dy - 2,
+              size.width + 4,
+              size.height + 4,
+            );
+          }
           return Rect.fromLTWH(
             offset.dx - 8,
             offset.dy - 8,
@@ -696,11 +723,15 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
               ? const Duration(milliseconds: 1600) 
               : const Duration(milliseconds: 800);
               
-          final scrollAlignment = _currentStep == 12 ? 0.35 : 0.08;
+          final scrollAlignment = _currentStep == 17 ? 0.72 : _currentStep == 12 ? 0.35 : 0.08;
           final scrollCurve = _currentStep == 12 ? Curves.easeInOutQuart : Curves.easeInOutCubic;
+
+          final targetContext = _currentStep == 17 && ShellKeys.devNoteKey.currentContext != null
+              ? ShellKeys.devNoteKey.currentContext!
+              : context;
               
           Scrollable.ensureVisible(
-            context,
+            targetContext,
             duration: scrollDuration,
             curve: scrollCurve,
             alignment: scrollAlignment,
@@ -966,7 +997,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       case 2:
         return 'Derse Dokun.';
       case 4:
-        return 'Üniteye Dokun.';
+        return 'Butona Dokun.';
       case 7:
         return 'Ders Notuna Dokun.';
       case 13:
@@ -995,13 +1026,20 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
         bottom = null;
         break;
       case CardPosition.top:
-        double calculatedTop = MediaQuery.of(context).padding.top + 24;
+        double calculatedTop = MediaQuery.of(context).padding.top + 20;
         if (_currentStep == 17) {
-          calculatedTop = MediaQuery.of(context).padding.top + 16;
-        } else if ((_currentStep == 9 || _currentStep == 12 || _currentStep == 17) && _spotlightRect != Rect.zero) {
+          final RenderBox? profileBox = ShellKeys.profileCardKey.currentContext?.findRenderObject() as RenderBox?;
+          if (profileBox != null) {
+            final profileOffset = profileBox.localToGlobal(Offset.zero);
+            final profileSize = profileBox.size;
+            calculatedTop = profileOffset.dy + profileSize.height + 12;
+          } else {
+            calculatedTop = MediaQuery.of(context).padding.top + 300;
+          }
+        } else if ((_currentStep == 9 || _currentStep == 12) && _spotlightRect != Rect.zero) {
           final double safeAreaTop = MediaQuery.of(context).padding.top;
           final double targetTop = _spotlightRect.top;
-          calculatedTop = ((safeAreaTop + targetTop) / 2 - 75).clamp(safeAreaTop + 12, targetTop - 170);
+          calculatedTop = ((safeAreaTop + targetTop) / 2 - 75).clamp(safeAreaTop + 12, targetTop - 145);
         }
         top = calculatedTop;
         bottom = null;
@@ -1077,10 +1115,8 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
               AnimatedBuilder(
                 animation: _pulseController,
                 builder: (context, child) {
-                  // Sadece alt navigasyon bar butonları hedef alındığında dairedir
-                  final activeKey = step.targetKey;
-                  final bool isCircle = _currentStep == 13 || 
-                      (step.tabIndex > 0 && step.targetKey == null && step.buttonText.isEmpty);
+                  // Tüm hedeflerde tutarlı ve şık bir görünüm için köşeleri yuvarlatılmış dikdörtgen (RRect) kullanılır
+                  const bool isCircle = false;
 
                   return AnimatedSpotlight(
                     targetRect: _spotlightRect,
@@ -1089,6 +1125,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                     size: size,
                     showOverlay: step.showOverlay,
                     isCircle: isCircle,
+                    hideCutout: _currentStep == 17,
                   );
                 },
               ),
@@ -1175,11 +1212,6 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                                   letterSpacing: 0.3,
                                 ),
                               ),
-                              if (step.title.contains('Hoş Geldiniz'))
-                                TextSpan(
-                                  text: ' 🛎️',
-                                  style: const TextStyle(fontSize: 13),
-                                ),
                             ],
                           ),
                         ),
@@ -1321,7 +1353,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
   }
 
   Widget _buildPointer(Rect rect, Size screenSize) {
-    if (rect == Rect.zero) return const SizedBox.shrink();
+    if (rect == Rect.zero || _currentStep == 17) return const SizedBox.shrink();
     
     final step = _steps[_currentStep];
     final bool shouldPointUp;
@@ -1480,6 +1512,7 @@ class AnimatedSpotlight extends ImplicitlyAnimatedWidget {
   final Size size;
   final bool showOverlay;
   final bool isCircle;
+  final bool hideCutout;
 
   const AnimatedSpotlight({
     super.key,
@@ -1489,6 +1522,7 @@ class AnimatedSpotlight extends ImplicitlyAnimatedWidget {
     required this.size,
     required this.showOverlay,
     required this.isCircle,
+    this.hideCutout = false,
     super.duration = const Duration(milliseconds: 218),
     super.curve = Curves.easeOutCubic,
   });
@@ -1522,6 +1556,7 @@ class _AnimatedSpotlightState
         glowColor: widget.glowColor,
         showOverlay: widget.showOverlay,
         isCircle: widget.isCircle,
+        hideCutout: widget.hideCutout,
       ),
     );
   }
@@ -1534,6 +1569,7 @@ class _SpotlightPainter extends CustomPainter {
   final Color glowColor;
   final bool showOverlay;
   final bool isCircle;
+  final bool hideCutout;
 
   _SpotlightPainter({
     required this.targetRect,
@@ -1541,6 +1577,7 @@ class _SpotlightPainter extends CustomPainter {
     required this.glowColor,
     required this.showOverlay,
     required this.isCircle,
+    this.hideCutout = false,
   });
 
   @override
@@ -1550,7 +1587,7 @@ class _SpotlightPainter extends CustomPainter {
     canvas.saveLayer(Offset.zero & size, Paint());
     canvas.drawRect(Offset.zero & size, paint);
 
-    if (targetRect != null && targetRect != Rect.zero) {
+    if (targetRect != null && targetRect != Rect.zero && !hideCutout) {
       final cutPaint = Paint()..blendMode = BlendMode.clear;
       if (isCircle) {
         canvas.drawOval(targetRect!, cutPaint);
@@ -1604,7 +1641,8 @@ class _SpotlightPainter extends CustomPainter {
         oldDelegate.pulseValue != pulseValue ||
         oldDelegate.glowColor != glowColor ||
         oldDelegate.showOverlay != showOverlay ||
-        oldDelegate.isCircle != isCircle;
+        oldDelegate.isCircle != isCircle ||
+        oldDelegate.hideCutout != hideCutout;
   }
 }
 
@@ -1630,25 +1668,30 @@ class _InteractiveTourButton extends StatefulWidget {
 }
 
 class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
-  double _scale = 1.0;
+  bool _isPressed = false;
   bool _isHovered = false;
 
   void _onTapDown(TapDownDetails details) {
     setState(() {
-      _scale = 0.92; // Tıklama anında küçülme
+      _isPressed = true;
     });
   }
 
   void _onTapUp(TapUpDetails details) {
     setState(() {
-      _scale = 1.0;
+      _isPressed = false;
     });
-    widget.onTap();
+    // Apple klavye tuşu tıklama tepki süresi (80ms) sonrası eylemi tetikle
+    Future.delayed(const Duration(milliseconds: 80), () {
+      if (mounted) {
+        widget.onTap();
+      }
+    });
   }
 
   void _onTapCancel() {
     setState(() {
-      _scale = 1.0;
+      _isPressed = false;
     });
   }
 
@@ -1663,9 +1706,13 @@ class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
         onTapUp: _onTapUp,
         onTapCancel: _onTapCancel,
         child: AnimatedScale(
-          scale: _scale,
-          duration: const Duration(milliseconds: 109),
-          curve: Curves.easeOut,
+          scale: _isPressed ? 0.96 : 1.0, // Apple standardı: Sadece %4 mikro-basış payı
+          duration: _isPressed 
+              ? const Duration(milliseconds: 60)   // Basılırken ultra hızlı tepki (60ms)
+              : const Duration(milliseconds: 150),  // Bırakılırken pürüzsüz ve tok geri büyüme (150ms)
+          curve: _isPressed 
+              ? Curves.easeOutQuad 
+              : Curves.easeOutCubic, // Kararlı ve profesyonel sönümlenme
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 218),
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),

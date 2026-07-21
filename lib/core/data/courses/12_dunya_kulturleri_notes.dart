@@ -532,6 +532,20 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "examples": [
             "Örnekle Pekiştirelim: Hintli konuklar için otel kahvaltı büfesinde sığır veya domuz eti içermeyen, taze kimyon ve köri aromalı özel mercimek çorbasının sunulmasıdır."
           ]
+        },
+        {
+          "name": "Koşer (Kosher) Kuralları",
+          "desc": "Yahudi inancına göre tüketilmesi uygun olan gıdalardır. Et ve süt ürünlerinin asla bir arada pişirilmemesi ve aynı mutfak ekipmanlarının (tencere, tabak, bıçak) kullanılmaması gibi çok katı kuralları vardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Musevi misafirlerin yiyeceği et yemeğinin yanında tereyağı veya yoğurt sunulmaması, etin Koşer sertifikalı kasaptan alınıp ayrı mutfak tezgahında hazırlanmasıdır."
+          ]
+        },
+        {
+          "name": "Vegan ve Vejetaryen Standartları",
+          "desc": "Vejetaryen: Et yemeyen ancak süt, peynir, yumurta tüketen beslenme şeklidir. Vegan: Hayvansal hiçbir ürünü (bal dahil) tüketmeyen, tamamen bitki bazlı felsefedir. Ayrı pişirme alanları kullanılmalıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Vegan misafirin yemeğinin, et pişen ızgarada değil, tamamen temizlenmiş ayrı bir tavada zeytinyağı ve taze sebzelerle hazırlanmasıdır."
+          ]
         }
       ],
       "caseStudy": "Hintli bir düğün grubu Antalya'da lüks bir oteli kapattığında, otel mutfağına mutlaka dışarıdan kendi getirdikleri Hintli aşçıları sokarlar. Çünkü Hint yemek kültürü son derece katıdır ve kendi aşçıları dışında kimsenin baharat dengesini tutturamayacağına inanırlar. Otel yönetimi bu esnekliği göstermek zorundadır.",

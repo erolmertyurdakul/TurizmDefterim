@@ -1,7 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
@@ -54,7 +56,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               const SizedBox(height: AppSizes.xl),
               _buildBadgesSection(),
 
-              const SizedBox(height: AppSizes.xxl),
+              const SizedBox(height: 36),
               _buildDeveloperNote(),
               const SizedBox(height: 120), // Yüzen navigasyon barının kartın üstüne binmesini engellemek için
               const SizedBox(height: AppSizes.xl),
@@ -69,6 +71,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     final accentColor = const Color(0xFF00FFCC); // Canlı neon turkuaz
 
     return Container(
+      key: ShellKeys.profileCardKey,
       width: double.infinity,
       height: 290,
       decoration: BoxDecoration(
@@ -140,7 +143,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               child: ClipRRect(
                 borderRadius: const BorderRadius.vertical(bottom: Radius.circular(26)),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                  filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
                     decoration: BoxDecoration(
@@ -502,6 +505,46 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               fontSize: 12,
               color: AppColors.textSecondary,
               height: 1.5,
+            ),
+          ),
+          const SizedBox(height: 16),
+          InkWell(
+            onTap: () async {
+              final prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('has_seen_onboarding_guide', false);
+              ref.read(shellTabProvider.notifier).state = 0;
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Uygulama rehberi sıfırlandı. Ana sayfaya yönlendiriliyorsunuz...'),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+              }
+            },
+            borderRadius: BorderRadius.circular(12),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              decoration: BoxDecoration(
+                color: AppColors.primaryMid.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: AppColors.primaryMid.withValues(alpha: 0.2)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.help_outline_rounded, size: 18, color: AppColors.accent),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Uygulama Rehberini Baştan İzle',
+                    style: GoogleFonts.outfit(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

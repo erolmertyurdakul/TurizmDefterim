@@ -106,6 +106,16 @@ class PodcastService extends ChangeNotifier {
     _lastPositionTime = DateTime.now();
 
     _positionSubscription = player.positionStream.listen((pos) {
+      // Konaklama İşletmeciliği 3. Öğrenme Birimi podcast'indeki 10:57 - 11:02 arasını otomatik atla (5 saniye)
+      if (_currentUrl == "https://anchor.fm/s/114a64400/podcast/play/122579689/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-6-8%2Fb244ca28-e2da-8d0d-21d6-3b8fec5a9421.mp3") {
+        const cutStart = Duration(minutes: 10, seconds: 57);
+        const cutEnd = Duration(minutes: 11, seconds: 2);
+        if (pos >= cutStart && pos < cutEnd) {
+          player.seek(cutEnd);
+          return;
+        }
+      }
+
       if (pos != _lastPosition) {
         _lastPosition = pos;
         _lastPositionTime = DateTime.now(); // Pozisyon ilerledikçe zamanı güncelle
@@ -113,14 +123,19 @@ class PodcastService extends ChangeNotifier {
       notifyListeners();
     });
 
-    // Akıllı Watchdog: Stream donmasını yakalar ve tarayıcı ses kanalını aktif tutar (keep-alive)
+    // Akıllı Watchdog: Stream donmasını yakalar ve otomatik kurtarma sağlar.
     _watchdogTimer?.cancel();
     _watchdogTimer = Timer.periodic(const Duration(seconds: 2), (_) async {
-      if (player.playing && _currentUrl != null) {
+      final processingState = player.processingState;
+      final isBuffering = processingState == ProcessingState.buffering || 
+                          processingState == ProcessingState.loading;
+
+      if (player.playing && _currentUrl != null && !isBuffering) {
         final now = DateTime.now();
         
-        // 1. Web Audio Context Keep-Alive (Akış sürerken sesin gitmesini önler)
-        if (now.second % 6 == 0) {
+        // Web'de periyodik setVolume çağrıları tarayıcı ses kanalını anlık kesebildiği için
+        // bu işlemi sadece web dışı platformlarda çalıştırıyoruz.
+        if (!kIsWeb && now.second % 8 == 0) {
           try {
             await player.setVolume(player.volume);
           } catch (_) {}
@@ -128,15 +143,15 @@ class PodcastService extends ChangeNotifier {
 
         final idleDuration = now.difference(_lastPositionTime);
 
-        // 2. Stream Donma Algılayıcı
-        if (idleDuration.inSeconds >= 4) {
+        // Donma algılama toleransını yavaş internet bağlantıları için 4 saniyeden 12 saniyeye çıkarıyoruz.
+        if (idleDuration.inSeconds >= 12) {
           if (kDebugMode) {
             print("PodcastService: Stream freeze detected! Initiating automatic recovery...");
           }
 
           final currentPos = player.position;
-          final recoverPos = currentPos > const Duration(seconds: 1)
-              ? currentPos - const Duration(milliseconds: 500)
+          final recoverPos = currentPos > const Duration(seconds: 2)
+              ? currentPos - const Duration(milliseconds: 1000)
               : Duration.zero;
 
           try {
@@ -294,7 +309,7 @@ class PodcastService extends ChangeNotifier {
         final session = await AudioSession.instance;
         await session.configure(const AudioSessionConfiguration.speech());
       } else {
-        await _player.setWebCrossOrigin(WebCrossOrigin.anonymous);
+        await _player.setWebCrossOrigin(null);
       }
 
       final audioSource = AudioSource.uri(

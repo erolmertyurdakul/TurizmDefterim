@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'splash_screen.dart';
 
@@ -17,7 +18,9 @@ class _InitialSplashScreenState extends State<InitialSplashScreen> {
         Navigator.pushReplacement(
           context,
           PageRouteBuilder(
-            transitionDuration: const Duration(milliseconds: 600), // Yaklaşık yarım saniye (600ms) geçiş
+            transitionDuration: kIsWeb
+                ? Duration.zero // Web'de geçiş animasyonu yok — anında açılır
+                : const Duration(milliseconds: 600),
             pageBuilder: (context, animation, secondaryAnimation) => const SplashScreen(),
             transitionsBuilder: (context, animation, secondaryAnimation, child) {
               return FadeTransition(
@@ -34,7 +37,7 @@ class _InitialSplashScreenState extends State<InitialSplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Color(0xFF0A1628), // Orijinal açılış ekranının zemin rengiyle uyumlu
+      backgroundColor: Color(0xFF0A1628),
       body: SizedBox.expand(),
     );
   }

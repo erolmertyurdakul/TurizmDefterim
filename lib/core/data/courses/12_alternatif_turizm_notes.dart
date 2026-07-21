@@ -193,6 +193,27 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           ]
         },
         {
+          "name": "Balneoterapi",
+          "desc": "Termomineral sular, şifalı çamurlar veya gazların belirli kürler halinde (genellikle 14-21 gün, günde 1 veya 2 banyo şeklinde) vücuda banyo veya içme şeklinde uygulanmasıyla yapılan yasal kaplıca tedavi yöntemidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Doktor kontrolündeki bir misafirin, 15 gün boyunca her sabah termal havuzda 20 dakika kalıp mineral emilimini sağlaması ve su içme kürü uygulamasıdır."
+          ]
+        },
+        {
+          "name": "Klimatoterapi",
+          "desc": "Temiz hava, güneş ışığı ve deniz havası gibi iklim faktörlerinin, doktor gözetiminde solunum, dolaşım ve deri hastalıklarının tedavisi amacıyla hedeflenen bölgede kullanılmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Astım hastası bir misafirin, havası nemsiz ve oksijeni bol olan Kaz Dağları'nda doktor tavsiyesiyle 3 hafta kalarak solunum kürü yapmasıdır."
+          ]
+        },
+        {
+          "name": "Peloidoterapi (Çamur Tedavisi)",
+          "desc": "Organik ve inorganik maddeler içeren şifalı doğal çamurların (peloid) lokal olarak ısıtılarak (genellikle 40-45 derece sıcaklıkta) vücuda bölgesel sarılması veya banyo şeklinde uygulanmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Eklem ağrısı olan misafirin, kaplıca tesisindeki peloidoterapi ünitesinde dizlerine sıcak çamur sürdürüp 30 dakika sargıda bekleterek şifa aramasıdır."
+          ]
+        },
+        {
           "name": "SPA & Wellness Turizmi",
           "desc": "SPA (Sudan gelen sağlık) ve Wellness (iyilik hali, zindelik). Cilt bakımı, masaj, yosun banyosu gibi bedeni ve ruhu dinlendiren hizmetlerdir.",
           "examples": [
@@ -220,6 +241,13 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "desc": "Karlı dağlarda yapılan kayak, snowboard, kar motoru (snowmobile) gibi aktiviteleri kapsar. Maliyeti yüksek bir turizm çeşididir. En popüler merkezler: Palandöken (Erzurum), Uludağ (Bursa), Erciyes (Kayseri), Kartalkaya (Bolu), Sarıkamış (Kars).",
           "examples": [
             "Örnekle Pekiştirelim: Sömestr tatilinde kayak takımlarını alıp ailesiyle birlikte Bursa Uludağ'daki telesiyejli ve karlı pistleri olan bir otele tatile giden bir gencin yaptığı spordur."
+          ]
+        },
+        {
+          "name": "Kayak Pisti Zorluk Dereceleri",
+          "desc": "Kayak pistlerinin eğimlerine ve zorluklarına göre dünya standartlarında renklendirilmesidir: Yeşil Pist (%10'dan az eğim, yeni başlayanlar), Mavi Pist (%10-25 eğim, orta düzey), Kırmızı Pist (%25-40 eğim, iyi düzey) ve Siyah Pist (%40'tan fazla dik eğim, uzman kayakçılar).",
+          "examples": [
+            "Örnekle Pekiştirelim: Hayatında ilk kez kayak yapacak olan Ahmet'in, eğitmen eşliğinde en güvenli ve düz olan Yeşil Pist'te alıştırmalar yapması; deneyimli abisinin ise dik ve engebeli olan Kırmızı veya Siyah Pist'i tercih etmesidir."
           ]
         },
         {

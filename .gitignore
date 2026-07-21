@@ -44,5 +44,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Key Signing & Android Security
+*.jks
+**/android/key.properties
+**/android/app/key.properties
+
 # PDF Files (Data source - not needed in git)
 /pdfs/

@@ -499,6 +499,37 @@ const Map<String, dynamic> katHizmetleriUnit5 = {
       ],
       "caseStudy": "Sektörden Vaka: Turizm Defterim İstanbul Boğazi'de RFID çipli tekstil takip sistemine geçilmesiyle birlikte, yıllık %8 olan tekstil kayıp oranı sıfıra indi. Her havlu ve çarşafa dikilen çipler, yıkama sayısını ve konumunu anlık izleyerek hem kayıpları hem de ömür sonuna gelen tekstillerin zamanında yenilenmesini otomatik olarak takip etti.",
       "tip": "Çamaşırhane personeli, otelin 'görünmez kalite güvencesi'dir. Onların yaptığı işin kalitesi misafirin yatağında uyurken hissedilir; ama ad konulmaz."
+    },
+    {
+      "id": 4,
+      "tag": "ÇAMAŞIRHANE TEKNOLOJİSİ",
+      "title": "ÇAMAŞIRHANE MAKİNE YÜKLEME MATEMATİĞİ VE G-KUVVETİ STANDARTLARI",
+      "microSummary": "Çamaşırhanede verimlilik ve tekstil ömrünü uzatmak, doğru yükleme oranları ve ideal sıkma hızları (G-Kuvveti) ile mümkündür.",
+      "definitions": [
+        {
+          "name": "Makine Yükleme Oranı Formülü",
+          "desc": "Çamaşır makinelerinin verimli yıkayabilmesi için kuru çamaşır ağırlığının (kg) makine tambur hacmine oranıdır. İdeal oran 1:10 ile 1:12 arasındadır (Yük = Hacim x Yoğunluk formülüne göre). Eksik veya fazla yükleme makineye ve çamaşıra zarar verir.",
+          "examples": [
+            "Örnekle Pekiştirelim: 50 kg kuru çamaşır kapasiteli bir endüstriyel makineye tam 50 kg kuru çarşaf tartılarak konmasıdır. Bu sayede makine ne eksik çalışır ne de aşırı yükten dolayı rulmanları bozar."
+          ]
+        },
+        {
+          "name": "G-Kuvveti (Sıkma Hızı Faktörü)",
+          "desc": "Sıkma (santrifüj) esnasında çamaşırın üzerindeki suyun uzaklaştırılmasını sağlayan merkezkaç kuvvetidir. Yüksek G-kuvveti kurutma süresini kısaltır ama liflerin yıpranmasına yol açar. Kumaş tipine göre ayarlanmalıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Havlular için 350 G-Kuvveti (yüksek sıkma) uygulanarak suyun %50'si atılırken, hassas saten çarşaflar için 150 G-Kuvveti (düşük sıkma) uygulanarak kumaş liflerinin korunmasıdır."
+          ]
+        },
+        {
+          "name": "Kurutma Isı ve Zaman Dengesi",
+          "desc": "Pamuklu çarşaflar için yüksek ısı, ipekli ve sentetik kumaşlar için düşük ısı ve havalandırma periyodu içeren kurutma standartlarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Kalın havluların 75 derecede kurutulup yumuşatılması, hassas ipek nevresimlerin ise 45 derecede kurutulup kırışıklık önleyici soğutma (cool down) çevrimine tabi tutulmasıdır."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Antalya'da bir otelde, çamaşırhane personeli makineleri aceleden kapasitesinin çok üzerinde doldurarak çalıştırdı. 50 kg'lık makineye 65 kg çamaşır yüklendi. Yıkama sonunda çarşaflarda grileşme, deterjan lekeleri ve yüksek sıkma hızında (yetersiz su tahliyesinden dolayı) 8 adet çarşafın yırtıldığı görüldü. Otel 12.000 TL'lik tekstil hasarı yaşadı. Bu olaydan sonra çamaşırhaneye terazi konularak her yükün tartılması ve yükleme formülüne uyulması zorunlu kılındı.",
+      "tip": "Makineleri aşırı doldurursanız çamaşırlar tamburda serbestçe dönemez ve temizlenmez. Çok az doldurursanız ise su ve kimyasal israfı olur, çamaşırlar birbirine çarparak erken yıpranır. İdeal yükleme seviyesi tamburun 3/4'ü kadar olmalıdır."
     }
   ]
 };

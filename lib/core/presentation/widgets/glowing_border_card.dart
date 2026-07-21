@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
 /// Dönen neon gradyan çerçeveli ve ışıltılı dış gölgeli premium kart widget'ı.
 /// Cam morfizması tasarımlar için harika bir çerçeve efekti sunar.
@@ -92,8 +93,8 @@ class _GlowingBorderPainter extends CustomPainter {
     // Dış ışıltı gölgesi (Neon aura efekti)
     final glowPaint = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = borderWidth + 4
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12.0);
+      ..strokeWidth = borderWidth + (kIsWeb ? 0 : 4)
+      ..maskFilter = kIsWeb ? null : const MaskFilter.blur(BlurStyle.normal, 12.0);
 
     // Keskin gradyan çerçeve çizgisi
     final borderPaint = Paint()

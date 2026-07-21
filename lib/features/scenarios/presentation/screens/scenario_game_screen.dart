@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/scenario_provider.dart';
 import 'scenario_report_screen.dart';
 import '../../../../core/utils/fade_page_route.dart';
+import '../../../../core/providers/points_provider.dart';
 
 class ScenarioGameScreen extends ConsumerStatefulWidget {
   const ScenarioGameScreen({super.key});
@@ -15,10 +17,16 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
   bool isFeedbackOpen = false;
   late AnimationController _panelController;
   late Animation<Offset> _panelOffsetAnimation;
+  Timer? _timePointsTimer;
 
   @override
   void initState() {
     super.initState();
+    _timePointsTimer = Timer.periodic(const Duration(minutes: 1), (timer) {
+      if (mounted) {
+        ref.read(pointsProvider.notifier).addReadingPoints();
+      }
+    });
     _panelController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 400),
@@ -34,6 +42,7 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
 
   @override
   void dispose() {
+    _timePointsTimer?.cancel();
     _panelController.dispose();
     super.dispose();
   }
@@ -57,6 +66,8 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
   Widget build(BuildContext context) {
     final state = ref.watch(scenarioProvider);
     final currentStep = state.currentStep;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double imageHeight = (screenHeight * 0.25).clamp(110.0, 230.0);
 
     if (state.currentScenario == null || currentStep == null && !state.isFinished) {
       return const Scaffold(
@@ -86,7 +97,7 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 title: const Text('Simülasyondan Çıkılsın mı?', style: TextStyle(color: Colors.white)),
                 content: const Text(
-                  'Mevcut ilerlemeniz ve canlı KPI durumlarınız silinecektir.',
+                  'Mevcut ilerlemeniz silinecektir.',
                   style: TextStyle(color: Colors.white70),
                 ),
                 actions: [
@@ -130,134 +141,141 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
           SafeArea(
             child: Column(
               children: [
-                _buildKPIMeters(state),
-                const SizedBox(height: 10),
-
                 // Main Game content
                 if (currentStep != null)
                   Expanded(
-                    child: SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
+                    child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         children: [
-                          // Story Image Card
-                          Container(
-                            height: 300,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              border: Border.all(color: Colors.white.withOpacity(0.1)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.4),
-                                  blurRadius: 15,
-                                  offset: const Offset(0, 8),
-                                ),
-                              ],
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(24),
-                              child: Padding(
-                                padding: EdgeInsets.zero,
-                                child: Image.asset(
-                                  currentStep.imageUrl,
-                                  fit: BoxFit.cover,
-                                  alignment: Alignment.topCenter,
-                                  errorBuilder: (context, error, stackTrace) => Container(
-                                    color: Colors.white10,
-                                    child: const Icon(Icons.broken_image, color: Colors.white24, size: 50),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-
-                          // Step Title & Story Box
-                          Container(
-                            padding: const EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.05),
-                              borderRadius: BorderRadius.circular(24),
-                              border: Border.all(color: Colors.white.withOpacity(0.1)),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  currentStep.title,
-                                  style: const TextStyle(
-                                    color: Colors.cyanAccent,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                Text(
-                                  currentStep.story,
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    height: 1.5,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-
-                          // Deceptive Choices (Buttons)
-                          Column(
-                            children: currentStep.options.map((option) {
-                              return Padding(
-                                padding: const EdgeInsets.only(bottom: 12),
-                                child: InkWell(
-                                  onTap: isFeedbackOpen
-                                      ? null
-                                      : () {
-                                          ref.read(scenarioProvider.notifier).selectOption(option);
-                                          _showFeedback();
-                                        },
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Container(
+                          // 1. Scrollable Middle Area (Image + Story)
+                          Expanded(
+                            child: SingleChildScrollView(
+                              physics: const BouncingScrollPhysics(),
+                              child: Column(
+                                children: [
+                                  const SizedBox(height: 6),
+                                  // Story Image Card - Dynamically Scaled
+                                  Container(
+                                    height: imageHeight,
                                     width: double.infinity,
-                                    padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
                                     decoration: BoxDecoration(
-                                      color: Colors.white.withOpacity(0.06),
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(
-                                        color: Colors.cyanAccent.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(color: Colors.white.withOpacity(0.1)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.4),
+                                          blurRadius: 12,
+                                          offset: const Offset(0, 6),
+                                        ),
+                                      ],
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image.asset(
+                                        currentStep.imageUrl,
+                                        fit: BoxFit.cover,
+                                        alignment: Alignment.topCenter,
+                                        errorBuilder: (context, error, stackTrace) => Container(
+                                          color: Colors.white10,
+                                          child: const Icon(Icons.broken_image, color: Colors.white24, size: 40),
+                                        ),
                                       ),
                                     ),
-                                    child: Row(
+                                  ),
+                                  const SizedBox(height: 12),
+
+                                  // Step Title & Story Box
+                                  Container(
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.04),
+                                      borderRadius: BorderRadius.circular(20),
+                                      border: Border.all(color: Colors.white.withOpacity(0.08)),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Expanded(
-                                          child: Text(
-                                            option.text,
-                                            style: const TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.w600,
-                                              height: 1.3,
-                                            ),
+                                        Text(
+                                          currentStep.title,
+                                          style: const TextStyle(
+                                            color: Colors.cyanAccent,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            letterSpacing: 0.5,
                                           ),
                                         ),
-                                        const SizedBox(width: 10),
-                                        const Icon(
-                                          Icons.arrow_forward_ios_rounded,
-                                          color: Colors.cyanAccent,
-                                          size: 16,
+                                        const SizedBox(height: 8),
+                                        Text(
+                                          currentStep.story,
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 15,
+                                            height: 1.45,
+                                          ),
                                         ),
                                       ],
                                     ),
                                   ),
-                                ),
-                              );
-                            }).toList(),
+                                  const SizedBox(height: 12),
+                                ],
+                              ),
+                            ),
                           ),
-                          const SizedBox(height: 30),
+
+                          // 2. Fixed Choice Buttons Area (At the bottom, always visible without scrolling)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 16),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: currentStep.options.map((option) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 8),
+                                  child: InkWell(
+                                    onTap: isFeedbackOpen
+                                        ? null
+                                        : () {
+                                            ref.read(scenarioProvider.notifier).selectOption(option);
+                                            _showFeedback();
+                                          },
+                                    borderRadius: BorderRadius.circular(16),
+                                    child: Container(
+                                      width: double.infinity,
+                                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withOpacity(0.06),
+                                        borderRadius: BorderRadius.circular(16),
+                                        border: Border.all(
+                                          color: Colors.cyanAccent.withOpacity(0.2),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              option.text,
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 14.5,
+                                                fontWeight: FontWeight.w600,
+                                                height: 1.3,
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 8),
+                                          const Icon(
+                                            Icons.arrow_forward_ios_rounded,
+                                            color: Colors.cyanAccent,
+                                            size: 14,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -289,82 +307,8 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
     );
   }
 
-  // Real-time KPI Status Bars
-  Widget _buildKPIMeters(ScenarioState state) {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 15.0),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.03),
-        border: Border(bottom: BorderSide(color: Colors.white.withOpacity(0.08))),
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(child: _buildSingleKPI('Misafir Memnuniyeti', state.satisfaction, '%', Colors.pinkAccent, Icons.favorite_rounded)),
-              const SizedBox(width: 16),
-              Expanded(child: _buildSingleKPI('Otel Bütçesi', state.budget, '\$', Colors.greenAccent, Icons.account_balance_wallet_rounded, maxVal: 1000)),
-            ],
-          ),
-          const SizedBox(height: 10),
-          _buildSingleKPI('Otel İtibarı', state.reputation, '%', Colors.amberAccent, Icons.verified_user_rounded),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSingleKPI(String title, int value, String unit, Color color, IconData icon, {int maxVal = 100}) {
-    final ratio = (value / maxVal).clamp(0.0, 1.0);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Icon(icon, color: color, size: 14),
-                const SizedBox(width: 4),
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.white.withOpacity(0.6),
-                    fontSize: 11,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              '$value$unit',
-              style: TextStyle(
-                color: color,
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 6),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: SizedBox(
-            height: 6,
-            child: LinearProgressIndicator(
-              value: ratio,
-              backgroundColor: Colors.white.withOpacity(0.08),
-              valueColor: AlwaysStoppedAnimation<Color>(color),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   // Slide-up Erol Hoca Feedback UI
   Widget _buildErolHocaPanel(BuildContext context, ScenarioState state) {
-    final hasNext = state.currentStep != null;
-
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(24),
@@ -403,25 +347,13 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
                 ),
               ),
               const SizedBox(width: 12),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Erol Hoca Operasyonel Analiz',
-                    style: TextStyle(
-                      color: Colors.cyanAccent,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'Sektörel Tecrübe & Gerçekçi Fatura',
-                    style: TextStyle(
-                      color: Colors.white.withOpacity(0.5),
-                      fontSize: 11,
-                    ),
-                  ),
-                ],
+              const Text(
+                'Operasyonel Analiz',
+                style: TextStyle(
+                  color: Colors.cyanAccent,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -435,7 +367,7 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
               borderRadius: BorderRadius.circular(16),
             ),
             child: Text(
-              state.lastOptionFeedback ?? '',
+              _cleanFeedbackText(state.lastOptionFeedback),
               textAlign: TextAlign.justify,
               style: const TextStyle(
                 color: Colors.white,
@@ -494,5 +426,40 @@ class _ScenarioGameScreenState extends ConsumerState<ScenarioGameScreen> with Si
         ],
       ),
     );
+  }
+
+  /// Geri bildirim metinlerini resmi ve pedagojik hale getiren filtre
+  String _cleanFeedbackText(String? text) {
+    if (text == null) return '';
+    String result = text;
+    
+    // "Erol Hoca Analizi:" ön ekini temizle
+    if (result.startsWith('Erol Hoca Analizi:')) {
+      result = result.replaceFirst('Erol Hoca Analizi:', '').trim();
+    }
+    
+    // Tırnak işaretlerini kaldır
+    if (result.startsWith('"') && result.endsWith('"')) {
+      result = result.substring(1, result.length - 1);
+    } else if (result.startsWith('“') && result.endsWith('”')) {
+      result = result.substring(1, result.length - 1);
+    }
+    
+    // Kelimeleri resmi ve pedagojik hale getir
+    return result
+        .replaceAll('evlat!', 'genç meslektaşım!')
+        .replaceAll('evlat.', 'genç meslektaşım.')
+        .replaceAll(' evlat', ' genç meslektaşım')
+        .replaceAll('evlat ', 'genç meslektaşım ')
+        .replaceAll('evlat', 'genç meslektaşım')
+        .replaceAll('öğrencim!', 'öğrencimiz!')
+        .replaceAll('öğrencim.', 'öğrencimiz.')
+        .replaceAll(' öğrencim', ' öğrencimiz')
+        .replaceAll('öğrencim ', 'öğrencimiz ')
+        .replaceAll('öğrencim', 'öğrencimiz')
+        .replaceAll('Aferin', 'Tebrikler')
+        .replaceAll('Korkunç', 'Son derece uygunsuz')
+        .replaceAll('çöküş', 'yaklaşım')
+        .replaceAll('oteli batırdın', 'işletmeye zarar verdiniz');
   }
 }

@@ -183,7 +183,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
             child: Text(
               question.questionText,
               style: GoogleFonts.outfit(
-                fontSize: 16, // Soru daha uzun olabileceği için 22 yerine 16
+                fontSize: 20,
                 fontWeight: FontWeight.w700,
                 color: Colors.white.withValues(alpha: 0.85),
                 height: 1.35,
@@ -311,7 +311,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                       String.fromCharCode(65 + index), // A, B, C, D
                       style: GoogleFonts.outfit(
                         fontWeight: FontWeight.w700,
-                        fontSize: 13,
+                        fontSize: 15,
                         color: _isAnswered ? textColor : Colors.grey.shade700,
                       ),
                     ),
@@ -321,7 +321,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                     child: Text(
                       text,
                       style: GoogleFonts.inter(
-                        fontSize: 12,
+                        fontSize: 15.5,
                         fontWeight: FontWeight.w600,
                         color: textColor,
                       ),
@@ -362,7 +362,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                 Text(
                   'Öğrenme Notu:',
                   style: GoogleFonts.outfit(
-                    fontSize: 12,
+                    fontSize: 13.5,
                     fontWeight: FontWeight.w800,
                     color: AppColors.accentWarm,
                   ),
@@ -372,7 +372,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
                   explanation,
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.inter(
-                    fontSize: 11,
+                    fontSize: 12.5,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textPrimary,
                     fontStyle: FontStyle.italic,

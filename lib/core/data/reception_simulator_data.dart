@@ -18,63 +18,63 @@ enum FeedbackType { perfect, correct, partial, wrong, guestLeft }
 enum RoomType {
   standart(
     emoji: '🏠',
-    displayName: 'Standart Oda',
+    displayName: 'Standart Room',
     price: 800,
     minLevel: 0,
     tip: 'Standart oda, otellerde en çok tercih edilen oda tipidir.',
   ),
   kose(
     emoji: '📐',
-    displayName: 'Köşe Oda',
+    displayName: 'Corner Room',
     price: 1100,
     minLevel: 1,
     tip: 'Köşe odalar, binanın köşelerinde yer alan, standart odalardan biraz daha geniş olan ve genellikle çift cepheli olup iki farklı manzarayı birden gören odalardır.',
   ),
   executive(
     emoji: '👔',
-    displayName: 'Executive Oda',
+    displayName: 'Executive Room',
     price: 1300,
     minLevel: 1,
     tip: 'Yönetici odaları (Executive Room), geniş çalışma masası ve prizler gibi iş odaklı donanımlarla CIP misafirlere hitap eder.',
   ),
   aile(
     emoji: '👨‍👩‍👧‍👦',
-    displayName: 'Aile Odası',
+    displayName: 'Family Room',
     price: 1500,
     minLevel: 2,
     tip: 'Aile odaları geniş yapılıdır ve genellikle ek yatak imkânı sunar.',
   ),
   ozelGereksinim(
     emoji: '♿',
-    displayName: 'Özel Gereksinimli Birey Odası',
+    displayName: 'Handicapped Room',
     price: 900,
     minLevel: 2,
     tip: 'Özel gereksinimli birey odaları geniş kapı, erişilebilir banyo ve tutunma barları içerir.',
   ),
   baglantili(
     emoji: '🚪',
-    displayName: 'Bağlantılı Oda',
+    displayName: 'Connecting Room',
     price: 1800,
     minLevel: 3,
     tip: 'Bağlantılı odalar, aralarında geçişi sağlayan bir iç kapı bulunan iki odadır.',
   ),
   bitisik(
     emoji: '🧱',
-    displayName: 'Bitişik Oda',
+    displayName: 'Adjoining Room',
     price: 1600,
     minLevel: 3,
     tip: 'Bitişik odalar, yan yana bulunan ancak aralarında doğrudan bir geçiş kapısı olmayan odalardır.',
   ),
   suite(
     emoji: '🏨',
-    displayName: 'Suite Oda',
+    displayName: 'Suite Room',
     price: 3500,
     minLevel: 4,
     tip: 'Suite odalar ayrı oturma odası ile misafire özel yaşam alanı sunar.',
   ),
   kralDairesi(
     emoji: '👑',
-    displayName: 'Kral Dairesi',
+    displayName: 'Presidential Suite',
     price: 6000,
     minLevel: 6,
     tip: 'Kral dairesi, otelin en prestijli odası olup VIP ve CIP misafirlere önerilir.',
@@ -102,7 +102,7 @@ enum RoomType {
 enum BoardType {
   sadeceOda(
     emoji: '🚫',
-    displayName: 'Sadece Oda',
+    displayName: 'Room Only (RO)',
     shortName: 'RO',
     price: 0,
     minLevel: 0,
@@ -110,23 +110,23 @@ enum BoardType {
   ),
   odaKahvalti(
     emoji: '☕',
-    displayName: 'Oda + Kahvaltı',
-    shortName: 'B&B',
+    displayName: 'Bed & Breakfast (BB)',
+    shortName: 'BB',
     price: 150,
     minLevel: 0,
-    tip: 'Bed & Breakfast (B&B): Sadece sabah kahvaltısı dahildir.',
+    tip: 'Bed & Breakfast (BB): Sadece sabah kahvaltısı dahildir.',
   ),
   yarimPansiyon(
     emoji: '🍽️',
-    displayName: 'Yarım Pansiyon',
-    shortName: 'HP',
+    displayName: 'Half Board (HB)',
+    shortName: 'HB',
     price: 300,
     minLevel: 1,
-    tip: 'Half Pension (HP): Kahvaltı ve akşam yemeği dahildir.',
+    tip: 'Half Board (HB): Kahvaltı ve akşam yemeği dahildir.',
   ),
   tamPansiyon(
     emoji: '🍴',
-    displayName: 'Tam Pansiyon',
+    displayName: 'Full Board (FB)',
     shortName: 'FB',
     price: 500,
     minLevel: 2,
@@ -134,7 +134,7 @@ enum BoardType {
   ),
   herSeyDahil(
     emoji: '🌟',
-    displayName: 'Her Şey Dahil',
+    displayName: 'All Inclusive (AI)',
     shortName: 'AI',
     price: 800,
     minLevel: 3,
@@ -142,7 +142,7 @@ enum BoardType {
   ),
   ultraHerSeyDahil(
     emoji: '👑',
-    displayName: 'Ultra Her Şey Dahil',
+    displayName: 'Ultra All Inclusive (UAI)',
     shortName: 'UAI',
     price: 1200,
     minLevel: 5,
@@ -216,7 +216,7 @@ enum GuestType {
   vip(
     emoji: '⭐',
     displayName: 'VIP Misafir',
-    patienceMultiplier: 0.6,
+    patienceMultiplier: 0.73,
     pointMultiplier: 3.0,
     minLevel: 4,
   ),
@@ -263,7 +263,7 @@ enum SpecialRequest {
   diyetMenu(emoji: '🥗', displayName: 'Diyet Menü', bonusPoints: 15,
     dialogueHint: 'Diyet menü seçeneğiniz var mı?'),
   transfer(emoji: '🚐', displayName: 'Havalimanı Transferi', bonusPoints: 20,
-    dialogueHint: 'Havalimanı transferi ayarlayabilir misiniz?');
+    dialogueHint: 'Havalimanı transferi ayarlayabilirseniz sevinirim.');
 
   const SpecialRequest({
     required this.emoji,
@@ -308,14 +308,16 @@ enum PowerUpType {
 enum Achievement {
   ilkCheckIn(emoji: '🎖️', displayName: 'İlk Check-in',
     description: 'İlk misafirini başarıyla yerleştir'),
-  comboUstasi(emoji: '🔥', displayName: 'Combo Ustası',
+  comboUstasi(emoji: '🔥', displayName: 'Kombo Ustası',
     description: '10 üst üste doğru check-in yap'),
   mukemmeliyetci(emoji: '💯', displayName: 'Mükemmeliyetçi',
     description: 'Hiç hata yapmadan oyna'),
   gelirKrali(emoji: '💰', displayName: 'Gelir Kralı',
     description: 'Tek oyunda 30.000₺ gelir elde et'),
   genelMudur(emoji: '👑', displayName: 'Genel Müdür',
-    description: 'Seviye 8\'e ulaş');
+    description: 'Seviye 8\'e ulaş'),
+  vipHizmeti(emoji: '⭐', displayName: 'VIP Hizmeti',
+    description: '3 ardışık VIP misafirini başarıyla karşıla');
 
   const Achievement({
     required this.emoji,
@@ -381,7 +383,7 @@ class LevelConfig {
       GuestType.values.where((g) => g.minLevel <= level).toList();
 
   static const List<LevelConfig> levels = [
-    LevelConfig(level: 0, title: 'Stajyer', basePatience: 15, maxSpecialRequests: 0, totalGuests: 4),
+    LevelConfig(level: 0, title: 'Stajyer', basePatience: 15, maxSpecialRequests: 0, totalGuests: 2),
     LevelConfig(level: 1, title: 'Bellboy', basePatience: 17, maxSpecialRequests: 0, totalGuests: 8),
     LevelConfig(level: 2, title: 'Resepsiyonist', basePatience: 19, maxSpecialRequests: 1, totalGuests: 8),
     LevelConfig(level: 3, title: 'Kıdemli Resepsiyonist', basePatience: 21, maxSpecialRequests: 1, totalGuests: 8),
@@ -400,7 +402,8 @@ class _GuestScenario {
   final List<RoomType> correctRooms;
   final BoardType correctBoard;
   final String dialogue;
-  const _GuestScenario(this.correctRooms, this.correctBoard, this.dialogue);
+  final List<SpecialRequest>? preferredSpecialRequests;
+  const _GuestScenario(this.correctRooms, this.correctBoard, this.dialogue, {this.preferredSpecialRequests});
 }
 
 class _GuestCandidate {
@@ -408,11 +411,13 @@ class _GuestCandidate {
   final RoomType room;
   final BoardType board;
   final String dialogue;
+  final List<SpecialRequest>? preferredSpecialRequests;
   const _GuestCandidate({
     required this.type,
     required this.room,
     required this.board,
     required this.dialogue,
+    this.preferredSpecialRequests,
   });
 }
 
@@ -444,6 +449,14 @@ class ReceptionSimulatorData {
     'Erol Bey',
   ];
 
+  static const List<String> _honeymoonMaleNames = [
+    'James', 'William', 'Alexander', 'Sebastian', 'Oliver',
+    'Benjamin', 'Lucas', 'Henry', 'Ethan', 'Daniel',
+    'Liam', 'Noah', 'Theo', 'Hugo', 'Oscar',
+    'Finn', 'Leon', 'Paul', 'Victor', 'Adrian',
+    'Marco', 'Dimitri', 'André', 'Patrick', 'Stefan',
+  ];
+
   // ── Milliyetler (Bayrak Emojileri) ──
   static const List<String> _nationalities = [
     '🇹🇷', '🇹🇷', '🇹🇷', '🇹🇷', '🇹🇷', // %50 Türk
@@ -454,24 +467,25 @@ class ReceptionSimulatorData {
   static final Map<GuestType, List<_GuestScenario>> _scenarios = {
     GuestType.normal: [
       _GuestScenario(
-        [RoomType.standart], BoardType.odaKahvalti,
-        'Merhaba, bir gece kalacağım. Uygun bir oda ve sabah kahvaltısı yeterli.',
-      ),
-      _GuestScenario(
         [RoomType.standart], BoardType.sadeceOda,
-        'İyi günler, kısa süreliğine kalacağım. Normal bir oda olsun, yemek istemiyorum.',
+        'İyi günler, kısa süreliğine kalacağım. Standart bir oda olsun, yemek istemiyorum.',
       ),
       _GuestScenario(
         [RoomType.standart], BoardType.odaKahvalti,
-        'Selam, bütçem kısıtlı. En uygun fiyatlı odanız olsun, kahvaltı dahil olursa sevinirim.',
+        'Merhaba, bütçem kısıtlı. En uygun fiyatlı odanız olsun, kahvaltı dahil olursa sevinirim.',
       ),
       _GuestScenario(
         [RoomType.standart], BoardType.odaKahvalti,
-        'Merhaba, tek kişi kalacağım. Standart bir oda ve kahvaltı paketi lütfen.',
+        'Merhaba, uygun fiyatlı bir oda ve kahvaltı paketi istiyorum.',
+        preferredSpecialRequests: [SpecialRequest.denizManzarasi],
       ),
       _GuestScenario(
         [RoomType.kose], BoardType.odaKahvalti,
         'Merhaba, dinlenmek için çift cepheli, geniş ve iki farklı yönden manzara gören bir oda istiyorum. Sabah kahvaltısı dahil olsun.',
+      ),
+      _GuestScenario(
+        [RoomType.kose], BoardType.yarimPansiyon,
+        'Merhaba, rahat bir konaklama istiyorum. Çift cepheli geniş bir oda ve yarım pansiyon paketi rica ediyorum.',
       ),
     ],
 
@@ -519,18 +533,20 @@ class ReceptionSimulatorData {
         'Merhabalar, eşim ve iki çocuğumla geldik. Geniş bir aile odası ve üç öğün yemek olsun.',
       ),
       _GuestScenario(
-        [RoomType.baglantili], BoardType.herSeyDahil,
-        'Merhaba, çocuklu bir aileyiz. Aralarında geçiş kapısı olan iki oda (Bağlantılı Oda) istiyoruz, her şey dahil olsun.',
+        [RoomType.aile], BoardType.herSeyDahil,
+        'Merhaba, iki çocuklu bir aileyiz. Geniş, ferah bir aile odası istiyoruz. Çocuklar için yatak ve her şey dahil paketi tercih ediyoruz.',
+        preferredSpecialRequests: [SpecialRequest.bebekYatagi],
       ),
       _GuestScenario(
-        [RoomType.bitisik], BoardType.yarimPansiyon,
-        'İyi günler, kalabalık bir aileyiz. Yan yana bulunan ancak aralarında doğrudan bir ara kapı bulunmayan iki oda (Bitişik Oda) rica ediyoruz, yarım pansiyon olsun.',
+        [RoomType.aile], BoardType.odaKahvalti,
+        'Merhaba, bebeğimizle seyahat ediyoruz. Bebek yatağı olan geniş bir aile odası ve sadece kahvaltı dahil olsun.',
+        preferredSpecialRequests: [SpecialRequest.bebekYatagi],
       ),
     ],
 
     GuestType.yasliCift: [
       _GuestScenario(
-        [RoomType.standart, RoomType.kose], BoardType.yarimPansiyon,
+        [RoomType.kose], BoardType.yarimPansiyon,
         'Merhaba evladım, eşimle dinlenmeye geldik. Çift cepheli, iki farklı yöne bakıp manzarayı geniş gören ferah bir oda ve yarım pansiyon olsun.',
       ),
       _GuestScenario(
@@ -547,6 +563,11 @@ class ReceptionSimulatorData {
       _GuestScenario(
         [RoomType.ozelGereksinim], BoardType.odaKahvalti,
         'Merhaba, tekerlekli sandalye kullanıyorum. Özel gereksinimli birey odası ve kahvaltı dahil olsun.',
+        preferredSpecialRequests: [
+          SpecialRequest.transfer,
+          SpecialRequest.denizManzarasi,
+          SpecialRequest.bebekYatagi,
+        ],
       ),
       _GuestScenario(
         [RoomType.ozelGereksinim], BoardType.yarimPansiyon,
@@ -561,11 +582,11 @@ class ReceptionSimulatorData {
     GuestType.vip: [
       _GuestScenario(
         [RoomType.suite], BoardType.herSeyDahil,
-        'İyi akşamlar, en iyi odanızı ve her şey dahil paketi istiyorum. Kaliteden ödün vermem.',
+        'İyi akşamlar, VIP konuğuyum. Lüks, konforlu bir oda ve her şey dahil paketi rica ediyorum.',
       ),
       _GuestScenario(
-        [RoomType.suite, RoomType.kralDairesi], BoardType.herSeyDahil,
-        'Merhaba, VIP konuğunuzum. En lüks odanız ve tüm hizmetlerin dahil olduğu paketi istiyorum.',
+        [RoomType.kralDairesi], BoardType.herSeyDahil,
+        'Merhaba, VIP konuğunuzum. En lüks odanızı ve her şey dahil paketini hazırlayın lütfen.',
       ),
       _GuestScenario(
         [RoomType.kralDairesi], BoardType.ultraHerSeyDahil,
@@ -575,12 +596,16 @@ class ReceptionSimulatorData {
 
     GuestType.balayi: [
       _GuestScenario(
-        [RoomType.suite], BoardType.herSeyDahil,
-        'Merhaba, eşimle balayındayız! Romantik bir süit oda ve her şey dahil istiyoruz.',
+        [RoomType.suite], BoardType.tamPansiyon,
+        'Merhaba, eşimle balayındayız! Ferah bir süit oda ve tam pansiyon istiyoruz.',
       ),
       _GuestScenario(
-        [RoomType.kose, RoomType.suite], BoardType.herSeyDahil,
-        'İyi günler, yeni evlendik! Çift cepheli iki yönü gören güzel bir oda veya lüks bir süit oda ile her şey dahil konaklama rica ediyoruz.',
+        [RoomType.kose], BoardType.herSeyDahil,
+        'İyi günler, yeni evlendik! Çift cepheli, iki yönü gören geniş bir oda ile her şey dahil konaklama rica ediyoruz.',
+      ),
+      _GuestScenario(
+        [RoomType.suite], BoardType.herSeyDahil,
+        'İyi günler, yeni evlendik! Lüks bir süit oda ile her şey dahil konaklama rica ediyoruz.',
       ),
       _GuestScenario(
         [RoomType.kralDairesi], BoardType.ultraHerSeyDahil,
@@ -593,8 +618,8 @@ class ReceptionSimulatorData {
   static const List<String> educationalTips = [
     '💡 Ön büro, otelin vitrinidir. İlk izlenim burada oluşur.',
     '💡 Check-in sırasında misafirin kimlik belgesi mutlaka kontrol edilmelidir.',
-    '💡 B&B (Bed & Breakfast) sadece kahvaltı dahil demektir.',
-    '💡 Yarım pansiyon (HP), kahvaltı ve akşam yemeğini kapsar.',
+    '💡 BB (Bed & Breakfast) sadece kahvaltı dahil demektir.',
+    '💡 Yarım Pansiyon (HB), kahvaltının yanında bir öğün yemeği (genellikle akşam yemeğini) içerir.',
     '💡 Tam pansiyon (FB), sabah, öğle ve akşam olmak üzere 3 öğün içerir.',
     '💡 Her şey dahil (AI) sisteminde tüm yiyecek ve yerli içecekler dahildir.',
     '💡 Suite odalarda ayrı bir oturma alanı bulunur.',
@@ -609,11 +634,11 @@ class ReceptionSimulatorData {
     '💡 Misafir memnuniyeti, otelin tekrar ziyaret oranını doğrudan etkiler.',
     '💡 Pansiyon türünü belirlerken misafirin seyahat amacı önemli bir ipucudur.',
     '💡 Ultra her şey dahil (UAI), premium içecekleri ve ek hizmetleri de kapsar.',
-    '💡 Ön büro departmanı; resepsiyon, concierge ve santral birimlerinden oluşur.',
+    '💡 Resepsiyon, concierge ve rezervasyon görevlileri için güçlü bir takım çalışması çok önemlidir.',
     '💡 Walk-in misafir, rezervasyonsuz gelen misafir anlamına gelir.',
     '💡 No-show, rezervasyon yaptırıp gelmeyen misafir demektir.',
     '💡 Overbooking, otel kapasitesinin üzerinde rezervasyon alınması durumudur.',
-    '💡 Grup rezervasyonlarında genellikle allotment (kontenjan) uygulanır.',
+    '💡 Kral daireleri, otel işletmelerindeki en yüksek ücrete ve imkanlara sahip odalardır.',
   ];
 
   /// Verilen seviyeye uygun rastgele bir misafir profili üretir.
@@ -660,8 +685,8 @@ class ReceptionSimulatorData {
         scenario.correctRooms.where((r) => r.minLevel <= level).toList();
     final correctRoom = availableRooms[random.nextInt(availableRooms.length)];
 
-    // Özel istekler oluştur
-    final requests = _generateSpecialRequests(config.maxSpecialRequests, random);
+    // Özel istekler oluştur (tercih edilen varsa onları kullan)
+    final requests = scenario.preferredSpecialRequests ?? _generateSpecialRequests(config.maxSpecialRequests, random, guestType: guestType);
 
     // Diyaloğu tamamla
     String dialogue = scenario.dialogue;
@@ -670,8 +695,10 @@ class ReceptionSimulatorData {
       dialogue += ' $requestTexts';
     }
 
-    // İsim ve milliyet
-    final name = _guestNames[random.nextInt(_guestNames.length)];
+    // İsim ve milliyet (balayı çiftlerinde yabancı erkek ismi)
+    final name = guestType == GuestType.balayi
+        ? _honeymoonMaleNames[random.nextInt(_honeymoonMaleNames.length)]
+        : _guestNames[random.nextInt(_guestNames.length)];
     final flag = _nationalities[random.nextInt(_nationalities.length)];
 
     return GuestProfile(
@@ -704,6 +731,7 @@ class ReceptionSimulatorData {
               room: room,
               board: scenario.correctBoard,
               dialogue: scenario.dialogue,
+              preferredSpecialRequests: scenario.preferredSpecialRequests,
             ));
           }
         }
@@ -728,11 +756,9 @@ class ReceptionSimulatorData {
     final selectedCandidates = <_GuestCandidate>[];
 
     if (level == 0) {
-      // Seviye 0'da tam olarak 4 benzersiz kombinasyon isteriz:
-      // (ekonomik, sadeceOda), (ekonomik, odaKahvalti), (standart, sadeceOda), (standart, odaKahvalti)
+      // Seviye 0'da sadece 2 benzersiz kombinasyon: standart+sadeceOda, standart+odaKahvalti
+      // Diğer oda/pansiyon türleri henüz açılmamıştır; seviye 0'ı tamamlayınca seviye 1'e geçilir.
       final combinations = [
-        const _RoomBoardPair(RoomType.standart, BoardType.sadeceOda),
-        const _RoomBoardPair(RoomType.standart, BoardType.odaKahvalti),
         const _RoomBoardPair(RoomType.standart, BoardType.sadeceOda),
         const _RoomBoardPair(RoomType.standart, BoardType.odaKahvalti),
       ];
@@ -791,17 +817,21 @@ class ReceptionSimulatorData {
     // Seçilen adayların sırasını karıştır
     selectedCandidates.shuffle(random);
 
-    // İsimlerin benzersiz olması için isim havuzunu karıştır
+    // İsim havuzları (balayı için yabancı erkek isimleri ayrı tutulur)
     final namesPool = List<String>.from(_guestNames)..shuffle(random);
+    final honeymoonPool = List<String>.from(_honeymoonMaleNames)..shuffle(random);
+    int honeymoonIndex = 0;
     final result = <GuestProfile>[];
 
     for (int i = 0; i < selectedCandidates.length; i++) {
       final candidate = selectedCandidates[i];
-      final name = namesPool[i % namesPool.length];
+      final name = candidate.type == GuestType.balayi
+          ? honeymoonPool[honeymoonIndex++ % honeymoonPool.length]
+          : namesPool[i % namesPool.length];
       final flag = _nationalities[random.nextInt(_nationalities.length)];
 
-      // Özel istekler
-      final requests = _generateSpecialRequests(config.maxSpecialRequests, random);
+      // Özel istekler (tercih edilen varsa onları kullan)
+      final requests = candidate.preferredSpecialRequests ?? _generateSpecialRequests(config.maxSpecialRequests, random);
 
       // Diyaloğa özel istek ipuçlarını ekle
       String dialogue = candidate.dialogue;
@@ -826,13 +856,17 @@ class ReceptionSimulatorData {
 
   /// Rastgele özel istekler oluşturur.
   static List<SpecialRequest> _generateSpecialRequests(
-      int maxRequests, Random random) {
+      int maxRequests, Random random, {GuestType? guestType}) {
     if (maxRequests <= 0) return const [];
     final hasRequests = random.nextBool();
     if (!hasRequests) return const [];
 
     final numRequests = random.nextInt(maxRequests) + 1;
-    final all = List<SpecialRequest>.from(SpecialRequest.values)..shuffle(random);
+    final all = List<SpecialRequest>.from(SpecialRequest.values);
+    if (guestType == GuestType.ozelGereksinim) {
+      all.remove(SpecialRequest.yuksekKat);
+    }
+    all.shuffle(random);
     return all.take(numRequests).toList();
   }
 
@@ -878,7 +912,7 @@ class ReceptionSimulatorData {
     if (newLevel == 2) {
       unlocks.add('🎯 Özel İstekler sistemi açıldı!');
     }
-    if (config.maxSpecialRequests > LevelConfig.levels[newLevel - 1].maxSpecialRequests) {
+    if (newLevel > 2 && config.maxSpecialRequests > LevelConfig.levels[newLevel - 1].maxSpecialRequests) {
       unlocks.add('📋 Özel istek sayısı artırıldı!');
     }
 

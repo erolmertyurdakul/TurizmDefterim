@@ -179,13 +179,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
             "Örnekle Pekiştirelim: Antalya'daki bir tatil köyünün, güneş paneli kurarak elektrik tüketimini %40 azaltması, havuz suyu geri dönüşüm sistemi kurması ve yerel halktan %80 istihdam sağlaması sonucu Green Globe sertifikası almasıdır."
           ]
         },
-        {
-          "name": "Blue Flag (Mavi Bayrak)",
-          "desc": "Plajların ve marinaların su kalitesi, çevre yönetimi, güvenlik ve hizmet standartlarını karşıladığını gösteren; 50 ülkede uygulanan uluslararası ödüldür. Türkiye, dünyada en fazla Mavi Bayraklı plaja sahip ülkeler arasındadır.",
-          "examples": [
-            "Örnekle Pekiştirelim: Mavi Bayrak alan Ölüdeniz plajında deniz suyunun AB normlarında temiz olması, atık kumluğa bırakılmaması ve görme engelliler için özel rampa bulunması zorunlu kriterleri yerine getirmesidir."
-          ]
-        },
+
         {
           "name": "Travelife ve Rainforest Alliance",
           "desc": "Travelife: Avrupa'da tur operatörleri ve oteller için yaygın kullanılan sürdürülebilirlik sertifikasyon programıdır. Rainforest Alliance: Özellikle tropikal destinasyonlardaki turizm işletmelerini ve eko-turları sertifikalayan Amerikan kökenli uluslararası standart kuruluşudur.",
@@ -249,15 +243,77 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           ]
         },
         {
-          "name": "Mavi Bayrak Başarısı",
-          "desc": "Türkiye, 2023 itibarıyla 531 Mavi Bayraklı plaj ve 26 Mavi Bayraklı marinayla dünya sıralamasında 2. konumdadır. Bu başarı, Türkiye'nin kıyı turizmi kalitesini sürdürülebilir kriterlerle geliştirmeye verdiği önemin somut göstergesidir.",
+          "name": "Mavi Bayrak (Blue Flag)",
+          "desc": "Plajlar, marinalar ve yatlar/tekneler için verilen; deniz suyunun temizliğini, çevre yönetiminin kalitesini, plaj güvenliğini ve cankurtaran hizmetlerinin yeterliliğini uluslararası düzeyde belgeleyen prestijli eko-etikettir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ege'deki bir plaj beldesinin, kirli kanalı temizlemek, plaj denetçisi atamak ve engelli erişim rampası kurmak için yerel yönetim bütçesini tahsis etmesi ve ardından Mavi Bayrak alarak turizm gelirini ikiye katlamasıdır."
+            "Örnekle Pekiştirelim: Ege'de yer alan bir plajdaki kirli kanalın temizlenmesi, oraya plaj denetçisi atanması ve özel gereksinimli bireyler için rampa kurulması için yatırım yapılır ve Mavi Bayrak ödülü alınmaya çalışılır. Bu sayede turizm gelirleri de artar."
           ]
         }
       ],
       "caseStudy": "Sektörden Vaka: Türkiye'nin Saklıkent Milli Parkı'nda, bölgeye zarar veren çok sayıda turizm işletmesi kapatılarak ulusal park sınırları genişletildi. Yerel halkın kurduğu kooperatif, kanoyla kanyon turu ve doğa rehberliği hizmetini almak isteyenlere sınırlı kapasiteli bilet satmaya başladı. İlk yılda gelir azalsa da üçüncü yılda bilet fiyatları 3 katına çıktı ve talep kapasiteyi aştı çünkü 'kalabalıksız doğa' ürünü lüks bir değer haline geldi.",
       "tip": "Türkiye'de sürdürülebilir turizm potansiyeli büyük ama yetersiz kullanılıyor. Bu alandaki eğitimli insan kaynağı eksikliği, sizin gibi genç nesile muazzam kariyer fırsatları yaratmaktadır."
+    },
+    {
+      "id": 5,
+      "tag": "GSTC PROGRAMI",
+      "title": "TÜRKİYE ULUSAL SÜRDÜRÜLEBİLİR TURİZM PROGRAMI (GSTC)",
+      "microSummary": "Türkiye, dünyada hükümet nezdinde küresel sürdürülebilirlik standartlarını (GSTC) yasa ile zorunlu kılan ilk ülkedir.",
+      "definitions": [
+        {
+          "name": "GSTC (Global Sustainable Tourism Council)",
+          "desc": "Sürdürülebilir turizm alanında dünyadaki en üst standartları belirleyen, BM destekli Küresel Sürdürülebilir Turizm Konseyidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Bir otelin sürdürülebilirlik kriterlerini uyarlarken, GSTC'nin yayınladığı 42 ana kriterlik küresel standart kılavuzunu baz almasıdır."
+          ]
+        },
+        {
+          "name": "Üç Aşamalı Ulusal Program",
+          "desc": "Kültür ve Turizm Bakanlığı ile GSTC ortaklığında yürütülen; otellerin 1. Aşama (%30 kriter), 2. Aşama (%70 kriter) ve 3. Aşama (%100 tam uyum - Sertifika) olarak tamamlamak zorunda olduğu yasal uyum programıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: 50 odalı bir otelin ilk yıl 1. aşama denetiminden geçerek 'Sürdürülebilir Turizm 1. Aşama Belgesi' alması, 3. yılın sonunda ise tüm kriterleri tamamlayıp uluslararası sertifikaya kavuşmasıdır."
+          ]
+        },
+        {
+          "name": "GSTC Kriter Kapsamı",
+          "desc": "Otellerin atık yönetimi, kültürel mirasa katkı, yerel istihdam ve enerji tasarrufu gibi 4 ana başlıkta yasal ve operasyonel kriterleri yerine getirmesini şart koşar.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otel mutfağında yerel ürün kullanım oranının en az %30 olmasını ve personelin en az %80'inin bölge halkından istihdam edilmesini belgelemektir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Antalya'da bir şehir oteli, Kültür ve Turizm Bakanlığı'nın başlattığı yasal zorunluluk kapsamında 'Sürdürülebilir Turizm 1. Aşama Belgesi' almak için başvurdu. Otel, su tasarruflu armatürlere geçti, yerel tedarik politikasını yazılı hale getirdi ve İSG standartlarını güncelledi. Yapılan denetimde 1. aşama kriterlerini %100 tamamlayarak yasal belgesini aldı ve sonraki aşamalar için çalışmaya başladı.",
+      "tip": "Türkiye'de faaliyet gösteren tüm konaklama tesislerinin bu program kapsamındaki aşama belgelerini alması yasal bir zorunluluktur. Otelcilik kariyerinizde GSTC standartlarını bilmek size büyük bir avantaj sağlayacaktır."
+    },
+    {
+      "id": 6,
+      "tag": "EKO-ETİKETLER",
+      "title": "YEŞİL ANAHTAR (GREEN KEY) VE DİĞER ÇEVRE ETİKETLERİ",
+      "microSummary": "Çevre etiketleri, otellerin yeşil operasyon standartlarını küresel ölçekte belgeleyen ve misafir güvenini artıran prestij sembolleridir.",
+      "definitions": [
+        {
+          "name": "Yeşil Anahtar (Green Key)",
+          "desc": "Çevre Eğitimi Vakfı (FEE) tarafından çevre dostu konaklama tesislerine verilen, 60'tan fazla ülkede tanınan lider uluslararası çevre etiketidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otelimizin atık pilleri kutularda toplaması, kimyasal kullanımını sınırlandırması ve misafirleri çevre bilinci hakkında broşürlerle bilgilendirmesi sonucu kapısına asılacak 'Yeşil Anahtar' bayrağını kazanmasııdır."
+          ]
+        },
+        {
+          "name": "Sürdürülebilir Turizm Belgesi (GSTC)",
+          "desc": "Kültür ve Turizm Bakanlığı ile GSTC (Küresel Sürdürülebilir Turizm Konseyi) ortaklığında yürütülen, çevre koruma, yerel istihdam ve kültürel mirası koruma kriterlerini karşılayan tesislere verilen yasal ve zorunlu belgedir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Bakanlık ve GSTC denetçilerinin denetimi sonrası otelimizin sürdürülebilirlik kriterlerini tamamlayıp 'Sürdürülebilir Turizm Belgesi' almaya hak kazanması ve bu sayede çevre koruma bilincini tescillemesidir."
+          ]
+        },
+        {
+          "name": "Karbon Ayak İzi Telafisi (Carbon Offset)",
+          "desc": "Otellerin faaliyetleri sonucu oluşan karbon emisyonunu sıfırlamak için çevreye ağaç dikmesi veya yenilenebilir enerji yatırımlarına ortak olmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otelimizin her 10 konaklama için Tema Vakfı'na 1 adet fidan bağışlayarak otel kaynaklı karbon salınımını doğada dengelemesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Bodrum'da lüks bir butik otel, uluslararası pazarda çevreci bilinç sahibi turistleri çekmek amacıyla 'Yeşil Anahtar' sertifikası için başvurdu. Otel, bahçe sulamasında yağmur hasadı suyunu kullandı, mutfak atıklarından kompost gübre üretti ve odalara plastik pet şişeler yerine cam sürahiler koydu. Yeşil Anahtar ödülünü aldıktan sonra, Avrupa'daki çevreci seyahat bloglarında geniş yer buldu ve doğrudan rezervasyonlarında %30 artış yaşadı.",
+      "tip": "Çevre etiketleri alan oteller, sadece doğayı korumakla kalmaz; belediye su faturalarında ve elektrik harcamalarında devletten ciddi vergi ve tarife indirimleri almaya hak kazanırlar."
     }
   ]
 };
@@ -359,6 +415,51 @@ const Map<String, dynamic> surdurulebilirTurizmUnit3 = {
       ],
       "caseStudy": "Sektörden Vaka: İskandinav ülkelerinde faaliyet gösteren Nordic Hotels Grubu, 2020'de tüm otellerinde misafir başına 150 litre/gece su tüketimi hedefi belirledi. Gerçek zamanlı su sayacı izleme sistemi kuruldu ve veri her sabah departman şeflerine raporlandı. Hedefin altında kalan otellere prim, üzerinde kalan otellere uyarı uygulandı. Sonuç: 3 yılda grup genelinde su tüketimi %28 azaldı ve tasarruf edilen miktarın maliyeti tam bir otel restorasyon bütçesine eşdeğer oldu.",
       "tip": "Sürdürülebilirlik bir hedef değil, sürekli iyileştirme döngüsüdür: Ölç → Analiz et → Önlem al → Tekrar ölç. Bu döngü hiç bitmez."
+    },
+    {
+      "id": 4,
+      "tag": "ATIK YÖNETİMİ",
+      "title": "SIFIR ATIK MAVİ VE OTEL MUTFAKLARINDA GIDA İSRAFI YÖNETİMİ",
+      "microSummary": "Otellerde mutfak ve kat hizmetleri kaynaklı atıkların doğru yönetilmesi, ekolojik dengeyi korumanın ilk adımıdır.",
+      "definitions": [
+        {
+          "name": "Sıfır Atık Mavi Projesi",
+          "desc": "Denizlerin, nehirlerin ve su kaynaklarının kirlenmesini önlemek amacıyla, kıyı otellerinde tek kullanımlık plastikleri yasaklayan ve deniz çöplerini toplayan ulusal çevre hareketidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otel plajındaki plastik pipet ve bardakların yasaklanarak yerine biyobozunur kağıt pipetler ve karton bardakların getirilmesi ve sahilin her sabah temizlenmesidir."
+          ]
+        },
+        {
+          "name": "Gıda Atığı Yönetimi ve İsraf",
+          "desc": "Otel açık büfelerinde tüketilmeyen gıdaların çöpe gitmesini önlemek için porsiyon boyutlarının küçültülmesi, artan ekmeklerin galeta ununa dönüştürülmesi veya organik atıkların gübre makinelerinde işlenmesidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Açık büfe tatlı porsiyonlarının küçük kaselerde tek tek sunulması ve gün sonunda kalan taze ekmeklerin kurutularak köfte harcı yapılmak üzere mutfakta öğütülmesidir."
+          ]
+        },
+        {
+          "name": "Kompostlaştırma (Organik Gübre)",
+          "desc": "Meyve, sebze kabukları ve yemek artıkları gibi organik atıkların, kompost makinelerinde biyolojik olarak parçalanarak otel bahçesinde kullanılacak doğal gübreye dönüştürülmesi sürecidir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otel mutfağındaki sebze ayıklama tezgâhından çıkan kabukların plastiklerden ayrı toplanıp bahçedeki kompost makinesine dökülerek toprak gübresi haline getirilmesidir."
+          ]
+        },
+        {
+          "name": "Mavi Bayrak (Blue Flag)",
+          "desc": "Plajlar, marinalar ve yatlar/tekneler için verilen; deniz suyunun temizliğini, çevre yönetiminin kalitesini, plaj güvenliğini ve cankurtaran hizmetlerinin yeterliliğini uluslararası düzeyde belgeleyen prestijli eko-etikettir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Ege'de yer alan bir plajdaki kirli kanalın temizlenmesi, oraya plaj denetçisi atanması ve özel gereksinimli bireyler için rampa kurulması için yatırım yapılır ve Mavi Bayrak ödülü alınmaya çalışılır. Bu sayede turizm gelirleri de artar."
+          ]
+        },
+        {
+          "name": "Mavi Bayrak Başarısı",
+          "desc": "Türkiye, 2020 yılındaki 486 plaj ve 22 marinalık Mavi Bayrak sayısını büyük bir çevre yatırımıyla geliştirerek, 2025 yılı itibarıyla 577 Mavi Bayraklı plaj, 29 Mavi Bayraklı marina ve 26 yat/tekneye ulaştırmıştır. Bu başarıyla Türkiye, dünya genelinde 3. sırada yer almaktadır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Ege'de yer alan bir plajdaki kirli kanalın temizlenmesi, oraya plaj denetçisi atanması ve özel gereksinimli bireyler için rampa kurulması için yatırım yapılır ve Mavi Bayrak ödülü alınmaya çalışılır. Bu sayede turizm gelirleri de artar."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Antalya'da 5 yıldızlı bir otel, her gün açık büfeden çıkan 2 ton gıda atığı için büyük bir kompost tesisi kurdu. Sebze, meyve kabukları ve yemek artıkları kompost makinelerinde organik gübreye dönüştürüldü. Otel bu gübreyi çevre köylerdeki çiftçilere ücretsiz dağıttı, karşılığında ise onlardan taze sebze satın aldı. Hem atık taşıma maliyetlerinden yılda 120.000 TL tasarruf etti hem de yerel tarımı destekleyerek döngüsel ekonomiye muazzam bir katkı sundu.",
+      "tip": "Açık büfelerde yiyeceklerin üzerine 'Lütfen tüketeceğiniz kadar alın, israfı birlikte önleyelim' gibi pedagojik ve eğitici küçük ahşap uyarı kartları yerleştirmek, gıda israfını %35 oranında azaltır."
     }
   ]
 };

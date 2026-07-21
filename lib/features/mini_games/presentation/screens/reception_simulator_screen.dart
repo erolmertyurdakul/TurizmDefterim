@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../../../../core/data/reception_simulator_data.dart';
 import '../../../../core/providers/sound_provider.dart';
+import '../../../../core/providers/points_provider.dart';
 import '../../providers/reception_simulator_provider.dart';
 import '../../../../core/utils/sfx_synthesizer.dart';
 import 'reception_simulator_tutorial.dart';
@@ -41,10 +43,19 @@ class _ReceptionSimulatorScreenState
   final AudioPlayer _bgmPlayer = AudioPlayer();
   final AudioPlayer _sfxPlayer = AudioPlayer();
   bool _isBgmPlaying = false;
+  bool _isCheckInPressed = false; // Check-In butonu tıklama animasyon takibi
+
+  Timer? _timePointsTimer;
 
   @override
   void initState() {
     super.initState();
+
+    _timePointsTimer = Timer.periodic(const Duration(minutes: 1), (timer) {
+      if (mounted) {
+        ref.read(pointsProvider.notifier).addReadingPoints();
+      }
+    });
 
     // Check if the game was already in progress (user returned after leaving)
     final currentState = ref.read(receptionSimulatorProvider);
@@ -90,6 +101,7 @@ class _ReceptionSimulatorScreenState
 
   @override
   void dispose() {
+    _timePointsTimer?.cancel();
     // Cancel timer safely — pauseGameTimer does NOT modify provider state
     ref.read(receptionSimulatorProvider.notifier).pauseGameTimer();
     _guestController.dispose();
@@ -242,6 +254,8 @@ class _ReceptionSimulatorScreenState
         return Icons.monetization_on_outlined;
       case Achievement.genelMudur:
         return Icons.emoji_events_outlined;
+      case Achievement.vipHizmeti:
+        return Icons.star_rounded;
     }
   }
 
@@ -253,6 +267,13 @@ class _ReceptionSimulatorScreenState
 
     ref.listen<ReceptionSimulatorState>(receptionSimulatorProvider,
         (prev, next) {
+      // Oyun bittiğinde ulaşılan seviye sayısını 5 ile çarparak sessizce XP ekle (Ekstra hiçbir bildirim gösterilmez)
+      if (prev != null && prev.phase != GamePhase.gameOver && next.phase == GamePhase.gameOver) {
+        final levelCount = next.currentLevel + 1;
+        final earnedXP = levelCount * 5;
+        ref.read(pointsProvider.notifier).addPoints(earnedXP);
+      }
+
       // Yeni misafir geldi
       if (prev?.currentGuest != next.currentGuest && next.currentGuest != null) {
         _guestController.reset();
@@ -1366,70 +1387,13 @@ class _ReceptionSimulatorScreenState
     required Color accentColor,
     required VoidCallback onTap,
   }) {
-    return GestureDetector(
+    return _InteractiveSelectionChip(
+      icon: icon,
+      emoji: emoji,
+      label: label,
+      isSelected: isSelected,
+      accentColor: accentColor,
       onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? accentColor.withValues(alpha: 0.18)
-              : const Color(0xFF0A192F).withOpacity(0.4),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: isSelected
-                ? accentColor
-                : Colors.white.withValues(alpha: 0.12),
-            width: isSelected ? 1.5 : 1,
-          ),
-          boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: accentColor.withValues(alpha: 0.20),
-                    blurRadius: 12,
-                    offset: const Offset(0, 4),
-                  ),
-                ]
-              : null,
-        ),
-        child: Row(
-          children: [
-            if (icon != null)
-              Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  color: isSelected
-                      ? accentColor.withValues(alpha: 0.25)
-                      : Colors.white.withValues(alpha: 0.05),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  icon,
-                  size: 14,
-                  color: isSelected ? accentColor : Colors.white60,
-                ),
-              )
-            else if (emoji != null)
-              Text(emoji, style: const TextStyle(fontSize: 15)),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                label,
-                style: GoogleFonts.inter(
-                  fontSize: 11,
-                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                  color: isSelected ? Colors.white : Colors.white70,
-                ),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            if (isSelected) ...[
-              const SizedBox(width: 6),
-              Icon(Icons.check_circle_rounded, size: 14, color: accentColor),
-            ],
-          ],
-        ),
-      ),
     );
   }
 
@@ -1541,33 +1505,38 @@ class _ReceptionSimulatorScreenState
             child: child,
           );
         },
-        child: ElevatedButton(
-          onPressed: isEnabled ? () => notifier.submitCheckIn() : null,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            disabledBackgroundColor: Colors.white.withValues(alpha: 0.04),
-            foregroundColor: Colors.white,
-            disabledForegroundColor: Colors.white24,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-            elevation: 0,
-            shadowColor: Colors.transparent,
-            padding: EdgeInsets.zero,
-          ),
-          child: Ink(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              gradient: isEnabled
-                  ? const LinearGradient(
-                      colors: [Color(0xFF0E918C), Color(0xFF17B5B0)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    )
-                  : null,
-            ),
-            child: Container(
+        child: GestureDetector(
+          onTapDown: isEnabled ? (_) => setState(() => _isCheckInPressed = true) : null,
+          onTapCancel: isEnabled ? () => setState(() => _isCheckInPressed = false) : null,
+          onTapUp: isEnabled ? (_) {
+            setState(() => _isCheckInPressed = false);
+            // Apple standardı 80ms tıklama yaylanma gecikmesi
+            Future.delayed(const Duration(milliseconds: 80), () {
+              if (mounted) {
+                notifier.submitCheckIn();
+              }
+            });
+          } : null,
+          child: AnimatedScale(
+            scale: _isCheckInPressed ? 0.96 : 1.0,
+            duration: _isCheckInPressed 
+                ? const Duration(milliseconds: 50) 
+                : const Duration(milliseconds: 140),
+            curve: _isCheckInPressed ? Curves.easeOutQuad : Curves.easeOutCubic,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
               alignment: Alignment.center,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: isEnabled ? null : Colors.white.withValues(alpha: 0.04),
+                gradient: isEnabled
+                    ? const LinearGradient(
+                        colors: [Color(0xFF0E918C), Color(0xFF17B5B0)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : null,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -1640,15 +1609,23 @@ class _ReceptionSimulatorScreenState
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                state.feedbackMessage ?? '',
-                style: GoogleFonts.inter(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                  height: 1.5,
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height * 0.35,
                 ),
-                textAlign: TextAlign.center,
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Text(
+                    state.feedbackMessage ?? '',
+                    style: GoogleFonts.inter(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      height: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
               const SizedBox(height: 12),
               ElevatedButton(
@@ -1936,7 +1913,7 @@ class _ReceptionSimulatorScreenState
                   child: _buildStatCard(
                     Icons.local_fire_department_outlined,
                     Colors.redAccent,
-                    'En Yüksek Combo',
+                    'En Yüksek Kombo',
                     'x${ReceptionSimulatorData.getComboMultiplier(state.maxCombo).toStringAsFixed(1)}',
                   ),
                 ),
@@ -1950,70 +1927,7 @@ class _ReceptionSimulatorScreenState
               '${state.reputation} / 100',
               isFullWidth: true,
             ),
-            const SizedBox(height: 14),
-
-            // Kazanılan rozetler
-            if (state.earnedAchievements.isNotEmpty) ...[
-              Text(
-                'Kazanılan Rozetler',
-                style: GoogleFonts.outfit(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white54,
-                  letterSpacing: 0.5,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: state.earnedAchievements.map((a) {
-                  return Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 6),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFFE8AA42), Color(0xFFF0C36D)],
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(0xFFE8AA42).withValues(alpha: 0.2),
-                          blurRadius: 8,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          _getAchievementIcon(a),
-                          color: Colors.black87,
-                          size: 16,
-                        ),
-                        const SizedBox(width: 6),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              a.displayName,
-                              style: GoogleFonts.outfit(
-                                fontSize: 11,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  );
-                }).toList(),
-              ),
-              const SizedBox(height: 16),
-            ],
+            const SizedBox(height: 16),
 
             // Butonlar
             SizedBox(
@@ -2131,5 +2045,139 @@ class _ReceptionSimulatorScreenState
       return '${(number / 1000).toStringAsFixed(1)}K';
     }
     return number.toString();
+  }
+}
+
+/// Tıklama (Apple Scale) ve hover hissi veren özel premium cam (Glassmorphic) seçim butonu
+class _InteractiveSelectionChip extends StatefulWidget {
+  final IconData? icon;
+  final String? emoji;
+  final String label;
+  final bool isSelected;
+  final Color accentColor;
+  final VoidCallback onTap;
+
+  const _InteractiveSelectionChip({
+    required this.icon,
+    required this.emoji,
+    required this.label,
+    required this.isSelected,
+    required this.accentColor,
+    required this.onTap,
+  });
+
+  @override
+  State<_InteractiveSelectionChip> createState() => _InteractiveSelectionChipState();
+}
+
+class _InteractiveSelectionChipState extends State<_InteractiveSelectionChip> {
+  bool _isPressed = false;
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final isSelected = widget.isSelected;
+    final accentColor = widget.accentColor;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTapDown: (_) => setState(() => _isPressed = true),
+        onTapCancel: () => setState(() => _isPressed = false),
+        onTapUp: (_) {
+          setState(() => _isPressed = false);
+          // Apple standardı 60ms klik animasyon gecikmesi
+          Future.delayed(const Duration(milliseconds: 60), () {
+            if (mounted) {
+              widget.onTap();
+            }
+          });
+        },
+        child: AnimatedScale(
+          scale: _isPressed ? 0.95 : 1.0,
+          duration: _isPressed 
+              ? const Duration(milliseconds: 50) 
+              : const Duration(milliseconds: 140),
+          curve: _isPressed ? Curves.easeOutQuad : Curves.easeOutCubic,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            decoration: BoxDecoration(
+              color: isSelected
+                  ? accentColor.withValues(alpha: 0.22)
+                  : const Color(0xFF0A192F).withValues(alpha: 0.55),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(
+                color: isSelected
+                    ? accentColor
+                    : Colors.white.withValues(alpha: 0.12),
+                width: isSelected ? 1.8 : 1.0,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: isSelected
+                      ? accentColor.withValues(alpha: 0.24)
+                      : Colors.black.withValues(alpha: 0.12),
+                  blurRadius: isSelected ? 14 : 6,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  child: Row(
+                    children: [
+                      if (widget.icon != null)
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: isSelected
+                                ? accentColor.withValues(alpha: 0.28)
+                                : Colors.white.withValues(alpha: 0.06),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            widget.icon,
+                            size: 13,
+                            color: isSelected ? Colors.white : Colors.white60,
+                          ),
+                        )
+                      else if (widget.emoji != null)
+                        Text(widget.emoji!, style: const TextStyle(fontSize: 15)),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          widget.label,
+                          style: GoogleFonts.outfit(
+                            fontSize: 11.5,
+                            fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                            color: isSelected ? Colors.white : Colors.white70,
+                            letterSpacing: 0.3,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      if (isSelected) ...[
+                        const SizedBox(width: 6),
+                        Icon(
+                          Icons.check_circle_rounded,
+                          size: 14,
+                          color: accentColor,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

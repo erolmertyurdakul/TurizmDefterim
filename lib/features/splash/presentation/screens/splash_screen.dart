@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -40,6 +41,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
   final _random = Random();
   AudioPlayer? _splashSfxPlayer;
   bool _soundPlayed = false;
+  bool _isPressed = false; // Apple butona basma hissi için state takibi
   late final int _startTime;
 
   @override
@@ -65,7 +67,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
 
     _pulseController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200),
+      duration: const Duration(milliseconds: 2000), // 2 saniye: Daha sakin ve asil nefes alma
     );
 
     _particleController = AnimationController(
@@ -94,10 +96,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
       ),
     );
 
-    _pulseAnimation = Tween<double>(begin: 1.0, end: 1.08).animate(
+    _pulseAnimation = Tween<double>(begin: 1.0, end: 1.03).animate( // Maksimum 1.03: Mikro süzülme
       CurvedAnimation(
         parent: _pulseController,
-        curve: Curves.easeInOut,
+        curve: Curves.easeInOutSine, // Organik dalga
       ),
     );
 
@@ -291,54 +293,83 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
           width: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: AppColors.oceanGradient,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xFF030F26), Color(0xFF0A192F)],
             ),
           ),
           child: SafeArea(
             child: Stack(
               children: [
-                // ── Arka Plan Efektleri ──
+                // ── Dynamic Fluid Mesh Gradient Spheres (Apple Siri / Samsung Style) ──
+                // Küre A (Sol Üst - Cyan)
                 Positioned(
-                  top: -100,
-                  left: -50,
-                  child: Container(
-                    width: 300,
-                    height: 300,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.05),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: -150,
-                  right: -100,
-                  child: Container(
-                    width: 400,
-                    height: 400,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.05),
+                  top: -120,
+                  left: -120,
+                  child: AnimatedBuilder(
+                    animation: _particleController,
+                    builder: (context, child) {
+                      final double angle = _particleController.value * 2 * pi;
+                      return Transform.translate(
+                        offset: Offset(sin(angle) * 35, cos(angle) * 25),
+                        child: child,
+                      );
+                    },
+                    child: Container(
+                      width: 360,
+                      height: 360,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: const Color(0xFF00D2FF).withOpacity(0.12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF00D2FF).withOpacity(0.12),
+                            blurRadius: 120,
+                            spreadRadius: 20,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
 
-                // ── Yüzen Parçacık Efekti ──
-                AnimatedBuilder(
-                  animation: _particleController,
-                  builder: (context, _) {
-                    final elapsed = (DateTime.now().millisecondsSinceEpoch - _startTime) / 1000.0;
-                    return CustomPaint(
-                      size: MediaQuery.of(context).size,
-                      painter: _ParticlePainter(
-                        particles: _particles,
-                        timeElapsed: elapsed,
-                        fadeIn: _fadeAnimation.value,
+                // Küre B (Sağ Alt - Mor)
+                Positioned(
+                  bottom: -100,
+                  right: -100,
+                  child: AnimatedBuilder(
+                    animation: _particleController,
+                    builder: (context, child) {
+                      final double angle = _particleController.value * 2 * pi;
+                      return Transform.translate(
+                        offset: Offset(cos(angle) * 40, sin(angle) * 30),
+                        child: child,
+                      );
+                    },
+                    child: Container(
+                      width: 400,
+                      height: 400,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: const Color(0xFF7C3AED).withOpacity(0.09),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF7C3AED).withOpacity(0.09),
+                            blurRadius: 130,
+                            spreadRadius: 25,
+                          ),
+                        ],
                       ),
-                    );
-                  },
+                    ),
+                  ),
+                ),
+
+                // ── Blur Katmanı (Mesh auraları süzgeçten geçirir) ──
+                Positioned.fill(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 80, sigmaY: kIsWeb ? 0 : 80),
+                    child: Container(color: Colors.black.withOpacity(0.15)),
+                  ),
                 ),
 
                 // ── Ana İçerik ──
@@ -355,29 +386,25 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                             padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white.withOpacity(0.12), width: 1.0), // Dış ince orbital halka
+                              border: Border.all(color: Colors.white.withOpacity(0.05), width: 1.0), // Dış ince orbital halka
                             ),
                             child: Container(
                               padding: const EdgeInsets.all(20),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.08), // Daha zarif cam saydamlığı
+                                color: const Color(0xFF0F172A).withOpacity(0.60), // Koyu uzay camı
                                 shape: BoxShape.circle,
-                                border: Border.all(color: Colors.white.withOpacity(0.25), width: 1.5), // Çerçeve halkası
+                                border: Border.all(color: Colors.white.withOpacity(0.18), width: 1.5), // Çerçeve halkası
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
+                                    color: Colors.black.withOpacity(0.40),
                                     blurRadius: 30,
                                     offset: const Offset(0, 15),
                                   ),
+                                  // Eclipse Aura
                                   BoxShadow(
-                                    color: AppColors.primarySeed.withOpacity(0.4),
-                                    blurRadius: 40,
-                                    spreadRadius: 6,
-                                  ),
-                                  BoxShadow(
-                                    color: Colors.white.withOpacity(0.08), // İç parıldama halkası
-                                    blurRadius: 25,
-                                    spreadRadius: -2,
+                                    color: const Color(0xFF00D2FF).withOpacity(0.25),
+                                    blurRadius: 35,
+                                    spreadRadius: 4,
                                   ),
                                 ],
                               ),
@@ -439,42 +466,46 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                           position: _slideAnimation,
                           child: Column(
                             children: [
-                              Text(
-                                'Turizm Defterim',
-                                style: GoogleFonts.outfit(
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.w900,
-                                  color: const Color(0xFFFCFCFD), // Sınıflar sayfasındaki platin beyazı ile eşitlendi
-                                  letterSpacing: 1.5,
-                                  shadows: const [
-                                    // 1. Derinlik Gölgelendirmesi (Gözü yormayan derinlik)
-                                    Shadow(
-                                      color: Colors.black38,
-                                      offset: Offset(0, 4),
-                                      blurRadius: 12,
-                                    ),
-                                    // 2. Çok hafif gökyüzü mavisi aura parıltısı (Ambient Glow)
-                                    Shadow(
-                                      color: Color(0xFF7DD3FC),
-                                      offset: Offset.zero,
-                                      blurRadius: 18,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                               ShaderMask(
+                                 shaderCallback: (bounds) => const LinearGradient(
+                                   colors: [
+                                     Colors.white,
+                                     Color(0xFFE2E8F0),
+                                     Color(0xFF94A3B8),
+                                     Colors.white,
+                                   ], // Metalik sıvı gümüş dalgalanması
+                                   begin: Alignment.topLeft,
+                                   end: Alignment.bottomRight,
+                                   stops: [0.0, 0.35, 0.70, 1.0],
+                                 ).createShader(bounds),
+                                 child: Text(
+                                   'Turizm Defterim',
+                                   style: GoogleFonts.outfit(
+                                     fontSize: 40,
+                                     fontWeight: FontWeight.w900,
+                                     color: Colors.white, // ShaderMask maskesi için beyaz kalmalı
+                                     letterSpacing: 1.5,
+                                   ),
+                                 ),
+                               ),
                               const SizedBox(height: 12), // Dikey ritim dengelendi: 8 -> 12
                               Container(
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF0A192F).withOpacity(0.65), // Koyu premium cam arka planı
+                                  color: const Color(0xFF0F172A).withOpacity(0.50), // Derin uzay camı
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
-                                    color: Colors.white.withOpacity(0.15),
-                                    width: 1.5,
+                                    color: Colors.white.withOpacity(0.15), // 1.2px hairline border
+                                    width: 1.2,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: const Color(0xFF7DD3FC).withOpacity(0.15), // Canlı mavi neon gölgesi
-                                      blurRadius: 16,
+                                      color: Colors.black.withOpacity(0.45),
+                                      blurRadius: 30,
+                                      offset: const Offset(0, 15),
+                                    ),
+                                    BoxShadow(
+                                      color: const Color(0xFF00D2FF).withOpacity(0.06), // Çok hafif gök aurası
+                                      blurRadius: 20,
                                       offset: const Offset(0, 8),
                                     ),
                                   ],
@@ -482,7 +513,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: BackdropFilter(
-                                    filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                                    filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                                       child: Column(
@@ -492,22 +523,29 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                                             textAlign: TextAlign.center,
                                             textScaler: TextScaler.noScaling,
                                             style: GoogleFonts.outfit(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w800,
-                                              color: Colors.white,
+                                              fontSize: 13.5,
+                                              fontWeight: FontWeight.w600, // Daha kibar
+                                              color: Colors.white.withOpacity(0.82), // Hiyerarşik gümüş beyazı
                                               letterSpacing: 0.5,
                                             ),
                                           ),
-                                          const SizedBox(height: 6),
-                                          Text(
-                                            'Konaklama ve Seyahat Hizmetleri Uygulaması',
-                                            textAlign: TextAlign.center,
-                                            textScaler: TextScaler.noScaling,
-                                            style: GoogleFonts.outfit(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w900,
-                                              color: const Color(0xFF00FFCC), // Parlak elektrik turkuaz neon!
-                                              letterSpacing: 0.8,
+                                          const SizedBox(height: 7),
+                                          ShaderMask(
+                                            shaderCallback: (bounds) => const LinearGradient(
+                                              colors: [Color(0xFF00E5FF), Color(0xFF00B0FF)], // Sınıflar ekranı uyumlu Neon Cyan'dan Maviye geçiş
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                            ).createShader(bounds),
+                                            child: Text(
+                                              'Konaklama ve Seyahat Hizmetleri Uygulaması',
+                                              textAlign: TextAlign.center,
+                                              textScaler: TextScaler.noScaling,
+                                              style: GoogleFonts.outfit(
+                                                fontSize: 14.5,
+                                                fontWeight: FontWeight.w900,
+                                                color: Colors.white, // ShaderMask maskesi için beyaz kalmalı
+                                                letterSpacing: 0.6,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -528,55 +566,74 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                         child: ScaleTransition(
                           scale: _pulseAnimation,
                           child: GestureDetector(
-                            onTap: _navigateToHome,
-                            child: Container(
-                              width: 120,
-                              height: 120,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.white.withValues(alpha: 0.8), width: 1.5), // Premium ince kenar aydınlatması (Rim Light)
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    Colors.white,
-                                    Colors.white.withValues(alpha: 0.95),
+                            onTapDown: (_) => setState(() => _isPressed = true),
+                            onTapCancel: () => setState(() => _isPressed = false),
+                            onTapUp: (_) {
+                              setState(() => _isPressed = false);
+                              // Apple klavye tuşu tıklama tepki süresi (80ms) sonrası navigasyon
+                              Future.delayed(const Duration(milliseconds: 80), () {
+                                if (mounted) {
+                                  _navigateToHome();
+                                }
+                              });
+                            },
+                            child: AnimatedScale(
+                              scale: _isPressed ? 0.96 : 1.0, // Apple standardı: Sadece %4 mikro-basış payı
+                              duration: _isPressed 
+                                  ? const Duration(milliseconds: 60)   // Basılırken ultra hızlı tepki (60ms)
+                                  : const Duration(milliseconds: 150),  // Bırakılırken pürüzsüz ve tok geri büyüme (150ms)
+                              curve: _isPressed 
+                                  ? Curves.easeOutQuad 
+                                  : Curves.easeOutCubic, // Kararlı ve profesyonel sönümlenme
+                              child: Container(
+                                width: 120,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(color: Colors.white.withValues(alpha: 0.8), width: 1.5), // Premium ince kenar aydınlatması (Rim Light)
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [
+                                      Colors.white,
+                                      Colors.white.withValues(alpha: 0.95),
+                                    ],
+                                  ),
+                                  boxShadow: [
+                                    // 1. Derinlik gölgesi (Depth Shadow)
+                                    BoxShadow(
+                                      color: Colors.black.withValues(alpha: 0.25),
+                                      blurRadius: 15,
+                                      offset: const Offset(0, 10),
+                                    ),
+                                    // 2. Işık yayılımı (Sky Blue Aura Glow)
+                                    BoxShadow(
+                                      color: const Color(0xFF7DD3FC).withValues(alpha: 0.45),
+                                      blurRadius: 25,
+                                      spreadRadius: 3,
+                                    ),
                                   ],
                                 ),
-                                boxShadow: [
-                                  // 1. Derinlik gölgesi (Depth Shadow)
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.25),
-                                    blurRadius: 15,
-                                    offset: const Offset(0, 10),
-                                  ),
-                                  // 2. Işık yayılımı (Sky Blue Aura Glow)
-                                  BoxShadow(
-                                    color: const Color(0xFF7DD3FC).withValues(alpha: 0.45),
-                                    blurRadius: 25,
-                                    spreadRadius: 3,
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'GİRİŞ',
-                                    style: GoogleFonts.outfit(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w900,
-                                      color: AppColors.primaryMid,
-                                      letterSpacing: 2.0,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'GİRİŞ',
+                                      style: GoogleFonts.outfit(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w900,
+                                        color: AppColors.primaryMid,
+                                        letterSpacing: 2.0,
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(height: 2),
-                                  const Icon(
-                                    Icons.arrow_forward_rounded,
-                                    color: AppColors.primaryMid,
-                                    size: 20, // İkon boyutu 24'ten 20'ye çekilerek dengelendi
-                                  ),
-                                ],
+                                    const SizedBox(height: 2),
+                                    const Icon(
+                                      Icons.arrow_forward_rounded,
+                                      color: AppColors.primaryMid,
+                                      size: 20, // İkon boyutu 24'ten 20'ye çekilerek dengelendi
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -1018,12 +1075,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(color: Colors.white.withOpacity(0.15), width: 1.0),
                       ),
-                      child: icon == Icons.airport_shuttle_rounded
-                          ? Transform.flip(
-                              flipX: true,
-                              child: Icon(icon, color: Colors.white, size: 22),
-                            )
-                          : Icon(icon, color: Colors.white, size: 22),
+                      child: Icon(icon, color: Colors.white, size: 22),
                     ),
                     const SizedBox(width: 16),
                     Expanded(

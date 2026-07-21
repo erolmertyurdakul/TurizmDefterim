@@ -63,6 +63,7 @@ Bu dosya Erol Mert YURDAKUL ile Antigravity (Gemini) arasındaki ortak çalışm
   - **Mikro-Animasyonlar:** Ses dalgaları, yükleme göstergeleri ve ikonlar üzerinde kullanıcı etkileşimini artıracak akıcı animasyonlar (örneğin `_SoundWaveVisualizer`, parlayan buton gölgeleri vb.) kullanılır.
 * **Ses & Podcast Oynatma:** Ses kütüphanesi özelliklerinde doğrudan GitHub sunucuları yerine bant genişliği sınırsız ve reklam barındırmayan Spotify/Anchor CDN bağlantılarını (`https://anchor.fm/s/...`) kullan. Oynatıcı olarak `just_audio` entegrasyonunu tercih et.
 * **Veri Yapısı:** `lib/core/data/` altındaki ders notları, mini oyun senaryoları ve soru bankası veri şablonlarını güncellerken mevcut Dart harita (Map) yapılarına ve veri tiplerine sadık kal.
+* **Dart Veri Üretim ve Script Koruması:** Python veya harici betikler ile Dart veri dosyaları (özellikle `lib/core/data/quiz_data.dart` vb.) güncellenirken tırnak içindeki metinlerin alt satıra kayması (multiline string) engellenmeli ve dizi içerisindeki elemanların sonundaki virgüller (`,`) her zaman eksiksiz korunmalıdır.
 
 
 ## 5. Ortak Çalışma & Problem Çözme Tarzı

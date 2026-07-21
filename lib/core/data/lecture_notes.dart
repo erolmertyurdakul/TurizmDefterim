@@ -243,6 +243,37 @@ const Map<String, dynamic> unit1Notes = {
       ],
       "caseStudy": "Garantisiz rezervasyon yapan bir misafir uçağı rötar yaptığı için şehir oteline saat 19:30'da gelirse odasını bulamayabilir. Çünkü kapora yoksa saat 18:00'de oda sisteme geri salınır. Görevli bu kuralı misafire telefonda bildirmelidir.\n\nSektörden Vaka: 50 kişilik bir futbol takımı otele geleceğinde, mutfak ve kat hizmetlerine \"Grup Memorandumu\" gönderilmezse yemekler ve odalar yetişmez, otelde büyük kriz çıkar.",
       "tip": "Kapora yoksa \"Saat 18:00\" kuralı (Otel güvende), kapora varsa \"7/24 Oda Garanti\" (Misafir güvende).\n\nNot Bilgi Köşesi: Memorandum = Mutfak ve Kat Hizmetlerine Mesaj (Departmanlar arası iç mektup)."
+    },
+    {
+      "id": 5,
+      "tag": "SATIŞ KANALLARI",
+      "title": "REZERVASYON KAYNAKLARI VE KANALLARI (DOĞRUDAN VE DOLAYLI KANALLAR)",
+      "microSummary": "Oteller odalarını sadece resepsiyondan satmazlar; dijital dünyada birçok farklı kaynaktan rezervasyon akışı sağlanır.",
+      "definitions": [
+        {
+          "name": "Doğrudan Rezervasyon Kaynakları",
+          "desc": "Konuğun otele telefon, e-posta, web sitesi veya yüz yüze görüşme aracılığıyla doğrudan ulaşıp rezervasyon yaptırmasıdır. Acente komisyonu ödenmediği için otel için en yüksek karlı kanaldır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Ahmet Bey'in, otelin kendi resmi web sitesine girerek kredi kartıyla doğrudan 3 gecelik oda satın alması ve otelin bu satıştan hiç komisyon ödememesidir."
+          ]
+        },
+        {
+          "name": "Dolaylı Rezervasyon Kanalları",
+          "desc": "Seyahat acenteleri, tur operatörleri, OTA (Online Travel Agency - Çevrim içi Seyahat Acenteleri) ve GDS (Global Distribution System - Küresel Dağıtım Sistemleri) gibi aracı kanallardır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Yabancı bir turistin, uluslararası bir online rezervasyon portalı üzerinden otelimizden oda ayırtması ve otelin bu portal firmasına %15 komisyon ödemesidir."
+          ]
+        },
+        {
+          "name": "GDS (Global Dağıtım Sistemleri)",
+          "desc": "Havayolları, oteller ve seyahat acentelerini dünya çapında birbirine bağlayan, seyahat profesyonellerinin kullandığı küresel rezervasyon ağlarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Tokyo'daki bir seyahat acentesinin, iş insanı konuğu için Amadeus sistemi üzerinden otelimizden uçak biletiyle birlikte oda rezervasyonu yapmasıdır."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: İstanbul'da bir iş oteli, odalarının %90'ını sadece online acenteler üzerinden satıyordu ve her ay yüksek oranda komisyon ödüyordu. Yeni rezervasyon şefi, otelin kendi web sitesine özel 'En Uygun Fiyat Garantisi ve Ücretsiz SPA Kullanımı' kampanyası başlattı. 6 ay içinde doğrudan rezervasyon oranı %10'dan %45'e yükseldi ve otel binlerce liralık komisyon masrafından kurtulmuş oldu.",
+      "tip": "Doğrudan rezervasyon yapmak için arayan bir konuğa, online acentelerden daha avantajlı bir teklif veya oda yükseltme gibi küçük bir jest sunarak doğrudan satışı teşvik edin."
     }
   ]
 };
@@ -406,6 +437,37 @@ const Map<String, dynamic> unit2Notes = {
       ],
       "caseStudy": "Bulut teknolojisi sayesinde yöneticiler nerede olurlarsa olsunlar otel operasyonunu anlık yönetebilirler.",
       "tip": "Duvar Cetveli = Taş Devri. Web Otomasyon = Bulut Teknolojisi (7/24 canlı kontrol)."
+    },
+    {
+      "id": 5,
+      "tag": "KAPASİTE KONTROLÜ",
+      "title": "SATIŞ KISITLAMALARI VE REZERVASYON ENGELLERİ (STOP-SALE, CLOSED-OUT)",
+      "microSummary": "Yoğun dönemlerde geliri maksimize etmek için otel yönetimi satışları sınırlandırabilir veya durdurabilir.",
+      "definitions": [
+        {
+          "name": "Stop-Sale (Satış Durdurma)",
+          "desc": "Otelin belirli bir tarih aralığında tamamen dolması veya teknik/operasyonel bir durum nedeniyle yeni rezervasyon kabulünü kapatması işlemidir. Acentelere ve online kanallara satış durdurma yazısı gönderilir.",
+          "examples": [
+            "Örnekle Pekiştirelim: Bayram tatilinde tüm odaları dolan otelin, rezervasyon şefinin online satış kanallarına 'Stop-Sale' (Satış Kapatma) komutu göndermesi ve yeni girişleri engellemesidir."
+          ]
+        },
+        {
+          "name": "Closed-Out (Kapanış)",
+          "desc": "Belirli bir pazar segmentine (örneğin sadece yerli pazara veya belirli bir acenteye) satışların durdurulması, diğer kanalların açık tutulmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otelde yabancı turist yoğunluğunu dengede tutmak için, iç pazara yönelik satışların 'Closed-Out' yapılarak sadece dış pazar acentelerine açık bırakılmasıdır."
+          ]
+        },
+        {
+          "name": "Minimum Stay (Asgari Konaklama Sınırı)",
+          "desc": "Yılbaşı, bayram veya festival gibi yoğun dönemlerde, otelde kalış süresini uzatmak için konuklara uygulanan 'en az konaklama günü' şartıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otelin Kurban Bayramı dönemi için 'Minimum Stay' (en az 4 gece) kuralı koyması ve 2 gecelik rezervasyon yapmak isteyen konukları reddetmesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Muğla'da bir otel, bayram dönemi için 'Minimum Stay' (en az 4 gece) kuralı koydu. Bazı misafirler 2 gecelik rezervasyon talep etti ancak kabul edilmedi. Bayram geldiğinde tüm odalar 4 gece boyunca dolu kaldı. Eğer 2 gecelik rezervasyonlar kabul edilseydi, bayramın diğer günlerinde odalar boş kalacaktı ve otel ciddi bir gelir kaybı yaşayacaktı.",
+      "tip": "Stop-Sale kararı alındığı an sisteme ve tüm acente kanallarına anında işlenmelidir. Gecikme yaşanırsa overbooking veya shorta düşme krizleri kaçınılmaz olur."
     }
   ]
 };
@@ -584,6 +646,30 @@ const Map<String, dynamic> unit4Notes = {
       ],
       "caseStudy": "Kongre rezervasyonlarında sözlü anlaşmalar geçerli değildir, mutlaka tüm detayları barındıran yazılı sözleşme olmalıdır.",
       "tip": "Kongre = Yüksek Gelir + Detaylı Sözleşme."
+    },
+    {
+      "id": 4,
+      "tag": "REKREASYON & TUR",
+      "title": "REKREASYON, AKTİVİTE VE TRANSFER REZERVASYONLARI",
+      "microSummary": "Ön büro sadece oda satmaz; konuğun tatili boyunca ihtiyaç duyacağı yerel turlar ve transferleri de organize eder.",
+      "definitions": [
+        {
+          "name": "Rekreasyonel Aktivite Rezervasyonları",
+          "desc": "Konukların otel içinde veya çevresinde katılabilecekleri eğlenceli ve dinlendirici aktivitelerin (balon turları, tekne turları, rehberli ören yeri gezileri vb.) ön büro veya concierge aracılığıyla ayırtılmasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Kapadokya'daki otelde konaklayan yabancı bir ailenin talebi üzerine resepsiyonistin sabah balon uçuşu ve öğleden sonra at binme turunu yetkili yerel acenteden ayırtmasıdır."
+          ]
+        },
+        {
+          "name": "Transfer Rezervasyonları",
+          "desc": "Konukların havalimanından otele veya otelden havalimanına güvenli bir şekilde ulaşımlarını sağlamak için yapılan özel araç veya servis rezervasyonlarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Misafirin uçuş kodunu (Flight Code) sisteme kaydedip, havalimanında karşılanması için otel şoförüne 'Özel transfer aracıyla saat 15:30'da misafiri karşılayın' emrinin verilmesidir."
+          ]
+        }
+      ],
+      "caseStudy": "Sektörden Vaka: Kapadokya'da konaklayan bir grup turist, balon turuna katılmak istediğini son gün bildirdi. Resepsiyonist, yoğun dönem olmasına rağmen yetkili yerel acentelerle hızlıca iletişime geçerek gruba özel bir balon sepeti ve transfer aracı organize etti. Konuklar bu harika hizmetten o kadar memnun kaldılar ki otelden çıkışta personele teşekkür edip sonraki sene için tekrar rezervasyon yaptırdılar.",
+      "tip": "Transfer rezervasyonu yaparken uçuş kodunu (Flight Code) ve konuğun tahmini iniş saatini mutlaka iki kez kontrol edin. Uçak rötar yapsa bile şoförün konuğu beklemesini koordine edin."
     }
   ]
 };

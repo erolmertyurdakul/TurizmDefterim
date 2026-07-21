@@ -221,6 +221,13 @@ const Map<String, dynamic> transferOperasyonuUnit2 = {
           "examples": [
             "Örnekle Pekiştirelim: Uzun mesafeli bir transferde takograf cihazını kontrol eden transfermanın, şoförün yasal dinlenme saatine uyduğunu teyit etmesidir."
           ]
+        },
+        {
+          "name": "Takograf Cihazı",
+          "desc": "Ticari araçlarda şoförün sürüş ve dinlenme süreleri ile hız limitlerini elektronik ehliyet kartı aracılığıyla kaydeden ve polis denetimlerinde rapor sunan zorunlu yasal ölçüm cihazıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Yolda trafik denetimine giren transfer otobüsünün şoförünün, takograf cihazından çıktı alarak polise sürüş saatlerinin yasal sınırda olduğunu kanıtlamasıdır."
+          ]
         }
       ],
       "tip": "İlk yardım çantasında yara bandı, gazlı bez, antiseptik solüsyon, makas ve el feneri gibi ekipmanların çalışır durumda olması hayati önem taşır."
@@ -259,6 +266,13 @@ const Map<String, dynamic> transferOperasyonuUnit2 = {
           "desc": "Yolculardan teslim alınan valizlerin sayısının karşılıklı teyit edilmesi, karışıklıkları önlemek için üzerlerine acente takip etiketlerinin asılmasıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Transfermanın 20 kişilik grubun 30 adet bagajını tek tek sayarak teslim alması, valiz kulplarına otel renklerine uygun bagaj fişi bağlamasıdır."
+          ]
+        },
+        {
+          "name": "PIR Raporu (Kayıp Bagaj Tutanağı)",
+          "desc": "Yolcunun valizinin havalimanında kaybolması veya hasarlı çıkması durumunda, havayolu kayıp eşya ofisinde (Lost & Found) doldurulması yasal zorunluluk olan resmi Property Irregularity Report (PIR) raporudur.",
+          "examples": [
+            "Örnekle Pekiştirelim: Havalimanında valizi çıkmayan misafir Hans için transfermanın acenteye bilgi vermesi ve havayolu bankosunda bagaj teslim fişi ve biletle PIR kayıp tutanağı düzenleterek takibini başlatmasıdır."
           ]
         },
         {

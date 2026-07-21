@@ -89,6 +89,13 @@ const Map<String, dynamic> turOperasyonuUnit1 = {
           "examples": [
             "Örnekle Pekiştirelim: Rehberlik ruhsatı olan Hakan Bey'in o yıl kartını vizetmediği için eylemsiz statüye geçmesi ve yasal olarak turlara çıkamaması; arkadaşı Can'ın ise kartı vizeli (eylemli) olduğu için turlarda aktif çalışabilmesidir."
           ]
+        },
+        {
+          "name": "Hanutçuluk Yasağı ve Meslek Etiği",
+          "desc": "Turist rehberlerinin veya acentelerin, turistleri yanıltarak veya zorla belirli alışveriş dükkanlarına yönlendirmesi ve buralardan gizli komisyon (hanut) talep etmesinin yasa ile kesinlikle yasaklanmasıdır. Rehber her zaman tarafsız, dürüst ve güvenilirlik ilkelerine sadık kalmalıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Rehberin gruptaki misafirleri tarihi yerler yerine tüm gün sadece komisyon aldığı deri veya halı mağazalarında tutmasının denetimlerde tespit edilip, rehberlik kartının iptal edilmesidir."
+          ]
         }
       ],
       "tip": "Kokartsız veya kartı vizelenmemiş (eylemsiz) kişilerle tur düzenlemek kaçak rehberlik suçuna girer ve ağır yasal yaptırımları vardır."

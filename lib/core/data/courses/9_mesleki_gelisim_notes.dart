@@ -389,10 +389,10 @@ const Map<String, dynamic> cevreKoruma = {
           ]
         },
         {
-          "name": "Yeşil Yıldız (Çevreye Duyarlı Tesis)",
-          "desc": "Kültür ve Turizm Bakanlığı tarafından, çevre koruma bilincinin geliştirilmesi ve turizm tesislerinin çevre dostu yapılandırılmasını teşvik etmek amacıyla verilen resmi belgedir.",
+          "name": "Sürdürülebilir Turizm Belgesi (GSTC)",
+          "desc": "Kültür ve Turizm Bakanlığı ile GSTC (Küresel Sürdürülebilir Turizm Konseyi) ortaklığında yürütülen, çevre koruma, yerel istihdam ve kültürel mirası koruma kriterlerini karşılayan tesislere verilen yasal ve zorunlu belgedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yeşil Yıldız sahibi bir otelin, misafirlere çarşafların her gün değil, misafir talep ettiğinde (kartı yatağa bıraktığında) değiştirileceğini belirterek su tasarrufu yapmasıdır."
+            "Örnekle Pekiştirelim: Sürdürülebilir Turizm Belgesi sahibi bir otelin, misafirlere çarşafların her gün değil, misafir talep ettiğinde değiştirileceğini belirterek su tasarrufu yapması ve yerel halktan istihdam sağlamasıdır."
           ]
         }
       ],

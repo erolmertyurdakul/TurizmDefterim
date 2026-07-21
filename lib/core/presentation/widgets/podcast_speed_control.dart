@@ -1,16 +1,21 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../services/podcast_service.dart';
 
 class PodcastSpeedControl extends StatefulWidget {
   final Color accentColor;
   final bool opensUpward;
+  final VoidCallback? onTapOverride;
+  final GlobalKey? targetAlignKey;
 
   const PodcastSpeedControl({
     super.key,
     this.accentColor = Colors.cyanAccent,
     this.opensUpward = false,
+    this.onTapOverride,
+    this.targetAlignKey,
   });
 
   @override
@@ -21,6 +26,7 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
   double _currentSpeed = 1.0;
   final GlobalKey _buttonKey = GlobalKey();
   OverlayEntry? _overlayEntry;
+  final GlobalKey<PodcastSpeedSheetState> _sheetKey = GlobalKey();
 
   @override
   void initState() {
@@ -49,8 +55,18 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
   }
 
   void _removeOverlay() {
-    _overlayEntry?.remove();
-    _overlayEntry = null;
+    if (_overlayEntry == null) return;
+    
+    final sheetState = _sheetKey.currentState;
+    if (sheetState != null) {
+      sheetState.animateClose().then((_) {
+        _overlayEntry?.remove();
+        _overlayEntry = null;
+      });
+    } else {
+      _overlayEntry?.remove();
+      _overlayEntry = null;
+    }
   }
 
   void _toggleOverlay() {
@@ -59,36 +75,44 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
       return;
     }
 
-    final RenderBox? renderBox =
-        _buttonKey.currentContext?.findRenderObject() as RenderBox?;
-    if (renderBox == null) return;
+    // Varsayılan hizalama kutusu butonun kendisidir
+    RenderBox? alignBox = _buttonKey.currentContext?.findRenderObject() as RenderBox?;
+    
+    // Eğer dışarıdan bir hedef hizalama anahtarı verilmişse onu kullan
+    if (widget.targetAlignKey != null && widget.targetAlignKey!.currentContext != null) {
+      alignBox = widget.targetAlignKey!.currentContext!.findRenderObject() as RenderBox?;
+    }
 
-    final buttonPosition = renderBox.localToGlobal(Offset.zero);
-    final buttonSize = renderBox.size;
+    if (alignBox == null) return;
+
+    final alignPosition = alignBox.localToGlobal(Offset.zero);
+    final alignSize = alignBox.size;
     final mediaQuery = MediaQuery.of(context);
     final screenWidth = mediaQuery.size.width;
 
-    // Popup genişliği: ekrana sığacak şekilde, max 320
-    double popupWidth = screenWidth - 32;
-    if (popupWidth > 320) popupWidth = 320;
+    // Hız panelinin genişliği: Referans alınan alanın genişliğinin tam %90'ı!
+    // Hem sağdan hem soldan eşit (%5'er) boşluk kalacak şekilde ortalanır.
+    double popupWidth = alignSize.width * 0.9;
+    if (popupWidth < 220) popupWidth = 220;
+    if (popupWidth > screenWidth - 32) popupWidth = screenWidth - 32;
 
-    // Popup'ın sağ kenarı ekranı aşmasın
-    double left = buttonPosition.dx + buttonSize.width - popupWidth;
+    // Yatayda referans alınan alanın merkezine ortala
+    double left = alignPosition.dx + (alignSize.width / 2) - (popupWidth / 2);
     if (left < 16) left = 16;
     if (left + popupWidth > screenWidth - 16) left = screenWidth - popupWidth - 16;
 
-    // Popup pozisyonu: opensUpward ise butonun hemen üzerine, değilse butonun altına
+    // Dikeyde tam referans alınan alanın bitiş sınırından başlasın (4px milimetrik boşlukla)
     bool opensUp;
-    const popupEstimatedHeight = 130;
+    const popupHeight = 76; // Yükseklik %10 azaltılarak 76px'e düşürüldü
     double top;
     if (widget.opensUpward) {
-      top = buttonPosition.dy - popupEstimatedHeight - 8;
+      top = alignPosition.dy - popupHeight - 4;
       opensUp = true;
     } else {
-      top = buttonPosition.dy + buttonSize.height + 8;
+      top = alignPosition.dy + alignSize.height + 4;
       opensUp = false;
-      if (top + popupEstimatedHeight > mediaQuery.size.height - mediaQuery.padding.bottom - 16) {
-        top = buttonPosition.dy - popupEstimatedHeight - 8;
+      if (top + popupHeight > mediaQuery.size.height - mediaQuery.padding.bottom - 16) {
+        top = alignPosition.dy - popupHeight - 4;
         opensUp = true;
       }
     }
@@ -110,7 +134,9 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
             top: top,
             child: Material(
               color: Colors.transparent,
-              child: _SpeedSheet(
+              child: PodcastSpeedSheet(
+                key: _sheetKey,
+                width: popupWidth,
                 currentSpeed: _currentSpeed,
                 accentColor: widget.accentColor,
                 onSpeedChanged: _setSpeed,
@@ -130,15 +156,23 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
   Widget build(BuildContext context) {
     return GestureDetector(
       key: _buttonKey,
-      onTap: _toggleOverlay,
+      onTap: widget.onTapOverride ?? _toggleOverlay,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.08),
-          borderRadius: BorderRadius.circular(10),
+          color: widget.accentColor.withOpacity(0.07),
+          borderRadius: BorderRadius.circular(9),
           border: Border.all(
-            color: Colors.white.withOpacity(0.1),
+            color: widget.accentColor.withOpacity(0.26),
+            width: 1.2,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: widget.accentColor.withOpacity(0.08),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -153,8 +187,9 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
               _speedLabel(_currentSpeed),
               style: GoogleFonts.outfit(
                 fontSize: 12,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
+                fontWeight: FontWeight.w800,
+                color: Colors.white.withOpacity(0.95),
+                letterSpacing: 0.2,
               ),
             ),
           ],
@@ -168,14 +203,17 @@ class _PodcastSpeedControlState extends State<PodcastSpeedControl> {
 //  COMPACT SPEED SHEET — Dropdown Style
 // ═══════════════════════════════════════════
 
-class _SpeedSheet extends StatefulWidget {
+class PodcastSpeedSheet extends StatefulWidget {
+  final double width;
   final double currentSpeed;
   final Color accentColor;
   final ValueChanged<double> onSpeedChanged;
   final VoidCallback onClose;
   final bool opensUp;
 
-  const _SpeedSheet({
+  const PodcastSpeedSheet({
+    super.key,
+    required this.width,
     required this.currentSpeed,
     required this.accentColor,
     required this.onSpeedChanged,
@@ -184,17 +222,53 @@ class _SpeedSheet extends StatefulWidget {
   });
 
   @override
-  State<_SpeedSheet> createState() => _SpeedSheetState();
+  State<PodcastSpeedSheet> createState() => PodcastSpeedSheetState();
 }
 
-class _SpeedSheetState extends State<_SpeedSheet> {
+class PodcastSpeedSheetState extends State<PodcastSpeedSheet> with SingleTickerProviderStateMixin {
   late double _speed;
-  final List<double> _presets = [1.0, 1.25, 1.5, 2.0];
+  final List<double> _presets = [1.0, 1.25, 1.50, 1.75, 2.0];
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
     _speed = widget.currentSpeed;
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    );
+
+    _fadeAnimation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeInOut,
+    );
+
+    _scaleAnimation = Tween<double>(begin: 0.94, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeOutBack,
+      ),
+    );
+
+    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  Future<void> animateClose() async {
+    await _animationController.animateTo(
+      0.0,
+      duration: const Duration(milliseconds: 150),
+      curve: Curves.easeInQuad,
+    );
   }
 
   String _speedLabel(double speed) {
@@ -206,180 +280,132 @@ class _SpeedSheetState extends State<_SpeedSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return TweenAnimationBuilder<double>(
-      tween: Tween(begin: 0.0, end: 1.0),
-      duration: const Duration(milliseconds: 200),
-      curve: Curves.easeOutCubic,
-      builder: (_, opacity, child) {
-        return Opacity(
-          opacity: opacity,
-          child: Transform.scale(
-            scale: 0.92 + (opacity * 0.08),
-            alignment: widget.opensUp
-                ? Alignment.bottomCenter
-                : Alignment.topCenter,
-            child: child,
-          ),
-        );
-      },
-      child: Container(
-        width: 320,
-        decoration: BoxDecoration(
-          color: const Color(0xFF0A192F).withOpacity(0.95),
-          borderRadius: BorderRadius.circular(18),
-          border: Border.all(
-            color: Colors.white.withOpacity(0.15),
-            width: 1.5,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: widget.accentColor.withOpacity(0.12),
-              blurRadius: 24,
-              offset: const Offset(0, 8),
+    const double buttonWidth = 36; // Buton genişliği biraz daha daraltıldı
+
+    bool isPresetSelected(double preset) {
+      return (_speed - preset).abs() < 0.01;
+    }
+
+    return FadeTransition(
+      opacity: _fadeAnimation,
+      child: ScaleTransition(
+        scale: _scaleAnimation,
+        alignment: widget.opensUp ? Alignment.bottomCenter : Alignment.topCenter,
+        child: Container(
+          width: widget.width,
+          height: 76, // Yükseklik %10 kısaltılarak 76px yapıldı
+          decoration: BoxDecoration(
+            // Dark-Neon standartlarında 0.65 şeffaflığında premium glassmorphic cam paneli
+            color: const Color(0xFF0A192F).withOpacity(0.65),
+            borderRadius: BorderRadius.circular(18),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.15),
+              width: 1.5,
             ),
-            BoxShadow(
-              color: Colors.black.withOpacity(0.4),
-              blurRadius: 16,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(18),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // Üst satır: Preset'ler + Hız göstergesi
-                  Row(
-                    children: [
-                      // Preset butonları
-                      ..._presets.map((preset) {
-                        final isSelected = (_speed - preset).abs() < 0.01;
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 5),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() => _speed = preset);
-                              widget.onSpeedChanged(preset);
-                            },
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 150),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 9,
-                                vertical: 5,
-                              ),
-                              decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: widget.accentColor.withOpacity(0.15),
+                blurRadius: 20,
+                offset: const Offset(0, 8),
+              ),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.35),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7), // Dikey padding azaltıldı
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // 1. Satır: Preset Butonları
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: _presets.map((preset) {
+                        final isSelected = isPresetSelected(preset);
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() => _speed = preset);
+                            widget.onSpeedChanged(preset);
+                          },
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 150),
+                            width: buttonWidth,
+                            height: 22, // Buton yüksekliği 22px'e düşürüldü
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: isSelected
+                                  ? widget.accentColor.withOpacity(0.18)
+                                  : Colors.white.withOpacity(0.04),
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(
                                 color: isSelected
-                                    ? widget.accentColor.withOpacity(0.18)
-                                    : Colors.white.withOpacity(0.04),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                  color: isSelected
-                                      ? widget.accentColor.withOpacity(0.5)
-                                      : Colors.white.withOpacity(0.06),
-                                  width: 1,
-                                ),
+                                    ? widget.accentColor.withOpacity(0.5)
+                                    : Colors.white.withOpacity(0.06),
+                                width: 1,
                               ),
-                              child: Text(
-                                _speedLabel(preset),
-                                style: GoogleFonts.outfit(
-                                  fontSize: 11,
-                                  fontWeight: isSelected
-                                      ? FontWeight.w700
-                                      : FontWeight.w500,
-                                  color: isSelected
-                                      ? widget.accentColor
-                                      : Colors.white54,
-                                ),
+                            ),
+                            child: Text(
+                              _speedLabel(preset),
+                              style: GoogleFonts.outfit(
+                                fontSize: 10,
+                                fontWeight: isSelected
+                                    ? FontWeight.w800
+                                    : FontWeight.w500,
+                                color: isSelected
+                                    ? widget.accentColor
+                                    : Colors.white70,
                               ),
                             ),
                           ),
                         );
-                      }),
+                      }).toList(),
+                    ),
+                    const SizedBox(height: 2), // Boşluk azaltıldı
 
-                      const Spacer(),
-
-                      // Hız göstergesi
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 3,
-                        ),
-                        decoration: BoxDecoration(
-                          color: widget.accentColor.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: Text(
-                          _speedLabel(_speed),
-                          style: GoogleFonts.outfit(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w800,
-                            color: widget.accentColor,
-                            letterSpacing: -0.5,
+                    // 2. Satır: 20 Bölmeli (0.05 adımlı) Geometrik Slider
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: buttonWidth / 2),
+                      child: SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                          activeTrackColor: widget.accentColor,
+                          inactiveTrackColor: Colors.white10,
+                          trackHeight: 1.8, // Track kalınlığı azaltıldı
+                          thumbColor: widget.accentColor,
+                          thumbShape: const RoundSliderThumbShape(
+                            enabledThumbRadius: 4.5, // Thumb küçültüldü
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 8),
-
-                  // Slider satırı
-                  Row(
-                    children: [
-                      Text(
-                        '1.0',
-                        style: GoogleFonts.inter(
-                          fontSize: 9,
-                          color: Colors.white24,
-                        ),
-                      ),
-                      Expanded(
-                        child: SliderTheme(
-                          data: SliderTheme.of(context).copyWith(
-                            activeTrackColor: widget.accentColor,
-                            inactiveTrackColor: Colors.white10,
-                            trackHeight: 2.5,
-                            thumbColor: widget.accentColor,
-                            thumbShape: const RoundSliderThumbShape(
-                              enabledThumbRadius: 5.5,
-                            ),
-                            overlayColor: widget.accentColor.withOpacity(0.08),
-                            overlayShape: const RoundSliderOverlayShape(
-                              overlayRadius: 10.0,
-                            ),
-                            tickMarkShape: const RoundSliderTickMarkShape(
-                              tickMarkRadius: 1.8,
-                            ),
-                            activeTickMarkColor:
-                                widget.accentColor.withOpacity(0.4),
-                            inactiveTickMarkColor: Colors.white10,
+                          overlayColor: widget.accentColor.withOpacity(0.08),
+                          overlayShape: const RoundSliderOverlayShape(
+                            overlayRadius: 8.0,
                           ),
-                          child: Slider(
-                            min: 1.0,
-                            max: 2.0,
-                            divisions: 10,
-                            value: _speed,
-                            onChanged: (value) {
-                              setState(() => _speed = value);
-                              widget.onSpeedChanged(value);
-                            },
+                          tickMarkShape: const RoundSliderTickMarkShape(
+                            tickMarkRadius: 1.0, // Noktalar küçültüldü
                           ),
+                          activeTickMarkColor: widget.accentColor.withOpacity(0.25),
+                          inactiveTickMarkColor: Colors.white10,
+                        ),
+                        child: Slider(
+                          min: 1.0,
+                          max: 2.0,
+                          divisions: 20,
+                          value: _speed,
+                          onChanged: (value) {
+                            final steppedValue = (value * 20).roundToDouble() / 20;
+                            setState(() => _speed = steppedValue);
+                            widget.onSpeedChanged(steppedValue);
+                          },
                         ),
                       ),
-                      Text(
-                        '2.0',
-                        style: GoogleFonts.inter(
-                          fontSize: 9,
-                          color: Colors.white24,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

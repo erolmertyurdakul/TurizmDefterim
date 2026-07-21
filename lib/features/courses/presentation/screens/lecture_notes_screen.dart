@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
@@ -165,7 +166,6 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
         final isLoading = isCurrent && PodcastService().isBuffering;
 
         return Container(
-          key: ShellKeys.podcastKey,
           margin: const EdgeInsets.symmetric(
             horizontal: AppSizes.screenPadding,
             vertical: AppSizes.sm,
@@ -187,10 +187,11 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
             ],
           ),
           child: ClipRRect(
+            key: ShellKeys.podcastKey,
             borderRadius: BorderRadius.circular(20),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-              child: Padding(
+              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
+              child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -232,7 +233,7 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
                           ),
                         ),
                         // Hız Kontrolü
-                        const PodcastSpeedControl(),
+                        PodcastSpeedControl(targetAlignKey: ShellKeys.podcastKey),
                         const SizedBox(width: 6),
                         // Sağ Kısım: Oynat/Durdur Butonu
                         isLoading
@@ -398,53 +399,60 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
                 if (podcastUrl != null)
                   _buildPodcastPanel(podcastUrl, widget.gradient),
 
-                // ── DİKEY KART LİSTESİ (Expanded Scrollable) ──
                 Expanded(
-                  child: ListView(
+                  child: ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.only(bottom: 100),
-                    children: [
-                      // ── Kart Sayacı ──
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
-                        child: Row(
+                    itemCount: cards.length + 1,
+                    itemBuilder: (context, index) {
+                      if (index == 0) {
+                        // ── Kart Sayacı ──
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(Icons.style_rounded, size: 16, color: widget.gradient.first),
-                            const SizedBox(width: 8),
-                            Text(
-                              '${cards.length} Çalışma Kartı',
-                              style: GoogleFonts.inter(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.textSecondary,
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.style_rounded, size: 16, color: widget.gradient.first),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    '${cards.length} Çalışma Kartı',
+                                    style: GoogleFonts.inter(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                    decoration: BoxDecoration(
+                                      color: widget.gradient.first.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Text(
+                                      'Aşağı Kaydır ↓',
+                                      style: GoogleFonts.inter(
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w600,
+                                        color: widget.gradient.first,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                            const Spacer(),
-                            Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                              decoration: BoxDecoration(
-                                color: widget.gradient.first.withOpacity(0.1),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Text(
-                                'Aşağı Kaydır ↓',
-                                style: GoogleFonts.inter(
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w600,
-                                  color: widget.gradient.first,
-                                ),
-                              ),
-                            ),
+                            const SizedBox(height: AppSizes.md),
                           ],
-                        ),
-                      ),
+                        );
+                      }
 
-                      const SizedBox(height: AppSizes.md),
-
-                      // ── Kartlar ──
-                      ...cards.map((card) {
-                        final idx = cards.indexOf(card);
-                        return Padding(
+                      // Kartlar
+                      final idx = index - 1;
+                      final card = cards[idx];
+                      return RepaintBoundary(
+                        child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
                           child: _StudyCardWidget(
                             key: idx == 0 ? ShellKeys.studyCardKey : null,
@@ -453,9 +461,9 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
                             totalCards: cards.length,
                             gradient: widget.gradient,
                           ),
-                        );
-                      }).toList(),
-                    ],
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
@@ -552,8 +560,8 @@ class _StudyCardWidget extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(28),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Column(
+          filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 10, sigmaY: kIsWeb ? 0 : 10),
+          child: Container(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // ── Kart Numarası Başlık Şeridi ──

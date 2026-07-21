@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
@@ -25,6 +26,7 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
   late final PageController _pageController;
   late final AnimationController _breathingController;
   late final AnimationController _gradientController;
+  final GlobalKey _miniPlayerBoxKey = GlobalKey();
 
   final List<Widget> _screens = const [
     HomeScreen(),
@@ -141,8 +143,9 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
               child: Container(
+                key: _miniPlayerBoxKey,
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                 decoration: BoxDecoration(
                   color: const Color(0xFF0A192F).withOpacity(0.85),
@@ -199,7 +202,11 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                             ],
                           ),
                         ),
-                        const PodcastSpeedControl(accentColor: Colors.cyanAccent, opensUpward: true),
+                        PodcastSpeedControl(
+                          accentColor: Colors.cyanAccent, 
+                          opensUpward: true,
+                          targetAlignKey: _miniPlayerBoxKey,
+                        ),
                         IconButton(
                           icon: Icon(
                             playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
@@ -262,7 +269,7 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
             child: PageView(
               controller: _pageController,
               physics: const NeverScrollableScrollPhysics(),
-              children: _screens,
+              children: _screens.map((screen) => RepaintBoundary(child: screen)).toList(),
             ),
           ),
           Positioned(
@@ -313,8 +320,8 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: activeColor.withOpacity(0.14 + breathingVal * 0.06), // Nefes alan neon gölge
-                              blurRadius: 20 + (breathingVal * 6),
+                              color: activeColor.withOpacity(kIsWeb ? 0.16 : (0.14 + breathingVal * 0.06)), // Nefes alan neon gölge (web'de sabit)
+                              blurRadius: kIsWeb ? 22 : (20 + (breathingVal * 6)),
                               spreadRadius: 1,
                               offset: const Offset(0, 8),
                             ),
@@ -328,7 +335,7 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(24),
                           child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+                            filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 18, sigmaY: kIsWeb ? 0 : 18),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                               child: Row(

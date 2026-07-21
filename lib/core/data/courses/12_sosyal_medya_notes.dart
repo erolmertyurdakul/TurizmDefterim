@@ -254,6 +254,13 @@ const Map<String, dynamic> sosyalMedyaUnit2 = {
           "examples": [
             "Örnekle Pekiştirelim: Videonun yayılmasının ardından restoran sahibinin hemen resmi hesaplardan 'Yaşanan olaydan derin üzüntü duyuyoruz, ilgili personel hakkında işlem yapılmış olup misafirimizden özür dileriz' açıklaması yapmasıdır."
           ]
+        },
+        {
+          "name": "Kriz İletişimi Protokolleri",
+          "desc": "Kriz anında atılacak adımların yasal ve etik çerçevesidir: 1) İlk 24 saat içinde dürüst bir resmi açıklama yapılması. 2) Yorum silme veya engelleme gibi gizleme çabalarından kaçınılması. 3) Mağduriyetin hukuki ve maddi olarak telafi edilmesi adımlarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Gıda zehirlenmesi iddiasıyla ilgili yayılan asılsız veya haklı bir videoya karşı otelin sosyal medya ekibinin yorumları silmek yerine, 'Olay laboratuvar analiz aşamasında olup tüm yasal süreçler şeffaflıkla yürütülmektedir' şeklinde dürüst bir bilgilendirme anonsu yapmasıdır."
+          ]
         }
       ],
       "tip": "Kriz anında olumsuz yorumları silmek veya hesabı kapatmak krizi daha da büyütür. Dürüst olmak ve hızlı özür dilemek en iyi çözümdür."

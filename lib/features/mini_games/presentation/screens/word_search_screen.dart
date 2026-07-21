@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/providers/sound_provider.dart';
+import '../../../../core/providers/points_provider.dart';
 import '../../../../core/utils/sfx_synthesizer.dart';
 import '../../providers/word_search_provider.dart';
 import '../../../badges/providers/badge_provider.dart';
@@ -21,10 +23,16 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
   final GlobalKey _gridKey = GlobalKey();
   double _cellSize = 0;
   final AudioPlayer _sfxPlayer = AudioPlayer();
+  Timer? _timePointsTimer;
 
   @override
   void initState() {
     super.initState();
+    _timePointsTimer = Timer.periodic(const Duration(minutes: 1), (timer) {
+      if (mounted) {
+        ref.read(pointsProvider.notifier).addReadingPoints();
+      }
+    });
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(wordSearchProvider.notifier).startGame();
     });
@@ -32,6 +40,7 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
 
   @override
   void dispose() {
+    _timePointsTimer?.cancel();
     _sfxPlayer.dispose();
     super.dispose();
   }
@@ -99,10 +108,12 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
     final notifier = ref.read(wordSearchProvider.notifier);
     final isSoundOn = ref.watch(soundSettingsProvider);
 
-    // Increment word search completed for badge progress on game over
+    // Increment word search completed for badge progress and award +5 XP silently on completion
     ref.listen<WordSearchGameState>(wordSearchProvider, (prev, next) {
       if (prev != null && !prev.isGameOver && next.isGameOver) {
         ref.read(badgeProgressProvider.notifier).incrementWordSearchCompleted();
+        // Bulmacadaki tüm kelimeler tamamlandığında sessizce +5 XP ver
+        ref.read(pointsProvider.notifier).addPoints(5);
       }
       
       // Ses efekti tetikleyicisi

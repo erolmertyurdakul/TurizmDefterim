@@ -54,6 +54,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
       final prefs = await SharedPreferences.getInstance();
       final hasSeen = prefs.getBool('has_seen_onboarding_guide') ?? false;
       if (!hasSeen) {
+        await Future.delayed(const Duration(milliseconds: 200));
         if (mounted) {
           OnboardingTourScreen.show(context, _gradeGridKey, _modulesKey);
         }
@@ -72,7 +73,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
         final dayOfYearIndex = now.difference(startOfYear).inDays;
         final factIndex = dayOfYearIndex % 365;
         final fact = dailyFacts[factIndex];
-        precacheImage(NetworkImage(getFactImageUrl(fact)), context);
+        precacheImage(const AssetImage('assets/images/Daily_Info_Image.jpeg'), context);
       } catch (_) {}
     });
   }
@@ -213,8 +214,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
           builder: (context, setState) {
             final fact = dailyFacts[factIndex];
             final dayDisplay = factIndex + 1;
-            // 7 tip images cycling based on factIndex
-            final imageAsset = 'assets/images/tip_${(factIndex % 7) + 1}.png';
+            // Sabit resim — tüm 365 gün için aynı görsel
+            const imageAsset = 'assets/images/Daily_Info_Image.jpeg';
 
             return AlertDialog(
               shape: RoundedRectangleBorder(
@@ -514,14 +515,24 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                 textScaler: TextScaler.noScaling,
                 TextSpan(
                   children: [
-                    TextSpan(
-                      text: 'Konaklama ve Seyahat Akademisi ',
-                      style: GoogleFonts.outfit(
-                        fontSize: 14.5,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(0xFF7DD3FC), // Canlı gökyüzü mavisi
-                        height: 1.3,
-                        letterSpacing: 0.5,
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: ShaderMask(
+                        shaderCallback: (bounds) => const LinearGradient(
+                          colors: [Color(0xFF00E5FF), Color(0xFF00B0FF)], // Giriş ekranıyla birebir aynı Neon Cyan ➔ Mavi geçişi
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ).createShader(bounds),
+                        child: Text(
+                          'Konaklama ve Seyahat Akademisi ',
+                          style: GoogleFonts.outfit(
+                            fontSize: 14.5,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white, // Maskeleme için beyaz
+                            height: 1.3,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
                       ),
                     ),
                     const WidgetSpan(

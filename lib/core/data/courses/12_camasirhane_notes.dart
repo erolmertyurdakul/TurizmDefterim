@@ -139,6 +139,20 @@ const Map<String, dynamic> camasirhaneUnit2 = {
           "examples": [
             "Örnekle Pekiştirelim: Şehir şebeke suyundaki yüksek demir oranı yüzünden grileşmeye yüz tutan beyaz nevresimleri, yıkama suyuna demir tutucu ekleyerek kar gibi bembeyaz yapmaktır."
           ]
+        },
+        {
+          "name": "Leke İstasyonu (Spotting Table)",
+          "desc": "Üzerinde vakum motoru, leke sökücü sıvı tabancası, buhar/hava tabancası ve paslanmaz çelik leke tepsisi barındıran, lekeli çamaşırların yıkanmadan önce ön işleme alındığı profesyonel leke masasıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Masa örtüsündeki mürekkep lekesine, leke masasının vakumunu açıp mürekkep çözücü kimyasal sıkarak, çözülen mürekkebin vakumla aşağı çekilmesinin sağlanmasıdır."
+          ]
+        },
+        {
+          "name": "Buhar Tabancası Güvenlik Kuralları",
+          "desc": "Leke masasında lekelerin liflerden ayrılması amacıyla 4-6 bar basınçlı sıcak buhar üfleyen tabancadır. Yanık riskine karşı el hiçbir zaman buhar çıkış yönüne tutulmamalı ve kumaştan 10-15 cm uzakta uygulanmalıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Görevlinin lekeli bluzun üzerine buhar tabancasını tutarken eldiven giymesi, bluzu metal spatulayla gerdirip elini buharın menzilinden uzak tutmasıdır."
+          ]
         }
       ],
       "tip": "Kan lekesi ASLA sıcak suyla yıkanmaz! Sıcak su proteini pişirerek lekeyi kumaşa tamamen sabitler. Kan lekesi soğuk veya amonyaklı ılık suyla çıkartılmalıdır."
@@ -185,6 +199,13 @@ const Map<String, dynamic> camasirhaneUnit3 = {
           "desc": "Çarşaf, nevresim ve masa örtüsü gibi büyük, düz tekstillerin iki kişi tarafından verilerek ütülendiği devasa makinedir. Bazıları otomatik katlama da yapar.",
           "examples": [
             "Örnekle Pekiştirelim: Genişliği 3 metre olan devasa bir silindir ütünün önüne iki görevlinin geçip, yıkamadan çıkan kırışık nevresimleri gererek silindirlerin arasına beslemesidir."
+          ]
+        },
+        {
+          "name": "Merdaneli Ütü (Mangle) Güvenliği",
+          "desc": "Silindir ütü makinelerinde parmakların sıcak merdaneye sıkışmasını veya ezilmesini önleyen, dokunulduğu anda makineyi durduran acil durdurma siperliği veya kızılötesi ışık bariyeri gibi yasal koruyucu İSG donanımlarıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Çarşafı ütüye besleyen görevlinin eli yanlışlıkla koruyucu siperliğe değdiğinde, makinenin silindirlerini anında durdurup geriye sararak iş kazasını tamamen önlemesidir."
           ]
         },
         {

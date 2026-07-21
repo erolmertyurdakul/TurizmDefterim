@@ -229,9 +229,9 @@ class _TerminologyQuizScreenState extends ConsumerState<TerminologyQuizScreen> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      'Hangi terim aşağıdaki açıklamayı tanımlar?',
+                      'Hangi açıklama aşağıdaki terimi tanımlar?',
                       style: GoogleFonts.inter(
-                        fontSize: 11,
+                        fontSize: 13,
                         color: Colors.white.withValues(alpha: 0.75),
                       ),
                     ),
@@ -239,7 +239,7 @@ class _TerminologyQuizScreenState extends ConsumerState<TerminologyQuizScreen> {
                     Text(
                       '"${question.term.word}"',
                       style: GoogleFonts.outfit(
-                        fontSize: 20,
+                        fontSize: 23,
                         fontWeight: FontWeight.w900,
                         color: AppColors.accent,
                       ),
@@ -363,7 +363,7 @@ class _TerminologyQuizScreenState extends ConsumerState<TerminologyQuizScreen> {
                       String.fromCharCode(65 + index), // A, B, C, D
                       style: GoogleFonts.outfit(
                         fontWeight: FontWeight.w700,
-                        fontSize: 13,
+                        fontSize: 15,
                         color: _isAnswered ? textColor : Colors.grey.shade700,
                       ),
                     ),
@@ -373,7 +373,7 @@ class _TerminologyQuizScreenState extends ConsumerState<TerminologyQuizScreen> {
                     child: Text(
                       text,
                       style: GoogleFonts.inter(
-                        fontSize: 12,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600,
                         color: textColor,
                       ),
@@ -416,7 +416,7 @@ class _TerminologyQuizScreenState extends ConsumerState<TerminologyQuizScreen> {
                 Text(
                   'Erol Hocanızdan İpucu:',
                   style: GoogleFonts.outfit(
-                    fontSize: 12,
+                    fontSize: 13.5,
                     fontWeight: FontWeight.w800,
                     color: AppColors.accentWarm,
                   ),
@@ -426,7 +426,7 @@ class _TerminologyQuizScreenState extends ConsumerState<TerminologyQuizScreen> {
                   'Bu kelime cümle içinde tam olarak şöyle kullanılır:\n"$example"',
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.inter(
-                    fontSize: 11,
+                    fontSize: 12.5,
                     fontWeight: FontWeight.w500,
                     color: AppColors.textPrimary,
                     fontStyle: FontStyle.italic,

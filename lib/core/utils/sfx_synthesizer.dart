@@ -50,6 +50,14 @@ class SfxSynthesizer {
       // Normalize & Volume
       sample = (sample / (notes.isEmpty ? 1.0 : notes.length)) * volume;
 
+      // --- Anti-pop fade out ---
+      // Sesin sonunda (son 150ms) aniden kesilmeyi engelleyip yumuşakça sıfıra inmesini sağlar (pıt sesini çözer)
+      final fadeOutSamples = (sampleRate * 0.15).toInt();
+      if (i > numSamples - fadeOutSamples) {
+        final fadeFactor = (numSamples - i) / fadeOutSamples;
+        sample *= fadeFactor;
+      }
+
       if (sample > 1.0) sample = 1.0;
       if (sample < -1.0) sample = -1.0;
 
@@ -176,10 +184,12 @@ class SfxSynthesizer {
   // Staggered decays simulate a natural mechanical impact.
   static Uint8List getWheelTick() {
     final sampleRate = 44100;
-    final numSamples = (sampleRate * 0.03).toInt(); // 30ms total
-    final samples = Float32List(numSamples);
+    final activeSamples = (sampleRate * 0.035).toInt(); // 35ms aktif ses
+    final totalSamples = (sampleRate * 0.09).toInt();   // 90ms toplam (Android kırpma koruması)
+    final samples = Float32List(totalSamples);
+    final fadeOutStart = (activeSamples * 0.75).toInt();
 
-    for (var i = 0; i < numSamples; i++) {
+    for (var i = 0; i < activeSamples; i++) {
       final t = i / sampleRate;
 
       // Layer 1: Body — 500Hz, slow-ish decay (gives 'weight')
@@ -191,14 +201,18 @@ class SfxSynthesizer {
       // Layer 3: Air — 2800Hz, instant decay (adds crispness)
       final air = sin(2 * pi * 2800.0 * t) * exp(-t * 250.0) * 0.15;
 
-      var sample = (body + click + air) * 0.22; // master volume
+      var sample = (body + click + air) * 0.30; // master volume
+      if (i > fadeOutStart) {
+        final fadeFactor = (activeSamples - i) / (activeSamples - fadeOutStart);
+        sample *= fadeFactor;
+      }
       if (sample > 1.0) sample = 1.0;
       if (sample < -1.0) sample = -1.0;
       samples[i] = sample;
     }
 
     // Encode as 16-bit mono WAV
-    final subchunk2Size = numSamples * 2;
+    final subchunk2Size = totalSamples * 2;
     final wavData = ByteData(44 + subchunk2Size);
     // RIFF header
     wavData.setUint8(0, 0x52); wavData.setUint8(1, 0x49);
@@ -220,7 +234,86 @@ class SfxSynthesizer {
     wavData.setUint8(36, 0x64); wavData.setUint8(37, 0x61);
     wavData.setUint8(38, 0x74); wavData.setUint8(39, 0x61);
     wavData.setUint32(40, subchunk2Size, Endian.little);
-    for (var i = 0; i < numSamples; i++) {
+    for (var i = 0; i < totalSamples; i++) {
+      wavData.setInt16(44 + i * 2, (samples[i] * 32767.0).toInt(), Endian.little);
+    }
+    return wavData.buffer.asUint8List();
+  }
+
+  // ── Tek Seferlik Çark Dönme Sesi (Tınnn) ──
+  // Kullanıcının isteği üzerine: kasmayı önlemek için tek parça, uzun, 
+  // yavaşça azalan büyülü bir çınlama sesi (3.2 saniye sürer)
+  static Uint8List getWheelSpinResonance() {
+    return generateWav(
+      notes: [440.0, 554.37, 659.25, 880.0], // A major arpeggio
+      delays: [0.0, 0.05, 0.10, 0.15],
+      duration: 3.2,
+      volume: 0.25,
+      attackTime: 0.05,
+      decayRate: 1.5, // 3 saniye boyunca yavaş yavaş azalacak sönümleme
+    );
+  }
+
+  // Generate a single 3.5 second track containing all the ticks at specific times.
+  // This eliminates stuttering caused by firing hundreds of play() events on Android.
+  static Uint8List generateFullSpinSequence(List<double> tickDelays) {
+    final sampleRate = 44100;
+    final duration = 3.5;
+    final totalSamples = (sampleRate * duration).toInt();
+    final samples = Float32List(totalSamples);
+    
+    final activeSamples = (sampleRate * 0.035).toInt();
+    final fadeOutStart = (activeSamples * 0.75).toInt();
+
+    for (final delay in tickDelays) {
+      final startSample = (delay * sampleRate).toInt();
+      for (var i = 0; i < activeSamples; i++) {
+        final idx = startSample + i;
+        if (idx >= totalSamples) break;
+        
+        final t = i / sampleRate;
+        final body = sin(2 * pi * 500.0 * t) * exp(-t * 90.0) * 0.35;
+        final click = sin(2 * pi * 1400.0 * t) * exp(-t * 160.0) * 0.50;
+        final air = sin(2 * pi * 2800.0 * t) * exp(-t * 250.0) * 0.15;
+        
+        var sample = (body + click + air) * 0.30;
+        if (i > fadeOutStart) {
+          final fadeFactor = (activeSamples - i) / (activeSamples - fadeOutStart);
+          sample *= fadeFactor;
+        }
+        
+        samples[idx] += sample;
+      }
+    }
+
+    // Normalize if too loud
+    for (var i = 0; i < totalSamples; i++) {
+      if (samples[i] > 1.0) samples[i] = 1.0;
+      if (samples[i] < -1.0) samples[i] = -1.0;
+    }
+
+    final subchunk2Size = totalSamples * 2;
+    final wavData = ByteData(44 + subchunk2Size);
+    
+    wavData.setUint8(0, 0x52); wavData.setUint8(1, 0x49);
+    wavData.setUint8(2, 0x46); wavData.setUint8(3, 0x46);
+    wavData.setUint32(4, 36 + subchunk2Size, Endian.little);
+    wavData.setUint8(8, 0x57); wavData.setUint8(9, 0x41);
+    wavData.setUint8(10, 0x56); wavData.setUint8(11, 0x45);
+    wavData.setUint8(12, 0x66); wavData.setUint8(13, 0x6D);
+    wavData.setUint8(14, 0x74); wavData.setUint8(15, 0x20);
+    wavData.setUint32(16, 16, Endian.little);
+    wavData.setUint16(20, 1, Endian.little);
+    wavData.setUint16(22, 1, Endian.little);
+    wavData.setUint32(24, sampleRate, Endian.little);
+    wavData.setUint32(28, sampleRate * 2, Endian.little);
+    wavData.setUint16(32, 2, Endian.little);
+    wavData.setUint16(34, 16, Endian.little);
+    wavData.setUint8(36, 0x64); wavData.setUint8(37, 0x61);
+    wavData.setUint8(38, 0x74); wavData.setUint8(39, 0x61);
+    wavData.setUint32(40, subchunk2Size, Endian.little);
+    
+    for (var i = 0; i < totalSamples; i++) {
       wavData.setInt16(44 + i * 2, (samples[i] * 32767.0).toInt(), Endian.little);
     }
     return wavData.buffer.asUint8List();
