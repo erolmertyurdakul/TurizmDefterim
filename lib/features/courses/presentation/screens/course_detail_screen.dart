@@ -362,16 +362,35 @@ class CourseDetailScreen extends ConsumerWidget {
       cardCount = cardsList.length; // Ana açılır kart sayısı (Örn: 9 Kart)
       int totalNotes = 0;
       for (var c in cardsList) {
-        if (c is Map && c['definitions'] is List) {
-          totalNotes += (c['definitions'] as List).length;
+        if (c is Map) {
+          // 1. Mikro Özet
+          if (c['microSummary'] != null && c['microSummary'].toString().trim().isNotEmpty) {
+            totalNotes += 1;
+          }
+          // 2. Tanım ve Terim Notları
+          if (c['definitions'] is List) {
+            totalNotes += (c['definitions'] as List).length;
+          }
+          // 3. Özel Ek Detay Notları (Yatak Tipleri vb.)
+          if (c['extraDetails'] is List) {
+            totalNotes += (c['extraDetails'] as List).length;
+          }
+          // 4. Sektörden Vaka Notu
+          if (c['caseStudy'] != null && c['caseStudy'].toString().trim().isNotEmpty) {
+            totalNotes += 1;
+          }
+          // 5. Bilgi Köşesi / Püf Noktası / İpucu Notu
+          if (c['tip'] != null && c['tip'].toString().trim().isNotEmpty) {
+            totalNotes += 1;
+          }
         } else {
           totalNotes += 1;
         }
       }
-      noteCount = totalNotes; // İçindeki alt ders notu/bilgiler (Örn: 29 Ders Notu)
+      noteCount = totalNotes; // Tüm eğitici içerik maddeleri (Örn: 56 Ders Notu)
     } else {
       cardCount = unit.lessonCount;
-      noteCount = unit.lessonCount * 3;
+      noteCount = unit.lessonCount * 5;
     }
 
     return RepaintBoundary(
