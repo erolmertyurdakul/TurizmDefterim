@@ -1085,7 +1085,7 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'Kapora',
+    word: 'Ön Ödeme (Kapora / Depozito)',
     definition: 'Hizmet veya oda satın almak için, toplam maddi bedelin önceden ödenen ve odayı kapora veren kişiye kesin olarak ayıran ön ödemedir (güvenmelik).',
     example: 'Ahmet Bey, yaz tatili rezervasyonunun iptal olmaması için bir gecelik oda ücretini otele "kapora" olarak havale etmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
@@ -1453,7 +1453,7 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'BRC',
+    word: 'BRC (Gıda Güvenliği Standardı)',
     definition: 'İngiliz Perakende Konsorsiyumu; gıda imalatında güvenlik, kalite ve operasyon kıstaslarını belirleyen uluslararası standart.',
     example: 'Restoranımızda kullandığımız dondurulmuş gıda ürünlerinin BRC standartlarına uygun üretim yapan sertifikalı tedarikçilerden alınmasına özen gösteriyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
@@ -1523,10 +1523,10 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'Butler',
-    definition: 'Özellikle üst düzey (VIP/VVIP) konuklara özel ve kişiselleştirilmiş hizmet sunan görevli.',
-    example: 'Kral dairesinde konaklayan cumhurbaşkanı ve ailesine, kaldıkları süre boyunca bagaj açma-toplamadan restoran rezervasyonuna kadar özel bir butler eşlik etti.',
-    category: 'Seyahat Acenteciliği ve Ulaştırma',
+    word: 'Kahya (Butler)',
+    definition: 'Özellikle üst düzey (VIP/VVIP) konuklara özel, kişiselleştirilmiş hizmet ve oda servisi sunan özel hizmet görevlisidir.',
+    example: 'Kral dairesinde konaklayan misafirimize tatili boyunca özel bir Kahya (Butler) eşlik etti.',
+    category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Proaktif Olmak',
@@ -1636,10 +1636,10 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'MSDS',
-    definition: 'Temizlik kimyasallarının güvenli kullanımı, riskleri, depolanması ve ilk yardım adımlarını içeren Malzeme Güvenlik Bilgi Formu (Material Safety Data Sheet).',
-    example: 'Kimyasal temizlik ürünlerini kullanan tüm personelin, acil bir durumda ne yapacağını bilmesi için depoda MSDS formları asılı bulundurulmalıdır.',
-    category: 'Seyahat Acenteciliği ve Ulaştırma',
+    word: 'Güvenlik Bilgi Formları (SDS / MSDS)',
+    definition: 'Temizlik kimyasallarının güvenli kullanımı, riskleri, depolanması ve acil durum ilk yardım adımlarını içeren Malzeme Güvenlik Bilgi Formudur.',
+    example: 'Kat hizmetleri personeli yeni temizlik kimyasalını kullanmadan önce Güvenlik Bilgi Formunu (SDS) inceledi.',
+    category: 'Kat Hizmetleri ve Temizlik Operasyonları',
   ),
   Term(
     word: 'pH Skalası',
@@ -2198,14 +2198,14 @@ const List<Term> terminologyData = [
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
-    word: 'İflas',
+    word: 'İşletme İflası ve Tasfiye',
     definition: 'Bir ticari işletmenin borçlarını ödeyemez hale gelmesi ve hukuki olarak ticari faaliyetlerinin sona ermesi durumu.',
     example: 'Kötü yönetim ve yanlış yatırım kararları yüzünden borçlarını ödeyemeyen seyahat acentesi mahkeme kararıyla iflas etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
-    word: 'İhracat',
+    word: 'Hizmet İhracatı ve Turizm Geliri',
     definition: 'Bir ülkede üretilen mal veya hizmetlerin, döviz karşılığında yabancı ülkelere (dış pazarlara) satılması (Dış Satım).',
     example: 'Yabancı turistlere otel hizmeti sunarak döviz girdisi sağlamamız, görünmeyen bir hizmet exports faaliyeti olarak kabul edilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
@@ -2310,7 +2310,7 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'KOSGEB',
+    word: 'KOSGEB Girişimcilik Destekleri',
     definition: 'Küçük ve Orta Ölçekli İşletmeleri Geliştirme ve Destekleme İdaresi Başkanlığı; girişimcilere ve KOBİ\'lere hibe/kredi desteği sağlayan kurum.',
     example: 'Eko-turizm alanında butik bir otel açmak isteyen girişimci kadın, KOSGEB hibesi alarak kendi işletmesini kurmayı başardı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
@@ -2452,7 +2452,7 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'TGA',
+    word: 'TGA (Türkiye Turizm Tanıtım ve Geliştirme Ajansı)',
     definition: 'Türkiye Turizm Tanıtım ve Geliştirme Ajansı; Türkiye\'nin turizm potansiyelini uluslararası alanda tanıtmak ve markalaşmasını sağlamakla görevli kurum.',
     example: 'TGA öncülüğünde yürütülen "Go Türkiye" kampanyası, ülkemizin e-turizm alanında dünya genelinde milyonlarca gezgine ulaşmasını sağlamıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
@@ -3456,7 +3456,7 @@ const List<Term> terminologyData = [
     isEnglish: false,
   ),
   Term(
-    word: 'İkebana',
+    word: 'İkebana (Japon Çiçek Düzenleme Sanatı)',
     definition: 'Japonlara özgü, doğa ile insanı birleştiren felsefi bir temele dayanan geleneksel ve minimalist çiçek düzenleme sanatı.',
     example: 'Kat hizmetleri departmanı, oda dekorasyonunda sadelik sağlamak için personele geleneksel İkebana çiçek düzenleme sanatı eğitimi aldırdı.',
     category: 'Turizm Coğrafyası ve Çevre',

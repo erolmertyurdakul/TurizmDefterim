@@ -1,0 +1,23 @@
+Starting PDF Check Script...
+PDF Path: C:\Erol_Mobil_Gelistirme\TurizmAkademi\pdfs\12. Sınıf Dünya Kültürleri.pdf
+PDF Exists: True
+PDF Size: 237242435 bytes
+Library pypdf is INSTALLED
+Library pdfplumber is NOT installed
+Library fitz is INSTALLED
+Library PyPDF2 is NOT installed
+Using pypdf to inspect the PDF...
+Total Pages: 245
+Page 1 Text (first 500 chars):
+KONAKLAMA VE SEYAHAT HİZMETLERİ ALANI DÜNYA KÜLTÜRLERİ 11-12 DERS MATERYALİ
+DÜNYA 
+KÜLTÜRLERİ 11-12
+DERS 
+MATERYALİ
+MESLEKİ VE TEKNİK  
+ANADOLU LİSESİ
+KONAKLAMA VE SEYAHAT 
+HİZMETLERİ  ALANI
+ISBN: 978-975-11-7972-2
+No outline/TOC found in PDF.
+Done.

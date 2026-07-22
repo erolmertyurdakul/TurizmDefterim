@@ -512,10 +512,10 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
           ]
         },
         {
-          "name": "Pre-Authorization (Ön Provizyon)",
-          "desc": "Giriş anında misafirin kredi kartından, konaklama bedeli ve tahmini ekstra harcamaları kapsayacak bir tutarın banka kanalıyla geçici olarak bloke edilmesidir. Çıkışta bu bloke çözülür.",
+          "name": "Ön Provizyon İşlemleri",
+          "desc": "Konuğun kredi kartından konaklama ve olası ekstra harcamalarını güvence altına almak amacıyla kart bakiye veya limitinin geçici olarak bloke edilmesi işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Pos cihazından misafirin kartına 'Ön Provizyon' işlemi uygulanarak 5000 TL'lik limitin otel lehine bloke edilmesi; misafir ödeme yapmadan ayrılırsa bu tutarın otel tarafından çekilebilmesidir."
+            "Örnekle Pekiştirelim: Resepsiyon görevlisinin konuğun giriş kaydını yaparken kredi kartından 2.000 TL tutarında ön provizyon alarak oda harcamalarını güvenceye almasıdır."
           ]
         },
         {

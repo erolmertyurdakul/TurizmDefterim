@@ -55,10 +55,10 @@ const Map<String, dynamic> meslekEtigiVeAhilik = {
           ]
         },
         {
-          "name": "Fütüvvetname",
-          "desc": "Ahilerin uyması gereken ahlaki kuralları, görgü kurallarını ve teşkilat disiplinini yazılı olarak belirleyen kılavuz kitaplardır. Esnafın ticari ve sosyal yaşam anayasasıdır.",
+          "name": "Ahilik Nasihati",
+          "desc": "Ahi Evran ve ahi büyükleri tarafından belirlenen; dürüstlük, cömertlik, alçakgönüllülük ve misafirperverliği esnafın hayat felsefesi kılan tarihi ahlak ilkeleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Fütüvvetnamede yer alan 'Yalan söylememek, cömert olmak, misafirperver olmak ve kimsenin kusurunu aramamak' kuralları, esnafın günlük ticari ahlakını şekillendirirdi."
+            "Örnekle Pekiştirelim: Ahilik Nasihatinde yer alan 'Harama bakma, haram yeme, haram içme; doğru, dürüst ve sabırlı ol' ilkeleri, esnafın ticari ahlakını oluşturan en temel rehberdir."
           ]
         }
       ],
@@ -306,10 +306,10 @@ const Map<String, dynamic> cevreKoruma = {
       "microSummary": "Doğal kaynaklarımızı tüketmeden, gelecek nesillerin de ihtiyaçlarını karşılayabileceği bir yaşam tarzı kurmalıyız.",
       "definitions": [
         {
-          "name": "Sürdürülebilirlik",
-          "desc": "İnsanlığın, gelecek nesillerin kendi ihtiyaçlarını karşılama yeteneğini tehlikeye atmadan, bugünün ihtiyaçlarını karşılayabilmesidir. Çevre, ekonomi ve toplum dengesini kurmaktır.",
+          "name": "Sürdürülebilir Gelişme ve Ekolojik Denge",
+          "desc": "Gelecek nesillerin ihtiyaçlarını tehlikeye atmadan, doğayı koruyarak kalkınma ve üretim süreçlerini yürütme anlayışıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelin bahçesini sulamak için şebeke suyu kullanmak yerine, çatılardan toplanan yağmur sularını arıtıp depolayarak sulama yapmak harika bir sürdürülebilirlik adımıdır."
+            "Örnekle Pekiştirelim: İşletmelerin doğal kaynakları tükenmeden kullanması ve çevre dostu üretim teknolojilerini benimsemesidir."
           ]
         },
         {
@@ -375,10 +375,10 @@ const Map<String, dynamic> cevreKoruma = {
           ]
         },
         {
-          "name": "Mavi Bayrak (Blue Flag)",
-          "desc": "Plajlar ve marinalar için verilen; deniz suyunun temizliğini, çevre yönetiminin kalitesini, plaj güvenliğini ve cankurtaran hizmetlerinin yeterliliğini belgeleyen prestijli eko-etikettir.",
+          "name": "Ekolojik Okuryazarlık",
+          "desc": "Doğal ekosistemlerin çalışma ilkelerini anlamak, doğanın dengesini korumak ve çevreyle uyumlu yaşam alışkanlıkları geliştirmektir.",
           "examples": [
-            "Örnekle Pekiştirelim: Antalya'da bir otelin plajında deniz suyunun her 15 günde bir analiz edilmesi, plajda evcil hayvanların girmesinin engellenmesi ve Mavi Bayrak standartlarının korunmasıdır."
+            "Örnekle Pekiştirelim: Bir öğrencinin su ve enerji tasarrufu yaparak, doğaya zarar vermeyen geri dönüştürülebilir ürünleri tercih etmesi ekolojik okuryazarlık örneğidir."
           ]
         },
         {
@@ -445,10 +445,10 @@ const Map<String, dynamic> girisimciFikirler = {
           ]
         },
         {
-          "name": "Fizibilite (Yapılabilirlik) Etüdü",
-          "desc": "Yatırım kararı vermeden önce, kurmak istenen işin teknik, ekonomik ve yasal olarak ne kadar kârlı ve uygulanabilir olduğunu araştıran rapordur.",
+          "name": "Yenilikçi İş Fikri",
+          "desc": "Pazardaki bir ihtiyacı fark edip bu ihtiyaca yönelik özgün, faydalı ve değer yaratan yeni bir ticari çözüm sunmaktır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bodrum'da bir restoran açmadan önce, bölgedeki turist yoğunluğunu, rakiplerin fiyatlarını ve dükkan kiralarını analiz ederek restoranın kârlı olup olmayacağını hesaplamaktır."
+            "Örnekle Pekiştirelim: Turistlerin bavullarını güvenle bırakabilecekleri mobil bir bagaj taşıma hizmeti fikri geliştirmek yenilikçi bir iş fikridir."
           ]
         },
         {
@@ -577,10 +577,10 @@ const Map<String, dynamic> fikriVeSinaiMulkiyet = {
           ]
         },
         {
-          "name": "Lisanslama ve Devir",
-          "desc": "Eser veya sınai hak sahibinin, belirli bir ücret karşılığında kullanım hakkını bir başkasına yasal sözleşmeyle (lisans) vermesi veya hakkı tamamen satması (devir) işlemidir.",
+          "name": "Fikri Hak İhlalleri ve Korunma",
+          "desc": "İzinsiz kullanım, taklit veya kopyalama durumunda hak sahibinin kanuni yollardan haklarını savunması ve eserini korumasıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Ünlü bir otel zincirinin, isim hakkını (franchise) yerel bir yatırımcıya yıllık belirli bir ücret karşılığında lisans sözleşmesiyle devredip otel açtırmasıdır."
+            "Örnekle Pekiştirelim: Özgün bir yazılım veya ders notunun izinsiz kopyalanması durumunda yasal mercilere başvurarak içeriğin kaldırılmasını talep etmektir."
           ]
         },
         {

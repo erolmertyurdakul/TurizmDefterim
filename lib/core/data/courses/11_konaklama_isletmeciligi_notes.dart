@@ -72,7 +72,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit1 = {
       "microSummary": "Oteller tek başlarına değil; ekonomi, siyaset, teknoloji ve doğa olaylarından doğrudan etkilenen çevre ile sürekli etkileşim içinde varlığını sürdürür.",
       "definitions": [
         {
-          "name": "Mevsimsellik (Seasonality)",
+          "name": "Sezonallik (Mevsimsel Dalgalanmalar)",
           "desc": "Turizm talebinin yıl içinde düzenli olarak yüksek sezon (yaz/kış) ve düşük sezon (omuz dönem) şeklinde dalgalanması ve bu dalgalanmanın otel gelirlerini doğrudan etkilemesidir.",
           "examples": [
             "Örnekle Pekiştirelim: Bodrum'daki bir otel, Temmuz-Ağustos aylarında tamamen dolu olup yüksek fiyat uygularken, Kasım-Mart aylarında sadece %20 dolulukta çalışarak kapasite atıl kalmaktadır."

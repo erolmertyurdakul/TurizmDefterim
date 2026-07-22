@@ -200,7 +200,7 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           ]
         },
         {
-          "name": "Klimatoterapi",
+          "name": "Klimatizm ve İklim Kürleri",
           "desc": "Temiz hava, güneş ışığı ve deniz havası gibi iklim faktörlerinin, doktor gözetiminde solunum, dolaşım ve deri hastalıklarının tedavisi amacıyla hedeflenen bölgede kullanılmasıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Astım hastası bir misafirin, havası nemsiz ve oksijeni bol olan Kaz Dağları'nda doktor tavsiyesiyle 3 hafta kalarak solunum kürü yapmasıdır."

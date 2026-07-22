@@ -132,7 +132,7 @@ const Map<String, dynamic> transferOperasyonuUnit1 = {
       "microSummary": "Transferin en güvenli, ekonomik ve hızlı güzergahtan gerçekleştirilmesi için yapılan ön çalışma sürecidir.",
       "definitions": [
         {
-          "name": "Rota Optimizasyonu",
+          "name": "Transfer Rota Planlaması",
           "desc": "Yol durumu, trafik yoğunluğu, yol yapım çalışmaları ve hava muhalefeti göz önüne alınarak en uygun güzergahın haritalandırılması ve şoförle koordine edilmesidir.",
           "examples": [
             "Örnekle Pekiştirelim: Yoğun bir tatil gününde havalimanı-otel transferi için trafik yoğunluğu olan sahil yolu yerine çevre yolunun rota olarak tercih edilmesidir."
@@ -368,7 +368,7 @@ const Map<String, dynamic> transferOperasyonuUnit2 = {
           ]
         },
         {
-          "name": "KVKK ve Gizlilik Esası",
+          "name": "Yolcu Bilgileri Gizliliği ve Güvenliği",
           "desc": "Konuğun kimlik, uçuş ve seyahat detaylarının üçüncü kişilerle kesinlikle paylaşılmaması, karşılama tabelasında misafirin açık adı yerine sadece unvanının veya özel acente kodunun yazılmasıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Ünlü bir sanatçının transferini gerçekleştiren transfermanının, konuğun fotoğraflarını çekip sosyal medyada paylaşmasının yasak olduğunu bilerek profesyonelce davranmasıdır."
@@ -484,7 +484,7 @@ const Map<String, dynamic> transferOperasyonuUnit3 = {
       "microSummary": "Havalimanlarında yolcuların beraberinde getirdikleri eşyalar için uygulanan denetim ve muafiyet kurallarıdır.",
       "definitions": [
         {
-          "name": "Yeşil Hat (Green Channel)",
+          "name": "Gümrük ve Alan Geçiş Prosedürleri",
           "desc": "Gümrük muafiyet limitlerini aşan vergiye tabi eşyası, ticari ürünü veya gümrük beyanına tabi nesnesi olmayan yolcuların geçtiği şerit alanıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Sadece kendi kişisel valiziyle gelen turistin, gümrük çıkışındaki yeşil kapıdan doğrudan geçerek dışarı çıkmasıdır."

@@ -24,7 +24,7 @@ const Map<String, dynamic> turOperasyonuUnit1 = {
           ]
         },
         {
-          "name": "Mihmandar",
+          "name": "Tur Lideri ve Enformatör",
           "desc": "Gelen konukları en iyi şekilde ağırlayan, onlara yol gösteren ve tüm ihtiyaçlarıyla ilgilenen, Türk kültürünün geleneksel misafirperverliğini temsil eden tarihi mihmandarlık kavramıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Osmanlı döneminde yabancı elçileri sınırda karşılayıp İstanbul'a gelene kadar yeme, içme ve barınma ihtiyaçlarını düzenleyen ve yolda rehberlik eden saray görevlileridir."
@@ -129,7 +129,7 @@ const Map<String, dynamic> turOperasyonuUnit2 = {
           ]
         },
         {
-          "name": "Paging (İsim Levhası)",
+          "name": "Karşılama ve Paging İşlemleri",
           "desc": "Havalimanlarında kalabalık arasında konukların rehberi kolayca bulabilmesi için üzerinde acente adının veya misafir isminin yazılı olduğu levhayı havada tutma işlemidir.",
           "examples": [
             "Örnekle Pekiştirelim: Rehber Pelin'in, havalimanı yolcu çıkış kapısında elinde üzerinde kalın harflerle 'SMITH FAMILY' yazan şık bir karton levhayı havada tutarak konuk aileyi bulmasıdır."
@@ -250,7 +250,7 @@ const Map<String, dynamic> turOperasyonuUnit3 = {
           ]
         },
         {
-          "name": "Fizibilite (Ön Keşif / İnfo)",
+          "name": "İnfo Tur (Ön İnceleme Gezisi)",
           "desc": "Tur programı satışa sunulmadan önce acente yetkililerinin o güzergaha bizzat giderek yolları, otelleri, restoranları ve müzeleri yerinde test edip onaylaması sürecidir.",
           "examples": [
             "Örnekle Pekiştirelim: Acente müdürünün yeni planladıkları Likya Yolu turundan önce bölgeye gidip, otobüsün geçeceği virajlı yolları ölçmesi ve restoran yemeklerinin kalitesini bizzat tadarak kontrol etmesidir."

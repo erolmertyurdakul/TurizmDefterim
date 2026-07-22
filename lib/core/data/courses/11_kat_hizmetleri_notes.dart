@@ -389,7 +389,7 @@ const Map<String, dynamic> katHizmetleriUnit4 = {
           ]
         },
         {
-          "name": "Işıklandırma ve Ambiyans",
+          "name": "Aydınlatma ve Ambiyans Düzeni",
           "desc": "Aydınlatma; mekânın atmosferini belirleyen en güçlü unsurdur. Genel aydınlatma (tavan lambası), görev aydınlatması (okuma lambası) ve vurgu aydınlatması (spot) üç temel katmandır. Renk sıcaklığı (Kelvin) mekânın enerjisini doğrudan etkiler.",
           "examples": [
             "Örnekle Pekiştirelim: Restoranın masa lambalarında 2700K sarı-turuncu ışık kullanmak romantik ve iştah açıcı bir ambiyans yaratırken; çalışma odasında 4000K beyaz ışık tercih etmek konsantrasyonu artırır."

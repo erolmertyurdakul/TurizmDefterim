@@ -181,7 +181,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
         },
 
         {
-          "name": "Travelife ve Rainforest Alliance",
+          "name": "Uluslararası Eko-Etiketler ve GSTC Sertifikaları",
           "desc": "Travelife: Avrupa'da tur operatörleri ve oteller için yaygın kullanılan sürdürülebilirlik sertifikasyon programıdır. Rainforest Alliance: Özellikle tropikal destinasyonlardaki turizm işletmelerini ve eko-turları sertifikalayan Amerikan kökenli uluslararası standart kuruluşudur.",
           "examples": [
             "Örnekle Pekiştirelim: Costa Rica'da Rainforest Alliance sertifikası alan bir eko-tur operatörünün, Amerika ve Avrupa'daki online seyahat platformlarında 'Sertifikalı Eko-Tur' etiketi alması ve bu sayede doluluk oranını %60'tan %90'a çıkarmasıdır."

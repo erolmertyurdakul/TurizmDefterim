@@ -416,43 +416,37 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(2),
+                        padding: const EdgeInsets.all(2.5),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(9),
-                          border: Border.all(color: Colors.white.withValues(alpha: 0.12), width: 0.8),
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withValues(alpha: 0.12),
-                                blurRadius: 8,
-                                offset: const Offset(0, 4),
-                              ),
-                              BoxShadow(
-                                color: AppColors.primarySeed.withValues(alpha: 0.25),
-                                blurRadius: 10,
-                                spreadRadius: 1,
-                              ),
-                              BoxShadow(
-                                color: Colors.white.withValues(alpha: 0.05),
-                                blurRadius: 6,
-                                spreadRadius: -1,
-                              ),
-                            ],
+                          borderRadius: BorderRadius.circular(11),
+                          color: Colors.transparent,
+                          border: Border.all(
+                            color: const Color(0xFF38BDF8).withValues(alpha: 0.45),
+                            width: 1.4,
                           ),
-                          child: SizedBox(
-                            width: 32,
-                            height: 32,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(7),
-                              child: Image.asset(
-                                'assets/images/app_logo.png',
-                                width: 32,
-                                height: 32,
-                                fit: BoxFit.contain,
-                              ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.35),
+                              blurRadius: 10,
+                              offset: const Offset(0, 4),
+                            ),
+                            BoxShadow(
+                              color: const Color(0xFF00D2FF).withValues(alpha: 0.30),
+                              blurRadius: 14,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: SizedBox(
+                          width: 32,
+                          height: 32,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(9),
+                            child: Image.asset(
+                              'assets/images/app_logo.png',
+                              width: 32,
+                              height: 32,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -667,7 +661,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
           crossAxisCount: 2,
           crossAxisSpacing: 14,
           mainAxisSpacing: 14,
-          childAspectRatio: 1.05,
+          childAspectRatio: 0.96,
         ),
         itemCount: grades.length,
         itemBuilder: (context, index) {

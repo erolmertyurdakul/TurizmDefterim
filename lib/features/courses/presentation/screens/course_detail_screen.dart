@@ -110,31 +110,36 @@ class CourseDetailScreen extends ConsumerWidget {
                       right: 12,
                       bottom: 12,
                       child: Container(
+                        padding: const EdgeInsets.all(3.5),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(24),
+                          shape: BoxShape.circle,
+                          color: Colors.transparent,
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.55),
+                            width: 1.4,
+                          ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.15),
+                              color: Colors.black.withValues(alpha: 0.40),
                               blurRadius: 20,
                               offset: const Offset(0, 8),
                             ),
                             BoxShadow(
-                              color: AppColors.primarySeed.withValues(alpha: 0.2),
-                              blurRadius: 30,
-                              spreadRadius: 5,
+                              color: const Color(0xFF00D2FF).withValues(alpha: 0.30),
+                              blurRadius: 25,
+                              spreadRadius: 3,
                             ),
                           ],
                         ),
                         child: SizedBox(
-                          width: 90,
-                          height: 90,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(22),
+                          width: 80,
+                          height: 80,
+                          child: ClipOval(
                             child: Image.asset(
                               'assets/images/app_logo.png',
-                              width: 90,
-                              height: 90,
-                              fit: BoxFit.contain,
+                              width: 80,
+                              height: 80,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),

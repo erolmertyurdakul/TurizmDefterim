@@ -61,7 +61,7 @@ const Map<String, dynamic> sosyalMedyaUnit1 = {
           ]
         },
         {
-          "name": "E-Pazaryeri (Marketplace)",
+          "name": "Dijital Pazarlama Platformları",
           "desc": "Binlerce farklı satıcının veya mağazanın tek bir çatı altında kendi ürünlerini sergilediği ve milyonlarca müşteriye ulaştığı dev alışveriş platformlarıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Yerel bir ayakkabı üreticisinin kendi web sitesini açmak yerine Trendyol veya Amazon gibi büyük bir e-pazaryerinde dükkan açarak satış yapmasıdır."
@@ -205,7 +205,7 @@ const Map<String, dynamic> sosyalMedyaUnit2 = {
       "microSummary": "Markalar, sosyal medya reklamları ve fenomenler aracılığıyla hedef kitlelerine nokta atışı ulaşırlar.",
       "definitions": [
         {
-          "name": "Hedefleme (Targeting)",
+          "name": "Sosyal Medya Hedef Kitle Analizi",
           "desc": "Sosyal medya reklamlarında bütçenin boşa gitmemesi için reklamın gösterileceği kişilerin yaş, cinsiyet, şehir, ilgi alanı ve dil gibi kriterlerle daraltılmasıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Pilates stüdyosu açan Canan Hanım'ın, reklam ayarlarından sadece stüdyoya 5 km yakınlıkta oturan, spor ve sağlıklı yaşamla ilgilenen 20-45 yaş arası kadınları seçmesidir."
@@ -317,7 +317,7 @@ const Map<String, dynamic> sosyalMedyaUnit3 = {
           ]
         },
         {
-          "name": "Google Analytics",
+          "name": "Dijital Performans ve Etkileşim Ölçümü",
           "desc": "Web sitesine eklenen küçük bir kod sayesinde, siteye girenlerin hangi ülkeden olduğunu, hangi sayfaları gezdiğini ve ne kadar süre kaldığını gösteren ücretsiz ve gelişmiş bir web analiz programıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Analytics paneline bakan otel sahibinin, siteye girenlerin %70'inin Almanya'dan olduğunu görüp web sitesine Almanca dil seçeneği ekleme kararı almasıdır."

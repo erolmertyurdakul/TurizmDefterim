@@ -315,7 +315,7 @@ const Map<String, dynamic> dunyaCografyasiUnit4 = {
           ]
         },
         {
-          "name": "Han ve Kervansaray",
+          "name": "Kervansaraylar ve Tarihi İpek Yolu Yapıları",
           "desc": "Tarihi ticaret yollarında seyahat eden kervanların ve yolcuların, güvenle konaklaması ve dinlenmesi için kurulmuş eski kale görünümlü otellerdir.",
           "examples": [
             "Örnekle Pekiştirelim: Tarihi İpek Yolu üzerinde kurulan ve Aksaray'da yer alan dev Sultanhanı Kervansarayı, Selçuklu döneminin lüks otellerine en güzel örnektir."

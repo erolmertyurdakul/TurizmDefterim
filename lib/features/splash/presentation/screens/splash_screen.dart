@@ -385,68 +385,61 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                           child: Container(
                             padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.white.withOpacity(0.05), width: 1.0), // Dış ince orbital halka
+                              borderRadius: BorderRadius.circular(32),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.45),
+                                  blurRadius: 35,
+                                  offset: const Offset(0, 16),
+                                ),
+                                BoxShadow(
+                                  color: const Color(0xFF00D2FF).withOpacity(0.35),
+                                  blurRadius: 45,
+                                  spreadRadius: 6,
+                                ),
+                              ],
                             ),
-                            child: Container(
-                              decoration: BoxDecoration(
+                            child: SizedBox(
+                              width: 145,
+                              height: 145,
+                              child: ClipRRect(
                                 borderRadius: BorderRadius.circular(28),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.35),
-                                    blurRadius: 30,
-                                    offset: const Offset(0, 15),
-                                  ),
-                                  // Eclipse Aura
-                                  BoxShadow(
-                                    color: const Color(0xFF00D2FF).withOpacity(0.25),
-                                    blurRadius: 35,
-                                    spreadRadius: 4,
-                                  ),
-                                ],
-                              ),
-                              child: SizedBox(
-                                width: 120, // Boyut %10 büyütüldü (110 -> 120)
-                                height: 120,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(26),
-                                  child: AnimatedBuilder(
-                                    animation: _controller,
-                                    builder: (context, child) {
-                                      return ShaderMask(
-                                        shaderCallback: (rect) {
-                                          return LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                            colors: [
-                                              Colors.white.withOpacity(0.0),
-                                              Colors.white.withOpacity(0.0),
-                                              Colors.white.withOpacity(0.65),
-                                              Colors.white.withOpacity(0.0),
-                                              Colors.white.withOpacity(0.0),
-                                            ],
-                                            stops: [
-                                              0.0,
-                                              (_shineAnimation.value - 0.15).clamp(0.0, 1.0),
-                                              _shineAnimation.value.clamp(0.0, 1.0),
-                                              (_shineAnimation.value + 0.15).clamp(0.0, 1.0),
-                                              1.0,
-                                            ],
-                                          ).createShader(rect);
-                                        },
-                                        blendMode: BlendMode.srcATop,
-                                        child: Transform.rotate(
-                                          angle: _logoRotationAnimation.value,
-                                          child: child,
-                                        ),
-                                      );
-                                    },
-                                    child: Image.asset(
-                                      'assets/images/app_logo.png',
-                                      width: 120,
-                                      height: 120,
-                                      fit: BoxFit.contain,
-                                    ),
+                                child: AnimatedBuilder(
+                                  animation: _controller,
+                                  builder: (context, child) {
+                                    return ShaderMask(
+                                      shaderCallback: (rect) {
+                                        return LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            Colors.white.withOpacity(0.0),
+                                            Colors.white.withOpacity(0.0),
+                                            Colors.white.withOpacity(0.65),
+                                            Colors.white.withOpacity(0.0),
+                                            Colors.white.withOpacity(0.0),
+                                          ],
+                                          stops: [
+                                            0.0,
+                                            (_shineAnimation.value - 0.15).clamp(0.0, 1.0),
+                                            _shineAnimation.value.clamp(0.0, 1.0),
+                                            (_shineAnimation.value + 0.15).clamp(0.0, 1.0),
+                                            1.0,
+                                          ],
+                                        ).createShader(rect);
+                                      },
+                                      blendMode: BlendMode.srcATop,
+                                      child: Transform.rotate(
+                                        angle: _logoRotationAnimation.value,
+                                        child: child,
+                                      ),
+                                    );
+                                  },
+                                  child: Image.asset(
+                                    'assets/images/app_logo.png',
+                                    width: 145,
+                                    height: 145,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ),

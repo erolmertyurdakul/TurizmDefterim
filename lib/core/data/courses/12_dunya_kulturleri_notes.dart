@@ -184,7 +184,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           ]
         },
         {
-          "name": "Yerelleşme (Glocalization)",
+          "name": "Küreselleşme ve Yerel Kültürler",
           "desc": "Global markaların, yerel pazarlarda başarılı olabilmek için ürünlerini yerel kültürün damak tadına ve inançlarına göre uyarlamasıdır (Global düşün, yerel hareket et).",
           "examples": [
             "Örnekle Pekiştirelim: Dünyaca ünlü bir fast-food zincirinin Türkiye'de 'McTurco' (lavaş arası köfte) satması veya Hindistan'da hamburger eti olarak sığır eti yerine patates kullanmasıdır."
@@ -375,7 +375,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           ]
         },
         {
-          "name": "Sürdürülebilirlik Odaklı Gezginler",
+          "name": "Kültür Turistleri ve Gezgin Tipleri",
           "desc": "Karbon ayak izini azaltmak için trenle seyahati tercih eden, yerel halka doğrudan para kazandıran ekolojik tesislerde konaklayan bilinçli kitledir.",
           "examples": [
             "Örnekle Pekiştirelim: Batılı turistler (özellikle İskandinavlar) otelin su tasarrufu yapıp yapmadığını, geri dönüşüm kutularını kullanıp kullanmadığını denetler ve 'Yeşil Anahtar' sertifikalı tesisleri seçerler."
@@ -452,7 +452,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
       "microSummary": "İslami değerler, misafirperverlik, aile mahremiyeti ve helal standartlarının günlük yaşamı ve turizm tercihlerini şekillendirdiği bölgedir.",
       "definitions": [
         {
-          "name": "Helal Konsepti",
+          "name": "İnanç ve Kültür Turizmi Standartları",
           "desc": "Yiyecek, içecek ve konaklama hizmetlerinin İslami kurallara (helal gıda standartları, kadın-erkek ayrı kullanım alanları) uygun olarak sunulmasıdır.",
           "examples": [
             "Örnekle Pekiştirelim: Otelde tüm yiyecek ve içeceklerin helal standartlarda olması, sunulan etlerin helal kesim sertifikalı olması ve kadınlara özel dışarıdan görünmeyen havuz bulunmasıdır."
