@@ -359,17 +359,19 @@ class CourseDetailScreen extends ConsumerWidget {
 
     if (unitData != null && unitData['cards'] is List) {
       final cardsList = unitData['cards'] as List;
-      noteCount = cardsList.length;
+      cardCount = cardsList.length; // Ana açılır kart sayısı (Örn: 9 Kart)
+      int totalNotes = 0;
       for (var c in cardsList) {
         if (c is Map && c['definitions'] is List) {
-          cardCount += (c['definitions'] as List).length;
+          totalNotes += (c['definitions'] as List).length;
         } else {
-          cardCount += 1;
+          totalNotes += 1;
         }
       }
+      noteCount = totalNotes; // İçindeki alt ders notu/bilgiler (Örn: 29 Ders Notu)
     } else {
-      noteCount = unit.lessonCount;
-      cardCount = unit.lessonCount * 3;
+      cardCount = unit.lessonCount;
+      noteCount = unit.lessonCount * 3;
     }
 
     return RepaintBoundary(
