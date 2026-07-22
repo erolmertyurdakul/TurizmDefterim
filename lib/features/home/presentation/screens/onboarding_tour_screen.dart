@@ -9,6 +9,7 @@ import '../../../../core/presentation/widgets/glowing_border_card.dart';
 import '../../../../core/providers/shell_tab_provider.dart';
 import '../../../../core/data/lecture_notes.dart';
 import '../../../../core/data/quiz_data.dart';
+import '../../../../core/utils/sfx_synthesizer.dart';
 import '../../../courses/providers/course_provider.dart';
 import '../../../courses/presentation/screens/course_list_screen.dart';
 import '../../../courses/presentation/screens/course_detail_screen.dart';
@@ -785,6 +786,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
   /// Bir sonraki adıma geçiş yapar. Sekmeyi ve sayfayı otomatik değiştirir.
   void _nextStep() {
+    SfxSynthesizer.playSoftClick();
     if (_currentStep < _steps.length - 1) {
       // ── Özel Geçiş Eylemleri ──
       
@@ -923,6 +925,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
   /// Rehberi tamamlar, SharedPreferences'e kaydeder ve kapatır.
   void _finishTour() async {
+    SfxSynthesizer.playSoftClick();
     // Overlay'i anında kapat — kullanıcı beklemez
     widget.onDismiss();
 

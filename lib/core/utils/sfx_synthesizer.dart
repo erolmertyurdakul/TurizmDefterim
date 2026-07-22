@@ -1,7 +1,31 @@
 import 'dart:math';
 import 'dart:typed_data';
+import 'package:audioplayers/audioplayers.dart';
 
 class SfxSynthesizer {
+  // ── Nazik & Profesyonel Buton Tıklama Sesi (Onboarding Rehber) ──
+  static Uint8List getSoftClick() {
+    return generateWav(
+      notes: [480.0, 720.0],
+      delays: [0.0, 0.004],
+      duration: 0.05,
+      volume: 0.15,
+      attackTime: 0.002,
+      decayRate: 50.0,
+    );
+  }
+
+  static void playSoftClick() async {
+    try {
+      final player = AudioPlayer();
+      await player.play(BytesSource(getSoftClick()));
+      player.onPlayerStateChanged.listen((state) {
+        if (state == PlayerState.completed || state == PlayerState.stopped) {
+          player.dispose();
+        }
+      });
+    } catch (_) {}
+  }
   static Uint8List generateWav({
     required List<double> notes,
     required List<double> delays,
