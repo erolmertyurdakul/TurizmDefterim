@@ -51,3 +51,7 @@ app.*.map.json
 
 # PDF Files (Data source - not needed in git)
 /pdfs/
+
+# Release Outputs (APK, AAB binaries)
+/TurizmAkademi_Ciktilar/
+
