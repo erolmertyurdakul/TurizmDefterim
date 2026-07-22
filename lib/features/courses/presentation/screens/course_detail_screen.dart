@@ -351,6 +351,27 @@ class CourseDetailScreen extends ConsumerWidget {
   //  ÖĞRENME BİRİMİ KART TASARIMI
   // ══════════════════════════════════════════
   Widget _buildUnitCard(BuildContext context, LearningUnit unit, int index) {
+    final notes = allCoursesNotes['$grade-$courseTitle'] ?? allCoursesNotes[courseTitle];
+    final unitData = (notes != null && index < notes.length) ? notes[index] : null;
+
+    int noteCount = 0;
+    int cardCount = 0;
+
+    if (unitData != null && unitData['cards'] is List) {
+      final cardsList = unitData['cards'] as List;
+      noteCount = cardsList.length;
+      for (var c in cardsList) {
+        if (c is Map && c['definitions'] is List) {
+          cardCount += (c['definitions'] as List).length;
+        } else {
+          cardCount += 1;
+        }
+      }
+    } else {
+      noteCount = unit.lessonCount;
+      cardCount = unit.lessonCount * 3;
+    }
+
     return RepaintBoundary(
       child: Container(
         key: index == 0 ? ShellKeys.unitCardKey : null,
@@ -452,28 +473,28 @@ class CourseDetailScreen extends ConsumerWidget {
                               ),
                         ),
                         const SizedBox(height: 6),
-                        // Konu ve Sınav Sayısı
+                        // Ders Notu ve Kart Sayısı
                         Row(
                           children: [
                             const Icon(
-                              Icons.play_circle_outline_rounded,
+                              Icons.description_outlined,
                               size: 14,
                               color: AppColors.textSecondary,
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              '${unit.lessonCount} Konu',
+                              '$noteCount Ders Notu',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                             const SizedBox(width: 12),
                             const Icon(
-                              Icons.task_alt_rounded,
+                              Icons.style_rounded,
                               size: 14,
                               color: AppColors.textSecondary,
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              '${unit.quizCount} Sınav',
+                              '$cardCount Kart',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ],
