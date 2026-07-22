@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/utils/sfx_synthesizer.dart';
 import '../../../shell/main_shell.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../profile/providers/profile_provider.dart';
@@ -554,7 +555,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                         child: ScaleTransition(
                           scale: _pulseAnimation,
                           child: GestureDetector(
-                            onTapDown: (_) => setState(() => _isPressed = true),
+                            onTapDown: (_) {
+                              SfxSynthesizer.playAppleSoftClick();
+                              setState(() => _isPressed = true);
+                            },
                             onTapCancel: () => setState(() => _isPressed = false),
                             onTapUp: (_) {
                               setState(() => _isPressed = false);
