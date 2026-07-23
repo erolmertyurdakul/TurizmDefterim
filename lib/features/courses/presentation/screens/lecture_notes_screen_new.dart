@@ -530,8 +530,27 @@ class _StudyCardWidget extends StatelessWidget {
     final microSummary = card["microSummary"] ?? "";
     final definitions = (card["definitions"] as List? ?? []);
     final extraDetails = (card["extraDetails"] as List? ?? []);
-    final caseStudy = card["caseStudy"] ?? "";
-    final tip = card["tip"] ?? "";
+    
+    // Robust Polymorphic Parsing for caseStudy
+    final caseStudyRaw = card["caseStudy"];
+    String caseStudy = "";
+    if (caseStudyRaw is String) {
+      caseStudy = caseStudyRaw;
+    } else if (caseStudyRaw is Map) {
+      final cTitle = caseStudyRaw["title"] ?? "Örnek Olay";
+      final cStory = caseStudyRaw["story"] ?? "";
+      final cSolution = caseStudyRaw["solution"] ?? "";
+      caseStudy = "$cTitle\n\nOlay: $cStory\n\nÇözüm: $cSolution";
+    }
+
+    // Robust Polymorphic Parsing for tip / tips
+    final tipRaw = card["tip"] ?? card["tips"];
+    String tip = "";
+    if (tipRaw is String) {
+      tip = tipRaw;
+    } else if (tipRaw is List && tipRaw.isNotEmpty) {
+      tip = tipRaw.first.toString();
+    }
 
     return Container(
       margin: const EdgeInsets.only(bottom: 20),

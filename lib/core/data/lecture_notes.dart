@@ -12,6 +12,7 @@ import 'courses/12_sosyal_medya_notes.dart';
 import 'courses/11_konaklama_isletmeciligi_notes.dart';
 import 'courses/11_surdurulebilir_turizm_notes.dart';
 import 'courses/11_kat_hizmetleri_notes.dart';
+import 'courses/11_on_buro_hizmetleri_notes.dart';
 import 'courses/10_konuk_giris_cikis_notes.dart';
 import 'courses/10_kat_hizmetleri_notes.dart';
 import 'courses/9_mesleki_gelisim_notes.dart';
@@ -699,6 +700,8 @@ const Map<String, List<Map<String, dynamic>>> allCoursesNotes = {
   'Konaklama İşletmeciliği': konaklamaIsletmeciligiNotes,
   'Sürdürülebilir Turizm': surdurulebilirTurizmNotes,
   'Kat Hizmetleri Atölyesi': katHizmetleriAtolyesiNotes,
+  'Ön Büro Hizmetleri Atölyesi': onBuroHizmetleriNotes,
+  '11-Ön Büro Hizmetleri Atölyesi': onBuroHizmetleriNotes,
   '10-Kat Hizmetleri Atölyesi': katHizmetleri10Notes,
   '11-Kat Hizmetleri Atölyesi': katHizmetleriAtolyesiNotes,
   'Konuk Giriş Çıkış İşlemleri': konukGirisCikisNotes,

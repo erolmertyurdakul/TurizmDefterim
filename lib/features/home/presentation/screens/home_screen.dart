@@ -648,7 +648,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
     final grades = [
       _GradeData('9', 'Sınıf', Icons.explore_rounded, AppColors.grade9Gradient, '6 Öğrenme Birimi'),
       _GradeData('10', 'Sınıf', Icons.room_service_rounded, AppColors.grade10Gradient, '13 Öğrenme Birimi'),
-      _GradeData('11', 'Sınıf', Icons.public_rounded, AppColors.grade11Gradient, '14 Öğrenme Birimi'),
+      _GradeData('11', 'Sınıf', Icons.public_rounded, AppColors.grade11Gradient, '25 Öğrenme Birimi'),
       _GradeData('12', 'Sınıf', Icons.airport_shuttle_rounded, AppColors.grade12Gradient, '37 Öğrenme Birimi'),
     ];
 

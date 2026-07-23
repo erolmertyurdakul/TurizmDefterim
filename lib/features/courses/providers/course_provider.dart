@@ -75,6 +75,23 @@ final coursesProvider = Provider.family<List<Course>, String>((ref, grade) {
         ],
       ),
       const Course(
+        title: 'Ön Büro Hizmetleri Atölyesi',
+        icon: Icons.desk_rounded,
+        learningUnits: [
+          LearningUnit(title: 'Sabah ve Akşam Vardiyası İşlemleri', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Gece İşlemlerini Yapma', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Ön Büroda Tutulan Defterler', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Mesleki Matematik Aritmetiği', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Mesleki Matematik Hesaplamaları', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Tesis İstatistiklerini Çıkarma', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Ticari Belgeler', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Muhasebe Süreci', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Aktif Hesaplar', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Pasif Hesaplar', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'Gelir Tablosu Hesapları', lessonCount: 6, quizCount: 2),
+        ],
+      ),
+      const Course(
         title: 'Kat Hizmetleri Atölyesi',
         icon: Icons.dry_cleaning_rounded,
         learningUnits: [

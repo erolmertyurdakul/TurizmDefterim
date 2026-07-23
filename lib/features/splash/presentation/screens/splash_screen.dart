@@ -234,7 +234,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
     if (_soundPlayed) return;
     try {
       _splashSfxPlayer ??= AudioPlayer();
-      await _splashSfxPlayer!.setVolume(0.5);
+      await _splashSfxPlayer!.setVolume(0.35);
       final soundBytes = _generateSplashSoundBytes();
       await _splashSfxPlayer!.play(
         BytesSource(soundBytes),
@@ -378,7 +378,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 60), // Butona yer açmak için biraz aşağı kaydırdık
+
                       FadeTransition(
                         opacity: _fadeAnimation,
                         child: ScaleTransition(
@@ -448,96 +448,80 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                           ),
                         ),
                       ),
-                      const SizedBox(height: 40), // Dikey ritim dengelendi: 32 -> 40
+                      const SizedBox(height: 30), // Welcome ekranıyla aynı logo-yazı mesafesi
                       FadeTransition(
                         opacity: _fadeAnimation,
                         child: SlideTransition(
                           position: _slideAnimation,
                           child: Column(
                             children: [
-                               ShaderMask(
-                                 shaderCallback: (bounds) => const LinearGradient(
-                                   colors: [
-                                     Colors.white,
-                                     Color(0xFFE2E8F0),
-                                     Color(0xFF94A3B8),
-                                     Colors.white,
-                                   ], // Metalik sıvı gümüş dalgalanması
-                                   begin: Alignment.topLeft,
-                                   end: Alignment.bottomRight,
-                                   stops: [0.0, 0.35, 0.70, 1.0],
-                                 ).createShader(bounds),
-                                 child: Text(
-                                   'Turizm Defterim',
-                                   style: GoogleFonts.outfit(
-                                     fontSize: 40,
-                                     fontWeight: FontWeight.w900,
-                                     color: Colors.white, // ShaderMask maskesi için beyaz kalmalı
-                                     letterSpacing: 1.5,
-                                   ),
-                                 ),
-                               ),
-                              const SizedBox(height: 12), // Dikey ritim dengelendi: 8 -> 12
+                              // 1. Ana Başlık: Turizm Defterim
+                              ShaderMask(
+                                shaderCallback: (bounds) => const LinearGradient(
+                                  colors: [
+                                    Colors.white,
+                                    Color(0xFFF1F5F9),
+                                    Color(0xFFCBD5E1),
+                                    Colors.white,
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  stops: [0.0, 0.35, 0.70, 1.0],
+                                ).createShader(bounds),
+                                child: Text(
+                                  'Turizm Defterim',
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 42,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    letterSpacing: 1.8,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+
+                              // Alt Yazı: Refined Frosted Glass Pill Badge (Gradient Border + Premium)
                               Container(
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF0F172A).withOpacity(0.50), // Derin uzay camı
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: Colors.white.withOpacity(0.15), // 1.2px hairline border
-                                    width: 1.2,
+                                  borderRadius: BorderRadius.circular(30),
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      const Color(0xFF00E5FF).withValues(alpha: 0.30),
+                                      const Color(0xFF7C3AED).withValues(alpha: 0.12),
+                                      const Color(0xFF00E5FF).withValues(alpha: 0.22),
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
                                   ),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.45),
-                                      blurRadius: 30,
-                                      offset: const Offset(0, 15),
-                                    ),
-                                    BoxShadow(
-                                      color: const Color(0xFF00D2FF).withOpacity(0.06), // Çok hafif gök aurası
-                                      blurRadius: 20,
-                                      offset: const Offset(0, 8),
+                                      color: const Color(0xFF00E5FF).withValues(alpha: 0.08),
+                                      blurRadius: 24,
+                                      spreadRadius: 2,
                                     ),
                                   ],
                                 ),
+                                padding: const EdgeInsets.all(0.8), // Ultra ince gradient kenar (0.8px)
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(29.2),
                                   child: BackdropFilter(
-                                    filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            'Turizm Mesleki ve Teknik Anadolu Lisesi',
-                                            textAlign: TextAlign.center,
-                                            textScaler: TextScaler.noScaling,
-                                            style: GoogleFonts.outfit(
-                                              fontSize: 13.5,
-                                              fontWeight: FontWeight.w600, // Daha kibar
-                                              color: Colors.white.withOpacity(0.82), // Hiyerarşik gümüş beyazı
-                                              letterSpacing: 0.5,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 7),
-                                          ShaderMask(
-                                            shaderCallback: (bounds) => const LinearGradient(
-                                              colors: [Color(0xFF00E5FF), Color(0xFF00B0FF)], // Sınıflar ekranı uyumlu Neon Cyan'dan Maviye geçiş
-                                              begin: Alignment.topLeft,
-                                              end: Alignment.bottomRight,
-                                            ).createShader(bounds),
-                                            child: Text(
-                                              'Konaklama ve Seyahat Hizmetleri Uygulaması',
-                                              textAlign: TextAlign.center,
-                                              textScaler: TextScaler.noScaling,
-                                              style: GoogleFonts.outfit(
-                                                fontSize: 14.5,
-                                                fontWeight: FontWeight.w900,
-                                                color: Colors.white, // ShaderMask maskesi için beyaz kalmalı
-                                                letterSpacing: 0.6,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                    filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 7),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(29.2),
+                                        color: const Color(0xFF0A192F).withValues(alpha: 0.50),
+                                      ),
+                                      child: Text(
+                                        'Konaklama ve Seyahat Hizmetleri',
+                                        textAlign: TextAlign.center,
+                                        textScaler: TextScaler.noScaling,
+                                        style: GoogleFonts.outfit(
+                                          fontSize: 12.5,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white.withValues(alpha: 0.82),
+                                          letterSpacing: 2.5,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -547,7 +531,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                           ),
                         ),
                       ),
-                      const SizedBox(height: 60), // Dikey ritim dengelendi: 80 -> 60 // Yazar ile buton arasına boşluk
+                      const SizedBox(height: 72), // Buton daha aşağıda, dengeli konum
                       
                       // ── Animasyonlu Giriş Butonu ──
                       FadeTransition(
@@ -578,11 +562,19 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                                   ? Curves.easeOutQuad 
                                   : Curves.easeOutCubic, // Kararlı ve profesyonel sönümlenme
                               child: Container(
+                                padding: const EdgeInsets.all(6), // Dış çember ile buton arası boşluk
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white.withValues(alpha: 0.12),
+                                    width: 0.6,
+                                  ),
+                                ),
+                                child: Container(
                                 width: 120,
                                 height: 120,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  border: Border.all(color: Colors.white.withValues(alpha: 0.8), width: 1.5), // Premium ince kenar aydınlatması (Rim Light)
                                   gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
@@ -626,10 +618,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                                     ),
                                   ],
                                 ),
+                                ),
                               ),
                             ),
-                          ),
                         ),
+                      ),
                       ),
                     ],
                   ),

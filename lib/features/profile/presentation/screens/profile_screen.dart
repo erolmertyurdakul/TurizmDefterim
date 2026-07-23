@@ -9,6 +9,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/providers/points_provider.dart';
 import '../../../../core/providers/shell_tab_provider.dart';
+import '../../../../core/utils/sfx_synthesizer.dart';
 import '../../providers/profile_provider.dart';
 import '../../../badges/data/badge_data.dart';
 import '../../../badges/providers/badge_provider.dart';
@@ -508,7 +509,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             ),
           ),
           const SizedBox(height: 16),
-          InkWell(
+          _RehberButton(
             onTap: () async {
               final prefs = await SharedPreferences.getInstance();
               await prefs.setBool('has_seen_onboarding_guide', false);
@@ -522,32 +523,91 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 );
               }
             },
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-              decoration: BoxDecoration(
-                color: AppColors.primaryMid.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: AppColors.primaryMid.withValues(alpha: 0.2)),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.help_outline_rounded, size: 18, color: AppColors.accent),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Uygulama Rehberini Baştan İzle',
-                    style: GoogleFonts.outfit(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.textPrimary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _RehberButton extends StatefulWidget {
+  final VoidCallback onTap;
+
+  const _RehberButton({required this.onTap});
+
+  @override
+  State<_RehberButton> createState() => _RehberButtonState();
+}
+
+class _RehberButtonState extends State<_RehberButton> {
+  bool _isPressed = false;
+  DateTime? _pressStartTime;
+
+  void _onTapDown(TapDownDetails details) {
+    _pressStartTime = DateTime.now();
+    SfxSynthesizer.playAppleSoftClick();
+    setState(() {
+      _isPressed = true;
+    });
+  }
+
+  void _onTapUp(TapUpDetails details) {
+    final elapsed = DateTime.now().difference(_pressStartTime ?? DateTime.now()).inMilliseconds;
+    final remainingVisualTime = (120 - elapsed).clamp(0, 120);
+
+    Future.delayed(Duration(milliseconds: remainingVisualTime), () {
+      if (mounted) {
+        setState(() {
+          _isPressed = false;
+        });
+        widget.onTap();
+      }
+    });
+  }
+
+  void _onTapCancel() {
+    setState(() {
+      _isPressed = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: _onTapDown,
+      onTapUp: _onTapUp,
+      onTapCancel: _onTapCancel,
+      child: AnimatedScale(
+        scale: _isPressed ? 0.94 : 1.0,
+        duration: _isPressed 
+            ? const Duration(milliseconds: 100) 
+            : const Duration(milliseconds: 200),
+        curve: _isPressed 
+            ? Curves.easeInOutCubic 
+            : Curves.easeOutBack,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          decoration: BoxDecoration(
+            color: AppColors.primaryMid.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColors.primaryMid.withValues(alpha: 0.2)),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.help_outline_rounded, size: 18, color: AppColors.accent),
+              const SizedBox(width: 8),
+              Text(
+                'Uygulama Rehberini Baştan İzle',
+                style: GoogleFonts.outfit(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

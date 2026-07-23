@@ -301,7 +301,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                 ),
                 const SizedBox(height: 30),
 
-                // ── DYNAMIC FROST GLASS CARD (Sıvı Cıva Başlık Tasarımı) ──
+                // ── DYNAMIC APPLE LEAD DESIGNER ARTWORK (Sadece Orijinal Yazılar + Soft Çizgiler) ──
                 AnimatedBuilder(
                   animation: _entranceController,
                   builder: (context, child) {
@@ -316,96 +316,56 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                       ),
                     );
                   },
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 44),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF0F172A).withOpacity(0.50), // Derin uzay grisi cam taban
-                      borderRadius: BorderRadius.circular(24),
-                      border: Border.all(
-                        color: Colors.white.withOpacity(0.15), // 1px Hairline rim border
-                        width: 1.2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.45),
-                          blurRadius: 30,
-                          offset: const Offset(0, 15),
-                        ),
-                        BoxShadow(
-                          color: const Color(0xFF00D2FF).withOpacity(0.06), // Çok hafif gök aurası
-                          blurRadius: 20,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(24),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 25, sigmaY: kIsWeb ? 0 : 25), // Ultra derin kristal bluru
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 28), // Denge için padding arttırıldı
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              // Sıvı Cıva / Gümüş Metalik Apple Başlığı
-                              ShaderMask(
-                                shaderCallback: (bounds) => const LinearGradient(
-                                  colors: [
-                                    Colors.white,
-                                    Color(0xFFE2E8F0),
-                                    Color(0xFF94A3B8),
-                                    Colors.white,
-                                  ], // Metalik sıvı gümüş dalgalanması
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  stops: [0.0, 0.35, 0.70, 1.0],
-                                ).createShader(bounds),
-                                child: Text(
-                                  'Hoş Geldiniz!',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.outfit(
-                                    fontSize: 38, // Başlık boyutu dengelendi (34 -> 38)
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 12),
-                              // Duru gümüş yazılı rol tanımı
-                              Text(
-                                'Değerli ${widget.role == 'Öğretmen' ? 'Öğretmenimiz' : 'Öğrencimiz'}',
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.outfit(
-                                  fontSize: 18, // Font boyutu dengelendi (16.5 -> 18)
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white.withOpacity(0.9),
-                                  letterSpacing: 0.3,
-                                ),
-                              ),
-                              const SizedBox(height: 14),
-                              // Şık, ince, parıldayan neon kılavuz çizgi
-                              Container(
-                                width: 36,
-                                height: 2.5,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(2),
-                                  gradient: const LinearGradient(
-                                    colors: [Color(0xFF00E5FF), Color(0xFF00B0FF)],
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: const Color(0xFF00E5FF).withOpacity(0.6),
-                                      blurRadius: 6,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+                  child: Column(
+                    children: [
+                      // 1. Ana Başlık: Hoş Geldiniz!
+                      ShaderMask(
+                        shaderCallback: (bounds) => const LinearGradient(
+                          colors: [
+                            Colors.white,
+                            Color(0xFFF1F5F9),
+                            Color(0xFFCBD5E1),
+                            Colors.white,
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          stops: [0.0, 0.35, 0.70, 1.0],
+                        ).createShader(bounds),
+                        child: Text(
+                          'Hoş Geldiniz!',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.outfit(
+                            fontSize: 40,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            letterSpacing: 0.8,
                           ),
                         ),
                       ),
-                    ),
+                      const SizedBox(height: 14),
+
+                      // 2. Yazıları Birbirine Bağlayan Zarif Dal Kavis Çizgisi (Organic Soft Vine Divider)
+                      SizedBox(
+                        width: 260,
+                        height: 28,
+                        child: CustomPaint(
+                          painter: _VineDividerPainter(),
+                        ),
+                      ),
+                      const SizedBox(height: 14),
+
+                      // 3. Rol Tanımı Yazısı: Değerli Öğretmenimiz / Öğrencimiz
+                      Text(
+                        'Değerli ${widget.role == 'Öğretmen' ? 'Öğretmenimiz' : 'Öğrencimiz'}',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.outfit(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white.withValues(alpha: 0.92),
+                          letterSpacing: 0.4,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 48),
@@ -422,10 +382,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0F172A).withOpacity(0.40),
+                      color: const Color(0xFF0F172A).withValues(alpha: 0.40),
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(
-                        color: Colors.white.withOpacity(0.06),
+                        color: Colors.white.withValues(alpha: 0.06),
                         width: 1.0,
                       ),
                     ),
@@ -446,7 +406,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
                           style: GoogleFonts.inter(
                             fontSize: 11.5,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white.withOpacity(0.65),
+                            color: Colors.white.withValues(alpha: 0.65),
                             letterSpacing: 0.3,
                           ),
                         ),
@@ -461,4 +421,107 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
       ),
     );
   }
+}
+
+// ── YAZILARI BİRBİRİNE BAĞLAYAN ZARİF DAL KAVİS ÇİZGİSİ (Soft Organic Vine Divider) ──
+class _VineDividerPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final centerX = size.width / 2;
+    final centerY = size.height / 2;
+
+    // 1. Sol Dal Path (S-Curve Vine Branch)
+    final leftPath = Path();
+    leftPath.moveTo(centerX - 6, centerY);
+    leftPath.cubicTo(
+      centerX - 35, centerY - 8,
+      centerX - 70, centerY + 8,
+      centerX - 115, centerY,
+    );
+
+    // Sol zarif filiz/yaprak kıvrımları
+    leftPath.moveTo(centerX - 42, centerY - 4);
+    leftPath.quadraticBezierTo(centerX - 48, centerY - 13, centerX - 58, centerY - 9);
+
+    leftPath.moveTo(centerX - 72, centerY + 4);
+    leftPath.quadraticBezierTo(centerX - 78, centerY + 13, centerX - 88, centerY + 8);
+
+    // 2. Sağ Dal Path (S-Curve Vine Branch)
+    final rightPath = Path();
+    rightPath.moveTo(centerX + 6, centerY);
+    rightPath.cubicTo(
+      centerX + 35, centerY - 8,
+      centerX + 70, centerY + 8,
+      centerX + 115, centerY,
+    );
+
+    // Sağ zarif filiz/yaprak kıvrımları
+    rightPath.moveTo(centerX + 42, centerY - 4);
+    rightPath.quadraticBezierTo(centerX + 48, centerY - 13, centerX + 58, centerY - 9);
+
+    rightPath.moveTo(centerX + 72, centerY + 4);
+    rightPath.quadraticBezierTo(centerX + 78, centerY + 13, centerX + 88, centerY + 8);
+
+    // Boya & Işıltılı Neon Gradient Ayarları
+    final vinePaint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.6
+      ..strokeCap = StrokeCap.round
+      ..shader = const LinearGradient(
+        colors: [
+          Colors.transparent,
+          Color(0x6000E5FF),
+          Color(0xFF00E5FF),
+          Color(0xFF38BDF8),
+          Color(0xFF00E5FF),
+          Color(0x6000E5FF),
+          Colors.transparent,
+        ],
+        stops: [0.0, 0.15, 0.35, 0.5, 0.65, 0.85, 1.0],
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
+
+    final glowPaint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 3.5
+      ..strokeCap = StrokeCap.round
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4)
+      ..shader = const LinearGradient(
+        colors: [
+          Colors.transparent,
+          Color(0x3000E5FF),
+          Color(0x8000E5FF),
+          Color(0x3000E5FF),
+          Colors.transparent,
+        ],
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
+
+    canvas.drawPath(leftPath, glowPaint);
+    canvas.drawPath(leftPath, vinePaint);
+
+    canvas.drawPath(rightPath, glowPaint);
+    canvas.drawPath(rightPath, vinePaint);
+
+    // Merkez Tomurcuk / Elmas Düğümü
+    final nodePath = Path();
+    nodePath.moveTo(centerX, centerY - 4.5);
+    nodePath.lineTo(centerX + 4.5, centerY);
+    nodePath.lineTo(centerX, centerY + 4.5);
+    nodePath.lineTo(centerX - 4.5, centerY);
+    nodePath.close();
+
+    final nodePaint = Paint()
+      ..style = PaintingStyle.fill
+      ..color = const Color(0xFF00E5FF);
+
+    final nodeGlow = Paint()
+      ..style = PaintingStyle.fill
+      ..color = const Color(0xFF00E5FF).withValues(alpha: 0.6)
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
+
+    canvas.drawPath(nodePath, nodeGlow);
+    canvas.drawPath(nodePath, nodePaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

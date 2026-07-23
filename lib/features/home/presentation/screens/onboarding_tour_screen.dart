@@ -99,6 +99,9 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
   bool _initialized = false;
   Rect _spotlightRect = Rect.zero;
   bool _isTracking = false;
+  bool _isStepTransitioning = false;
+  int _lastTappedStep = -1;
+  DateTime _lastTapTime = DateTime.fromMillisecondsSinceEpoch(0);
 
   void _startTracking() {
     if (_isTracking) return;
@@ -786,7 +789,20 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
   /// Bir sonraki adıma geçiş yapar. Sekmeyi ve sayfayı otomatik değiştirir.
   void _nextStep() {
-    SfxSynthesizer.playSoftClick();
+    final now = DateTime.now();
+
+    // Sert 1000ms (1 Tam Saniye) Buton Kilidi: Tıklandıktan sonra 1 saniye geçmeden hiç bir buton tıklaması kabul edilmez!
+    if (_isStepTransitioning || now.difference(_lastTapTime).inMilliseconds < 1000) {
+      return;
+    }
+
+    _isStepTransitioning = true;
+    _lastTappedStep = _currentStep;
+    _lastTapTime = now;
+
+    // Her buton basışında SADECE VE SADECE 1 KEZ tık sesi çalınır
+    SfxSynthesizer.playAppleSoftClick();
+
     if (_currentStep < _steps.length - 1) {
       // ── Özel Geçiş Eylemleri ──
       
@@ -916,6 +932,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       Future.delayed(const Duration(milliseconds: 350), () {
         if (mounted) {
           _updateSpotlightPosition();
+          _isStepTransitioning = false;
         }
       });
     } else {
@@ -925,7 +942,6 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
   /// Rehberi tamamlar, SharedPreferences'e kaydeder ve kapatır.
   void _finishTour() async {
-    SfxSynthesizer.playSoftClick();
     // Overlay'i anında kapat — kullanıcı beklemez
     widget.onDismiss();
 
@@ -1673,20 +1689,25 @@ class _InteractiveTourButton extends StatefulWidget {
 class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
   bool _isPressed = false;
   bool _isHovered = false;
+  DateTime? _pressStartTime;
 
   void _onTapDown(TapDownDetails details) {
+    _pressStartTime = DateTime.now();
     setState(() {
       _isPressed = true;
     });
   }
 
   void _onTapUp(TapUpDetails details) {
-    setState(() {
-      _isPressed = false;
-    });
-    // Apple klavye tuşu tıklama tepki süresi (80ms) sonrası eylemi tetikle
-    Future.delayed(const Duration(milliseconds: 80), () {
+    final elapsed = DateTime.now().difference(_pressStartTime ?? DateTime.now()).inMilliseconds;
+    final remainingVisualTime = (120 - elapsed).clamp(0, 120);
+
+    // Hızlı hafif dokunuşlarda da gözün çökmeyi görebilmesi için minimum 120ms basılı tutma garantisi
+    Future.delayed(Duration(milliseconds: remainingVisualTime), () {
       if (mounted) {
+        setState(() {
+          _isPressed = false;
+        });
         widget.onTap();
       }
     });
@@ -1709,13 +1730,13 @@ class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
         onTapUp: _onTapUp,
         onTapCancel: _onTapCancel,
         child: AnimatedScale(
-          scale: _isPressed ? 0.96 : 1.0, // Apple standardı: Sadece %4 mikro-basış payı
+          scale: _isPressed ? 0.94 : 1.0, // Tatmin edici ve belirgin %6 çökme payı
           duration: _isPressed 
-              ? const Duration(milliseconds: 60)   // Basılırken ultra hızlı tepki (60ms)
-              : const Duration(milliseconds: 150),  // Bırakılırken pürüzsüz ve tok geri büyüme (150ms)
+              ? const Duration(milliseconds: 100)  // Tak diye değil, akıcı çökme (100ms)
+              : const Duration(milliseconds: 200), // Esnek yaylanarak geri çıkma (200ms)
           curve: _isPressed 
-              ? Curves.easeOutQuad 
-              : Curves.easeOutCubic, // Kararlı ve profesyonel sönümlenme
+              ? Curves.easeInOutCubic 
+              : Curves.easeOutBack, // İpeksi ve canlı esneme hissi
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 218),
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),

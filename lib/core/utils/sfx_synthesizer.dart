@@ -8,17 +8,17 @@ class SfxSynthesizer {
     return generateWav(
       notes: [480.0, 720.0],
       delays: [0.0, 0.004],
-      duration: 0.05,
+      duration: 0.08,
       volume: 0.15,
       attackTime: 0.002,
       decayRate: 50.0,
     );
   }
 
-  static void playSoftClick() async {
+  static void playSoftClick() {
     try {
       final player = AudioPlayer();
-      await player.play(BytesSource(getSoftClick()));
+      player.play(BytesSource(getSoftClick()));
       player.onPlayerStateChanged.listen((state) {
         if (state == PlayerState.completed || state == PlayerState.stopped) {
           player.dispose();
@@ -27,37 +27,35 @@ class SfxSynthesizer {
     } catch (_) {}
   }
 
-  // ── Apple Softness Taptic Engine "Giriş" Butonu Tıklama Sesi ──
+  // ── Apple Softness Taptic Engine "Giriş" Butonu Tıklama Sesi (Aynen Ekran Görüntüsündeki Ses) ──
   static Uint8List getAppleSoftClick() {
     final sampleRate = 44100;
-    final durationSec = 0.045; // 45ms Apple Taptic Engine impulse
+    final durationSec = 0.035; // 35ms Taptic Engine impulse
     final numSamples = (sampleRate * durationSec).toInt();
     final samples = Float32List(numSamples);
 
     for (var i = 0; i < numSamples; i++) {
       final t = i / sampleRate;
 
-      // 1. Warm Body (Taptic Engine low pulse) - 420Hz down to 160Hz
-      final phaseBody = 2.0 * pi * (420.0 * (1.0 - exp(-t * 35.0)) / 35.0 + 160.0 * t);
-      final body = sin(phaseBody) * exp(-t * 70.0) * 0.40;
+      // 1. Deep Sub-body (Tok taptic hissi): 150Hz -> 65Hz
+      final phaseBody = 2.0 * pi * (150.0 * (1.0 - exp(-t * 130.0)) / 130.0 + 65.0 * t);
+      final body = sin(phaseBody) * exp(-t * 140.0) * 0.75;
 
-      // 2. Crisp Presence (Apple Glass Pop) - 1250Hz down to 600Hz
-      final phasePop = 2.0 * pi * (1250.0 * (1.0 - exp(-t * 60.0)) / 60.0 + 600.0 * t);
-      final pop = sin(phasePop) * exp(-t * 140.0) * 0.25;
+      // 2. Soft Glass Pop (Yumuşak Apple tık): 480Hz -> 200Hz
+      final phasePop = 2.0 * pi * (480.0 * (1.0 - exp(-t * 200.0)) / 200.0 + 200.0 * t);
+      final pop = sin(phasePop) * exp(-t * 240.0) * 0.30;
 
-      // 3. Soft Air Sparkle - 2400Hz ultra-fast decay
-      final air = sin(2.0 * pi * 2400.0 * t) * exp(-t * 220.0) * 0.08;
+      // Reduced volume by 15% (0.60 * 0.85 = 0.51)
+      var val = (body + pop) * 0.51;
 
-      var val = (body + pop + air) * 0.20; // Silky volume
-
-      // Envelope
-      final attackSamples = (sampleRate * 0.0012).toInt();
+      // Envelope (0.5ms attack, 5ms fadeout)
+      final attackSamples = (sampleRate * 0.0005).toInt();
       var envelope = 1.0;
       if (i < attackSamples) {
         envelope = i / attackSamples;
       }
 
-      final fadeOutSamples = (sampleRate * 0.010).toInt();
+      final fadeOutSamples = (sampleRate * 0.005).toInt();
       if (i > numSamples - fadeOutSamples) {
         envelope *= (numSamples - i) / fadeOutSamples;
       }
@@ -94,16 +92,32 @@ class SfxSynthesizer {
     return wavData.buffer.asUint8List();
   }
 
-  static void playAppleSoftClick() async {
+  static DateTime _lastAppleClickTime = DateTime.fromMillisecondsSinceEpoch(0);
+
+  /// Bekleyince ses gitmesini ve gecikmeyi önleyen SoundPool Apple Taptic Engine kanalı
+  static void playAppleSoftClick() {
+    final now = DateTime.now();
+    if (now.difference(_lastAppleClickTime).inMilliseconds < 300) {
+      return; // 300ms içinde çift ses çalınmasını engeller
+    }
+    _lastAppleClickTime = now;
+
     try {
       final player = AudioPlayer();
-      await player.play(BytesSource(getAppleSoftClick()));
+      player.play(AssetSource('sounds/apple_soft_click.wav'), mode: PlayerMode.lowLatency).catchError((_) {
+        player.play(BytesSource(getAppleSoftClick()));
+      });
       player.onPlayerStateChanged.listen((state) {
         if (state == PlayerState.completed || state == PlayerState.stopped) {
           player.dispose();
         }
       });
-    } catch (_) {}
+    } catch (_) {
+      try {
+        final player = AudioPlayer();
+        player.play(BytesSource(getAppleSoftClick()));
+      } catch (_) {}
+    }
   }
   static Uint8List generateWav({
     required List<double> notes,

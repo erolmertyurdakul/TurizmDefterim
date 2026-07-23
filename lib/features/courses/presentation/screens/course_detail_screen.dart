@@ -494,20 +494,9 @@ class CourseDetailScreen extends ConsumerWidget {
                               ),
                         ),
                         const SizedBox(height: 6),
-                        // Ders Notu ve Kart Sayısı
+                        // Kartlar (Solda) ve Ders Notu (Sağda)
                         Row(
                           children: [
-                            const Icon(
-                              Icons.description_outlined,
-                              size: 14,
-                              color: AppColors.textSecondary,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              '$noteCount Ders Notu',
-                              style: Theme.of(context).textTheme.bodySmall,
-                            ),
-                            const SizedBox(width: 12),
                             const Icon(
                               Icons.style_rounded,
                               size: 14,
@@ -516,6 +505,17 @@ class CourseDetailScreen extends ConsumerWidget {
                             const SizedBox(width: 4),
                             Text(
                               '$cardCount Kart',
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                            const SizedBox(width: 12),
+                            const Icon(
+                              Icons.description_outlined,
+                              size: 14,
+                              color: AppColors.textSecondary,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              '$noteCount Ders Notu',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ],
