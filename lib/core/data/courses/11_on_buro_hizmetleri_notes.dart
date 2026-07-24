@@ -16,14 +16,14 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
           "name": "Çıkış (Check-Out) Listesi Kontrolü",
           "desc": "Sabah 08:00 vardiyasında otomasyon sisteminden çekilen, o gün ayrılacak konukların oda numaralarını, ödeme tiplerini ve harcama folyolarını gösteren takip belgesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyonist sabah saat 08:30'da sistemden çıkış listesini alır. Bugün ayrılacak 15 odanın hesaplarını inceler, saat 12:00'ye kadar tüm ödemelerin nakit veya pos ile kapatıldığını doğrulayarak oda kartlarını teslim alır."
+            "Örnekle Pekiştirelim: Sabah 08.30'da sistemden çıkış listesini alır ve bugün ayrılacak odaların hesaplarını inceler."
           ]
         },
         {
           "name": "Erken Ayrılma (Early Check-Out) Yönetimi",
           "desc": "Misafirin planlanan tarihten daha önce otelden ayrılmak istemesi durumudur. Acente sözleşmesi ve ceza koşulları incelenerek hesap kapatılır, oda Kat Hizmetlerine bildirilir.",
           "examples": [
-            "Örnekle Pekiştirelim: 4 gece kalacak olan bir misafir 2. günün sabahı acil işi çıktığı için ayrılmak istediğinde; resepsiyonist acente sözleşmesini kontrol eder, kullanılmayan gecelerin iade prosedürünü uygular ve odayı boş temiz duruma geçirtir."
+            "Örnekle Pekiştirelim: 4 gece kalacak olan bir misafir 2. günün sabahı acil işi çıktığı için ayrılmak istediğinde; resepsiyonist acente sözleşmesini kontrol eder, kullanılmayan gecelerin iade prosedürünü uygular."
           ]
         }
       ],
@@ -40,14 +40,14 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
           "name": "Kat Hizmetleri (Housekeeping) Raporu",
           "desc": "Kat görevlilerinin her sabah odaları dolaşarak fiziki durumu (Dolu-Temiz, Dolu-Kirli, Boş-Temiz, Arızalı) kaydettiği günlük kontrol listesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kat görevlisi 304 nolu odaya girdiğinde yatağın bozuk olduğunu ama odada valiz bulunmadığını fark edince rapora 'Dolu/Boş Uyuşmazlığı' (Discrepancy) notunu yazar."
+            "Örnekle Pekiştirelim: Kat görevlisinin her sabah katları gezerek odaların fiziki durumunu (örneğin 201 nolu odayı 'Dolu-Temiz', 202 nolu odayı 'Boş-Kirli') rapora kaydetmesi ve hazırladığı raporu resepsiyona teslim etmesidir."
           ]
         },
         {
           "name": "Oda Durum Mutabakatı (Housekeeping Discrepancy)",
           "desc": "Resepsiyon bilgisayarındaki oda durumu ile kat raporundaki fiziki oda durumu uyuşmadığında yapılan fiziki ve sistemsel doğrulama işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sistemde 201 nolu oda 'Boş' görünürken kat raporunda 'Dolu' görünüyorsa; resepsiyonist gece kayıtsız konuk girip girmediğini veya yanlış odaya anahtar verilip verilmediğini araştırır."
+            "Örnekle Pekiştirelim: Sistemde 304 nolu oda 'Boş' görünürken kat raporunda 'Dolu' görünüyorsa; resepsiyonist uyuşmazlık (Discrepancy) fark edince gece kayıtsız konuk girip girmediğini veya yanlış odaya anahtar verilip verilmediğini araştırır ve mutabakat sağlar."
           ]
         }
       ],
@@ -58,7 +58,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
       "id": 3,
       "tag": "AKŞAM VARDİYASI & FORECAST",
       "title": "GÜNLÜK GİRİŞLER VE DOLULUK TAHMİNİ (FORECAST)",
-      "microSummary": "Akşam vardiyası yeni gelen konukların giriş (Check-in) işlemleriyle ilgilenir; otelin gelecek dönem doluluk tahminlerini (Forecast) analiz eder.",
+      "microSummary": "Vardiya saatleri 14.00'ten sonraya denk gelen resepsiyon personelleri yeni gelen konukların giriş (Check-in) işlemleriyle ilgilenir; otelin gelecek dönem doluluk tahminlerini (Forecast) analiz eder.",
       "definitions": [
         {
           "name": "Günlük Giriş (Check-In) Listesi Kontrolü",
@@ -76,7 +76,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
         }
       ],
       "caseStudy": "Örnek Olay: Yüksek Sezonda Çifte Rezervasyon (Overbooking)\n\nOlay: Saat 21:00'de rezervasyonlu konuk gelir ancak oteldeki tüm odalar tamamen doludur.\n\nÇözüm: Ön büro memuru Forecast raporunu inceler. Overbooking nedeniyle konuk derhal aynı kalitedeki yakındaki anlaşmalı otele taksiyle transfer edilir ve ilk gece konaklaması otel tarafından karşılanır.",
-      "tip": "İpucu: Geç geleceğini bildiren konukların rezervasyonlarına 'Garanti Edilmiş Rezervasyon' notu eklenerek odaları muhafaza edilmelidir."
+      "tip": "İpucu: Oda ücreti önceden ödenmiş, kaporası yatırılmış veya kredi kartı ön provizyonu alınmış rezervasyonlar 'Garanti Edilmiş Rezervasyon' sayılır; misafir geç gelse bile odası sabaha kadar muhafaza edilir."
     },
     {
       "id": 4,
@@ -86,7 +86,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
       "definitions": [
         {
           "name": "Seyir Defteri (Logbook) Devri",
-          "desc": "Vardiya sırasında gerçekleşen önemli olayların, takipli konuk isteklerinin ve arızaların yazıldığı dahili takip defteridir.\n\n📊 VARDİYA SAATLERİ VE GÖREV DÜZENİ TABLOSU:\n• Sabah Vardiyası (08.00 - 16.00): Çıkışlar, Fatura Kapatma ve Kat Mutabakatı\n• Akşam Vardiyası (16.00 - 24.00): Girişler, Restoran Harcamaları ve Oda Blokajları\n• Gece Vardiyası (24.00 - 08.00): Night Audit, POS Kapanışları ve Gün Sonu Raporları",
+          "desc": "Vardiya sırasında gerçekleşen önemli olayların ve takipli konuk isteklerinin yazıldığı takip defteridir.\n\n📊 VARDİYA SAATLERİ VE GÖREV DÜZENİ TABLOSU:\n• Sabah Vardiyası (08.00 - 16.00): Çıkışlar, Fatura Kapatma ve Kat Mutabakatı\n• Akşam Vardiyası (16.00 - 24.00): Girişler, Restoran Harcamaları ve Oda Blokajları\n• Gece Vardiyası (24.00 - 08.00): Night Audit, POS Kapanışları ve Gün Sonu Raporları",
           "examples": [
             "Örnekle Pekiştirelim: Sabah vardiyası memuru Seyir Defterine '501 nolu odanın kliması soğutmuyor, teknik servis saat 17:30'da kontrol edecek' notunu düşer."
           ]
@@ -99,7 +99,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
           ]
         }
       ],
-      "caseStudy": "Örnek Olay: Kasa Devrinde 150 TL Açık Çıkması\n\nOlay: Vardiya devri sırasında kasada bulunması gereken tutardan 150 TL eksik olduğu görülür.\n\nÇözüm: Devreden ve devralan memurlar gün içindeki nakit adisyonları ve POS fişlerini inceler. Bir konuğun nakit ödemesinin yanlışlıkla 'Kredi Kartı' girildiği tespit edilerek kayıt düzeltilir.",
+      "caseStudy": "Örnek Olay: Kasa Devrinde 150 TL Açık Çıkması\n\nOlay: Vardiya devri sırasında kasada bulunması gereken tutardan 150 TL eksik olduğu görülür.\n\nÇözüm: Devreden ve devralan memurlar gün içindeki nakit adisyonları ve POS fişlerini inceler. Bir konuğun Kredi Kartı ile yaptığı ödemenin sisteme yanlışlıkla 'Nakit' girildiği tespit edilerek kayıt düzeltilir.",
       "tip": "İpucu: Vardiya devir tesliminde kasa fiziki olarak sayılmadan ve Seyir Defteri okunmadan kesinlikle devir imzası atılmamalıdır."
     }
   ]

@@ -143,7 +143,7 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
               child: Container(
                 key: _miniPlayerBoxKey,
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -335,7 +335,7 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(24),
                           child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 18, sigmaY: kIsWeb ? 0 : 18),
+                            filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                               child: Row(

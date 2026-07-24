@@ -190,7 +190,7 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
             key: ShellKeys.podcastKey,
             borderRadius: BorderRadius.circular(20),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 child: Column(
@@ -560,7 +560,7 @@ class _StudyCardWidget extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(28),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 10, sigmaY: kIsWeb ? 0 : 10),
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

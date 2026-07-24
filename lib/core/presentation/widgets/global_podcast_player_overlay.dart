@@ -120,7 +120,7 @@ class _GlobalPodcastPlayerOverlayState extends State<GlobalPodcastPlayerOverlay>
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: BackdropFilter(
-                                    filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 16, sigmaY: kIsWeb ? 0 : 16),
+                                    filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [

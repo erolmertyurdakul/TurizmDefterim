@@ -1,0 +1,776 @@
+[
+  {
+    "file": "lecture_notes.dart",
+    "index": 21,
+    "name": "Geliş Saati ve Ödeme Garantisi Olmayan Rezervasyon",
+    "desc": "Kapora alınmamıştır. Uluslararası kurallara göre oda, sayfiye otellerinde saat 16.00'ya, şehir otellerinde saat 18.00'e kadar bekletilir. Misafir gelmezse iptal edilir ve başkasına satılır. Misafir hak talep edemez.",
+    "example": "Örnekle Pekiştirelim: Kapora ödemeyen Can Bey’in odasının, saat 18:00'i geçtiği halde gelmediği için iptal edilerek lobide bekleyen walk-in misafire satılmasıdır.",
+    "matched_other_name": "Walk-In",
+    "reason": "Example contains the title of OTHER definition: 'Walk-In'"
+  },
+  {
+    "file": "lecture_notes.dart",
+    "index": 38,
+    "name": "Formül",
+    "desc": "(Önceki günden kalan boş oda + O gün çıkış yapacak oda) - (O gün giriş yapacak oda + Arızalı/Personel odası).",
+    "example": "Örnekle Pekiştirelim: 100 odalı otelde 60 oda dolu, 5 oda arızalı ve 15 adet kesin rezervasyon varsa; Satılabilir Oda = 100 - (60 + 15 + 5) = 20 odadır. Görevli Ayşe, o gün en fazla 20 oda daha satabileceğini bu hesaba göre bilir.",
+    "matched_other_name": "Satılabilir Oda",
+    "reason": "Example contains the title of OTHER definition: 'Satılabilir Oda'"
+  },
+  {
+    "file": "lecture_notes.dart",
+    "index": 40,
+    "name": "Shorta Düşmek (Şorta Düşmek)",
+    "desc": "Fazla alınan rezervasyonların hepsinin gelmesi sonucu oda kalmaması ve kriz çıkmasıdır.",
+    "example": "Örnekle Pekiştirelim: Overbooking yapılan otele tüm misafirler gelince Hans Bey odasız kalmıştır. Otel, Hans Bey'i yandaki otele transfer edip ücretini kendi ödemek zorunda kalmıştır.",
+    "matched_other_name": "Overbooking (Fazla Rezervasyon)",
+    "reason": "Example contains the title of OTHER definition: 'Overbooking (Fazla Rezervasyon)'"
+  },
+  {
+    "file": "10_konuk_giris_cikis_notes.dart",
+    "index": 63,
+    "name": "Billing Instruction (Fatura Talimatı) Aktarımı",
+    "desc": "Acente veya şirket misafirlerinin oda ücretlerinin doğrudan firmanın kredili hesabına (City Ledger) aktarılması, kişisel ekstralarının ise misafirden tahsil edilmesidir.",
+    "example": "Örnekle Pekiştirelim: X şirketiyle gelen misafirin sadece oda bedelini şirketin City Ledger hesabına aktarıp, misafirin yediği akşam yemeği bedelini misafirin kendi kartından çekmektir.",
+    "matched_other_name": "City Ledger (Kredili Defter)",
+    "reason": "Example contains the title of OTHER definition: 'City Ledger (Kredili Defter)'"
+  },
+  {
+    "file": "11_konaklama_isletmeciligi_notes.dart",
+    "index": 25,
+    "name": "İş Analizi ve Görev Tanımı (Job Description)",
+    "desc": "Bir pozisyonun gerektirdiği görev ve sorumlulukları, gerekli eğitim/deneyim şartlarını ve çalışma koşullarını açıklayan resmi belgedir.",
+    "example": "Örnekle Pekiştirelim: 'Resepsiyon Görevlisi' ilanında 'En az lise mezunu, iki yabancı dil bilen, MS Office bilen, takım çalışmasına yatkın, esnek saatlerde çalışabilir' gibi net kriterlerin yazılmasıdır.",
+    "matched_other_name": "Resepsiyon (Reception)",
+    "reason": "Example contains the title of OTHER definition: 'Resepsiyon (Reception)'"
+  },
+  {
+    "file": "11_konaklama_isletmeciligi_notes.dart",
+    "index": 29,
+    "name": "KPI ve Performans Değerlendirme",
+    "desc": "Çalışanların belirlenmiş hedeflere ulaşma düzeyini ölçen sayısal göstergelerdir (KPI). Yılda 1-2 kez yapılan değerlendirmede çalışan ile yönetici bir araya gelir; güçlü yanlar ve gelişim alanları konuşulur.",
+    "example": "Örnekle Pekiştirelim: Resepsiyonist Aylin için KPI hedefinin 'Misafir memnuniyet skoru 4.5/5 üzeri, check-in süresi ortalama 3 dakika altı ve sıfır şikayet' olarak belirlenmesidir.",
+    "matched_other_name": "Resepsiyon (Reception)",
+    "reason": "Example contains the title of OTHER definition: 'Resepsiyon (Reception)'"
+  },
+  {
+    "file": "11_konaklama_isletmeciligi_notes.dart",
+    "index": 35,
+    "name": "Meslek Hastalıkları ve Önlemler",
+    "desc": "Sürekli ayakta durma, ağır kaldırma veya tekrarlı hareketlerden kaynaklanan kas-iskelet sistemi rahatsızlıklarını önlemek için vardiya aralarında germe-esnetme egzersizleri yapılmasıdır.",
+    "example": "Örnekle Pekiştirelim: Resepsiyonistlerin uzun süreli dik duruştan dolayı varis oluşumunu engellemek için her saat başı banko arkasında 2 dakika bacak esnetme hareketleri yapmasıdır.",
+    "matched_other_name": "Resepsiyon (Reception)",
+    "reason": "Example contains the title of OTHER definition: 'Resepsiyon (Reception)'"
+  },
+  {
+    "file": "11_konaklama_isletmeciligi_notes.dart",
+    "index": 46,
+    "name": "Temassız Check-in (Contactless Check-in)",
+    "desc": "Misafirin otele gelmeden önce mobil uygulama üzerinden kimlik belgelerini yükleyerek, resepsiyona uğramadan doğrudan oda kartını veya kapı şifresini alıp odasına geçmesini sağlayan teknolojidir.",
+    "example": "Örnekle Pekiştirelim: Gece geç saatte uçakla Antalya'ya inen yorgun iş insanının, otele geldiğinde resepsiyonda kuyruk beklemeden telefonundaki QR kodu kapı kilidiyle eşleştirip doğrudan odasına girmesidir.",
+    "matched_other_name": "Resepsiyon (Reception)",
+    "reason": "Example contains the title of OTHER definition: 'Resepsiyon (Reception)'"
+  },
+  {
+    "file": "11_konaklama_isletmeciligi_notes.dart",
+    "index": 52,
+    "name": "Çalışan Refahı ve İş Yaşam Dengesi",
+    "desc": "Vardiyalı ve yoğun çalışma temposundaki otel personeline psikolojik destek, esnek izin planları ve sosyal alan imkânı sağlayarak tükenmişliği önleme stratejisidir.",
+    "example": "Örnekle Pekiştirelim: Yaz sezonunda haftada 60 saat çalışan resepsiyonistlere otelin meditasyon odasını açması, personele ücretsiz yemek ve servis imkânı sunması ile yılda 2 kez takdir ödülü verilmesidir.",
+    "matched_other_name": "Resepsiyon (Reception)",
+    "reason": "Example contains the title of OTHER definition: 'Resepsiyon (Reception)'"
+  },
+  {
+    "file": "11_on_buro_hizmetleri_notes.dart",
+    "index": 6,
+    "name": "Seyir Defteri (Logbook) Devri",
+    "desc": "Vardiya sırasında gerçekleşen önemli olayların ve takipli konuk isteklerinin yazıldığı takip defteridir.\\n\\n📊 VARDİYA SAATLERİ VE GÖREV DÜZENİ TABLOSU:\\n• Sabah Vardiyası (08.00 - 16.00): Çıkışlar, Fatura Kapatma ve Kat Mutabakatı\\n• Akşam Vardiyası (16.00 - 24.00): Girişler, Restoran Harcamaları ve Oda Blokajları\\n• Gece Vardiyası (24.00 - 08.00): Night Audit, POS Kapanışları ve Gün Sonu Raporları",
+    "example": "Örnekle Pekiştirelim: Sabah vardiyası memuru Seyir Defterine '501 nolu odanın kliması soğutmuyor, teknik servis saat 17:30'da kontrol edecek' notunu düşer.",
+    "matched_other_name": "Seyir Defteri (Shift Logbook)",
+    "reason": "Example contains the title of OTHER definition: 'Seyir Defteri (Shift Logbook)'"
+  },
+  {
+    "file": "11_on_buro_hizmetleri_notes.dart",
+    "index": 32,
+    "name": "Tekdüzen Hesap Planı (THP)",
+    "desc": "Maliye Bakanlığı tarafından belirlenen, hesapların kodlarla (100 Kasa, 102 Bankalar, 300 Banka Kredileri vb.) standart hale getirildiği hesap sistemidir.\\n\\n📊 HESAP GRUPLARI SINIFLANDIRMA TABLOSU:\\n• 1. Dönen Varlıklar: 1 Yıl İçinde Nakde Dönecek Varlıklar (Kasa, Banka, Alıcılar)\\n• 2. Duran Varlıklar: 1 Yıldan Uzun Ömürlü Varlıklar (Binalar, Taşıtlar, Demirbaşlar)\\n• 3. Kısa Vadeli Yabancı Kaynaklar: 1 Yıl İçinde Ödenecek Borçlar (Banka Kredisi, Satıcılar)\\n• 4. Uzun Vadeli Yabancı Kaynaklar: 1 Yıldan Uzun Vadeli Borçlar\\n• 5. Öz Kaynaklar: İşletme Sermayesi ve Geçmiş Kâr/Zararlar",
+    "example": "Örnekle Pekiştirelim: Otel kasasına giren nakit para 100 Kasa hesabına, banka hesabına gelen acente havalesi 102 Bankalar hesabına kaydedilir.",
+    "matched_other_name": "100 Kasa Hesabı",
+    "reason": "Example contains the title of OTHER definition: '100 Kasa Hesabı'"
+  },
+  {
+    "file": "11_on_buro_hizmetleri_notes.dart",
+    "index": 33,
+    "name": "Çift Taraflı Kayıt Usulü (Borç / Alacak)",
+    "desc": "Her mali işlemin en az bir hesabın Borç (sol) tarafına, bir başka hesabın Alacak (sağ) tarafına eşit tutarlarla yazılması kuralıdır.",
+    "example": "Örnekle Pekiştirelim: Bankadan 15.000 TL nakit çekildiğinde: 100 Kasa Hesabı (Borçlu) 15.000 TL, 102 Bankalar Hesabı (Alacaklı) 15.000 TL olarak kaydedilir.",
+    "matched_other_name": "100 Kasa Hesabı",
+    "reason": "Example contains the title of OTHER definition: '100 Kasa Hesabı'"
+  },
+  {
+    "file": "11_surdurulebilir_turizm_notes.dart",
+    "index": 3,
+    "name": "Rio Konferansı (1992) ve Gündem 21",
+    "desc": "BM'nin Brezilya Rio'da düzenlediği Dünya Zirvesi'nde 178 ülkenin imzaladığı eylem planıdır. Turizm sektörü de dahil olmak üzere tüm sektörlere sürdürülebilir kalkınma yükümlülükleri getirilmiştir.",
+    "example": "Örnekle Pekiştirelim: Rio'dan sonra pek çok ülke, otel inşaatlarında Çevresel Etki Değerlendirmesi (ÇED) raporunu zorunlu hale getirdi. Bu sayede sahil kenarına gelişigüzel yapılan oteller yasal engele çarpmaya başladı.",
+    "matched_other_name": "Çevresel Etki Değerlendirmesi (ÇED)",
+    "reason": "Example contains the title of OTHER definition: 'Çevresel Etki Değerlendirmesi (ÇED)'"
+  },
+  {
+    "file": "11_surdurulebilir_turizm_notes.dart",
+    "index": 13,
+    "name": "Sürdürülebilir Turizm Pazarının Büyüklüğü",
+    "desc": "UNWTO verilerine göre dünya turizm gelirinin yaklaşık %20'si artık sürdürülebilir turizm odaklıdır ve bu pay her yıl %10-15 büyümektedir. Özellikle Avrupalı ve Kuzey Amerikalı turistler bu alanda öncü tüketici grubunu oluşturmaktadır.",
+    "example": "Örnekle Pekiştirelim: Araştırmalar, Alman turistlerin %73'ünün tatil tercihinde 'çevre dostu otel' kriterini önemli bulduğunu ortaya koymaktadır. Bu büyük tüketici grubu, sürdürülebilir turizmi zorla değil taleple dönüştürmektedir.",
+    "matched_other_name": "Sürdürülebilir Turizm",
+    "reason": "Example contains the title of OTHER definition: 'Sürdürülebilir Turizm'"
+  },
+  {
+    "file": "11_surdurulebilir_turizm_notes.dart",
+    "index": 24,
+    "name": "Üç Aşamalı Ulusal Program",
+    "desc": "Kültür ve Turizm Bakanlığı ile GSTC ortaklığında yürütülen; otellerin 1. Aşama (%30 kriter), 2. Aşama (%70 kriter) ve 3. Aşama (%100 tam uyum - Sertifika) olarak tamamlamak zorunda olduğu yasal uyum programıdır.",
+    "example": "Örnekle Pekiştirelim: 50 odalı bir otelin ilk yıl 1. aşama denetiminden geçerek 'Sürdürülebilir Turizm 1. Aşama Belgesi' alması, 3. yılın sonunda ise tüm kriterleri tamamlayıp uluslararası sertifikaya kavuşmasıdır.",
+    "matched_other_name": "Sürdürülebilir Turizm",
+    "reason": "Example contains the title of OTHER definition: 'Sürdürülebilir Turizm'"
+  },
+  {
+    "file": "11_surdurulebilir_turizm_notes.dart",
+    "index": 29,
+    "name": "Destinasyon Yönetim Organizasyonu (DMO)",
+    "desc": "Bir turistik bölgenin sürdürülebilir yönetimini üstlenen; yerel yönetimler, özel sektör, sivil toplum ve yerli halk ortaklığıyla oluşturulan koordinasyon ve planlama kuruluşudur.",
+    "example": "Örnekle Pekiştirelim: Kapadokya'daki baloncu işletmeleri, otel sahipleri, belediyeleri ve doğa derneğinin bir araya gelerek bölgenin yıllık turist kapasitesini birlikte belirlemesi ve ortak sürdürülebilirlik kurallarına uymasıdır.",
+    "matched_other_name": "Sürdürülebilirlik",
+    "reason": "Example contains the title of OTHER definition: 'Sürdürülebilirlik'"
+  },
+  {
+    "file": "11_surdurulebilir_turizm_notes.dart",
+    "index": 42,
+    "name": "Mavi Bayrak Başarısı",
+    "desc": "Türkiye, 2020 yılındaki 486 plaj ve 22 marinalık Mavi Bayrak sayısını büyük bir çevre yatırımıyla geliştirerek, 2025 yılı itibarıyla 577 Mavi Bayraklı plaj, 29 Mavi Bayraklı marina ve 26 yat/tekneye ulaştırmıştır. Bu başarıyla Türkiye, dünya genelinde 3. sırada yer almaktadır.",
+    "example": "Örnekle Pekiştirelim: Ege'de yer alan bir plajdaki kirli kanalın temizlenmesi, oraya plaj denetçisi atanması ve özel gereksinimli bireyler için rampa kurulması için yatırım yapılır ve Mavi Bayrak ödülü alınmaya çalışılır. Bu sayede turizm gelirleri de artar.",
+    "matched_other_name": "Mavi Bayrak (Blue Flag)",
+    "reason": "Example contains the title of OTHER definition: 'Mavi Bayrak (Blue Flag)'"
+  },
+  {
+    "file": "11_surdurulebilir_turizm_notes.dart",
+    "index": 42,
+    "name": "Mavi Bayrak Başarısı",
+    "desc": "Türkiye, 2020 yılındaki 486 plaj ve 22 marinalık Mavi Bayrak sayısını büyük bir çevre yatırımıyla geliştirerek, 2025 yılı itibarıyla 577 Mavi Bayraklı plaj, 29 Mavi Bayraklı marina ve 26 yat/tekneye ulaştırmıştır. Bu başarıyla Türkiye, dünya genelinde 3. sırada yer almaktadır.",
+    "example": "Örnekle Pekiştirelim: Ege'de yer alan bir plajdaki kirli kanalın temizlenmesi, oraya plaj denetçisi atanması ve özel gereksinimli bireyler için rampa kurulması için yatırım yapılır ve Mavi Bayrak ödülü alınmaya çalışılır. Bu sayede turizm gelirleri de artar.",
+    "matched_other_name": "Mavi Bayrak (Blue Flag)",
+    "reason": "Example contains the title of OTHER definition: 'Mavi Bayrak (Blue Flag)'"
+  },
+  {
+    "file": "12_alternatif_turizm_notes.dart",
+    "index": 2,
+    "name": "Mekân ve Zaman",
+    "desc": "Kitle turizmi sahillerde ve yaz aylarında yoğunlaşırken; alternatif turizm her bölgede geliştirilebilir ve tüm yıla yayılabilir.",
+    "example": "Örnekle Pekiştirelim: Kıyı otellerinin kışın kapanması zamansal bağımlılığa; ancak Bolu'da kışın kayak, baharda göl yürüyüşü, yazın ise yayla turları yapılması alternatif turizmin zamansızlığına örnektir.",
+    "matched_other_name": "Alternatif Turizm",
+    "reason": "Example contains the title of OTHER definition: 'Alternatif Turizm'"
+  },
+  {
+    "file": "12_alternatif_turizm_notes.dart",
+    "index": 4,
+    "name": "Maliyet ve Ekonomi",
+    "desc": "Kitle turizmi grup bazlı olduğu için turist açısından daha ucuza mal olur ama gelirin %80'i uluslararası şirketlere gider. Alternatif turizm bireye yönelik olduğu için maliyetlidir ama turist daha çok harcama yapar ve gelirin %90'ı yerel ekonomiye kalır.",
+    "example": "Örnekle Pekiştirelim: Dev gemilerle (kruvaziyer) limana inen turistlerin sadece hediyelik alması kitle turizmidir. Bir köye gidip orada rehber tutup köy evinde kalan alternatif turist ise parasını doğrudan halka bırakır.",
+    "matched_other_name": "Kitle Turizmi",
+    "reason": "Example contains the title of OTHER definition: 'Kitle Turizmi'"
+  },
+  {
+    "file": "12_alternatif_turizm_notes.dart",
+    "index": 7,
+    "name": "Gelir Dağılımını Düzenleyici Etkisi",
+    "desc": "Geri kalmış ancak doğal güzelliğe sahip kırsal bölgelerin turizm sayesinde gelişerek zenginleşmesi ve kentle arasındaki refah farkının azalmasıdır.",
+    "example": "Örnekle Pekiştirelim: Rize'nin küçük bir köyünde yaşayan köylülerin, yayla turizmi sayesinde evlerini butik otele çevirip şehre göç etmek yerine kendi köylerinde refah içinde yaşamasıdır.",
+    "matched_other_name": "Yayla Turizmi",
+    "reason": "Example contains the title of OTHER definition: 'Yayla Turizmi'"
+  },
+  {
+    "file": "12_camasirhane_notes.dart",
+    "index": 2,
+    "name": "İş Kıyafeti (Üniforma)",
+    "desc": "Terletmeyen, kolay yıkanabilir ve dayanıklı kumaşlardan olmalıdır. İş önlüklerinde düğme yerine cırtlı bantlar kullanılmalıdır (düğmelerin kopup makinelere zarar vermesini önlemek için).",
+    "example": "Örnekle Pekiştirelim: Çamaşırhanedeki dev silindir ütüye çarşaf verirken personelin gömlek düğmesinin kopup merdaneyi sıkıştırmasını önlemek için cırt cırtlı önlük giyilmesidir.",
+    "matched_other_name": "Silindir Ütü",
+    "reason": "Example contains the title of OTHER definition: 'Silindir Ütü'"
+  },
+  {
+    "file": "12_camasirhane_notes.dart",
+    "index": 16,
+    "name": "Çarşaf Kurutma",
+    "desc": "Çarşaf ve nevresimler silindir ütüye girecekleri için tam olarak kurutulmaz, ütüleme kalitesini artırmak için %10-20 oranında hafif nemli bırakılır.",
+    "example": "Örnekle Pekiştirelim: Kurutma makinesinden çıkan çarşafların hafif nemli hissettirecek şekilde makineden çıkarılıp, doğrudan silindir ütünün sıcak silindirlerine verilerek jilet gibi ütülenmesidir.",
+    "matched_other_name": "Silindir Ütü",
+    "reason": "Example contains the title of OTHER definition: 'Silindir Ütü'"
+  },
+  {
+    "file": "12_dunya_cografyasi_notes.dart",
+    "index": 6,
+    "name": "Kruvaziyer (Gemi) Limanı",
+    "desc": "Devasa yolcu gemilerinin (kruvaziyer) yanaştığı, pasaport kontrolü, alışveriş ve yerel turların organize edildiği büyük deniz turizm kapılarıdır.",
+    "example": "Örnekle Pekiştirelim: Akdeniz turuna çıkan 5000 yolculu bir kruvaziyer gemisinin Ege'de Kuşadası Limanı'na yanaşması ve yolcuların Efes Antik Kenti'ne günübirlik tura çıkmasıdır.",
+    "matched_other_name": "Antik Kent",
+    "reason": "Example contains the title of OTHER definition: 'Antik Kent'"
+  },
+  {
+    "file": "12_dunya_cografyasi_notes.dart",
+    "index": 6,
+    "name": "Kruvaziyer (Gemi) Limanı",
+    "desc": "Devasa yolcu gemilerinin (kruvaziyer) yanaştığı, pasaport kontrolü, alışveriş ve yerel turların organize edildiği büyük deniz turizm kapılarıdır.",
+    "example": "Örnekle Pekiştirelim: Akdeniz turuna çıkan 5000 yolculu bir kruvaziyer gemisinin Ege'de Kuşadası Limanı'na yanaşması ve yolcuların Efes Antik Kenti'ne günübirlik tura çıkmasıdır.",
+    "matched_other_name": "Kruvaziyer Gemisi",
+    "reason": "Example contains the title of OTHER definition: 'Kruvaziyer Gemisi'"
+  },
+  {
+    "file": "12_dunya_cografyasi_notes.dart",
+    "index": 32,
+    "name": "Alışveriş (Shopping) Turizmi",
+    "desc": "Ünlü markaların indirim günlerinden yararlanmak veya devasa alışveriş merkezlerini gezmek amacıyla yapılan seyahatlerdir.",
+    "example": "Örnekle Pekiştirelim: Paris'teki devasa Disneyland tema parkı çocuklu ailelerin; Dubai Alışveriş Festivali (Dubai Mall) ise alışveriş tutkunlarının küresel çekim merkezidir.",
+    "matched_other_name": "Tema Parkı (Eğlence Parkı)",
+    "reason": "Example contains the title of OTHER definition: 'Tema Parkı (Eğlence Parkı)'"
+  },
+  {
+    "file": "12_dunya_cografyasi_notes.dart",
+    "index": 36,
+    "name": "Kültür Festivali",
+    "desc": "Bir bölgenin yerel geleneklerini, renklerini veya ürünlerini dünyaya tanıtmak için her yıl belirli tarihlerde düzenlenen şenlikli etkinliklerdir.",
+    "example": "Örnekle Pekiştirelim: Brezilya'daki Rio Karnavalı (samba dansçıları ile), İtalya'daki Venedik Karnavalı (gizemli maskeleriyle) ve Hindistan'daki Holi Renk Festivali bu grubun küresel yıldızlarıdır.",
+    "matched_other_name": "Karnaval",
+    "reason": "Example contains the title of OTHER definition: 'Karnaval'"
+  },
+  {
+    "file": "12_dunya_cografyasi_notes.dart",
+    "index": 40,
+    "name": "Sağlık Turizmi",
+    "desc": "Kişinin sağlığına kavuşmak, tedavi olmak veya daha zinde hissetmek (fizik tedavi, estetik, kaplıca) amacıyla yaptığı seyahatlerin genel adıdır.",
+    "example": "Örnekle Pekiştirelim: Afyonkarahisar kaplıcaları veya Denizli Pamukkale'deki travertenler ve termal antik havuz, şifalı sıcak sularıyla termal turizmin ülkemizdeki başkentleridir.",
+    "matched_other_name": "Termal Turizm (Kaplıca)",
+    "reason": "Example contains the title of OTHER definition: 'Termal Turizm (Kaplıca)'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 1,
+    "name": "Maddi Kültür Unsurları",
+    "desc": "Toplumun teknolojik gelişmişliğini ve fiziksel üretimini gösteren unsurlardır. Binalar, araç-gereçler, el sanatları, tarihi saraylar ve mimari eserler bu gruptadır.",
+    "example": "Örnekle Pekiştirelim: İstanbul'daki Topkapı Sarayı, el yapımı Türk halıları ve Safranbolu evleri maddi kültürün somut birer göstergesidir.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 4,
+    "name": "Görenek (Adet)",
+    "desc": "Gelenek kadar yaptırım gücü yüksek olmayan, 'görüle geldiği gibi' yapılan pratik günlük alışkanlıklar ve davranış modelleridir.",
+    "example": "Örnekle Pekiştirelim: Düğünlerde takı takılması, bayramlarda büyüklerin elinin öpülmesi ve kız isteme törenleri örf ve adetlerimize (gelenek) en güzel örnektir.",
+    "matched_other_name": "Gelenek (Örf)",
+    "reason": "Example contains the title of OTHER definition: 'Gelenek (Örf)'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 7,
+    "name": "Beden Dili (Jest ve Mimikler)",
+    "desc": "İletişimin %60'ından fazlasını oluşturan, duruş, göz teması ve el-kol hareketleriyle verilen mesajlardır. Kültüre duyarlıdır.",
+    "example": "Örnekle Pekiştirelim: Baş sallama hareketi dünya genelinde 'Evet' anlamına gelirken; Bulgaristan ve Yunanistan'da tam tersi 'Hayır' anlamına gelmektedir. Benzer şekilde, kafa arkaya atılarak yapılan 'Cık' sesi Türk kültüründe hayır demektir.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 9,
+    "name": "Kültür Turizmi",
+    "desc": "İnsanların yeni kültürler tanımak, tarihi eserleri, müzeleri, festivalleri ziyaret etmek ve yerel yaşam tarzını deneyimlemek amacıyla yaptığı seyahatlerdir.",
+    "example": "Örnekle Pekiştirelim: Yabancı bir turistin Kars'a giderek oradaki tarihi Rus evlerini incelemesi, aşık atışmalarını dinlemesi ve kaz eti yiyerek kültürü öğrenmesidir.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 10,
+    "name": "Turist Beklentisi",
+    "desc": "Gezginin seyahat ettiği bölgedeki hizmet kalitesi, otantiklik (özgünlük) ve güvenlik standartlarına yönelik ön kabulleridir.",
+    "example": "Örnekle Pekiştirelim: Kapadokya'ya giden bir turistin, orada otantik taş bir butik otelde kalmayı ve sabahları geleneksel sıcak gözleme yemeyi önceden umarak gitmesidir.",
+    "matched_other_name": "Gelenek (Örf)",
+    "reason": "Example contains the title of OTHER definition: 'Gelenek (Örf)'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 11,
+    "name": "Kültürel Otantiklik (Özgünlük)",
+    "desc": "Kültürel unsurların yapaylaştırılmadan, ticari kaygılarla bozulmadan, aslına uygun bir şekilde turistlere sunulması durumudur.",
+    "example": "Örnekle Pekiştirelim: Bir köyde turistler için suni olarak düzenlenen sahte törenler yerine; köy halkının gerçek düğün yemeğine konuk olunması otantik kültürel deneyimdir.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 22,
+    "name": "Oktoberfest (Almanya)",
+    "desc": "Bavyera kültürünün simgesi olan, Münih şehrinde düzenlenen, geleneksel kıyafetlerin (Dirndl ve Lederhosen) giyildiği dünyanın en büyük halk festivalidir.",
+    "example": "Örnekle Pekiştirelim: Almanya Münih'te devasa çadırlarda kurulan uzun tahta masalarda binlerce turistin geleneksel Bavyera müzikleri eşliğinde tuzlu simit (Brezel) yiyip eğlenmesidir.",
+    "matched_other_name": "Gelenek (Örf)",
+    "reason": "Example contains the title of OTHER definition: 'Gelenek (Örf)'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 28,
+    "name": "Latin (Güney) Amerika Kültürü",
+    "desc": "Meksika'dan Arjantin'e uzanan; dans, müzik (Salsa, Tango), karnavallar, aile bağları ve dini inanışların (Katoliklik) yön verdiği coşkulu yaşam tarzıdır.",
+    "example": "Örnekle Pekiştirelim: Brezilya'daki Rio Karnavalı ve Meksika'daki 'Ölüler Günü' (Dia de los Muertos) Latin Amerika'nın zengin ritüellerini yansıtan en ünlü kültürel etkinliklerdir.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 57,
+    "name": "Masai ve Zulu Kabileleri",
+    "desc": "Doğu Afrika'da (Kenya/Tanzanya) kırmızı giysileri ve yüksek sıçrama danslarıyla ünlü Masailer ile Güney Afrika'nın savaşçı ruhlu, el sanatlarında gelişmiş Zulularıdır.",
+    "example": "Örnekle Pekiştirelim: Masai savaşçılarının yaptığı 'Adumu' (Sıçrama dansı) töreni, köye gelen safari turistlerinin ilgisini çeken en popüler kültürel gösteridir.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_dunya_kulturleri_notes.dart",
+    "index": 60,
+    "name": "Maori Kültürü ve Haka Dansı",
+    "desc": "Yeni Zelanda'nın yerlileridir. Savaşçı ruhlarını, güçlerini ve saygılarını göstermek için gözlerini belerterek ve vücutlarına vurarak yaptıkları Haka dansıyla tanınırlar.",
+    "example": "Örnekle Pekiştirelim: Yeni Zelanda milli ragbi takımı 'All Blacks', her uluslararası maçtan önce rakiplerine karşı Haka dansı yaparak bu Maori kültürel mirasını canlı tutar.",
+    "matched_other_name": "Kültür",
+    "reason": "Example contains the title of OTHER definition: 'Kültür'"
+  },
+  {
+    "file": "12_gastronomi_turizmi_notes.dart",
+    "index": 2,
+    "name": "Gastronomi Turisti",
+    "desc": "Gittiği destinasyonda yeme-içme deneyimini seyahatinin merkezine koyan, yerel lezzetler için daha fazla bütçe ayıran ve keşfetmeyi seven bilinçli turist profilidir.",
+    "example": "Örnekle Pekiştirelim: Seyahat ettiği her ülkede yerel pazarları gezen, yemek pişirme atölyelerine katılan ve tatil bütçesinin büyük kısmını kaliteli yerel yemeklere harcayan seyyah Can Bey'dir.",
+    "matched_other_name": "Yerel Pazarlar (Üretici Pazarları)",
+    "reason": "Example contains the title of OTHER definition: 'Yerel Pazarlar (Üretici Pazarları)'"
+  },
+  {
+    "file": "12_gastronomi_turizmi_notes.dart",
+    "index": 17,
+    "name": "UNESCO Yaratıcı Şehirler Ağı (UCCN)",
+    "desc": "UNESCO tarafından şehirlerin kültürel kimliklerini (Gastronomi, Müzik, Tasarım vb.) küresel düzeyde korumak ve tanıtmak için oluşturulan ağdır.",
+    "example": "Örnekle Pekiştirelim: Gaziantep'in zengin mutfak kültürü sayesinde UNESCO tarafından 'Gastronomi Şehri' tescili alarak dünya genelinde resmi koruma ve tanıtım kazanmasıdır.",
+    "matched_other_name": "Gastronomi",
+    "reason": "Example contains the title of OTHER definition: 'Gastronomi'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 3,
+    "name": "PCO (Profesyonel Kongre Organizatörü)",
+    "desc": "Kongrenin planlama, bütçe yönetimi, pazarlama, kayıt, konaklama ve teknik altyapı dahil tüm operasyonel sürecini üstlenen uzman şirketlerdir.",
+    "example": "Örnekle Pekiştirelim: Uluslararası kardiyoloji kongresinin web sitesinin açılması, bildirilerin toplanması, salonların kiralanması ve bütçenin yönetilmesi için derneğin anlaştığı A sınıfı seyahat acentesidir.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 5,
+    "name": "ICCVB (Kongre ve Ziyaretçi Bürosu)",
+    "desc": "Kar amacı gütmeyen, destinasyonu küresel olarak tanıtan resmi ve sivil ortaklı pazarlama kuruluşudur.",
+    "example": "Örnekle Pekiştirelim: İstanbul Kongre ve Ziyaretçi Bürosu'nun (ICVB), yurt dışındaki fuarlarda İstanbul'u uluslararası derneklere tanıtarak büyük kongrelerin İstanbul'a gelmesini sağlamasıdır.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 7,
+    "name": "Teklif Dosyası (Bid Book)",
+    "desc": "Bir kongrenin ülkeye kazandırılması amacıyla; destinasyonun altyapısını, otellerini, havalimanını, kültürel çekiciliklerini ve finansal tekliflerini içeren resmi adaylık sunum dosyasıdır.",
+    "example": "Örnekle Pekiştirelim: Türkiye'nin 2028 yılındaki Dünya Eczacılık Kongresi'ni kazanabilmek için, İstanbul'un otellerini ve kongre merkezlerini tanıtan 100 sayfalık İngilizce slayt sunumunu dernek kuruluna sunmasıdır.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 8,
+    "name": "Sabit ve Değişken Bütçe",
+    "desc": "Bütçelemede salon kirası, teknik ekipman gibi katılımcı sayısına göre değişmeyen giderler 'Sabit'; yiyecek-içecek, yaka kartları ve çanta gibi katılımcı sayısı arttıkça artan giderler 'Değişken' maliyettir.",
+    "example": "Örnekle Pekiştirelim: 1000 kişilik bir kongrede simultaneous (simültane) tercüme sistemi kirası sabit maliyet iken; katılımcılara sunulan öğle yemeği değişken maliyettir.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 9,
+    "name": "Kongre Takvimi (Zaman Çizelgesi)",
+    "desc": "Abstract (bildiri) özetlerinin son kabul tarihi, erken kayıt (early-bird) avantajlarının bitişi gibi kritik tarihlerin Gantt şemasıyla planlanmasıdır.",
+    "example": "Örnekle Pekiştirelim: Kongreye 6 ay kala 'Erken Kayıt' indiriminin sona ereceğinin duyurulması ve sunum yapacak akademisyenler için bildiri kabulünün 3 ay kala tamamen durdurulacağının takvime işlenmesidir.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 12,
+    "name": "Bildiri Özetleri (Abstracts)",
+    "desc": "Akademisyenlerin kongrede sunmak istedikleri bilimsel araştırmaların, hakem heyeti (bilim kurulu) tarafından değerlendirilmek üzere gönderilen kısa özet metinleridir.",
+    "example": "Örnekle Pekiştirelim: Bir doçentin hazırladığı kanser tedavisi konulu 300 kelimelik araştırmasını, kongrede sunum hakkı kazanmak için bilim kuruluna e-posta ile incelemeye göndermesidir.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 17,
+    "name": "Fuaye (Foyer) Alanı",
+    "desc": "Salonların girişinde yer alan; delegelerin kayıt yaptırdığı, kahve aralarının (coffee break) verildiği, sponsor standlarının kurulduğu geniş sosyal sosyalleşme alanıdır.",
+    "example": "Örnekle Pekiştirelim: 500 kişilik bir tıp kongresinde, doktorların sunum aralarında ilaç firmalarının stantlarını gezerek sohbet ettiği ve çay-kahve içtiği alan fuaye alanıdır.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 20,
+    "name": "Sınıf (Classroom) Düzeni",
+    "desc": "Sandalyelerin önünde not tutmaya ve laptop koymaya uygun uzun çalışma masalarının bulunduğu düzendir. Eğitimler için idealdir. Kapasite hesabında kişi başı 1.5-2 m² alan ayrılır.",
+    "example": "Örnekle Pekiştirelim: Tıp kongresindeki teknik sunumlar için delegelerin önünde not almaları amacıyla masalı sınıf düzeninin kurulmasıdır.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 22,
+    "name": "Banket (Banquet / Yuvarlak Masa) Düzeni",
+    "desc": "10'ar kişilik yuvarlak masaların salona dağıtıldığı yerleşimdir. Gala yemekleri ve ödül törenleri için kullanılır. Kapasite hesabında kişi başı 2-2.5 m² alan ve masalar arası en az 1.5 m geçiş koridoru hesaplanır.",
+    "example": "Örnekle Pekiştirelim: Kongrenin kapanış gecesinde düzenlenen ve şık kumaşlarla süslenmiş 10 kişilik yuvarlak masaların etrafında delegelerin oturduğu gala yemeği düzenidir.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 24,
+    "name": "Coffee Break (Kahve Arası)",
+    "desc": "Oturum aralarında fuaye alanında sunulan; çay, kahve, meyve suları ile tatlı/tuzlu kurabiye, mini sandviç ve meyvelerin yer aldığı pratik ayakta atıştırma büfesidir.",
+    "example": "Örnekle Pekiştirelim: Kongrede 15 dakikalık arada 500 kişinin aynı anda fuayeye çıkacağını bilen banket şefi, uzun kuyrukları önlemek için fuayenin farklı köşelerine 4 ayrı kahve istasyonu (buffets) kurmuştur.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 27,
+    "name": "Hospitality (Ağırlama/Danışma) Desk",
+    "desc": "Otel lobisinde, PCO görevlilerinin veya otel halkla ilişkiler sorumlusunun oturduğu; delegelerin kongre çantalarını aldığı, turlar hakkında bilgi edindiği özel stanttır.",
+    "example": "Örnekle Pekiştirelim: Otele giriş yapan delege Can Bey, resepsiyonda sıra beklemeden doğrudan 'Hospitality Desk'e giderek yaka kartını, kongre programını ve odasının anahtarını teslim almıştır.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kongre_etkinlik_notes.dart",
+    "index": 30,
+    "name": "Kat Hizmetleri (Housekeeping) Hazırlığı",
+    "desc": "BEO doğrultusunda, salonların temizliği, tuvaletlerin periyodik bakımı ve fuaye alanındaki çöplerin boşaltılması gibi arka plan temizlik operasyonudur.",
+    "example": "Örnekle Pekiştirelim: 1000 kişilik bir tıp kongresinin kahve arasında, kat görevlisinin fuaye alanındaki çöp kutularını sessizce boşaltması ve tuvaletlerin sıvı sabunlarını periyodik olarak tamamlamasıdır.",
+    "matched_other_name": "Kongre",
+    "reason": "Example contains the title of OTHER definition: 'Kongre'"
+  },
+  {
+    "file": "12_kuru_temizleme_notes.dart",
+    "index": 0,
+    "name": "Kişisel Koruyucu Donanım (KKD)",
+    "desc": "Kuru temizleme atölyelerinde çalışanları risklere karşı koruyan; eldiven, maske, koruyucu gözlük ve önlük gibi ekipmanların genel adıdır. Makine bakımı ve filtre temizliğinde mutlaka profesyonel gaz maskeleri kullanılmalıdır.",
+    "example": "Örnekle Pekiştirelim: Kuru temizleme makinesinin solvent filtresini temizleyecek olan operatörün, uçucu gazlardan zehirlenmemek için aktif karbon filtreli tam yüz gaz maskesi ve kalın kimyasal eldivenleri takmasıdır.",
+    "matched_other_name": "Kuru Temizleme Makinesi",
+    "reason": "Example contains the title of OTHER definition: 'Kuru Temizleme Makinesi'"
+  },
+  {
+    "file": "12_kuru_temizleme_notes.dart",
+    "index": 2,
+    "name": "Hidrokarbon Çözücüler (HC)",
+    "desc": "PERC çözücüsüne alternatif olarak kullanılan, parlama noktası yüksek ve yanıcı özelliği bulunan ancak toksik etkisi daha az olan, yün ve hassas elyaflarda çekme riskini minimize eden petrol bazlı kuru temizleme solventidir.",
+    "example": "Örnekle Pekiştirelim: Çok narin boncuklu bir abiye elbisenin, liflerinin zarar görmemesi için perkloroetilen yerine hidrokarbon bazlı solvent kullanan bir makinede hassas devirde temizlenmesidir.",
+    "matched_other_name": "Perkloroetilen (PERC)",
+    "reason": "Example contains the title of OTHER definition: 'Perkloroetilen (PERC)'"
+  },
+  {
+    "file": "12_kuru_temizleme_notes.dart",
+    "index": 14,
+    "name": "Makineye Yükleme",
+    "desc": "Tüm hazırlıklar tamamlandıktan sonra, tekstiller makinenin tamburuna kapasitesinin 1/3 oranında doldurularak, kumaş türüne uygun program seçilir.",
+    "example": "Örnekle Pekiştirelim: 15 kg kapasiteli bir kuru temizleme makinesine giysilerin sıkışıp temizlenememesini önlemek için en fazla 10 kg giysi yüklenmesidir.",
+    "matched_other_name": "Kuru Temizleme Makinesi",
+    "reason": "Example contains the title of OTHER definition: 'Kuru Temizleme Makinesi'"
+  },
+  {
+    "file": "12_sosyal_medya_notes.dart",
+    "index": 16,
+    "name": "İçerik Takvimi (Content Calendar)",
+    "desc": "Hangi gün, hangi saatte, hangi sosyal medya mecrasında ne tür bir içeriğin (fotoğraf, video, hikaye) paylaşılacağını önceden gösteren planlama çizelgesidir.",
+    "example": "Örnekle Pekiştirelim: Sosyal medya uzmanının 'Pazartesi saat 10:00'da Instagram'da yeni menü görseli paylaşılacak, Çarşamba 18:00'de YouTube'a şef röportajı yüklenecek' şeklinde aylık plan yapmasıdır.",
+    "matched_other_name": "Sosyal Medya",
+    "reason": "Example contains the title of OTHER definition: 'Sosyal Medya'"
+  },
+  {
+    "file": "12_sosyal_medya_notes.dart",
+    "index": 22,
+    "name": "Topluluk Yönetimi (Community Management)",
+    "desc": "Sosyal medya hesaplarına gelen tüm yorumları, soruları ve direkt mesajları (DM) kurumsal bir dil ve nezaket kuralları çerçevesinde hızlıca yanıtlama sürecidir.",
+    "example": "Örnekle Pekiştirelim: Otelimizin Instagram hesabına 'Oda fiyatlarınız nedir?' diye DM atan bir misafire, sosyal medya uzmanının 5 dakika içinde detaylı fiyat listesi ve güler yüzlü bir emojiyle yanıt vermesidir.",
+    "matched_other_name": "Sosyal Medya",
+    "reason": "Example contains the title of OTHER definition: 'Sosyal Medya'"
+  },
+  {
+    "file": "12_sosyal_medya_notes.dart",
+    "index": 25,
+    "name": "Kriz İletişimi Protokolleri",
+    "desc": "Kriz anında atılacak adımların yasal ve etik çerçevesidir: 1) İlk 24 saat içinde dürüst bir resmi açıklama yapılması. 2) Yorum silme veya engelleme gibi gizleme çabalarından kaçınılması. 3) Mağduriyetin hukuki ve maddi olarak telafi edilmesi adımlarıdır.",
+    "example": "Örnekle Pekiştirelim: Gıda zehirlenmesi iddiasıyla ilgili yayılan asılsız veya haklı bir videoya karşı otelin sosyal medya ekibinin yorumları silmek yerine, 'Olay laboratuvar analiz aşamasında olup tüm yasal süreçler şeffaflıkla yürütülmektedir' şeklinde dürüst bir bilgilendirme anonsu yapmasıdır.",
+    "matched_other_name": "Sosyal Medya",
+    "reason": "Example contains the title of OTHER definition: 'Sosyal Medya'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 0,
+    "name": "Kişisel Hijyen ve Bakım",
+    "desc": "Transfer elemanının işe başlamadan önce günlük olarak duş alması, saç ve sakal tıraşına dikkat etmesi, el ve tırnak temizliğini yapması gibi kişisel hijyen kurallarının bütünüdür.",
+    "example": "Örnekle Pekiştirelim: Transferman Can'ın, sabah işe çıkmadan önce tıraşını olması, deodorant kullanarak temiz ütülü iş kıyafetlerini giymesi ve bakımlı bir şekilde misafirlerin karşısına çıkmasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 1,
+    "name": "Kıyafet Standartları ve Yaka Kartı",
+    "desc": "Acentenin belirlediği kurumsal üniforma standartlarına (ceket, gömlek, kumaş pantolon, kapalı ayakkabı) uyulması ve misafirlerin kolayca tanıması için yaka kartının görünür şekilde takılmasıdır.",
+    "example": "Örnekle Pekiştirelim: Transferman Merve'nin, spor ayakkabı veya terlik yerine siyah boyalı kapalı deri ayakkabı giymesi, yaka kartını sol göğüs hizasına sabitleyerek misafirleri karşılamasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 2,
+    "name": "Çalışma ve Uyku Düzeni",
+    "desc": "Yüksek tempoda ve vardiyalı çalışılan turizm sezonunda, dikkat dağınıklığını önlemek ve iş kazası riskini azaltmak amacıyla personelin uyku ve dinlenme sürelerine dikkat etmesidir.",
+    "example": "Örnekle Pekiştirelim: Gece nöbetçi olan transferman Aylin'in, gündüz saatlerinde telefonunu sessize alarak kesintisiz 8 saat uyuması ve gece transferine dinç bir şekilde katılmasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 12,
+    "name": "GPS Takip Sistemi",
+    "desc": "Küresel Konumlama Sistemi (GPS) vasıtasıyla araçların hız limitlerinin, konumlarının ve duraklama sürelerinin merkezden anlık izlenmesidir.",
+    "example": "Örnekle Pekiştirelim: Operasyon merkezinin ekrandan transfer aracının hızını ve hedefe kalan mesafesini takip ederek oteldeki karşılama ekibini bilgilendirmesidir.",
+    "matched_other_name": "Operasyon Merkezi (Merkez Ofis)",
+    "reason": "Example contains the title of OTHER definition: 'Operasyon Merkezi (Merkez Ofis)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 14,
+    "name": "Acil Çıkış Çekiçleri ve Tahliye Plakaları",
+    "desc": "Kaza veya yangın durumunda araç camlarının kırılarak yolcuların güvenle tahliye edilmesini sağlayan ve cam kenarlarında sabitlenmiş aparatlar ile yönlendirici fosforlu levhalardır.",
+    "example": "Örnekle Pekiştirelim: Transfermanının pre-check esnasında koltuk arkalarında veya pencerelerde bulunması zorunlu güvenlik çekiçlerinin yerinde takılı olduğunu kontrol etmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 16,
+    "name": "Acente Havalimanı Temsilcisi",
+    "desc": "Havalimanında acente adına operasyonları koordine eden, gelen uçuş rötarlarını takip edip araçları ve transfermanları yönlendiren yetkili personendir.",
+    "example": "Örnekle Pekiştirelim: Uçuş bilgi panosunda rötarlı bir uçak gören temsilci Sinem'in, bekleyen şoför ve transfermanı arayarak yeni hareket saatini bildirmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 18,
+    "name": "Şoför Çalışma Süreleri ve Güvenlik",
+    "desc": "Uykusuz sürüşü önlemek amacıyla yasal olarak şoförlerin 24 saat içinde en fazla 9 saat araç kullanabilmesi ve her 4.5 saatte bir 45 dakika mola vermesi zorunluluğudur.",
+    "example": "Örnekle Pekiştirelim: Uzun mesafeli bir transferde takograf cihazını kontrol eden transfermanın, şoförün yasal dinlenme saatine uyduğunu teyit etmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 18,
+    "name": "Şoför Çalışma Süreleri ve Güvenlik",
+    "desc": "Uykusuz sürüşü önlemek amacıyla yasal olarak şoförlerin 24 saat içinde en fazla 9 saat araç kullanabilmesi ve her 4.5 saatte bir 45 dakika mola vermesi zorunluluğudur.",
+    "example": "Örnekle Pekiştirelim: Uzun mesafeli bir transferde takograf cihazını kontrol eden transfermanın, şoförün yasal dinlenme saatine uyduğunu teyit etmesidir.",
+    "matched_other_name": "Takograf Cihazı",
+    "reason": "Example contains the title of OTHER definition: 'Takograf Cihazı'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 20,
+    "name": "Welcome Board (Karşılama Panosu)",
+    "desc": "Çıkış kapısında misafirlerin veya acentenin adının net bir şekilde yazılı olduğu, temiz ve şık yönlendirme tabelasıdır.",
+    "example": "Örnekle Pekiştirelim: Transferman Aylin'in, gelen yolcu kapısında 'TURİZM DEFTERİM ACENTESİ' logosu basılı şık pleksi tabelayı göğüs hizasında dik tutarak beklemesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 21,
+    "name": "Konuk Teyidi ve No-Show Tespiti",
+    "desc": "Gelen misafirin kimlik/pasaport ve otel voucher bilgilerinin listeden kontrol edilerek doğrulanması, gelmeyen konukların ise acenteye 'No-Show' olarak raporlanmasıdır.",
+    "example": "Örnekle Pekiştirelim: Listedeki konuğun ismini kontrol edip 'Smith Ailesi - Turizm Defterim Oteli' rezervasyonunu onaylayan transfermanın grubu otobüse yönlendirmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 22,
+    "name": "Bagaj Etiketleme ve Sayım",
+    "desc": "Yolculardan teslim alınan valizlerin sayısının karşılıklı teyit edilmesi, karışıklıkları önlemek için üzerlerine acente takip etiketlerinin asılmasıdır.",
+    "example": "Örnekle Pekiştirelim: Transfermanın 20 kişilik grubun 30 adet bagajını tek tek sayarak teslim alması, valiz kulplarına otel renklerine uygun bagaj fişi bağlamasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 23,
+    "name": "PIR Raporu (Kayıp Bagaj Tutanağı)",
+    "desc": "Yolcunun valizinin havalimanında kaybolması veya hasarlı çıkması durumunda, havayolu kayıp eşya ofisinde (Lost & Found) doldurulması yasal zorunluluk olan resmi Property Irregularity Report (PIR) raporudur.",
+    "example": "Örnekle Pekiştirelim: Havalimanında valizi çıkmayan misafir Hans için transfermanın acenteye bilgi vermesi ve havayolu bankosunda bagaj teslim fişi ve biletle PIR kayıp tutanağı düzenleterek takibini başlatmasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 24,
+    "name": "Porter (Bagaj Taşıyıcı) Organizasyonu",
+    "desc": "Özellikle büyük gruplarda ve ağır yüklerde, havalimanı lisanslı bagaj taşıyıcıları (porter) ile koordineli olarak bagaj arabalarının düzenlenmesi hizmetidir.",
+    "example": "Örnekle Pekiştirelim: Yaşlı turist kafilesi geldiğinde transfermanın 5 adet porter çağırarak valizlerin otobüs bagajına kadar yorulmadan taşınmasını organize etmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 25,
+    "name": "Welcome Anonsu",
+    "desc": "Yolcular araca yerleşip kapılar kapandıktan sonra yapılan; kendini, şoförü, acenteyi ve yol güzergahını tanıtan resmi karşılama konuşmasıdır.",
+    "example": "Örnekle Pekiştirelim: Otobüs hareket edince transfermanın 'Değerli misafirlerimiz, acentemiz adına hoş geldiniz. Ben transfermanınız Burak, şoförümüz Ahmet Bey ile birlikte yaklaşık 40 dakikalık yolculukla otelimize ulaşacağız...' anonsudur.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 32,
+    "name": "Yolcu Bilgileri Gizliliği ve Güvenliği",
+    "desc": "Konuğun kimlik, uçuş ve seyahat detaylarının üçüncü kişilerle kesinlikle paylaşılmaması, karşılama tabelasında misafirin açık adı yerine sadece unvanının veya özel acente kodunun yazılmasıdır.",
+    "example": "Örnekle Pekiştirelim: Ünlü bir sanatçının transferini gerçekleştiren transfermanının, konuğun fotoğraflarını çekip sosyal medyada paylaşmasının yasak olduğunu bilerek profesyonelce davranmasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 35,
+    "name": "IATA Havalimanı Kodları",
+    "desc": "Dünya genelindeki havalimanlarını tanımlayan 3 harfli uluslararası kodlardır (Örn: IST: İstanbul, SAW: Sabiha Gökçen, AYT: Antalya, DLM: Dalaman).",
+    "example": "Örnekle Pekiştirelim: Misafirin biletinde kalkış noktası olarak 'IST', varış noktası olarak 'AYT' yazmasını transfermanının İstanbul-Antalya uçuşu olarak okumasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 43,
+    "name": "Destinasyon Enformasyonu",
+    "desc": "Yolculuk esnasında transfer elemanı tarafından misafirlere sunulan; bölgenin tarihi, coğrafyası, iklim şartları, yöresel lezzetleri ve dikkat edilmesi gereken pratik kuralları içeren sözlü sunumdur.",
+    "example": "Örnekle Pekiştirelim: Transfermanının otobüste 'Bölgemizde şu an yaz mevsimi yaşanmakta olup nem oranı yüksektir. Yarın katılabileceğiniz ören yeri turlarında şapka ve güneş kremi bulundurmanızı tavsiye ederiz' açıklaması yapmasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 44,
+    "name": "Info-Tur ve Acente Pazarlaması",
+    "desc": "Acentenin sunduğu günübirlik turların (tekne turu, jeep safari, müze gezileri) broşürler veya kısa videolar yardımıyla misafirlere tanıtılarak satış potansiyelinin artırılması faaliyetidir.",
+    "example": "Örnekle Pekiştirelim: Transfermanının yolculuğun son 15 dakikasında misafirlere acentenin tur broşürlerini dağıtıp 'Kapadokya balon turumuza katılmak isterseniz otel rehberimizle iletişime geçebilirsiniz' duyurusunu yapmasıdır.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 53,
+    "name": "Acente ve Yolcu Belgeleri",
+    "desc": "TÜRSAB veya noter onaylı Seyahat Acentası İşletme Belgesi sureti, araçta seyahat eden yolcuların isim, pasaport/rezervasyon detaylarını gösteren Transfer Yolcu Manifestosu (Listesi) ve ön camda yer alan karekodlu TÜRSAB Plakasıdır.",
+    "example": "Örnekle Pekiştirelim: TÜRSAB denetiminde transfermanının ön camdaki resmi plakayı ve klasördeki ıslak imzalı yolcu manifestosunu denetmene göstermesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 56,
+    "name": "Engelsiz Turizm ve İSG",
+    "desc": "Bedensel veya görme engelli, yaşlı veya hamile misafirlere yönelik engelli biniş rampası kullanımı, kapıya yakın koltuk tahsisi ve lobide bizzat resepsiyona teslimat yapılması kurallarıdır.",
+    "example": "Örnekle Pekiştirelim: Tekerlekli sandalye kullanan konuk için transfermanının araçtaki hidrolik engelli liftini açıp güvenle içeri alması, otelde de lobiye kadar refakat etmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 57,
+    "name": "Evcil Hayvan Taşıma Kuralları",
+    "desc": "Yolcularla seyahat eden evcil hayvanların, yasal aşı sertifikası ve sağlık karnesi teyit edilerek, standart taşıma kafesiyle araç bagajında veya uygun iç bölmede taşınmasıdır.",
+    "example": "Örnekle Pekiştirelim: Kedisiyle gelen yolcunun kedi kafesini kontrol eden transfermanın, sağlık belgesini doğrulayarak kafesi araçtaki iklimlendirmeli özel bagaj alanına yerleştirmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 58,
+    "name": "Otel Giriş Asistanlığı ve Drop-off",
+    "desc": "Otele ulaşıldığında misafirlerin valizlerinin güvenle indirilmesi, lobiye taşınması ve resepsiyonda check-in (kayıt) işlemlerine yardım edilmesidir.",
+    "example": "Örnekle Pekiştirelim: Lobide yabancı turistlerin 'Konuk Kayıt Formu' doldurmasına yardım eden transfermanın oda anahtarlarını almalarına asistanlık etmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 59,
+    "name": "Lost & Found (Unutulan Eşya) Kontrolü",
+    "desc": "Tüm misafirler araçtan indikten sonra koltukların, rafların ve bagaj alanının taranarak unutulan eşyaların tutanakla kayıt altına alınması prosedürüdür.",
+    "example": "Örnekle Pekiştirelim: Yolcular indikten sonra araçta unutulan cep telefonunu bulan transferman Hakan'ın, durum tespit tutanağı hazırlayarak telefonu lobi resepsiyonuna teslim etmesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_transfer_operasyonu_notes.dart",
+    "index": 61,
+    "name": "Transfer Raporu (Transfer Report)",
+    "desc": "Transfer tamamlandıktan sonra transferman tarafından hazırlanan; araç temizliği, rötarlar, şoför performansı ve misafir memnuniyetini içeren resmi operasyon raporudur.",
+    "example": "Örnekle Pekiştirelim: Transferman Elif'in sisteme girerek 'Tüm konuklar otele sorunsuz yerleşti. Bagajlar eksiksiz teslim edildi, misafir memnuniyeti tamdır' raporunu göndermesidir.",
+    "matched_other_name": "Transferman (Transfer Elemanı)",
+    "reason": "Example contains the title of OTHER definition: 'Transferman (Transfer Elemanı)'"
+  },
+  {
+    "file": "12_tur_operasyonu_notes.dart",
+    "index": 10,
+    "name": "Briefing (Ön Bilgilendirme)",
+    "desc": "Tur başlamadan önce rehberin acente operasyon biriminden tur dosyası, konuk listesi ve detaylar hakkında aldığı kapsamlı bilgilendirme toplantısıdır.",
+    "example": "Örnekle Pekiştirelim: Tura çıkacak olan rehber Burak'ın, acente ofisine giderek operasyon sorumlusundan gidecekleri güzergahtaki yol durumu, otel voucherları ve özel misafir talepleri hakkında brifing almasıdır.",
+    "matched_other_name": "Voucher (Rezervasyon Belgesi)",
+    "reason": "Example contains the title of OTHER definition: 'Voucher (Rezervasyon Belgesi)'"
+  },
+  {
+    "file": "12_tur_operasyonu_notes.dart",
+    "index": 19,
+    "name": "Paket Tur (Package Tour)",
+    "desc": "Ulaştırma, konaklama ve diğer turizm hizmetlerinin (rehberlik, müze girişleri vb.) her şey dahil tek bir fiyat altında birleştirildiği ve 24 saati aşan ya da bir geceliklemeyi içeren organize seyahat ürünüdür.",
+    "example": "Örnekle Pekiştirelim: Bir acentenin '3 Gece 4 Gün Karadeniz Turu' adı altında; gidiş-dönüş uçak biletini, otel konaklamalarını, sabah-akşam yemeklerini ve rehberlik hizmetini tek bir fiyatla (Örn: 15.000 TL) müşteriye satmasıdır.",
+    "matched_other_name": "Rehberlik Hizmeti",
+    "reason": "Example contains the title of OTHER definition: 'Rehberlik Hizmeti'"
+  },
+  {
+    "file": "12_tur_operasyonu_notes.dart",
+    "index": 49,
+    "name": "A Grubu Seyahat Acentesi",
+    "desc": "Yerli ve yabancı turistler için paket turlar düzenleme, uçak bileti satma, transfer yapma ve her türlü acentecilik faaliyetini yürütme yetkisine sahip tam yetkili acente sınıfıdır.",
+    "example": "Örnekle Pekiştirelim: ETS Tur veya Jolly Tur gibi dev firmaların kendi paket turlarını hazırlayıp, kendi otobüsleriyle yurt içi ve yurt dışı turlar düzenleme yetkisinin olmasıdır.",
+    "matched_other_name": "Paket Tur (Package Tour)",
+    "reason": "Example contains the title of OTHER definition: 'Paket Tur (Package Tour)'"
+  },
+  {
+    "file": "12_tur_operasyonu_notes.dart",
+    "index": 50,
+    "name": "B ve C Grubu Seyahat Acentesi",
+    "desc": "B Grubu acenteler sadece A Grubu acentelerin hazırladığı turların biletlerini satabilir; C Grubu acenteler ise sadece kendi üyelerine yönelik dar kapsamlı transferler ve günübirlik geziler düzenleyebilir.",
+    "example": "Örnekle Pekiştirelim: Mahalle aralarında bulunan küçük bir turizm bürosunun (B Grubu) kendi başına paket tur yapamayıp, sadece büyük bir A Grubu acentenin Karadeniz tur biletlerini komisyon karşılığı satmasıdır.",
+    "matched_other_name": "Paket Tur (Package Tour)",
+    "reason": "Example contains the title of OTHER definition: 'Paket Tur (Package Tour)'"
+  }
+]

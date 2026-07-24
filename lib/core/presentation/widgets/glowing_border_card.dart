@@ -93,8 +93,8 @@ class _GlowingBorderPainter extends CustomPainter {
     // Dış ışıltı gölgesi (Neon aura efekti)
     final glowPaint = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = borderWidth + (kIsWeb ? 0 : 4)
-      ..maskFilter = kIsWeb ? null : const MaskFilter.blur(BlurStyle.normal, 12.0);
+      ..strokeWidth = borderWidth + 2
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0);
 
     // Keskin gradyan çerçeve çizgisi
     final borderPaint = Paint()

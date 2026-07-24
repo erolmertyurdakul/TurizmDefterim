@@ -136,119 +136,127 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF020617), // Apple Pro Koyu Gece Mavisi / Siyah
-      body: Stack(
-        children: [
-          // ── 1. KATMAN: DİNAMİK MESH GRADYAN SIVI HAREKETLERİ (Apple Siri / macOS Style) ──
-          
-          // Küre A (Sol Üst - Okyanus Mavisi)
-          Positioned(
-            top: -120,
-            left: -120,
-            child: AnimatedBuilder(
-              animation: _fluidController,
-              builder: (context, child) {
-                final double angle = _fluidController.value * 2 * pi;
-                final double dx = sin(angle) * 45;
-                final double dy = cos(angle) * 35;
-                return Transform.translate(
-                  offset: Offset(dx, dy),
-                  child: child,
-                );
-              },
-              child: Container(
-                width: 380,
-                height: 380,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: const Color(0xFF00D2FF).withOpacity(0.12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF00D2FF).withOpacity(0.12),
-                      blurRadius: 120,
-                      spreadRadius: 20,
-                    ),
-                  ],
+      backgroundColor: const Color(0xFF030F26),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF030F26), Color(0xFF0A192F)],
+          ),
+        ),
+        child: Stack(
+          children: [
+            // ── 1. KATMAN: DİNAMİK MESH GRADYAN SIVI HAREKETLERİ (Apple Siri / macOS Style) ──
+            
+            // Küre A (Sol Üst - Okyanus Mavisi)
+            Positioned(
+              top: -120,
+              left: -120,
+              child: AnimatedBuilder(
+                animation: _fluidController,
+                builder: (context, child) {
+                  final double angle = _fluidController.value * 2 * pi;
+                  final double dx = sin(angle) * 45;
+                  final double dy = cos(angle) * 35;
+                  return Transform.translate(
+                    offset: Offset(dx, dy),
+                    child: child,
+                  );
+                },
+                child: Container(
+                  width: 380,
+                  height: 380,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: const Color(0xFF00D2FF).withOpacity(0.12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF00D2FF).withOpacity(0.12),
+                        blurRadius: 120,
+                        spreadRadius: 20,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // Küre B (Sağ Orta/Alt - Derin Lavanta / Mor)
-          Positioned(
-            bottom: size.height * 0.18,
-            right: -130,
-            child: AnimatedBuilder(
-              animation: _fluidController,
-              builder: (context, child) {
-                final double angle = _fluidController.value * 2 * pi;
-                final double dx = cos(angle + pi) * 50;
-                final double dy = sin(angle + pi) * 40;
-                return Transform.translate(
-                  offset: Offset(dx, dy),
-                  child: child,
-                );
-              },
-              child: Container(
-                width: 420,
-                height: 420,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: const Color(0xFF7C3AED).withOpacity(0.09),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF7C3AED).withOpacity(0.09),
-                      blurRadius: 130,
-                      spreadRadius: 30,
-                    ),
-                  ],
+            // Küre B (Sağ Orta/Alt - Derin Lavanta / Mor)
+            Positioned(
+              bottom: size.height * 0.18,
+              right: -130,
+              child: AnimatedBuilder(
+                animation: _fluidController,
+                builder: (context, child) {
+                  final double angle = _fluidController.value * 2 * pi;
+                  final double dx = cos(angle + pi) * 50;
+                  final double dy = sin(angle + pi) * 40;
+                  return Transform.translate(
+                    offset: Offset(dx, dy),
+                    child: child,
+                  );
+                },
+                child: Container(
+                  width: 420,
+                  height: 420,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: const Color(0xFF7C3AED).withOpacity(0.09),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF7C3AED).withOpacity(0.09),
+                        blurRadius: 130,
+                        spreadRadius: 30,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // Küre C (Orta Sol - Derin Zümrüt / Teal)
-          Positioned(
-            top: size.height * 0.35,
-            left: -140,
-            child: AnimatedBuilder(
-              animation: _fluidController,
-              builder: (context, child) {
-                final double angle = _fluidController.value * 2 * pi;
-                final double dx = sin(angle + pi/2) * 35;
-                final double dy = cos(angle - pi/2) * 45;
-                return Transform.translate(
-                  offset: Offset(dx, dy),
-                  child: child,
-                );
-              },
-              child: Container(
-                width: 360,
-                height: 360,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: const Color(0xFF0D9488).withOpacity(0.07),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF0D9488).withOpacity(0.07),
-                      blurRadius: 110,
-                      spreadRadius: 20,
-                    ),
-                  ],
+            // Küre C (Orta Sol - Derin Zümrüt / Teal)
+            Positioned(
+              top: size.height * 0.35,
+              left: -140,
+              child: AnimatedBuilder(
+                animation: _fluidController,
+                builder: (context, child) {
+                  final double angle = _fluidController.value * 2 * pi;
+                  final double dx = sin(angle + pi/2) * 35;
+                  final double dy = cos(angle - pi/2) * 45;
+                  return Transform.translate(
+                    offset: Offset(dx, dy),
+                    child: child,
+                  );
+                },
+                child: Container(
+                  width: 360,
+                  height: 360,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: const Color(0xFF0D9488).withOpacity(0.07),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF0D9488).withOpacity(0.07),
+                        blurRadius: 110,
+                        spreadRadius: 20,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // ── 2. KATMAN: ULTRA PREMIUM BULANIKLAŞTIRMA (Akışkan Zemin Maskesi) ──
-          Positioned.fill(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 90, sigmaY: kIsWeb ? 0 : 90),
-              child: Container(
-                color: Colors.black.withOpacity(0.15),
+            // ── 2. KATMAN: ULTRA PREMIUM BULANIKLAŞTIRMA (Akışkan Zemin Maskesi) ──
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: kIsWeb ? 45 : 90, sigmaY: kIsWeb ? 45 : 90),
+                child: Container(
+                  color: Colors.black.withOpacity(0.15),
+                ),
               ),
             ),
-          ),
 
           // ── 3. KATMAN: SUNUM VE YÖNLENDİRME (Staggered UI) ──
           Center(
@@ -419,8 +427,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
 
 // ── YAZILARI BİRBİRİNE BAĞLAYAN ZARİF DAL KAVİS ÇİZGİSİ (Soft Organic Vine Divider) ──

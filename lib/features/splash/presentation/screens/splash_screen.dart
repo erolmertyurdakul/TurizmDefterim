@@ -368,7 +368,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
                 // ── Blur Katmanı (Mesh auraları süzgeçten geçirir) ──
                 Positioned.fill(
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 80, sigmaY: kIsWeb ? 0 : 80),
+                    filter: ImageFilter.blur(sigmaX: kIsWeb ? 40 : 80, sigmaY: kIsWeb ? 40 : 80),
                     child: Container(color: Colors.black.withOpacity(0.15)),
                   ),
                 ),

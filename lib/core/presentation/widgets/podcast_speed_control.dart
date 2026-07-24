@@ -318,7 +318,7 @@ class PodcastSpeedSheetState extends State<PodcastSpeedSheet> with SingleTickerP
           child: ClipRRect(
             borderRadius: BorderRadius.circular(18),
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: kIsWeb ? 0 : 12, sigmaY: kIsWeb ? 0 : 12),
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7), // Dikey padding azaltıldı
                 child: Column(

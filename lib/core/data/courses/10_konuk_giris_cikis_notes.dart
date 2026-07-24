@@ -383,7 +383,7 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
           "name": "Room Discrepancy (Oda Durum Uyuşmazlığı)",
           "desc": "Ön büro bilgisayarındaki oda durum kodu ile Kat Hizmetlerinin yaptığı fiili oda denetimi sonuçlarının birbirini tutmaması durumudur. Güvenlik ve satış kayıpları açısından çok tehlikelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bilgisayarda 'VC' (Boş Temiz) görünen ve misafire satılmaya hazır olan 204 nolu odanın, kat şefinin raporunda 'OC' (Dolu Temiz - içinde misafir kalıyor) olarak bildirilmesidir."
+            "Örnekle Pekiştirelim: Bilgisayarda 'VC' (Boş Temiz) görünen 204 nolu odanın, kat şefinin raporunda 'OC' (Dolu) olarak bildirilmesi sonucu oda durum uyuşmazlığının (room discrepancy) ortaya çıkmasıdır."
           ]
         },
         {
@@ -678,7 +678,7 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
           "name": "Billing Instruction (Fatura Talimatı) Aktarımı",
           "desc": "Acente veya şirket misafirlerinin oda ücretlerinin doğrudan firmanın kredili hesabına (City Ledger) aktarılması, kişisel ekstralarının ise misafirden tahsil edilmesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: X şirketiyle gelen misafirin sadece oda bedelini şirketin City Ledger hesabına aktarıp, misafirin yediği akşam yemeği bedelini misafirin kendi kartından çekmektir."
+            "Örnekle Pekiştirelim: Şirketinden gelen Billing Instruction (Fatura Talimatı) uyarınca; otomasyon sisteminde oda ücretinin şirketin kredili (City Ledger) hesabına, minibar harcamasının ise misafirin kendi şahsi folyosuna aktarılarak ayrıştırılmasıdır."
           ]
         }
       ],

@@ -41,14 +41,14 @@ const Map<String, dynamic> unit1Notes = {
           "name": "Mini Süit Oda (Junior Suite Room)",
           "desc": "Oturma bölümü ile yatak bölümünün bir paravan ile ayrıldığı odalardır. Standart odalardan daha geniştir.",
           "examples": [
-            "Örnekle Pekiştirelim: Tek bir geniş odanın içerisinde, yatak bölümü ile koltuk takımının şık bir ahşap paravanla ayrıldığı odada genç bir çiftin kalmasıdır."
+            "Örnekle Pekiştirelim: Tek bir geniş odanın içerisinde, yatak bölümü ile koltuk takımının şık bir ahşap paravanla ayrıldığı mini süit (junior suite) odada genç bir çiftin kalmasıdır."
           ]
         },
         {
           "name": "Köşe Süit Oda (Corner Suite Room)",
           "desc": "Koridor sonunda bulunan, iki ya da üç cepheli, salon ve yatak odasından oluşan geniş odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Koridorun en ucunda, hem orman hem deniz manzarasını gören geniş iki cepheli köşe odada bir yazarın ilham bulmak için kalmasıdır."
+            "Örnekle Pekiştirelim: Koridorun en ucunda, hem orman hem deniz manzarasını gören geniş iki cepheli köşe süit (corner suite) odada bir yazarın ilham bulmak için kalmasıdır."
           ]
         },
         {

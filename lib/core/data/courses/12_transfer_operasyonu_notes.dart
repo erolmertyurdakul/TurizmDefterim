@@ -249,7 +249,7 @@ const Map<String, dynamic> transferOperasyonuUnit2 = {
           "name": "Konuk Teyidi ve No-Show Tespiti",
           "desc": "Gelen misafirin kimlik/pasaport ve otel voucher bilgilerinin listeden kontrol edilerek doğrulanması, gelmeyen konukların ise acenteye 'No-Show' olarak raporlanmasıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Listedeki konuğun ismini kontrol edip 'Smith Ailesi - Turizm Defterim Oteli' rezervasyonunu onaylayan transfermanın grubu otobüse yönlendirmesidir."
+            "Örnekle Pekiştirelim: Transfermanın listedeki misafirin kimliğini ve otel voucher'ını teyit edip otobüse yönlendirmesi; 20 dakika boyunca gelmeyen misafire ulaşılamayınca ise acenteye resmi No-Show (gelmedi) raporu bildirmesidir."
           ]
         }
       ],
