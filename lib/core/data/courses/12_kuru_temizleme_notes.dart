@@ -13,28 +13,28 @@ const Map<String, dynamic> kuruTemizlemeUnit1 = {
           "name": "Kişisel Koruyucu Donanım (KKD)",
           "desc": "Kuru temizleme atölyelerinde çalışanları risklere karşı koruyan; eldiven, maske, koruyucu gözlük ve önlük gibi ekipmanların genel adıdır. Makine bakımı ve filtre temizliğinde mutlaka profesyonel gaz maskeleri kullanılmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kuru temizleme makinesinin solvent filtresini temizleyecek olan operatörün, uçucu gazlardan zehirlenmemek için aktif karbon filtreli tam yüz gaz maskesi ve kalın kimyasal eldivenleri takmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Kuru temizleme makinesinin solvent filtresini temizleyecek olan operatör, uçucu gazlardan zehirlenmemek için aktif karbon filtreli tam yüz gaz maskesi ve kalın kimyasal eldivenleri takmıştır."
           ]
         },
         {
           "name": "Perkloroetilen (PERC)",
           "desc": "Renksiz, şeffaf, kloroforma benzer kokuya sahip organik çözücü kimyasaldır. Toksik etkisi olduğundan, solunması baş dönmesi ve yorgunluk yapar; yüksek ısıda zehirli fosgen gazına dönüşebilir. Ancak damıtılarak tekrar kullanılabildiği için sektörde yaygındır.",
           "examples": [
-            "Örnekle Pekiştirelim: Atölyede havalandırma sisteminin bozuk olması nedeniyle havaya karışan PERC gazını soluyan ustanın, bir süre sonra baş dönmesi ve mide bulantısı şikayetiyle açık havaya çıkmak zorunda kalmasıdır."
+            "Örnekle Pekiştirelim: Atölyede havalandırma sisteminin bozuk olması nedeniyle havaya karışan PERC gazını soluyan ustanın bir süre sonra baş dönmesi ve mide bulantısı şikayetiyle açık havaya çıkmak zorunda kalmıştır."
           ]
         },
         {
           "name": "Hidrokarbon Çözücüler (HC)",
           "desc": "PERC çözücüsüne alternatif olarak kullanılan, parlama noktası yüksek ve yanıcı özelliği bulunan ancak toksik etkisi daha az olan, yün ve hassas elyaflarda çekme riskini minimize eden petrol bazlı kuru temizleme solventidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Çok narin boncuklu bir abiye elbisenin, liflerinin zarar görmemesi için perkloroetilen yerine hidrokarbon bazlı solvent kullanan bir makinede hassas devirde temizlenmesidir."
+            "Örnekle Pekiştirelim: Çok narin boncuklu bir abiye elbisenin, liflerin zarar görmemesi için perkloroetilen yerine hidrokarbon bazlı solvent kullanan bir makinede hassas devirde temizlenmiştir."
           ]
         },
         {
           "name": "GreenEarth (Silikon Çözücü)",
           "desc": "Sıvı silikon (D5) bazlı, tamamen toksik olmayan, kokusuz, çevre dostu ve doğada kum, su ve karbondioksite dönüşebilen yeni nesil biyobozunur kuru temizleme solventidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ekolojik otelimizin çamaşırhanesinde, çevre standartlarına uyum sağlamak için yeşil etiketli silikon bazlı solvent makinesinin tercih edilmesidir."
+            "Örnekle Pekiştirelim: Ekolojik otelimizin çamaşırhanesinde, çevre standartlarına uyum sağlamak için yeşil etiketli silikon bazlı solvent makinesinin tercih edilmiştir."
           ]
         }
       ],
@@ -60,21 +60,21 @@ const Map<String, dynamic> kuruTemizlemeUnit1 = {
           "name": "Kuru Temizleme Makinesi",
           "desc": "Solvent tankı ve temizleme odasından (tambur) oluşan, giysilere solvent püskürterek lekeleri çözen kapalı devre makinelerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Müşterinin getirdiği kaşe paltonun suyla yıkanıp çekmesini önlemek için, tamburunda su yerine solvent dolaşan dev kuru temizleme makinesine atılmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Misafirin getirdiği kaşe paltonun suyla yıkanıp çekmesini önlemek için, tamburunda su yerine solvent dolaşan dev kuru temizleme makinesine atılmıştır."
           ]
         },
         {
           "name": "Paskala (Basınçlı) Ütü",
           "desc": "Buhar kazanlı sanayi tipi ütüdür. Altındaki vakum pedalı sayesinde kumaşın masadan kaymasını engeller ve pürüzsüz ütüleme sağlar.",
           "examples": [
-            "Örnekle Pekiştirelim: İpek abiyenin ütü masasında kayıp kırışmasını önlemek için, ütücünün ayak pedalıyla vakumu çalıştırıp elbiseyi masaya adeta yapıştırarak buharla ütülemesidir."
+            "Örnekle Pekiştirelim: İpek abiyenin ütü masasında kayıp kırışmasını önlemek için, ütücü ayak pedalıyla vakumu çalıştırıp elbiseyi masaya adeta yapıştırarak buharla ütülemiştir."
           ]
         },
         {
           "name": "Ambalajlama Makinesi",
           "desc": "Ütülenen askılı ürünleri şeffaf naylon bir film ile kaplayıp, sıcak kesme yaparak dış etkenlerden koruyan makinedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ütüsü biten takım elbisenin askıya asılıp, ambalaj makinesinin çekilmesiyle saniyeler içinde tozlanmayı önleyecek şeffaf poşetle kaplanıp ağzının kapatılmasıdır."
+            "Örnekle Pekiştirelim: Ütüsü biten takım elbisenin askıya asılıp, ambalaj makinesinin çekilmesiyle saniyeler içinde tozlanmayı önleyecek şeffaf poşetle kaplanıp ağzı kapatılmıştır."
           ]
         }
       ],
@@ -84,7 +84,7 @@ const Map<String, dynamic> kuruTemizlemeUnit1 = {
           "content": "• Formlar: Ürün Teslim Alma Formu, Misafir Çamaşır Listesi vb.\n• Ürün Numaralandırma Araçları: Etiket basma makineleri ve görünmeyen yerlere zımbalanan özel numaralar.\n• Leke Çıkarma Fırçaları: Kumaşa zarar vermeyen ahşap veya plastik gövdeli özel fırçalar.\n• Solventler ve Leke Çıkarıcılar: Temel yıkama için PERC veya silikon bazlı solventler; lokal lekeler için özel kimyasallar."
         }
       ],
-      "caseStudy": "Müşterinin 10.000 TL değerindeki ipek elbisesi işletmeye geldiğinde; önce etiket makinesiyle fişlenir, ardından leke çıkarma fırçasıyla lokal müdahale yapılır, makinede temizlendikten sonra Paskala ütüyle ütülenir ve ambalaj makinesinde poşetlenerek teslim edilir."
+      "caseStudy": "Misafirin 10.000 TL değerindeki ipek elbisesi işletmeye geldiğinde; önce etiket makinesiyle fişlenir, ardından leke çıkarma fırçasıyla lokal müdahale yapılır, makinede temizlendikten sonra Paskala ütüyle ütülenir ve ambalaj makinesinde poşetlenerek teslim edilir."
     }
   ]
 };
@@ -104,18 +104,18 @@ const Map<String, dynamic> kuruTemizlemeUnit2 = {
           "name": "Teslim Alma Formu",
           "desc": "Konuğun adı, oda numarası, ürünün cinsi, rengi, adedi ve teslim tarihinin yazıldığı, üç nüsha düzenlenen resmî belgedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyondan gelen misafirin temizlenmesi için bıraktığı 2 adet siyah takım elbisenin, teslim alma formuna '301 nolu oda - 2 Adet - Siyah Takım Elbise - Kuru Temizleme' şeklinde kaydedilmesidir."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Resepsiyondan gelen misafirin temizlenmesi için bıraktığı 2 adet siyah takım elbise, teslim alma formuna '301 nolu oda - 2 Adet - Siyah Takım Elbise - Kuru Temizleme' şeklinde kaydedilmiştir.'301 nolu oda - 2 Adet - Siyah Takım Elbise - Kuru Temizleme' şeklinde kaydedilmiştir."
           ]
         },
         {
           "name": "Fiziksel Kontrol Süreci",
-          "desc": "Ürün teslim alınırken kuru temizlemeye uygunluğu (bakım etiketine bakılır), sökük, yırtık, eksik düğme olup olmadığı ve ceplerinde eşya unutulup unutulmadığı müşteri önünde kontrol edilir.",
+          "desc": "Ürün teslim alınırken kuru temizlemeye uygunluğu (bakım etiketine bakılır), sökük, yırtık, eksik düğme olup olmadığı ve ceplerinde eşya unutulup unutulmadığı misafir önünde kontrol edilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Teslim alınan ceketin cepleri kontrol edilirken içinden çıkan altın yüzüğün müşteriye o anda teslim edilmesi ve ceketin kolundaki yırtığın forma işlenmesidir."
+            "Örnekle Pekiştirelim: Teslim alınan ceketin cepleri kontrol edilirken içinden çıkan altın yüzük misafire anında teslim edilmiş, ceketin kolundaki hafif yırtık ise forma işlenmiştir."
           ]
         }
       ],
-      "tip": "Müşterinin cebinde unuttuğu bir tükenmez kalem makineye girerse, o makinedeki tüm çamaşırları boyayarak on binlerce liralık hasara yol açar. Cep kontrolü hayati önem taşır!"
+      "tip": "Misafirin cebinde unuttuğu bir tükenmez kalem makineye girerse, o makinedeki tüm çamaşırları boyayarak on binlerce liralık hasara yol açar. Cep kontrolü hayati önem taşır!"
     },
     {
       "id": 2,
@@ -127,28 +127,28 @@ const Map<String, dynamic> kuruTemizlemeUnit2 = {
           "name": "Rengine Göre",
           "desc": "Açık renkli, koyu renkli ve beyaz tekstillerin ayrı ayrı gruplandırılmasıdır. Renklerin birbirine karışmaması (solmaması) için şarttır.",
           "examples": [
-            "Örnekle Pekiştirelim: Beyaz ipek gömleğin, koyu lacivert yün takım elbiseden ayrılarak beyaz yıkama kazanına alınmasıdır."
+            "Örnekle Pekiştirelim: Beyaz ipek gömlek, koyu lacivert yün takım elbiseden ayrılarak beyaz yıkama kazanına alınmıştır."
           ]
         },
         {
           "name": "Cinsine Göre",
-          "desc": "Kıyafetler (gömlek, pantolon, ceket) ile tefrişat ürünlerinin (perde, yatak örtüsü, battaniye) ayrı yıkanmasıdır.",
+          "desc": "Kıyafetler (gömlek, pantolon, ceket) ile tefrişat ürünlerinin (perde, yatak örtüsü, battaniye) ayrı yıkanması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ağır kadife salon perdelerinin, hassas konuk gömlekleriyle karıştırılmadan ayrı yıkama programında yıkanmasıdır."
+            "Örnekle Pekiştirelim: Ağır kadife salon perdelerin hassas konuk gömlekleriyle karıştırılmadan ayrı yıkama programında yıkanmıştır."
           ]
         },
         {
           "name": "Kirlilik Düzeyine Göre",
           "desc": "Çok kirli olanlarla az kirli olanların ayrılmasıdır. Bu sayede az kirliler gereksiz yere yıpranmaz, zamandan ve enerjiden tasarruf sağlanır.",
           "examples": [
-            "Örnekle Pekiştirelim: Sadece bir kez giyilmiş hafif tozlu bir ceketin, kolları tamamen lekelenmiş bir garson ceketiyle karıştırılmayıp kısa yıkama programına ayrılmasıdır."
+            "Örnekle Pekiştirelim: Sadece bir kez giyilmiş hafif tozlu bir ceket kolları tamamen lekelenmiş bir garson ceketiyle karıştırılmayıp kısa yıkama programına ayrılmıştır."
           ]
         },
         {
           "name": "Büyüklüğüne Göre",
           "desc": "Küçük tekstillerle büyük tekstillerin (yorgan vs.) ayrılmasıdır. Büyüklerin arasında küçükler yıpranabilir.",
           "examples": [
-            "Örnekle Pekiştirelim: İpek fularların, devasa elyaf yorganlardan ayrılarak narin ve küçük yıkama torbalarında yıkanmasıdır."
+            "Örnekle Pekiştirelim: İpek fularlar dev elyaf yorganlardan ayrılmış, narin yıkama torbalarına konularak hassas devirde yıkanmıştır."
           ]
         }
       ]
@@ -163,11 +163,11 @@ const Map<String, dynamic> kuruTemizlemeUnit2 = {
           "name": "Ön Müdahale",
           "desc": "Kuru temizleme işlemine girmeden önce, lekenin cinsi belirlenir (kan, mürekkep, pas vb.) ve o lekeye özel kimyasal uygulanarak giysi makineye hazır hâle getirilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Gömleğin yakasındaki tükenmez kalem lekesinin üzerine leke masasında mürekkep sökücü solvent damlatılıp, lekenin gevşetilerek makineye atılmasıdır."
+            "Örnekle Pekiştirelim: Gömleğin yakasındaki tükenmez kalem lekesine leke masasında mürekkep sökücü solvent uygulanmış; leke yumuşatıldıktan sonra ürün makineye atılmıştır."
           ]
         }
       ],
-      "caseStudy": "Müşterinin beyaz gömleğindeki kurumuş kahve lekesi direkt makineye atılırsa sıcağın etkisiyle tamamen sabitlenip hiç çıkmayabilir. Önce leke masasında soğuk su/kimyasal ile yumuşatılmalıdır."
+      "caseStudy": "Misafirin beyaz gömleğindeki kurumuş kahve lekesi direkt makineye atılırsa sıcağın etkisiyle tamamen sabitlenip hiç çıkmayabilir. Önce leke masasında soğuk su/kimyasal ile yumuşatılmalıdır."
     }
   ]
 };
@@ -187,14 +187,14 @@ const Map<String, dynamic> kuruTemizlemeUnit3 = {
           "name": "Makineye Yükleme",
           "desc": "Tüm hazırlıklar tamamlandıktan sonra, tekstiller makinenin tamburuna kapasitesinin 1/3 oranında doldurularak, kumaş türüne uygun program seçilir.",
           "examples": [
-            "Örnekle Pekiştirelim: 15 kg kapasiteli bir kuru temizleme makinesine giysilerin sıkışıp temizlenememesini önlemek için en fazla 10 kg giysi yüklenmesidir."
+            "Örnekle Pekiştirelim: 15 kg kapasiteli bir kuru temizleme makinesine giysilerin sıkışıp temizlenememesini önlemek için en fazla 10 kg giysi yüklenmiştir."
           ]
         },
         {
           "name": "Havalandırma Süreci",
           "desc": "Temizlenip makineden çıkan giysilerin üzerinde PERC buharı ve solvent kokusu kalır. Bu kimyasalların uçması ve gözeneklerin temizlenmesi için ürünler askıda 4-6 saat bekletilmelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Makineden yeni çıkan takım elbisenin kokusunun giderilmesi ve kimyasal buharların tamamen uçması için askılıkta vantilatör karşısında 5 saat bekletilmesidir."
+            "Örnekle Pekiştirelim: Makineden yeni çıkan takım elbisenin kokusunun giderilmesi ve kimyasal buharlar tamamen uçması için askılıkta vantilatör karşısında 5 saat bekletilmiştir."
           ]
         }
       ],
@@ -204,27 +204,27 @@ const Map<String, dynamic> kuruTemizlemeUnit3 = {
       "id": 2,
       "tag": "ÜTÜLEME",
       "title": "SON DOKUNUŞ: ÜTÜLEME VE DÜZENLEME",
-      "microSummary": "Temizlik kadar önemli olan ütüleme aşaması, giysinin müşteriye mükemmel formda teslim edilmesini sağlar.",
+      "microSummary": "Temizlik kadar önemli olan ütüleme aşaması, giysinin misafire mükemmel formda teslim edilmesini sağlar.",
       "definitions": [
         {
           "name": "Ütü Öncesi Hazırlık",
           "desc": "Ürünlerin son kez kontrol edilmesi (leke kalmış mı, sökük var mı?). Leke varsa asla ütü vurulmaz, ütü lekeyi kumaşa sabitler.",
           "examples": [
-            "Örnekle Pekiştirelim: Ütü masasına alınan gömleğin yakasında hafif bir çikolata lekesi fark edilip, ütünün sıcağıyla lekeyi sabitlememek için gömleğin tekrar leke masasına gönderilmesidir."
+            "Örnekle Pekiştirelim: Ütü masasına alınan gömleğin yakasında hafif bir çikolata lekesi fark edilip, ütünün sıcağıyla lekeyi sabitlememek için gömlek tekrar leke masasına gönderilmiştir."
           ]
         },
         {
           "name": "Ütüleme Kuralları",
           "desc": "Zaman ve enerji tasarrufu için önce düşük ısı gerektiren ipek ve sentetikler, sonra yüksek ısı gerektiren pamuklular ütülenmelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ütünün taban sıcaklığı henüz düşükken ipek elbiseleri ütüleyip, ütü ısındıktan sonra keten pantolonların ütülenmesine geçilmesidir."
+            "Örnekle Pekiştirelim: Ütünün taban sıcaklığı henüz düşükken ipek elbiseleri ütüleyip, ütü ısındıktan sonra keten pantolonlar ütülenmesine geçilmiştir."
           ]
         },
         {
           "name": "Pres Ütü (Steam Press)",
           "desc": "Pantolon, ceket ve düz kumaşları yüksek buhar gücüyle iki plaka arasında sıkıştırarak saniyeler içinde jilet gibi ütüleyen, endüstriyel kuru temizleme presidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kumaş pantolonun ütü çizgilerini bozmadan saniyeler içinde düzeltmek için pres ütünün alt plakasına pantolonu serip üst plakayı üzerine kapatarak buhar şoku verilmesidir."
+            "Örnekle Pekiştirelim: Kumaş pantolonun ütü çizgilerini bozmadan saniyeler içinde düzeltmek için pres ütünün alt plakasına pantolonu serip üst plakayı üzerine kapatarak buhar şoku verilmiştir."
           ]
         },
         {
@@ -236,9 +236,9 @@ const Map<String, dynamic> kuruTemizlemeUnit3 = {
         },
         {
           "name": "Düzenleme ve Ambalaj",
-          "desc": "Ütüsü biten ürünler uygun boyuttaki askılara takılır, tozlanmayı önlemek için naylon poşetle kaplanıp (ambalajlanıp) müşteriye teslim edilmek üzere sıralanır.",
+          "desc": "Ütüsü biten ürünler uygun boyuttaki askılara takılır, tozlanmayı önlemek için naylon poşetle kaplanıp (ambalajlanıp) misafire teslim edilmek üzere sıralanır.",
           "examples": [
-            "Örnekle Pekiştirelim: Ütülenen abiyenin omuzlarının askıdan kaymaması için süngerli askıya asılıp, ambalaj makinesinde boydan poşetlenerek askı numarasının takılmasıdır."
+            "Örnekle Pekiştirelim: Ütülenen abiyenin omuzlarının askıdan kaymaması için süngerli askıya asılıp, ambalaj makinesinde boydan poşetlenerek askı numarasının takılmıştır."
           ]
         }
       ],
@@ -262,14 +262,14 @@ const Map<String, dynamic> kuruTemizlemeUnit4 = {
           "name": "Günlük Bakımlar",
           "desc": "Düğme Süzgeci ve Tüy Torbasının temizlenmesidir. Tamburdan gelen tüy, madeni para, düğme gibi maddelerin pompalara kaçmasını önler.",
           "examples": [
-            "Örnekle Pekiştirelim: Akşam vardiyası kapanırken makinenin düğme süzgecinin açılıp içindeki madeni paraların ve tüy yumaklarının boşaltılarak süzgecin temizlenmesidir."
+            "Örnekle Pekiştirelim: Akşam vardiyası kapanırken makinenin düğme süzgecinin açılıp içindeki madeni paraların ve tüy yumaklarının boşaltılarak süzgeç temizlenmiştir."
           ]
         },
         {
           "name": "Aylık ve Altı Aylık Bakımlar",
-          "desc": "Kapsamlı sızıntı kontrolü, egzoz damperi temizliği, karbon emici filtrelerin kontrolü ve motor/tambur, elektrik bağlantılarının yetkili servislerce denetlenmesidir.",
+          "desc": "Kapsamlı sızıntı kontrolü, egzoz damperi temizliği, karbon emici filtrelerin kontrolü ve motor/tambur, elektrik bağlantılarının yetkili servislerce denetlenmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Her ayın ilk pazar günü yetkili servisin gelerek solvent tanklarındaki kaçakları özel dedektörlerle ölçüp, motor kayışlarının gerginliğini ayarlamasıdır."
+            "Örnekle Pekiştirelim: Her ayın ilk pazar günü yetkili servisin gelerek solvent tanklarındaki kaçakları özel dedektörlerle ölçüp, motor kayışların gerginliğini ayarlamıştır."
           ]
         }
       ],
@@ -299,21 +299,21 @@ const Map<String, dynamic> kuruTemizlemeUnit5 = {
           "name": "Otel Çamaşırları",
           "desc": "Kat hizmetleri (çarşaf, yastık, havlu), F&B (masa örtüsü, peçete) ve genel alan temizlik bezleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Odalardan toplanan havlu ve çarşafların suyla yıkanmak üzere dev 50 kg'lık çamaşır makinelerine doldurulmasıdır."
+            "Örnekle Pekiştirelim: Odalardan toplanan havlu ve çarşaflar suyla yıkanmak üzere dev 50 kg'lık çamaşır makinelerine doldurulmuştur."
           ]
         },
         {
           "name": "Elyaf ve İplik",
           "desc": "İpliklerin dokunmasıyla tekstil elde edilir. Pamuk, yün, ipek, keten gibi doğal lifler ve naylon, polyester gibi sentetik lifler bulunur.",
           "examples": [
-            "Örnekle Pekiştirelim: Havlularda emiciliği yüksek olması için %100 pamuk ipliği tercih edilirken, perdelerde dayanıklılık için polyester karışımlı ipliklerin kullanılmasıdır."
+            "Örnekle Pekiştirelim: Havlularda emiciliği yüksek olması için %100 pamuk ipliği tercih edilirken, perdelerde dayanıklılık için polyester karışımlı iplikler kullanılmıştır."
           ]
         },
         {
           "name": "Ekolojik Tekstil ve Karbon Ayak İzi",
           "desc": "Çevreyi gözeten organik tekstillerdir. Karbon ayak izi ise üretimden tüketime kadar doğaya salınan sera gazı miktarını ifade eder. Doğal kumaşlar çevre dostudur.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelde geri dönüştürülmüş polyesterden yapılan ekolojik üniformaların kullanılarak doğaya salınan karbon miktarının azaltılmasıdır."
+            "Örnekle Pekiştirelim: Otelde geri dönüştürülmüş polyesterden yapılan ekolojik üniformalar kullanılarak doğaya salınan karbon miktarı azaltılmıştır."
           ]
         }
       ]
@@ -328,32 +328,32 @@ const Map<String, dynamic> kuruTemizlemeUnit5 = {
           "name": "Ağartıcı (Çamaşır Suyu/Oksijen)",
           "desc": "Kumaşlardaki inatçı boyar maddeleri ve kirleri çözen ancak yanlış kullanılırsa pamukluları yıpratan ve delinmelere yol açan kimyasaldır.",
           "examples": [
-            "Örnekle Pekiştirelim: Sararan pamuklu nevresimleri beyazlatmak için yıkama suyuna klor bazlı çamaşır suyu yerine kumaşı yıpratmayan oksijen bazlı ağartıcı eklenmesidir."
+            "Örnekle Pekiştirelim: Sararan pamuklu nevresimleri beyazlatmak için yıkama suyuna kumaşı yıpratmayan oksijen bazlı ağartıcı eklenmiştir."
           ]
         },
         {
           "name": "Yıkama Sıcaklıkları",
           "desc": "• Beyaz Pamuklular: 80-90°C\n• Renkli Pamuklular: Maksimum 60°C\n• Yünlüler ve İpekliler: 30-40°C (Düşük ısıda yıkanır aksi hâlde çekerler).",
           "examples": [
-            "Örnekle Pekiştirelim: Beyaz nevresimlerin dezenfeksiyonu için 85°C'de yıkanması; fakat yün battaniyenin çekip küçülmemesi için 30°C narin programda yıkanmasıdır."
+            "Örnekle Pekiştirelim: Beyaz nevresimler dezenfeksiyon için 85°C'de yıkanmış, yün battaniyeler ise çekip küçülmemesi için 30°C narin programda yıkanmıştır."
           ]
         },
         {
           "name": "Kolalama İşlemi",
           "desc": "Çamaşırların (özellikle restoran peçeteleri ve masa örtüleri) dik, sıkı ve parlak görünmesi, geç kirlenmesi ve kolay şekil alması için uygulanan işlemdir. Pirinç kolası veya sentetik kola kullanılır.",
           "examples": [
-            "Örnekle Pekiştirelim: Balo salonundaki gala masalarında duran kumaş peçetelerin dik ve yelpaze şeklinde durabilmesi için son durulama suyuna kola kimyasalı eklenerek ütülenmesidir."
+            "Örnekle Pekiştirelim: Balo salonundaki gala masalarında duran kumaş peçetelerin dik ve yelpaze şeklinde durabilmesi için son durulama suyuna kola kimyasalı eklenerek ütülenmiştir."
           ]
         },
         {
           "name": "Çamaşır Hijyeni (Hıfzıssıhha)",
-          "desc": "Otel ortamında binlerce kişinin kullandığı çarşafların mikroorganizmalardan arındırılarak sterilize edilmesidir.",
+          "desc": "Otel ortamında binlerce kişinin kullandığı çarşafların mikroorganizmalardan arındırılarak sterilize edilmesini ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Hastalıklı veya enfeksiyon riski olan odalardan gelen çarşafların diğerleriyle karıştırılmadan özel hijyen deterjanları ve yüksek sıcaklıkta sterilize edilmesidir."
+            "Örnekle Pekiştirelim: Hastalıklı veya enfeksiyon riski olan odalardan gelen çarşaflar diğerleriyle karıştırılmadan özel hijyen deterjanlarıyla yüksek sıcaklıkta sterilize edilmiştir."
           ]
         }
       ],
-      "caseStudy": "Müşterinin otelde unuttuğu organik güneş yağı veya SPA salonundan gelen yoğun masaj yağı lekesi olan havlular normal yıkamayla çıkmaz, leke yüzeye mühürlenir. Bu tür havlular mutlaka özel formüllü çözücülerle ön işleme alınmalıdır."
+      "caseStudy": "Misafirin otelde unuttuğu organik güneş yağı veya SPA salonundan gelen yoğun masaj yağı lekesi olan havlular normal yıkamayla çıkmaz, leke yüzeye mühürlenir. Bu tür havlular mutlaka özel formüllü çözücülerle ön işleme alınmalıdır."
     }
   ]
 };

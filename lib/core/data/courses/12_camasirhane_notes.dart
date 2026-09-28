@@ -13,21 +13,21 @@ const Map<String, dynamic> camasirhaneUnit1 = {
           "name": "Vücut Temizliği",
           "desc": "Ter kokusunu önlemek için günlük banyo yapılmalıdır. Kullanılacak sabunun pH değeri 5.5, su sıcaklığı ise 35-38 derece olmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Sürekli sıcak ütü presleri ve buhar salınımı olan çamaşırhanede çalışan Ahmet Usta'nın, ter kokusunu önlemek ve cildini korumak için her vardiya öncesi nötr pH'lı sabunla duş almasıdır."
+            "Örnekle Pekiştirelim: Sürekli sıcak ütü preslerinde çalışan Ahmet Usta, ter kokusunu önlemek ve cildini korumak için vardiya öncesi duş almıştır."
           ]
         },
         {
           "name": "El ve Ayak Bakımı",
           "desc": "Tırnaklar kısa kesilmelidir. Çamaşırhanede sürekli ayakta kalındığı için ortopedik, kaymaz tabanlı, su geçirmeyen ve terletmeyen iş ayakkabıları/çizmeler kullanılmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Sürekli ıslak zeminlerde çalışan personelin kayıp düşmesini engellemek için altı tırtıklı ve çelik burunlu su geçirmez bot giymesidir."
+            "Örnekle Pekiştirelim: Sürekli ıslak zeminlerde çalışan personel kayıp düşmeyi engellemek için altı tırtıklı ve çelik burunlu su geçirmez bot giymiştir."
           ]
         },
         {
           "name": "İş Kıyafeti (Üniforma)",
           "desc": "Terletmeyen, kolay yıkanabilir ve dayanıklı kumaşlardan olmalıdır. İş önlüklerinde düğme yerine cırtlı bantlar kullanılmalıdır (düğmelerin kopup makinelere zarar vermesini önlemek için).",
           "examples": [
-            "Örnekle Pekiştirelim: Çamaşırhanedeki dev silindir ütüye çarşaf verirken personelin gömlek düğmesinin kopup merdaneyi sıkıştırmasını önlemek için cırt cırtlı önlük giyilmesidir."
+            "Örnekle Pekiştirelim: Çamaşırhanedeki dev silindir ütüye çarşaf verirken personelin gömlek düğmesinin kopup merdaneyi sıkıştırmasını önlemek için cırt cırtlı önlük giyilmiştir."
           ]
         }
       ],
@@ -43,7 +43,7 @@ const Map<String, dynamic> camasirhaneUnit1 = {
           "name": "Vardiyalar Arası İletişim Defteri",
           "desc": "Bir önceki vardiyadan kalan işlerin (örneğin kurutma makinesinde kalan çamaşırların) bilgisinin aktarıldığı, işin kesintisiz sürmesini sağlayan kayıt defteridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sabah işe gelen Ayşe Hanım'ın vardiya defterini okuyarak, gece vardiyasından '2 nolu kurutucuda misafir gömlekleri bekliyor' notunu görüp hemen işlemi tamamlamasıdır."
+            "Örnekle Pekiştirelim: Sabah işe gelen Ayşe Hanım vardiya defterini okumuş, gece vardiyasından kalan '2 nolu kurutucuda misafir gömlekleri bekliyor' notunu görüp işlemi tamamlamıştır."
           ]
         },
         {
@@ -123,14 +123,14 @@ const Map<String, dynamic> camasirhaneUnit2 = {
           "name": "Şeffaf Lekeler",
           "desc": "Sıvı yağ, krema gibi lekelerdir. Emici tozlar (pudra, nişasta) yardımıyla yağın kumaştan çekilmesi sağlanabilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Salata sosundan dökülen zeytinyağı lekesinin üzerine bebek pudrası dökülerek yağın kumaştan emilmesinin sağlanmasıdır."
+            "Örnekle Pekiştirelim: Salata sosundan dökülen zeytinyağı lekesinin üzerine bebek pudrası dökülerek yağın kumaştan emilmesi sağlanmıştır."
           ]
         },
         {
           "name": "Enzimler",
           "desc": "Kan, yumurta, süt gibi protein bazlı ağır lekeleri parçalayarak çıkartan biyolojik deterjan katkılarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yaralanan bir misafirin çarşafına bulaşan kan lekesini çözmek için, yıkama suyuna protein bağlarını parçalayan 'amilaz ve proteaz' içerikli enzim deterjanı eklenmesidir."
+            "Örnekle Pekiştirelim: Yaralanan bir misafirin çarşafına bulaşan kan lekesini çözmek için, yıkama suyuna protein bağlarını parçalayan 'amilaz ve proteaz' içerikli enzim deterjanı eklenmiştir."
           ]
         },
         {
@@ -144,14 +144,14 @@ const Map<String, dynamic> camasirhaneUnit2 = {
           "name": "Leke İstasyonu (Spotting Table)",
           "desc": "Üzerinde vakum motoru, leke sökücü sıvı tabancası, buhar/hava tabancası ve paslanmaz çelik leke tepsisi barındıran, lekeli çamaşırların yıkanmadan önce ön işleme alındığı profesyonel leke masasıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Masa örtüsündeki mürekkep lekesine, leke masasının vakumunu açıp mürekkep çözücü kimyasal sıkarak, çözülen mürekkebin vakumla aşağı çekilmesinin sağlanmasıdır."
+            "Örnekle Pekiştirelim: Masa örtüsündeki mürekkep lekesine, leke masasının vakumunu açıp mürekkep çözücü kimyasal sıkarak, çözülen mürekkebin vakumla aşağı çekilmesi sağlanmıştır."
           ]
         },
         {
           "name": "Buhar Tabancası Güvenlik Kuralları",
           "desc": "Leke masasında lekelerin liflerden ayrılması amacıyla 4-6 bar basınçlı sıcak buhar üfleyen tabancadır. Yanık riskine karşı el hiçbir zaman buhar çıkış yönüne tutulmamalı ve kumaştan 10-15 cm uzakta uygulanmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Görevlinin lekeli bluzun üzerine buhar tabancasını tutarken eldiven giymesi, bluzu metal spatulayla gerdirip elini buharın menzilinden uzak tutmasıdır."
+            "Örnekle Pekiştirelim: Görevli lekeli bluzun üzerine buhar tabancasını tutarken eldiven giymiş, bluzu metal spatulayla gerdirip elini buharın menzilinden uzak tutmuştur."
           ]
         }
       ],
@@ -161,20 +161,20 @@ const Map<String, dynamic> camasirhaneUnit2 = {
       "id": 3,
       "tag": "KURUTMA",
       "title": "KURUTMA İŞLEMİ",
-      "microSummary": "Çamaşırların tamburlu sanayi tipi kurutma makinelerinde kumaş yapısına uygun ısıda nemden arındırılmasıdır.",
+      "microSummary": "Çamaşırların tamburlu sanayi tipi kurutma makinelerinde kumaş yapısına uygun ısıda nemden arındırılması anlamına gelir.",
       "definitions": [
         {
           "name": "Havlu Kurutma",
           "desc": "Havlular ütülenmediği için yumuşaklıklarını korumaları adına mutlaka kurutma makinesinde tam olarak kurutulmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: SPA ve banyo havlularının yıkandıktan sonra sertleşmesini önlemek ve pofuduk (yumuşak) dokusunu korumak için 70°C sıcaklıkta kurutma makinesinde tam kurutulmasıdır."
+            "Örnekle Pekiştirelim: SPA ve banyo havluların yıkandıktan sonra sertleşmesini önlemek ve pofuduk (yumuşak) dokusunu korumak için 70°C sıcaklıkta kurutma makinesinde tam kurutulmuştur."
           ]
         },
         {
           "name": "Çarşaf Kurutma",
           "desc": "Çarşaf ve nevresimler silindir ütüye girecekleri için tam olarak kurutulmaz, ütüleme kalitesini artırmak için %10-20 oranında hafif nemli bırakılır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kurutma makinesinden çıkan çarşafların hafif nemli hissettirecek şekilde makineden çıkarılıp, doğrudan silindir ütünün sıcak silindirlerine verilerek jilet gibi ütülenmesidir."
+            "Örnekle Pekiştirelim: Kurutma makinesinden çıkan çarşafların hafif nemli hissettirecek şekilde makineden çıkarılıp, doğrudan silindir ütünün sıcak silindirlerine verilerek ütülenmiştir."
           ]
         }
       ],
@@ -278,14 +278,14 @@ const Map<String, dynamic> camasirhaneUnit4 = {
           "name": "Yerleştirme Kuralları",
           "desc": "Sık kullanılan ağır tekstiller (çarşaf) bel hizasındaki raflara, daha hafif ve az kullanılanlar (yastık kılıfı) üst raflara yerleştirilmelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Personelin bel sağlığını korumak için 2 kiloluk ağır pike ve battaniyelerin orta raflara, 100 gramlık yastık kılıflarının ise üst raflara konulmasıdır."
+            "Örnekle Pekiştirelim: Personelin bel sağlığını korumak için 2 kiloluk ağır pike ve battaniyelerin orta raflara, 100 gramlık yastık kılıfların ise üst raflara konulmuştur."
           ]
         },
         {
           "name": "FIFO Sistemi",
           "desc": "İlk Giren İlk Çıkar (First In First Out) kuralıdır. Yıkanıp gelen yeni temiz çamaşırlar rafın en arkasına konur, kullanım için rafın en önündeki eski çamaşırlar alınır. Böylece tekstillerin eşit yıpranması sağlanır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bugün yıkanıp ütülenen çarşafların raftaki mevcut çarşafların arkasına yerleştirilerek, rafta dinlenmiş olan en eski çarşafın kata gönderilmesidir."
+            "Örnekle Pekiştirelim: Bugün yıkanıp ütülenen çarşafların raftaki mevcut çarşafların arkasına yerleştirilerek, rafta dinlenmiş olan en eski çarşaf kata gönderilmiştir."
           ]
         }
       ],
@@ -301,14 +301,14 @@ const Map<String, dynamic> camasirhaneUnit4 = {
           "name": "Birebir Değişim Yöntemi",
           "desc": "Personelin kirli üniformasını getirip teslim etmeden yeni ve temiz üniformasını alamadığı en yaygın güvenlik kontrol yöntemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Mutfakta çalışan Mehmet Şef'in lekelenen aşçı ceketini çamaşırhaneye getirip teslim ederek, yerine jilet gibi ütülenmiş temiz ceketini almasıdır."
+            "Örnekle Pekiştirelim: Mutfakta çalışan Mehmet Şef' lekelenen aşçı ceketini çamaşırhaneye getirip teslim ederek, yerine ütülenmiş temiz ceketini almıştır."
           ]
         },
         {
           "name": "Zimmet Formu",
           "desc": "İşe yeni başlayan personele verilen üniformanın adet ve özelliklerinin yazıldığı, personelin imzasıyla zimmetlenen resmî formdur. İşten ayrılırken iade edilmezse bedeli personelden kesilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ön büroda yeni işe başlayan resepsiyoniste verilen 2 adet ceket ve 2 adet pantolonun seri numaralarıyla birlikte zimmet formuna kaydedilip imzalatılmasıdır."
+            "Örnekle Pekiştirelim: Ön büroda yeni işe başlayan resepsiyoniste verilen 2 adet ceket ve 2 adet pantolon seri numaralarıyla birlikte zimmet formuna kaydedilip imzalatılmıştır."
           ]
         }
       ],

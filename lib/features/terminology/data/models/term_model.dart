@@ -4,6 +4,7 @@ class Term {
   final String example;
   final String category;
   final bool isEnglish;
+  final String? audioPath;
 
   const Term({
     required this.word,
@@ -11,5 +12,6 @@ class Term {
     required this.example,
     required this.category,
     this.isEnglish = true,
+    this.audioPath,
   });
 }

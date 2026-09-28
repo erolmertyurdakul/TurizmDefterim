@@ -284,7 +284,7 @@ const Map<String, dynamic> katHizmetleriUnit3 = {
           "name": "Hasar Formu ve Bildirim Süreci",
           "desc": "Temizlik sırasında saptanan her hasar (kırık şişe, yanmış halı, çalınan havlu), aynı gün standart bir hasar formuna kaydedilerek kat şefine iletilir. Haber verilmeden bırakılan hasar, görevliye yansıtılabilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Odayı temizleyen görevlinin, misafirin bavulundan düşen nesne nedeniyle kırılan ayna çerçevesini 'Hasar Bildirim Formu'na yazması; içinde kim olduğunu, tarihi ve hasarı fotoğraflayarak kat şefine göndermesidir."
+            "Örnekle Pekiştirelim: Odayı temizleyen görevli, misafir bavulundan düşen nesne nedeniyle kırılan ayna çerçevesini 'Hasar Bildirim Formu'na yazması; içinde kim olduğunu, tarihi ve hasarı fotoğraflayarak kat şefine göndermiştir."
           ]
         },
         {
@@ -378,7 +378,7 @@ const Map<String, dynamic> katHizmetleriUnit4 = {
           "name": "Renk Uyumu ve Renk Teorisi",
           "desc": "Otel mekânlarında renk seçimi; misafirin psikolojisini etkiler. Sıcak renkler (kırmızı, turuncu) enerji, soğuk renkler (mavi, yeşil) sakinlik yaratır. Tamamlayıcı renk paleti (renk çarkında karşılıklı renkler) en estetik uyumu verir.",
           "examples": [
-            "Örnekle Pekiştirelim: Spa alanında mavi-yeşil renk paleti kullanılırken restoranın duvarlarında sıcak krem ve toprak tonlarının seçilmesi; her iki mekânda da istenilen duygu ortamının (rahatlama vs. iştah açma) psikolojik olarak desteklenmesidir."
+            "Örnekle Pekiştirelim: Spa alanında mavi-yeşil renk paleti kullanılırken restoranın duvarlarında sıcak krem ve toprak tonlarının seçilmesi; her iki mekânda da istenilen duygu ortamın (rahatlama vs. iştah açma) psikolojik olarak desteklenmiştir."
           ]
         },
         {
@@ -517,14 +517,14 @@ const Map<String, dynamic> katHizmetleriUnit5 = {
           "name": "G-Kuvveti (Sıkma Hızı Faktörü)",
           "desc": "Sıkma (santrifüj) esnasında çamaşırın üzerindeki suyun uzaklaştırılmasını sağlayan merkezkaç kuvvetidir. Yüksek G-kuvveti kurutma süresini kısaltır ama liflerin yıpranmasına yol açar. Kumaş tipine göre ayarlanmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Havlular için 350 G-Kuvveti (yüksek sıkma) uygulanarak suyun %50'si atılırken, hassas saten çarşaflar için 150 G-Kuvveti (düşük sıkma) uygulanarak kumaş liflerinin korunmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Örnekle Pekiştirelim: Örnekle Pekiştirelim: Havlular için 350 G-Kuvveti (yüksek sıkma) uygulanarak suyun %50'si atılırken, hassas saten çarşaflar için 150 G-Kuvveti (düşük sıkma) uygulanarak kumaş liflerin korunmuştur.'si atılırken, hassas saten çarşaflar için 150 G-Kuvveti (düşük sıkma) uygulanarak kumaş lifleri korunur.'si atılırken, hassas saten çarşaflar için 150 G-Kuvveti (düşük sıkma) uygulanarak kumaş lifleri korunur.'si atılırken, hassas saten çarşaflar için 150 G-Kuvveti (düşük sıkma) uygulanarak kumaş lifleri korunur."
           ]
         },
         {
           "name": "Kurutma Isı ve Zaman Dengesi",
           "desc": "Pamuklu çarşaflar için yüksek ısı, ipekli ve sentetik kumaşlar için düşük ısı ve havalandırma periyodu içeren kurutma standartlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kalın havluların 75 derecede kurutulup yumuşatılması, hassas ipek nevresimlerin ise 45 derecede kurutulup kırışıklık önleyici soğutma (cool down) çevrimine tabi tutulmasıdır."
+            "Örnekle Pekiştirelim: Kalın havluların 75 derecede kurutulup yumuşatılması, hassas ipek nevresimler ise 45 derecede kurutulup kırışıklık önleyici soğutma (cool down) çevrimine tabi tutulmuştur."
           ]
         }
       ],
@@ -563,7 +563,7 @@ const Map<String, dynamic> katHizmetleriUnit6 = {
           "name": "Kuru Temizleme Makinesi ve Çözücü Yönetimi",
           "desc": "Profesyonel kuru temizleme makineleri kapalı devre çalışır; çözücü atık ortama salınmaz, filtreden geçirilerek geri kazanılır. Çözücü düzeyi düzenli kontrol edilmeli ve tükenince yetkili firmadan tamamlanmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kuru temizleme makinesinin çözücü deposu yetersiz olduğunda, giysilerin yeterince temizlenemediği gibi çözücü kalıntısı kumaşta kalabilir. Bu durum hem kıyafeti tahrip eder hem sağlık riski oluşturur."
+            "Örnekle Pekiştirelim: Misafirin getirdiği kaşe paltonun suyla yıkanıp çekmesini önlemek için, tamburunda su yerine solvent dolaşan dev kuru temizleme makinesine atılmıştır."
           ]
         }
       ],
@@ -603,7 +603,7 @@ const Map<String, dynamic> katHizmetleriUnit6 = {
     },
     {
       "id": 3,
-      "tag": "MÜŞTERİ",
+      "tag": "MİSAFİR",
       "title": "MİSAFİR GİYSİ HİZMETLERİ VE KALİTE KONTROLÜ",
       "microSummary": "Otelde sunulan misafir giysisi temizleme hizmeti; sürat, hassasiyet ve iletişim üzerine kuruludur. Bir hata, misafirle doğrudan yüzleşme anlamına gelir.",
       "definitions": [

@@ -9,7 +9,7 @@ class ScenarioDatabase {
       id: 'bellboy_baggage_mixup',
       title: 'Acentede Bagaj Karışıklığı Krizi',
       department: 'Ön Büro',
-      description: 'Grup girişleri sırasında iki farklı misafirin bagajları karıştı. Misafirlerden biri valizindeki özel eşyalarına acil ihtiyacı olduğunu belirtiyor. Bellboy olarak ne yapacaksın?',
+      description: 'Giriş sırasında misafirlerin bagajları karıştı ve acil çözüm gerekiyor. Bellboy olarak ne yapacaksın?',
       imageUrl: 'assets/images/bellboy.png',
       steps: {
         'step_1': ScenarioStep(
@@ -130,7 +130,7 @@ class ScenarioDatabase {
       id: 'reservation_overbooking',
       title: 'Rezervasyon Çakışması Krizi',
       department: 'Ön Büro',
-      description: 'Acenteden gelen büyük bir grup ile doğrudan rezervasyon yapan bir aile çakıştı. Overbooking söz konusu yani boş oda yok. Ne karar vereceksin?',
+      description: 'Otelde çifte rezervasyon (overbooking) oluştu ve boş oda kalmadı. Bu krizi nasıl çözeceksin?',
       imageUrl: 'assets/images/reservation.png',
       steps: {
         'step_1': ScenarioStep(
@@ -251,7 +251,7 @@ class ScenarioDatabase {
       id: 'receptionist_safe_theft',
       title: 'Kayıp Kasa ve Hırsızlık İddiası',
       department: 'Ön Büro',
-      description: 'Misafir odasındaki kasadan 2000 dolar çalındığını iddia ediyor ve kat görevlisini suçluyor. Ne yapmalısın?',
+      description: 'Misafir odasındaki kasadan parasının çalındığını iddia edip personeli suçluyor. Ne yapacaksın?',
       imageUrl: 'assets/images/receptionist.png',
       steps: {
         'step_1': ScenarioStep(

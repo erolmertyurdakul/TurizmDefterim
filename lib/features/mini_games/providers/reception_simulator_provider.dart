@@ -283,8 +283,12 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
   void _handleGuestLeft() {
     _patienceTimer?.cancel();
 
-    final newReputation = (state.reputation - 20).clamp(0, 100);
     final guestType = state.currentGuest?.type;
+    int repLoss = 20;
+    if (guestType == GuestType.vip) repLoss = 40;
+    if (guestType == GuestType.ozelGereksinim) repLoss = 30;
+
+    final newReputation = (state.reputation - repLoss).clamp(0, 100);
 
     state = state.copyWith(
       score: state.score - 100,
@@ -367,7 +371,11 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
     int newVipSuccess = state.vipSuccessCount;
 
     final isFullMatch = roomCorrect && boardCorrect && requestsMatch;
-    final isPartialMatch = !isFullMatch && (roomCorrect || boardCorrect || playerRequests.isNotEmpty);
+    
+    // Kısmi doğru sayılması için, kullanıcının seçtiği oda, pansiyon veya var olan bir özel isteğin tutması gerekir.
+    // Bomboş bir misafire rastgele özel istek ekleyip de kısmi doğru almasının önüne geçildi.
+    final hasAnyCorrectRequest = guestRequests.isNotEmpty && playerRequests.any((r) => guestRequests.contains(r));
+    final isPartialMatch = !isFullMatch && (roomCorrect || boardCorrect || hasAnyCorrectRequest);
 
     if (isFullMatch) {
       pointsEarned = 100;
@@ -385,8 +393,7 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
 
       if (guest.type == GuestType.vip) newVipSuccess++;
 
-      final tip = ReceptionSimulatorData.getRandomTip(_random);
-      feedbackMessage = '✅ Mükemmel Eşleşme! +$pointsEarned\n$tip';
+      feedbackMessage = '✅ Mükemmel Eşleşme! (+$pointsEarned XP)';
 
     } else if (isPartialMatch) {
       pointsEarned = 30;
@@ -463,7 +470,7 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
         : 0;
 
     final newReputation = (state.reputation + reputationChange).clamp(0, 100);
-    final newGuestsCorrect = (roomCorrect && boardCorrect) ? state.guestsCorrect + 1 : state.guestsCorrect;
+    final newGuestsCorrect = isFullMatch ? state.guestsCorrect + 1 : state.guestsCorrect;
     final newMaxCombo = newCombo > state.maxCombo ? newCombo : state.maxCombo;
 
     // Güç-up güncelle (Her 5 doğru serisinde Pas Geç jokeri kazanılır)
@@ -555,6 +562,8 @@ class ReceptionSimulatorNotifier extends StateNotifier<ReceptionSimulatorState> 
           availablePowerUps: newPowerUps,
           feedbackMessage: '⏭️ Misafir Pas Geçildi!',
           feedbackType: FeedbackType.correct,
+          guestsRemainingInLevel: state.guestsRemainingInLevel - 1,
+          guestsServed: state.guestsServed + 1,
         );
         Future.delayed(const Duration(milliseconds: 1500), () {
           if (_disposed) return;

@@ -20,7 +20,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit1 = {
           "name": "Sürdürülebilir Turizm",
           "desc": "Yerel halkın ekonomik refahını artırırken doğal, kültürel ve sosyal kaynakları tüketen değil koruyan; hem bugünkü turistlerin hem de gelecekte gelecek turistlerin aynı destinasyonu keşfedebilmesini sağlayan turizm anlayışıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'da her yıl milyonlarca turist geliyor. Eğer tarihi mağara yapıları korunmazsa, 20 yıl sonra ziyaret edilecek bir şey kalmaz. Bunun önüne geçmek için ziyaretçi sayısını sınırlamak, restorasyon yapmak ve yerel halkla geliri paylaşmak sürdürülebilir turizmin ta kendisidir."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Kapadokya'da her yıl milyonlarca turist geliyor. Eğer tarihi mağara yapıları korunmazsa, 20 yıl sonra ziyaret edilecek bir şey kalmaz. Bunun önüne geçmek için ziyaretçi sayısını sınırlamak, restorasyon yapmak ve yerel halkla geliri paylaşmak sürdürülebilir turizmin ta kendisidir."
           ]
         },
         {
@@ -38,7 +38,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit1 = {
       "id": 2,
       "tag": "TARİHSEL",
       "title": "SÜRDÜRÜLEBİLİR TURİZMİN TARİHSEL GELİŞİMİ VE ULUSLARARASI ÇERÇEVE",
-      "microSummary": "Sürdürülebilir turizm fikri, 1970'lerin çevre hareketleriyle doğdu; bugün BM Sürdürülebilir Kalkınma Hedefleri'nin ayrılmaz bir parçasıdır.",
+      "microSummary": "Sürdürülebilir turizm fikri, 1970'lerin çevre hareketleriyle doğdu; bugün BM Sürdürülebilir Kalkınma Hedefleri'nin ayrılmaz bir parçasıdır.'nin ayrılmaz bir parçasıdır.",
       "definitions": [
         {
           "name": "Rio Konferansı (1992) ve Gündem 21",
@@ -51,14 +51,14 @@ const Map<String, dynamic> surdurulebilirTurizmUnit1 = {
           "name": "2030 Sürdürülebilir Kalkınma Hedefleri (SDG)",
           "desc": "BM'nin 2015 yılında belirlediği ve 17 küresel hedeften oluşan bu çerçevede turizm; SDG 8 (İnsana Yakışır İş), SDG 12 (Sorumlu Tüketim) ve SDG 14 (Su Altı Yaşamı) hedefleriyle doğrudan ilişkilendirilmiştir.",
           "examples": [
-            "Örnekle Pekiştirelim: SDG 8 kapsamında bir otel zincirinin yerel halktan eleman istihdam etmesi, SDG 12 kapsamında tek kullanımlık plastikleri yasaklaması ve SDG 14 kapsamında sahil temizleme kampanyası düzenlemesidir."
+            "Örnekle Pekiştirelim: Saros Körfezi kıyısına inşaat planı yapılan otel projesinin, deniz ekosistemini ve göçmen kuş güzergâhını tehdit ettiği ÇED raporuyla ortaya konması ve proje iptal edilmiştir."
           ]
         },
         {
           "name": "UNWTO Küresel Turizm Etiği Kuralları",
           "desc": "Birleşmiş Milletler Dünya Turizm Örgütü'nün (UNWTO) yayımladığı, turizm sektörünün uyması beklenen 10 maddelik etik ilkeler bütünüdür. Kültürel saygı, çevre koruma ve adil ekonomik paylaşım bu ilkelerin özünü oluşturur.",
           "examples": [
-            "Örnekle Pekiştirelim: UNWTO etik kurallarının 'Yerli halkın geleneksel topraklarına zarar veren turizm faaliyetlerine izin verilmemeli' maddesi gereğince Amazon yağmur ormanlarına inşa edilmek istenen büyük otelin yapımının durdurulmasıdır."
+            "Örnekle Pekiştirelim: UNWTO etik kurallarının 'Yerli halkın geleneksel topraklarına zarar veren turizm faaliyetlerine izin verilmemeli' maddesi gereğince Amazon yağmur ormanlarına inşa edilmek istenen büyük otelin yapımın durdurulmuştur."
           ]
         }
       ],
@@ -75,21 +75,21 @@ const Map<String, dynamic> surdurulebilirTurizmUnit1 = {
           "name": "Ekoturizm",
           "desc": "Doğal alanları minimum çevresel etki yaratacak şekilde keşfetmeyi, yerel halkın ekonomisine katkıda bulunmayı ve çevre eğitimini birleştiren, doğa odaklı sorumlu seyahat biçimidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Amazon'da yerel rehber eşliğinde kanoya binip yağmur ormanının ekolojisini öğrenmek, geceyi ekolojik bungalowda geçirmek ve bölgenin plastikten arındırılması için bağış yapmaktır. Hayvanları beslemek, ağaç kesmek veya ormana çöp atmak ise ekoturizm değildir."
+            "Örnekle Pekiştirelim: Doğa koruma altındaki bir sulak alana giden turistler kuş gözlem kulelerinden dürbünle göçmen kuşları rahatsız etmeden izlemesi ve sadece patikalarda yürümüştür."
           ]
         },
         {
           "name": "Yavaş Turizm (Slow Tourism)",
           "desc": "Hızlı ve tüketim odaklı kitlesel turizmin tam karşısında, tek bir destinasyonda uzun süre kalarak yerel yaşamı, mutfağı ve kültürü derinlemesine deneyimlemeyi ve düşük karbon ayak izi bırakmayı hedefleyen turizm felsefesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: 10 ülkeyi 10 günde gezme telaşı yerine, İtalya'nın küçük bir köyünde 2 hafta kalarak sabahları yerel pazardan alışveriş yapıp yerel pide ustasından yemek dersi almak, bisikletle bölgeyi gezmek ve az karbonlu ulaşımı tercih etmektir."
+            "Örnekle Pekiştirelim: İzmir Seferihisar'a giden bir turist, arabasını park edip sokaklarda yürüyerek yerel kadınların kooperatifte sattığı el açması börekleri yavaşça tatmıştır."
           ]
         },
         {
           "name": "Toplum Temelli Turizm (Community-Based Tourism)",
           "desc": "Turizm gelirlerinin ve kararlarının büyük otel zincirleri yerine yerel halkın elinde olduğu; köylülerin rehber, pansiyon sahibi veya el sanatları üreticisi olarak turizmden doğrudan kazanç sağladığı katılımcı turizm modelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Doğu Anadolu'da bir köyde, köy halkının kurduğu kooperatifin turiste köy evi pansiyonu sunması, geleneksel yöresel yemekler ikram etmesi ve turistin doğrudan köylüden el sanatı satın almasıdır."
+            "Örnekle Pekiştirelim: Doğu Anadolu'da bir köyde, köy halkının kurduğu kooperatifin turiste köy evi pansiyonu sunması, geleneksel yöresel yemekler ikram etmesi ve turistin doğrudan köylüden el sanatı satın almıştır."
           ]
         }
       ],
@@ -106,14 +106,14 @@ const Map<String, dynamic> surdurulebilirTurizmUnit1 = {
           "name": "Kitlesel Turizm (Mass Tourism)",
           "desc": "Çok sayıda turistin düşük maliyetli paket turlarla kısa sürede bir destinasyona akın etmesidir. Ucuz uçak bileti ve her şey dahil otel mantığına dayanır. Destinasyonlara kısa vadede yüksek ekonomik girdi sağlasa da çevresel ve kültürel tahribatı büyüktür.",
           "examples": [
-            "Örnekle Pekiştirelim: Yaz aylarında Antalya'ya günde 5 charter uçakla gelen binlerce turistin tek bir otel tatil köyünde kahvaltıdan gece eğlencesine kadar tüm harcamalarını yapması; dışarıda yerel esnafa hiçbir katkı bırakmadan ayrılmasıdır."
+            "Örnekle Pekiştirelim: Yaz aylarında Antalya'ya günde 5 charter uçakla gelen binlerce turist tek bir otel tatil köyünde kahvaltıdan gece eğlencesine kadar tüm harcamalarını yapması; dışarıda yerel esnafa hiçbir katkı bırakmadan ayrılmıştır."
           ]
         },
         {
           "name": "Overtourism (Aşırı Turizm)",
-          "desc": "Bir destinasyona gelen ziyaretçi sayısının doğal ve sosyal taşıma kapasitesini aşarak yerel halkın yaşam kalitesini düşürmesi, tarihi alanları tahrip etmesi ve ekosistemlere zarar vermesidir.",
+          "desc": "Bir destinasyona gelen ziyaretçi sayısının doğal ve sosyal taşıma kapasitesini aşarak yerel halkın yaşam kalitesini düşürmesi, tarihi alanları tahrip etmesi ve ekosistemlere zarar vermesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Venedik'te yılda 30 milyona yakın turist gelmesi nedeniyle yerlilerin ev kiralarının uçması, tarihi kanalların kirlenmesi ve şehrin neredeyse sadece turistlere hitap eden içi boş bir dekor haline gelmesidir."
+            "Örnekle Pekiştirelim: Venedik'te yılda 30 milyona yakın turist gelmesi nedeniyle yerlilerin ev kiralarının uçması, tarihi kanalların kirlenmesi ve şehir neredeyse sadece turistlere hitap eden içi boş bir dekor haline gelmiştir."
           ]
         },
         {
@@ -159,7 +159,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Değer Temelli Fiyatlandırma",
           "desc": "Sürdürülebilir turizm ürünleri, sunduğu çevresel ve sosyal değer gerekçesiyle kitlesel turizm ürünlerinden daha yüksek fiyatla satılabilir ve bu fiyata razı olan bilinçli bir tüketici kitlesi mevcuttur.",
           "examples": [
-            "Örnekle Pekiştirelim: Güneş panelli, yağmur suyu toplayan ve yerel çiftçiden organik malzeme alan bir eko-bungalow'un, aynı bölgedeki sıradan bir otelden gecelik %40 fazla ücret almasına rağmen rezervasyonlarının aylar öncesinden dolmasıdır."
+            "Örnekle Pekiştirelim: Güneş panelli, yağmur suyu toplayan ve yerel çiftçiden organik malzeme alan bir eko-bungalow'un, aynı bölgedeki sıradan bir otelden gecelik %40 fazla ücret almasına rağmen rezervasyonların aylar öncesinden dolmuştur."
           ]
         }
       ],
@@ -176,7 +176,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Green Globe Sertifikası",
           "desc": "Turizm işletmelerinin sürdürülebilirlik standartlarını karşıladığını belgeleyen ve 83 ülkede tanınan uluslararası sertifikasyon sistemidir. Enerji, su, atık, biodiversite ve sosyal sorumluluk kriterleri değerlendirilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Antalya'daki bir tatil köyünün, güneş paneli kurarak elektrik tüketimini %40 azaltması, havuz suyu geri dönüşüm sistemi kurması ve yerel halktan %80 istihdam sağlaması sonucu Green Globe sertifikası almasıdır."
+            "Örnekle Pekiştirelim: Antalya'daki bir tatil köyün güneş paneli kurarak elektrik tüketimini %40 azaltması, havuz suyu geri dönüşüm sistemi kurması ve yerel halktan %80 istihdam sağlaması sonucu Green Globe sertifikası almıştır."
           ]
         },
 
@@ -184,7 +184,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Uluslararası Eko-Etiketler ve GSTC Sertifikaları",
           "desc": "Travelife: Avrupa'da tur operatörleri ve oteller için yaygın kullanılan sürdürülebilirlik sertifikasyon programıdır. Rainforest Alliance: Özellikle tropikal destinasyonlardaki turizm işletmelerini ve eko-turları sertifikalayan Amerikan kökenli uluslararası standart kuruluşudur.",
           "examples": [
-            "Örnekle Pekiştirelim: Costa Rica'da Rainforest Alliance sertifikası alan bir eko-tur operatörünün, Amerika ve Avrupa'daki online seyahat platformlarında 'Sertifikalı Eko-Tur' etiketi alması ve bu sayede doluluk oranını %60'tan %90'a çıkarmasıdır."
+            "Örnekle Pekiştirelim: Costa Rica'da Rainforest Alliance sertifikası alan bir eko-tur operatörün Amerika ve Avrupa'daki online seyahat platformlarında 'Sertifikalı Eko-Tur' etiketi alması ve bu sayede doluluk oranını %60'tan %90'a çıkarmıştır."
           ]
         }
       ],
@@ -201,7 +201,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Greenwashing (Yeşil Boyama)",
           "desc": "İşletmelerin gerçekte sürdürülebilir uygulamalar yapmadan sadece pazarlama ve reklam materyallerinde 'çevre dostu' imajı yaratmaya çalışmasıdır. Bu etik dışı bir yaklaşımdır ve uzun vadede kurumu zarara uğratır.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelin tanıtım broşüründe 'Doğayla uyumlu, yeşil otel' yazarken lobisinde klimalı cam kapıları açık bırakması, havuzu gereksiz yere aydınlatması ve çöplerini geri dönüşüm yapmadan aynı konteynere atmasıdır."
+            "Örnekle Pekiştirelim: Otel tanıtım broşüründe 'Doğayla uyumlu, yeşil otel' yazarken lobisinde klimalı cam kapıları açık bırakması, havuzu gereksiz yere aydınlatması ve çöplerini geri dönüşüm yapmadan aynı konteynere atmıştır."
           ]
         },
         {
@@ -215,7 +215,7 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Şeffaf İletişim ve Etki Raporlaması",
           "desc": "Turizm işletmelerinin çevresel ve sosyal performanslarını belirli dönemlerde (yıllık) kamuoyuyla paylaştığı, somut veri ve görsellerle desteklenmiş sürdürülebilirlik raporlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir otelin web sitesinde '2023'te 500.000 litre su tasarrufu yaptık, 45 yerel köylüyü istihdam ettik ve atıklarımızın %85'ini geri dönüştürdük' şeklinde somut veri yayımlaması ve misafirlerin bu bilgiye erişebilmesidir."
+            "Örnekle Pekiştirelim: Bir otelin web sitesinde '2023'te 500.000 litre su tasarrufu yaptık, 45 yerel köylüyü istihdam ettik ve atıklarımızın %85'ini geri dönüştürdük' şeklinde somut veri yayımlaması ve misafirler bu bilgiye erişebilmiştir."
           ]
         }
       ],
@@ -232,14 +232,14 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Türkiye'nin Sürdürülebilir Turizm Potansiyeli",
           "desc": "Türkiye; 3 biyocoğrafi bölge, 12.000'i aşkın bitki türü, 1.500'den fazla doğal sit alanı ve UNESCO Dünya Mirası listesindeki 21 alanıyla sürdürülebilir turizm için olağanüstü bir potansiyele sahiptir.",
           "examples": [
-            "Örnekle Pekiştirelim: Artvin'in Kaçkar Dağları, Muğla'nın Likya Yolu, Antalya'nın antik kentleri ve Doğu Anadolu'nun göçer kültürü; hepsi sürdürülebilir ve kültürel turizm ürünü olarak uluslararası piyasada büyük değer taşır."
+            "Örnekle Pekiştirelim: Karabük'teki tarihi Safranbolu Evleri ile Denizli Pamukkale Hierapolis antik kenti UNESCO koruma listesinde yer almıştır."
           ]
         },
         {
           "name": "Türkiye Turizm Stratejisi ve Sürdürülebilirlik",
           "desc": "Türkiye, Kültür ve Turizm Bakanlığı'nın 2023-2028 Turizm Stratejisi kapsamında sürdürülebilir turizmi öncelikli hedef olarak belirlemiş; eko-destinasyon geliştirme ve yeşil otel sertifikalamasını teşvik programlarıyla desteklemiştir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bakanlığın, Doğu Anadolu'da 10 köy pansiyonunu sürdürülebilir konaklama standartlarına kavuşturmak için sübvansiyon sağlaması ve bu köyleri uluslararası platformlarda 'Köy Turizmi Destinasyonu' olarak tanıtmasıdır."
+            "Örnekle Pekiştirelim: Bakanlık Doğu Anadolu'da 10 köy pansiyonunu sürdürülebilir konaklama standartlarına kavuşturmak için sübvansiyon sağlaması ve bu köyleri uluslararası platformlarda 'Köy Turizmi Destinasyonu' olarak tanıtmıştır."
           ]
         },
         {
@@ -263,14 +263,14 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "GSTC (Global Sustainable Tourism Council)",
           "desc": "Sürdürülebilir turizm alanında dünyadaki en üst standartları belirleyen, BM destekli Küresel Sürdürülebilir Turizm Konseyidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir otelin sürdürülebilirlik kriterlerini uyarlarken, GSTC'nin yayınladığı 42 ana kriterlik küresel standart kılavuzunu baz almasıdır."
+            "Örnekle Pekiştirelim: Bir otelin sürdürülebilirlik kriterlerini uyarlarken, GSTC'n yayınladığı 42 ana kriterlik küresel standart kılavuzunu baz almıştır."
           ]
         },
         {
           "name": "Üç Aşamalı Ulusal Program",
           "desc": "Kültür ve Turizm Bakanlığı ile GSTC ortaklığında yürütülen; otellerin 1. Aşama (%30 kriter), 2. Aşama (%70 kriter) ve 3. Aşama (%100 tam uyum - Sertifika) olarak tamamlamak zorunda olduğu yasal uyum programıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: 50 odalı bir otelin ilk yıl 1. aşama denetiminden geçerek 'Sürdürülebilir Turizm 1. Aşama Belgesi' alması, 3. yılın sonunda ise tüm kriterleri tamamlayıp uluslararası sertifikaya kavuşmasıdır."
+            "Örnekle Pekiştirelim: 50 odalı bir otel ilk yıl 1. aşama denetiminden geçerek 'Sürdürülebilir Turizm 1. Aşama Belgesi' alması, 3. yıl sonunda ise tüm kriterleri tamamlayıp uluslararası sertifikaya kavuşmuştur."
           ]
         },
         {
@@ -294,21 +294,21 @@ const Map<String, dynamic> surdurulebilirTurizmUnit2 = {
           "name": "Yeşil Anahtar (Green Key)",
           "desc": "Çevre Eğitimi Vakfı (FEE) tarafından çevre dostu konaklama tesislerine verilen, 60'tan fazla ülkede tanınan lider uluslararası çevre etiketidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelimizin atık pilleri kutularda toplaması, kimyasal kullanımını sınırlandırması ve misafirleri çevre bilinci hakkında broşürlerle bilgilendirmesi sonucu kapısına asılacak 'Yeşil Anahtar' bayrağını kazanmasııdır."
+            "Örnekle Pekiştirelim: Bir otel Yeşil Anahtar alabilmek için odalarında musluk debilerini sınırlamış ve çevre dostu deterjanlar kullanmıştır."
           ]
         },
         {
           "name": "Sürdürülebilir Turizm Belgesi (GSTC)",
           "desc": "Kültür ve Turizm Bakanlığı ile GSTC (Küresel Sürdürülebilir Turizm Konseyi) ortaklığında yürütülen, çevre koruma, yerel istihdam ve kültürel mirası koruma kriterlerini karşılayan tesislere verilen yasal ve zorunlu belgedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bakanlık ve GSTC denetçilerinin denetimi sonrası otelimizin sürdürülebilirlik kriterlerini tamamlayıp 'Sürdürülebilir Turizm Belgesi' almaya hak kazanması ve bu sayede çevre koruma bilincini tescillemesidir."
+            "Örnekle Pekiştirelim: Sürdürülebilir Turizm Belgesi sahibi bir otel, çarşafları her gün değil misafirlerin talebi doğrultusunda değiştirmiştir."
           ]
         },
         {
           "name": "Karbon Ayak İzi Telafisi (Carbon Offset)",
-          "desc": "Otellerin faaliyetleri sonucu oluşan karbon emisyonunu sıfırlamak için çevreye ağaç dikmesi veya yenilenebilir enerji yatırımlarına ortak olmasıdır.",
+          "desc": "Otellerin faaliyetleri sonucu oluşan karbon emisyonunu sıfırlamak için çevreye ağaç dikmesi veya yenilenebilir enerji yatırımlarına ortak olması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelimizin her 10 konaklama için Tema Vakfı'na 1 adet fidan bağışlayarak otel kaynaklı karbon salınımını doğada dengelemesidir."
+            "Örnekle Pekiştirelim: Otelimiz her 10 konaklama için Tema Vakfı'na 1 adet fidan bağışlayarak otel kaynaklı karbon salınımını doğada dengelemiştir."
           ]
         }
       ],
@@ -333,21 +333,21 @@ const Map<String, dynamic> surdurulebilirTurizmUnit3 = {
           "name": "Destinasyon Yönetim Organizasyonu (DMO)",
           "desc": "Bir turistik bölgenin sürdürülebilir yönetimini üstlenen; yerel yönetimler, özel sektör, sivil toplum ve yerli halk ortaklığıyla oluşturulan koordinasyon ve planlama kuruluşudur.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'daki baloncu işletmeleri, otel sahipleri, belediyeleri ve doğa derneğinin bir araya gelerek bölgenin yıllık turist kapasitesini birlikte belirlemesi ve ortak sürdürülebilirlik kurallarına uymasıdır."
+            "Örnekle Pekiştirelim: Kapadokya'daki baloncu işletmeleri, otel sahipleri, belediyeleri ve doğa derneğinin bir araya gelerek bölge yıllık turist kapasitesini birlikte belirlemesi ve ortak sürdürülebilirlik kurallarına uymuştur."
           ]
         },
         {
           "name": "Ziyaretçi Yönetimi Stratejileri",
           "desc": "Aşırı kalabalık riskinitaşıyan destinasyonlarda ziyaretçileri dağıtmak, yoğun saat ve mekânlardan uzaklaştırmak için uygulanan giriş kotası, rezervasyon sistemi ve alternatif güzergâh yönlendirme tekniklerinin bütünüdür.",
           "examples": [
-            "Örnekle Pekiştirelim: Efes Antik Kenti'ne girişin günlük 10.000 kişiyle sınırlandırılması, online bilet rezervasyonu zorunluluğu ve rehbersiz giriş yasağıyla ziyaretçilerin kontrollü dağılımının sağlanmasıdır."
+            "Örnekle Pekiştirelim: Efes Antik Kenti'ne girişin günlük 10.000 kişiyle sınırlandırılması, online bilet rezervasyonu zorunluluğu ve rehbersiz giriş yasağıyla ziyaretçilerin kontrollü dağılımın sağlanmıştır."
           ]
         },
         {
           "name": "Çevresel Etki Değerlendirmesi (ÇED)",
           "desc": "Yeni bir turizm tesisi veya altyapı projesinin doğal çevreye, ekosisteme ve yerel topluma olası etkilerini önceden analiz eden ve riskleri minimize eden zorunlu resmi rapordur.",
           "examples": [
-            "Örnekle Pekiştirelim: Saros Körfezi kıyısına inşaat planı yapılan otel projesinin, deniz ekosistemini ve göçmen kuş güzergâhını tehdit ettiği ÇED raporuyla ortaya konması ve projenin iptal edilmesidir."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Saros Körfezi kıyısına inşaat planı yapılan otel projesinin, deniz ekosistemini ve göçmen kuş güzergâhını tehdit ettiği ÇED raporuyla ortaya konması ve proje iptal edilmiştir."
           ]
         }
       ],
@@ -362,23 +362,23 @@ const Map<String, dynamic> surdurulebilirTurizmUnit3 = {
       "definitions": [
         {
           "name": "Enerji Verimliliği",
-          "desc": "Otellerin fosil yakıt tüketimini azaltmak için güneş paneli, LED aydınlatma, akıllı termostat ve ısı geri kazanım sistemleri gibi yenilenebilir enerji ve tasarruf teknolojilerini kullanmasıdır.",
+          "desc": "Otellerin fosil yakıt tüketimini azaltmak için güneş paneli, LED aydınlatma, akıllı termostat ve ısı geri kazanım sistemleri gibi yenilenebilir enerji ve tasarruf teknolojilerini kullanması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Bodrum'daki bir otel; çatısına kurduğu güneş panelleriyle yaz boyunca elektrik faturasını sıfıra indiriyor, kışın fazla üretilen enerjiyi şebekeye satıyor ve yıllık 200.000 TL enerji tasarrufu elde ediyor."
           ]
         },
         {
           "name": "Su Yönetimi ve Gri Su Sistemi",
-          "desc": "Lavabo ve duş suyu olan 'gri su'nun arıtılarak bahçe sulamasında ve tuvalet sifonu doldurulmasında yeniden kullanılması; yağmur suyu hasadı ile su tüketiminin %30-50 azaltılmasıdır.",
+          "desc": "Lavabo ve duş suyu olan 'gri su'nun arıtılarak bahçe sulamasında ve tuvalet sifonu doldurulmasında yeniden kullanılması; yağmur suyu hasadı ile su tüketiminin %30-50 azaltılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Konuktan 'Havlunuzu tekrar kullanmak isterseniz askıya asın, yenilemek isterseniz yere bırakın' mesajıyla günlük 500 litre çamaşır suyu tasarrufu sağlayan otel uygulamasıdır."
+            "Örnekle Pekiştirelim: Konuktan 'Havlunuzu tekrar kullanmak isterseniz askıya asın, yenilemek isterseniz yere bırakın' mesajıyla günlük 500 litre çamaşır suyu tasarrufu sağlayan otel uygulamıştır."
           ]
         },
         {
           "name": "Yerel ve Organik Tedarik Zinciri",
-          "desc": "Otelin mutfağına, hediyelik eşya dükkanına ve dekorasyonuna yönelik ürünlerin uzak merkezlerden değil, bölgedeki yerel çiftçilerden, zanaatkarlardan ve üreticilerden temin edilmesidir.",
+          "desc": "Otelin mutfağına, hediyelik eşya dükkanına ve dekorasyonuna yönelik ürünlerin uzak merkezlerden değil, bölgedeki yerel çiftçilerden, zanaatkarlardan ve üreticilerden temin edilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel restoranının kahvaltı ürünlerini 50 km içindeki organik çiftlikten alması, oda dekorasyonu için 30 km mesafedeki çömlekçiden el yapımı vazo temin etmesi ve hediyelik eşya dükkanında yalnızca yerel el sanatları satmasıdır."
+            "Örnekle Pekiştirelim: Otel restoranının kahvaltı ürünlerini 50 km içindeki organik çiftlikten alması, oda dekorasyonu için 30 km mesafedeki çömlekçiden el yapımı vazo temin etmesi ve hediyelik eşya dükkanında yalnızca yerel el sanatları satmıştır."
           ]
         }
       ],
@@ -393,9 +393,9 @@ const Map<String, dynamic> surdurulebilirTurizmUnit3 = {
       "definitions": [
         {
           "name": "Karbon Ayak İzi Hesaplama",
-          "desc": "Bir turizm işletmesinin ya da turistin seyahati boyunca atmosfere saldığı sera gazı miktarının ton CO₂ cinsinden hesaplanması ve bu miktarın azaltılması ya da telafi edilmesidir.",
+          "desc": "Bir turizm işletmesinin ya da turistin seyahati boyunca atmosfere saldığı sera gazı miktarının ton CO₂ cinsinden hesaplanması ve bu miktarın azaltılması ya da telafi edilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul'dan Antalya'ya uçan turist başına 0.14 ton CO₂ salındığının hesaplanması ve otel tarafından her konuk için 1 ağaç dikimi kampanyasıyla bu etkinin telafi edilmesidir."
+            "Örnekle Pekiştirelim: İstanbul'dan Antalya'ya uçan turist başına 0.14 ton CO₂ salındığının hesaplanması ve otel tarafından her konuk için 1 ağaç dikimi kampanyasıyla bu etkin telafi edilmiştir."
           ]
         },
         {
@@ -426,21 +426,21 @@ const Map<String, dynamic> surdurulebilirTurizmUnit3 = {
           "name": "Sıfır Atık Mavi Projesi",
           "desc": "Denizlerin, nehirlerin ve su kaynaklarının kirlenmesini önlemek amacıyla, kıyı otellerinde tek kullanımlık plastikleri yasaklayan ve deniz çöplerini toplayan ulusal çevre hareketidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel plajındaki plastik pipet ve bardakların yasaklanarak yerine biyobozunur kağıt pipetler ve karton bardakların getirilmesi ve sahilin her sabah temizlenmesidir."
+            "Örnekle Pekiştirelim: Otel plajındaki plastik pipet ve bardakların yasaklanarak yerine biyobozunur kağıt pipetler ve karton bardakların getirilmesi ve sahil her sabah temizlenmiştir."
           ]
         },
         {
           "name": "Gıda Atığı Yönetimi ve İsraf",
-          "desc": "Otel açık büfelerinde tüketilmeyen gıdaların çöpe gitmesini önlemek için porsiyon boyutlarının küçültülmesi, artan ekmeklerin galeta ununa dönüştürülmesi veya organik atıkların gübre makinelerinde işlenmesidir.",
+          "desc": "Otel açık büfelerinde tüketilmeyen gıdaların çöpe gitmesini önlemek için porsiyon boyutlarının küçültülmesi, artan ekmeklerin galeta ununa dönüştürülmesi veya organik atıkların gübre makinelerinde işlenmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Açık büfe tatlı porsiyonlarının küçük kaselerde tek tek sunulması ve gün sonunda kalan taze ekmeklerin kurutularak köfte harcı yapılmak üzere mutfakta öğütülmesidir."
+            "Örnekle Pekiştirelim: Açık büfe tatlı porsiyonlarının küçük kaselerde tek tek sunulması ve gün sonunda kalan taze ekmekler kurutularak köfte harcı yapılmak üzere mutfakta öğütülmüştür."
           ]
         },
         {
           "name": "Kompostlaştırma (Organik Gübre)",
           "desc": "Meyve, sebze kabukları ve yemek artıkları gibi organik atıkların, kompost makinelerinde biyolojik olarak parçalanarak otel bahçesinde kullanılacak doğal gübreye dönüştürülmesi sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel mutfağındaki sebze ayıklama tezgâhından çıkan kabukların plastiklerden ayrı toplanıp bahçedeki kompost makinesine dökülerek toprak gübresi haline getirilmesidir."
+            "Örnekle Pekiştirelim: Otel mutfağındaki sebze ayıklama tezgâhından çıkan kabuklar plastiklerden ayrı toplanıp bahçedeki kompost makinesine dökülerek toprak gübresi haline getirilmiştir."
           ]
         },
         {

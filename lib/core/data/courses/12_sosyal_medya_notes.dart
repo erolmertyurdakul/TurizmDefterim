@@ -13,28 +13,28 @@ const Map<String, dynamic> sosyalMedyaUnit1 = {
           "name": "E-Ticaret (Elektronik Ticaret)",
           "desc": "İnternet teknolojilerini kullanarak, fiziki mağazalara gitmeden bilgisayar veya telefon üzerinden her türlü mal, ürün veya hizmetin satın alınması veya satılması faaliyetidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ahmet'in evinden çıkmadan, internet sitesi üzerinden beğendiği bir çift spor ayakkabıyı sipariş edip ödemesini kartla online olarak gerçekleştirmesidir."
+            "Örnekle Pekiştirelim: Ahmet evinden çıkmadan, internet sitesi üzerinden beğendiği bir çift spor ayakkabıyı sipariş edip ödemesini kartla online olarak gerçekleştirmiştir."
           ]
         },
         {
           "name": "B2C (Firmadan Tüketiciye)",
           "desc": "İnternet siteleri aracılığıyla ticari şirketlerin veya markaların, doğrudan bireysel son tüketicilere perakende olarak ürün satması modelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir otelin kendi web sitesi üzerinden yaz tatili yapmak isteyen bir aileye doğrudan oda rezervasyonu satmasıdır."
+            "Örnekle Pekiştirelim: Bir otel kendi web sitesi üzerinden yaz tatili yapmak isteyen bir aileye doğrudan oda rezervasyonu satmıştır."
           ]
         },
         {
           "name": "B2B (Firmadan Firmaya)",
           "desc": "Şirketlerin veya ticari işletmelerin kendi aralarında yaptığı, genellikle toptan mal alım satımı veya iş birliği modelini içeren ticarettir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir otel işletmesinin, restoranı için ihtiyaç duyduğu 1 ton eti toptancı bir et entegre tesisinden internet portalı üzerinden toptan sipariş etmesidir."
+            "Örnekle Pekiştirelim: Bir otel işletmesin restoranı için ihtiyaç duyduğu 1 ton eti toptancı bir et entegre tesisinden internet portalı üzerinden toptan sipariş etmiştir."
           ]
         },
         {
           "name": "C2C (Tüketiciden Tüketiciye)",
           "desc": "Bireysel tüketicilerin, aracı internet platformlarını kullanarak kendi aralarında yaptığı ikinci el veya sıfır ürün satış modelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Meltem'in küçülen montunu, ikinci el kıyafet satan bir mobil uygulama üzerinden başka bir öğrenciye satmasıdır."
+            "Örnekle Pekiştirelim: Meltem' küçülen montunu, ikinci el kıyafet satan bir mobil uygulama üzerinden başka bir öğrenciye satmıştır."
           ]
         }
       ],
@@ -48,7 +48,7 @@ const Map<String, dynamic> sosyalMedyaUnit1 = {
       "definitions": [
         {
           "name": "Sanal POS (Point of Sale)",
-          "desc": "Fiziki mağazalardaki kart çekim cihazlarının internet sitelerine uyarlanmış dijital yazılım versiyonudur; müşterinin online ödeme yapmasını sağlar.",
+          "desc": "Fiziki mağazalardaki kart çekim cihazlarının internet sitelerine uyarlanmış dijital yazılım versiyonudur; misafirin online ödeme yapmasını sağlar.",
           "examples": [
             "Örnekle Pekiştirelim: İnternetten kitap satın alırken kredi kartı bilgilerimizi girip cep telefonumuza gelen onay kodu (3D Secure) ile ödemeyi saniyeler içinde tamamlamamızdır."
           ]
@@ -57,14 +57,14 @@ const Map<String, dynamic> sosyalMedyaUnit1 = {
           "name": "SSL Sertifikası",
           "desc": "İnternet sitesi ile ziyaretçi arasındaki veri akışını (kart bilgileri, şifreler vb.) şifreleyerek üçüncü şahısların çalmasını önleyen güvenlik protokolüdür. Adres çubuğundaki kilit simgesiyle anlaşılır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir web sitesinde alışveriş yaparken adres çubuğunun solunda kapalı bir kilit simgesinin bulunması ve adresin 'https://' ile başlayarak korunduğunu göstermesidir."
+            "Örnekle Pekiştirelim: Bir web sitesinde alışveriş yaparken adres çubuğunun solunda kapalı bir kilit simgesinin bulunması ve adres 'https://' ile başlayarak korunduğunu göstermiştir."
           ]
         },
         {
           "name": "Dijital Pazarlama Platformları",
-          "desc": "Binlerce farklı satıcının veya mağazanın tek bir çatı altında kendi ürünlerini sergilediği ve milyonlarca müşteriye ulaştığı dev alışveriş platformlarıdır.",
+          "desc": "Binlerce farklı satıcının veya mağazanın tek bir çatı altında kendi ürünlerini sergilediği ve milyonlarca misafire ulaştığı dev alışveriş platformlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yerel bir ayakkabı üreticisinin kendi web sitesini açmak yerine Trendyol veya Amazon gibi büyük bir e-pazaryerinde dükkan açarak satış yapmasıdır."
+            "Örnekle Pekiştirelim: Yerel bir ayakkabı üreticisin kendi web sitesini açmak yerine Trendyol veya Amazon gibi büyük bir e-pazaryerinde dükkan açarak satış yapmıştır."
           ]
         }
       ],
@@ -74,61 +74,61 @@ const Map<String, dynamic> sosyalMedyaUnit1 = {
       "id": 3,
       "tag": "PAZARLAMA",
       "title": "DİJİTAL PAZARLAMA VE SEO TEKNİKLERİ",
-      "microSummary": "İnternet sitelerinin Google gibi arama motorlarında üst sıralarda yer alması ve müşteriye ulaşması için yapılan çalışmalardır.",
+      "microSummary": "İnternet sitelerinin Google gibi arama motorlarında üst sıralarda yer alması ve misafire ulaşması için yapılan çalışmalardır.",
       "definitions": [
         {
           "name": "SEO (Arama Motoru Optimizasyonu)",
           "desc": "Web sitesinin arama motorlarında (Google vb.) hedeflenen kelimelerde üst sıralarda çıkması için reklam ücreti ödemeden yapılan ücretsiz kod ve içerik iyileştirme çalışmalarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'daki bir butik otelin web sitesine 'Kapadokya en iyi butik otel' anahtar kelimesini ekleyip hızlandırarak, Google aramalarında ilk sayfada çıkmayı başarmasıdır."
+            "Örnekle Pekiştirelim: Kapadokya'daki bir butik otel web sitesine 'Kapadokya en iyi butik otel' anahtar kelimesini ekleyip hızlandırarak, Google aramalarında ilk sayfada çıkmayı başarmıştır."
           ]
         },
         {
           "name": "E-Posta Pazarlaması (Newsletter)",
-          "desc": "Mevcut veya üye olan potansiyel müşterilere kampanya, yeni ürün veya indirim duyurularını içeren e-postaların toplu ve izinli olarak gönderilmesi sürecidir.",
+          "desc": "Mevcut veya üye olan potansiyel misafirlere kampanya, yeni ürün veya indirim duyurularını içeren e-postaların toplu ve izinli olarak gönderilmesi sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir seyahat acentesinin, veri tabanındaki üyelere 'Hafta sonuna özel %20 İzmir turları indirimi!' konulu şık tasarımlı bir e-postayı topluca göndermesidir."
+            "Örnekle Pekiştirelim: Bir seyahat acentesi, veri tabanındaki üyelere 'Hafta sonuna özel %20 İzmir turları indirimi!' konulu şık tasarımlı bir e-postayı topluca göndermiştir."
           ]
         },
         {
           "name": "PPC (Tıklama Başına Maliyetli Reklam)",
           "desc": "Arama motorlarında veya sosyal medyada yayınlanan sponsorlu reklam modelidir; reklam veren sadece reklamına tıklandığında ücret öder.",
           "examples": [
-            "Örnekle Pekiştirelim: Google'da 'araç kiralama' araması yapıldığında en üstte çıkan 'Sponsorlu' linkine tıkladığımızda, reklam veren şirketin Google'a tıklama başı 5 TL ödemesidir."
+            "Örnekle Pekiştirelim: Google'da 'araç kiralama' araması yapıldığında en üstte çıkan 'Sponsorlu' linkine tıkladığımızda, reklam veren şirket Google'a tıklama başı 5 TL ödemiştir."
           ]
         }
       ],
-      "tip": "SEO uzun vadeli ve ücretsiz organik başarı sağlarken, PPC reklamları anlık bütçe ödeyerek hızlıca müşteri çekmeye yarar."
+      "tip": "SEO uzun vadeli ve ücretsiz organik başarı sağlarken, PPC reklamları anlık bütçe ödeyerek hızlıca misafir çekmeye yarar."
     },
     {
       "id": 4,
       "tag": "LOJİSTİK",
       "title": "LOJİSTİK VE SATIŞ SONRASI MEMNUNİYET YÖNETİMİ",
-      "microSummary": "Satışın tamamlanması lojistik süreçlerin ve müşteri geri bildirimlerinin başarıyla yönetilmesine bağlıdır.",
+      "microSummary": "Satışın tamamlanması lojistik süreçlerin ve misafir geri bildirimlerinin başarıyla yönetilmesine bağlıdır.",
       "definitions": [
         {
           "name": "Kargo ve Teslimat Lojistiği",
           "desc": "E-ticarette satın alınan fiziksel ürünlerin depodan çıkarılarak, paketlenmesi ve hasarsız bir şekilde kargo firmaları aracılığıyla alıcıya ulaştırılması sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sipariş edilen porselen tabakların kırılmaması için balonlu naylonlara sarılıp dayanıklı kutulara konarak özel kurye ile müşterinin adresine teslim edilmesidir."
+            "Örnekle Pekiştirelim: Sipariş edilen porselen tabakların kırılmaması için balonlu naylonlara sarılıp dayanıklı kutulara konarak özel kurye ile misafir adresine teslim edilmiştir."
           ]
         },
         {
           "name": "14 Günlük Koşulsuz Cayma Hakkı",
           "desc": "Tüketici kanununa göre, internetten alınan bir ürünü tüketicinin hiçbir gerekçe göstermeden ve ceza ödemeden 14 gün içinde iade etme yasal hakkıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: İnternetten aldığı elbisenin rengini beğenmeyen Aylin'in, kargo eline ulaştıktan 5 gün sonra site üzerinden 'Cayma Hakkı' talebi oluşturup elbiseyi ücretsiz kargoyla geri göndererek parasını iade almasıdır."
+            "Örnekle Pekiştirelim: İnternetten aldığı elbisenin rengini beğenmeyen Aylin' kargo eline ulaştıktan 5 gün sonra site üzerinden 'Cayma Hakkı' talebi oluşturup elbiseyi ücretsiz kargoyla geri göndererek parasını iade almıştır."
           ]
         },
         {
-          "name": "Müşteri Yorumları ve İtibar Yönetimi",
+          "name": "Misafir Yorumları ve İtibar Yönetimi",
           "desc": "Ürünlerin altına yapılan tüketici değerlendirmelerinin yakından izlenerek, olumsuz yorumlara yapıcı ve hızlı yanıtlar verilmesi, marka değerinin korunması sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelde kalan bir misafirin internete yazdığı 'Odada klima çalışmıyordu' olumsuz yorumuna, otel müdürünün 'Çok özür dileriz, teknik ekibimiz sorunu çözdü, sizi tekrar ağırlamak isteriz' yazarak yanıt vermesidir."
+            "Örnekle Pekiştirelim: Otelde kalan bir misafirin internete yazdığı 'Odada klima çalışmıyordu' olumsuz yorumuna, otel müdürü 'Çok özür dileriz, teknik ekibimiz sorunu çözdü, sizi tekrar ağırlamak isteriz' yazarak yanıt vermiştir."
           ]
         }
       ],
-      "tip": "E-ticarette satış, kargo müşterinin eline ulaşıp iade süresi bittikten ve müşteri memnun kaldığında resmi olarak tamamlanmış sayılır."
+      "tip": "E-ticarette satış, kargo misafirin eline ulaşıp iade süresi bittikten ve misafir memnun kaldığında resmi olarak tamamlanmış sayılır."
     }
   ]
 };
@@ -148,21 +148,21 @@ const Map<String, dynamic> sosyalMedyaUnit2 = {
           "name": "Sosyal Medya",
           "desc": "İnternet üzerinde kullanıcıların kendi içeriklerini (yazı, fotoğraf, video) üretebildikleri, paylaşabildikleri ve diğer insanlarla anlık etkileşime girebildikleri çift yönlü iletişim platformlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir öğrencinin tatilde çektiği Kapadokya balon fotoğraflarını kendi hesabından paylaşması ve arkadaşlarının bu fotoğrafları beğenip yorum yapmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Bir öğrencinin tatilde çektiği Kapadokya balon fotoğraflarını kendi hesabından paylaşması ve arkadaşların bu fotoğrafları beğenip yorum yapmıştır."
           ]
         },
         {
           "name": "Görsel ve Video Odaklı Platformlar",
           "desc": "Fotoğraf, kısa video (Reels/Shorts) veya uzun videoların paylaşımı üzerine kurulu, estetiğin ve hızlı tüketimin ön planda olduğu popüler mecralardır (Instagram, YouTube, TikTok).",
           "examples": [
-            "Örnekle Pekiştirelim: Bir şefin hazırladığı çikolatalı sufle tarifini 15 saniyelik eğlenceli ve hızlı bir Instagram Reels videosu olarak çekip yayınlayarak binlerce izlenim almasıdır."
+            "Örnekle Pekiştirelim: Bir şef hazırladığı çikolatalı sufle tarifini 15 saniyelik eğlenceli ve hızlı bir Instagram Reels videosu olarak çekip yayınlayarak binlerce izlenim almıştır."
           ]
         },
         {
           "name": "LinkedIn (Profesyonel Ağ Kurma)",
           "desc": "İş dünyasındaki profesyonellerin, şirketlerin ve iş arayanların bir araya gelerek kariyer gelişimi, iş ilanları ve kurumsal paylaşımlar yaptığı resmi platformdur.",
           "examples": [
-            "Örnekle Pekiştirelim: Üniversiteden mezun olan Hakan'ın LinkedIn profilinde özgeçmişini yayınlaması, sektördeki otel müdürlerini takibe alarak staj başvuruları yapmasıdır."
+            "Örnekle Pekiştirelim: Üniversiteden mezun olan Hakan LinkedIn profilinde özgeçmişini yayınlaması, sektördeki otel müdürlerini takibe alarak staj başvuruları yapmıştır."
           ]
         }
       ],
@@ -178,21 +178,21 @@ const Map<String, dynamic> sosyalMedyaUnit2 = {
           "name": "İçerik Takvimi (Content Calendar)",
           "desc": "Hangi gün, hangi saatte, hangi sosyal medya mecrasında ne tür bir içeriğin (fotoğraf, video, hikaye) paylaşılacağını önceden gösteren planlama çizelgesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sosyal medya uzmanının 'Pazartesi saat 10:00'da Instagram'da yeni menü görseli paylaşılacak, Çarşamba 18:00'de YouTube'a şef röportajı yüklenecek' şeklinde aylık plan yapmasıdır."
+            "Örnekle Pekiştirelim: Sosyal medya uzmanın 'Pazartesi saat 10:00'da Instagram'da yeni menü görseli paylaşılacak, Çarşamba 18:00'de YouTube'a şef röportajı yüklenecek' şeklinde aylık plan yapmıştır."
           ]
         },
         {
           "name": "Hashtag (#) Kullanımı",
           "desc": "Paylaşılan gönderilerin yanına yazılan '#' işaretiyle başlayan kelimelerdir; içeriğin o konudaki aramalarda kolayca bulunmasını sağlar.",
           "examples": [
-            "Örnekle Pekiştirelim: İzmir'deki bir restoranın paylaştığı boyoz fotoğrafının altına '#izmirboyozu #izmirestoran #sokaklezzetleri' yazarak boyoz arayan turistlerin bu hesaba ulaşmasını sağlamasıdır."
+            "Örnekle Pekiştirelim: İzmir'deki bir restoran paylaştığı boyoz fotoğrafının altına '#izmirboyozu #izmirestoran #sokaklezzetleri' etiketlerini ekleyerek turistlerin bu hesaba ulaşmasını sağlamıştır."
           ]
         },
         {
           "name": "Etkileşim (Engagement Rate)",
           "desc": "Bir gönderinin aldığı beğeni, yorum, paylaşım ve kaydetme sayılarının, toplam takipçi veya erişim sayısına bölünmesiyle elde edilen başarı oranıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: 1.000 takipçisi olan bir hesabın paylaştığı fotoğraf 100 beğeni ve 50 yorum aldığında, etkileşim oranının %15 gibi oldukça yüksek bir seviyede gerçekleşmesidir."
+            "Örnekle Pekiştirelim: 1.000 takipçisi olan bir hesabın paylaştığı fotoğraf 100 beğeni ve 50 yorum aldığında, etkileşim oranın %15 gibi oldukça yüksek bir seviyede gerçekleşmiştir."
           ]
         }
       ],
@@ -206,23 +206,23 @@ const Map<String, dynamic> sosyalMedyaUnit2 = {
       "definitions": [
         {
           "name": "Sosyal Medya Hedef Kitle Analizi",
-          "desc": "Sosyal medya reklamlarında bütçenin boşa gitmemesi için reklamın gösterileceği kişilerin yaş, cinsiyet, şehir, ilgi alanı ve dil gibi kriterlerle daraltılmasıdır.",
+          "desc": "Sosyal medya reklamlarında bütçenin boşa gitmemesi için reklamın gösterileceği kişilerin yaş, cinsiyet, şehir, ilgi alanı ve dil gibi kriterlerle daraltılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Pilates stüdyosu açan Canan Hanım'ın, reklam ayarlarından sadece stüdyoya 5 km yakınlıkta oturan, spor ve sağlıklı yaşamla ilgilenen 20-45 yaş arası kadınları seçmesidir."
+            "Örnekle Pekiştirelim: Pilates stüdyosu açan Canan Hanım reklam ayarlarından sadece stüdyoya 5 km yakınlıkta oturan, spor ve sağlıklı yaşamla ilgilenen 20-45 yaş arası kadınları seçmiştir."
           ]
         },
         {
           "name": "Sponsorlu Gönderi (Paid Social)",
-          "desc": "Markaların, kendi takipçileri dışındaki milyonlarca potansiyel müşteriye ulaşmak için platforma bütçe ödeyerek yayınladığı reklamlardır. Altında 'Sponsorlu' yazar.",
+          "desc": "Markaların, kendi takipçileri dışındaki milyonlarca potansiyel misafire ulaşmak için platforma bütçe ödeyerek yayınladığı reklamlardır. Altında 'Sponsorlu' yazar.",
           "examples": [
             "Örnekle Pekiştirelim: Butik otelimizin havuz başı görselinin altına bir rezervasyon linki koyup bütçe tanımlayarak, bizi takip etmeyen binlerce tatilciye reklam olarak göstermektir."
           ]
         },
         {
           "name": "Influencer Marketing (Fenomen Pazarlaması)",
-          "desc": "Yüksek takipçisi ve ikna gücü olan sosyal medya fenomenleri ile iş birliği yaparak, markanın veya ürünün onların hesaplarında tavsiye şeklinde tanıtılmasıdır.",
+          "desc": "Yüksek takipçisi ve ikna gücü olan sosyal medya fenomenleri ile iş birliği yaparak, markanın veya ürünün onların hesaplarında tavsiye şeklinde tanıtılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Meşhur bir yemek bloggerının restoranımıza davet edilerek hazırladığımız kebapları kendi hikayesinde paylaşıp takipçilerine 'Mutlaka deneyin!' diye önermesidir."
+            "Örnekle Pekiştirelim: Meşhur bir yemek bloggerının restoranımıza davet edilerek hazırladığımız kebapları kendi hikayesinde paylaşıp takipçilerine 'Mutlaka deneyin!' diye önermiştir."
           ]
         }
       ],
@@ -238,28 +238,28 @@ const Map<String, dynamic> sosyalMedyaUnit2 = {
           "name": "Topluluk Yönetimi (Community Management)",
           "desc": "Sosyal medya hesaplarına gelen tüm yorumları, soruları ve direkt mesajları (DM) kurumsal bir dil ve nezaket kuralları çerçevesinde hızlıca yanıtlama sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelimizin Instagram hesabına 'Oda fiyatlarınız nedir?' diye DM atan bir misafire, sosyal medya uzmanının 5 dakika içinde detaylı fiyat listesi ve güler yüzlü bir emojiyle yanıt vermesidir."
+            "Örnekle Pekiştirelim: Otelimizin Instagram hesabına 'Oda fiyatlarınız nedir?' diye DM atan bir misafire, sosyal medya uzmanın 5 dakika içinde detaylı fiyat listesi ve güler yüzlü bir emojiyle yanıt vermiştir."
           ]
         },
         {
           "name": "Sosyal Medya Krizi",
-          "desc": "Müşterinin yaşadığı kötü bir deneyimin (Örn: Yemekten kıl çıkması) videosunu paylaşmasıyla olayın sosyal medyada hızla yayılarak markaya zarar vermesidir.",
+          "desc": "Misafirin yaşadığı kötü bir deneyimin (Örn: Yemekten kıl çıkması) videosunu paylaşmasıyla olayın sosyal medyada hızla yayılarak markaya zarar vermesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Restoranda garsonun müşteriye kaba davrandığı gizli çekim bir videonun TikTok'ta paylaşılıp 1 milyon kez izlenmesi ve altına binlerce olumsuz yorum yağmasıdır."
+            "Örnekle Pekiştirelim: Restoranda garsonun misafire kaba davrandığı gizli çekim bir videon TikTok'ta paylaşılıp 1 milyon kez izlenmesi ve altına binlerce olumsuz yorum yağmıştır."
           ]
         },
         {
           "name": "Kriz İletişim Planı",
           "desc": "Sosyal medya krizi patlak verdiğinde; inkar etmek yerine hatayı kabul eden, resmi, samimi ve yapıcı bir özür açıklaması yayınlayarak sorunu çözme sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Videonun yayılmasının ardından restoran sahibinin hemen resmi hesaplardan 'Yaşanan olaydan derin üzüntü duyuyoruz, ilgili personel hakkında işlem yapılmış olup misafirimizden özür dileriz' açıklaması yapmasıdır."
+            "Örnekle Pekiştirelim: Videonun yayılmasının ardından restoran sahibin hemen resmi hesaplardan 'Yaşanan olaydan derin üzüntü duyuyoruz, ilgili personel hakkında işlem yapılmış olup misafirimizden özür dileriz' açıklaması yapmıştır."
           ]
         },
         {
           "name": "Kriz İletişimi Protokolleri",
           "desc": "Kriz anında atılacak adımların yasal ve etik çerçevesidir: 1) İlk 24 saat içinde dürüst bir resmi açıklama yapılması. 2) Yorum silme veya engelleme gibi gizleme çabalarından kaçınılması. 3) Mağduriyetin hukuki ve maddi olarak telafi edilmesi adımlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Gıda zehirlenmesi iddiasıyla ilgili yayılan asılsız veya haklı bir videoya karşı otelin sosyal medya ekibinin yorumları silmek yerine, 'Olay laboratuvar analiz aşamasında olup tüm yasal süreçler şeffaflıkla yürütülmektedir' şeklinde dürüst bir bilgilendirme anonsu yapmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Gıda zehirlenmesi iddiasıyla ilgili yayılan asılsız veya haklı bir videoya karşı otelin sosyal medya ekibin yorumları silmek yerine, 'Olay laboratuvar analiz aşamasında olup tüm yasal süreçler şeffaflıkla yürütülmektedir' şeklinde dürüst bir bilgilendirme anonsu yapmıştır.'Olay laboratuvar analiz aşamasında olup tüm yasal süreçler şeffaflıkla yürütülmektedir' şeklinde dürüst bir bilgilendirme anonsu yapmıştır."
           ]
         }
       ],
@@ -281,9 +281,9 @@ const Map<String, dynamic> sosyalMedyaUnit3 = {
       "definitions": [
         {
           "name": "Veri Analizi (Data Analytics)",
-          "desc": "İnternet sitemizi veya sosyal medya hesaplarımızı ziyaret eden kullanıcıların bıraktığı dijital izlerin toplanıp incelenerek gelecek kararların alınmasıdır.",
+          "desc": "İnternet sitemizi veya sosyal medya hesaplarımızı ziyaret eden kullanıcıların bıraktığı dijital izlerin toplanıp incelenerek gelecek kararların alınması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Geçen ay paylaştığımız 50 gönderinin verilerini inceleyen uzmanın, video gönderilerinin fotoğraflardan 3 kat daha fazla satış getirdiğini tespit etmesidir."
+            "Örnekle Pekiştirelim: Geçen ay paylaştığımız 50 gönderinin verilerini inceleyen uzmanın, video gönderilerin fotoğraflardan 3 kat daha fazla satış getirdiğini tespit etmiştir."
           ]
         },
         {
@@ -320,14 +320,14 @@ const Map<String, dynamic> sosyalMedyaUnit3 = {
           "name": "Dijital Performans ve Etkileşim Ölçümü",
           "desc": "Web sitesine eklenen küçük bir kod sayesinde, siteye girenlerin hangi ülkeden olduğunu, hangi sayfaları gezdiğini ve ne kadar süre kaldığını gösteren ücretsiz ve gelişmiş bir web analiz programıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Analytics paneline bakan otel sahibinin, siteye girenlerin %70'inin Almanya'dan olduğunu görüp web sitesine Almanca dil seçeneği ekleme kararı almasıdır."
+            "Örnekle Pekiştirelim: Analytics paneline bakan otel sahibinin, siteye girenlerin %70'inin Almanya'dan olduğunu görüp web sitesine Almanca dil seçeneği ekleme kararı almıştır."
           ]
         },
         {
           "name": "Hemen Çıkma Oranı (Bounce Rate)",
           "desc": "Web sitesine giren bir ziyaretçinin, sitede başka hiçbir sayfaya tıklamadan ve vakit geçirmeden geldiği gibi siteden hemen ayrılma yüzdesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sitemize giren 100 kişiden 60'ının ilk sayfayı gördüğü anda sıkılıp pencereyi kapatması durumunda, Hemen Çıkma Oranımızın %60 gibi yüksek bir seviyede olmasıdır."
+            "Örnekle Pekiştirelim: Sitemize giren 100 kişiden 60'ının ilk sayfayı gördüğü anda sıkılıp pencereyi kapatması durumunda, Hemen Çıkma Oranımız %60 gibi yüksek bir seviyede olmuştur."
           ]
         }
       ],
@@ -362,7 +362,7 @@ const Map<String, dynamic> sosyalMedyaUnit3 = {
         },
         {
           "name": "Daire (Pasta) Grafiği (Pie Chart)",
-          "desc": "Bir bütünün parçalarını (Örn: Müşteri oranları veya bütçe dağılımları) pasta dilimleri şeklinde yüzde oranlarıyla gösteren grafik türüdür.",
+          "desc": "Bir bütünün parçalarını (Örn: Misafir oranları veya bütçe dağılımları) pasta dilimleri şeklinde yüzde oranlarıyla gösteren grafik türüdür.",
           "examples": [
             "Örnekle Pekiştirelim: Otelimize gelen turistlerin %50'sinin Alman, %30'unun Rus, %20'sinin ise yerli turist olduğunu pasta dilimleri şeklinde gösteren daire grafiğidir."
           ]

@@ -58,84 +58,121 @@ class MiniGamesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isDesktop = screenWidth >= 1180;
+    final isTablet = screenWidth >= 800 && screenWidth < 1180;
+    final isWide = screenWidth >= 800;
+
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            // ── Başlık ──
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(
-                  AppSizes.screenPadding, AppSizes.md, AppSizes.screenPadding, 0,
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF8B5CF6), Color(0xFFA78BFA)],
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1450),
+            child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                // ── Başlık ──
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSizes.screenPadding, AppSizes.md, AppSizes.screenPadding, 0,
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(isWide ? 12 : 10),
+                          decoration: BoxDecoration(
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF8B5CF6), Color(0xFFA78BFA)],
+                            ),
+                            borderRadius: BorderRadius.circular(14),
+                            boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
+                          ),
+                          child: Icon(Icons.sports_esports_rounded, color: Colors.white, size: isWide ? 30 : 26),
                         ),
-                        borderRadius: BorderRadius.circular(14),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
+                        const SizedBox(width: 14),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Uygulamalar',
+                                style: GoogleFonts.outfit(
+                                  fontSize: isWide ? 28 : 22,
+                                  fontWeight: FontWeight.w900,
+                                  color: AppColors.textPrimary,
+                                ),
+                              ),
+                              Text(
+                                '${_games.length} eğlenceli öğrenme uygulaması',
+                                style: GoogleFonts.inter(
+                                  fontSize: isWide ? 14 : 13,
+                                  color: AppColors.textSecondary,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      child: const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 26),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 14),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Uygulamalar',
-                            style: GoogleFonts.outfit(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w900,
-                              color: AppColors.textPrimary,
-                            ),
-                          ),
-                          Text(
-                            '${_games.length} eğlenceli öğrenme uygulaması',
-                            style: GoogleFonts.inter(
-                              fontSize: 13,
-                              color: AppColors.textSecondary,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
 
-            const SliverToBoxAdapter(child: SizedBox(height: AppSizes.lg)),
+                const SliverToBoxAdapter(child: SizedBox(height: AppSizes.lg)),
 
-            // ── Oyun Kartları Listesi ──
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final game = _games[index];
-                    return _GameCard(game: game, index: index);
-                  },
-                  childCount: _games.length,
+                // ── Oyun Kartları Listesi (Masaüstünde 3'lü grid, tablette 2'li grid, mobilde liste) ──
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
+                  sliver: isWide
+                      ? SliverGrid(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: isDesktop ? 3 : 2,
+                            crossAxisSpacing: 16,
+                            mainAxisSpacing: 16,
+                            mainAxisExtent: 145,
+                          ),
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) {
+                              final game = _games[index];
+                              return _GameCard(
+                                game: game,
+                                index: index,
+                                inGrid: true,
+                                isWide: isWide,
+                                isDesktop: isDesktop,
+                              );
+                            },
+                            childCount: _games.length,
+                          ),
+                        )
+                      : SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) {
+                              final game = _games[index];
+                              return _GameCard(
+                                game: game,
+                                index: index,
+                                isWide: false,
+                                isDesktop: false,
+                              );
+                            },
+                            childCount: _games.length,
+                          ),
+                        ),
                 ),
-              ),
-            ),
 
-            const SliverToBoxAdapter(child: SizedBox(height: 100)),
-          ],
+                const SliverToBoxAdapter(child: SizedBox(height: 100)),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -148,14 +185,23 @@ class MiniGamesScreen extends StatelessWidget {
 class _GameCard extends StatelessWidget {
   final _MiniGame game;
   final int index;
+  final bool inGrid;
+  final bool isWide;
+  final bool isDesktop;
 
-  const _GameCard({required this.game, required this.index});
+  const _GameCard({
+    required this.game,
+    required this.index,
+    this.inGrid = false,
+    this.isWide = false,
+    this.isDesktop = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return RepaintBoundary(
       child: Container(
-        margin: const EdgeInsets.only(bottom: 14),
+        margin: EdgeInsets.only(bottom: inGrid ? 0 : 14),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
@@ -206,20 +252,21 @@ class _GameCard extends StatelessWidget {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(isDesktop ? 16 : 13),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Emoji İkon
                 Container(
-                  width: 58,
-                  height: 58,
+                  width: isDesktop ? 62 : 54,
+                  height: isDesktop ? 62 : 54,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: game.gradient,
                     ),
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(isDesktop ? 16 : 14),
                     boxShadow: [
                       BoxShadow(
                         color: game.gradient.first.withValues(alpha: 0.25),
@@ -229,28 +276,35 @@ class _GameCard extends StatelessWidget {
                     ],
                   ),
                   alignment: Alignment.center,
-                  child: Text(game.emoji, style: const TextStyle(fontSize: 28)),
+                  child: Text(game.emoji, style: TextStyle(fontSize: isDesktop ? 30 : 26)),
                 ),
-                const SizedBox(width: 14),
+                SizedBox(width: isDesktop ? 14 : 11),
                 // Oyun Bilgisi
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
                         children: [
                           Expanded(
                             child: Text(
                               game.name,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                               style: GoogleFonts.outfit(
-                                fontSize: 15,
+                                fontSize: isDesktop ? 16.5 : 15,
                                 fontWeight: FontWeight.w800,
                                 color: AppColors.textPrimary,
                               ),
                             ),
                           ),
+                          const SizedBox(width: 6),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 3,
+                            ),
                             decoration: BoxDecoration(
                               color: game.gradient.first.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(20),
@@ -258,7 +312,7 @@ class _GameCard extends StatelessWidget {
                             child: Text(
                               game.type,
                               style: GoogleFonts.inter(
-                                fontSize: 10,
+                                fontSize: isDesktop ? 11 : 9.5,
                                 fontWeight: FontWeight.w700,
                                 color: game.gradient.first,
                               ),
@@ -266,15 +320,15 @@ class _GameCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 3),
                       Text(
                         game.description,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.inter(
-                          fontSize: 12,
+                          fontSize: isDesktop ? 12.5 : 11.5,
                           color: AppColors.textSecondary,
-                          height: 1.35,
+                          height: 1.3,
                         ),
                       ),
                       const SizedBox(height: 6),
@@ -283,7 +337,10 @@ class _GameCard extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: isWide ? 10 : 8,
+                                vertical: isWide ? 4 : 3,
+                              ),
                               decoration: BoxDecoration(
                                 color: AppColors.accent.withValues(alpha: 0.12),
                                 borderRadius: BorderRadius.circular(8),
@@ -291,12 +348,12 @@ class _GameCard extends StatelessWidget {
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const Icon(Icons.schedule_rounded, size: 12, color: AppColors.accentWarm),
+                                  Icon(Icons.schedule_rounded, size: isWide ? 14 : 12, color: AppColors.accentWarm),
                                   const SizedBox(width: 4),
                                   Text(
                                     'Yakında',
                                     style: GoogleFonts.inter(
-                                      fontSize: 10,
+                                      fontSize: isWide ? 11.5 : 10,
                                       fontWeight: FontWeight.w700,
                                       color: AppColors.accentWarm,
                                     ),
@@ -310,7 +367,10 @@ class _GameCard extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: isWide ? 16 : 12,
+                                vertical: isWide ? 6 : 4,
+                              ),
                               decoration: BoxDecoration(
                                 color: game.gradient.first,
                                 borderRadius: BorderRadius.circular(8),
@@ -325,12 +385,12 @@ class _GameCard extends StatelessWidget {
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const Icon(Icons.play_arrow_rounded, size: 14, color: Colors.white),
+                                  Icon(Icons.play_arrow_rounded, size: isWide ? 16 : 14, color: Colors.white),
                                   const SizedBox(width: 4),
                                   Text(
                                     'Oyna',
                                     style: GoogleFonts.inter(
-                                      fontSize: 11,
+                                      fontSize: isWide ? 12.5 : 11,
                                       fontWeight: FontWeight.w800,
                                       color: Colors.white,
                                     ),

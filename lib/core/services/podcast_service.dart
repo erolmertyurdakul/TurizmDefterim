@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:io';
-import 'js_stub.dart' if (dart.library.js) 'dart:js' as js;
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
@@ -27,6 +25,11 @@ class PodcastService extends ChangeNotifier {
   Timer? _watchdogTimer;
   DateTime _lastPositionTime = DateTime.now();
   Duration _lastPosition = Duration.zero;
+
+  // Podcast dinleme süresi takibi (Turizm Frekansı rozeti için)
+  Timer? _listeningTimer;
+  int _activeListeningSeconds = 0;
+  void Function(int totalMinutes)? onMinuteListened;
 
   // Current playing podcast details
   String? _currentUrl;
@@ -169,6 +172,41 @@ class PodcastService extends ChangeNotifier {
         }
       }
     });
+
+    // Podcast dinleme süresi takibi: Sadece ses fiilen oynatılırken saniyeleri sayar
+    _listeningTimer?.cancel();
+    _listeningTimer = Timer.periodic(const Duration(seconds: 1), (_) async {
+      final isPlaying = player.playing;
+      final processingState = player.processingState;
+      final isReady = processingState == ProcessingState.ready;
+
+      if (isPlaying && isReady && !_isBuffering) {
+        _activeListeningSeconds++;
+        if (_activeListeningSeconds >= 60) {
+          _activeListeningSeconds = 0;
+          await _recordListeningMinute();
+        }
+      }
+    });
+  }
+
+  /// Her 60 saniyelik fiili dinleme tamamlandığında kalıcı hafızaya ve dinleyicilere bildirir
+  Future<void> _recordListeningMinute() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      const key = 'badge_progress_podcast_minutes';
+      final currentMinutes = prefs.getInt(key) ?? 0;
+      final newTotal = currentMinutes + 1;
+      await prefs.setInt(key, newTotal);
+      if (kDebugMode) {
+        print("PodcastService: Total podcast listened minutes updated: $newTotal min");
+      }
+      onMinuteListened?.call(newTotal);
+    } catch (e) {
+      if (kDebugMode) {
+        print("PodcastService: _recordListeningMinute failed: $e");
+      }
+    }
   }
 
   /// 8 dinleme barajına ulaşıldığında ses önbelleğini temizler
@@ -186,36 +224,13 @@ class PodcastService extends ChangeNotifier {
           print("PodcastService: 8-listen threshold reached! Starting cache eviction...");
         }
         
-        // 1. Mobil Platform Temizliği (Temporary Directory temizlenir)
+        // Mobil Platform Temizliği (Temporary Directory temizlenir)
         if (!kIsWeb) {
           final tempDir = await getTemporaryDirectory();
           if (tempDir.existsSync()) {
-            // Klasörün içeriğini asenkron silerek UI'ı asla dondurmuyoruz
             await tempDir.delete(recursive: true);
             if (kDebugMode) {
               print("PodcastService: Mobile temporary directory cache cleared successfully.");
-            }
-          }
-        } 
-        // 2. Web Platform Temizliği (Tarayıcı Cache'leri temizlenir)
-        else {
-          try {
-            // JS Cache API ile tarayıcıdaki tüm ses cache verilerini temizliyoruz
-            js.context.callMethod('eval', ["""
-              if ('caches' in window) {
-                caches.keys().then(names => {
-                  for (let name of names) {
-                    caches.delete(name);
-                  }
-                });
-              }
-            """]);
-            if (kDebugMode) {
-              print("PodcastService: Web Browser Cache cleared successfully.");
-            }
-          } catch (e) {
-            if (kDebugMode) {
-              print("PodcastService: Web Browser Cache clear failed: $e");
             }
           }
         }
@@ -242,15 +257,28 @@ class PodcastService extends ChangeNotifier {
     } catch (_) {}
   }
 
+  /// Doğrudan CDN bağlantısını çözen yardımcı metot (Anchor yönlendirmesi kaynaklı web tarayıcı CORS ve akış kilitlenmelerini engeller)
+  static String resolveDirectAudioUrl(String url) {
+    if (url.contains('/https%3A%2F%2F')) {
+      final decoded = Uri.decodeComponent(url.split('/https%3A%2F%2F').last);
+      if (decoded.startsWith('http://') || decoded.startsWith('https://')) {
+        return decoded;
+      }
+      return 'https://$decoded';
+    }
+    return url;
+  }
+
   /// Oynatıcıyı dispose etmeden sadece ses kaynağını pürüzsüzce tazeleyen kurtarma metodu
   Future<void> _refreshSourceOnly() async {
     if (_currentUrl == null) return;
     try {
       final position = _player.position;
       final speed = _playbackSpeed;
+      final directUrl = resolveDirectAudioUrl(_currentUrl!);
 
       final audioSource = AudioSource.uri(
-        Uri.parse(_currentUrl!),
+        Uri.parse(directUrl),
         tag: MediaItem(
           id: _currentId ?? _currentUrl!,
           album: _currentAlbum ?? '',
@@ -275,6 +303,12 @@ class PodcastService extends ChangeNotifier {
 
   // Play podcast from URL
   Future<void> play(String url, {required String id, required String title, required String album}) async {
+    if (url.trim().isEmpty) {
+      if (kDebugMode) {
+        print("PodcastService: Cannot play empty podcast URL.");
+      }
+      return;
+    }
     try {
       if (!kIsWeb) {
         try {
@@ -289,10 +323,13 @@ class PodcastService extends ChangeNotifier {
       }
 
       if (_currentUrl == url) {
-        if (!_player.playing) {
-          await _player.play();
+        final state = _player.playerState.processingState;
+        if (state != ProcessingState.idle && state != ProcessingState.completed) {
+          if (!_player.playing) {
+            await _player.play();
+          }
+          return;
         }
-        return;
       }
 
       // Her yeni podcast çalındığında dinleme sayacını artırıyoruz
@@ -303,17 +340,19 @@ class PodcastService extends ChangeNotifier {
       _currentId = id;
       _currentAlbum = album;
 
-      await _player.stop();
+      try {
+        await _player.stop();
+      } catch (_) {}
 
       if (!kIsWeb) {
         final session = await AudioSession.instance;
         await session.configure(const AudioSessionConfiguration.speech());
-      } else {
-        await _player.setWebCrossOrigin(null);
       }
 
+      final directUrl = resolveDirectAudioUrl(url);
+
       final audioSource = AudioSource.uri(
-        Uri.parse(url),
+        Uri.parse(directUrl),
         tag: MediaItem(
           id: id,
           album: album,
@@ -332,6 +371,34 @@ class PodcastService extends ChangeNotifier {
     } catch (e) {
       if (kDebugMode) {
         print("Error playing podcast: $e");
+      }
+      // Otomatik kurtarma: Player'ı sıfırdan oluşturup doğrudan adresi çal
+      try {
+        _player.dispose();
+      } catch (_) {}
+      _player = AudioPlayer();
+      _attachPlayerListeners(_player);
+      try {
+        final directUrl = resolveDirectAudioUrl(url);
+        final audioSource = AudioSource.uri(
+          Uri.parse(directUrl),
+          tag: MediaItem(
+            id: id,
+            album: album,
+            title: title,
+            artUri: null,
+          ),
+        );
+        await _player.setAudioSource(audioSource);
+        if (_playbackSpeed != 1.0) {
+          await _player.setSpeed(_playbackSpeed);
+        }
+        await _player.play();
+        _lastPositionTime = DateTime.now();
+      } catch (e2) {
+        if (kDebugMode) {
+          print("PodcastService: Recovery attempt failed: $e2");
+        }
       }
     }
   }

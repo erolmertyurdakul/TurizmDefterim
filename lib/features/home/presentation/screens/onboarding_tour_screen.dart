@@ -102,6 +102,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
   bool _isStepTransitioning = false;
   int _lastTappedStep = -1;
   DateTime _lastTapTime = DateTime.fromMillisecondsSinceEpoch(0);
+  bool _showSkipDialog = false;
 
   void _startTracking() {
     if (_isTracking) return;
@@ -137,11 +138,12 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
     if (_currentStep == 1) {
       final profileState = ref.read(profileProvider);
-      final gradeNum = profileState.grade?.replaceAll(RegExp(r'[^0-9]'), '') ?? '10';
+      final isTeacher = profileState.role == 'Öğretmen';
+      final gradeNum = isTeacher ? '11' : (profileState.grade?.replaceAll(RegExp(r'[^0-9]'), '') ?? '11');
       final int gradeIdx = gradeNum == '9' ? 0 : gradeNum == '11' ? 2 : gradeNum == '12' ? 3 : 1;
       activeKey = ShellKeys.gradeCardKeys[gradeIdx];
     }
-    if (_currentStep == 13) {
+    if (_currentStep == 14) {
       activeKey = ShellKeys.navKeys[1];
     }
     if (_currentStep == 3) {
@@ -212,7 +214,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
               size.height + 4,
             );
           }
-          if (activeKey == ShellKeys.unitQuizFabKey) {
+          if (activeKey == ShellKeys.unitQuizFabKey || activeKey == ShellKeys.unitNotesFabKey) {
             return Rect.fromLTWH(
               offset.dx,
               offset.dy,
@@ -323,7 +325,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
     ),
     _TourStep(
       title: 'Öğrenme Birimleri ve Testler',
-      description: 'Ders kitabıyla uyumlu olarak hazırlanan zengin öğrenme birimi içeriklerini keşfedebilirsiniz. Ayrıca öğrendiklerinizi pekiştirmeniz için oluşturulmuş testlerle bilginizi sınayabilirsiniz.',
+      description: 'Ders kitaplarıyla uyumlu olarak hazırlanan zengin öğrenme birimi içeriklerini keşfedebilir, seçtiğiniz ders için notlar alabilir ve öğrendiklerini pekiştirmeniz için oluşturulmuş testlerle bilginizi sınayabilirsiniz.',
       buttonText: 'Devam Et',
       icon: Icons.menu_book_rounded,
       tabIndex: 0,
@@ -398,6 +400,17 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       cardPosition: CardPosition.top,
     ),
     _TourStep(
+      title: 'Not Defterim 📝',
+      description: 'Derslerinizle ilgili bilgileri çeşitli etiketler ve renkler kullanarak not edebilirsiniz. Tüm notlarınıza tek bir panelden erişebilir ve arama yaparak kaydettiğiniz notlarınızı kolayca bulabilirsiniz.',
+      buttonText: 'Devam Et',
+      icon: Icons.edit_note_rounded,
+      tabIndex: 0,
+      targetKey: ShellKeys.unitNotesFabKey,
+      gradient: AppColors.sunsetGradient,
+      accentColor: const Color(0xFFF59E0B),
+      cardPosition: CardPosition.bottom,
+    ),
+    _TourStep(
       title: 'Öğrenme Birimi Testleri',
       description: 'Öğrenme birimlerinin içerisindeki test sorularıyla bilginizi daha küçük parçalarla sınayabilirsiniz. Teste erişmek istediğinizde buradaki butona tıklamanız yeterli olacaktır.',
       buttonText: 'Ana Menüye Dön',
@@ -420,7 +433,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
     ),
     _TourStep(
       title: 'Gelişim Atölyesi',
-      description: "Her biri örnekle pekiştirilmiş yaklaşık bin kelimelik Turizm Terimler Sözlüğü'ne ve diğer içeriklere buradan erişebilirsiniz.",
+      description: "Her biri örnekle pekiştirilmiş yaklaşık bin kelimelik Turizm Sözlüğü'ne ve diğer içeriklere buradan erişebilirsiniz.",
       buttonText: 'Devam Et',
       icon: Icons.insights_rounded,
       tabIndex: 0,
@@ -442,7 +455,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
     ),
     _TourStep(
       title: 'Derslerle İlgili Uygulamalar',
-      description: "Derslerle ilgili oluşturulan uygulamaları deneyimleyebilir ve öğrenmenizi daha eğlenceli hale getirebilirsiniz.",
+      description: "Derslerle ilgili oluşturulan uygulamaları deneyimleyebilir ve öğrenme sürecinizi daha eğlenceli hale getirebilirsiniz.",
       buttonText: 'Devam Et',
       icon: Icons.sports_esports_rounded,
       tabIndex: 1,
@@ -475,7 +488,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
     ),
     _TourStep(
       title: 'Tebrikler, Rehberi Tamamladınız!',
-      description: 'Turizm sektöründe ve derslerinizde daha başarılı olmanızı desteklemek için yoğun bir emekle hazırladığım bu ücretsiz uygulamayı sizlere sunmaktan çok memnunum.\n\nBaşarılar dilerim, sevgiyle kalın.',
+      description: 'Turizm sektöründe ve derslerinizde daha başarılı olmanızı desteklemek için yoğun bir emekle hazırladığım bu ücretsiz uygulamayı sizlere sunmaktan çok memnunum.\n\nSevgili gençler, başarılar 🌸',
       buttonText: 'Rehberi Tamamla',
       icon: Icons.emoji_events_rounded,
       tabIndex: 3,
@@ -533,7 +546,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       activeKey = ShellKeys.gradeCardKeys[gradeIdx];
     }
     
-    if (_currentStep == 13) {
+    if (_currentStep == 14) {
       activeKey = ShellKeys.navKeys[1];
     }
     
@@ -687,7 +700,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
               size.height + 4,
             );
           }
-          if (activeKey == ShellKeys.unitQuizFabKey) {
+          if (activeKey == ShellKeys.unitQuizFabKey || activeKey == ShellKeys.unitNotesFabKey) {
             // Exact-fit for FAB!
             return Rect.fromLTWH(
               offset.dx,
@@ -723,14 +736,14 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
           }
 
           // 2. Sayfayı kaydır (Premium Yavaş Kaydırma)
-          final scrollDuration = _currentStep == 12 
+          final scrollDuration = _currentStep == 13 
               ? const Duration(milliseconds: 1600) 
               : const Duration(milliseconds: 800);
               
-          final scrollAlignment = _currentStep == 17 ? 0.72 : _currentStep == 12 ? 0.35 : 0.08;
-          final scrollCurve = _currentStep == 12 ? Curves.easeInOutQuart : Curves.easeInOutCubic;
+          final scrollAlignment = _currentStep == 18 ? 0.95 : _currentStep == 13 ? 0.35 : 0.08;
+          final scrollCurve = _currentStep == 13 ? Curves.easeInOutQuart : Curves.easeInOutCubic;
 
-          final targetContext = _currentStep == 17 && ShellKeys.devNoteKey.currentContext != null
+          final targetContext = _currentStep == 18 && ShellKeys.devNoteKey.currentContext != null
               ? ShellKeys.devNoteKey.currentContext!
               : context;
               
@@ -893,8 +906,8 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
         } catch (_) {}
       }
       
-      // Adım 10 -> Adım 11: POP ALL COURSE SCREENS AND RETURNING TO SHELL
-      else if (_currentStep == 10) {
+      // Adım 11 -> Adım 12: POP ALL COURSE SCREENS AND RETURNING TO SHELL
+      else if (_currentStep == 11) {
         Navigator.of(context).popUntil((route) => route.isFirst);
         Future.delayed(const Duration(milliseconds: 360), () {
           if (widget.gradeGridKey.currentContext != null) {
@@ -982,6 +995,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       return '${grade}_kat_hizmetleri_atolyesi';
     }
     switch (title) {
+    case 'Ön Büro Hizmetleri Atölyesi': return 'on_buro_hizmetleri_atolyesi';
       case 'Ön Büroda Rezervasyon': return 'on_buro_rezervasyon';
       case 'Konuk Giriş Çıkış İşlemleri': return 'konuk_giris_cikis_islemleri';
       case 'Konaklama İşletmeciliği': return 'konaklama_isletmeciligi';
@@ -1012,17 +1026,17 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
   String _getInteractiveButtonText() {
     switch (_currentStep) {
       case 1:
-        return 'Sınıfa Dokun.';
+        return 'Sınıfa Dokun';
       case 2:
-        return 'Derse Dokun.';
+        return 'Derse Dokun';
       case 4:
-        return 'Butona Dokun.';
+        return 'Butona Dokun';
       case 7:
-        return 'Ders Notuna Dokun.';
+        return 'Ders Notuna Dokun';
       case 13:
-        return 'Butona Dokun.';
+        return 'Butona Dokun';
       default:
-        return 'Karta Dokun.';
+        return 'Karta Dokun';
     }
   }
 
@@ -1031,6 +1045,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
     if (!_initialized) return const SizedBox.shrink();
 
     final size = MediaQuery.of(context).size;
+    final bool isWide = size.width >= 768;
     final step = _steps[_currentStep];
 
     double? top;
@@ -1045,20 +1060,13 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
         bottom = null;
         break;
       case CardPosition.top:
-        double calculatedTop = MediaQuery.of(context).padding.top + 20;
-        if (_currentStep == 17) {
-          final RenderBox? profileBox = ShellKeys.profileCardKey.currentContext?.findRenderObject() as RenderBox?;
-          if (profileBox != null) {
-            final profileOffset = profileBox.localToGlobal(Offset.zero);
-            final profileSize = profileBox.size;
-            calculatedTop = profileOffset.dy + profileSize.height + 12;
-          } else {
-            calculatedTop = MediaQuery.of(context).padding.top + 300;
-          }
-        } else if ((_currentStep == 9 || _currentStep == 12) && _spotlightRect != Rect.zero) {
+        double calculatedTop = MediaQuery.of(context).padding.top + (isWide ? 24 : 16);
+        if ((_currentStep == 9 || _currentStep == 13) && _spotlightRect != Rect.zero) {
           final double safeAreaTop = MediaQuery.of(context).padding.top;
           final double targetTop = _spotlightRect.top;
-          calculatedTop = ((safeAreaTop + targetTop) / 2 - 75).clamp(safeAreaTop + 12, targetTop - 145);
+          calculatedTop = ((safeAreaTop + targetTop) / 2 - (isWide ? 90 : 75)).clamp(safeAreaTop + 12, targetTop - (isWide ? 190 : 145));
+        } else if (_currentStep == 18) {
+          calculatedTop = MediaQuery.of(context).padding.top + (isWide ? 24 : 16);
         }
         top = calculatedTop;
         bottom = null;
@@ -1085,12 +1093,12 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
           bottom = null;
         } else {
           double calculatedBottom = MediaQuery.of(context).padding.bottom + 125;
-          if (_currentStep == 10) {
+          if (_currentStep == 10 || _currentStep == 11) {
             calculatedBottom = MediaQuery.of(context).padding.bottom + 210;
-          } else if (_currentStep == 13) {
+          } else if (_currentStep == 14) {
             calculatedBottom = MediaQuery.of(context).padding.bottom + 240;
-          } else if (_currentStep == 14 || _currentStep == 15 || _currentStep == 16) {
-            calculatedBottom = MediaQuery.of(context).padding.bottom + 112;
+          } else if (_currentStep == 15 || _currentStep == 16 || _currentStep == 17) {
+            calculatedBottom = MediaQuery.of(context).padding.bottom + (isWide ? 100 : 112);
           }
           top = null;
           bottom = calculatedBottom;
@@ -1098,23 +1106,32 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
         break;
     }
 
+    final double horizontalMargin = isWide ? 32.0 : 20.0;
     final Widget cardPositioned = AnimatedPositioned(
-      duration: Duration(milliseconds: _currentStep == 12 ? 218 : 273),
+      duration: Duration(milliseconds: _currentStep == 13 ? 218 : 273),
       curve: Curves.easeOutCubic,
       top: top,
       bottom: bottom,
-      left: 20,
-      right: 20,
+      left: horizontalMargin,
+      right: horizontalMargin,
       child: _buildStepCard(step),
     );
 
     return PopScope(
       canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (_showSkipDialog) {
+          setState(() {
+            _showSkipDialog = false;
+          });
+        }
+      },
       child: Material(
         color: Colors.transparent,
         child: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTapDown: (details) {
+            if (_showSkipDialog) return;
             final tapPos = details.globalPosition;
             if (_spotlightRect != Rect.zero && _spotlightRect.contains(tapPos)) {
               // Sadece buton yazısı boş olan (interaktif) adımlarda dokunulduğunda ilerle!
@@ -1144,7 +1161,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                     size: size,
                     showOverlay: step.showOverlay,
                     isCircle: isCircle,
-                    hideCutout: _currentStep == 17,
+                    hideCutout: _currentStep == 18,
                   );
                 },
               ),
@@ -1154,6 +1171,10 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
               // ── Rehber Kartı ──
               cardPositioned,
+
+              // ── Rehberi Atla Bilgilendirme Kartı ──
+              if (_showSkipDialog)
+                _buildSkipTourDialog(size),
             ],
           ),
         ),
@@ -1163,6 +1184,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
 
   /// Rehber kart içeriğini oluşturur.
   Widget _buildStepCard(_TourStep step) {
+    final bool isWide = MediaQuery.of(context).size.width >= 768;
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 327),
       transitionBuilder: (Widget child, Animation<double> animation) {
@@ -1178,7 +1200,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       },
       child: GlowingBorderCard(
         key: ValueKey<int>(_currentStep),
-        borderRadius: 24,
+        borderRadius: isWide ? 28 : 24,
         glowColors: [
           step.accentColor,
           step.accentColor.withOpacity(0.5),
@@ -1186,11 +1208,14 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
           step.accentColor,
         ],
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(isWide ? 28 : 24),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(
+                horizontal: isWide ? 32 : 20, 
+                vertical: isWide ? 24 : 20,
+              ),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -1200,7 +1225,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(isWide ? 28 : 24),
                 border: Border.all(
                   color: Colors.white.withOpacity(0.12),
                   width: 1.0,
@@ -1215,9 +1240,9 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                       Icon(
                         step.icon,
                         color: step.accentColor,
-                        size: 20,
+                        size: isWide ? 28 : 20,
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: isWide ? 14 : 10),
                       Expanded(
                         child: Text.rich(
                           TextSpan(
@@ -1225,7 +1250,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                               TextSpan(
                                 text: step.title,
                                 style: GoogleFonts.outfit(
-                                  fontSize: 17,
+                                  fontSize: isWide ? 23 : 17,
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,
                                   letterSpacing: 0.3,
@@ -1237,11 +1262,40 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                       ),
                     ],
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: isWide ? 16 : 12),
 
                   // Açıklama Yazısı
                   () {
-                    final description = step.description;
+                    final profileState = ref.read(profileProvider);
+                    final isTeacher = profileState.role == 'Öğretmen';
+                    String description = step.description;
+                    if (isTeacher) {
+                      if (_currentStep == 1) {
+                        description = 'Sınıfa dokunarak ders müfredatıyla uyumlu içerikleri inceleyelim.';
+                      } else if (_currentStep == 2) {
+                        description = 'Sınıfa ait meslek dersleri burada listelenir. İçerisindeki öğrenme birimlerini görmek için ders kartına dokunun.';
+                      } else if (_currentStep == 3) {
+                        description = 'Ders kitabıyla uyumlu olarak hazırlanan zengin öğrenme birimi içeriklerini keşfedebilirsiniz. Ayrıca öğrenilenlerin pekiştirilmesi için oluşturulmuş ders testleri de burada yer almaktadır.';
+                      } else if (_currentStep == 6) {
+                        description = 'Her öğrenme biriminin içerisinde, iki uzman yapay zekanın karşılıklı sohbeti şeklinde oluşturulmuş podcastler yer alır. Podcastlerle öğrenme süreçlerini daha keyifli hale getirebilirsiniz.\n\nNot: Uygulama arkaplandayken de podcastlerin dinlenebilmesi ve istediğinizde hız butonuna tıklayarak çalma hızının değiştirilebilmesi mümkündür.';
+                      } else if (_currentStep == 8) {
+                        description = 'Ders notları örneklerle pekiştirilmiştir.';
+                      } else if (_currentStep == 9) {
+                        description = 'Sektörden Vaka ve Bilgi Köşesi notlarında gerçek hayattan bilgileri ve ipuçlarını görebilirsiniz.';
+                      } else if (_currentStep == 10) {
+                        description = 'Derslerinizle ilgili bilgileri çeşitli etiketler ve renkler kullanarak not edebilirsiniz. Tüm notlarınıza tek bir panelden erişebilir ve arama yaparak kaydettiğiniz notlarınızı kolayca bulabilirsiniz.';
+                      } else if (_currentStep == 11) {
+                        description = 'Öğrenme birimlerinin içerisindeki test soruları bilgileri küçük parçalarla sınamaya imkan tanımaktadır. Teste erişmek istediğinizde buradaki butona tıklamanız yeterli olacaktır.';
+                      } else if (_currentStep == 14) {
+                        description = 'Şimdi Uygulamalar sekmesine dokunarak derslerle ilgili uygulamalara göz atalım.';
+                      } else if (_currentStep == 15) {
+                        description = 'Derslerle ilgili oluşturulan uygulamaları deneyimleyebilir ve öğrenme süreçlerini daha eğlenceli hale getirebilirsiniz.';
+                      } else if (_currentStep == 16) {
+                        description = 'İçerikleri keşfedip deneyimledikçe puanlar kazanılır. Seviye seviye ayrılmış rozetleri buradan inceleyebilirsiniz.';
+                      } else if (_currentStep == 18) {
+                        description = 'Turizm gençlerimizin sektörde ve derslerinde daha başarılı olmalarını desteklemek amacıyla yoğun bir emekle hazırladığım bu ücretsiz uygulamayı sizlere sunmaktan çok memnunum.\n\nSaygılarımla.';
+                      }
+                    }
                     if (description.contains('\n\n')) {
                       final parts = description.split('\n\n');
                       return Column(
@@ -1251,25 +1305,27 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                             parts[0],
                             textAlign: TextAlign.justify,
                             style: GoogleFonts.inter(
-                              fontSize: 13,
+                              fontSize: isWide ? 17.5 : 13,
                               fontWeight: FontWeight.w500,
                               color: Colors.white.withOpacity(0.85),
-                              height: 1.5,
+                              height: isWide ? 1.55 : 1.5,
                               letterSpacing: 0.2,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: isWide ? 14 : 10),
                           Text(
                             parts[1],
                             textAlign: TextAlign.justify,
                             style: GoogleFonts.inter(
-                              fontSize: parts[1].startsWith('Not:') ? 12.5 : 13,
+                              fontSize: isWide 
+                                  ? (parts[1].startsWith('Not:') ? 16.0 : 17.5)
+                                  : (parts[1].startsWith('Not:') ? 12.5 : 13),
                               fontWeight: FontWeight.w500,
                               fontStyle: parts[1].startsWith('Not:') ? FontStyle.italic : FontStyle.normal,
                               color: parts[1].startsWith('Not:') 
                                   ? Colors.white.withOpacity(0.75)
                                   : Colors.white.withOpacity(0.85),
-                              height: 1.5,
+                              height: isWide ? 1.55 : 1.5,
                               letterSpacing: 0.2,
                             ),
                           ),
@@ -1280,22 +1336,22 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                       description,
                       textAlign: TextAlign.justify,
                       style: GoogleFonts.inter(
-                        fontSize: 13,
+                        fontSize: isWide ? 17.5 : 13,
                         fontWeight: FontWeight.w500,
                         color: Colors.white.withOpacity(0.85),
-                        height: 1.5,
+                        height: isWide ? 1.55 : 1.5,
                         letterSpacing: 0.2,
                       ),
                     );
                   }(),
                   if (step.developerName != null) ...[
-                    const SizedBox(height: 10),
+                    SizedBox(height: isWide ? 14 : 10),
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         step.developerName!,
                         style: GoogleFonts.outfit(
-                          fontSize: 14,
+                          fontSize: isWide ? 18.0 : 14,
                           fontWeight: FontWeight.w700,
                           fontStyle: FontStyle.italic,
                           color: step.accentColor,
@@ -1303,30 +1359,49 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                       ),
                     ),
                   ],
-                  const SizedBox(height: 18),
+                  SizedBox(height: isWide ? 22 : 18),
 
                   // Alt Satır: İlerleme Noktaları ve Buton
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // İlerleme Noktaları
-                      Row(
-                        children: List.generate(
-                          _steps.length,
-                          (index) => AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            margin: const EdgeInsets.only(right: 3),
-                            width: _currentStep == index ? 12 : 4,
-                            height: 4,
-                            decoration: BoxDecoration(
-                              color: _currentStep == index 
-                                  ? step.accentColor 
-                                  : Colors.white24,
-                              borderRadius: BorderRadius.circular(2),
+                      // İlk adımda şık Rehberi Atla butonu, sonraki adımlarda ilerleme noktaları
+                      if (_currentStep == 0)
+                        _SkipTourButton(
+                          onTap: () {
+                            SfxSynthesizer.playAppleSoftClick();
+                            setState(() {
+                              _showSkipDialog = true;
+                            });
+                          },
+                        )
+                      else
+                        // İlerleme Noktaları (Taşmayı önlemek için Expanded ve Scrollable korumalı)
+                        Expanded(
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            physics: const BouncingScrollPhysics(),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: List.generate(
+                                _steps.length,
+                                (index) => AnimatedContainer(
+                                  duration: const Duration(milliseconds: 300),
+                                  margin: EdgeInsets.only(right: isWide ? 5 : 2.5),
+                                  width: _currentStep == index ? (isWide ? 22 : 10) : (isWide ? 6 : 3.5),
+                                  height: isWide ? 6 : 3.5,
+                                  decoration: BoxDecoration(
+                                    color: _currentStep == index 
+                                        ? step.accentColor 
+                                        : Colors.white24,
+                                    borderRadius: BorderRadius.circular(isWide ? 3 : 2),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                      const SizedBox(width: 8),
 
                       // İleri Butonu veya Dokun İpucu
                       step.buttonText.isNotEmpty
@@ -1338,23 +1413,30 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
                               isLastStep: _currentStep == _steps.length - 1,
                             )
                           : Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: isWide ? 20 : 11, 
+                                vertical: isWide ? 11 : 8,
+                              ),
                               decoration: BoxDecoration(
                                 color: step.accentColor.withOpacity(0.15),
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(isWide ? 16 : 12),
                                 border: Border.all(color: step.accentColor.withOpacity(0.3), width: 1.0),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Icon(Icons.touch_app_rounded, color: step.accentColor, size: 15),
-                                  const SizedBox(width: 6),
+                                  Icon(
+                                    Icons.touch_app_rounded, 
+                                    color: step.accentColor, 
+                                    size: isWide ? 20 : 14,
+                                  ),
+                                  SizedBox(width: isWide ? 8 : 5),
                                   Text(
                                     _getInteractiveButtonText(),
                                     style: GoogleFonts.outfit(
                                       color: step.accentColor,
                                       fontWeight: FontWeight.w800,
-                                      fontSize: 12.5,
+                                      fontSize: isWide ? 16.5 : 12.0,
                                     ),
                                   ),
                                 ],
@@ -1372,7 +1454,7 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
   }
 
   Widget _buildPointer(Rect rect, Size screenSize) {
-    if (rect == Rect.zero || _currentStep == 17) return const SizedBox.shrink();
+    if (rect == Rect.zero || _currentStep == 18) return const SizedBox.shrink();
     
     final step = _steps[_currentStep];
     final bool shouldPointUp;
@@ -1420,6 +1502,267 @@ class _OnboardingTourScreenState extends ConsumerState<OnboardingTourScreen> wit
       child: _BouncingPointer(
         isPointingUp: finalIsPointingUp,
         glowColor: step.accentColor,
+      ),
+    );
+  }
+
+  /// Rehberi atlamak isteyen kullanıcıya sunulan bilgilendirme kartı
+  Widget _buildSkipTourDialog(Size size) {
+    final bool isDesktopOrBoard = size.width >= 1024;
+    final bool isTablet = size.width >= 650 && size.width < 1024;
+
+    return Positioned.fill(
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () {
+          setState(() {
+            _showSkipDialog = false;
+          });
+        },
+        child: Container(
+          color: const Color(0xFF030F26).withOpacity(0.85),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
+            child: Center(
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: () {}, // Kart içine tıklamalarda modalın kapanmasını engelle
+                child: Container(
+                  constraints: BoxConstraints(
+                    maxWidth: isDesktopOrBoard 
+                        ? 640 
+                        : (isTablet ? 500 : size.width * 0.88),
+                  ),
+                  child: GlowingBorderCard(
+                    borderRadius: isDesktopOrBoard ? 32 : (isTablet ? 28 : 24),
+                    glowColors: const [
+                      Colors.cyanAccent,
+                      AppColors.accent,
+                      Colors.cyanAccent,
+                    ],
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(isDesktopOrBoard ? 32 : (isTablet ? 28 : 24)),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: isDesktopOrBoard ? 40 : (isTablet ? 28 : 20),
+                          vertical: isDesktopOrBoard ? 36 : (isTablet ? 26 : 22),
+                        ),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              const Color(0xFF0F172A).withOpacity(0.96),
+                              const Color(0xFF1E293B).withOpacity(0.96),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(isDesktopOrBoard ? 32 : (isTablet ? 28 : 24)),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.14),
+                            width: 1.2,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // Üst İkon (Geniş ekranda daha belirgin)
+                            Container(
+                              width: isDesktopOrBoard ? 74 : (isTablet ? 58 : 48),
+                              height: isDesktopOrBoard ? 74 : (isTablet ? 58 : 48),
+                              decoration: BoxDecoration(
+                                color: Colors.cyanAccent.withOpacity(0.12),
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.cyanAccent.withOpacity(0.35),
+                                  width: isDesktopOrBoard ? 2.0 : 1.5,
+                                ),
+                              ),
+                              child: Icon(
+                                Icons.explore_off_rounded,
+                                color: Colors.cyanAccent,
+                                size: isDesktopOrBoard ? 38 : (isTablet ? 30 : 24),
+                              ),
+                            ),
+                            SizedBox(height: isDesktopOrBoard ? 22 : (isTablet ? 16 : 12)),
+
+                            // Başlık
+                            Text(
+                              'Rehberi Atlamak İstiyor musunuz?',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.outfit(
+                                fontSize: isDesktopOrBoard ? 25 : (isTablet ? 20 : 17),
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                                letterSpacing: 0.3,
+                              ),
+                            ),
+                            SizedBox(height: isDesktopOrBoard ? 14 : (isTablet ? 10 : 8)),
+
+                            // Açıklama
+                            Text(
+                              'Uygulamayı doğrudan kendi başınıza keşfetmeye başlayabilirsiniz.',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.inter(
+                                fontSize: isDesktopOrBoard ? 16.5 : (isTablet ? 14.5 : 12.5),
+                                color: Colors.white.withOpacity(0.85),
+                                height: 1.5,
+                              ),
+                            ),
+                            SizedBox(height: isDesktopOrBoard ? 24 : (isTablet ? 18 : 14)),
+
+                            // Profil Bilgilendirme Kartı
+                            Container(
+                              padding: EdgeInsets.all(isDesktopOrBoard ? 18 : (isTablet ? 14 : 12)),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF0A192F).withOpacity(0.88),
+                                borderRadius: BorderRadius.circular(isDesktopOrBoard ? 20 : 16),
+                                border: Border.all(
+                                  color: Colors.cyanAccent.withOpacity(0.35),
+                                  width: 1.2,
+                                ),
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: isDesktopOrBoard ? 3 : 2),
+                                    child: Icon(
+                                      Icons.help_outline_rounded,
+                                      color: Colors.cyanAccent,
+                                      size: isDesktopOrBoard ? 26 : (isTablet ? 22 : 18),
+                                    ),
+                                  ),
+                                  SizedBox(width: isDesktopOrBoard ? 14 : (isTablet ? 12 : 10)),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'İstediğiniz Zaman Tekrar İzleyin',
+                                          style: GoogleFonts.outfit(
+                                            color: Colors.cyanAccent,
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: isDesktopOrBoard ? 17.5 : (isTablet ? 14.5 : 13),
+                                          ),
+                                        ),
+                                        SizedBox(height: isDesktopOrBoard ? 6 : 3),
+                                        Text(
+                                          'Profil sekmesinde bulunan "Uygulama Rehberini Baştan İzle" seçeneğiyle bu tanıtımı dilediğiniz an yeniden başlatabilirsiniz.',
+                                          style: GoogleFonts.inter(
+                                            color: Colors.white.withOpacity(0.85),
+                                            fontSize: isDesktopOrBoard ? 15.0 : (isTablet ? 13 : 11.5),
+                                            height: 1.45,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: isDesktopOrBoard ? 28 : (isTablet ? 22 : 18)),
+
+                            // Butonlar
+                            Row(
+                              children: [
+                                // Rehbere Geri Dön (Vazgeç)
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      SfxSynthesizer.playAppleSoftClick();
+                                      setState(() {
+                                        _showSkipDialog = false;
+                                      });
+                                    },
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: isDesktopOrBoard ? 16 : (isTablet ? 13 : 11),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withOpacity(0.08),
+                                        borderRadius: BorderRadius.circular(isDesktopOrBoard ? 18 : 14),
+                                        border: Border.all(
+                                          color: Colors.white.withOpacity(0.2),
+                                          width: 1.0,
+                                        ),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          'Rehbere Dön',
+                                          style: GoogleFonts.outfit(
+                                            color: Colors.white.withOpacity(0.9),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: isDesktopOrBoard ? 17 : (isTablet ? 15 : 13),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: isDesktopOrBoard ? 16 : 12),
+
+                                // Uygulamaya Devam Et (Rehberi Bitir & Sınıflar Menüsüne Geç)
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      SfxSynthesizer.playAppleSoftClick();
+                                      _finishTour();
+                                    },
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: isDesktopOrBoard ? 16 : (isTablet ? 13 : 11),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        gradient: const LinearGradient(
+                                          colors: AppColors.oceanGradient,
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                        ),
+                                        borderRadius: BorderRadius.circular(isDesktopOrBoard ? 18 : 14),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.cyanAccent.withOpacity(0.4),
+                                            blurRadius: isDesktopOrBoard ? 12 : 8,
+                                            offset: const Offset(0, 3),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Center(
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(
+                                              'Uygulamaya Devam Et',
+                                              style: GoogleFonts.outfit(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w800,
+                                                fontSize: isDesktopOrBoard ? 16.5 : (isTablet ? 14 : 12.0),
+                                              ),
+                                            ),
+                                            SizedBox(width: isDesktopOrBoard ? 6 : 4),
+                                            Icon(
+                                              Icons.arrow_forward_rounded,
+                                              color: Colors.white,
+                                              size: isDesktopOrBoard ? 18 : 14,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -1721,6 +2064,7 @@ class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isWide = MediaQuery.of(context).size.width >= 768;
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -1739,14 +2083,17 @@ class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
               : Curves.easeOutBack, // İpeksi ve canlı esneme hissi
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 218),
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            padding: EdgeInsets.symmetric(
+              horizontal: isWide ? 22 : 14, 
+              vertical: isWide ? 11 : 8,
+            ),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: widget.gradient,
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(isWide ? 16 : 14),
               boxShadow: [
                 BoxShadow(
                   color: widget.accentColor.withOpacity(_isHovered ? 0.45 : 0.28),
@@ -1763,14 +2110,14 @@ class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
                   style: GoogleFonts.outfit(
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
-                    fontSize: 13,
+                    fontSize: isWide ? 17 : 13,
                   ),
                 ),
-                const SizedBox(width: 6),
+                SizedBox(width: isWide ? 8 : 6),
                 Icon(
                   widget.isLastStep ? Icons.done_all_rounded : Icons.arrow_forward_rounded,
                   color: Colors.white,
-                  size: 14,
+                  size: isWide ? 18 : 14,
                 ),
               ],
             ),
@@ -1780,3 +2127,72 @@ class _InteractiveTourButtonState extends State<_InteractiveTourButton> {
     );
   }
 }
+
+/// İlk rehber kartında yer alan şık Rehberi Atla butonu
+class _SkipTourButton extends StatefulWidget {
+  final VoidCallback onTap;
+
+  const _SkipTourButton({required this.onTap});
+
+  @override
+  State<_SkipTourButton> createState() => _SkipTourButtonState();
+}
+
+class _SkipTourButtonState extends State<_SkipTourButton> {
+  bool _isPressed = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final bool isDesktopOrBoard = size.width >= 1024;
+    final bool isWide = size.width >= 768;
+
+    return GestureDetector(
+      onTapDown: (_) => setState(() => _isPressed = true),
+      onTapUp: (_) {
+        setState(() => _isPressed = false);
+        widget.onTap();
+      },
+      onTapCancel: () => setState(() => _isPressed = false),
+      child: AnimatedScale(
+        scale: _isPressed ? 0.94 : 1.0,
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.easeOutCubic,
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: isDesktopOrBoard ? 22 : (isWide ? 16 : 11),
+            vertical: isDesktopOrBoard ? 13 : (isWide ? 10 : 8),
+          ),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.08),
+            borderRadius: BorderRadius.circular(isDesktopOrBoard ? 18 : (isWide ? 16 : 14)),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.18),
+              width: 1.0,
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.fast_forward_rounded,
+                size: isDesktopOrBoard ? 19 : (isWide ? 16 : 13),
+                color: Colors.white.withOpacity(0.85),
+              ),
+              SizedBox(width: isDesktopOrBoard ? 8 : (isWide ? 6 : 4)),
+              Text(
+                'Rehberi Atla',
+                style: GoogleFonts.outfit(
+                  color: Colors.white.withOpacity(0.92),
+                  fontWeight: FontWeight.w600,
+                  fontSize: isDesktopOrBoard ? 16.5 : (isWide ? 15 : 12.0),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+

@@ -28,6 +28,7 @@ class CourseListScreen extends ConsumerWidget {
 
     final courses = ref.watch(coursesProvider(grade));
     final isOnboarding = ref.watch(isOnboardingActiveProvider);
+    final isWide = MediaQuery.of(context).size.width >= 768;
 
     return PopScope(
       canPop: !isOnboarding,
@@ -37,17 +38,33 @@ class CourseListScreen extends ConsumerWidget {
           slivers: [
             // ── Dinamik Header ──
             SliverAppBar(
-              expandedHeight: 180,
+              expandedHeight: isWide ? 200 : 180,
               pinned: true,
               stretch: true,
+              leadingWidth: isWide ? 76 : 58,
               leading: isOnboarding
                   ? const SizedBox.shrink()
-                  : Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white.withValues(alpha: 0.2),
+                  : Center(
+                      child: Container(
+                        margin: EdgeInsets.only(left: isWide ? 16 : 8),
+                        width: isWide ? 46 : 40,
+                        height: isWide ? 46 : 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.18),
+                              blurRadius: 10,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
                         child: IconButton(
-                          icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+                          padding: EdgeInsets.zero,
+                          iconSize: isWide ? 26 : 22,
+                          icon: Icon(Icons.arrow_back_rounded, color: gradient.first),
+                          tooltip: 'Geri Dön',
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),
@@ -68,8 +85,8 @@ class CourseListScreen extends ConsumerWidget {
                 child: Stack(
                   children: [
                     Positioned(
-                      right: 12,
-                      bottom: 12,
+                      right: 16,
+                      bottom: 16,
                       child: Container(
                         padding: const EdgeInsets.all(3.5),
                         decoration: BoxDecoration(
@@ -93,13 +110,13 @@ class CourseListScreen extends ConsumerWidget {
                           ],
                         ),
                         child: SizedBox(
-                          width: 80,
-                          height: 80,
+                          width: isWide ? 90 : 80,
+                          height: isWide ? 90 : 80,
                           child: ClipOval(
                             child: Image.asset(
                               'assets/images/app_logo.png',
-                              width: 80,
-                              height: 80,
+                              width: isWide ? 90 : 80,
+                              height: isWide ? 90 : 80,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -107,13 +124,13 @@ class CourseListScreen extends ConsumerWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 24.0),
+                      padding: EdgeInsets.fromLTRB(isWide ? 32.0 : 20.0, 0, 20.0, isWide ? 28.0 : 24.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            padding: EdgeInsets.symmetric(horizontal: isWide ? 14 : 10, vertical: isWide ? 6 : 4),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.25),
                               borderRadius: BorderRadius.circular(20),
@@ -121,8 +138,8 @@ class CourseListScreen extends ConsumerWidget {
                             child: Text(
                               'Ders İçerikleri',
                               style: GoogleFonts.inter(
-                                fontSize: 11,
-                                fontWeight: FontWeight.w600,
+                                fontSize: isWide ? 15 : 12,
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
                             ),
@@ -131,7 +148,7 @@ class CourseListScreen extends ConsumerWidget {
                           Text(
                             '$grade. Sınıf',
                             style: GoogleFonts.outfit(
-                              fontSize: 28,
+                              fontSize: isWide ? 38 : 30,
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
                               height: 1.1,
@@ -140,7 +157,7 @@ class CourseListScreen extends ConsumerWidget {
                           Text(
                             'Alana Ait Meslek Dersleri',
                             style: GoogleFonts.inter(
-                              fontSize: 14,
+                              fontSize: isWide ? 19 : 15,
                               color: Colors.white.withValues(alpha: 0.85),
                             ),
                           ),
@@ -153,14 +170,17 @@ class CourseListScreen extends ConsumerWidget {
             ),
           ),
 
-          // ── Dersler Listesi ──
+          // ── Dersler Listesi (Ekranı tam kullanan, sola dayalı) ──
           SliverPadding(
-            padding: const EdgeInsets.all(AppSizes.screenPadding),
+            padding: EdgeInsets.symmetric(
+              horizontal: isWide ? 36.0 : AppSizes.screenPadding,
+              vertical: isWide ? 26.0 : AppSizes.screenPadding,
+            ),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
                   final course = courses[index];
-                  return _buildCourseCard(context, course, index);
+                  return _buildCourseCard(context, course, index, isWide);
                 },
                 childCount: courses.length,
               ),
@@ -175,24 +195,25 @@ class CourseListScreen extends ConsumerWidget {
   // ══════════════════════════════════════════
   //  DERS KARTI TASARIMI
   // ══════════════════════════════════════════
-  Widget _buildCourseCard(BuildContext context, Course course, int index) {
+  Widget _buildCourseCard(BuildContext context, Course course, int index, bool isWide) {
     return RepaintBoundary(
       child: Container(
+        width: double.infinity,
         key: index == 0 ? ShellKeys.courseCardKey : null,
-        margin: const EdgeInsets.only(bottom: AppSizes.md),
+        margin: EdgeInsets.only(bottom: isWide ? 22.0 : AppSizes.md),
         decoration: BoxDecoration(
           color: Theme.of(context).cardTheme.color ?? Colors.white,
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          borderRadius: BorderRadius.circular(isWide ? 24 : AppSizes.radiusLg),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primarySeed.withValues(alpha: 0.04),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
+              color: AppColors.primarySeed.withValues(alpha: 0.05),
+              blurRadius: 14,
+              offset: const Offset(0, 5),
             ),
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          borderRadius: BorderRadius.circular(isWide ? 24 : AppSizes.radiusLg),
           child: Material(
             color: Colors.transparent,
             child: InkWell(
@@ -209,58 +230,71 @@ class CourseListScreen extends ConsumerWidget {
                 );
               },
               child: Padding(
-              padding: const EdgeInsets.all(AppSizes.md),
-              child: Row(
-                children: [
-                  // Sol: Ders İkon Kutusu
-                  Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: gradient.first.withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(12),
+                padding: EdgeInsets.symmetric(
+                  horizontal: isWide ? 32.0 : AppSizes.md,
+                  vertical: isWide ? 26.0 : AppSizes.md,
+                ),
+                child: Row(
+                  children: [
+                    // Sol: Ders İkon Kutusu
+                    Container(
+                      width: isWide ? 76 : 52,
+                      height: isWide ? 76 : 52,
+                      decoration: BoxDecoration(
+                        color: gradient.first.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(isWide ? 20 : 12),
+                      ),
+                      child: Icon(
+                        course.icon,
+                        color: gradient.first,
+                        size: isWide ? 38 : 26,
+                      ),
                     ),
-                    child: Icon(
-                      course.icon,
-                      color: gradient.first,
-                      size: 24,
-                    ),
-                  ),
-                  const SizedBox(width: 16),
+                    SizedBox(width: isWide ? 24 : 16),
 
-                  // Orta: Ders Başlığı ve Detayı
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          course.title,
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w800,
-                              ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '${course.learningUnits.length} Öğrenme Birimi',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                      ],
+                    // Orta: Ders Başlığı ve Detayı
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            course.title,
+                            style: GoogleFonts.outfit(
+                              fontSize: isWide ? 26 : 17,
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.textPrimary,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            course.learningUnits.isEmpty
+                                ? (course.title == 'Ön Büro Hizmetleri Atölyesi'
+                                    ? 'Ders Bilgilendirmesi'
+                                    : 'İçerik Güncelleniyor')
+                                : '${course.learningUnits.length} Öğrenme Birimi',
+                            style: GoogleFonts.inter(
+                              fontSize: isWide ? 18 : 13.5,
+                              color: AppColors.textSecondary,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
 
-                  // Sağ: İlerleme Oku
-                  const Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 14,
-                    color: AppColors.textHint,
-                  ),
-                ],
+                    // Sağ: İlerleme Oku
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: isWide ? 26 : 16,
+                      color: AppColors.textHint,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

@@ -82,14 +82,14 @@ const Map<String, dynamic> katOfisiIslemleri = {
           "name": "Güvenlik Bilgi Formları (SDS)",
           "desc": "Kullanılan her temizlik kimyasalının üzerinde veya kat ofisinde yer alan, kimyasalın içeriğini, olası tehlikelerini ve acil durumlarda ilk yardım adımlarını gösteren resmi formlardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yanlışlıkla çamaşır suyu yutan bir personelin, SDS formundaki ilk yardım talimatlarına bakılarak kusturulmaması ve derhal bol su içirilip hastaneye sevk edilmesi gerektiğinin bilinmesidir."
+            "Örnekle Pekiştirelim: Yanlışlıkla çamaşır suyu yutan bir personele, SDS formundaki ilk yardım talimatlarına bakılarak tıbbi müdahale yapılmıştır."
           ]
         },
         {
           "name": "Kişisel Koruyucu Donanım (KKD)",
           "desc": "Kimyasal kullanırken eldiven ve maske takılması, ıslak zeminlerde kaymaz tabanlı iş ayakkabısı giyilmesi, ağır yatak kaldırırken bel destek kemeri kullanılması gibi iş sağlığı ve güvenliği kurallarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Banyoyu asitli banyo temizleyiciyle silerken mutlaka kimyasala dayanıklı kalın eldiven ve koruyucu gözlük takılarak cildin ve gözlerin zarar görmesinin engellenmesidir."
+            "Örnekle Pekiştirelim: Banyoyu asitli banyo temizleyiciyle silerken mutlaka kimyasala dayanıklı kalın eldiven ve koruyucu gözlük takılarak cildin ve gözlerin zarar görmesin engellenmiştir."
           ]
         }
       ],
@@ -128,7 +128,7 @@ const Map<String, dynamic> odaTemizlikIslemleri = {
           "name": "Oda İlk Giriş Kontrolü",
           "desc": "Odaya girildikten sonra hemen temizliğe başlanmaz. Perdeler açılarak gün ışığı içeri alınır, pencere açılarak oda havalandırılır. Odada misafirin unuttuğu değerli bir eşya, kırılmış bir mobilya veya çalışmayan bir lamba olup olmadığı kontrol edilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Görevlinin odaya girer girmez TV'nin ekranının çatlak olduğunu fark edip, temizliğe başlamadan önce cep telefonuyla fotoğrafını çekip kat şefine hasar raporu göndermesidir."
+            "Örnekle Pekiştirelim: Görevli odaya girer girmez TV'nin ekranın çatlak olduğunu fark edip, temizliğe başlamadan önce cep telefonuyla fotoğrafını çekip kat şefine hasar raporu göndermiştir."
           ]
         }
       ],
@@ -170,7 +170,7 @@ const Map<String, dynamic> odaTemizlikIslemleri = {
       "id": 3,
       "tag": "ODA DÜZENİ",
       "title": "ODA DÜZENLEME VE SON KONTROL",
-      "microSummary": "Temizliğin son aşaması, bukletlerin yerleştirilmesi, eşyaların düzenlenmesi ve self-check kontrol listesinin uygulanmasıdır.",
+      "microSummary": "Temizliğin son aşaması, bukletlerin yerleştirilmesi, eşyaların düzenlenmesi ve self-check kontrol listesinin uygulanması anlamına gelir.",
       "definitions": [
         {
           "name": "Misafir Eşyalarının Korunması",
@@ -181,16 +181,16 @@ const Map<String, dynamic> odaTemizlikIslemleri = {
         },
         {
           "name": "Buklet Malzemeleri Düzeni",
-          "desc": "Minibar, çay-kahve ikram tepsisi, dikiş seti, ayakkabı çekeceği, şampuan, duş jeli gibi otelin misafire ücretsiz sunduğu tüm ikram ve sarf malzemelerinin eksiksiz olarak standart yerlerine dizilmesidir.",
+          "desc": "Minibar, çay-kahve ikram tepsisi, dikiş seti, ayakkabı çekeceği, şampuan, duş jeli gibi otelin misafire ücretsiz sunduğu tüm ikram ve sarf malzemelerinin eksiksiz olarak standart yerlerine dizilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Boşalan su şişelerinin yerine yenilerinin konması, eksilen çay poşetlerinin tamamlanması ve buklet tepsisinin jilet gibi hizalanmasıdır."
+            "Örnekle Pekiştirelim: Boşalan su şişelerinin yerine yenileri konulmuş, eksilen çay poşetleri ve buklet malzemeleri eksiksiz tamamlanmıştır."
           ]
         },
         {
           "name": "Self-Check (Öz Kontrol) Listesi",
           "desc": "Görevlinin odadan çıkmadan önce durup odaya alıcı gözle son bir kez bakmasıdır. 'Lamba yanıyor mu?', 'Perde düzgün duruyor mu?', 'Kötü koku var mı?', 'Saç kılı kalmış mı?' gibi kritik detaylar gözle taranır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapıdan çıkmadan önce görevlinin arkasını dönüp yatağın düzgünlüğünü, banyonun ışığını ve televizyon kumandasının masanın üstündeki yerini kontrol etmesidir."
+            "Örnekle Pekiştirelim: Kapıdan çıkmadan önce görevli arkasını dönüp yatağın düzgünlüğünü, banyonun ışığını ve televizyon kumandasının masan üstündeki yerini kontrol etmiştir."
           ]
         }
       ],
@@ -215,14 +215,14 @@ const Map<String, dynamic> yatakHazirlamaIslemleri = {
           "name": "Yatak Hijyeninin Önemi",
           "desc": "Misafirler otelde en çok yatakla doğrudan temas ederler. Yatağın mayt (akar), bakteri, leke ve saç kıllarından tamamen arındırılmış olması gerekir. Her çarşaf değişiminde yatak yüzeyi gözle kontrol edilmelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Çarşaflar söküldükten sonra yatak şiltesinin üzerinde sarı bir leke gören görevlinin, şiltenin yıkanması veya değiştirilmesi için kat şefine bilgi vermesidir."
+            "Örnekle Pekiştirelim: Çarşaflar söküldükten sonra yatak şiltesinin üzerinde leke gören görevli, koruyucu alezi değiştirerek şilteyi temizlemiştir."
           ]
         },
         {
           "name": "Koruyucu Alez Kontrolü",
           "desc": "Alez, yatağı terden, sıvılardan ve kirlenmeden koruyan fermuarlı veya lastikli kumaş kaplamadır. Her temizlikte alezin temiz, yırtıksız ve lekesiz olduğu kontrol edilmelidir. Lekeli alezler derhal yenisiyle değiştirilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Misafir check-out yaptıktan sonra alezde kahve lekesi gören görevlinin, temiz çarşafı sermeden önce alezi söküp kirli torbasına atması ve yeni, temiz bir alez takmasıdır."
+            "Örnekle Pekiştirelim: Misafir check-out yaptıktan sonra alezde leke gören görevli, temiz çarşafı sermeden önce alezi yıkanmak üzere leke masasına göndermiştir."
           ]
         },
         {
@@ -260,11 +260,11 @@ const Map<String, dynamic> yatakHazirlamaIslemleri = {
           "name": "Nevresim ve Yastık Kılıfı Takılması",
           "desc": "Nevresim jilet gibi düzgün geçirilmelidir; yorgan nevresimin içinde topaklanmamalı, köşeleri tam oturmalıdır. Yastık kılıfının açık kısmı daima yatağın dışına (duvara veya koridora) değil, yatağın iç kısmına bakacak şekilde yerleştirilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yastıkların kılıfa geçirildikten sonra elle hafifçe vurularak kabartılması ve yatak başlığına tam dik veya 45 derece açıyla estetik şekilde dizilmesidir."
+            "Örnekle Pekiştirelim: Yastıklar kılıfa geçirildikten sonra elle hafifçe vurularak kabartılmış ve yatak başlığına dik şekilde estetikçe dizilmiştir."
           ]
         }
       ],
-      "caseStudy": "Sektörden Vaka: İzmir'de bir iş otelinde yapılan gizli müşteri denetiminde, yatak çarşaflarının zarf köşesi yapılmadan alelade sıkıştırıldığı saptandı. Gece uyurken çarşafı sıyrılan misafir, doğrudan alez ve yatak şiltesiyle temas ettiği için hijyen puanını en düşük seviyede verdi. Otel yönetimi, tüm kat hizmetleri ekibine zarf köşesi tekniği için pratik sınav uygulamaya başladı.",
+      "caseStudy": "Sektörden Vaka: İzmir'de bir iş otelinde yapılan gizli misafir (mystery guest) denetiminde, yatak çarşaflarının zarf köşesi yapılmadan alelade sıkıştırıldığı saptandı. Gece uyurken çarşafı sıyrılan misafir, doğrudan alez ve yatak şiltesiyle temas ettiği için hijyen puanını en düşük seviyede verdi. Otel yönetimi, tüm kat hizmetleri ekibine zarf köşesi tekniği için pratik sınav uygulamaya başladı.",
       "tip": "Nevresimi yorgana geçirirken, yorganın dört köşesindeki bağcıkları nevresimin içindeki halkalara bağlayın. Bu sayede yorgan nevresim içinde asla kaymaz ve toplanmaz."
     },
     {
@@ -284,14 +284,14 @@ const Map<String, dynamic> yatakHazirlamaIslemleri = {
           "name": "Havlu Katlama Sanatı (Origami)",
           "desc": "Temiz havluların yaratıcı şekillerde katlanarak yatak üzerinde kuğu, fil, kalp veya çiçek figürleri oluşturulmasıdır. Genellikle balayı çiftleri, VIP misafirler ve çocuklu aileler için yapılır.",
           "examples": [
-            "Örnekle Pekiştirelim: İki büyük banyo havlusunun rulo yapılıp kıvrılarak yatak ortasında gagaları birleşen iki aşık kuğu haline getirilmesi ve etrafına kırmızı gül yapraklarının serpilmesidir."
+            "Örnekle Pekiştirelim: İki büyük banyo havlusunun rulo yapılıp kıvrılarak yatak ortasında gagaları birleşen iki aşık kuğu haline getirilmesi ve etrafına kırmızı gül yaprakların serpilmiştir."
           ]
         },
         {
           "name": "Ekstra Yatak (Extra Bed / Rollaway) Açılması",
           "desc": "Odaya ek bir misafir geleceğinde kullanılan, katlanabilir tekerlekli yatakların odaya getirilip kurulması ve aynı standartlarda çarşaf ve yastıkla hazırlanması sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Aile odasına çocuk için getirilen katlanır yatağın, ana yatakların düzenini ve odadaki hareket alanını bozmayacak şekilde uygun bir köşeye yerleştirilip jilet gibi hazırlanmasıdır."
+            "Örnekle Pekiştirelim: Aile odasına çocuk için getirilen katlanır yatağın, ana yatakların düzenini ve odadaki hareket alanını bozmayacak şekilde uygun bir köşeye yerleştirilip hazırlanmıştır."
           ]
         }
       ],
@@ -323,7 +323,7 @@ const Map<String, dynamic> banyoTemizlikIslemleri = {
           "name": "Klozet Temizliği",
           "desc": "Klozet içi ve dışı tamamen dezenfekte edilmelidir. Klozet içine çamaşır suyu veya özel klozet temizleyici dökülüp fırçayla ovulur. Dış yüzeyler (kapak, sifon düğmesi, oturak) kırmızı bez ve dezenfektan sprey ile yukarıdan aşağıya doğru silinir.",
           "examples": [
-            "Örnekle Pekiştirelim: Klozetin sifon düğmesinin misafirlerin en çok dokunduğu yerlerden biri olması nedeniyle, buranın dezenfektanla ıslatılmış kırmızı bezle ovularak silinmesidir."
+            "Örnekle Pekiştirelim: Klozet sifon düğmesi misafirlerin en çok dokunduğu alanlardan biri olduğu için titizlikle dezenfekte edilmiştir."
           ]
         },
         {
@@ -347,7 +347,7 @@ const Map<String, dynamic> banyoTemizlikIslemleri = {
           "name": "Havlu Asma ve Katlama Standartları",
           "desc": "Banyoda banyo havlusu (büyük), el havlusu (orta), ayak havlusu (paspas) ve yüz havlusu (küçük) bulunur. Havluların kat yerleri aynı yöne bakmalı, kenarlarında sökük veya leke olmamalı ve havlu askısına simetrik asılmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: El havlusunun üç eşit parçaya katlanıp askıya asılması ve üzerine otelin logosunun tam ortalanmış şekilde görünmesinin sağlanmasıdır."
+            "Örnekle Pekiştirelim: El havlusu üç eşit parçaya katlanıp askıya asılmış ve otel logosu tam ortalanacak şekilde düzenlenmiştir."
           ]
         },
         {
@@ -361,7 +361,7 @@ const Map<String, dynamic> banyoTemizlikIslemleri = {
           "name": "Banyo Ayak Havlusu Yerleşimi",
           "desc": "Ayak havlusu, misafirin duştan çıktığında ıslak zemine basıp kaymasını önlemek için duşakabin veya küvetin hemen önüne, düzgünce katlanarak veya serilerek yerleştirilmelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ayak havlusunun üzerine otel logosu basılmışsa, logonun duştan çıkan misafirin düz okuyacağı açıyla tam duş kapısının önüne serilmesidir."
+            "Örnekle Pekiştirelim: Ayak havlusunun üzerine otel logosu basılmışsa, logonun duştan çıkan misafirin düz okuyacağı açıyla tam duş kapısın önüne serilmiştir."
           ]
         }
       ],
@@ -392,7 +392,7 @@ const Map<String, dynamic> banyoTemizlikIslemleri = {
           "name": "Banyo Çöp Kovası ve Havalandırma Kontrolü",
           "desc": "Banyo çöp kovasının poşeti yenilenmeli, içi kurulanmalıdır. Banyodaki nemin giderilmesi için aspiratörün (havalandırma fanı) çalıştığı kontrol edilmeli ve banyo kapısı hafif aralık bırakılarak hava sirkülasyonu sağlanmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Çöp kovasının dibine dökülmüş olabilecek sıvıların yıkanıp kurulanması, banyoda oluşabilecek kötü kokuların kaynağında engellenmesidir."
+            "Örnekle Pekiştirelim: Çöp kovasının dibine dökülmüş olabilecek sıvıların yıkanıp kurulanması, banyoda oluşabilecek kötü kokular kaynağında engellenmiştir."
           ]
         }
       ],
@@ -417,21 +417,21 @@ const Map<String, dynamic> genelAlanTemizligi = {
           "name": "Lobi Temizlik Protokolü",
           "desc": "Lobi zeminleri gün boyu sürekli paspaslanmalı ve süpürülmelidir. Resepsiyon bankosu, lobi sehpaları ve koltuk kolları gibi sık dokunulan yüzeyler periyodik olarak dezenfekte edilmelidir. Girişteki döner kapı camları parmak izlerinden arındırılmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yağmurlu bir günde lobiye giren misafirlerin ayakkabılarından süzülen çamurlu suların, görevli tarafından anında ıslak zemin tabelası konularak paspaslanmasıdır."
+            "Örnekle Pekiştirelim: Yağmurlu bir günde lobiye giren misafirlerin ayakkabılarından süzülen çamurlu sular görevli tarafından anında ıslak zemin tabelası konularak paspaslanmıştır."
           ]
         },
         {
           "name": "Asansör Temizliği",
           "desc": "Asansör içi aynalar cam temizleyiciyle silinir. Paslanmaz çelik olan asansör kapıları ve duvarları özel çelik parlatıcı kimyasalla parlatılır. Asansör zeminindeki halı veya taş zemin her saat başı kontrol edilip temizlenir.",
           "examples": [
-            "Örnekle Pekiştirelim: Asansör düğmelerinin üzerindeki parmak izlerinin ve bakterilerin, saat başı dezenfektanlı bezle silinerek hijyenik tutulmasıdır."
+            "Örnekle Pekiştirelim: Asansör düğmelerinin üzerindeki parmak izlerinin ve bakteriler saat başı dezenfektanlı bezle silinerek hijyenik tutulmuştur."
           ]
         },
         {
           "name": "Genel Alan Atık Kutuları Kontrolü",
           "desc": "Otelin dış girişindeki atık kutuları ve iç mekanlardaki çöp kutuları asla dolup taşmamalıdır. Atık kutuları yarıya gelmeden boşaltılmalı ve temizlenmelidir. Çöp kutularının poşetleri düzenli değiştirilmelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel girişindeki büyük ayaklı atık kutusunun içindeki çöplerin görevli tarafından temizlenmesi, kutunun dış yüzeyinin silinerek hijyenik ve lekesiz tutulmasıdır."
+            "Örnekle Pekiştirelim: Otel girişindeki büyük ayaklı atık kutusunun içindeki çöplerin görevli tarafından temizlenmesi, kutunun dış yüzeyin silinerek hijyenik ve lekesiz tutulmuştur."
           ]
         }
       ],
@@ -448,21 +448,21 @@ const Map<String, dynamic> genelAlanTemizligi = {
           "name": "Yiyecek İçecek Alanları Temizliği",
           "desc": "Servis saatleri dışında restoran masaları ve sandalye kolları dezenfektanla silinir. Zeminler kırıntılardan süpürülür ve paspaslanır. Açık büfe tezgahları ve cam korumalıkları lekesiz şekilde temizlenir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sabah kahvaltısı bittikten sonra saat 11:00'de kahvaltı salonuna giren genel temizlik ekibinin, tüm büfe tezgahlarını buharlı temizlik makinesiyle derinlemesine dezenfekte etmesidir."
+            "Örnekle Pekiştirelim: Sabah kahvaltısı bittikten sonra saat 11:00'de kahvaltı salonuna giren genel temizlik ekibin tüm büfe tezgahlarını buharlı temizlik makinesiyle derinlemesine dezenfekte etmiştir."
           ]
         },
         {
           "name": "Toplantı Salonu Temizliği",
           "desc": "Toplantı aralarında salonlar hızla havalandırılır, masalardaki boş su şişeleri ve kağıt çöpleri toplanır. Sandalyeler simetrik olarak hizalanır. Yazı tahtaları temizlenir ve sunum ekipmanlarının tozu alınır.",
           "examples": [
-            "Örnekle Pekiştirelim: 500 kişilik bir tıp kongresinin öğle arasında, 10 kişilik kat hizmetleri ekibinin salona girerek 15 dakikada tüm salonu sıfır gibi temiz ve düzenli hale getirmesidir."
+            "Örnekle Pekiştirelim: 500 kişilik bir tıp kongresinin öğle arasında, 10 kişilik kat hizmetleri ekibin salona girerek 15 dakikada tüm salonu sıfır gibi temiz ve düzenli hale getirmiştir."
           ]
         },
         {
           "name": "Genel Tuvaletlerin Periyodik Takibi",
           "desc": "Lobi ve restoran yakınındaki genel tuvaletler çok sık kullanılır. Bu alanlarda her 30 dakikada bir kontrol yapılmalı; sabun, kağıt havlu ve tuvalet kağıdı tamamlanmalı, lavabolar ve klozetler silinmelidir. Kontrol kartı mutlaka imzalanmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Tuvalet kapısının arkasındaki 'Temizlik Takip Çizelgesi'ne görevlinin saat 14:30'da yaptığı kontrolü yazıp kendi paraflarını atmasıdır."
+            "Örnekle Pekiştirelim: Tuvalet kapısının arkasındaki 'Temizlik Takip Çizelgesi'ne görevli saat 14:30'da yaptığı kontrolü yazıp kendi paraflarını atmıştır."
           ]
         }
       ],
@@ -479,21 +479,21 @@ const Map<String, dynamic> genelAlanTemizligi = {
           "name": "Mermer Zemin Cila İşlemleri",
           "desc": "Mermer zeminlerin zamanla matlaşmasını önlemek için cila makinesi (düşük devirli) ve özel kristal cila kimyasalı kullanılarak yapılan işlemdir. Mermerin yüzeyinde sert ve parlak koruyucu bir tabaka oluşturur.",
           "examples": [
-            "Örnekle Pekiştirelim: Gece saat 02:00'de lobi trafiği en düşük seviyedeyken, cila ekibinin mermer zeminleri parlatarak ertesi sabah gelen misafirleri ayna gibi parlayan bir lobiyle karşılamasıdır."
+            "Örnekle Pekiştirelim: Gece saat 02:00'de lobi trafiği en düşük seviyedeyken, cila ekibin mermer zeminleri parlatarak ertesi sabah gelen misafirleri ayna gibi parlayan bir lobiyle karşılamıştır."
           ]
         },
         {
           "name": "Halı Yıkama ve Vakumlama İşlemleri",
           "desc": "Ortak alanlardaki halıların içine nüfuz eden toz ve kirlerin, yüksek vakumlu halı yıkama makineleri ve bitkisel halı şampuanları kullanılarak periyodik olarak (3 veya 6 ayda bir) yıkanması işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Koridor halılarındaki kahve ve çamur lekelerinin, halı yıkama makinesinin püskürttüğü sıcak deterjanlı suyun vakumlanarak halı liflerinin derinlemesine temizlenmesidir."
+            "Örnekle Pekiştirelim: Koridor halılarındaki kahve ve çamur lekelerinin, halı yıkama makinesinin püskürttüğü sıcak deterjanlı suyun vakumlanarak halı liflerin derinlemesine temizlenmiştir."
           ]
         },
         {
           "name": "Periyodik Temizlik Planları (PTP)",
-          "desc": "Günlük temizliğin dışında kalan haftalık, aylık ve yıllık derin temizlik işlerinin (cam cephe temizliği, avizelerin indirilip silinmesi vb.) belirli bir takvime göre planlanması ve izlenmesidir.",
+          "desc": "Günlük temizliğin dışında kalan haftalık, aylık ve yıllık derin temizlik işlerinin (cam cephe temizliği, avizelerin indirilip silinmesi vb.) belirli bir takvime göre planlanması ve izlenmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel dış cephe camlarının temizliğinin, yılda iki kez profesyonel dağcı temizlik ekibi kiralanarak periyodik plana uygun şekilde yapılmasıdır."
+            "Örnekle Pekiştirelim: Otel dış cephe camlarının temizliğinin, yılda iki kez profesyonel dağcı temizlik ekibi kiralanarak periyodik plana uygun şekilde yapılmıştır."
           ]
         }
       ],

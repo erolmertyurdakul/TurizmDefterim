@@ -24,6 +24,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
   final AudioPlayer _bgmPlayer = AudioPlayer();
   final AudioPlayer _sfxPlayer = AudioPlayer();
   bool _isBgmPlaying = false;
+  bool _isDisposed = false;
 
   // Combo alev animasyonu — artık _FlameParticles widget'ı kendi yönetiyor
 
@@ -43,9 +44,14 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
 
   @override
   void dispose() {
+    _isDisposed = true;
     _pulseController.dispose();
-    _bgmPlayer.dispose();
-    _sfxPlayer.dispose();
+    try {
+      _bgmPlayer.stop();
+      _bgmPlayer.dispose();
+      _sfxPlayer.stop();
+      _sfxPlayer.dispose();
+    } catch (_) {}
     super.dispose();
   }
 
@@ -57,12 +63,15 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
   bool get _isMuted => !ref.read(soundSettingsProvider);
 
   Future<void> _startBGMMusic() async {
-    if (_isBgmPlaying) return;
+    if (_isBgmPlaying || _isDisposed) return;
     _isBgmPlaying = true;
     try {
       await _bgmPlayer.stop();
+      if (_isDisposed) return;
       await _bgmPlayer.setReleaseMode(ReleaseMode.loop);
+      if (_isDisposed) return;
       await _bgmPlayer.play(UrlSource('https://freepd.com/music/Mega%20Hyper%20Drive.mp3'));
+      if (_isDisposed) return;
       await _bgmPlayer.setVolume(_isMuted ? 0.0 : 0.22);
     } catch (e) {
       debugPrint("Error starting BGM: $e");
@@ -135,6 +144,10 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
       }
       if (previous != null && previous.isPlaying && !next.isPlaying) {
         ref.read(badgeProgressProvider.notifier).incrementBlitzQuizCompleted();
+        final solvedCount = next.correctCount + next.wrongCount;
+        if (solvedCount > 0) {
+          ref.read(badgeProgressProvider.notifier).incrementQuestionsSolved(count: solvedCount);
+        }
       }
     });
 
@@ -159,18 +172,26 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
       _pulseController.value = 1.0;
     }
 
+    final isWide = MediaQuery.of(context).size.width >= 768;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0C091C), 
       appBar: AppBar(
         title: Text(
           'Blitz Test ⚡',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: Colors.white),
+          style: GoogleFonts.outfit(
+            fontSize: isWide ? 26 : 22,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.close_rounded, color: Colors.white),
+          icon: Icon(Icons.close_rounded, color: Colors.white, size: isWide ? 34 : 24),
+          tooltip: 'Kapat',
+          splashRadius: isWide ? 28 : 22,
           onPressed: () {
             notifier.endGame();
             Navigator.pop(context);
@@ -182,8 +203,8 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
             child: GestureDetector(
               onTap: () => ref.read(soundSettingsProvider.notifier).toggleMute(),
               child: Container(
-                width: 38,
-                height: 38,
+                width: isWide ? 42 : 38,
+                height: isWide ? 42 : 38,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white.withValues(alpha: 0.08),
@@ -195,7 +216,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                     child: Icon(
                       isSoundOn ? Icons.volume_up_rounded : Icons.volume_off_rounded,
                       color: isSoundOn ? const Color(0xFF00FFCC) : Colors.white38,
-                      size: 20,
+                      size: isWide ? 22 : 20,
                     ),
                   ),
                 ),
@@ -218,7 +239,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                               ? const Color(0xFFFF9F43) // Turuncu uyarı
                               : const Color(0xFF00FFCC), // Canlı camgöbeği (güvenli)
                     ),
-                    minHeight: 4,
+                    minHeight: isWide ? 6 : 4,
                   ),
                 ),
               )
@@ -275,10 +296,10 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
             ),
             SafeArea(
               child: state.isPlaying
-                  ? _buildGamePlay(state, notifier)
+                  ? _buildGamePlay(state, notifier, isWide)
                   : state.isGameOver
-                      ? _buildGameOver(state, notifier)
-                      : _buildIntro(state, notifier),
+                      ? _buildGameOver(state, notifier, isWide)
+                      : _buildIntro(state, notifier, isWide),
             ),
             // Yüksek Kombo Alev Parçacık Animasyonları (bağımsız widget — tüm ekranı yeniden çizmez)
             if (state.isPlaying && state.comboCount >= 3)
@@ -290,115 +311,120 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
   }
 
   // ── Giriş Ekranı (Intro Screen) ──
-  Widget _buildIntro(BlitzQuizGameState state, BlitzQuizGameNotifier notifier) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Spacer(),
-          Container(
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: const LinearGradient(
-                colors: [Color(0xFFFF5252), Color(0xFFFF7A00)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFFFF5252).withValues(alpha: 0.4),
-                  blurRadius: 30,
-                  offset: const Offset(0, 10),
+  Widget _buildIntro(BlitzQuizGameState state, BlitzQuizGameNotifier notifier, bool isWide) {
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 720),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: isWide ? 32 : AppSizes.screenPadding),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Spacer(),
+              Container(
+                padding: EdgeInsets.all(isWide ? 28 : 24),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFFF5252), Color(0xFFFF7A00)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFFFF5252).withValues(alpha: 0.4),
+                      blurRadius: 30,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: const Icon(Icons.flash_on_rounded, size: 80, color: Colors.white),
-          ),
-          const SizedBox(height: 32),
-          Text(
-            'Blitz Test',
-            style: GoogleFonts.outfit(
-              fontSize: 36,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-            ),
-          ),
-          const SizedBox(height: 12),
-          Text(
-            'Zamana karşı yarış! 4 sınıfın tüm konularından karışık sorular karşına çıkacak. 60 saniyede ne kadar çok soru çözebilirsin?',
-            textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
-              fontSize: 15,
-              color: Colors.white70,
-              height: 1.5,
-            ),
-          ),
-          const SizedBox(height: 32),
-          // Kurallar Kutusu
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
-            ),
-            child: Column(
-              children: [
-                _buildRuleRow('⏱️', 'Süre sınırı 60 saniyedir.'),
-                const SizedBox(height: 12),
-                _buildRuleRow('🔥', 'Doğru cevap serileri (Kombo) puan çarpanını artırır ve alev efekti açar!'),
-                const SizedBox(height: 12),
-                _buildRuleRow('🎁', 'Her 5 doğru komboda +3 saniye bonus süre kazanırsın.'),
-                const SizedBox(height: 12),
-                _buildRuleRow('⏩', 'Zorlandığında "Pas Geç" jokerini kullanabilirsin.'),
-                const SizedBox(height: 12),
-                _buildRuleRow('❌', 'Her yanlış cevap -5 puan götürür.'),
-              ],
-            ),
-          ),
-          const Spacer(flex: 2),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () => _startGameWithSound(notifier),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFF5252),
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 18),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                elevation: 5,
-                shadowColor: const Color(0xFFFF5252).withValues(alpha: 0.5),
+                child: Icon(Icons.flash_on_rounded, size: isWide ? 90 : 80, color: Colors.white),
               ),
-              child: Text(
-                'BAŞLA 🚀',
+              SizedBox(height: isWide ? 36 : 32),
+              Text(
+                'Blitz Test',
+                style: GoogleFonts.outfit(
+                  fontSize: isWide ? 46 : 38,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: isWide ? 16 : 12),
+              Text(
+                'Zamana karşı yarış! 4 sınıfın tüm konularından karışık sorular karşına çıkacak. 60 saniyede ne kadar çok soru çözebilirsin?',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1,
+                  fontSize: isWide ? 21 : 17,
+                  color: Colors.white70,
+                  height: 1.55,
                 ),
               ),
-            ),
+              SizedBox(height: isWide ? 36 : 32),
+              // Kurallar Kutusu
+              Container(
+                padding: EdgeInsets.all(isWide ? 26 : 20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+                ),
+                child: Column(
+                  children: [
+                    _buildRuleRow('⏱️', 'Süre sınırı 60 saniyedir.', isWide),
+                    SizedBox(height: isWide ? 16 : 12),
+                    _buildRuleRow('🔥', 'Doğru cevap serileri (Kombo) puan çarpanını artırır ve alev efekti açar!', isWide),
+                    SizedBox(height: isWide ? 16 : 12),
+                    _buildRuleRow('🎁', 'Her 5 doğru komboda +3 saniye bonus süre kazanırsın.', isWide),
+                    SizedBox(height: isWide ? 16 : 12),
+                    _buildRuleRow('⏩', 'Zorlandığında "Pas Geç" jokerini kullanabilirsin.', isWide),
+                    SizedBox(height: isWide ? 16 : 12),
+                    _buildRuleRow('❌', 'Her yanlış cevap -5 puan götürür.', isWide),
+                  ],
+                ),
+              ),
+              const Spacer(flex: 2),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () => _startGameWithSound(notifier),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFFF5252),
+                    foregroundColor: Colors.white,
+                    padding: EdgeInsets.symmetric(vertical: isWide ? 22 : 18),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                    elevation: 5,
+                    shadowColor: const Color(0xFFFF5252).withValues(alpha: 0.5),
+                  ),
+                  child: Text(
+                    'BAŞLA 🚀',
+                    style: GoogleFonts.inter(
+                      fontSize: isWide ? 24 : 20,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 24),
+            ],
           ),
-          const SizedBox(height: 24),
-        ],
+        ),
       ),
     );
   }
 
-  Widget _buildRuleRow(String emoji, String text) {
+  Widget _buildRuleRow(String emoji, String text, bool isWide) {
     return Row(
       children: [
-        Text(emoji, style: const TextStyle(fontSize: 20)),
-        const SizedBox(width: 14),
+        Text(emoji, style: TextStyle(fontSize: isWide ? 28 : 24)),
+        SizedBox(width: isWide ? 16 : 14),
         Expanded(
           child: Text(
             text,
             style: GoogleFonts.inter(
-              fontSize: 13,
+              fontSize: isWide ? 19 : 15.5,
               fontWeight: FontWeight.w600,
-              color: Colors.white.withOpacity(0.90),
+              color: Colors.white.withOpacity(0.95),
             ),
           ),
         ),
@@ -407,7 +433,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
   }
 
   // ── Oyun Oynanış Ekranı (Gameplay Screen) ──
-  Widget _buildGamePlay(BlitzQuizGameState state, BlitzQuizGameNotifier notifier) {
+  Widget _buildGamePlay(BlitzQuizGameState state, BlitzQuizGameNotifier notifier, bool isWide) {
     if (state.questions.isEmpty) {
       return const Center(child: CircularProgressIndicator(color: Color(0xFFFF5252)));
     }
@@ -415,243 +441,274 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     final question = state.questions[state.currentIndex];
     final isTimeLow = state.timeLeft <= 10;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
-      child: Column(
-        children: [
-          const SizedBox(height: 16),
-          // Timer, Score & Combo HUD
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 860),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: isWide ? 24 : AppSizes.screenPadding),
+          child: Column(
             children: [
-              // Skor
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              SizedBox(height: isWide ? 20 : 16),
+              // Timer, Score & Combo HUD
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'SKOR',
-                    style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white54),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    '${state.score}',
-                    style: GoogleFonts.outfit(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFFFFD000),
-                    ),
-                  ),
-                ],
-              ),
-              // Sayaç
-              ScaleTransition(
-                scale: _pulseController,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: isTimeLow
-                        ? Colors.red.withValues(alpha: 0.2)
-                        : Colors.white.withValues(alpha: 0.05),
-                    borderRadius: BorderRadius.circular(24),
-                    border: Border.all(
-                      color: isTimeLow ? Colors.redAccent : Colors.white24,
-                      width: 2,
-                    ),
-                    boxShadow: isTimeLow
-                        ? [
-                            BoxShadow(
-                              color: Colors.redAccent.withValues(alpha: 0.3),
-                              blurRadius: 12,
-                              spreadRadius: 2,
-                            )
-                          ]
-                        : null,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
+                  // Skor
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.timer_rounded,
-                        color: isTimeLow ? Colors.redAccent : Colors.white70,
-                        size: 20,
-                      ),
-                      const SizedBox(width: 8),
                       Text(
-                        '${state.timeLeft}s',
+                        'SKOR',
+                        style: GoogleFonts.inter(
+                          fontSize: isWide ? 15 : 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white54,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        '${state.score}',
                         style: GoogleFonts.outfit(
-                          fontSize: 22,
+                          fontSize: isWide ? 40 : 30,
                           fontWeight: FontWeight.w900,
-                          color: isTimeLow ? Colors.redAccent : Colors.white,
+                          color: const Color(0xFFFFD000),
                         ),
                       ),
                     ],
                   ),
-                ),
-              ),
-              // Combo / Seri Göstergesi
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    'SERİ',
-                    style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.white54),
-                  ),
-                  const SizedBox(height: 2),
-                  _buildFlameComboHUD(state.comboCount),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-
-          // Soru Kartı
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF261D4C), Color(0xFF161033)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.purpleAccent.withValues(alpha: 0.2), width: 1.5),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.purpleAccent.withValues(alpha: 0.1),
-                  blurRadius: 20,
-                  offset: const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Ders Kategorisi Etiketi
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.purpleAccent.withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(8),
+                  // Sayaç
+                  ScaleTransition(
+                    scale: _pulseController,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: isWide ? 26 : 20,
+                        vertical: isWide ? 12 : 10,
                       ),
-                      child: Text(
-                        _getCourseDisplayName(question.courseId),
+                      decoration: BoxDecoration(
+                        color: isTimeLow
+                            ? Colors.red.withValues(alpha: 0.2)
+                            : Colors.white.withValues(alpha: 0.05),
+                        borderRadius: BorderRadius.circular(24),
+                        border: Border.all(
+                          color: isTimeLow ? Colors.redAccent : Colors.white24,
+                          width: 2,
+                        ),
+                        boxShadow: isTimeLow
+                            ? [
+                                BoxShadow(
+                                  color: Colors.redAccent.withValues(alpha: 0.3),
+                                  blurRadius: 12,
+                                  spreadRadius: 2,
+                                )
+                              ]
+                            : null,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.timer_rounded,
+                            color: isTimeLow ? Colors.redAccent : Colors.white70,
+                            size: isWide ? 30 : 24,
+                          ),
+                          SizedBox(width: isWide ? 10 : 8),
+                          Text(
+                            '${state.timeLeft}s',
+                            style: GoogleFonts.outfit(
+                              fontSize: isWide ? 32 : 25,
+                              fontWeight: FontWeight.w900,
+                              color: isTimeLow ? Colors.redAccent : Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // Combo / Seri Göstergesi
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'SERİ',
                         style: GoogleFonts.inter(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.purpleAccent.shade100,
+                          fontSize: isWide ? 15 : 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white54,
                           letterSpacing: 0.5,
                         ),
                       ),
-                    ),
-                    Text(
-                      'Soru ${state.currentIndex + 1}',
-                      style: GoogleFonts.inter(fontSize: 12, color: Colors.white38, fontWeight: FontWeight.bold),
+                      const SizedBox(height: 2),
+                      _buildFlameComboHUD(state.comboCount, isWide: isWide),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: isWide ? 24 : 20),
+
+              // Soru Kartı
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(
+                  horizontal: isWide ? 28 : 20,
+                  vertical: isWide ? 24 : 18,
+                ),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF261D4C), Color(0xFF161033)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(isWide ? 22 : 20),
+                  border: Border.all(color: Colors.purpleAccent.withValues(alpha: 0.2), width: 1.5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.purpleAccent.withValues(alpha: 0.1),
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  question.questionText,
-                  style: GoogleFonts.outfit(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white.withValues(alpha: 0.9),
-                    height: 1.3,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 12),
-
-          // Pas Geç Joker Butonu (Siberpunk camgöbeği parıltılı tasarımı)
-          if (!state.isAnswered)
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    gradient: LinearGradient(
-                      colors: state.skipsRemaining > 0
-                          ? [Colors.cyanAccent.withOpacity(0.12), Colors.blueAccent.withOpacity(0.04)]
-                          : [Colors.white.withOpacity(0.02), Colors.transparent],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Ders Kategorisi Etiketi
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: isWide ? 16 : 12,
+                            vertical: isWide ? 7 : 5,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.purpleAccent.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Text(
+                            _getCourseDisplayName(question.courseId),
+                            style: GoogleFonts.inter(
+                              fontSize: isWide ? 16 : 13,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.purpleAccent.shade100,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          'Soru ${state.currentIndex + 1}',
+                          style: GoogleFonts.inter(
+                            fontSize: isWide ? 18 : 14,
+                            color: Colors.white60,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
-                    border: Border.all(
-                      color: state.skipsRemaining > 0
-                          ? Colors.cyanAccent.withOpacity(0.35)
-                          : Colors.white10,
-                      width: 1.2,
-                    ),
-                    boxShadow: state.skipsRemaining > 0
-                        ? [
-                            BoxShadow(
-                              color: Colors.cyanAccent.withOpacity(0.08),
-                              blurRadius: 10,
-                              spreadRadius: 1,
-                            )
-                          ]
-                        : null,
-                  ),
-                  child: TextButton.icon(
-                    onPressed: state.skipsRemaining > 0
-                        ? () {
-                            notifier.useSkipJoker();
-                          }
-                        : null,
-                    icon: Icon(
-                      Icons.fast_forward_rounded, 
-                      color: state.skipsRemaining > 0 ? Colors.cyanAccent : Colors.white24, 
-                      size: 18,
-                    ),
-                    label: Text(
-                      'Pas Geç (${state.skipsRemaining} Joker)',
-                      style: GoogleFonts.inter(
-                        color: state.skipsRemaining > 0 ? Colors.cyanAccent : Colors.white30,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 13,
-                        letterSpacing: 0.5,
+                    SizedBox(height: isWide ? 16 : 12),
+                    Text(
+                      question.questionText,
+                      style: GoogleFonts.outfit(
+                        fontSize: isWide ? 27 : 21,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white.withValues(alpha: 0.95),
+                        height: 1.42,
                       ),
                     ),
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                      backgroundColor: Colors.transparent,
+                  ],
+                ),
+              ),
+              SizedBox(height: isWide ? 14 : 12),
+
+              // Pas Geç Joker Butonu (Siberpunk camgöbeği parıltılı tasarımı)
+              if (!state.isAnswered)
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        gradient: LinearGradient(
+                          colors: state.skipsRemaining > 0
+                              ? [Colors.cyanAccent.withOpacity(0.12), Colors.blueAccent.withOpacity(0.04)]
+                              : [Colors.white.withOpacity(0.02), Colors.transparent],
+                        ),
+                        border: Border.all(
+                          color: state.skipsRemaining > 0
+                              ? Colors.cyanAccent.withOpacity(0.35)
+                              : Colors.white10,
+                          width: 1.2,
+                        ),
+                        boxShadow: state.skipsRemaining > 0
+                            ? [
+                                BoxShadow(
+                                  color: Colors.cyanAccent.withOpacity(0.08),
+                                  blurRadius: 10,
+                                  spreadRadius: 1,
+                                )
+                              ]
+                            : null,
+                      ),
+                      child: TextButton.icon(
+                        onPressed: state.skipsRemaining > 0
+                            ? () {
+                                notifier.useSkipJoker();
+                              }
+                            : null,
+                        icon: Icon(
+                          Icons.fast_forward_rounded, 
+                          color: state.skipsRemaining > 0 ? Colors.cyanAccent : Colors.white24, 
+                          size: isWide ? 24 : 20,
+                        ),
+                        label: Text(
+                          'Pas Geç (${state.skipsRemaining} Joker)',
+                          style: GoogleFonts.inter(
+                            color: state.skipsRemaining > 0 ? Colors.cyanAccent : Colors.white30,
+                            fontWeight: FontWeight.w800,
+                            fontSize: isWide ? 17 : 14.5,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: isWide ? 22 : 16,
+                            vertical: isWide ? 11 : 8,
+                          ),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                          backgroundColor: Colors.transparent,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
 
-          // Şıklar Listesi
-          Expanded(
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemCount: question.options.length,
-              itemBuilder: (context, index) {
-                final option = question.options[index];
-                return _buildOptionButton(index, option, question, state, notifier);
-              },
-            ),
+              // Şıklar Listesi
+              Expanded(
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: question.options.length,
+                  itemBuilder: (context, index) {
+                    final option = question.options[index];
+                    return _buildOptionButton(index, option, question, state, notifier, isWide);
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
 
-  Widget _buildFlameComboHUD(int comboCount) {
+  Widget _buildFlameComboHUD(int comboCount, {bool isWide = false}) {
     final isFlameActive = comboCount >= 3;
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       padding: isFlameActive
-          ? const EdgeInsets.symmetric(horizontal: 16, vertical: 6)
-          : const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          ? EdgeInsets.symmetric(horizontal: isWide ? 18 : 16, vertical: isWide ? 8 : 6)
+          : EdgeInsets.symmetric(horizontal: isWide ? 10 : 8, vertical: isWide ? 6 : 4),
       decoration: isFlameActive
           ? BoxDecoration(
               gradient: const LinearGradient(
@@ -673,13 +730,13 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
         mainAxisSize: MainAxisSize.min,
         children: [
           if (isFlameActive) ...[
-            const Icon(Icons.local_fire_department_rounded, color: Colors.yellowAccent, size: 24),
+            Icon(Icons.local_fire_department_rounded, color: Colors.yellowAccent, size: isWide ? 32 : 26),
             const SizedBox(width: 4),
           ],
           Text(
             'x$comboCount',
             style: GoogleFonts.outfit(
-              fontSize: 28,
+              fontSize: isWide ? 38 : 30,
               fontWeight: FontWeight.w900,
               color: isFlameActive ? Colors.yellowAccent : Colors.white,
             ),
@@ -695,6 +752,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     dynamic question,
     BlitzQuizGameState state,
     BlitzQuizGameNotifier notifier,
+    bool isWide,
   ) {
     Color cardColor = Colors.white.withValues(alpha: 0.05);
     Color borderColor = Colors.white.withValues(alpha: 0.1);
@@ -735,15 +793,15 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     }
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin: EdgeInsets.only(bottom: isWide ? 14 : 10),
       decoration: BoxDecoration(
         color: cardColor,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(isWide ? 20 : 16),
         border: Border.all(color: borderColor, width: 1.5),
         boxShadow: shadows,
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(isWide ? 20 : 16),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
@@ -754,12 +812,15 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
               }
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              padding: EdgeInsets.symmetric(
+                horizontal: isWide ? 22 : 16,
+                vertical: isWide ? 18 : 12,
+              ),
               child: Row(
                 children: [
                   Container(
-                    width: 28,
-                    height: 28,
+                    width: isWide ? 44 : 32,
+                    height: isWide ? 44 : 32,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -770,25 +831,26 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                       String.fromCharCode(65 + index),
                       style: GoogleFonts.outfit(
                         fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                        fontSize: isWide ? 22 : 16,
                         color: textColor,
                       ),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: isWide ? 18 : 12),
                   Expanded(
                     child: Text(
                       text,
                       style: GoogleFonts.inter(
-                        fontSize: 13,
+                        fontSize: isWide ? 22 : 17,
                         fontWeight: FontWeight.w600,
                         color: textColor,
+                        height: 1.35,
                       ),
                     ),
                   ),
                   if (icon != null) ...[
                     const SizedBox(width: 8),
-                    Icon(icon, color: borderColor),
+                    Icon(icon, color: borderColor, size: isWide ? 30 : 24),
                   ]
                 ],
               ),
@@ -800,7 +862,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
   }
 
   // ── Oyun Sonu Ekranı (GameOver Screen) ──
-  Widget _buildGameOver(BlitzQuizGameState state, BlitzQuizGameNotifier notifier) {
+  Widget _buildGameOver(BlitzQuizGameState state, BlitzQuizGameNotifier notifier, bool isWide) {
     String rankTitle = 'Amatör Hızcı';
     IconData badgeIcon = Icons.stars_rounded;
     Color color = const Color(0xFFFF5252);
@@ -816,15 +878,15 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     }
 
     return Center(
-      child: Transform.scale(
-        scale: 0.95,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 720),
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: AppSizes.lg),
+          padding: EdgeInsets.symmetric(horizontal: isWide ? 32 : AppSizes.lg),
           child: Column(
             children: [
-              const SizedBox(height: 8),
+              SizedBox(height: isWide ? 16 : 8),
               Container(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(isWide ? 28 : 20),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.05),
                   shape: BoxShape.circle,
@@ -837,13 +899,13 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                     ),
                   ],
                 ),
-                child: Icon(badgeIcon, size: 64, color: color),
+                child: Icon(badgeIcon, size: isWide ? 84 : 68, color: color),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: isWide ? 18 : 12),
               Text(
                 'Süre Doldu!',
                 style: GoogleFonts.outfit(
-                  fontSize: 28,
+                  fontSize: isWide ? 40 : 30,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
                 ),
@@ -852,16 +914,16 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
               Text(
                 rankTitle,
                 style: GoogleFonts.outfit(
-                  fontSize: 18,
+                  fontSize: isWide ? 26 : 20,
                   fontWeight: FontWeight.bold,
                   color: color,
                 ),
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: isWide ? 20 : 14),
 
               // Genel İstatistikler Kutusu
               Container(
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.all(isWide ? 24 : 16),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.04),
                   borderRadius: BorderRadius.circular(20),
@@ -869,40 +931,40 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                 ),
                 child: Column(
                   children: [
-                    _buildStatRow('Toplam Skor', '${state.score} Puan', const Color(0xFFFFD000)),
-                    const Divider(color: Colors.white10, height: 12),
-                    _buildStatRow('Toplam Doğru', '${state.correctCount}', Colors.greenAccent),
-                    const Divider(color: Colors.white10, height: 12),
-                    _buildStatRow('Toplam Yanlış', '${state.wrongCount}', Colors.redAccent),
-                    const Divider(color: Colors.white10, height: 12),
-                    _buildStatRow('En Yüksek Seri (Kombo)', '${state.maxCombo}', Colors.orangeAccent),
+                    _buildStatRow('Toplam Skor', '${state.score} Puan', const Color(0xFFFFD000), isWide: isWide),
+                    const Divider(color: Colors.white10, height: 14),
+                    _buildStatRow('Toplam Doğru', '${state.correctCount}', Colors.greenAccent, isWide: isWide),
+                    const Divider(color: Colors.white10, height: 14),
+                    _buildStatRow('Toplam Yanlış', '${state.wrongCount}', Colors.redAccent, isWide: isWide),
+                    const Divider(color: Colors.white10, height: 14),
+                    _buildStatRow('En Yüksek Seri (Kombo)', '${state.maxCombo}', Colors.orangeAccent, isWide: isWide),
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: isWide ? 16 : 10),
 
               // Ders Bazlı Doğru-Yanlış Analiz Tablosu
-              _buildCourseStatsTable(state),
-              const SizedBox(height: 14),
+              _buildCourseStatsTable(state, isWide: isWide),
+              SizedBox(height: isWide ? 20 : 14),
 
               // Puan Ekleme Bildirimi
               if (state.score > 0)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: isWide ? 22 : 16, vertical: isWide ? 14 : 10),
                   decoration: BoxDecoration(
                     color: Colors.green.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(14),
                     border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.stars_rounded, color: Colors.greenAccent, size: 20),
+                      Icon(Icons.stars_rounded, color: Colors.greenAccent, size: isWide ? 26 : 22),
                       const SizedBox(width: 8),
                       Text(
                         '+${state.score} Genel Puan Hesabına Eklendi!',
                         style: GoogleFonts.inter(
-                          fontSize: 12,
+                          fontSize: isWide ? 17 : 14,
                           fontWeight: FontWeight.bold,
                           color: Colors.greenAccent,
                         ),
@@ -911,7 +973,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                   ),
                 ),
 
-              const SizedBox(height: 18),
+              SizedBox(height: isWide ? 24 : 18),
               // Butonlar
               Row(
                 children: [
@@ -920,12 +982,16 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                       onPressed: () => Navigator.pop(context),
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: Colors.white30),
-                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        padding: EdgeInsets.symmetric(vertical: isWide ? 20 : 15),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       ),
                       child: Text(
                         'Kapat',
-                        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+                        style: GoogleFonts.inter(
+                          fontSize: isWide ? 20 : 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -936,12 +1002,15 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFFF5252),
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        padding: EdgeInsets.symmetric(vertical: isWide ? 20 : 15),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       ),
                       child: Text(
                         'Tekrar Dene 🔄',
-                        style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.bold),
+                        style: GoogleFonts.inter(
+                          fontSize: isWide ? 20 : 16,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -955,19 +1024,27 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     );
   }
 
-  Widget _buildStatRow(String label, String value, Color valueColor) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
+  Widget _buildStatRow(String label, String value, Color valueColor, {bool isWide = false}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: isWide ? 8.0 : 4.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             label,
-            style: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white70),
+            style: GoogleFonts.inter(
+              fontSize: isWide ? 19 : 15.5,
+              fontWeight: FontWeight.w600,
+              color: Colors.white70,
+            ),
           ),
           Text(
             value,
-            style: GoogleFonts.outfit(fontSize: 16, fontWeight: FontWeight.bold, color: valueColor),
+            style: GoogleFonts.outfit(
+              fontSize: isWide ? 24 : 18,
+              fontWeight: FontWeight.bold,
+              color: valueColor,
+            ),
           ),
         ],
       ),
@@ -975,7 +1052,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
   }
 
   // Ders bazlı doğru/yanlış tablosunu çizer
-  Widget _buildCourseStatsTable(BlitzQuizGameState state) {
+  Widget _buildCourseStatsTable(BlitzQuizGameState state, {bool isWide = false}) {
     final courseIds = [
       'on_buro_rezervasyon',
       'surdurulebilir_turizm',
@@ -989,7 +1066,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
     if (!hasAnyStats) return const SizedBox.shrink();
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(isWide ? 22 : 16),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.04),
         borderRadius: BorderRadius.circular(20),
@@ -1000,19 +1077,19 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
         children: [
           Row(
             children: [
-              const Icon(Icons.analytics_outlined, color: Colors.purpleAccent, size: 18),
-              const SizedBox(width: 6),
+              Icon(Icons.analytics_outlined, color: Colors.purpleAccent, size: isWide ? 24 : 20),
+              const SizedBox(width: 8),
               Text(
                 'Ders Bazlı Soru Analizi',
                 style: GoogleFonts.outfit(
-                  fontSize: 14,
+                  fontSize: isWide ? 20 : 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: isWide ? 16 : 10),
           ...courseIds.map((courseId) {
             final correct = state.correctByCourse[courseId] ?? 0;
             final wrong = state.wrongByCourse[courseId] ?? 0;
@@ -1022,7 +1099,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
             final courseName = _getCourseDisplayName(courseId);
 
             return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+              padding: EdgeInsets.symmetric(vertical: isWide ? 7.0 : 4.0),
               child: Row(
                 children: [
                   Expanded(
@@ -1031,7 +1108,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.inter(
-                        fontSize: 12,
+                        fontSize: isWide ? 17 : 14,
                         fontWeight: FontWeight.w600,
                         color: Colors.white70,
                       ),
@@ -1040,7 +1117,10 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: isWide ? 12 : 8,
+                          vertical: isWide ? 5 : 3,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.green.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(8),
@@ -1049,7 +1129,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                         child: Text(
                           '$correct Doğru',
                           style: GoogleFonts.outfit(
-                            fontSize: 11,
+                            fontSize: isWide ? 15 : 12.5,
                             fontWeight: FontWeight.bold,
                             color: Colors.greenAccent,
                           ),
@@ -1057,7 +1137,10 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                       ),
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: isWide ? 12 : 8,
+                          vertical: isWide ? 5 : 3,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.red.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(8),
@@ -1066,7 +1149,7 @@ class _BlitzQuizScreenState extends ConsumerState<BlitzQuizScreen> with TickerPr
                         child: Text(
                           '$wrong Yanlış',
                           style: GoogleFonts.outfit(
-                            fontSize: 11,
+                            fontSize: isWide ? 15 : 12.5,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent,
                           ),

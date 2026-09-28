@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,12 +12,15 @@ import '../../../../core/data/quiz_data.dart';
 import '../../../quiz/presentation/screens/quiz_screen.dart';
 import '../../../../core/providers/shell_tab_provider.dart';
 import '../../../../core/utils/fade_page_route.dart';
+import '../../../notes/presentation/screens/student_notes_screen.dart';
+import '../../../notes/presentation/providers/notes_provider.dart';
 
 String _getCourseId(String title, String grade) {
   if (title == 'Kat Hizmetleri Atölyesi') {
     return '${grade}_kat_hizmetleri_atolyesi';
   }
   switch (title) {
+    case 'Ön Büro Hizmetleri Atölyesi': return 'on_buro_hizmetleri_atolyesi';
     case 'Ön Büroda Rezervasyon': return 'on_buro_rezervasyon';
     case 'Konuk Giriş Çıkış İşlemleri': return 'konuk_giris_cikis_islemleri';
     case 'Konaklama İşletmeciliği': return 'konaklama_isletmeciligi';
@@ -32,6 +36,8 @@ String _getCourseId(String title, String grade) {
     case 'Transfer Operasyonu': return 'transfer_operasyonu';
     case 'Sosyal Medya': return 'sosyal_medya';
     case 'Mesleki Gelişim Atölyesi': return 'mesleki_gelisim_atolyesi';
+    case 'Genel Turizm': return 'genel_turizm';
+    case 'Otelcilik ve Seyahat Hizmetleri': return 'otelcilik_ve_seyahat_hizmetleri';
     default:
       return title.toLowerCase()
         .replaceAll(' ', '_')
@@ -67,6 +73,7 @@ class CourseDetailScreen extends ConsumerWidget {
     );
     final units = course.learningUnits;
     final isOnboarding = ref.watch(isOnboardingActiveProvider);
+    final isWide = MediaQuery.of(context).size.width >= 768;
 
     return PopScope(
       canPop: !isOnboarding,
@@ -76,17 +83,33 @@ class CourseDetailScreen extends ConsumerWidget {
           slivers: [
             // ── Dinamik Header & AppBar ──
             SliverAppBar(
-              expandedHeight: 180,
+              expandedHeight: isWide ? 220 : 180,
               pinned: true,
               stretch: true,
+              leadingWidth: isWide ? 76 : 58,
               leading: isOnboarding
                   ? const SizedBox.shrink()
-                  : Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white.withValues(alpha: 0.2),
+                  : Center(
+                      child: Container(
+                        margin: EdgeInsets.only(left: isWide ? 16 : 8),
+                        width: isWide ? 46 : 40,
+                        height: isWide ? 46 : 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.18),
+                              blurRadius: 10,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
                         child: IconButton(
-                          icon: const Icon(Icons.arrow_back_rounded, color: Colors.white),
+                          padding: EdgeInsets.zero,
+                          iconSize: isWide ? 26 : 22,
+                          icon: Icon(Icons.arrow_back_rounded, color: gradient.first),
+                          tooltip: 'Geri Dön',
                           onPressed: () => Navigator.pop(context),
                         ),
                       ),
@@ -107,8 +130,8 @@ class CourseDetailScreen extends ConsumerWidget {
                 child: Stack(
                   children: [
                     Positioned(
-                      right: 12,
-                      bottom: 12,
+                      right: 16,
+                      bottom: 16,
                       child: Container(
                         padding: const EdgeInsets.all(3.5),
                         decoration: BoxDecoration(
@@ -132,13 +155,13 @@ class CourseDetailScreen extends ConsumerWidget {
                           ],
                         ),
                         child: SizedBox(
-                          width: 80,
-                          height: 80,
+                          width: isWide ? 96 : 80,
+                          height: isWide ? 96 : 80,
                           child: ClipOval(
                             child: Image.asset(
                               'assets/images/app_logo.png',
-                              width: 80,
-                              height: 80,
+                              width: isWide ? 96 : 80,
+                              height: isWide ? 96 : 80,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -146,13 +169,13 @@ class CourseDetailScreen extends ConsumerWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20.0, 0, 20.0, 24.0),
+                      padding: EdgeInsets.fromLTRB(isWide ? 32.0 : 20.0, 0, 20.0, isWide ? 28.0 : 24.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                            padding: EdgeInsets.symmetric(horizontal: isWide ? 14 : 10, vertical: isWide ? 6 : 4),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.25),
                               borderRadius: BorderRadius.circular(20),
@@ -160,8 +183,8 @@ class CourseDetailScreen extends ConsumerWidget {
                             child: Text(
                               '$grade. Sınıf Dersi',
                               style: GoogleFonts.inter(
-                                fontSize: 11,
-                                fontWeight: FontWeight.w600,
+                                fontSize: isWide ? 15 : 12,
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
                             ),
@@ -170,18 +193,18 @@ class CourseDetailScreen extends ConsumerWidget {
                           Text(
                             courseTitle,
                             style: GoogleFonts.outfit(
-                              fontSize: 24,
+                              fontSize: isWide ? 38 : 26,
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
-                              height: 1.1,
+                              height: 1.15,
                             ),
                           ),
-                          const SizedBox(height: 2),
+                          const SizedBox(height: 4),
                           Text(
                             'Ders Öğrenme Birimleri ve İçerikleri',
                             style: GoogleFonts.inter(
-                              fontSize: 13,
-                              color: Colors.white.withValues(alpha: 0.85),
+                              fontSize: isWide ? 19 : 14,
+                              color: Colors.white.withValues(alpha: 0.9),
                             ),
                           ),
                         ],
@@ -193,154 +216,393 @@ class CourseDetailScreen extends ConsumerWidget {
             ),
           ),
 
-          // ── Genel Ders Sınavı Kartı ──
-          if (allQuizQuestions.any((q) => q.courseId == _getCourseId(courseTitle, grade)))
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(AppSizes.screenPadding, AppSizes.lg, AppSizes.screenPadding, 0),
-                child: GestureDetector(
-                  onTap: () {
-                    final courseQuestions = allQuizQuestions
-                        .where((q) => q.courseId == _getCourseId(courseTitle, grade))
-                        .toList();
-                    
-                    final Map<int, List<QuizQuestion>> questionsByUnit = {};
-                    for (final q in courseQuestions) {
-                      questionsByUnit.putIfAbsent(q.unitIndex, () => []).add(q);
-                    }
-                    
-                    for (final unitList in questionsByUnit.values) {
-                      unitList.shuffle();
-                    }
-                    
-                    final List<QuizQuestion> selectedQuestions = [];
-                    final List<int> sortedUnitIndices = questionsByUnit.keys.toList()..sort();
-                    
-                    if (sortedUnitIndices.isNotEmpty) {
-                      int indexPointer = 0;
-                      while (selectedQuestions.length < 8) {
-                        bool anyQuestionsLeft = false;
-                        for (final list in questionsByUnit.values) {
-                          if (list.isNotEmpty) {
-                            anyQuestionsLeft = true;
-                            break;
+          // ── Hızlı Erişim Butonları: Ders Testleri & Not Defterim (Yan Yana & Sabit Renkler) ──
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                isWide ? 36.0 : AppSizes.screenPadding,
+                isWide ? 20.0 : 14.0,
+                isWide ? 36.0 : AppSizes.screenPadding,
+                0,
+              ),
+              child: Consumer(
+                builder: (context, ref, _) {
+                  final courseId = _getCourseId(courseTitle, grade);
+                  final noteCount = ref.watch(courseNoteCountProvider(courseId));
+                  final hasQuiz = allQuizQuestions.any((q) => q.courseId == courseId);
+
+                  // 1. Ders Testleri Kartı (Sabit Kraliyet İndigo / Gece Mavisi Teması)
+                  Widget buildQuizCard() {
+                    return GestureDetector(
+                      key: ShellKeys.generalQuizKey,
+                      onTap: () {
+                        final courseQuestions = allQuizQuestions
+                            .where((q) => q.courseId == courseId)
+                            .toList();
+
+                        final Map<int, List<QuizQuestion>> questionsByUnit = {};
+                        for (final q in courseQuestions) {
+                          questionsByUnit.putIfAbsent(q.unitIndex, () => []).add(q);
+                        }
+
+                        for (final unitList in questionsByUnit.values) {
+                          unitList.shuffle();
+                        }
+
+                        final List<QuizQuestion> selectedQuestions = [];
+                        final List<int> sortedUnitIndices = questionsByUnit.keys.toList()..sort();
+
+                        if (sortedUnitIndices.isNotEmpty) {
+                          int indexPointer = 0;
+                          while (selectedQuestions.length < 8) {
+                            bool anyQuestionsLeft = false;
+                            for (final list in questionsByUnit.values) {
+                              if (list.isNotEmpty) {
+                                anyQuestionsLeft = true;
+                                break;
+                              }
+                            }
+                            if (!anyQuestionsLeft) break;
+
+                            final currentUnitIndex = sortedUnitIndices[indexPointer % sortedUnitIndices.length];
+                            final currentUnitList = questionsByUnit[currentUnitIndex];
+                            if (currentUnitList != null && currentUnitList.isNotEmpty) {
+                              selectedQuestions.add(currentUnitList.removeAt(0));
+                            }
+                            indexPointer++;
                           }
                         }
-                        if (!anyQuestionsLeft) break;
-                        
-                        final currentUnitIndex = sortedUnitIndices[indexPointer % sortedUnitIndices.length];
-                        final currentUnitList = questionsByUnit[currentUnitIndex];
-                        if (currentUnitList != null && currentUnitList.isNotEmpty) {
-                          selectedQuestions.add(currentUnitList.removeAt(0));
-                        }
-                        indexPointer++;
-                      }
-                    }
-                    
-                    if (selectedQuestions.isNotEmpty) {
-                      Navigator.push(
-                        context,
-                        FadePageRoute(
-                          child: QuizScreen(
-                            title: '$courseTitle - Ders Testi',
-                            gradient: gradient,
-                            questions: selectedQuestions,
-                          ),
-                        ),
-                      );
-                    }
-                  },
-                  key: ShellKeys.generalQuizKey,
-                  child: Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [gradient.first, gradient.last],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(24),
-                      boxShadow: [
-                        BoxShadow(
-                          color: gradient.first.withValues(alpha: 0.3),
-                          blurRadius: 15,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.15),
-                                blurRadius: 10,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
-                          ),
-                          child: SizedBox(
-                            width: 28,
-                            height: 28,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(6),
-                              child: Image.asset(
-                                'assets/images/app_logo.png',
-                                width: 28,
-                                height: 28,
-                                fit: BoxFit.contain,
+
+                        if (selectedQuestions.isNotEmpty) {
+                          Navigator.push(
+                            context,
+                            FadePageRoute(
+                              child: QuizScreen(
+                                title: '$courseTitle - Ders Testi',
+                                gradient: gradient,
+                                questions: selectedQuestions,
                               ),
                             ),
+                          );
+                        }
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(isWide ? 16 : 13),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF4338CA), Color(0xFF6366F1)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
+                          borderRadius: BorderRadius.circular(isWide ? 20 : 16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF4338CA).withValues(alpha: 0.30),
+                              blurRadius: 12,
+                              offset: const Offset(0, 5),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withValues(alpha: 0.18),
+                                        blurRadius: 6,
+                                        offset: const Offset(0, 2),
+                                      ),
+                                    ],
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(7),
+                                    child: Image.asset(
+                                      'assets/images/app_logo.png',
+                                      width: isWide ? 26 : 22,
+                                      height: isWide ? 26 : 22,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.play_circle_fill_rounded,
+                                  color: Colors.white.withValues(alpha: 0.95),
+                                  size: isWide ? 26 : 22,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Ders Testleri',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.outfit(
+                                    fontSize: isWide ? 17.5 : 15,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                    letterSpacing: -0.2,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  '8 Soruluk Test',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.inter(
+                                    fontSize: isWide ? 12.5 : 11,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white.withValues(alpha: 0.88),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+
+                  // 2. Not Defterim Kartı (Sabit Sıcak Kehribar / Amber Teması)
+                  Widget buildNotesCard() {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          FadePageRoute(
+                            child: StudentNotesScreen(
+                              initialGrade: grade,
+                              initialCourseId: courseId,
+                              initialCourseTitle: courseTitle,
+                              gradient: gradient,
+                              entrySource: NotesEntrySource.courseDetail,
+                            ),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(isWide ? 16 : 13),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFFD97706), Color(0xFFF59E0B)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.circular(isWide ? 20 : 16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFFD97706).withValues(alpha: 0.30),
+                              blurRadius: 12,
+                              offset: const Offset(0, 5),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withValues(alpha: 0.22),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Icon(
+                                    Icons.menu_book_rounded,
+                                    color: Colors.white,
+                                    size: isWide ? 22 : 18,
+                                  ),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2.5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withValues(alpha: 0.25),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    noteCount > 0 ? '$noteCount Not' : 'Not Al',
+                                    style: GoogleFonts.inter(
+                                      fontSize: isWide ? 11 : 10,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Not Defterim',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.outfit(
+                                    fontSize: isWide ? 17.5 : 15,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                    letterSpacing: -0.2,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  noteCount > 0 ? 'Notları İncele' : 'Ders Notu Ekle',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.inter(
+                                    fontSize: isWide ? 12.5 : 11,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white.withValues(alpha: 0.88),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+
+                  if (hasQuiz) {
+                    return IntrinsicHeight(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(child: buildQuizCard()),
+                          SizedBox(width: isWide ? 16 : 11),
+                          Expanded(child: buildNotesCard()),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return buildNotesCard();
+                  }
+                },
+              ),
+            ),
+          ),
+          if (units.isEmpty)
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                horizontal: isWide ? 24.0 : AppSizes.screenPadding,
+                vertical: AppSizes.xl,
+              ),
+              sliver: SliverToBoxAdapter(
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 1020),
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.symmetric(horizontal: isWide ? 36 : 24, vertical: isWide ? 48 : 36),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF0A192F).withValues(alpha: 0.65),
+                        borderRadius: BorderRadius.circular(24),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.15),
+                          width: 1.5,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: gradient.first.withValues(alpha: 0.25),
+                            blurRadius: 20,
+                            offset: const Offset(0, 10),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(24),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                'Ders Testlerini Çöz',
-                                style: GoogleFonts.outfit(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white,
+                              Container(
+                                padding: EdgeInsets.all(isWide ? 26 : 20),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: gradient.first.withValues(alpha: 0.15),
+                                  border: Border.all(
+                                    color: gradient.first.withValues(alpha: 0.4),
+                                    width: 1.5,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: gradient.first.withValues(alpha: 0.2),
+                                      blurRadius: 16,
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  courseTitle == 'Ön Büro Hizmetleri Atölyesi'
+                                      ? Icons.menu_book_rounded
+                                      : Icons.update_rounded,
+                                  color: gradient.first,
+                                  size: isWide ? 56 : 44,
                                 ),
                               ),
-                              const SizedBox(height: 4),
+                              const SizedBox(height: 24),
                               Text(
-                                '8 soruluk testlerle ders bilgini sınamaya hazır mısın?',
+                                courseTitle == 'Ön Büro Hizmetleri Atölyesi'
+                                    ? 'Ders Bilgilendirmesi'
+                                    : 'Ders içerikleriniz güncellenmektedir.',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.outfit(
+                                  fontSize: isWide ? 24 : 19,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                              const SizedBox(height: 12),
+                              Text(
+                                courseTitle == 'Ön Büro Hizmetleri Atölyesi'
+                                    ? 'Bu derse ilişkin eğitim videoları, ders kitabınızda otel otomasyon programı olarak öğrendiğiniz ElektraWeb uygulamasının resmi web sitesinde hali hazırda bulunmaktadır. Kitabınızdan ya da kitabınızdaki uygulamanın resmi web sitesinden öğrenmeye devam edebilirsiniz.'
+                                    : 'Müfredatla uyumlu zengin içerik ve öğrenme birimleri hazırlanmaktadır.',
+                                textAlign: TextAlign.center,
                                 style: GoogleFonts.inter(
-                                  fontSize: 13,
-                                  color: Colors.white.withValues(alpha: 0.9),
+                                  fontSize: isWide ? 17 : 13.5,
+                                  color: Colors.white.withValues(alpha: 0.85),
+                                  height: 1.55,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        const Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 36),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSizes.screenPadding,
-              vertical: AppSizes.lg,
-            ),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  final unit = units[index];
-                  return _buildUnitCard(context, unit, index);
-                },
-                childCount: units.length,
+            )
+          else
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                horizontal: isWide ? 36.0 : AppSizes.screenPadding,
+                vertical: isWide ? 20.0 : AppSizes.lg,
+              ),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final unit = units[index];
+                    return _buildUnitCard(context, unit, index, isWide);
+                  },
+                  childCount: units.length,
+                ),
               ),
             ),
-          ),
         ],
       ),
     ),
@@ -350,7 +612,7 @@ class CourseDetailScreen extends ConsumerWidget {
   // ══════════════════════════════════════════
   //  ÖĞRENME BİRİMİ KART TASARIMI
   // ══════════════════════════════════════════
-  Widget _buildUnitCard(BuildContext context, LearningUnit unit, int index) {
+  Widget _buildUnitCard(BuildContext context, LearningUnit unit, int index, bool isWide) {
     final notes = allCoursesNotes['$grade-$courseTitle'] ?? allCoursesNotes[courseTitle];
     final unitData = (notes != null && index < notes.length) ? notes[index] : null;
 
@@ -396,10 +658,10 @@ class CourseDetailScreen extends ConsumerWidget {
     return RepaintBoundary(
       child: Container(
         key: index == 0 ? ShellKeys.unitCardKey : null,
-        margin: const EdgeInsets.only(bottom: AppSizes.md),
+        margin: EdgeInsets.only(bottom: isWide ? 20.0 : AppSizes.md),
         decoration: BoxDecoration(
           color: Theme.of(context).cardTheme.color ?? Colors.white,
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          borderRadius: BorderRadius.circular(isWide ? 22 : AppSizes.radiusLg),
           boxShadow: [
             BoxShadow(
               color: AppColors.primarySeed.withValues(alpha: 0.05),
@@ -409,7 +671,7 @@ class CourseDetailScreen extends ConsumerWidget {
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          borderRadius: BorderRadius.circular(isWide ? 22 : AppSizes.radiusLg),
           child: Material(
             color: Colors.transparent,
             child: InkWell(
@@ -441,13 +703,13 @@ class CourseDetailScreen extends ConsumerWidget {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.all(AppSizes.md),
+              padding: EdgeInsets.all(isWide ? 24.0 : AppSizes.md),
               child: Row(
                 children: [
                   // Sol taraf: Kıvrımlı Öğrenme Birimi Numarası
                   Container(
-                    width: 54,
-                    height: 54,
+                    width: isWide ? 70 : 54,
+                    height: isWide ? 70 : 54,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
@@ -457,19 +719,19 @@ class CourseDetailScreen extends ConsumerWidget {
                           gradient.last.withValues(alpha: 0.05),
                         ],
                       ),
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(isWide ? 20 : 14),
                     ),
                     alignment: Alignment.center,
                     child: Text(
                       '0${index + 1}',
                       style: GoogleFonts.outfit(
-                        fontSize: 20,
+                        fontSize: isWide ? 25 : 20,
                         fontWeight: FontWeight.w800,
                         color: gradient.first,
                       ),
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: isWide ? 22 : 16),
 
                   // Orta: Öğrenme Birimi Başlıkları
                   Expanded(
@@ -479,44 +741,93 @@ class CourseDetailScreen extends ConsumerWidget {
                         Text(
                           '${index + 1}. ÖĞRENME BİRİMİ',
                           style: GoogleFonts.inter(
-                            fontSize: 11,
+                            fontSize: isWide ? 15 : 11,
                             fontWeight: FontWeight.w700,
                             color: gradient.first,
                             letterSpacing: 0.5,
                           ),
                         ),
-                        const SizedBox(height: 2),
+                        const SizedBox(height: 3),
                         Text(
                           unit.title,
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w700,
-                                height: 1.25,
-                              ),
+                          style: GoogleFonts.outfit(
+                            fontSize: isWide ? 23 : 16,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.textPrimary,
+                            height: 1.25,
+                          ),
                         ),
-                        const SizedBox(height: 6),
+                        SizedBox(height: isWide ? 10 : 6),
                         // Kartlar (Solda) ve Ders Notu (Sağda)
                         Row(
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.style_rounded,
-                              size: 14,
+                              size: isWide ? 18 : 14,
                               color: AppColors.textSecondary,
                             ),
-                            const SizedBox(width: 4),
+                            const SizedBox(width: 5),
                             Text(
                               '$cardCount Kart',
-                              style: Theme.of(context).textTheme.bodySmall,
+                              style: GoogleFonts.inter(
+                                fontSize: isWide ? 16 : 12,
+                                color: AppColors.textSecondary,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                            const SizedBox(width: 12),
-                            const Icon(
+                            SizedBox(width: isWide ? 20 : 12),
+                            Icon(
                               Icons.description_outlined,
-                              size: 14,
+                              size: isWide ? 18 : 14,
                               color: AppColors.textSecondary,
                             ),
-                            const SizedBox(width: 4),
+                            const SizedBox(width: 5),
                             Text(
                               '$noteCount Ders Notu',
-                              style: Theme.of(context).textTheme.bodySmall,
+                              style: GoogleFonts.inter(
+                                fontSize: isWide ? 16 : 12,
+                                color: AppColors.textSecondary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Consumer(
+                              builder: (context, ref, _) {
+                                final cId = _getCourseId(courseTitle, grade);
+                                final uNoteCount = ref.watch(unitNoteCountProvider((courseId: cId, unitIndex: index)));
+                                if (uNoteCount <= 0) return const SizedBox.shrink();
+                                return Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(width: isWide ? 16 : 10),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2.5),
+                                      decoration: BoxDecoration(
+                                        color: gradient.first.withValues(alpha: 0.12),
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: gradient.first.withValues(alpha: 0.28),
+                                          width: 1,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Icon(Icons.edit_note_rounded, size: 13, color: gradient.first),
+                                          const SizedBox(width: 3),
+                                          Text(
+                                            '$uNoteCount Not',
+                                            style: GoogleFonts.inter(
+                                              fontSize: isWide ? 12 : 10.5,
+                                              fontWeight: FontWeight.w700,
+                                              color: gradient.first,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
                             ),
                           ],
                         ),
@@ -525,10 +836,10 @@ class CourseDetailScreen extends ConsumerWidget {
                   ),
 
                   // Sağ taraf: Ok
-                  const SizedBox(width: 8),
-                  const Icon(
+                  const SizedBox(width: 10),
+                  Icon(
                     Icons.arrow_forward_ios_rounded,
-                    size: 14,
+                    size: isWide ? 20 : 14,
                     color: AppColors.textHint,
                   ),
                 ],

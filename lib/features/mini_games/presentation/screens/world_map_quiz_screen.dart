@@ -91,6 +91,7 @@ class _WorldMapQuizScreenState extends ConsumerState<WorldMapQuizScreen> {
   Widget build(BuildContext context) {
     final gameState = ref.watch(worldMapGameProvider);
     final notifier = ref.read(worldMapGameProvider.notifier);
+    final isWide = MediaQuery.of(context).size.width >= 768;
 
     return Scaffold(
       backgroundColor: const Color(0xFF071317),
@@ -102,7 +103,9 @@ class _WorldMapQuizScreenState extends ConsumerState<WorldMapQuizScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.close_rounded, color: Colors.white),
+          icon: Icon(Icons.close_rounded, color: Colors.white, size: isWide ? 34 : 24),
+          tooltip: 'Kapat',
+          splashRadius: isWide ? 28 : 22,
           onPressed: () {
             notifier.endGame();
             Navigator.pop(context);

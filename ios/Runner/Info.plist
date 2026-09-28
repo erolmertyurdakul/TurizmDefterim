@@ -8,6 +8,10 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Ders notlarınızı sesinizle pratik şekilde yazdırmak için mikrofon erişimi gereklidir.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Konuşmalarınızı metne dönüştürerek not tutabilmeniz için ses tanıma izni gereklidir.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

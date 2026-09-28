@@ -2,6 +2,10 @@
 
 Bu dosya Erol Mert YURDAKUL ile Antigravity (Gemini) arasındaki ortak çalışma prensiplerini, kodlama standartlarını ve genel tasarım kurallarını tanımlar.
 
+## 0. ANAYASA KURALI (MUTLAK VE DEĞİŞTİRİLEMEZ)
+* **Kullanıcının Direktiflerine %100 Sadakat:** Erol Mert YURDAKUL'un söylediği, dikte ettiği veya emrettiği hiçbir kelimeden, harften veya yönergeden **ASLA VE KAT'İYEN BİR HARF DAHİ DIŞARI ÇIKILMAYACAKTIR.**
+* Kullanıcının istediği yöntem (örn. okuyarak kontrol etmek, belirli bir ifadeyi aynen kullanmak) ne ise, otomatik betiklerle kestirmeden gitmeye çalışmak kesinlikle yasaktır. Kullanıcı "oku" dediğinde baştan sona gözle okunacak, kullanıcı metin dikte ettiğinde tek harfi dahi değiştirilmeden aynen işlenecektir.
+
 ## 1. Geliştirici Profili & Alanlar
 * **Çok Yönlü Geliştirici:** Erol Mert YURDAKUL; eğitim, turizm ve oyun geliştirme (örneğin Evocore Survivor, TurizmAkademi) gibi farklı alanlarda projeler üretmektedir.
 * **Hedef Kitle ve Tonlama:**
@@ -16,57 +20,10 @@ Bu dosya Erol Mert YURDAKUL ile Antigravity (Gemini) arasındaki ortak çalışm
 * **API Anahtarları & Şifreler:** Google AI Studio (Gemini API), Firebase, OpenRouter veya veritabanı şifreleri gibi gizli bilgileri asla doğrudan kod dosyalarının içine (hardcoded) yazma.
 * **Çevre Değişkenleri:** Bu tür gizli anahtarları her zaman `.env` veya `.env.local` dosyalarında tanımlat ve bu dosyaların `.gitignore` içerisinde engellendiğinden emin ol.
 
-## 4. Kodlama ve Tasarım Tercihleri (Flutter / Dart)
-* **Arayüz Estetiği & Tasarım Sistemi:** Uygulamalarda modern, premium ve canlı bir "Dark-Neon / Glassmorphism" tasarım estetiği benimsenmelidir. Bu estetiğin temel bileşenleri şunlardır:
-  - **Renk Paleti & Arka Plan:** Derin lacivert ve siyah tonları ana arka plan olarak kullanılır. Tüm ekran arka planlarında şu degrade geçiş uygulanmalıdır:
-    ```dart
-    decoration: const BoxDecoration(
-      gradient: LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Color(0xFF030F26), Color(0xFF0A192F)],
-      ),
-    )
-    ```
-  - **Cam Efekti (Glassmorphic Panels):** Kartlar ve paneller yarı saydam koyu renkli, ince beyaz sınırlara sahip ve arkasını blurlayan yapıda tasarlanır. Kod şablonu tam olarak şudur:
-    ```dart
-    Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF0A192F).withOpacity(0.65),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.15),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: accentColor.withOpacity(0.15), // Canlı neon rengin gölgesi (Cyan, Mor vb.)
-            blurRadius: 16,
-            offset: const Offset(0, 8),
-          ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: childWidget,
-          ),
-        ),
-      ),
-    )
-    ```
-  - **Glow & Shadow Efektleri:** Bileşenlerde gölgeler sıradan gri/siyah yerine, degradenin canlı renk tonunun opaklığı düşürülerek (`color: gradient.first.withOpacity(0.15)`) oluşturulur ve ışık saçma (glow) hissi verilir.
-  - **Tipografi:** Başlıklar, butonlar ve önemli vurgular için mutlaka modern ve şık bir yazı tipi olan `GoogleFonts.outfit` kullanılır. Başlıklar için `letterSpacing: 0.5` veya `0.8` ve `FontWeight.w800` (ya da `FontWeight.bold`) tercih edilmelidir.
-  - **Mikro-Animasyonlar:** Ses dalgaları, yükleme göstergeleri ve ikonlar üzerinde kullanıcı etkileşimini artıracak akıcı animasyonlar (örneğin `_SoundWaveVisualizer`, parlayan buton gölgeleri vb.) kullanılır.
-* **Ses & Podcast Oynatma:** Ses kütüphanesi özelliklerinde doğrudan GitHub sunucuları yerine bant genişliği sınırsız ve reklam barındırmayan Spotify/Anchor CDN bağlantılarını (`https://anchor.fm/s/...`) kullan. Oynatıcı olarak `just_audio` entegrasyonunu tercih et.
-* **Veri Yapısı:** `lib/core/data/` altındaki ders notları, mini oyun senaryoları ve soru bankası veri şablonlarını güncellerken mevcut Dart harita (Map) yapılarına ve veri tiplerine sadık kal.
-* **Dart Veri Üretim ve Script Koruması:** Python veya harici betikler ile Dart veri dosyaları (özellikle `lib/core/data/quiz_data.dart` vb.) güncellenirken tırnak içindeki metinlerin alt satıra kayması (multiline string) engellenmeli ve dizi içerisindeki elemanların sonundaki virgüller (`,`) her zaman eksiksiz korunmalıdır.
+## 4. Dürüstlük ve Şeffaflık Kuralı (Kritik)
+* **Mutlak Dürüstlük (%100 Şeffaflık):** Her zaman ve istisnasız olarak %100 dürüst ol. Eğer bir bilgi, resmi belgede veya kaynakta doğrudan yazmıyorsa ve sen bunu kendi çıkarımın, pedagojik sentezin veya tahminin olarak ürettiysen, bu durumu **asla** resmi kaynaktan birebir alınmış bir alıntıymış gibi sunma.
+* **Cevap Vermek İçin Yalan Söyleme Yasaktır:** Sadece kullanıcıya yanıt verebilmek veya süreci geçiştirmek amacıyla yalan söylemek, gerçeği çarptırmak, tahminleri gerçekmiş gibi sunmak veya henüz bitmemiş bir işe "bitti/tamamlandı" demek KESİNLİKLE YASAKTIR. Cevap ne olursa olsun daima %100 ham gerçek neyse o söylenecektir.
 
-
-## 5. Ortak Çalışma & Problem Çözme Tarzı
-* **Pratik ve Alternatif Çözüm Odaklılık:** Karşılaşılan teknik engellerde (örn. GitHub Pages limitleri veya yerel terminal kısıtlamaları) hemen alternatif yolları (örn. sesleri Spotify/Anchor'a taşımak, kullanıcının kendi terminalinde çalıştırabileceği pratik Python/Dart betikleri hazırlamak gibi) proaktif olarak üret.
-* **Doğrudan Sonuç ve İletişim:** Değişiklikleri açıklarken teknik laf kalabalığı yapma. Doğrudan sonuca, neyin güncellendiğine ve kullanıcının ne yapması gerektiğine odaklan.
-* **Yedekleme ve Adım Adım Temizlik:** Dosyaları silmeden önce her zaman kullanıcının yerel bilgisayarında bir yedeği olup olmadığını sorgula ve silme işlemlerini aşamalı olarak doğrulat.
+## 5. Hız, Doğrudanlık ve Sıfır Gecikme Kuralı (Kritik)
+* **Kendi Başına Arka Plan Görevi Başlatmak Yasaktır:** Kullanıcı açıkça emretmedikçe arka planda ağır analizler (`flutter analyze`), zamanlayıcılar (`schedule`) veya disk taramaları çalıştırmak KESİNLİKLE YASAKTIR.
+* **Doğrudan Tek Hamlede İcra:** İstenen değişiklik parça parça dosya okuma döngülerine (`view_file` tekrarlarına) sokulmadan, doğrudan tek hamlede dosyaya işlenecek ve anında kullanıcıya sunulacaktır. Kullanıcının vaktini ve kotasını çalan hiçbir gereksiz işlem yapılmayacaktır.

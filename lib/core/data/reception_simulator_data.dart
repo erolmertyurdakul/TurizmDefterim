@@ -195,21 +195,21 @@ enum GuestType {
   aile(
     emoji: '👨‍👩‍👧‍👦',
     displayName: 'Aile',
-    patienceMultiplier: 1.3,
+    patienceMultiplier: 0.95,
     pointMultiplier: 1.2,
     minLevel: 2,
   ),
   yasliCift(
     emoji: '👴',
     displayName: 'Yaşlı Çift',
-    patienceMultiplier: 1.5,
+    patienceMultiplier: 1.2,
     pointMultiplier: 1.0,
     minLevel: 2,
   ),
   ozelGereksinim(
     emoji: '♿',
     displayName: 'Özel Gereksinimli Misafir',
-    patienceMultiplier: 1.2,
+    patienceMultiplier: 0.85,
     pointMultiplier: 1.3,
     minLevel: 2,
   ),
@@ -383,14 +383,14 @@ class LevelConfig {
       GuestType.values.where((g) => g.minLevel <= level).toList();
 
   static const List<LevelConfig> levels = [
-    LevelConfig(level: 0, title: 'Stajyer', basePatience: 15, maxSpecialRequests: 0, totalGuests: 2),
-    LevelConfig(level: 1, title: 'Bellboy', basePatience: 17, maxSpecialRequests: 0, totalGuests: 8),
-    LevelConfig(level: 2, title: 'Resepsiyonist', basePatience: 19, maxSpecialRequests: 1, totalGuests: 8),
-    LevelConfig(level: 3, title: 'Kıdemli Resepsiyonist', basePatience: 21, maxSpecialRequests: 1, totalGuests: 8),
-    LevelConfig(level: 4, title: 'Vardiya Amiri', basePatience: 23, maxSpecialRequests: 2, totalGuests: 8),
-    LevelConfig(level: 5, title: 'Ön Büro Şefi', basePatience: 25, maxSpecialRequests: 2, totalGuests: 8),
-    LevelConfig(level: 6, title: 'Ön Büro Müdürü', basePatience: 27, maxSpecialRequests: 2, totalGuests: 8),
-    LevelConfig(level: 7, title: 'Genel Müdür', basePatience: 29, maxSpecialRequests: 3, totalGuests: 8),
+    LevelConfig(level: 0, title: 'Stajyer', basePatience: 18, maxSpecialRequests: 0, totalGuests: 2),
+    LevelConfig(level: 1, title: 'Bellboy', basePatience: 20, maxSpecialRequests: 0, totalGuests: 8),
+    LevelConfig(level: 2, title: 'Resepsiyonist', basePatience: 22, maxSpecialRequests: 1, totalGuests: 8),
+    LevelConfig(level: 3, title: 'Kıdemli Resepsiyonist', basePatience: 24, maxSpecialRequests: 1, totalGuests: 8),
+    LevelConfig(level: 4, title: 'Vardiya Amiri', basePatience: 26, maxSpecialRequests: 2, totalGuests: 8),
+    LevelConfig(level: 5, title: 'Ön Büro Şefi', basePatience: 28, maxSpecialRequests: 2, totalGuests: 8),
+    LevelConfig(level: 6, title: 'Ön Büro Müdürü', basePatience: 30, maxSpecialRequests: 2, totalGuests: 8),
+    LevelConfig(level: 7, title: 'Genel Müdür', basePatience: 32, maxSpecialRequests: 3, totalGuests: 8),
   ];
 }
 
@@ -686,7 +686,9 @@ class ReceptionSimulatorData {
     final correctRoom = availableRooms[random.nextInt(availableRooms.length)];
 
     // Özel istekler oluştur (tercih edilen varsa onları kullan)
-    final requests = scenario.preferredSpecialRequests ?? _generateSpecialRequests(config.maxSpecialRequests, random, guestType: guestType);
+    final requests = config.maxSpecialRequests > 0 
+        ? (scenario.preferredSpecialRequests ?? _generateSpecialRequests(config.maxSpecialRequests, random, guestType: guestType, boardType: scenario.correctBoard))
+        : const <SpecialRequest>[];
 
     // Diyaloğu tamamla
     String dialogue = scenario.dialogue;
@@ -831,7 +833,9 @@ class ReceptionSimulatorData {
       final flag = _nationalities[random.nextInt(_nationalities.length)];
 
       // Özel istekler (tercih edilen varsa onları kullan)
-      final requests = candidate.preferredSpecialRequests ?? _generateSpecialRequests(config.maxSpecialRequests, random);
+      final requests = config.maxSpecialRequests > 0 
+          ? (candidate.preferredSpecialRequests ?? _generateSpecialRequests(config.maxSpecialRequests, random, guestType: candidate.type, boardType: candidate.board))
+          : const <SpecialRequest>[];
 
       // Diyaloğa özel istek ipuçlarını ekle
       String dialogue = candidate.dialogue;
@@ -856,16 +860,24 @@ class ReceptionSimulatorData {
 
   /// Rastgele özel istekler oluşturur.
   static List<SpecialRequest> _generateSpecialRequests(
-      int maxRequests, Random random, {GuestType? guestType}) {
+      int maxRequests, Random random, {GuestType? guestType, BoardType? boardType}) {
     if (maxRequests <= 0) return const [];
     final hasRequests = random.nextBool();
     if (!hasRequests) return const [];
 
     final numRequests = random.nextInt(maxRequests) + 1;
     final all = List<SpecialRequest>.from(SpecialRequest.values);
+    
     if (guestType == GuestType.ozelGereksinim) {
       all.remove(SpecialRequest.yuksekKat);
     }
+    if (guestType == GuestType.balayi || guestType == GuestType.yasliCift || guestType == GuestType.isInsani) {
+      all.remove(SpecialRequest.bebekYatagi);
+    }
+    if (boardType == BoardType.sadeceOda) {
+      all.remove(SpecialRequest.diyetMenu);
+    }
+    
     all.shuffle(random);
     return all.take(numRequests).toList();
   }

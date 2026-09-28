@@ -13,7 +13,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Kültür",
           "desc": "İnsanın doğaya eklediği, toplumsal olarak öğrenilen ve aktarılan yaşam tarzıdır. Latince 'colere' (toprağı işlemek, bakmak) kelimesinden türemiştir.",
           "examples": [
-            "Örnekle Pekiştirelim: Türk kültüründe konuklara çay ve Türk kahvesi ikram edilmesi, bu ikramın toplumsal olarak öğrenilen ve nesiller boyu aktarılan sıcak bir yaşam tarzı olmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Türk kültüründe konuklara çay ve Türk kahvesi ikram edilmesi, bu ikram toplumsal olarak öğrenilen ve nesiller boyu aktarılan sıcak bir yaşam tarzı olmuştur."
           ]
         },
         {
@@ -63,7 +63,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Toplumsal Normlar",
           "desc": "Bireylerin toplumsal ilişkilerde uymak zorunda oldukları davranış kurallarıdır. Değerlerden beslenir ve ahlak, din, görgü kuralları şeklinde somutlaşır.",
           "examples": [
-            "Örnekle Pekiştirelim: Toplu taşıma araçlarında hamilelere, yaşlılara veya engelli vatandaşlara yer vermenin toplumda yazısız ama köklü bir görgü kuralı olmasıdır."
+            "Örnekle Pekiştirelim: Toplu taşıma araçlarında hamilelere, yaşlılara veya engelli vatandaşlara yer vermen toplumda yazısız ama köklü bir görgü kuralı olmuştur."
           ]
         }
       ],
@@ -80,7 +80,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Kültürlerarası İletişim",
           "desc": "Farklı kültürlerden gelen insanların algılama, kodlama ve mesaj iletme süreçlerindeki benzerlik ve farklılıkları inceleyen iletişim dalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyon görevlisinin otele gelen bir Arap konukla konuşurken yüksek samimiyet göstermesi, ancak bir Japon konukla konuşurken daha mesafeli ve eğilerek selamlaşmasıdır."
+            "Örnekle Pekiştirelim: Resepsiyon görevlisi otele gelen bir Arap konukla konuşurken yüksek samimiyet göstermesi, ancak bir Japon konukla konuşurken daha mesafeli ve eğilerek selamlaşmıştır."
           ]
         },
         {
@@ -94,7 +94,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Kişisel Alan (Proksemik)",
           "desc": "İnsanların başkalarıyla aralarında korumak istedikleri görünmez fiziksel mesafedir. Akdeniz ve Ortadoğu kültürlerinde bu mesafe dar iken, Kuzey Avrupa ve Asya'da geniştir.",
           "examples": [
-            "Örnekle Pekiştirelim: İspanyol bir turistin konuşurken kolunuza dokunup çok yakın durması; buna karşılık İsveçli bir turistin araya en az 1.5 metre mesafe koyarak konuşmayı tercih etmesidir."
+            "Örnekle Pekiştirelim: İspanyol turist konuşurken kolunuza dokunup yakın dururken, İsveçli turist araya en az 1.5 metre mesafe koymayı tercih etmiştir."
           ]
         }
       ],
@@ -111,14 +111,14 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Kültür Turizmi",
           "desc": "İnsanların yeni kültürler tanımak, tarihi eserleri, müzeleri, festivalleri ziyaret etmek ve yerel yaşam tarzını deneyimlemek amacıyla yaptığı seyahatlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yabancı bir turistin Kars'a giderek oradaki tarihi Rus evlerini incelemesi, aşık atışmalarını dinlemesi ve kaz eti yiyerek kültürü öğrenmesidir."
+            "Örnekle Pekiştirelim: Yabancı bir turist Kars'a giderek tarihi Rus evlerini incelemiş, aşık atışmalarını dinlemiş ve kaz eti yiyerek yöre kültürünü yakından tanımıştır."
           ]
         },
         {
           "name": "Turist Beklentisi",
           "desc": "Gezginin seyahat ettiği bölgedeki hizmet kalitesi, otantiklik (özgünlük) ve güvenlik standartlarına yönelik ön kabulleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'ya giden bir turistin, orada otantik taş bir butik otelde kalmayı ve sabahları geleneksel sıcak gözleme yemeyi önceden umarak gitmesidir."
+            "Örnekle Pekiştirelim: Kapadokya'ya giden bir turist, orada otantik taş bir butik otelde kalmayı ve sabahları geleneksel sıcak gözleme yemeyi önceden umarak gitmiştir."
           ]
         },
         {
@@ -156,7 +156,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "UNESCO Dünya Mirası",
           "desc": "Tüm insanlığın ortak mirası kabul edilen ve korunması amacıyla UNESCO tarafından tescillenip koruma altına alınan üst düzey prestijli listedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Karabük'teki tarihi Safranbolu Evleri'nin veya Denizli Pamukkale Hierapolis antik kentinin UNESCO koruma listesinde yer almasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Karabük'teki tarihi Safranbolu Evleri ile Denizli Pamukkale Hierapolis antik kenti UNESCO koruma listesinde yer almıştır."
           ]
         }
       ],
@@ -167,18 +167,18 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
       "id": 6,
       "tag": "KÜRESEL",
       "title": "KÜRESELLEŞME VE KÜLTÜREL DEĞİŞİM",
-      "microSummary": "Teknoloji ve iletişimle sınırların kalktığı dünyada popüler kültürün yerel değerleri etkilemesi ve melez kültürlerin doğmasıdır.",
+      "microSummary": "Teknoloji ve iletişimle sınırların kalktığı dünyada popüler kültürün yerel değerleri etkilemesi ve melez kültürlerin doğmasını ifade eder.",
       "definitions": [
         {
           "name": "Küreselleşme (Globalization)",
-          "desc": "Ekonomik, sosyal ve kültürel değerlerin dünya ölçeğinde yayılması, sınırların belirsizleşmesi ve tek bir dünya toplumu modelinin oluşmasıdır.",
+          "desc": "Ekonomik, sosyal ve kültürel değerlerin dünya ölçeğinde yayılması, sınırların belirsizleşmesi ve tek bir dünya toplumu modelinin oluşmasını ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Dünyanın neresine giderseniz gidin insanların internet sayesinde aynı sosyal medya platformlarını kullanması ve küresel gündemi takip etmesidir."
+            "Örnekle Pekiştirelim: Dünyanın neresine gidilirse gidilsin, insanlar internet sayesinde aynı sosyal medya platformlarını kullanarak küresel gündemi takip etmektedir."
           ]
         },
         {
           "name": "Kültürel Homojenleşme (Tek tipleşme)",
-          "desc": "Küresel markaların ve popüler Amerikan kültürünün (McDonaldlaşma) yerel giyim, yeme-içme ve yaşam tarzlarını yok ederek dünyayı aynılaştırmasıdır.",
+          "desc": "Küresel markaların ve popüler Amerikan kültürünün (McDonaldlaşma) yerel giyim, yeme-içme ve yaşam tarzlarını yok ederek dünyayı aynılaştırmasını ifade eder.",
           "examples": [
             "Örnekle Pekiştirelim: Dünyanın her yerinde gençlerin aynı kot pantolonu giymesi, aynı pop müzikleri dinlemesi ve aynı kahve zincirlerinden (Starbucks) kahve alması kültürel homojenleşmedir."
           ]
@@ -187,11 +187,11 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Küreselleşme ve Yerel Kültürler",
           "desc": "Global markaların, yerel pazarlarda başarılı olabilmek için ürünlerini yerel kültürün damak tadına ve inançlarına göre uyarlamasıdır (Global düşün, yerel hareket et).",
           "examples": [
-            "Örnekle Pekiştirelim: Dünyaca ünlü bir fast-food zincirinin Türkiye'de 'McTurco' (lavaş arası köfte) satması veya Hindistan'da hamburger eti olarak sığır eti yerine patates kullanmasıdır."
+            "Örnekle Pekiştirelim: Küresel bir fast-food zinciri Türkiye'de lavaş arası köfte satarken Hindistan'da sığır eti yerine patates köftesi kullanmıştır."
           ]
         }
       ],
-      "caseStudy": "Dünyaca ünlü bir fast-food zincirinin Türkiye'de 'McTurco' (lavaş arası köfte) satması veya Hindistan'da inek kutsal olduğu için hamburger etini sığır eti yerine patates ve tavuktan üretmesi en başarılı 'Glocalization' (yerelleşme) örnekleridir.",
+      "caseStudy": "Örnekle Pekiştirelim: Küresel bir fast-food zinciri Türkiye'de lavaş arası köfte satarken Hindistan'da sığır eti yerine patates köftesi kullanmıştır.'de 'McTurco' (lavaş arası köfte) satması veya Hindistan'da inek kutsal olduğu için hamburger etini sığır eti yerine patates ve tavuktan üretmesi en başarılı 'Glocalization' (yerelleşme) örnekleridir.",
       "tip": "Glocalization = Global + Local (Küresel teknolojiyi, yerel kültürel değerlerle harmanlamak)."
     },
     {
@@ -204,12 +204,12 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Küresel Turizm Etik İlkeleri",
           "desc": "Dünya Turizm Örgütü (UNWTO) tarafından belirlenmiş; turizmin kültürleri koruması, insan haklarına saygı duyması ve sürdürülebilir olması gerektiğini savunan ilkelerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Turist rehberlerinin, gezi düzenlenen antik kentlerde çevreye çöp atılmaması ve yerel halkın dükkanlarından alışveriş yapılması konusunda sürekli uyarılarda bulunmasıdır."
+            "Örnekle Pekiştirelim: Turist rehberleri, gezi düzenlenen antik kentlerde çevreye çöp atılmaması ve yerel halkın dükkanlarından alışveriş yapılması konusunda uyarılarda bulunmuştur."
           ]
         },
         {
           "name": "Kültürel Röntgencilik",
-          "desc": "Turistlerin, yerel halkın yoksulluğunu veya geleneksel yaşamını tıpkı bir hayvanat bahçesindeymiş gibi sadece fotoğraf çekmek ve eğlenmek amacıyla etik dışı izlemesidir.",
+          "desc": "Turistlerin, yerel halkın yoksulluğunu veya geleneksel yaşamını tıpkı bir hayvanat bahçesindeymiş gibi sadece fotoğraf çekmek ve eğlenmek amacıyla etik dışı izlemesini ifade eder.",
           "examples": [
             "Örnekle Pekiştirelim: Afrika'daki yoksul kabile çocuklarına şeker fırlatarak onların fotoğraflarını çekmeye çalışmak etik dışı, sömürgeci bir yaklaşımdır ve turizm etiğine tamamen aykırıdır."
           ]
@@ -218,7 +218,7 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Adil Turizm (Fair Tourism)",
           "desc": "Turizm gelirlerinin büyük otel zincirleri yerine doğrudan yerel rehberlere, yerel pansiyon işleten köylülere ve küçük esnafa dağıtılmasını savunan ahlaki modeldir.",
           "examples": [
-            "Örnekle Pekiştirelim: Turistlerin dev tatil köyleri yerine köy pansiyonlarında kalması ve köy pazarında tezgah açan kadınlardan el yapımı reçeller satın almasıdır."
+            "Örnekle Pekiştirelim: Turistler dev tatil köyleri yerine köy pansiyonlarında kalmış, yerel pazardan el yapımı ürünler satın almıştır."
           ]
         }
       ],
@@ -235,14 +235,14 @@ const Map<String, dynamic> dunyaKulturleriUnit1 = {
           "name": "Holi Festivali (Hindistan)",
           "desc": "Baharın gelişini kutlamak amacıyla insanların birbirine rengarenk organik boyalar (kırmızı, sarı, yeşil) fırlattığı, sevgi ve hoşgörünün simgesi olan 'Renklerin Festivali'dir.",
           "examples": [
-            "Örnekle Pekiştirelim: Hindistan'da binlerce yerli ve yabancı turistin beyaz giysiler giyip sokaklarda 'Holi Hai' bağırışlarıyla birbirlerine toz boya fırlatarak dans etmesidir."
+            "Örnekle Pekiştirelim: Hindistan'da binlerce yerli ve yabancı turist beyaz giysiler giyip sokaklarda birbirlerine toz boya fırlatarak dans etmiştir."
           ]
         },
         {
           "name": "Oktoberfest (Almanya)",
           "desc": "Bavyera kültürünün simgesi olan, Münih şehrinde düzenlenen, geleneksel kıyafetlerin (Dirndl ve Lederhosen) giyildiği dünyanın en büyük halk festivalidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Almanya Münih'te devasa çadırlarda kurulan uzun tahta masalarda binlerce turistin geleneksel Bavyera müzikleri eşliğinde tuzlu simit (Brezel) yiyip eğlenmesidir."
+            "Örnekle Pekiştirelim: Almanya Münih'te dev çadırlarda kurulan uzun masalarda binlerce turist geleneksel Bavyera müzikleri eşliğinde eğlenmiştir."
           ]
         },
         {
@@ -303,7 +303,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Kuzey Amerika Kültürü (Anglo-Sakson)",
           "desc": "ABD ve Kanada'yı kapsayan; girişimcilik, rekabetçilik, özgürlük, pratiklik ve hızlı tüketime (Fast-food, Pop-kültür) dayalı dinamik yapıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: ABD'deki iş dünyasında zamanın çok değerli olması nedeniyle öğle yemeklerinin 'ayaküstü' (fast-food) yenilip işe geri dönülmesidir."
+            "Örnekle Pekiştirelim: ABD iş dünyasında zaman çok değerli olduğu için öğle yemekleri hızlıca yenilip mesaiye geri dönülmüştür."
           ]
         },
         {
@@ -317,7 +317,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Yerli Mirası",
           "desc": "Peru'daki İnka medeniyeti (Machu Picchu) ve Meksika'daki Maya/Aztek kalıntılarının oluşturduğu, Latin Amerika turizminin can damarı olan kadim tarihtir.",
           "examples": [
-            "Örnekle Pekiştirelim: Peru'da And Dağları'nın zirvesindeki antik Machu Picchu şehrini ziyaret eden turistlerin, İnkaların taş işçiliğine hayran kalmasıdır."
+            "Örnekle Pekiştirelim: Peru'da And Dağları'nın zirvesindeki antik Machu Picchu şehrini ziyaret eden turistler, İnkaların taş işçiliğine hayran kalmıştır."
           ]
         }
       ],
@@ -333,7 +333,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Bahşiş Kültürü (Tipping)",
           "desc": "Amerika'da hizmet sektörünün yasal bir parçası haline gelmiş, faturanın %15-20'si oranında bırakılması zorunlu olan ücrettir. Avrupa'da ise daha esnektir.",
           "examples": [
-            "Örnekle Pekiştirelim: New York'ta bir kafede 10 dolarlık kahve içen turistin, hesabı öderken garson masasına en az 1.5 - 2 dolar bahşiş bırakmasının etik bir kural olmasıdır."
+            "Örnekle Pekiştirelim: New York'ta bir kafede 10 dolarlık kahve içen turist, hesabı öderken masada en az 1.5-2 dolar bahşiş bırakmıştır."
           ]
         },
         {
@@ -364,14 +364,14 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Alman Turist Profili",
           "desc": "Dünyanın en çok seyahat eden kitlelerindendir. Çok planlıdırlar, rezervasyonlarını aylar önce yaparlar. Kalite standartlarına ve sözleşme detaylarına aşırı önem verirler.",
           "examples": [
-            "Örnekle Pekiştirelim: Alman bir turistin tatile gitmeden 6 ay önce uçak, otel ve müze biletlerini alıp, gün gün nereyi gezeceğini gösteren detaylı bir gezi planı hazırlamasıdır."
+            "Örnekle Pekiştirelim: Alman bir turist tatile gitmeden 6 ay önce uçak, otel ve müze biletlerini alıp, gün gün nereyi gezeceğini gösteren detaylı bir gezi planı hazırlamıştır."
           ]
         },
         {
           "name": "İngiliz Turist Profili",
           "desc": "Eğlenceye, gece hayatına ve eğlence kültürüne düşkündürler. Akdeniz kıyılarında deniz-kum-güneş (3S) tatillerini çok tercih ederler.",
           "examples": [
-            "Örnekle Pekiştirelim: İngiliz turistlerin Bodrum veya Marmaris'teki eğlence merkezlerinde geç saatlere kadar eğlenip gündüzleri de güneşlenmek üzere plajları doldurmasıdır."
+            "Örnekle Pekiştirelim: İngiliz turistler Bodrum veya Marmaris'teki eğlence merkezlerinde geç saatlere kadar eğlenip gündüzleri de güneşlenmek üzere plajları doldurmuştur."
           ]
         },
         {
@@ -437,9 +437,9 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
         },
         {
           "name": "Kolektif (Toplulukçu) Kültür",
-          "desc": "Bireysel isteklerden ziyade ailenin, şirketin veya toplumun başarısının ve uyumunun (Girişkenlik yerine uyum) ön planda tutulduğu Asya sosyal yapısıdır.",
+          "desc": "Bireysel isteklerden ziyade ailenin, şirketin veya toplumun başarısının ve uyumunun ön planda tutulduğu Asya sosyal yapısını ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Japon bir çalışanın kendi kişisel fikrini öne sürmek yerine, departmandaki tüm arkadaşlarıyla ortak karara varıp uyumlu çalışmasıdır."
+            "Örnekle Pekiştirelim: Japon bir çalışan, kişisel fikrini öne sürmek yerine departmandaki tüm çalışma arkadaşlarıyla ortak karara vararak uyum içinde çalışmıştır."
           ]
         }
       ],
@@ -453,9 +453,9 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
       "definitions": [
         {
           "name": "İnanç ve Kültür Turizmi Standartları",
-          "desc": "Yiyecek, içecek ve konaklama hizmetlerinin İslami kurallara (helal gıda standartları, kadın-erkek ayrı kullanım alanları) uygun olarak sunulmasıdır.",
+          "desc": "Yiyecek, içecek ve konaklama hizmetlerinin İslami kurallara (helal gıda standartları, kadın-erkek ayrı kullanım alanları) uygun olarak sunulmasını ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelde tüm yiyecek ve içeceklerin helal standartlarda olması, sunulan etlerin helal kesim sertifikalı olması ve kadınlara özel dışarıdan görünmeyen havuz bulunmasıdır."
+            "Örnekle Pekiştirelim: Otelde tüm yiyecek ve içecekler helal standartlarda sunulmuş, etler sertifikalandırılmış ve kadınlara özel korunaklı havuz hazırlanmıştır."
           ]
         },
         {
@@ -469,7 +469,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Aile Mahremiyeti",
           "desc": "Ortadoğu kültüründe aile yapısının korunması ve kadınların mahremiyetine (örneğin izinsiz fotoğraflarının çekilmemesi) gösterilen yüksek hassasiyettir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel odasında temizlik yapacak olan kat görevlisinin, odada misafir varken kapıyı vurup içeriye seslenmeden kesinlikle girmemesidir."
+            "Örnekle Pekiştirelim: Otel odasında temizlik yapacak olan kat görevlisi, odada misafir varken kapıyı vurup içeriye seslenmeden kesinlikle girmemiştir."
           ]
         }
       ],
@@ -485,7 +485,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Japonya'da Selamlaşma (Eğilme - Bowing)",
           "desc": "Fiziksel temas (tokalaşma, sarılma) yerine, baş ve sırt düz tutularak eğilerek yapılan saygı selamıdır (Ojigi). Eğilme derecesi kişinin statüsüne göre değişir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel genel müdürünün otele gelen Japon acente başkanını karşılarken tokalaşmak yerine ellerini yanına alıp 30 derece eğilerek selamlamasıdır."
+            "Örnekle Pekiştirelim: Otel genel müdürü, otele gelen Japon acente başkanını karşılarken tokalaşmak yerine hafifçe eğilerek saygıyla selamlamıştır."
           ]
         },
         {
@@ -516,7 +516,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Uzak Doğu (Japon/Çin) Turist Profili",
           "desc": "Genellikle tur otobüsleriyle grup halinde seyahat ederler. Güvenlik, temizlik ve dakikliğe takıntılıdırlar. Fotoğraf çekmeye ve hediyelik eşya almaya çok düşkündürler.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'ya gelen Çinli bir grubun, sabah saat tam 09:00'da otobüsün önünde eksiksiz toplanıp, gün boyu tarihi yerlerde bol bol fotoğraf çekmesidir."
+            "Örnekle Pekiştirelim: Kapadokya'ya gelen Çinli turist grubu, sabah tam vaktinde otobüs önünde eksiksiz toplanmış ve gün boyu fotoğraf çekmiştir."
           ]
         },
         {
@@ -528,23 +528,23 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
         },
         {
           "name": "Mutfak Hassasiyetleri",
-          "desc": "Japonlar için taze yeşil çay (Matcha) ve pirinç pilavı; Hintliler için ise kesinlikle vejetaryen/helal yemek seçeneklerinin (baharatlı köri sosları) menüde yer almasıdır.",
+          "desc": "Japonlar için taze yeşil çay ve pirinç pilavı, Hintliler için ise vejetaryen yemek seçeneklerinin menüde yer almasını ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Hintli konuklar için otel kahvaltı büfesinde sığır veya domuz eti içermeyen, taze kimyon ve köri aromalı özel mercimek çorbasının sunulmasıdır."
+            "Örnekle Pekiştirelim: Hintli konuklar için otel kahvaltı büfesinde sığır veya domuz eti içermeyen, baharat aromalı özel çorbalar sunulmuştur."
           ]
         },
         {
           "name": "Koşer (Kosher) Kuralları",
           "desc": "Yahudi inancına göre tüketilmesi uygun olan gıdalardır. Et ve süt ürünlerinin asla bir arada pişirilmemesi ve aynı mutfak ekipmanlarının (tencere, tabak, bıçak) kullanılmaması gibi çok katı kuralları vardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Musevi misafirlerin yiyeceği et yemeğinin yanında tereyağı veya yoğurt sunulmaması, etin Koşer sertifikalı kasaptan alınıp ayrı mutfak tezgahında hazırlanmasıdır."
+            "Örnekle Pekiştirelim: Musevi misafirlerin yemeğinde süt ve et ürünleri karıştırılmamış; etler Koşer sertifikalı kasaptan alınıp ayrı tezgahta hazırlanmıştır."
           ]
         },
         {
           "name": "Vegan ve Vejetaryen Standartları",
           "desc": "Vejetaryen: Et yemeyen ancak süt, peynir, yumurta tüketen beslenme şeklidir. Vegan: Hayvansal hiçbir ürünü (bal dahil) tüketmeyen, tamamen bitki bazlı felsefedir. Ayrı pişirme alanları kullanılmalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Vegan misafirin yemeğinin, et pişen ızgarada değil, tamamen temizlenmiş ayrı bir tavada zeytinyağı ve taze sebzelerle hazırlanmasıdır."
+            "Örnekle Pekiştirelim: Vegan misafir yemeği, et pişen ızgarada değil, tamamen temizlenmiş ayrı bir tavada zeytinyağı ve taze sebzelerle hazırlanmıştır."
           ]
         }
       ],
@@ -589,9 +589,9 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
       "definitions": [
         {
           "name": "Ubuntu Felsefesi",
-          "desc": "Güney Afrika kökenli 'Ben, biz olduğumuz için benim' anlamına gelen; paylaşım, yardımlaşma ve insanlığı temel alan yaşam felsefesidir.",
+          "desc": "Güney Afrika kökenli 'Ben, biz olduğumuz için benim' anlamına gelen, paylaşım, yardımlaşma ve insanlığı temel alan yaşam felsefesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Köyde yiyecek sıkıntısı çeken bir aileye, diğer kabile üyelerinin kendi tarlalarındaki mısırları karşılıksız olarak götürüp paylaşmasıdır."
+            "Örnekle Pekiştirelim: Köyde yiyecek sıkıntısı çeken bir aileye, kabile üyeleri kendi tarlalarındaki mısırları götürerek karşılıksız paylaşmıştır."
           ]
         },
         {
@@ -605,7 +605,7 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
           "name": "Safari Kültürü ve Doğal Yaşam",
           "desc": "Vahşi hayvanları (Büyük Beşli: Aslan, Fil, Leopar, Gergedan, Bufalo) doğal ortamında koruyarak izlemeye dayalı, doğaya duyarlı lüks turizmdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Tanzanya Serengeti ovasında üstü açık özel araçlarla, vahşi doğada göç eden yüzbinlerce antilobun ve onları takip eden avcı aslanların izlenmesidir."
+            "Örnekle Pekiştirelim: Tanzanya Serengeti ovasında üstü açık araçlarla, vahşi doğada göç eden antilop sürüsü ve onları takip eden aslanlar izlenmiştir."
           ]
         }
       ],
@@ -633,9 +633,9 @@ const Map<String, dynamic> dunyaKulturleriUnit2 = {
         },
         {
           "name": "Uluru Kutsal Kayası (Ayers Rock)",
-          "desc": "Avustralya çölünün ortasında bulunan, gün batımında renk değiştiren ve Aborjinler için son derece kutsal olan devasa kızıl kaya kütlesidir.",
+          "desc": "Avustralya çölünün ortasında bulunan, gün batımında renk değiştiren ve Aborjinler için son derece kutsal olan devasa kızıl kaya kütlesini ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Avustralya'nın iç kesimlerindeki devasa kızıl Uluru kayasını uzaktan fotoğraflayan turistlerin, Aborjinlerin inançlarına saygı göstererek kayaya tırmanmaktan kaçınmasıdır."
+            "Örnekle Pekiştirelim: Avustralya'nın iç kesimlerindeki devasa kızıl Uluru kayasını uzaktan fotoğraflayan turistler, Aborjinlerin inançlarına saygı göstererek kayaya tırmanmaktan kaçınmıştır."
           ]
         }
       ],

@@ -4,15 +4,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/data/daily_facts.dart';
-import '../../../courses/presentation/screens/coming_soon_screen.dart';
 import '../../../courses/presentation/screens/course_list_screen.dart';
 import '../../../scenarios/presentation/screens/scenario_list_screen.dart';
 import '../../../terminology/presentation/screens/terminology_screen.dart';
 import '../../../../core/utils/fade_page_route.dart';
-
+import '../../../notes/presentation/screens/student_notes_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/providers/points_provider.dart';
-import '../../../../core/data/terminology_data.dart';
 import 'onboarding_tour_screen.dart';
 import '../../../../core/providers/shell_tab_provider.dart';
 
@@ -68,11 +66,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
     // Pre-cache the daily fact image after the first layout frame to eliminate startup frame drop!
     WidgetsBinding.instance.addPostFrameCallback((_) {
       try {
-        final now = DateTime.now();
-        final startOfYear = DateTime(now.year, 1, 1);
-        final dayOfYearIndex = now.difference(startOfYear).inDays;
-        final factIndex = dayOfYearIndex % 365;
-        final fact = dailyFacts[factIndex];
         precacheImage(const AssetImage('assets/images/Daily_Info_Image.jpeg'), context);
       } catch (_) {}
     });
@@ -87,22 +80,29 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+    final isDesktop = screenWidth >= 1050;
+
     return Scaffold(
       body: SafeArea(
         child: FadeTransition(
           opacity: _fadeController,
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSizes.screenPadding),
+            padding: EdgeInsets.symmetric(
+              horizontal: isWide ? 28.0 : AppSizes.screenPadding,
+              vertical: isWide ? 14.0 : AppSizes.screenPadding,
+            ),
             physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: AppSizes.sm),
+                SizedBox(height: isWide ? 4.0 : AppSizes.sm),
 
                 // ── Hoşgeldin Banner ──
                 _buildWelcomeBanner(context),
 
-                const SizedBox(height: AppSizes.lg),
+                SizedBox(height: isWide ? (isDesktop ? 26.0 : 22.0) : AppSizes.lg),
 
                 // ── Bölüm Başlığı: Sınıflar ──
                 _buildSectionTitle(
@@ -112,12 +112,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                   subtitle: 'Öğrenim planına uygun içeriklere eriş',
                 ),
 
-                const SizedBox(height: AppSizes.md),
+                SizedBox(height: isWide ? (isDesktop ? 16.0 : 14.0) : AppSizes.md),
 
-                // ── 4 Sınıf Kartı (2x2 Grid) ──
+                // ── 4 Sınıf Kartı (2x2 Grid mobilde, 4 sütun geniş ekranda) ──
                 _buildGradeGrid(context),
 
-                const SizedBox(height: AppSizes.xl),
+                SizedBox(height: isWide ? (isDesktop ? 28.0 : 24.0) : AppSizes.xl),
 
                 Column(
                   key: _modulesKey,
@@ -131,64 +131,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                       subtitle: 'Bilgini pekiştir, pratik yap',
                     ),
 
-                    const SizedBox(height: AppSizes.md),
+                    SizedBox(height: isWide ? (isDesktop ? 16.0 : 14.0) : AppSizes.md),
 
-                    // ── İnteraktif Vaka Analizi Kartı ──
-                    _buildModuleCard(
-                      context,
-                      title: 'İnteraktif Vaka Analizi',
-                      subtitle: 'Turizm senaryoları üzerinde düşün',
-                      icon: Icons.cases_rounded,
-                      gradient: AppColors.turquoiseGradient,
-                      iconBg: const Color(0xFF0B7A76),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          FadePageRoute(
-                            child: const ScenarioListScreen(),
-                          ),
-                        );
-                      },
-                    ),
-
-                    const SizedBox(height: AppSizes.md),
-
-                    // ── Terimler Sözlüğü & Quiz Kartı ──
-                    _buildModuleCard(
-                      context,
-                      title: 'Turizm Terimler Sözlüğü',
-                      subtitle: 'Mesleki terminolojini geliştir ve sına',
-                      icon: Icons.quiz_rounded,
-                      gradient: AppColors.sunsetGradient,
-                      iconBg: const Color(0xFFC46420),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          FadePageRoute(
-                            child: const TerminologyScreen(),
-                          ),
-                        );
-                      },
-                    ),
-
-                    const SizedBox(height: AppSizes.md),
-
-                    // ── Günün Bilgisi Kartı ──
-                    _buildModuleCard(
-                      context,
-                      title: 'Günün Bilgisi',
-                      subtitle: 'Her gün yeni bir bilgi öğren',
-                      icon: Icons.lightbulb_rounded,
-                      gradient: AppColors.oceanGradient,
-                      iconBg: const Color(0xFF0F52BA),
-                      onTap: () {
-                        _showDailyFactDialog(context);
-                      },
-                    ),
+                    // ── Gelişim Atölyesi Modülleri (Geniş ekranda 4 modül tek satır, tablette 2x2, mobilde alt alta) ──
+                    _buildWorkshopModules(context),
                   ],
                 ),
 
-                const SizedBox(height: 100),
+                SizedBox(height: isWide ? (isDesktop ? 120.0 : 110.0) : 100.0),
               ],
             ),
           ),
@@ -278,40 +228,39 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                             'Yılın $dayDisplay. Gününe Özel',
                             style: GoogleFonts.inter(
                               fontSize: 12,
-                              color: Colors.white.withValues(alpha: 0.8),
+                              color: Colors.white70,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
                       ),
                     ),
-                    
-                    // İlgili Yerin Fotoğrafı
                     Padding(
-                      padding: const EdgeInsets.only(top: AppSizes.lg, left: AppSizes.lg, right: AppSizes.lg),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Image.asset(
-                          imageAsset,
-                          height: 180,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              height: 180,
-                              color: AppColors.surface,
-                              child: const Center(
-                                child: Icon(Icons.image_not_supported_rounded, color: AppColors.textHint, size: 40),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(AppSizes.xl),
+                      padding: const EdgeInsets.all(AppSizes.lg),
                       child: Column(
                         children: [
+                          // Sabit Bilgi Görseli (Container boyutu sabit)
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+                            child: Image.asset(
+                              imageAsset,
+                              height: 140,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) => Container(
+                                height: 140,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: AppColors.surface,
+                                  borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+                                ),
+                                child: const Center(
+                                  child: Icon(Icons.image_not_supported_outlined, color: AppColors.textSecondary, size: 40),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: AppSizes.md),
                           Text(
                             fact,
                             textAlign: TextAlign.center,
@@ -377,6 +326,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
   //  HOŞGELDİN BANNER
   // ══════════════════════════════════════════
   Widget _buildWelcomeBanner(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+
     return RepaintBoundary(
       child: SlideTransition(
         position: Tween<Offset>(
@@ -388,15 +340,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
         )),
         child: Container(
           width: double.infinity,
-          padding: const EdgeInsets.all(AppSizes.lg),
+          padding: EdgeInsets.symmetric(
+            horizontal: isWide ? 30 : AppSizes.lg,
+            vertical: isWide ? 16 : AppSizes.lg,
+          ),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: AppColors.oceanGradient,
             ),
-            borderRadius: BorderRadius.circular(32),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.15), width: 1.2), // Premium outline!
+            borderRadius: BorderRadius.circular(isWide ? 28 : 24),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.18), width: 1.2), // Premium outline!
             boxShadow: const [
               BoxShadow(
                 color: Colors.black26, // Premium floating shadow
@@ -416,12 +371,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                   Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(2.5),
+                        padding: const EdgeInsets.all(3.0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(11),
+                          borderRadius: BorderRadius.circular(12),
                           color: Colors.transparent,
                           border: Border.all(
-                            color: const Color(0xFF38BDF8).withValues(alpha: 0.45),
+                            color: const Color(0xFF38BDF8).withValues(alpha: 0.5),
                             width: 1.4,
                           ),
                           boxShadow: [
@@ -431,33 +386,34 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                               offset: const Offset(0, 4),
                             ),
                             BoxShadow(
-                              color: const Color(0xFF00D2FF).withValues(alpha: 0.30),
+                              color: const Color(0xFF00D2FF).withValues(alpha: 0.35),
                               blurRadius: 14,
                               spreadRadius: 2,
                             ),
                           ],
                         ),
                         child: SizedBox(
-                          width: 32,
-                          height: 32,
+                          width: isWide ? 44 : 32,
+                          height: isWide ? 44 : 32,
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(9),
+                            borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
                               'assets/images/app_logo.png',
-                              width: 32,
-                              height: 32,
+                              width: isWide ? 44 : 32,
+                              height: isWide ? 44 : 32,
                               fit: BoxFit.contain,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      SizedBox(width: isWide ? 14 : 12),
                       Text(
                         'Turizm Defterim',
                         style: GoogleFonts.outfit(
-                          fontSize: 21,
+                          fontSize: isWide ? 28 : 21,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFFFCFCFD),
+                          letterSpacing: 0.3,
                         ),
                       ),
                     ],
@@ -467,13 +423,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                     builder: (context, ref, child) {
                       final points = ref.watch(pointsProvider);
                       return Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        padding: EdgeInsets.symmetric(horizontal: isWide ? 18 : 12, vertical: isWide ? 8 : 6),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                              color: AppColors.primarySeed.withValues(alpha: 0.1),
+                              color: AppColors.primarySeed.withValues(alpha: 0.12),
                               blurRadius: 8,
                               offset: const Offset(0, 3),
                             ),
@@ -482,14 +438,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(Icons.stars_rounded, color: Color(0xFFF59E0B), size: 18),
-                            const SizedBox(width: 4),
+                            Icon(Icons.stars_rounded, color: const Color(0xFFF59E0B), size: isWide ? 24 : 18),
+                            SizedBox(width: isWide ? 6 : 4),
                             Text(
                               '$points',
                               style: GoogleFonts.outfit(
-                                fontSize: 14,
+                                fontSize: isWide ? 18 : 13,
                                 fontWeight: FontWeight.w800,
-                                color: AppColors.textPrimary,
+                                color: const Color(0xFFB45309),
                               ),
                             ),
                           ],
@@ -499,7 +455,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                   ),
                 ],
               ),
-              const SizedBox(height: AppSizes.md),
+              SizedBox(height: isWide ? 12 : AppSizes.md),
               Text.rich(
                 textScaler: TextScaler.noScaling,
                 TextSpan(
@@ -508,16 +464,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                       alignment: PlaceholderAlignment.middle,
                       child: ShaderMask(
                         shaderCallback: (bounds) => const LinearGradient(
-                          colors: [Color(0xFF00E5FF), Color(0xFF00B0FF)], // Giriş ekranıyla birebir aynı Neon Cyan ➔ Mavi geçişi
+                          colors: [Color(0xFF00E5FF), Color(0xFF38BDF8)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(bounds),
                         child: Text(
                           'Konaklama ve Seyahat Akademisi ',
                           style: GoogleFonts.outfit(
-                            fontSize: 14.5,
+                            fontSize: isWide ? 19.0 : 14.5,
                             fontWeight: FontWeight.w800,
-                            color: Colors.white, // Maskeleme için beyaz
+                            color: Colors.white,
                             height: 1.3,
                             letterSpacing: 0.5,
                           ),
@@ -531,76 +487,76 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                   ],
                 ),
               ),
-            const SizedBox(height: AppSizes.sm),
-            Text.rich(
-              TextSpan(
-                children: [
-                  WidgetSpan(
-                    alignment: PlaceholderAlignment.middle,
-                    child: ShaderMask(
-                      shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xFF9D4EDD), Colors.white], // Koyu mor ve beyaz gradyanı
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ).createShader(bounds),
-                      child: Text(
-                        '“',
-                        style: GoogleFonts.inter(
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          height: 0.8,
+              SizedBox(height: isWide ? 8 : AppSizes.sm),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: ShaderMask(
+                        shaderCallback: (bounds) => const LinearGradient(
+                          colors: [Color(0xFF38BDF8), Color(0xFFE0F2FE)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ).createShader(bounds),
+                        child: Text(
+                          '“',
+                          style: GoogleFonts.inter(
+                            fontSize: isWide ? 28.0 : 22.0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            height: 0.8,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  TextSpan(
-                    text: " Turizm alanında binlerce bilgiye ulaşabileceğin içerikler (ders notları, podcastler, testler, terimler sözlüğü, vaka analizleri ve simülatörler) seninle! ",
-                    style: GoogleFonts.inter(
-                      fontSize: 12.0,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w500, // Okunabilirlik için w400'den w500'e (Medium) yükseltildi
-                      color: const Color(0xFFF3E8FF), // Soluk beyaz yerine hafif morumsu tatlı bir inci beyazı
-                      height: 1.6,
-                      letterSpacing: 0.2,
-                      shadows: const [
-                        Shadow(
-                          color: Colors.black38, // Beyaz gölge yerine siyah gölgeyle netlik ve kontrast artırıldı
-                          offset: Offset(0, 1.5),
-                          blurRadius: 4.0,
-                        ),
-                      ],
+                    TextSpan(
+                      text: " Turizm alanında binlerce bilgiye ulaşabileceğin içerikler (ders notları, podcastler, testler, terimler sözlüğü, vaka analizleri ve simülatörler) seninle! ",
+                      style: GoogleFonts.inter(
+                        fontSize: isWide ? 16.5 : 12.0,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFFF8FAFC),
+                        height: 1.5,
+                        letterSpacing: 0.2,
+                        shadows: const [
+                          Shadow(
+                            color: Colors.black45,
+                            offset: Offset(0, 1.5),
+                            blurRadius: 4.0,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  WidgetSpan(
-                    alignment: PlaceholderAlignment.middle,
-                    child: ShaderMask(
-                      shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xFF9D4EDD), Colors.white],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ).createShader(bounds),
-                      child: Text(
-                        '”',
-                        style: GoogleFonts.inter(
-                          fontSize: 22.0,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          height: 0.8,
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: ShaderMask(
+                        shaderCallback: (bounds) => const LinearGradient(
+                          colors: [Color(0xFF38BDF8), Color(0xFFE0F2FE)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ).createShader(bounds),
+                        child: Text(
+                          '”',
+                          style: GoogleFonts.inter(
+                            fontSize: isWide ? 28.0 : 22.0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            height: 0.8,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+                textAlign: TextAlign.justify,
               ),
-              textAlign: TextAlign.justify,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   // ══════════════════════════════════════════
   //  BÖLÜM BAŞLIĞI
@@ -611,28 +567,41 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
     required String title,
     required String subtitle,
   }) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+    final isDesktop = screenWidth >= 1050;
+
     return Row(
       children: [
         Container(
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.all(isWide ? (isDesktop ? 14 : 12) : 8),
           decoration: BoxDecoration(
             color: AppColors.primaryMid.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(14),
           ),
-          child: Icon(icon, color: AppColors.primaryMid, size: 20),
+          child: Icon(icon, color: AppColors.primaryMid, size: isWide ? (isDesktop ? 30 : 28) : 20),
         ),
-        const SizedBox(width: 12),
+        SizedBox(width: isWide ? (isDesktop ? 16 : 14) : 10),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 title,
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: GoogleFonts.outfit(
+                  fontSize: isWide ? (isDesktop ? 26 : 24) : 18,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.textPrimary,
+                ),
               ),
+              const SizedBox(height: 2),
               Text(
                 subtitle,
-                style: Theme.of(context).textTheme.bodySmall,
+                style: GoogleFonts.inter(
+                  fontSize: isWide ? (isDesktop ? 15.5 : 15.0) : 12,
+                  color: AppColors.textSecondary,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ],
           ),
@@ -646,22 +615,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
   // ══════════════════════════════════════════
   Widget _buildGradeGrid(BuildContext context) {
     final grades = [
-      _GradeData('9', 'Sınıf', Icons.explore_rounded, AppColors.grade9Gradient, '6 Öğrenme Birimi'),
+      _GradeData('9', 'Sınıf', Icons.explore_rounded, AppColors.grade9Gradient, '20 Öğrenme Birimi'),
       _GradeData('10', 'Sınıf', Icons.room_service_rounded, AppColors.grade10Gradient, '13 Öğrenme Birimi'),
       _GradeData('11', 'Sınıf', Icons.public_rounded, AppColors.grade11Gradient, '25 Öğrenme Birimi'),
       _GradeData('12', 'Sınıf', Icons.airport_shuttle_rounded, AppColors.grade12Gradient, '37 Öğrenme Birimi'),
     ];
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+    final isDesktop = screenWidth >= 1050;
 
     return Container(
       key: _gradeGridKey,
       child: GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 14,
-          mainAxisSpacing: 14,
-          childAspectRatio: 0.96,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: isWide ? (screenWidth >= 900 ? 4 : 2) : 2,
+          crossAxisSpacing: isWide ? (isDesktop ? 18 : 20) : 14,
+          mainAxisSpacing: isWide ? (isDesktop ? 18 : 20) : 14,
+          mainAxisExtent: isWide ? (isDesktop ? 305 : 225) : null,
+          childAspectRatio: isWide ? 1.0 : 0.96,
         ),
         itemCount: grades.length,
         itemBuilder: (context, index) {
@@ -671,7 +645,157 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
     );
   }
 
+  // ══════════════════════════════════════════
+  //  GELİŞİM ATÖLYESİ MODÜLLERİ (PC'de 4 modül yan yana, tablette 2x2, mobilde alt alta)
+  // ══════════════════════════════════════════
+  Widget _buildWorkshopModules(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+    final isDesktopRow = screenWidth >= 1050;
+
+    final moduleNotes = _buildModuleCard(
+      context,
+      title: 'Not Defterim',
+      subtitle: 'Dersler için kaydetmek istediğin notları al',
+      icon: Icons.menu_book_rounded,
+      gradient: const [
+        Color(0xFF1E3A8A),
+        Color(0xFF2563EB),
+        Color(0xFF3B82F6),
+      ],
+      iconBg: const Color(0xFF1D4ED8),
+      onTap: () {
+        Navigator.push(
+          context,
+          FadePageRoute(
+            child: const StudentNotesScreen(
+              entrySource: NotesEntrySource.mainMenu,
+            ),
+          ),
+        );
+      },
+    );
+
+    final module2 = _buildModuleCard(
+      context,
+      title: 'Turizm Sözlüğü',
+      subtitle: 'Mesleki terminolojini geliştir ve sına',
+      icon: Icons.quiz_rounded,
+      gradient: AppColors.sunsetGradient,
+      iconBg: const Color(0xFFC46420),
+      onTap: () {
+        Navigator.push(
+          context,
+          FadePageRoute(
+            child: const TerminologyScreen(),
+          ),
+        );
+      },
+    );
+
+    final module1 = _buildModuleCard(
+      context,
+      title: 'İnteraktif Vaka Analizi',
+      subtitle: 'Turizm senaryoları üzerinde düşün',
+      icon: Icons.cases_rounded,
+      gradient: AppColors.turquoiseGradient,
+      iconBg: const Color(0xFF0B7A76),
+      onTap: () {
+        Navigator.push(
+          context,
+          FadePageRoute(
+            child: const ScenarioListScreen(),
+          ),
+        );
+      },
+    );
+
+    final module3 = _buildModuleCard(
+      context,
+      title: 'Günün Bilgisi',
+      subtitle: 'Her gün yeni bir bilgi öğren',
+      icon: Icons.lightbulb_rounded,
+      gradient: AppColors.oceanGradient,
+      iconBg: const Color(0xFF0F52BA),
+      onTap: () {
+        _showDailyFactDialog(context);
+      },
+    );
+
+    // Geniş masaüstü ekranda 4 modül tek bir satırda yer alarak taşmayı önler
+    if (isDesktopRow) {
+      return IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(child: moduleNotes),
+            const SizedBox(width: 14),
+            Expanded(child: module2),
+            const SizedBox(width: 14),
+            Expanded(child: module1),
+            const SizedBox(width: 14),
+            Expanded(child: module3),
+          ],
+        ),
+      );
+    }
+
+    if (isWide) {
+      return Column(
+        children: [
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: moduleNotes),
+                SizedBox(width: isWide ? 16 : AppSizes.md),
+                Expanded(child: module2),
+              ],
+            ),
+          ),
+          SizedBox(height: isWide ? 14 : AppSizes.md),
+          IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(child: module1),
+                SizedBox(width: isWide ? 16 : AppSizes.md),
+                Expanded(child: module3),
+              ],
+            ),
+          ),
+        ],
+      );
+    }
+
+    return Column(
+      children: [
+        moduleNotes,
+        const SizedBox(height: AppSizes.md),
+        module2,
+        const SizedBox(height: AppSizes.md),
+        module1,
+        const SizedBox(height: AppSizes.md),
+        module3,
+      ],
+    );
+  }
+
+  // ══════════════════════════════════════════
+  //  SINIF KARTI
+  // ══════════════════════════════════════════
   Widget _buildGradeCard(BuildContext context, _GradeData data, int index) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+    final isDesktop = screenWidth >= 1050;
+
+    final iconSize = isWide ? (isDesktop ? 34.0 : 28.0) : 19.5;
+    final gradeNumSize = isWide ? (isDesktop ? 60.0 : 44.0) : 36.0;
+    final labelSize = isWide ? (isDesktop ? 28.0 : 22.0) : 18.0;
+    final unitFontSize = isWide ? (isDesktop ? 15.5 : 13.5) : 11.0;
+    final unitPaddingH = isWide ? (isDesktop ? 20.0 : 14.0) : 10.0;
+    final unitPaddingV = isWide ? (isDesktop ? 8.0 : 5.5) : 4.0;
+
     return RepaintBoundary(
       child: SlideTransition(
         position: Tween<Offset>(
@@ -687,7 +811,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
         )),
         child: _InteractiveGradeCard(
           key: ShellKeys.gradeCardKeys[index],
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          borderRadius: BorderRadius.circular(isWide ? 26 : AppSizes.radiusLg),
           onTap: () {
             Navigator.push(
               context,
@@ -706,42 +830,42 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                 end: Alignment.bottomRight,
                 colors: data.gradient,
               ),
-              borderRadius: BorderRadius.circular(AppSizes.radiusLg),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.15), width: 1.2), // Premium glassmorphic border!
+              borderRadius: BorderRadius.circular(isWide ? 26 : AppSizes.radiusLg),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.18), width: 1.2),
               boxShadow: const [
                 BoxShadow(
-                  color: Colors.black26, // Smoother, uniform premium shadow
+                  color: Colors.black26,
                   blurRadius: 20,
                   offset: Offset(0, 10),
                 ),
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.all(AppSizes.md),
+              padding: EdgeInsets.all(isWide ? (isDesktop ? 24.0 : 20.0) : AppSizes.md),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // İkon Satırı: Sol tarafta branş ikonu, sağ tarafta cam efektli gitme oku
+                  // İkon Satırı
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         margin: const EdgeInsets.only(left: 2.0),
-                        padding: const EdgeInsets.all(7),
+                        padding: EdgeInsets.all(isWide ? (isDesktop ? 15 : 11) : 7),
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white.withValues(alpha: 0.22),
+                          borderRadius: BorderRadius.circular(16),
                         ),
                         child: Icon(
                           data.icon,
                           color: Colors.white,
-                          size: 19.5,
+                          size: iconSize,
                         ),
                       ),
                       Container(
-                        padding: const EdgeInsets.all(6),
+                        padding: EdgeInsets.all(isWide ? (isDesktop ? 11 : 9) : 6),
                         decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.15),
+                          color: Colors.white.withValues(alpha: 0.18),
                           shape: BoxShape.circle,
                         ),
                         child: const _AnimatedChevron(),
@@ -753,39 +877,65 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
                     padding: const EdgeInsets.only(left: 2.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        // Sınıf numarası
-                        Text(
-                          '${data.grade}.',
-                          style: GoogleFonts.outfit(
-                            fontSize: 36,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            height: 1.0,
+                        if (isWide) ...[
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text(
+                                '${data.grade}.',
+                                style: GoogleFonts.outfit(
+                                  fontSize: gradeNumSize,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  height: 1.0,
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              Text(
+                                data.label,
+                                style: GoogleFonts.outfit(
+                                  fontSize: labelSize,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white.withValues(alpha: 0.95),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Text(
-                          data.label,
-                          style: GoogleFonts.outfit(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white.withValues(alpha: 0.9),
+                        ] else ...[
+                          Text(
+                            '${data.grade}.',
+                            style: GoogleFonts.outfit(
+                              fontSize: gradeNumSize,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                              height: 1.0,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 6),
-                        // Ünite bilgisi
+                          Text(
+                            data.label,
+                            style: GoogleFonts.outfit(
+                              fontSize: labelSize,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white.withValues(alpha: 0.9),
+                            ),
+                          ),
+                        ],
+                        SizedBox(height: isWide ? (isDesktop ? 14 : 8) : 6),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          padding: EdgeInsets.symmetric(horizontal: unitPaddingH, vertical: unitPaddingV),
                           decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.2),
+                            color: Colors.white.withValues(alpha: 0.22),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
                             data.unitInfo,
                             style: GoogleFonts.inter(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white.withValues(alpha: 0.9),
+                              fontSize: unitFontSize,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white.withValues(alpha: 0.95),
                             ),
                           ),
                         ),
@@ -802,7 +952,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
   }
 
   // ══════════════════════════════════════════
-  //  MODÜL KARTI (Büyük, şık)
+  //  GELİŞİM ATÖLYESİ KARTI
   // ══════════════════════════════════════════
   Widget _buildModuleCard(
     BuildContext context, {
@@ -813,101 +963,104 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with TickerProviderStat
     required Color iconBg,
     required VoidCallback onTap,
   }) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth >= 768;
+    final isDesktop = screenWidth >= 1050;
+
     return RepaintBoundary(
-      child: SlideTransition(
-        position: Tween<Offset>(
-          begin: const Offset(0, 0.3),
-          end: Offset.zero,
-        ).animate(CurvedAnimation(
-          parent: _slideController,
-          curve: const Interval(0.4, 1.0, curve: Curves.easeOutCubic),
-        )),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: onTap,
-            borderRadius: BorderRadius.circular(AppSizes.radiusLg),
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: gradient,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(isWide ? 22 : AppSizes.radiusLg),
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              horizontal: isWide ? (isDesktop ? 20 : 20) : 16,
+              vertical: isWide ? (isDesktop ? 28 : 18) : 14,
+            ),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: gradient,
+              ),
+              borderRadius: BorderRadius.circular(isWide ? 22 : AppSizes.radiusLg),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.18), width: 1.2),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 16,
+                  offset: Offset(0, 8),
                 ),
-                borderRadius: BorderRadius.circular(AppSizes.radiusLg),
-                border: Border.all(color: Colors.white.withOpacity(0.15), width: 1.2),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 16,
-                    offset: Offset(0, 8),
+              ],
+            ),
+            child: Row(
+              children: [
+                // Sol: İkon Kutusu
+                Container(
+                  padding: EdgeInsets.all(isWide ? (isDesktop ? 16 : 14) : 11),
+                  decoration: BoxDecoration(
+                    color: iconBg.withValues(alpha: 0.45),
+                    borderRadius: BorderRadius.circular(18),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.18), width: 1.0),
                   ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  // Sol: İkon Kutusu
-                  Container(
-                    padding: const EdgeInsets.all(11),
-                    decoration: BoxDecoration(
-                      color: iconBg.withOpacity(0.45),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.white.withOpacity(0.12), width: 1.0),
-                    ),
-                    child: Icon(
-                      icon,
-                      color: Colors.white,
-                      size: 22,
-                    ),
+                  child: Icon(
+                    icon,
+                    color: Colors.white,
+                    size: isWide ? (isDesktop ? 30 : 26) : 22,
                   ),
-                  const SizedBox(width: 14),
-                  
-                  // Orta: Başlık & Alt Başlık
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          title,
-                          style: GoogleFonts.outfit(
-                            fontSize: 16.5,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
-                          ),
+                ),
+                SizedBox(width: isWide ? (isDesktop ? 16 : 16) : 14),
+                
+                // Orta: Başlık & Alt Başlık
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.outfit(
+                          fontSize: isWide ? (isDesktop ? 20.5 : 19.5) : 16.5,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          letterSpacing: 0.3,
                         ),
-                        const SizedBox(height: 3),
-                        Text(
-                          subtitle.replaceAll('\n', ' '),
-                          style: GoogleFonts.inter(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white.withOpacity(0.85),
-                            height: 1.25,
-                          ),
+                      ),
+                      SizedBox(height: isWide ? 4 : 3),
+                      Text(
+                        subtitle.replaceAll('\n', ' '),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.inter(
+                          fontSize: isWide ? (isDesktop ? 14.0 : 13.5) : 12,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white.withValues(alpha: 0.92),
+                          height: 1.3,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 10),
-                  
-                  // Sağ: Ok butonu
-                  Container(
-                    padding: const EdgeInsets.all(7),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.15),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      color: Colors.white,
-                      size: 13,
-                    ),
+                ),
+                const SizedBox(width: 8),
+                
+                // Sağ: Ok butonu
+                Container(
+                  padding: EdgeInsets.all(isWide ? (isDesktop ? 11 : 9) : 7),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.20),
+                    shape: BoxShape.circle,
                   ),
-                ],
-              ),
+                  child: Icon(
+                    Icons.arrow_forward_rounded,
+                    color: Colors.white,
+                    size: isWide ? (isDesktop ? 22 : 20) : 16,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -955,27 +1108,27 @@ class _PremiumGlowingStarState extends State<_PremiumGlowingStar> with SingleTic
       duration: const Duration(milliseconds: 2200),
     )..repeat();
 
-    // 1. Parıltı (Sol Üst) - Döngünün 0.0 - 0.45 aralığında aktif
+    // 1. Parıltı (Sol Üst) - Döngünün 0.05 - 0.45 aralığında aktif
     _sparkle1Scale = TweenSequence<double>([
       TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0).chain(CurveTween(curve: Curves.easeOutBack)), weight: 40),
       TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0).chain(CurveTween(curve: Curves.easeIn)), weight: 60),
-    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.0, 0.45)));
-    
+    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.05, 0.45)));
+
     _sparkle1Opacity = TweenSequence<double>([
       TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0), weight: 30),
       TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 70),
-    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.0, 0.45)));
+    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.05, 0.45)));
 
-    // 2. Parıltı (Sağ Üst) - Döngünün 0.25 - 0.70 aralığında aktif
+    // 2. Parıltı (Sağ Üst) - Döngünün 0.35 - 0.75 aralığında aktif
     _sparkle2Scale = TweenSequence<double>([
       TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0).chain(CurveTween(curve: Curves.easeOutBack)), weight: 40),
       TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0).chain(CurveTween(curve: Curves.easeIn)), weight: 60),
-    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.25, 0.7)));
+    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.35, 0.75)));
 
     _sparkle2Opacity = TweenSequence<double>([
       TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0), weight: 30),
       TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 70),
-    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.25, 0.7)));
+    ]).animate(CurvedAnimation(parent: _controller, curve: const Interval(0.35, 0.75)));
 
     // 3. Parıltı (Alt Sağ) - Döngünün 0.55 - 0.95 aralığında aktif
     _sparkle3Scale = TweenSequence<double>([
@@ -1197,14 +1350,14 @@ class _AnimatedChevronState extends State<_AnimatedChevron> with SingleTickerPro
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: _controller,
+      animation: _translationAnimation,
       builder: (context, child) {
         return Transform.translate(
           offset: Offset(_translationAnimation.value, 0),
           child: const Icon(
-            Icons.chevron_right_rounded, // Kalın yuvarlatılmış chevron
+            Icons.arrow_forward_ios_rounded,
             color: Colors.white,
-            size: 23.5, // Boyut ve çizgi kalınlığı %30 oranında artırıldı (18 -> 23.5)
+            size: 13,
           ),
         );
       },

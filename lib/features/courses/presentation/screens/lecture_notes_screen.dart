@@ -1,10 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_sizes.dart';
-import '../../../../core/data/lecture_notes.dart';
 
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,6 +13,7 @@ import '../../../../core/services/podcast_service.dart';
 import 'package:just_audio/just_audio.dart';
 import '../../../badges/providers/badge_provider.dart';
 import '../../../../core/providers/shell_tab_provider.dart';
+import 'package:flutter/foundation.dart';
 import '../../../../core/presentation/widgets/podcast_speed_control.dart';
 
 class LectureNotesScreen extends ConsumerStatefulWidget {
@@ -35,6 +34,92 @@ class LectureNotesScreen extends ConsumerStatefulWidget {
 
 class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
   Timer? _studyTimer;
+  double _fontScale = 1.0;
+
+  Widget _buildFontSizeControl(List<Color> gradient, [bool isWide = true]) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: isWide ? 10 : 6,
+        vertical: isWide ? 6 : 4,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(isWide ? 18 : 14),
+        border: Border.all(color: const Color(0xFFCBD5E1), width: isWide ? 1.5 : 1.2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            icon: Icon(
+              Icons.text_decrease_rounded,
+              size: isWide ? 26 : 20,
+              color: _fontScale > 0.85 ? AppColors.textPrimary : Colors.grey.shade400,
+            ),
+            tooltip: 'Yazıyı Küçült (A-)',
+            constraints: const BoxConstraints(),
+            padding: EdgeInsets.all(isWide ? 9 : 7),
+            onPressed: _fontScale > 0.85
+                ? () {
+                    setState(() {
+                      _fontScale = (_fontScale - 0.1).clamp(0.8, 1.8);
+                    });
+                  }
+                : null,
+          ),
+          InkWell(
+            onTap: () {
+              setState(() {
+                _fontScale = 1.0;
+              });
+            },
+            borderRadius: BorderRadius.circular(8),
+            child: Tooltip(
+              message: 'Varsayılan Boyut (%100)',
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: isWide ? 10 : 6,
+                  vertical: isWide ? 4 : 3,
+                ),
+                child: Text(
+                  '${(_fontScale * 100).round()}%',
+                  style: GoogleFonts.inter(
+                    fontSize: isWide ? 16 : 13.5,
+                    fontWeight: FontWeight.w800,
+                    color: gradient.first,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.text_increase_rounded,
+              size: isWide ? 26 : 20,
+              color: _fontScale < 1.75 ? AppColors.textPrimary : Colors.grey.shade400,
+            ),
+            tooltip: 'Yazıyı Büyüt (A+)',
+            constraints: const BoxConstraints(),
+            padding: EdgeInsets.all(isWide ? 9 : 7),
+            onPressed: _fontScale < 1.75
+                ? () {
+                    setState(() {
+                      _fontScale = (_fontScale + 0.1).clamp(0.8, 1.8);
+                    });
+                  }
+                : null,
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -299,6 +384,7 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
     final learningUnit = widget.data["learningUnit"] ?? "Öğrenme Birimi";
     final cards = (widget.data["cards"] as List? ?? []);
     final String? podcastUrl = widget.data["podcastUrl"];
+    final isWide = MediaQuery.of(context).size.width >= 768;
 
     final isOnboarding = ref.watch(isOnboardingActiveProvider);
 
@@ -391,16 +477,24 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
                           ],
                         ),
                       ),
+                      if (isWide) ...[
+                        const SizedBox(width: 16),
+                        _buildFontSizeControl(widget.gradient, isWide),
+                      ],
                     ],
                   ),
                 ),
 
                 // ── STICKY PODCAST CONTROL PANEL ──
-                if (podcastUrl != null)
+                if (podcastUrl != null && podcastUrl.trim().isNotEmpty)
                   _buildPodcastPanel(podcastUrl, widget.gradient),
 
                 Expanded(
-                  child: ListView.builder(
+                  child: MediaQuery(
+                    data: MediaQuery.of(context).copyWith(
+                      textScaler: TextScaler.linear(isWide ? _fontScale : 1.0),
+                    ),
+                    child: ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     padding: const EdgeInsets.only(bottom: 100),
                     itemCount: cards.length + 1,
@@ -466,7 +560,8 @@ class _LectureNotesScreenState extends ConsumerState<LectureNotesScreen> {
                     },
                   ),
                 ),
-              ],
+              ),
+            ],
             ),
           ),
         ],
@@ -561,7 +656,7 @@ class _StudyCardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // ── Kart Numarası Başlık Şeridi ──

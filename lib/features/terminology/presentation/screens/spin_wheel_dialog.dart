@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:convert';
 import 'dart:math' as math;
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -14,6 +13,7 @@ import '../../../../core/constants/app_sizes.dart';
 import '../../../../core/data/terminology_data.dart';
 import '../../../../core/providers/sound_provider.dart';
 import '../../../../core/utils/sfx_synthesizer.dart';
+import '../../../badges/providers/badge_provider.dart';
 
 class SpinWheelDialog extends ConsumerStatefulWidget {
   const SpinWheelDialog({super.key});
@@ -99,6 +99,8 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
         Future.delayed(const Duration(milliseconds: 100), () {
           if (mounted) _playResultSound();
         });
+        // Terim Çarkı Ustası rozet sayacını artır
+        ref.read(badgeProgressProvider.notifier).incrementWheelSpins();
         setState(() {
           _state = 'result';
           _currentRotation = _animation.value;
@@ -111,6 +113,13 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
     try {
       await _spinPlayer.setVolume(0.5);
       await _resultPlayer.setVolume(0.7);
+
+      if (kIsWeb) {
+        await _spinPlayer.setReleaseMode(ReleaseMode.stop);
+        await _resultPlayer.setReleaseMode(ReleaseMode.stop);
+        if (mounted) setState(() { _isAudioReady = true; });
+        return;
+      }
 
       final tempDir = await getTemporaryDirectory();
       final spinFilePath = '${tempDir.path}/wheel_spin_resonance.wav';
@@ -140,6 +149,11 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
     if (_isDisposed || !_isAudioReady) return;
     if (!ref.read(soundSettingsProvider)) return;
     try {
+      if (kIsWeb) {
+        await _spinPlayer.stop();
+        await _spinPlayer.play(BytesSource(_spinBytes, mimeType: 'audio/wav'), volume: 0.5);
+        return;
+      }
       await _spinPlayer.stop();
       await _spinPlayer.seek(Duration.zero);
       if (_isDisposed) return;
@@ -153,6 +167,11 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
     if (_isDisposed || !_isAudioReady) return;
     if (!ref.read(soundSettingsProvider)) return;
     try {
+      if (kIsWeb) {
+        await _resultPlayer.stop();
+        await _resultPlayer.play(BytesSource(_resultBytes, mimeType: 'audio/wav'), volume: 0.7);
+        return;
+      }
       await _resultPlayer.stop();
       await _resultPlayer.seek(Duration.zero);
       if (_isDisposed) return;
@@ -245,19 +264,21 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final dialogWidth = math.min(size.width * 0.92, 390.0);
-    final dialogHeight = math.min(size.height * 0.80, 565.0);
+    final isWide = size.width >= 768;
+    final dialogWidth = isWide ? 760.0 : math.min(size.width * 0.94, 440.0);
+    final dialogHeight = isWide ? 790.0 : math.min(size.height * 0.88, 620.0);
+    final wheelSize = isWide ? 300.0 : 220.0;
 
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppSizes.radiusXl),
+        borderRadius: BorderRadius.circular(isWide ? 28 : AppSizes.radiusXl),
       ),
       backgroundColor: Colors.white,
       insetPadding: const EdgeInsets.symmetric(horizontal: 16),
       child: Container(
         width: dialogWidth,
         height: dialogHeight,
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(isWide ? 26.0 : 16.0),
         child: Column(
           children: [
             // ── Üst Başlık ve Kapatma Butonu ──
@@ -266,16 +287,16 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
               children: [
                 Row(
                   children: [
-                    const Icon(
-                      Icons.explore_rounded, // Casino yerine Keşif/Pusula ikonu
+                    Icon(
+                      Icons.explore_rounded,
                       color: AppColors.primaryMid,
-                      size: 24,
+                      size: isWide ? 32 : 24,
                     ),
-                    const SizedBox(width: 8),
+                    const SizedBox(width: 10),
                     Text(
                       'Terim Çarkı',
                       style: GoogleFonts.outfit(
-                        fontSize: 18,
+                        fontSize: isWide ? 26 : 18,
                         fontWeight: FontWeight.w800,
                         color: AppColors.textPrimary,
                       ),
@@ -284,14 +305,14 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                 ),
                 IconButton(
                   onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.close_rounded, color: AppColors.textSecondary),
-                  splashRadius: 20,
+                  icon: Icon(Icons.close_rounded, color: AppColors.textSecondary, size: isWide ? 28 : 22),
+                  splashRadius: 22,
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                 ),
               ],
             ),
-            const Divider(color: AppColors.divider, height: 16),
+            Divider(color: AppColors.divider, height: isWide ? 22 : 16),
 
             // ── Çark Alanı (Çark + Pointer) ──
             Expanded(
@@ -304,9 +325,9 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                       // Çarkın Kendisi (GPU Ön Belleklenmiş 60 FPS Akıcı Mimarisi)
                       AnimatedBuilder(
                         animation: _animation,
-                        child: const CustomPaint(
-                          size: Size(200, 200),
-                          painter: _WheelPainter(
+                        child: CustomPaint(
+                          size: Size(wheelSize, wheelSize),
+                          painter: const _WheelPainter(
                             words: _wheelWords,
                             colors: _sliceColors,
                           ),
@@ -321,8 +342,8 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                       
                       // Çarkın Göbeği (Merkez Daire)
                       Container(
-                        width: 36,
-                        height: 36,
+                        width: isWide ? 50 : 36,
+                        height: isWide ? 50 : 36,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
@@ -332,12 +353,12 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                               blurRadius: 8,
                             ),
                           ],
-                          border: Border.all(color: AppColors.primaryMid, width: 3),
+                          border: Border.all(color: AppColors.primaryMid, width: isWide ? 3.5 : 3),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Icon(
                             Icons.school_rounded,
-                            size: 14,
+                            size: isWide ? 22 : 14,
                             color: AppColors.primaryMid,
                           ),
                         ),
@@ -347,13 +368,13 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                       Positioned(
                         top: 0,
                         child: CustomPaint(
-                          size: const Size(24, 20),
+                          size: Size(isWide ? 32 : 24, isWide ? 28 : 20),
                           painter: _PointerPainter(),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  SizedBox(height: isWide ? 20 : 16),
 
                   // ── Sonuç Alanı / Durum Bilgisi ──
                   Expanded(
@@ -371,7 +392,7 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                           ),
                         );
                       },
-                      child: _buildStateWidget(),
+                      child: _buildStateWidget(isWide),
                     ),
                   ),
                 ],
@@ -382,14 +403,14 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
             // ── Aksiyon Butonu ──
             SizedBox(
               width: double.infinity,
-              height: 46,
+              height: isWide ? 58 : 48,
               child: ElevatedButton(
                 onPressed: _state == 'spinning' ? null : _spinWheel,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primaryMid,
                   disabledBackgroundColor: AppColors.surfaceVariant,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(AppSizes.radiusMd),
+                    borderRadius: BorderRadius.circular(isWide ? 16 : AppSizes.radiusMd),
                   ),
                 ),
                 child: Text(
@@ -400,7 +421,7 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                           : 'Çarkı Çevir! 🎯',
                   style: GoogleFonts.inter(
                     fontWeight: FontWeight.w700,
-                    fontSize: 14,
+                    fontSize: isWide ? 19 : 14.5,
                     color: _state == 'spinning' ? AppColors.textHint : Colors.white,
                   ),
                 ),
@@ -412,7 +433,7 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
     );
   }
 
-  Widget _buildStateWidget() {
+  Widget _buildStateWidget(bool isWide) {
     if (_state == 'idle') {
       return Container(
         key: const ValueKey('idle_state'),
@@ -422,21 +443,21 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Rastgele Bir Terim Keşfet!',
+              'Rastgele Bir Kavram Keşfet!',
               style: GoogleFonts.outfit(
-                fontSize: 15,
+                fontSize: isWide ? 23 : 16,
                 fontWeight: FontWeight.w700,
                 color: AppColors.textPrimary,
               ),
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 6),
             Text(
-              'Çarkı çevirerek sözlükten rastgele bir turizm terimini detaylarıyla öğrenebilirsiniz.',
+              'Çarkı çevirerek sözlükten rastgele bir turizm kavramını detaylarıyla öğrenebilirsiniz.',
               textAlign: TextAlign.center,
               style: GoogleFonts.inter(
-                fontSize: 12,
+                fontSize: isWide ? 17 : 12.5,
                 color: AppColors.textSecondary,
-                height: 1.4,
+                height: 1.45,
               ),
             ),
           ],
@@ -449,19 +470,19 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              width: 24,
-              height: 24,
-              child: CircularProgressIndicator(
-                strokeWidth: 2.5,
+            SizedBox(
+              width: isWide ? 36 : 24,
+              height: isWide ? 36 : 24,
+              child: const CircularProgressIndicator(
+                strokeWidth: 3,
                 color: AppColors.secondary,
               ),
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: isWide ? 16 : 12),
             Text(
               'Çark dönüyor, yeni bir bilgi yolda...',
               style: GoogleFonts.inter(
-                fontSize: 12,
+                fontSize: isWide ? 17 : 12.5,
                 fontWeight: FontWeight.w600,
                 fontStyle: FontStyle.italic,
                 color: AppColors.textSecondary,
@@ -478,10 +499,10 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
       return Container(
         key: const ValueKey('result_state'),
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: isWide ? 20 : 12, vertical: isWide ? 16 : 10),
         decoration: BoxDecoration(
           color: AppColors.surface,
-          borderRadius: BorderRadius.circular(AppSizes.radiusLg),
+          borderRadius: BorderRadius.circular(isWide ? 20 : AppSizes.radiusLg),
           border: Border.all(color: AppColors.divider),
         ),
         child: SingleChildScrollView(
@@ -493,33 +514,33 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
               Text(
                 term.word,
                 style: GoogleFonts.outfit(
-                  fontSize: 16,
+                  fontSize: isWide ? 26 : 17,
                   fontWeight: FontWeight.w900,
                   color: AppColors.primaryMid,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: isWide ? 6 : 4),
               
               // Tanım
               Text(
                 term.definition,
                 style: GoogleFonts.inter(
-                  fontSize: 12,
+                  fontSize: isWide ? 18.5 : 13,
                   fontWeight: FontWeight.w600,
                   color: AppColors.textPrimary,
-                  height: 1.3,
+                  height: 1.4,
                 ),
               ),
               
               // Örnek Cümle (Varsa)
               if (term.example.isNotEmpty) ...[
-                const SizedBox(height: 6),
+                SizedBox(height: isWide ? 12 : 6),
                 Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                  padding: EdgeInsets.symmetric(horizontal: isWide ? 16 : 10, vertical: isWide ? 12 : 8),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(isWide ? 12 : 8),
                     border: Border.all(color: AppColors.divider.withValues(alpha: 0.8)),
                   ),
                   child: Column(
@@ -527,26 +548,27 @@ class _SpinWheelDialogState extends ConsumerState<SpinWheelDialog> with SingleTi
                     children: [
                       Row(
                         children: [
-                          const Icon(Icons.school_rounded, color: AppColors.primaryBright, size: 12),
-                          const SizedBox(width: 4),
+                          Icon(Icons.school_rounded, color: AppColors.primaryBright, size: isWide ? 20 : 13),
+                          const SizedBox(width: 6),
                           Text(
                             'Örnekle Pekiştirelim:',
                             style: GoogleFonts.outfit(
-                              fontSize: 10,
+                              fontSize: isWide ? 16 : 11,
                               fontWeight: FontWeight.w800,
                               color: AppColors.primaryBright,
                             ),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 2),
+                      const SizedBox(height: 4),
                       Text(
                         '"${term.example}"',
                         style: GoogleFonts.inter(
-                          fontSize: 11,
+                          fontSize: isWide ? 17 : 12,
                           fontWeight: FontWeight.w500,
                           fontStyle: FontStyle.italic,
                           color: AppColors.textSecondary,
+                          height: 1.4,
                         ),
                       ),
                     ],
@@ -604,14 +626,16 @@ class _WheelPainter extends CustomPainter {
       canvas.translate(center.dx, center.dy);
       canvas.rotate(textAngle);
 
+      final double calculatedFontSize = (radius * 0.098).clamp(13.0, 18.0);
+
       final textPainter = TextPainter(
         text: TextSpan(
           text: words[i],
           style: GoogleFonts.outfit(
             color: Colors.white,
-            fontSize: 9,
+            fontSize: calculatedFontSize,
             fontWeight: FontWeight.w900,
-            letterSpacing: 0.3,
+            letterSpacing: 0.4,
           ),
         ),
         textDirection: TextDirection.ltr,

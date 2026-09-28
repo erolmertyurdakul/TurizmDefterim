@@ -13,21 +13,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit1 = {
           "name": "Konaklama İşletmesi",
           "desc": "Seyahat eden kişilere geçici bir süre için ücret karşılığında güvenli yatak, temiz oda ve yardımcı hizmetler (yiyecek, temizlik, güvenlik) sunan ticari işletmelerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: İş toplantısı için Ankara'ya giden bir mühendisin, gece konaklayacağı otel odasına check-in yapıp güvenle uyuması ve sabah kahvaltısını otel büfesinden yemesidir."
+            "Örnekle Pekiştirelim: İş toplantısı için Ankara'ya giden bir mühendisin, gece konaklayacağı otel odasına check- yapıp güvenle uyuması ve sabah kahvaltısını otel büfesinden yemiştir."
           ]
         },
         {
           "name": "Kervansaray (Tarihsel Kök)",
           "desc": "İpek Yolu üzerinde kervanların dinlenmesi, hayvanların bakımı ve tüccarların güvenle konaklayıp ticaret yapması için Osmanlı döneminde inşa edilen tarihi konaklama tesisleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Konya'daki Sultanhanı Kervansarayı'nın, yüzyıllar önce Bağdat'tan kumaş yüklenmiş develerle yola çıkan tüccarları ücretsiz olarak 3 gün konaklatması, hayvanlarını besledip yolculukların devamını sağlamasıdır."
+            "Örnekle Pekiştirelim: Konya'daki Sultanhanı Kervansarayı'nın, yüzyıllar önce Bağdat'tan kumaş yüklenmiş develerle yola çıkan tüccarları ücretsiz olarak 3 gün konaklatması, hayvanlarını besledip yolculuklar devamını sağlamıştır."
           ]
         },
         {
           "name": "Konaklama Endüstrisinin Ekonomideki Yeri",
           "desc": "Dünya GSYİH'ının yaklaşık %10'unu oluşturan, her 10 çalışandan birini istihdam eden, turizmin çekirdeğini oluşturan dev ekonomik sektördür.",
           "examples": [
-            "Örnekle Pekiştirelim: Türkiye'nin 2023 yılında turizm gelirinden 54 milyar dolar kazanmasında, bu gelirleri toplayan otel işletmelerinin ana taşıyıcı rolü üstlenmesidir."
+            "Örnekle Pekiştirelim: Türkiye'nin 2023 yılında turizm gelirinden 54 milyar dolar kazanmasında, bu gelirleri toplayan otel işletmelerin ana taşıyıcı rolü üstlenmiştir."
           ]
         }
       ],
@@ -44,7 +44,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit1 = {
           "name": "Yıldız Sınıflandırma Sistemi",
           "desc": "Kültür ve Turizm Bakanlığı'nın belirlediği standartlara göre, otel tesislerinin sunduğu hizmet kalitesi ve fiziki donanım seviyesini 1 yıldızdan 5 yıldıza kadar derecelendiren resmi sınıflama sistemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: 5 yıldızlı bir otelde spa, havuz, 7/24 oda servisi ve çok sayıda restoran bulunurken; 2 yıldızlı bir otelde yalnızca temiz oda ve sabah kahvaltısı sunulmasıdır."
+            "Örnekle Pekiştirelim: 5 yıldızlı bir otelde spa, havuz, 7/24 oda servisi ve çok sayıda restoran bulunurken; 2 yıldızlı bir otelde yalnızca temiz oda ve sabah kahvaltısı sunulmuştur."
           ]
         },
         {
@@ -58,7 +58,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit1 = {
           "name": "Hostel ve Apart Otel",
           "desc": "Hostel: Bütçesi kısıtlı gezginlere, özellikle gençlere yönelik, ortak yatak odaları (dorm) sunan ekonomik konaklamadır. Apart Otel: Mutfağıyla tam bir daire konforu sunan, uzun süreli konaklamalar için ideal işletmedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Üniversite öğrencisi Zeynep'in, Avrupa turunda geceleri 10 yataklı ortak yurt odasında kaldığı hostel ile iş adamının İstanbul'da 3 ay boyunca mutfaklı apart otelinde kalmayı tercih etmesidir."
+            "Örnekle Pekiştirelim: Üniversite öğrencisi Zeynep'in, Avrupa turunda geceleri 10 yataklı ortak yurt odasında kaldığı hostel ile iş adamı İstanbul'da 3 ay boyunca mutfaklı apart otelinde kalmayı tercih etmiştir."
           ]
         }
       ],
@@ -73,21 +73,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit1 = {
       "definitions": [
         {
           "name": "Sezonallik (Mevsimsel Dalgalanmalar)",
-          "desc": "Turizm talebinin yıl içinde düzenli olarak yüksek sezon (yaz/kış) ve düşük sezon (omuz dönem) şeklinde dalgalanması ve bu dalgalanmanın otel gelirlerini doğrudan etkilemesidir.",
+          "desc": "Turizm talebinin yıl içinde düzenli olarak yüksek sezon (yaz/kış) ve düşük sezon (omuz dönem) şeklinde dalgalanması ve bu dalgalanmanın otel gelirlerini doğrudan etkilemesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Bodrum'daki bir otel, Temmuz-Ağustos aylarında tamamen dolu olup yüksek fiyat uygularken, Kasım-Mart aylarında sadece %20 dolulukta çalışarak kapasite atıl kalmaktadır."
           ]
         },
         {
           "name": "Ekonomik Konjonktür",
-          "desc": "Ülke ekonomisindeki büyüme veya kriz dönemlerinin, turistlerin tatil bütçesini ve seyahat tercihlerini doğrudan etkileyerek otellerin doluluk oranlarına yansımasıdır.",
+          "desc": "Ülke ekonomisindeki büyüme veya kriz dönemlerinin, turistlerin tatil bütçesini ve seyahat tercihlerini doğrudan etkileyerek otellerin doluluk oranlarına yansıması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ekonomik durgunluk döneminde insanların 5 yıldızlı otel yerine bütçe dostu 3 yıldızlı otelleri tercih etmesi ve tatil sürelerini kısaltmasıdır."
+            "Örnekle Pekiştirelim: Ekonomik durgunluk döneminde insanlar 5 yıldızlı otel yerine bütçe dostu 3 yıldızlı otelleri tercih etmesi ve tatil sürelerini kısaltmıştır."
           ]
         },
         {
           "name": "Teknoloji ve Dijitalleşme",
-          "desc": "Online rezervasyon platformlarının, akıllı oda sistemlerinin ve sosyal medyanın konaklama sektöründeki hizmet anlayışını ve müşteri beklentilerini köklü biçimde dönüştürmesidir.",
+          "desc": "Online rezervasyon platformlarının, akıllı oda sistemlerinin ve sosyal medyanın konaklama sektöründeki hizmet anlayışını ve misafir beklentilerini köklü biçimde dönüştürmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Booking.com'un piyasaya girmesinden önce turistlerin seyahat acentelerini arayıp tek tek oda sordukları dönemden, bugün telefondan 30 saniyede dünyanın her yerindeki oda rezervasyonunu yapabilen dijital dönüşüme geçiştir."
           ]
@@ -114,7 +114,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           "name": "Resepsiyon (Reception)",
           "desc": "Misafirlerin check-in ve check-out işlemlerini yapan, oda anahtarlarını teslim eden, genel bilgi veren ve şikayetleri alan ön büronun operasyon merkezidir.",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul'a iş seyahatiyle gelen Kemal Bey'in otele girişinde, resepsiyonist Aylin Hanım'ın pasaportunu tarayıp sisteme girerek anahtarını 2 dakikada teslim etmesidir."
+            "Örnekle Pekiştirelim: İstanbul'a iş seyahatiyle gelen Kemal Bey'in otele girişinde, resepsiyonist Aylin Hanım pasaportunu tarayıp sisteme girerek anahtarını 2 dakikada teslim etmiştir."
           ]
         },
         {
@@ -128,7 +128,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           "name": "Bellboy Hizmeti",
           "desc": "Misafirlerin giriş ve çıkış anında bavullarını taşıyan, odaya eşlik eden, oda donanımlarını tanıtan ve valet hizmeti veren ön büro destek personelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapıya yanaşan araçtan 4 büyük valizi alan bell boy Murat'ın, misafiri 703 nolu odaya kadar refakat edip klimanın ve TV uzaktan kumandasının kullanımını göstermesidir."
+            "Örnekle Pekiştirelim: Kapıya yanaşan araçtan 4 büyük valizi alan bell boy Murat'ın, misafiri 703 nolu odaya kadar refakat edip klimanın ve TV uzaktan kumandasın kullanımını göstermiştir."
           ]
         }
       ],
@@ -145,7 +145,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           "name": "Housekeeping (Kat Hizmetleri)",
           "desc": "Otel odalarının günlük temizliğini, yatak takımlarının değişimini, banyo hijyenini ve minibar ikmalini gerçekleştiren, otelin en kalabalık çalışan grubunu barındıran departmandır.",
           "examples": [
-            "Örnekle Pekiştirelim: Oda görevlisi Fatma Hanım'ın sabah 08:00-15:00 arasında günde ortalama 16 odayı standart sürede temizleyip, çarşafları değiştirip, banyoyu dezenfekte etmesidir."
+            "Örnekle Pekiştirelim: Oda görevlisi Fatma Hanım sabah 08:00-15:00 arasında günde ortalama 16 odayı standart sürede temizleyip, çarşafları değiştirip, banyoyu dezenfekte etmiştir."
           ]
         },
         {
@@ -159,11 +159,11 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           "name": "Minibar Yönetimi",
           "desc": "Oda içindeki küçük buzdolabında hazır sunulan içecek ve atıştırmalıkların günlük kontrolü, tüketim takibi ve eksiksiz ikmaline yönelik kat hizmetleri sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sabah odayı temizleyen görevlinin minimobardaki su, çikolata ve meyve suyunun kaçının bittiğini mini check-listle kayıt edip, folio sistemine misafir hesabına yansıtarak ikmalini yapmasıdır."
+            "Örnekle Pekiştirelim: Sabah odayı temizleyen görevlinin minimobardaki su, çikolata ve meyve suyunun kaçın bittiğini mini check-listle kayıt edip, folio sistemine misafir hesabına yansıtarak ikmalini yapmıştır."
           ]
         }
       ],
-      "caseStudy": "Sektörden Vaka: Türkiye'nin önde gelen bir tatil köyünde yapılan gizli müşteri denetiminde (mystery shopping), oda temizliğinde küvet kenarında kalan sabun köpüğü ve değiştirilmemiş havlu nedeniyle otel, kalite sertifikasını geçici olarak kaybetti. Bu vaka, kat hizmetlerinde standart dışı tek bir hatanın kurumsal itibarı nasıl etkileyebileceğini göstermektedir.",
+      "caseStudy": "Sektörden Vaka: Türkiye'nin önde gelen bir tatil köyünde yapılan gizli misafir denetiminde (mystery guest), oda temizliğinde küvet kenarında kalan sabun köpüğü ve değiştirilmemiş havlu nedeniyle otel, kalite sertifikasını geçici olarak kaybetti. Bu vaka, kat hizmetlerinde standart dışı tek bir hatanın kurumsal itibarı nasıl etkileyebileceğini göstermektedir.",
       "tip": "Kat hizmetleri, konaklama sektöründe en yüksek devir oranına sahip bölümdür. Çalışan memnuniyeti ve doğru eğitim bu sorunun en etkili çözümüdür."
     },
     {
@@ -174,23 +174,23 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
       "definitions": [
         {
           "name": "Satış ve Pazarlama Departmanı",
-          "desc": "Otelin doluluk oranını artırmak için kurumsal müşteri sözleşmeleri yapan, turizm fuarlarına katılan, dijital reklam kampanyaları yürüten ve fiyat stratejilerini belirleyen bölümdür.",
+          "desc": "Otelin doluluk oranını artırmak için kurumsal misafir sözleşmeleri yapan, turizm fuarlarına katılan, dijital reklam kampanyaları yürüten ve fiyat stratejilerini belirleyen bölümdür.",
           "examples": [
-            "Örnekle Pekiştirelim: Satış direktörünün, EMITT fuarında Alman tur operatörleriyle görüşerek önümüzdeki yaz için 2.000 gecelik oda bloğu satışı gerçekleştirmesidir."
+            "Örnekle Pekiştirelim: Satış direktörün EMITT fuarında Alman tur operatörleriyle görüşerek önümüzdeki yaz için 2.000 gecelik oda bloğu satışı gerçekleştirmiştir."
           ]
         },
         {
           "name": "Muhasebe ve Finans Departmanı",
           "desc": "Günlük gelir-gider takibini yapan, çalışan maaşlarını hesaplayan, fatura ve ödeme işlemlerini yürüten ve otelin mali tablolarını hazırlayan bölümdür.",
           "examples": [
-            "Örnekle Pekiştirelim: Muhasebecinin ay sonunda otel gelirleri ve giderlerini karşılaştırarak aylık Net İşletme Kârı raporunu hazırlayıp genel müdüre sunmasıdır."
+            "Örnekle Pekiştirelim: Muhasebecin ay sonunda otel gelirleri ve giderlerini karşılaştırarak aylık Net İşletme Kârı raporunu hazırlayıp genel müdüre sunmuştur."
           ]
         },
         {
           "name": "Teknik Servis ve Güvenlik",
           "desc": "Teknik Servis: Asansör, klima, elektrik, su tesisatı ve tüm mekanik sistemlerin bakım-onarımını üstlenir. Güvenlik: Misafirlerin ve personelin can güvenliğini, yangın önlemlerini ve çevrenin korunmasını sağlar.",
           "examples": [
-            "Örnekle Pekiştirelim: Gece 02:00'de 304 nolu odanın klimasının bozulduğunu bildiren misafir için teknik servis görevlisinin 15 dakika içinde odaya gelip sorunu çözmesi ve güvenlik görevlisinin otel çevresini kameralarla 7/24 izlemesidir."
+            "Örnekle Pekiştirelim: Gece 02:00'de 304 nolu odanın klimasının bozulduğunu bildiren misafir için teknik servis görevlisinin 15 dakika içinde odaya gelip sorunu çözmesi ve güvenlik görevlisi otel çevresini kameralarla 7/24 izlemiştir."
           ]
         }
       ],
@@ -207,21 +207,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           "name": "Acil Durum Eylem Planı",
           "desc": "Deprem, yangın, sel veya doğal afet gibi acil durumlarda hangi personelin hangi görevi yapacağını ve misafirlerin nasıl güvenle tahliye edileceğini gösteren yasal eylem planıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yangın alarmı çaldığında ön büro şefinin misafir listesini (in-house list) alarak acil çıkış kapısına yönelmesi ve bellboyların katlardaki odaları kontrol edip misafirleri tahliye etmesidir."
+            "Örnekle Pekiştirelim: Yangın alarmı çaldığında ön büro şefinin misafir listesini (in-house list) alarak acil çıkış kapısına yönelmesi ve bellboylar katlardaki odaları kontrol edip misafirleri tahliye etmiştir."
           ]
         },
         {
           "name": "Acil Durum Toplanma Alanı",
           "desc": "Tahliye edilen konukların ve personelin güvenli bir şekilde bir araya gelmesi için otel bahçesinde veya dışarısında belirlenen, özel tabela ile işaretlenmiş yasal alandır.",
           "examples": [
-            "Örnekle Pekiştirelim: Olası bir deprem tahliyesinde, resepsiyonistlerin konukları lobi yerine otelin ön bahçesinde bulunan 'Acil Durum Toplanma Alanı' tabelasının altına yönlendirmesidir."
+            "Örnekle Pekiştirelim: Olası bir deprem tahliyesinde, resepsiyonistlerin konukları lobi yerine otelin ön bahçesinde bulunan 'Acil Durum Toplanma Alanı' tabelasın altına yönlendirmiştir."
           ]
         },
         {
           "name": "Yangın Algılama ve Söndürme Sistemleri",
           "desc": "Odalar ve ortak alanlarda yer alan duman dedektörleri, sprinkler (yağmurlama) başlıkları, yangın dolapları ve koridorlardaki tüplerin 6 ayda bir periyodik olarak denetlenmesi sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Her ay teknik servisin tüm katlardaki yangın tüplerinin basınç ibrelerini kontrol edip onay etiketini imzalaması ve duman sensörlerini test etmesidir."
+            "Örnekle Pekiştirelim: Her ay teknik servisin tüm katlardaki yangın tüplerin basınç ibrelerini kontrol edip onay etiketini imzalaması ve duman sensörlerini test etmiştir."
           ]
         }
       ],
@@ -238,21 +238,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit2 = {
           "name": "Koruyucu Bakım (Preventive Maintenance)",
           "desc": "Klimaların, asansörlerin, jeneratörlerin ve kazan dairelerinin bozulmasını beklemeden, belirli takvimlere göre (haftalık, aylık, yıllık) yapılan temizlik, yağlama ve parça değişim süreçleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yaz sezonu başlamadan önce nisan ayında teknik servisin tüm odalardaki klimaların filtrelerini temizleyip gaz kaçaklarını kontrol ederek sezona hazır etmesidir."
+            "Örnekle Pekiştirelim: Yaz sezonu başlamadan önce nisan ayında teknik servisin tüm odalardaki klimalar filtrelerini temizleyip gaz kaçaklarını kontrol ederek sezona hazır etmiştir."
           ]
         },
         {
           "name": "Kazan Dairesi ve Chiller Sistemi",
           "desc": "Oteldeki sıcak su ve merkezi soğutma (klima) sistemlerini üreten ana mekanik merkezdir. Bu sistemlerin verimliliği otel konforunu doğrudan belirler.",
           "examples": [
-            "Örnekle Pekiştirelim: Teknik servis müdürünün, merkezi chiller soğutma ünitesinin su derecelerini her sabah kontrol ederek sistemin stabil çalıştığından emin olmasıdır."
+            "Örnekle Pekiştirelim: Teknik servis müdürünün, merkezi chiller soğutma ünitesinin su derecelerini her sabah kontrol ederek sistem stabil çalıştığından emin olmuştur."
           ]
         },
         {
           "name": "Enerji Otomasyonu (Energy Saver)",
-          "desc": "Odada misafir olmadığında kartlı enerji tasarruf anahtarının elektriği otomatik kesmesi ve merkezi klima sisteminin pencere açıldığında otomatik kapanmasıdır.",
+          "desc": "Odada misafir olmadığında kartlı enerji tasarruf anahtarının elektriği otomatik kesmesi ve merkezi klima sisteminin pencere açıldığında otomatik kapanması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Oda balkon kapısı açıldığında, odadaki sensörün bunu algılayıp klima motorunun çalışmasını otomatik olarak durdurması ve enerji israfını önlemesidir."
+            "Örnekle Pekiştirelim: Oda balkon kapısı açıldığında, odadaki sensörün bunu algılayıp klima motorun çalışmasını otomatik olarak durdurması ve enerji israfını önlemiştir."
           ]
         }
       ],
@@ -277,21 +277,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit3 = {
           "name": "İnsan Kaynakları Yönetimi (İKY)",
           "desc": "Otelde çalışacak personelin seçilmesi, eğitilmesi, motive edilmesi, performansının ölçülmesi ve elde tutulmasına yönelik sistematik süreçlerin bütünüdür.",
           "examples": [
-            "Örnekle Pekiştirelim: İK müdürünün yaz sezonunda ihtiyaç duyulacak personel sayısını önceden hesaplayarak, Şubat ayında sezon personeli alımına başlaması ve onları sezon başlamadan eğitip hazır etmesidir."
+            "Örnekle Pekiştirelim: İK müdürü yaz sezonunda ihtiyaç duyulacak personel sayısını önceden hesaplayarak, Şubat ayında sezon personeli alımına başlaması ve onları sezon başlamadan eğitip hazır etmiştir."
           ]
         },
         {
           "name": "İş Analizi ve Görev Tanımı (Job Description)",
           "desc": "Bir pozisyonun gerektirdiği görev ve sorumlulukları, gerekli eğitim/deneyim şartlarını ve çalışma koşullarını açıklayan resmi belgedir.",
           "examples": [
-            "Örnekle Pekiştirelim: 'Resepsiyon Görevlisi' ilanında 'En az lise mezunu, iki yabancı dil bilen, MS Office bilen, takım çalışmasına yatkın, esnek saatlerde çalışabilir' gibi net kriterlerin yazılmasıdır."
+            "Örnekle Pekiştirelim: 'Resepsiyon Görevlisi' ilanında 'En az lise mezunu, iki yabancı dil bilen, MS Office bilen, takım çalışmasına yatkın, esnek saatlerde çalışabilir' gibi net kriterler yazılmıştır."
           ]
         },
         {
           "name": "Mülakat ve Seçim Süreci",
           "desc": "Başvurulardan doğru adayı seçmek için yapılan CV incelemesi, yabancı dil testi, kişilik envanteri ve yüz yüze mülakat aşamalarından oluşan süreçtir.",
           "examples": [
-            "Örnekle Pekiştirelim: Aday Hakan'ın İK'ya özgeçmiş göndermesinin ardından telefon değerlendirmesi, ardından İngilizce yazılı test ve son olarak genel müdür ile yüz yüze mülakat aşamalarından geçmesidir."
+            "Örnekle Pekiştirelim: Aday Hakan'ın İK'ya özgeçmiş göndermesin ardından telefon değerlendirmesi, ardından İngilizce yazılı test ve son olarak genel müdür ile yüz yüze mülakat aşamalarından geçmiştir."
           ]
         }
       ],
@@ -308,26 +308,26 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit3 = {
           "name": "Oryantasyon Eğitimi",
           "desc": "Yeni işe başlayan çalışana otelin kurallarını, kültürünü, departman yapısını ve iş arkadaşlarını tanıtmak amacıyla verilen ilk hafta iş başlangıç eğitimidir.",
           "examples": [
-            "Örnekle Pekiştirelim: İlk gün işe gelen garson adayı Selin'in, otel müdürünün brifingini dinlemesi, tüm departmanları gezerek tanışması ve otel kuralları kılavuzunu okumasıdır."
+            "Örnekle Pekiştirelim: İlk gün işe gelen garson adayı Selin'in, otel müdürü brifingini dinlemesi, tüm departmanları gezerek tanışması ve otel kuralları kılavuzunu okumuştur."
           ]
         },
         {
           "name": "OJT (On-the-Job Training / İş Başı Eğitim)",
           "desc": "Çalışanın gerçek iş ortamında, deneyimli bir eğitmen veya yönetici gözetiminde bizzat iş yaparak pratik becerilerini kazanmasını sağlayan uygulamalı eğitim yöntemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kat görevlisi adayının, 2 hafta boyunca deneyimli bir kat hizmetleri şefinin yanında gerçek odalarda çalışarak yatak yapma, banyo temizleme ve minibar kontrolü becerilerini kazanmasıdır."
+            "Örnekle Pekiştirelim: Kat görevlisi adayının, 2 hafta boyunca deneyimli bir kat hizmetleri şefi yanında gerçek odalarda çalışarak yatak yapma, banyo temizleme ve minibar kontrolü becerilerini kazanmıştır."
           ]
         },
         {
           "name": "KPI ve Performans Değerlendirme",
           "desc": "Çalışanların belirlenmiş hedeflere ulaşma düzeyini ölçen sayısal göstergelerdir (KPI). Yılda 1-2 kez yapılan değerlendirmede çalışan ile yönetici bir araya gelir; güçlü yanlar ve gelişim alanları konuşulur.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyonist Aylin için KPI hedefinin 'Misafir memnuniyet skoru 4.5/5 üzeri, check-in süresi ortalama 3 dakika altı ve sıfır şikayet' olarak belirlenmesidir."
+            "Örnekle Pekiştirelim: Resepsiyonist Aylin için KPI hedefinin 'Misafir memnuniyet skoru 4.5/5 üzeri, check- süresi ortalama 3 dakika altı ve sıfır şikayet' olarak belirlenmiştir."
           ]
         }
       ],
       "caseStudy": "Sektörden Vaka: Uluslararası bir otel zinciri, yeni işe aldığı personele standart 3 günlük oryantasyon yerine 3 haftalık kapsamlı bir 'Marka Büyükelçisi Programı' uygulamaya başladı. Sonuç olarak ilk 6 ay içindeki personel terk oranı %45 azaldı ve misafir memnuniyeti puanları %12 yükseldi.",
-      "tip": "Eğitime harcanan her lira, müşteri şikayetlerine harcanan 10 liranın önüne geçer. Eğitim bir maliyet değil, bir yatırımdır."
+      "tip": "Eğitime harcanan her lira, misafir şikayetlerine harcanan 10 liranın önüne geçer. Eğitim bir maliyet değil, bir yatırımdır."
     },
     {
       "id": 3,
@@ -339,14 +339,14 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit3 = {
           "name": "Fazla Mesai Hakları",
           "desc": "Günlük 7.5 saati veya haftalık 45 saati aşan çalışma sürelerinde, işçiye normal saatlik ücretinin en az %50 fazlası oranında ödeme yapılması yasal zorunluluğudur.",
           "examples": [
-            "Örnekle Pekiştirelim: Haftalık 45 saatten fazla çalışan oda görevlisi Serkan'ın fazla mesai saatlerinin, normal saat ücretinin 1.5 katı üzerinden bordrosuna yansıtılmasıdır."
+            "Örnekle Pekiştirelim: Haftalık 45 saatten fazla çalışan oda görevlisi Serkan'ın fazla mesai saatlerinin, normal saat ücretin 1.5 katı üzerinden bordrosuna yansıtılmıştır."
           ]
         },
         {
           "name": "Yıllık Ücretli İzin",
           "desc": "4857 Sayılı İş Kanunu'na göre, 1 yılını dolduran çalışanların kıdemlerine göre 14 ila 26 gün arasında değişen, ücret kesintisi olmaksızın kullanabildiği yasal tatil hakkıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelde 3 yıldır çalışan Merve Hanım'ın, Temmuz ayında 14 gün ücretli yıllık izin kullanarak maaşının kesilmeksizin ailesini ziyaret etmesidir."
+            "Örnekle Pekiştirelim: Otelde 3 yıldır çalışan Merve Hanım'ın, Temmuz ayında 14 gün ücretli yıllık izin kullanarak maaşının kesilmeksiz ailesini ziyaret etmiştir."
           ]
         },
         {
@@ -368,7 +368,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit3 = {
       "definitions": [
         {
           "name": "Ergonomik Yük Taşıma",
-          "desc": "Bellboy veya kat görevlilerinin sırt ve bel yaralanmalarını önlemek için yük taşırken bel yerine dizlerden güç alarak eğilmesi ve yükü vücuda yakın tutmasıdır.",
+          "desc": "Bellboy veya kat görevlilerinin sırt ve bel yaralanmalarını önlemek için yük taşırken bel yerine dizlerden güç alarak eğilmesi ve yükü vücuda yakın tutması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Bellboyun ağır bir valizi kaldırırken belini bükmek yerine dizlerini kırarak çömelmesi, valizi kucaklayarak bacak kaslarıyla yukarı kalkması doğru taşımadır."
           ]
@@ -377,14 +377,14 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit3 = {
           "name": "KKD (Kişisel Koruyucu Donanım)",
           "desc": "Temizlik kimyasalları kullanılırken eldiven/maske/gözlük, kaygan zeminlerde ise kaymaz tabanlı özel iş ayakkabısı gibi yasal olarak kullanılması zorunlu koruyucu ekipmanlardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kat görevlisinin banyoda kireç çözücü kimyasal sıkarken maskesini takması ve ellerini tahrişten korumak için kalın nitril temizlik eldiveni kullanmasıdır."
+            "Örnekle Pekiştirelim: Kat görevlisinin banyoda kireç çözücü kimyasal sıkarken maskesini takması ve ellerini tahrişten korumak için kal nitril temizlik eldiveni kullanmıştır."
           ]
         },
         {
           "name": "Meslek Hastalıkları ve Önlemler",
-          "desc": "Sürekli ayakta durma, ağır kaldırma veya tekrarlı hareketlerden kaynaklanan kas-iskelet sistemi rahatsızlıklarını önlemek için vardiya aralarında germe-esnetme egzersizleri yapılmasıdır.",
+          "desc": "Sürekli ayakta durma, ağır kaldırma veya tekrarlı hareketlerden kaynaklanan kas-iskelet sistemi rahatsızlıklarını önlemek için vardiya aralarında germe-esnetme egzersizleri yapılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyonistlerin uzun süreli dik duruştan dolayı varis oluşumunu engellemek için her saat başı banko arkasında 2 dakika bacak esnetme hareketleri yapmasıdır."
+            "Örnekle Pekiştirelim: Resepsiyonistler uzun süreli dik duruştan dolayı varis oluşumunu engellemek için her saat başı banko arkasında 2 dakika bacak esnetme hareketleri yapmıştır."
           ]
         }
       ],
@@ -403,27 +403,27 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit4 = {
       "id": 1,
       "tag": "PAZAR",
       "title": "PAZAR SEGMENTASYONu VE KONUMLANDIRMA (STP)",
-      "microSummary": "Herkese aynı mesajı vermek yerine, doğru müşteri grubuna doğru teklifi sunmak otel pazarlamasının temel prensibidir.",
+      "microSummary": "Herkese aynı mesajı vermek yerine, doğru misafir grubuna doğru teklifi sunmak otel pazarlamasının temel prensibidir.",
       "definitions": [
         {
           "name": "Pazar Segmentasyonu",
-          "desc": "Otel müşterilerini ortak özelliklerine (yaş, gelir, seyahat amacı, ülke) göre anlamlı alt gruplara ayırma ve her gruba özel bir hizmet teklifi oluşturma sürecidir.",
+          "desc": "Otel misafirlerini ortak özelliklerine (yaş, gelir, seyahat amacı, ülke) göre anlamlı alt gruplara ayırma ve her gruba özel bir hizmet teklifi oluşturma sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir otelcinin müşterilerini 'İş seyahat eden yöneticiler', 'Balayı çiftleri', 'Çocuklu aileler' ve 'Genç bütçe gezginleri' segmentlerine bölerek her gruba ayrı paket sunmasıdır."
+            "Örnekle Pekiştirelim: Bir otelci misafirlerini 'İş seyahat eden yöneticiler', 'Balayı çiftleri', 'Çocuklu aileler' ve 'Genç bütçe gezginleri' segmentlerine bölerek her gruba ayrı paket sunmuştur."
           ]
         },
         {
           "name": "Hedef Pazar Seçimi (Targeting)",
-          "desc": "Belirlenen segmentler arasından otelin kapasitesi, konumu ve hizmet kalitesiyle en iyi eşleşen ve en yüksek geliri getirebilecek müşteri grubunun seçilmesidir.",
+          "desc": "Belirlenen segmentler arasından otelin kapasitesi, konumu ve hizmet kalitesiyle en iyi eşleşen ve en yüksek geliri getirebilecek misafir grubunun seçilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul Levent'teki bir butik business otelin, 'Balayı çiftleri' yerine 'Hafta içi iş amaçlı seyahat eden kurumsal yöneticiler' segmentini hedef olarak seçmesidir."
+            "Örnekle Pekiştirelim: İstanbul Levent'teki bir butik business otel 'Balayı çiftleri' yerine 'Hafta içi iş amaçlı seyahat eden kurumsal yöneticiler' segmentini hedef olarak seçmiştir."
           ]
         },
         {
           "name": "Konumlandırma (Positioning)",
           "desc": "Otelin rakiplerinden farklılaşmak için seçtiği hedef kitlede kendine özgü ve çekici bir imaj yaratma stratejisidir. Misafirin zihninde 'Bu oteli düşününce ne geliyor?' sorusunun cevabıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: 'Türkiye'nin en yeşil oteli' olarak konumlanan bir otelin, tüm reklamlarında sürdürülebilirlik ve doğa temasını öne çıkararak çevreci bilinçli gezginleri çekmesidir."
+            "Örnekle Pekiştirelim: 'Türkiye'nin en yeşil oteli' olarak konumlanan bir otel tüm reklamlarında sürdürülebilirlik ve doğa temasını öne çıkararak çevreci bilinçli gezginleri çekmiştir."
           ]
         }
       ],
@@ -440,7 +440,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit4 = {
           "name": "Dinamik Fiyatlandırma",
           "desc": "Otelin aynı odası için talebe, doluluk oranına, rezervasyon tarihine ve rakip fiyatlarına göre gün ve hatta saat içinde farklı fiyatlar uygulaması stratejisidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Pazartesi günü 1.200 TL olan otel odasının, cumartesi gecesi için web sitesinde 2.800 TL olarak görünmesi veya son 5 odada %30 fiyat artışı uygulanmasıdır."
+            "Örnekle Pekiştirelim: Pazartesi günü 1.200 TL olan otel odası cumartesi gecesi için web sitesinde 2.800 TL olarak görünmesi veya son 5 odada %30 fiyat artışı uygulanmıştır."
           ]
         },
         {
@@ -454,7 +454,7 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit4 = {
           "name": "Erken Rezervasyon ve Son Dakika İndirimleri",
           "desc": "Erken rezervasyon: Belirli tarihe kadar rezervasyon yapanlara düşük fiyat garantisi. Son dakika indirimi: Dolmayan odalara sezon içinde indirim yaparak en azından bir gelir elde etme stratejisidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Acentenin 'Sezon başlamadan 3 ay önce rezervasyon yapana %25 erken rezervasyon indirimi, 2 gün kala hâlâ boş kalan odalara ise %40 son dakika indirimi' kampanyası uygulamasıdır."
+            "Örnekle Pekiştirelim: Acenten 'Sezon başlamadan 3 ay önce rezervasyon yapana %25 erken rezervasyon indirimi, 2 gün kala hâlâ boş kalan odalara ise %40 son dakika indirimi' kampanyası uygulamıştır."
           ]
         }
       ],
@@ -471,21 +471,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit4 = {
           "name": "OTA (Online Travel Agency)",
           "desc": "Booking.com, Expedia, Hotels.com gibi internet üzerinden otel odalarını toplu olarak listeleyen ve rezervasyon yaptıran, satış komisyonu karşılığı hizmet veren çevrimiçi seyahat acenteleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Berlin'deki bir otelin, müşterilerin %60'ını Booking.com üzerinden alması karşılığında acenteye her rezervasyondan %15-20 komisyon ödemesidir."
+            "Örnekle Pekiştirelim: Berlin'deki bir otelin, misafirler %60'ını Booking.com üzerinden alması karşılığında acenteye her rezervasyondan %15-20 komisyon ödemiştir."
           ]
         },
         {
           "name": "Tripadvisor ve Online İtibar Yönetimi",
-          "desc": "Misafirlerin konaklama deneyimlerini puanladığı platformlarda olumlu yorumlar bırakmak ve olumsuz yorumlara yapıcı yanıt vermek suretiyle dijital itibarın korunmasıdır.",
+          "desc": "Misafirlerin konaklama deneyimlerini puanladığı platformlarda olumlu yorumlar bırakmak ve olumsuz yorumlara yapıcı yanıt vermek suretiyle dijital itibarın korunması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Tripadvisor'da 8.9 puanı olan bir otelin, puana bakarak rezervasyon yapan yeni misafirlerin güvenini kazanması; aksine 6.5 puanlı otelin aynı fiyatta misafir çekememesidir."
+            "Örnekle Pekiştirelim: Tripadvisor'da 8.9 puanı olan bir otelin, puana bakarak rezervasyon yapan yeni misafirlerin güvenini kazanması; aksine 6.5 puanlı otel aynı fiyatta misafir çekememiştir."
           ]
         },
         {
           "name": "Direkt Rezervasyon Stratejisi",
           "desc": "Misafiri Booking.com komisyonundan kurtarmak için otelin kendi web sitesine özel fiyat avantajı, üyelik puanı veya ekstra hizmet (ücretsiz havalimanı transferi vb.) sunarak doğrudan rezervasyona yönlendirme stratejisidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelin kendi sitesinden rezervasyon yapana %10 indirim ve ücretsiz sabah kahvaltısı sunarak misafiri OTA komisyonundan kurtarması ve otelin net gelirini artırmasıdır."
+            "Örnekle Pekiştirelim: Otelin kendi sitesinden rezervasyon yapana %10 indirim ve ücretsiz sabah kahvaltısı sunarak misafiri OTA komisyonundan kurtarması ve otel net gelirini artırmıştır."
           ]
         }
       ],
@@ -510,21 +510,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit5 = {
           "name": "PMS (Property Management System)",
           "desc": "Otel yönetim yazılımı; rezervasyon, check-in/out, oda tahsisi, faturalama, kat hizmetleri takibi ve raporlamayı tek bir ekranda entegre olarak yöneten otomasyondur.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyonistin PMS ekranına bakarak hangi odanın boş, hangisinin dolu, hangisinin temizlenmesi gerektiğini anında görmesi ve yeni gelen misafiri sisteme saniyeler içinde kaydedebilmesidir."
+            "Örnekle Pekiştirelim: Resepsiyonistin PMS ekranına bakarak hangi odanın boş, hangisinin dolu, hangisin temizlenmesi gerektiğini anında görmesi ve yeni gelen misafiri sisteme saniyeler içinde kaydedebilmiştir."
           ]
         },
         {
           "name": "Temassız Check-in (Contactless Check-in)",
           "desc": "Misafirin otele gelmeden önce mobil uygulama üzerinden kimlik belgelerini yükleyerek, resepsiyona uğramadan doğrudan oda kartını veya kapı şifresini alıp odasına geçmesini sağlayan teknolojidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Gece geç saatte uçakla Antalya'ya inen yorgun iş insanının, otele geldiğinde resepsiyonda kuyruk beklemeden telefonundaki QR kodu kapı kilidiyle eşleştirip doğrudan odasına girmesidir."
+            "Örnekle Pekiştirelim: Gece geç saatte uçakla Antalya'ya inen yorgun iş insanı otele geldiğinde resepsiyonda kuyruk beklemeden telefonundaki QR kodu kapı kilidiyle eşleştirip doğrudan odasına girmiştir."
           ]
         },
         {
           "name": "Akıllı Oda Sistemleri (IoT)",
           "desc": "Ses komutu veya telefon uygulamasıyla oda ısısının, aydınlatmasının, perdenin ve televizyonun kontrol edilebildiği, Nesnelerin İnterneti (IoT) teknolojisine dayanan konforlu oda ekipmanlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Sabah uyanan misafirin 'Tamam Otel, kahvemi hazırla' ses komutuyla odasındaki akıllı kahve makinesini başlatması ve 'Perdeleri aç' diyerek gün ışığına kavuşmasıdır."
+            "Örnekle Pekiştirelim: Sabah uyanan misafir 'Tamam Otel, kahvemi hazırla' ses komutuyla odasındaki akıllı kahve makinesini başlatması ve 'Perdeleri aç' diyerek gün ışığına kavuşmuştur."
           ]
         }
       ],
@@ -541,21 +541,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit5 = {
           "name": "AI Chatbot (Yapay Zeka Sohbet Botu)",
           "desc": "Otel web sitesine veya WhatsApp hattına entegre edilen, 7/24 aralıksız çalışarak misafir sorularına otomatik ve anlık yanıt veren yapay zeka destekli sanal asistanlardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Gece 03:00'te Booking.com'dan rezervasyon yapan Alman misafirin 'Otelin havuz saatleri nedir?' sorusuna, hiçbir personel uyku halindeyken chatbotun otomatik olarak 'Havuzumuz 08:00-20:00 açıktır' diye yanıt vermesidir."
+            "Örnekle Pekiştirelim: Gece 03:00'te Booking.com'dan rezervasyon yapan Alman misafirin 'Otelin havuz saatleri nedir?' sorusuna, hiçbir personel uyku halindeyken chatbot otomatik olarak 'Havuzumuz 08:00-20:00 açıktır' diye yanıt vermiştir."
           ]
         },
         {
           "name": "Kişiselleştirilmiş Misafir Deneyimi",
-          "desc": "Misafirin önceki konaklamaları sırasında bıraktığı verilere (yastık tercihi, diyet kısıtlaması, favori oda katı vb.) dayanarak sonraki konaklamasında sürpriz kişisel dokunuşlar yapılmasıdır.",
+          "desc": "Misafirin önceki konaklamaları sırasında bıraktığı verilere (yastık tercihi, diyet kısıtlaması, favori oda katı vb.) dayanarak sonraki konaklamasında sürpriz kişisel dokunuşlar yapılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Geçen yıl otelde 'yastığım çok sert' diyen misafir tekrar geldiğinde, sistemin hatırlatması sayesinde odaya yumuşak yastıkların önceden yerleştirilmesi ve masaya kendi tercih ettiği çikolataların konmasıdır."
+            "Örnekle Pekiştirelim: Geçen yıl otelde 'yastığım çok sert' diyen misafir tekrar geldiğinde, sistemin hatırlatması sayesinde odaya yumuşak yastıkların önceden yerleştirilmesi ve masaya kendi tercih ettiği çikolatalar konmuştur."
           ]
         },
         {
           "name": "Talep Tahminleme (Predictive Analytics)",
           "desc": "Geçmiş doluluk verilerini, hava durumu tahminlerini ve yerel etkinlik takvimlerini analiz eden yapay zekanın, gelecekteki talep dalgalanmalarını tahmin etmesine dayanan yönetim sistemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sistemin, geçen yıl Nisan'da şehirde yapılan uluslararası kongre sırasında doluluk %95'e çıktığını analiz edip bu yılın Nisan'ında benzer kongre öncesinde otomatik olarak fiyatları %30 artırmasıdır."
+            "Örnekle Pekiştirelim: Sistemin, geçen yıl Nisan'da şehirde yapılan uluslararası kongre sırasında doluluk %95'e çıktığını analiz edip bu yıl Nisan'ında benzer kongre öncesinde otomatik olarak fiyatları %30 artırmıştır."
           ]
         }
       ],
@@ -572,21 +572,21 @@ const Map<String, dynamic> konaklamaIsletmeciligiUnit5 = {
           "name": "Yeşil Otel Sertifikaları",
           "desc": "Enerji tasarrufu, su yönetimi, atık azaltma ve organik ürün kullanımı gibi çevre dostu uygulamalar sergileyen otellere verilen LEED, Green Globe veya Travelife gibi uluslararası kalite sertifikalarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Green Globe sertifikası alan otelimizin; güneş panelleriyle enerji üretmesi, yağmur suyu toplayarak bahçe sulaması, tek kullanımlık plastikleri tamamen kaldırması ve yerel çiftçilerden organik malzeme almasıdır."
+            "Örnekle Pekiştirelim: Green Globe sertifikası alan otelimiz güneş panelleriyle enerji üretmesi, yağmur suyu toplayarak bahçe sulaması, tek kullanımlık plastikleri tamamen kaldırması ve yerel çiftçilerden organik malzeme almıştır."
           ]
         },
         {
           "name": "Çalışan Refahı ve İş Yaşam Dengesi",
           "desc": "Vardiyalı ve yoğun çalışma temposundaki otel personeline psikolojik destek, esnek izin planları ve sosyal alan imkânı sağlayarak tükenmişliği önleme stratejisidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yaz sezonunda haftada 60 saat çalışan resepsiyonistlere otelin meditasyon odasını açması, personele ücretsiz yemek ve servis imkânı sunması ile yılda 2 kez takdir ödülü verilmesidir."
+            "Örnekle Pekiştirelim: Yaz sezonunda haftada 60 saat çalışan resepsiyonistlere otel meditasyon odasını açması, personele ücretsiz yemek ve servis imkânı sunması ile yılda 2 kez takdir ödülü verilmiştir."
           ]
         },
         {
           "name": "Esnek ve Uzaktan Çalışma Modelleri",
           "desc": "Operasyonel olmayan departmanların (İK, Pazarlama, Muhasebe) çalışanlarının belirli günlerde ofis dışından çalışabildiği, iş-özel hayat dengesini destekleyen modern çalışma modelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelimizin pazarlama müdürünün haftada 2 gün evden çalışarak İstanbul trafiğinden zaman kazanması ve stresi azalmasıyla daha verimli içerik üretmesidir."
+            "Örnekle Pekiştirelim: Otelimizin pazarlama müdürü haftada 2 gün evden çalışarak İstanbul trafiğinden zaman kazanması ve stresi azalmasıyla daha verimli içerik üretmiştir."
           ]
         }
       ],

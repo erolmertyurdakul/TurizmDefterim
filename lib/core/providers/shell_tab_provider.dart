@@ -21,6 +21,7 @@ class ShellKeys {
   static final GlobalKey firstConceptKey = GlobalKey();
   static final GlobalKey tipKey = GlobalKey();
   static final GlobalKey unitQuizFabKey = GlobalKey();
+  static final GlobalKey unitNotesFabKey = GlobalKey();
   static final GlobalKey devNoteKey = GlobalKey();
   static final GlobalKey profileCardKey = GlobalKey();
   static final GlobalKey blitzGameKey = GlobalKey();

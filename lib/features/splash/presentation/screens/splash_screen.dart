@@ -12,6 +12,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../profile/providers/profile_provider.dart';
 import '../../../profile/presentation/screens/profile_screen.dart';
 import 'welcome_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/presentation/widgets/glowing_border_card.dart';
 
 /// Floating particle data for the splash background
@@ -127,6 +128,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
       if (mounted) {
         _controller.forward().then((_) {
           _pulseController.repeat(reverse: true);
+          if (kIsWeb) {
+            _checkAndShowWebUpdateCard();
+          }
         });
       }
     });
@@ -870,7 +874,11 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
 
   void _selectRole(String role) {
     Navigator.pop(context); // Close role selector dialog
-    _showGradeSelectorDialog(role);
+    if (role == 'Öğretmen') {
+      _saveRoleAndGradeAndProceed('Öğretmen', '11. Sınıf');
+    } else {
+      _showGradeSelectorDialog(role);
+    }
   }
 
   void _showGradeSelectorDialog(String role) {
@@ -1096,11 +1104,16 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
     );
   }
 
-  void _selectGrade(String role, String grade) async {
+  void _selectGrade(String role, String grade) {
     Navigator.pop(context); // Close grade selector dialog
+    _saveRoleAndGradeAndProceed(role, grade);
+  }
+
+  void _saveRoleAndGradeAndProceed(String role, String grade) async {
     await ref.read(profileProvider.notifier).saveRole(role);
     await ref.read(profileProvider.notifier).saveGrade(grade);
     
+    if (!mounted) return;
     final profileState = ref.read(profileProvider);
     _goToWelcomeScreen(role, profileState.idCode ?? '');
   }
@@ -1118,6 +1131,251 @@ class _SplashScreenState extends ConsumerState<SplashScreen> with TickerProvider
           return FadeTransition(opacity: animation, child: child);
         },
       ),
+    );
+  }
+
+  Future<void> _checkAndShowWebUpdateCard() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final hasSeenUpdate = prefs.getBool('has_seen_web_update_v1_notdefterim') ?? false;
+      if (!hasSeenUpdate && mounted) {
+        await Future.delayed(const Duration(milliseconds: 400));
+        if (mounted) {
+          _showWebUpdateDialog(context);
+          await prefs.setBool('has_seen_web_update_v1_notdefterim', true);
+        }
+      }
+    } catch (_) {}
+  }
+
+  void _showWebUpdateDialog(BuildContext context) {
+    final isWide = MediaQuery.of(context).size.width >= 768;
+
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: 'Güncelleme',
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 400),
+      transitionBuilder: (context, anim1, anim2, child) {
+        return FadeTransition(
+          opacity: CurvedAnimation(parent: anim1, curve: Curves.easeOutCubic),
+          child: ScaleTransition(
+            scale: Tween<double>(begin: 0.85, end: 1.0).animate(
+              CurvedAnimation(parent: anim1, curve: Curves.easeOutBack),
+            ),
+            child: child,
+          ),
+        );
+      },
+      pageBuilder: (context, anim1, anim2) {
+        return Center(
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              width: isWide ? 520 : MediaQuery.of(context).size.width * 0.9,
+              constraints: const BoxConstraints(maxWidth: 560),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  color: AppColors.divider.withValues(alpha: 0.5),
+                  width: 1.2,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primarySeed.withValues(alpha: 0.18),
+                    blurRadius: 40,
+                    offset: const Offset(0, 16),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // ── Header Gradient ──
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isWide ? 28 : 20,
+                      vertical: isWide ? 24 : 20,
+                    ),
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color(0xFF0A2647),
+                          Color(0xFF205295),
+                          Color(0xFF2C74B3),
+                        ],
+                      ),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(22.8)),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.15),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: const Text('🆕', style: TextStyle(fontSize: 26)),
+                        ),
+                        const SizedBox(width: 14),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Yeni Güncelleme',
+                                style: GoogleFonts.outfit(
+                                  fontSize: isWide ? 20 : 17,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                'Turizm Defterim v1.0',
+                                style: GoogleFonts.outfit(
+                                  fontSize: isWide ? 13 : 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white.withValues(alpha: 0.7),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // ── İçerik ──
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isWide ? 28 : 20,
+                      vertical: isWide ? 22 : 18,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Not Defterim özelliği
+                        _buildUpdateFeatureRow(
+                          emoji: '📓',
+                          title: 'Not Defterim',
+                          description: 'Sesli dikte, şablon seçimi, etiket ve renk ile kişisel not alma aracı artık uygulamada!',
+                          isWide: isWide,
+                        ),
+                        const SizedBox(height: 14),
+
+                        // 9. sınıf içerik güncellemesi
+                        _buildUpdateFeatureRow(
+                          emoji: '📚',
+                          title: '9. Sınıf İçerikleri',
+                          description: 'Tüm dersler yeni müfredat kitaplarına tam uyumlu olarak zenginleştirildi.',
+                          isWide: isWide,
+                        ),
+                        const SizedBox(height: 14),
+
+                        // Web arayüz iyileştirmesi
+                        _buildUpdateFeatureRow(
+                          emoji: '🖥️',
+                          title: 'Web & Akıllı Tahta Arayüzü',
+                          description: 'Sınıf ortamında rahat okunabilirlik için arayüz optimize edildi, yazı büyütme özelliği eklendi.',
+                          isWide: isWide,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // ── Alt Buton ──
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(
+                      isWide ? 28 : 20,
+                      0,
+                      isWide ? 28 : 20,
+                      isWide ? 22 : 18,
+                    ),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: isWide ? 48 : 44,
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.primaryMid,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          elevation: 0,
+                        ),
+                        child: Text(
+                          'Anladım, Keşfetmeye Başla!',
+                          style: GoogleFonts.outfit(
+                            fontSize: isWide ? 15 : 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildUpdateFeatureRow({
+    required String emoji,
+    required String title,
+    required String description,
+    required bool isWide,
+  }) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: isWide ? 42 : 38,
+          height: isWide ? 42 : 38,
+          decoration: BoxDecoration(
+            color: AppColors.surface,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: AppColors.divider.withValues(alpha: 0.5)),
+          ),
+          alignment: Alignment.center,
+          child: Text(emoji, style: TextStyle(fontSize: isWide ? 20 : 18)),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: GoogleFonts.outfit(
+                  fontSize: isWide ? 15 : 14,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              const SizedBox(height: 3),
+              Text(
+                description,
+                style: GoogleFonts.outfit(
+                  fontSize: isWide ? 13 : 12,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.textSecondary,
+                  height: 1.4,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

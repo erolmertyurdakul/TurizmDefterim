@@ -89,7 +89,7 @@ const Map<String, dynamic> konukGirisCikisUnit1 = {
           "name": "Oda Satış Raporları",
           "desc": "Ön büronun günlük olarak hazırladığı; satılan oda sayısı, toplam ciro, ortalama oda fiyatı (ADR - Average Daily Rate) ve walk-in misafir satış oranlarını gösteren finansal takip tablolarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Akşam vardiyası sonundaki resepsiyonistin; 'Bugün 45 standart oda, 5 süit oda satılmış, ortalama oda fiyatı 1200 TL olarak gerçekleşmiş ve 3 adet walk-in misafir satışı yapılmıştır' raporunu müdüre sunmasıdır."
+            "Örnekle Pekiştirelim: Akşam vardiyası sonundaki resepsiyonist; 'Bugün 45 standart oda, 5 süit oda satılmış, ortalama oda fiyatı 1200 TL olarak gerçekleşmiş ve 3 adet walk-in misafir satışı yapılmıştır' raporunu müdüre sunmuştur."
           ]
         }
       ],
@@ -158,12 +158,12 @@ const Map<String, dynamic> konukGirisCikisUnit1 = {
           "name": "İsteğe Bağlı Rezervasyonlar (On-Request) ve Serbest Satış (Free Sale)",
           "desc": "İsteğe Bağlı (On-Request) rezervasyon, acentenin elinde kontenjanı olmadığında her satış öncesi otelden uygunluk onayı istemesidir. Serbest Satış (Free Sale) ise otel boş olduğu sürece acentenin otele sormadan doğrudan oda satabilmesi yetkisidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Acentenin bir müşteriye oda satmadan önce oteli arayıp '3 nolu oda boş mu, satabilir miyim?' diye onay istemesi İsteğe Bağlı rezervasyondur. Acentenin sisteme bakıp doğrudan onay vermesi ise Serbest Satıştır."
+            "Örnekle Pekiştirelim: Acentenin bir misafire oda satmadan önce oteli arayıp '3 nolu oda boş mu, satabilir miyim?' diye onay istemesi İsteğe Bağlı rezervasyondur. Acentenin sisteme bakıp doğrudan onay vermesi ise Serbest Satıştır."
           ]
         },
         {
           "name": "Blok Rezervasyon ve Kontenjan Arasındaki Temel Farklar",
-          "desc": "Kitapta anlatıldığı üzere; Kontenjan acentelerin sezon boyunca oda satabilmesi için onlara uzun vadeli ayrılan oda havuzudur. Blok Rezervasyon ise seyahat acentesi veya tur operatörünün, oteldeki odaların bir kısmını sadece kendi belirledikleri özel bir grup veya tek seferlik etkinlik için geçici olarak ayırmasıdır.",
+          "desc": "Kontenjan, seyahat acentelerine sezon boyunca satabilmeleri için ayrılan ve opsiyon tarihine kadar satılmayan odaların otele geri devredildiği acente açısından riski düşük sistemdir. Kontenjanda, satılamayan odaların ücreti otel işletmesine ödenmez veya sözleşme şartları uygulanır. Blok rezervasyon ise genellikle belirli bir grup veya etkinlik için odaların topluca kapatıldığı ve satılmasa dahi finansal sorumluluğun organizasyonu yapan acenteye ait olduğu kesin taahhütlü rezervasyondur. Acente, odaları kimseye satamasa dahi otel işletmesine bloke ettirdiği onların ücretini sözleşmeye uygun şekilde öder.",
           "examples": [
             "Örnekle Pekiştirelim: Bir acentenin yaz boyunca satmak üzere elinde sürekli 5 oda bulundurması KONTENJAN'dır. Ancak aynı acentenin 15-18 Ekim tarihlerindeki bir kongre grubu veya düğün davetlileri için 30 odayı toplu olarak kapatması BLOK REZERVASYON'dur."
           ]
@@ -275,7 +275,7 @@ const Map<String, dynamic> konukGirisCikisUnit1 = {
           "name": "Overbooking (Fazla Rezervasyon) Nedir?",
           "desc": "Otellerin son andaki iptalleri (cancellation) ve gelmeyen konukları (no show) hesaba katarak, toplam oda kapasitelerinden daha fazla sayıda rezervasyon kabul etmesi sürecidir. Amacı otelde boş oda kalmasını engellemektir.",
           "examples": [
-            "Örnekle Pekiştirelim: 100 odası olan otelimizin geçmiş istatistiklerine göre her gün ortalama 5 oda iptal oluyorsa, o gün için sisteme 105 oda satışı tanımlamak bir Overbooking (fazla rezervasyon) uygulamasıdır."
+            "Örnekle Pekiştirelim: 100 odası olan otelimiz geçmiş istatistiklerine göre her gün ortalama 5 oda iptal oluyorsa, o gün için sisteme 105 oda satışı tanımlamak bir Overbooking (fazla rezervasyon) uygulamıştır."
           ]
         },
         {
@@ -321,14 +321,14 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
           "name": "VIP ve Özel Konuk Takibi",
           "desc": "Devlet büyükleri, sanatçılar, balayı çiftleri veya sürekli gelen sadık misafirlerin (Repeat Guest) geliş saatinden saatler önce odalarının hazır edilmesi, VIP ikramlarının yerleştirilmesi ve özel karşılama planlarının yapılması sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: VIP 1 statüsündeki bir iş insanının odasına meyve tabağı, içecek ikramları ve genel müdürün ıslak imzalı hoş geldiniz mektubunun yerleştirilmesini Ön Büro ekibinin koordine etmesidir."
+            "Örnekle Pekiştirelim: VIP 1 statüsündeki bir misafirin odasına meyve tabağı, içecek ikramları ve genel müdürün ıslak imzalı hoş geldiniz mektubunun yerleştirilmesini ön büro ekibi koordine etmiştir."
           ]
         },
         {
           "name": "Departmanlar Arası İş Birliği",
-          "desc": "Ön büronun, geliş listesindeki özel talepleri (örn: engelli odası, bebek yatağı, alerjik oda temizliği) Kat Hizmetleri (Housekeeping) ve Yiyecek-İçecek (F&B) departmanlarına yazılı veya dijital sistemle anında iletmesidir.",
+          "desc": "Ön büronun, geliş listesindeki özel talepleri (örn: engelli odası, bebek yatağı, alerjik oda temizliği) Kat Hizmetleri (Housekeeping) ve Yiyecek-İçecek (F&B) departmanlarına yazılı veya dijital sistemle anında iletmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Rezervasyonda 'kuş tüyü yastık alerjisi var' notu olan misafir için Ön Büro'nun Kat Hizmetlerine haber vererek odadaki yastıkların silikon yastıklarla değiştirilmesini sağlamasıdır."
+            "Örnekle Pekiştirelim: Rezervasyonda 'kuş tüyü yastık alerjisi var' notu olan misafir için ön büronun, kat hizmetlerine haber vererek odadaki yastıkların silikon yastıklarla değiştirilmesini sağlamıştır."
           ]
         }
       ],
@@ -343,7 +343,7 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
       "definitions": [
         {
           "name": "Blokaj Nedir?",
-          "desc": "Giriş yapacak misafirlerin rezervasyon özelliklerine, kalış sürelerine, oda tiplerine ve özel taleplerine göre o günkü boş odalarla eşleştirilip, misafir otele gelmeden önce oda numarasının sistemde rezerve edilmesidir.",
+          "desc": "Giriş yapacak misafirlerin rezervasyon özelliklerine, kalış sürelerine, oda tiplerine ve özel taleplerine göre o günkü boş odalarla eşleştirilip, misafir otele gelmeden önce oda numarasının sistemde rezerve edilmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Deniz manzaralı oda satın alan Can ailesine, giriş gününün sabahında otomasyon programından 405 nolu deniz manzaralı odanın kilitlenip atanması işlemidir."
           ]
@@ -352,14 +352,14 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
           "name": "Blokaj Kriterleri",
           "desc": "Blokaj yapılırken; sık gelen (repeat) misafirlere her zamanki odaları, uzun süre kalacak misafirlere en sessiz ve ferah odalar, yaşlı veya engelli misafirlere ise asansöre yakın zemin odaları atanır.",
           "examples": [
-            "Örnekle Pekiştirelim: 1 gece kalacak bir iş insanına asansör yanındaki oda verilebilirken; 15 gün balayı tatili yapacak çifte koridor sonundaki en sessiz ve panoramik manzaralı odanın bloke edilmesidir."
+            "Örnekle Pekiştirelim: 1 gece kalacak bir iş insanına asansör yanındaki oda verilebilirken; 15 gün balayı tatili yapacak çifte koridor sonundaki en sessiz ve panoramik manzaralı oda bloke edilmiştir."
           ]
         },
         {
           "name": "Dijital Blokaj Cetveli",
           "desc": "Ön büro otomasyon sisteminde yer alan; oda numaraları, oda tipleri, temizlik durumları (kirli/temiz) ve o günkü konuk tahsislerinin grafiksel ve renkli olarak görüntülendiği operasyonel tablodur.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyonistin ekrana bakarak yeşil renkli (boş temiz) odalardan 302'yi seçip o gün gelecek olan Ahmet Bey'in rezervasyon kartıyla ilişkilendirmesidir."
+            "Örnekle Pekiştirelim: Resepsiyonist ekrana bakarak yeşil renkli (boş temiz) odalardan 302'yi seçip o gün gelecek olan Ahmet Bey rezervasyon kartıyla ilişkilendirmiştir."
           ]
         }
       ],
@@ -383,14 +383,14 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
           "name": "Room Discrepancy (Oda Durum Uyuşmazlığı)",
           "desc": "Ön büro bilgisayarındaki oda durum kodu ile Kat Hizmetlerinin yaptığı fiili oda denetimi sonuçlarının birbirini tutmaması durumudur. Güvenlik ve satış kayıpları açısından çok tehlikelidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bilgisayarda 'VC' (Boş Temiz) görünen 204 nolu odanın, kat şefinin raporunda 'OC' (Dolu) olarak bildirilmesi sonucu oda durum uyuşmazlığının (room discrepancy) ortaya çıkmasıdır."
+            "Örnekle Pekiştirelim: Bilgisayarda 'VC' (Boş Temiz) görünen 204 nolu odanın, kat şefinin raporunda 'OC' (Dolu) olarak bildirilmesi sonucu oda durum uyuşmazlığın (room discrepancy) ortaya çıkmıştır."
           ]
         },
         {
           "name": "Uyuşmazlık Çözüm Süreci",
           "desc": "Kat Hizmetleri her gün sabah ve öğleden sonra 'Housekeeping Report' hazırlar. Ön büro bu raporla sistemini karşılaştırır, fark olan odaları bellboy veya resepsiyon şefi göndererek fiziksel olarak kontrol ettirip sistemi eşitler.",
           "examples": [
-            "Örnekle Pekiştirelim: Uyuşmazlık listesinde (discrepancy list) çıkan 105 nolu odayı kontrol etmek için şefin telsizle bellboya; '105 nolu odayı kontrol et, içeride bavul veya misafir var mı bak' talimatı vermesidir."
+            "Örnekle Pekiştirelim: Uyuşmazlık listesinde (discrepancy list) çıkan 105 nolu odayı kontrol etmek için şef telsizle bellboya; '105 nolu odayı kontrol et, içeride bavul veya misafir var mı bak' talimatı vermiştir."
           ]
         }
       ],
@@ -405,23 +405,23 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
       "definitions": [
         {
           "name": "Rooming List (Oda Dağılım Listesi)",
-          "desc": "Acentenin veya organizasyon şirketinin otele grup gelmeden en az bir hafta önce gönderdiği, gruptaki misafirlerin isimlerini, oda arkadaşı eşleşmelerini, giriş-çıkış tarihlerini ve varsa özel taleplerini içeren resmi listedir.",
+          "desc": "Turistlerin otelde hangi odalarda, kiminle kalacağını ve yatak tiplerini (twin/double) gösteren, otel resepsiyonuna verilen resmi isim listesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otele gelecek 20 kişilik bir spor kafilesinin hangi odalarda ikişer kişi kalacağını gösteren isim listesinin önceden rezervasyon departmanına iletilmesidir."
+            "Örnekle Pekiştirelim: Otele gelecek 20 kişilik bir spor kafilesinin hangi odalarda ikişer kişi kalacağını gösteren isim listesinin önceden rezervasyon departmanına iletilmiştir."
           ]
         },
         {
           "name": "Grup Memorandumu (İç Yazışma)",
           "desc": "Ön büronun, gruba verilecek tüm hizmetleri (oda blokaj detayları, ortak yemek saatleri, bagaj taşıma planlaması) Kat Hizmetleri ve Yiyecek-İçecek gibi diğer operasyonel departmanlara duyurduğu resmi iç yazışma belgesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ön Büro Müdürünün sisteme; 'Cumartesi günü saat 14:00'te 30 odalık bir kongre grubu gelecektir, bagajlar için bellboy sayısı artırılsın ve akşam yemeği saat 19:00'da hazır edilsin' yazılı memorandumunu ilgili departmanlara göndermesidir."
+            "Örnekle Pekiştirelim: Ön Büro Müdürü sisteme; 'Cumartesi günü saat 14:00'te 30 odalık bir kongre grubu gelecektir, bagajlar için bellboy sayısı artırılsın ve akşam yemeği saat 19:00'da hazır edilsin' yazılı memorandumunu ilgili departmanlara göndermiştir."
           ]
         },
         {
           "name": "Grup Zarflarının Hazırlanması",
           "desc": "Grup giriş yaptığı an resepsiyon bankosunda yığılma ve kargaşa olmasını önlemek amacıyla, her oda için önceden hazırlanan; içinde oda anahtar kartı, oda numarası yazılı kartvizit ve konaklama belgesinin (registration card) bulunduğu zarflardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kafile otobüsten inmeden önce resepsiyonistlerin her odanın zarfını hazırlayıp, üzerine misafirlerin isimlerini yazarak alfabetik sırayla grup liderine teslim etmek üzere jilet gibi dizmesidir."
+            "Örnekle Pekiştirelim: Kafile otobüsten inmeden önce resepsiyonistlerin her odanın zarfını hazırlayıp, üzerine misafirler isimlerini yazarak alfabetik sırayla grup liderine teslim etmek üzere dizmiştir."
           ]
         }
       ],
@@ -438,21 +438,21 @@ const Map<String, dynamic> konukGirisCikisUnit2 = {
           "name": "Special Attention Guests (SPATT - Özel Gereksinimi Olan Konuklar)",
           "desc": "Yaşlı, hareket kısıtlılığı olan, bebekli aileler veya alerjik durumları olan konuklar gibi hizmet alırken ekstra ilgi, fiziksel kolaylık ve operasyonel düzenleme gerektiren özel konuk grubudur.",
           "examples": [
-            "Örnekle Pekiştirelim: Rezervasyonda 'tekerlekli sandalye kullanıyor' notu olan misafir için Ön Büro'nun odayı asansöre en yakın katta bloke etmesi ve banyodaki güvenlik aparatlarını kontrol ettirmesidir."
+            "Örnekle Pekiştirelim: Rezervasyonda 'tekerlekli sandalye kullanıyor' notu olan misafir için Ön Büro'nun odayı asansöre en yakın katta bloke etmesi ve banyodaki güvenlik aparatlarını kontrol ettirmiştir."
           ]
         },
         {
           "name": "VIP ve CIP Karşılama Standartları",
           "desc": "VIP (Çok Önemli Kişi) ve CIP (Ticari Olarak Önemli Kişi) misafirlerin önem derecelerine (VIP 1 - VIP 5) göre odalarına özel meyve sepetleri, taze soğuk ikram setleri yerleştirilmesi, genel müdürün hoş geldiniz mektubu ve üst düzey yöneticilerce karşılanma sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: VIP 1 statüsündeki bir iş insanının odasına girişinden yarım saat önce taze çilekler, kuruyemiş tabağı ve dezenfekte edilmiş özel bornoz setinin yerleştirilmesidir."
+            "Örnekle Pekiştirelim: VIP 1 statüsündeki bir misafirin odasına girişinden yarım saat önce taze çilekler, kuruyemiş tabağı ve dezenfekte edilmiş özel bornoz setin yerleştirilmiştir."
           ]
         },
         {
           "name": "Sadakat Programı Kademeleri (Loyalty Programs)",
           "desc": "Misafirlerin otel zincirinde konaklama sıklığına göre kazandıkları kart seviyeleridir (Klasik, Gümüş, Altın, Platinyum, Elmas). Kademeye göre ücretsiz oda yükseltme (upgrade), geç çıkış (late check-out) veya erken giriş gibi haklar sunulur.",
           "examples": [
-            "Örnekle Pekiştirelim: Altın Kart sahibi bir misafir otele geldiğinde, standart oda fiyatı ödemiş olmasına rağmen hakkı olan 'ücretsiz oda yükseltme' standardı gereği ona Suite oda anahtarı verilmesidir."
+            "Örnekle Pekiştirelim: Altın Kart sahibi bir misafir otele geldiğinde, standart oda fiyatı ödemiş olmasına rağmen hakkı olan 'ücretsiz oda yükseltme' standardı gereği ona Suite oda anahtarı verilmiştir."
           ]
         }
       ],
@@ -508,14 +508,14 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
           "name": "Giriş Ödemesi ve Depozito",
           "desc": "Özellikle walk-in veya garantisiz rezervasyonlu konuklardan oda ücreti giriş anında tahsil edilir. Ekstra harcamalar (oda içi yiyecek-içecek ikramları, restoran) için belirli tutarda nakit depozito alınır ve makbuz kesilir.",
           "examples": [
-            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve ek harcamalar için 1000 TL nakit depozito alınarak kasaya konmasıdır."
+            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve ek harcamalar için 1000 TL nakit depozito alınarak kasaya konmuştur."
           ]
         },
         {
           "name": "Ön Provizyon İşlemleri",
           "desc": "Konuğun kredi kartından konaklama ve olası ekstra harcamalarını güvence altına almak amacıyla kart bakiye veya limitinin geçici olarak bloke edilmesi işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyon görevlisinin konuğun giriş kaydını yaparken kredi kartından 2.000 TL tutarında ön provizyon alarak oda harcamalarını güvenceye almasıdır."
+            "Örnekle Pekiştirelim: Resepsiyon görevlisi konuk giriş kaydını yaparken kredi kartından 2.000 TL tutarında ön provizyon alarak oda harcamalarını güvenceye almıştır."
           ]
         },
         {
@@ -544,16 +544,16 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
         },
         {
           "name": "Otel İçi Hizmet Bilgilendirmesi",
-          "desc": "Anahtar kartı teslim ederken; kahvaltı saatleri, Wi-Fi şifresi, SPA ve havuz kullanım saatleri gibi önemli otel hizmetlerinin misafire kısaca özetlenmesidir.",
+          "desc": "Anahtar kartı teslim ederken; kahvaltı saatleri, Wi-Fi şifresi, SPA ve havuz kullanım saatleri gibi önemli otel hizmetlerinin misafire kısaca özetlenmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: 'Efendim oda kartınız hazır, odanız 4. kattadır. Sabah kahvaltımız lobi katındaki restoranda 07:00-10:30 arasındadır. Wi-Fi şifremiz kart zarfının içinde yer almaktadır' demek bilgilendirme standardıdır."
           ]
         },
         {
           "name": "Bellboy Koordinasyonu",
-          "desc": "Misafirin bagajlarının bagaj kartıyla teslim alınarak bellboy (bagaj taşıma görevlisi) eşliğinde odaya çıkarılması, bellboyun odaya refakat edip oda içi donanımları (klima, tv, kasa) tanıtmasıdır.",
+          "desc": "Misafirin bagajlarının bagaj kartıyla teslim alınarak bellboy (bagaj taşıma görevlisi) eşliğinde odaya çıkarılması, bellboyun odaya refakat edip oda içi donanımları (klima, tv, kasa) tanıtması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Resepsiyonistin bellboyu çağırıp; 'Ahmet Bey, Can ailesine 402 nolu odaya kadar refakat edelim, bagajlarını teslim edelim' talimatını verip bagaj fişini kesmesidir."
+            "Örnekle Pekiştirelim: Resepsiyonist bellboyu çağırıp; 'Ahmet Bey, Can ailesine 402 nolu odaya kadar refakat edelim, bagajlarını teslim edelim' talimatını verip bagaj fişini kesmiştir."
           ]
         }
       ],
@@ -570,14 +570,14 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
           "name": "Doorman (Kapı Görevlisi) Karşılama Standardı",
           "desc": "Otele araçla gelen misafirlerin kapılarının güler yüzle açılması (protokol gereği önce hanımefendilerin kapısı açılır) ve günün saatine uygun şekilde selamlanmasıdır. Misafirin kendini güvende ve değerli hissetmesini sağlar.",
           "examples": [
-            "Örnekle Pekiştirelim: Otele gelen bir konuğun arabasının kapısını açan doorman'in; 'Hoş geldiniz efendim, yolculuğunuz nasıl geçti? Sizleri ağırlamaktan mutluluk duyuyoruz' diyerek selamlamasıdır."
+            "Örnekle Pekiştirelim: Otele gelen bir konuğun arabasının kapısını açan doorman' 'Hoş geldiniz efendim, yolculuğunuz nasıl geçti? Sizleri ağırlamaktan mutluluk duyuyoruz' diyerek selamlamıştır."
           ]
         },
         {
           "name": "Vale Otopark ve Güvenlik Fişi",
-          "desc": "Konuğun aracı teslim alınırken, araçta herhangi bir çizik/hasar kontrolü yapılması, otopark fişinin kesilip bir nüshasının konuğa verilmesi ve anahtarın kilitli vale dolabına konmasıdır.",
+          "desc": "Konuğun aracı teslim alınırken, araçta herhangi bir çizik/hasar kontrolü yapılması, otopark fişinin kesilip bir nüshasının konuğa verilmesi ve anahtarın kilitli vale dolabına konması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Vale personelinin, anahtarı teslim alırken otopark fişini iki nüsha doldurup birini misafire vermesi ve 'Aracınız güvenli otoparkımıza çekilecektir, buyurun bu fişiniz efendim' demesidir."
+            "Örnekle Pekiştirelim: Vale personelinin, anahtarı teslim alırken otopark fişini iki nüsha doldurup birini misafire vermesi ve 'Aracınız güvenli otoparkımıza çekilecektir, buyur bu fişiniz efendim' demiştir."
           ]
         },
         {
@@ -601,14 +601,14 @@ const Map<String, dynamic> konukGirisCikisUnit3 = {
           "name": "Folio Borç ve Alacak Dengesi",
           "desc": "Folio, misafirin oda hesabıdır. Misafirin yaptığı oda servisi veya ek hizmet harcamaları 'Borç (Debit)' sütununa; yaptığı ön ödemeler ve depozitolar ise 'Alacak (Credit)' sütununa (+) ve (-) olarak yazılır. Hesap kapatılırken bu iki dengenin sıfır olması şarttır.",
           "examples": [
-            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve ek hizmet harcamaları için 1000 TL nakit depozito alınarak kasaya konmasıdır."
+            "Örnekle Pekiştirelim: 3 gece kalacak misafirden giriş anında oda bedeli olan 6000 TL'nin tahsil edilmesi ve ek hizmet harcamaları için 1000 TL nakit depozito alınarak kasaya konmuştur."
           ]
         },
         {
           "name": "Night Audit (Gece Ön Kasa Raporu) ve Room Charge",
-          "desc": "Gece yarısından sonra otel gününü kapatan gece ön kasa görevlisinin, o gün konaklayan tüm odaların günlük oda bedellerini (Room Charge) sisteme işlemesi ve mali hesapları doğrulamasıdır.",
+          "desc": "Gece yarısından sonra otel gününü kapatan gece ön kasa görevlisinin, o gün konaklayan tüm odaların günlük oda bedellerini (Room Charge) sisteme işlemesi ve mali hesapları doğrulaması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Gece ön kasa görevlisinin saat 02:00'de sistem üzerinden gün kapatma işlemini başlatarak o günkü oda konaklama bedellerini misafirlerin foliolarına borç olarak yansıtmasıdır."
+            "Örnekle Pekiştirelim: Gece ön kasa görevlisi saat 02:00'de sistem üzerinden gün kapatma işlemini başlatarak o günkü oda konaklama bedellerini misafirler foliolarına borç olarak yansıtmıştır."
           ]
         }
       ],
@@ -633,21 +633,21 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
           "name": "Expected Departure List (Günlük Ayrılış Listesi)",
           "desc": "O gün otelden çıkış (check-out) yapması beklenen tüm odaların oda numarası, konuk adı, pansiyon durumu ve tahmini çıkış saatlerini gösteren resmi operasyon listesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sabah vardiyasındaki görevlinin listeye bakarak o gün 30 odanın çıkış yapacağını, bunlardan 5'inin erken ayrılmak istediğini saptayıp hazırlık yapmasıdır."
+            "Örnekle Pekiştirelim: Sabah vardiyasındaki görevli listeye bakarak o gün 30 odanın çıkış yapacağını, bunlardan 5'in erken ayrılmak istediğini saptayıp hazırlık yapmıştır."
           ]
         },
         {
           "name": "Late Check-Out (Geç Çıkış) Talepleri",
           "desc": "Otel standart çıkış saati olan 12:00'den sonra, misafirin talebi ve otelin doluluk durumunun uygunluğuna göre ek süre (ücretli veya ücretsiz) verilmesi işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Uçağı akşam 20:00'de olan misafirin ricası üzerine, Ön Büro Müdürü'nün onayıyla odadan çıkış saatinin saat 16:00'ya kadar uzatılması ve sisteme işlenmesidir."
+            "Örnekle Pekiştirelim: Uçağı akşam 20:00'de olan misafirin ricası üzerine, Ön Büro Müdürü'nün onayıyla odadan çıkış saatin saat 16:00'ya kadar uzatılması ve sisteme işlenmiştir."
           ]
         },
         {
           "name": "Folio (Misafir Cari Hesabı) İncelemesi",
-          "desc": "Misafirin otelde kaldığı süre boyunca yaptığı tüm harcamaların (oda, minibar, telefon, SPA vb.) detaylı cari dökümünün Ön Büro sistemi üzerinden doğruluğunun kontrol edilmesidir.",
+          "desc": "Misafirin otelde kaldığı süre boyunca yaptığı tüm harcamaların (oda, minibar, telefon, SPA vb.) detaylı cari dökümünün Ön Büro sistemi üzerinden doğruluğunun kontrol edilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Misafir bankoya gelmeden önce folio ekranının açılarak restorandan gelen adisyon imzalarının sisteme doğru işlenip işlenmediğinin kontrol edilmesidir."
+            "Örnekle Pekiştirelim: Misafir bankoya gelmeden önce folio ekranının açılarak restorandan gelen adisyon imzalarının sisteme doğru işlenip işlenmediğin kontrol edilmiştir."
           ]
         }
       ],
@@ -662,23 +662,23 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
       "definitions": [
         {
           "name": "Folio Kapatma ve Ödeme Alma",
-          "desc": "Misafirin folio cari hesabında biriken borcun nakit, kredi kartı veya şirket/acente kredili hesabı (City Ledger) üzerinden sıfırlanıp hesabın kapatılmasıdır.",
+          "desc": "Misafirin folio cari hesabında biriken borcun nakit, kredi kartı veya şirket/acente kredili hesabı (City Ledger) üzerinden sıfırlanıp hesabın kapatılması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Misafirin folio hesabındaki 8500 TL'lik bakiyeyi pos cihazından kredi kartıyla çekerek bakiye hanesini sıfıra indirip hesabı kapatmaktır."
           ]
         },
         {
           "name": "Resmi Fatura (Invoice) Düzenleme",
-          "desc": "Tahsil edilen konaklama ve ekstra hizmetlerin KDV oranları, otel ve konuk yasal bilgileriyle birlikte resmi mali formata dökülerek basılması ve konuğa takdim edilmesidir.",
+          "desc": "Tahsil edilen konaklama ve ekstra hizmetlerin KDV oranları, otel ve konuk yasal bilgileriyle birlikte resmi mali formata dökülerek basılması ve konuğa takdim edilmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Ödeme yapıldıktan sonra sistemden resmi fatura kesip, kaşeleyip imzalayarak bir nüshasını şık bir zarf içinde misafire teslim etmektir."
           ]
         },
         {
           "name": "Billing Instruction (Fatura Talimatı) Aktarımı",
-          "desc": "Acente veya şirket misafirlerinin oda ücretlerinin doğrudan firmanın kredili hesabına (City Ledger) aktarılması, kişisel ekstralarının ise misafirden tahsil edilmesidir.",
+          "desc": "Acente veya şirket misafirlerinin oda ücretlerinin doğrudan firmanın kredili hesabına (City Ledger) aktarılması, kişisel ekstralarının ise misafirden tahsil edilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Şirketinden gelen Billing Instruction (Fatura Talimatı) uyarınca; otomasyon sisteminde oda ücretinin şirketin kredili (City Ledger) hesabına, minibar harcamasının ise misafirin kendi şahsi folyosuna aktarılarak ayrıştırılmasıdır."
+            "Örnekle Pekiştirelim: Şirketinden gelen Billing Instruction (Fatura Talimatı) uyarınca; otomasyon sisteminde oda ücretinin şirketin kredili (City Ledger) hesabına, minibar harcamasının ise misafir kendi şahsi folyosuna aktarılarak ayrıştırılmıştır."
           ]
         }
       ],
@@ -707,7 +707,7 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
         },
         {
           "name": "Uğurlama ve Bagaj Transferi",
-          "desc": "Bellboyun misafirin valizlerini emanetten veya odadan alarak aracına yerleştirmesi, resepsiyonistin güler yüzle iyi yolculuklar dileyerek misafiri otelden uğurlamasıdır.",
+          "desc": "Bellboyun misafirin valizlerini emanetten veya odadan alarak aracına yerleştirmesi, resepsiyonistin güler yüzle iyi yolculuklar dileyerek misafiri otelden uğurlaması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Misafiri kapıya kadar geçirip; 'Bizi tercih ettiğiniz için çok teşekkür ederiz efendim. Tekrar görüşmek dileğiyle, yolunuz açık olsun' diyerek el sallamaktır."
           ]
@@ -726,7 +726,7 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
           "name": "Açık Fatura Düzenleme",
           "desc": "Satılan konaklama hizmeti bedelinin peşin tahsil edilmeyip acenteye veya şirkete kredili/vadeli olarak fatura edildiği fatura türüdür. İmza ve kaşe faturanın üst kısmında yer alır.",
           "examples": [
-            "Örnekle Pekiştirelim: Seyahat acentesinin konaklama bedelini 30 gün sonra ödeyeceği bir rezervasyon için çıkışta acente adına açık fatura kesilerek gönderilmesidir."
+            "Örnekle Pekiştirelim: Seyahat acentesinin konaklama bedelini 30 gün sonra ödeyeceği bir rezervasyon için çıkışta acente adına açık fatura kesilerek gönderilmiştir."
           ]
         },
         {
@@ -740,7 +740,7 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
           "name": "Konaklama Vergisi Hesaplama",
           "desc": "Yasal düzenlemelere göre, otelde konaklayan konukların fatura matrahına (KDV hariç oda bedeli) yansıtılan %2 oranındaki yasal vergidir. Faturada ayrıca gösterilmek zorundadır.",
           "examples": [
-            "Örnekle Pekiştirelim: 1000 TL KDV hariç oda bedeline %2 oranında yani 20 TL konaklama vergisi eklenmesi ve faturanın KDV (%10) ve konaklama vergisiyle birlikte toplam 1120 TL olarak basılmasıdır."
+            "Örnekle Pekiştirelim: 1000 TL KDV hariç oda bedeline %2 oranında yani 20 TL konaklama vergisi eklenmesi ve faturan KDV (%10) ve konaklama vergisiyle birlikte toplam 1120 TL olarak basılmıştır."
           ]
         }
       ],
@@ -757,14 +757,14 @@ const Map<String, dynamic> konukGirisCikisUnit4 = {
           "name": "City Ledger (Kredili Defter)",
           "desc": "Acente veya şirket anlaşmalı misafirlerin oda bedellerinin, çıkış anında misafir tarafından ödenmeyip şirketin oteldeki vadeli cari hesabına borç olarak kaydedilmesi işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: X şirketinin misafirinin sadece oda bedelinin şirketin City Ledger hesabına aktarılması, misafirin kendi yaptığı ek harcamaların ise misafirden nakit alınmasıdır."
+            "Örnekle Pekiştirelim: X şirketinin misafirinin sadece oda bedelinin şirketin City Ledger hesabına aktarılması, misafirin kendi yaptığı ek harcamalar ise misafirden nakit alınmıştır."
           ]
         },
         {
           "name": "Expected Departure List (Ayrılış Listesi) İletimi",
-          "desc": "O gün otelden çıkış yapacak odaların listesidir. Bu listenin Kat Hizmetlerine (odaların temizlenip yeni misafire hazırlanması için) ve restoranlara (ekstra harcama kontrolü için) zamanında iletilmesidir.",
+          "desc": "O gün otelden çıkış yapacak odaların listesidir. Bu listenin Kat Hizmetlerine (odaların temizlenip yeni misafire hazırlanması için) ve restoranlara (ekstra harcama kontrolü için) zamanında iletilmesi anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sabah saat 08:00'de o gün çıkış yapacak 15 odanın listesinin Kat Hizmetlerine bildirilmesi ve bu odaların temizliğine öncelik verilmesinin istenmesidir."
+            "Örnekle Pekiştirelim: Sabah saat 08:00'de o gün çıkış yapacak 15 odanın listesinin Kat Hizmetlerine bildirilmesi ve bu odaların temizliğine öncelik verilmesin istenmiştir."
           ]
         }
       ],

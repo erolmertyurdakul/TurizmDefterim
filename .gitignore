@@ -55,3 +55,9 @@ app.*.map.json
 # Release Outputs (APK, AAB binaries)
 /TurizmAkademi_Ciktilar/
 
+# Scratch & Temporary Analysis Scripts
+scratch/
+*.txt
+mismatches*
+sayim.dart
+scratch_ocr.ps1

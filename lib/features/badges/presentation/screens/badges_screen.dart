@@ -32,10 +32,15 @@ class _BadgesScreenState extends ConsumerState<BadgesScreen> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
+    final isWide = MediaQuery.of(context).size.width >= 768;
+
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: Column(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1400),
+            child: Column(
           children: [
             // ── Üst Başlık ──
             Padding(
@@ -131,11 +136,11 @@ class _BadgesScreenState extends ConsumerState<BadgesScreen> with TickerProvider
                       bottom: 100,
                     ),
                     physics: const BouncingScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 14,
-                      childAspectRatio: 0.78,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: isWide ? 5 : 3,
+                      crossAxisSpacing: 14,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: isWide ? 0.88 : 0.78,
                     ),
                     itemCount: categoryBadges.length,
                     itemBuilder: (context, index) {
@@ -155,11 +160,28 @@ class _BadgesScreenState extends ConsumerState<BadgesScreen> with TickerProvider
           ],
         ),
       ),
-    );
+    ),
+  ),
+);
   }
 
-  // ── Rozet Detay Bottom Sheet ──
+  // ── Rozet Detay Gösterimi ──
   void _showBadgeDetail(BadgeItem badge, int currentLevel) {
+    showBadgeDetailModal(context, badge, currentLevel);
+  }
+}
+
+/// Rozet detayını hem Web/PC (şık ortalanmış Dialog) hem de mobil (tam boy BottomSheet)
+/// üzerinde eksiksiz ve taşma olmadan gösteren ortak fonksiyon.
+void showBadgeDetailModal(BuildContext context, BadgeItem badge, int currentLevel) {
+  final isWide = MediaQuery.of(context).size.width >= 768;
+  if (isWide) {
+    showDialog(
+      context: context,
+      barrierColor: Colors.black.withValues(alpha: 0.65),
+      builder: (context) => _BadgeDetailDialog(badge: badge, currentLevel: currentLevel),
+    );
+  } else {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -186,6 +208,11 @@ class _BadgeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isUnlocked = currentLevel > 0;
+    final isWide = MediaQuery.of(context).size.width >= 768;
+    final circleSize = isWide ? 76.0 : 56.0;
+    final emojiSize = isWide ? 38.0 : 28.0;
+    final nameFontSize = isWide ? 14.5 : 12.0;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -206,8 +233,8 @@ class _BadgeTile extends StatelessWidget {
           children: [
             // Emoji Rozet
             Container(
-              width: 56,
-              height: 56,
+              width: circleSize,
+              height: circleSize,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -228,21 +255,21 @@ class _BadgeTile extends StatelessWidget {
                 opacity: isUnlocked ? 1.0 : 0.35,
                 child: Text(
                   badge.emoji,
-                  style: const TextStyle(fontSize: 28),
+                  style: TextStyle(fontSize: emojiSize),
                 ),
               ),
             ),
             const SizedBox(height: 8),
             // İsim
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
                 badge.name,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: GoogleFonts.outfit(
-                  fontSize: 12,
+                  fontSize: nameFontSize,
                   fontWeight: FontWeight.w800,
                   color: AppColors.textPrimary,
                   height: 1.2,
@@ -284,6 +311,258 @@ class _BadgeTile extends StatelessWidget {
 // ══════════════════════════════════════════
 //  ROZET DETAY BOTTOM SHEET
 // ══════════════════════════════════════════
+// ══════════════════════════════════════════
+//  ROZET DETAY DİYALOĞU (PC / Web İçin Ortalanmış, Asla Kesilmeyen Şık Modal)
+// ══════════════════════════════════════════
+class _BadgeDetailDialog extends StatelessWidget {
+  final BadgeItem badge;
+  final int currentLevel;
+
+  const _BadgeDetailDialog({required this.badge, required this.currentLevel});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 620,
+            maxHeight: screenHeight * 0.88,
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(28),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.25),
+                  blurRadius: 32,
+                  offset: const Offset(0, 12),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(28),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Gradient Başlık + Kapat Butonu
+                  Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.fromLTRB(28, 24, 28, 24),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: badge.gradient,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            // Büyük Emoji
+                            Container(
+                              width: 78,
+                              height: 78,
+                              decoration: BoxDecoration(
+                                color: Colors.white.withValues(alpha: 0.22),
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Colors.white.withValues(alpha: 0.35), width: 2),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(badge.emoji, style: const TextStyle(fontSize: 42)),
+                            ),
+                            const SizedBox(width: 20),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withValues(alpha: 0.22),
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    child: Text(
+                                      badge.category,
+                                      style: GoogleFonts.inter(
+                                        fontSize: 11.5,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 6),
+                                  Text(
+                                    badge.name,
+                                    style: GoogleFonts.outfit(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w900,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    badge.description,
+                                    style: GoogleFonts.inter(
+                                      fontSize: 14,
+                                      color: Colors.white.withValues(alpha: 0.9),
+                                      height: 1.35,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 12,
+                        right: 12,
+                        child: Material(
+                          color: Colors.transparent,
+                          child: IconButton(
+                            icon: const Icon(Icons.close_rounded, color: Colors.white, size: 24),
+                            onPressed: () => Navigator.of(context).pop(),
+                            tooltip: 'Kapat',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  // Seviye Aşamaları Listesi (Tam görünür, alttan kesilmez)
+                  Flexible(
+                    child: Scrollbar(
+                      thumbVisibility: true,
+                      child: ListView.builder(
+                        padding: const EdgeInsets.fromLTRB(24, 18, 24, 24),
+                        shrinkWrap: true,
+                        itemCount: badge.levels.length,
+                        itemBuilder: (context, index) {
+                          final level = badge.levels[index];
+                          final levelIcons = ['🥉', '🥈', '🥇', '💎', '👑'];
+                          final isLevelUnlocked = currentLevel > index;
+
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 12),
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: isLevelUnlocked
+                                  ? level.color.withValues(alpha: 0.08)
+                                  : const Color(0xFFF8FAFC),
+                              borderRadius: BorderRadius.circular(18),
+                              border: Border.all(
+                                color: isLevelUnlocked
+                                    ? level.color.withValues(alpha: 0.35)
+                                    : AppColors.divider.withValues(alpha: 0.8),
+                                width: isLevelUnlocked ? 1.5 : 1.0,
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  width: 48,
+                                  height: 48,
+                                  decoration: BoxDecoration(
+                                    color: level.color.withValues(alpha: isLevelUnlocked ? 0.2 : 0.08),
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: level.color.withValues(alpha: isLevelUnlocked ? 0.4 : 0.15),
+                                    ),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Opacity(
+                                    opacity: isLevelUnlocked ? 1.0 : 0.4,
+                                    child: Text(levelIcons[index], style: const TextStyle(fontSize: 24)),
+                                  ),
+                                ),
+                                const SizedBox(width: 16),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            level.name,
+                                            style: GoogleFonts.outfit(
+                                              fontSize: 16.5,
+                                              fontWeight: FontWeight.w800,
+                                              color: isLevelUnlocked
+                                                  ? AppColors.textPrimary
+                                                  : AppColors.textSecondary,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 8),
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                            decoration: BoxDecoration(
+                                              color: isLevelUnlocked
+                                                  ? const Color(0xFF2ED573).withValues(alpha: 0.15)
+                                                  : Colors.black.withValues(alpha: 0.05),
+                                              borderRadius: BorderRadius.circular(8),
+                                            ),
+                                            child: Text(
+                                              isLevelUnlocked ? 'Kazanıldı' : 'Kilitli',
+                                              style: GoogleFonts.inter(
+                                                fontSize: 10.5,
+                                                fontWeight: FontWeight.w700,
+                                                color: isLevelUnlocked
+                                                    ? const Color(0xFF2ED573)
+                                                    : AppColors.textHint,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 3),
+                                      Text(
+                                        level.condition,
+                                        style: GoogleFonts.inter(
+                                          fontSize: 13.5,
+                                          color: isLevelUnlocked
+                                              ? AppColors.textSecondary
+                                              : AppColors.textHint,
+                                          height: 1.3,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Icon(
+                                  isLevelUnlocked ? Icons.check_circle_rounded : Icons.lock_outline_rounded,
+                                  size: 22,
+                                  color: isLevelUnlocked
+                                      ? const Color(0xFF2ED573)
+                                      : Colors.grey.withValues(alpha: 0.45),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// ══════════════════════════════════════════
+//  ROZET DETAY BOTTOM SHEET (Mobil / Android)
+// ══════════════════════════════════════════
 class _BadgeDetailSheet extends StatelessWidget {
   final BadgeItem badge;
   final int currentLevel;
@@ -293,9 +572,9 @@ class _BadgeDetailSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-      initialChildSize: 0.7,
-      minChildSize: 0.4,
-      maxChildSize: 0.9,
+      initialChildSize: 0.85,
+      minChildSize: 0.5,
+      maxChildSize: 0.95,
       builder: (context, scrollController) {
         return Container(
           decoration: BoxDecoration(
@@ -303,9 +582,9 @@ class _BadgeDetailSheet extends StatelessWidget {
             borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 20,
-                offset: const Offset(0, -4),
+                color: Colors.black.withValues(alpha: 0.15),
+                blurRadius: 24,
+                offset: const Offset(0, -6),
               ),
             ],
           ),
@@ -318,7 +597,7 @@ class _BadgeDetailSheet extends StatelessWidget {
                 height: 4,
                 decoration: BoxDecoration(
                   color: AppColors.divider,
-                  borderRadius: BorderRadius.circular(2),
+                  borderRadius: BorderRadius.circular(3),
                 ),
               ),
 
@@ -345,17 +624,19 @@ class _BadgeDetailSheet extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    // Büyük Emoji
                     Container(
-                      width: 70,
-                      height: 70,
+                      width: 68,
+                      height: 68,
                       decoration: BoxDecoration(
                         color: Colors.white.withValues(alpha: 0.2),
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
                       ),
                       alignment: Alignment.center,
-                      child: Text(badge.emoji, style: const TextStyle(fontSize: 38)),
+                      child: Text(
+                        badge.emoji, 
+                        style: const TextStyle(fontSize: 36),
+                      ),
                     ),
                     const SizedBox(width: 16),
                     Expanded(
@@ -371,7 +652,7 @@ class _BadgeDetailSheet extends StatelessWidget {
                             child: Text(
                               badge.category,
                               style: GoogleFonts.inter(
-                                fontSize: 10,
+                                fontSize: 10.5,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.white.withValues(alpha: 0.9),
                               ),
@@ -381,7 +662,7 @@ class _BadgeDetailSheet extends StatelessWidget {
                           Text(
                             badge.name,
                             style: GoogleFonts.outfit(
-                              fontSize: 22,
+                              fontSize: 21,
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
                             ),
@@ -390,9 +671,9 @@ class _BadgeDetailSheet extends StatelessWidget {
                           Text(
                             badge.description,
                             style: GoogleFonts.inter(
-                              fontSize: 12,
-                              color: Colors.white.withValues(alpha: 0.85),
-                              height: 1.3,
+                              fontSize: 12.5,
+                              color: Colors.white.withValues(alpha: 0.88),
+                              height: 1.35,
                             ),
                           ),
                         ],
@@ -406,7 +687,7 @@ class _BadgeDetailSheet extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   controller: scrollController,
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.fromLTRB(16, 4, 16, 36),
                   itemCount: badge.levels.length,
                   itemBuilder: (context, index) {
                     final level = badge.levels[index];
@@ -429,7 +710,6 @@ class _BadgeDetailSheet extends StatelessWidget {
                       ),
                       child: Row(
                         children: [
-                          // Seviye İkonu
                           Opacity(
                             opacity: isLevelUnlocked ? 1.0 : 0.4,
                             child: Container(
@@ -441,7 +721,10 @@ class _BadgeDetailSheet extends StatelessWidget {
                                 border: Border.all(color: level.color.withValues(alpha: 0.3)),
                               ),
                               alignment: Alignment.center,
-                              child: Text(levelIcons[index], style: const TextStyle(fontSize: 22)),
+                              child: Text(
+                                levelIcons[index], 
+                                style: const TextStyle(fontSize: 22),
+                              ),
                             ),
                           ),
                           const SizedBox(width: 14),
@@ -451,28 +734,51 @@ class _BadgeDetailSheet extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    level.name,
-                                    style: GoogleFonts.outfit(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w800,
-                                      color: AppColors.textPrimary,
-                                    ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        level.name,
+                                        style: GoogleFonts.outfit(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w800,
+                                          color: AppColors.textPrimary,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 6),
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                        decoration: BoxDecoration(
+                                          color: isLevelUnlocked
+                                              ? const Color(0xFF2ED573).withValues(alpha: 0.15)
+                                              : Colors.black.withValues(alpha: 0.05),
+                                          borderRadius: BorderRadius.circular(6),
+                                        ),
+                                        child: Text(
+                                          isLevelUnlocked ? 'Kazanıldı' : 'Kilitli',
+                                          style: GoogleFonts.inter(
+                                            fontSize: 9.5,
+                                            fontWeight: FontWeight.w700,
+                                            color: isLevelUnlocked
+                                                ? const Color(0xFF2ED573)
+                                                : AppColors.textHint,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  const SizedBox(height: 2),
+                                  const SizedBox(height: 3),
                                   Text(
                                     level.condition,
                                     style: GoogleFonts.inter(
                                       fontSize: 12,
                                       color: AppColors.textSecondary,
-                                      height: 1.3,
+                                      height: 1.35,
                                     ),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          // Açılmışsa check, kilitliyse lock
                           Icon(
                             isLevelUnlocked ? Icons.check_circle_rounded : Icons.lock_outline_rounded,
                             size: 20,

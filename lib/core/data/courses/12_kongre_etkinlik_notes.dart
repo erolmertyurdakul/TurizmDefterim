@@ -27,7 +27,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "Teşvik (Incentive) Gezileri",
           "desc": "Şirketlerin, çalışanlarını motive etmek, bayilerini ödüllendirmek veya satış hedeflerini aşan ekipleri ödüllendirmek amacıyla tamamen ücretsiz olarak düzenlediği lüks seyahatlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir otomotiv firmasının yıl genelinde en çok satışı gerçekleştiren 20 bayisini 4 gün boyunca her şey dahil lüks bir Paris tatiliyle ödüllendirmesidir."
+            "Örnekle Pekiştirelim: Bir otomotiv firması, yıl genelinde en çok satış yapan 20 bayisini 4 gün boyunca lüks bir Paris tatiliyle ödüllendirmiştir."
           ]
         }
       ],
@@ -49,7 +49,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "PCO (Profesyonel Kongre Organizatörü)",
           "desc": "Kongrenin planlama, bütçe yönetimi, pazarlama, kayıt, konaklama ve teknik altyapı dahil tüm operasyonel sürecini üstlenen uzman şirketlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Uluslararası kardiyoloji kongresinin web sitesinin açılması, bildirilerin toplanması, salonların kiralanması ve bütçenin yönetilmesi için derneğin anlaştığı A sınıfı seyahat acentesidir."
+            "Örnekle Pekiştirelim: Uluslararası kardiyoloji kongresi için internet sitesi açılmış, bildiriler toplanmış ve salonlar kiralanarak organizasyon tamamlanmıştır."
           ]
         },
         {
@@ -63,7 +63,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "ICCVB (Kongre ve Ziyaretçi Bürosu)",
           "desc": "Kar amacı gütmeyen, destinasyonu küresel olarak tanıtan resmi ve sivil ortaklı pazarlama kuruluşudur.",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul Kongre ve Ziyaretçi Bürosu'nun (ICVB), yurt dışındaki fuarlarda İstanbul'u uluslararası derneklere tanıtarak büyük kongrelerin İstanbul'a gelmesini sağlamasıdır."
+            "Örnekle Pekiştirelim: İstanbul Kongre ve Ziyaretçi Bürosu (ICVB), yurt dışındaki fuarlarda İstanbul'u uluslararası derneklere tanıtarak büyük kongrelerin kentte yapılmasını sağlamıştır."
           ]
         },
         {
@@ -85,9 +85,9 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
       "definitions": [
         {
           "name": "Teklif Dosyası (Bid Book)",
-          "desc": "Bir kongrenin ülkeye kazandırılması amacıyla; destinasyonun altyapısını, otellerini, havalimanını, kültürel çekiciliklerini ve finansal tekliflerini içeren resmi adaylık sunum dosyasıdır.",
+          "desc": "Bir kongrenin ülkeye kazandırılması amacıyla, destinasyonun altyapısını, otellerini, havalimanını, kültürel çekiciliklerini ve finansal tekliflerini içeren resmi adaylık sunum dosyasıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Türkiye'nin 2028 yılındaki Dünya Eczacılık Kongresi'ni kazanabilmek için, İstanbul'un otellerini ve kongre merkezlerini tanıtan 100 sayfalık İngilizce slayt sunumunu dernek kuruluna sunmasıdır."
+            "Örnekle Pekiştirelim: Türkiye'nin 2028 yılındaki Dünya Eczacılık Kongresi'ni kazanabilmek için, İstanbul'un otellerini ve kongre merkezlerini tanıtan 100 sayfalık İngilizce slayt sunumunu dernek kuruluna sunmuştur."
           ]
         },
         {
@@ -99,9 +99,9 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
         },
         {
           "name": "Kongre Takvimi (Zaman Çizelgesi)",
-          "desc": "Abstract (bildiri) özetlerinin son kabul tarihi, erken kayıt (early-bird) avantajlarının bitişi gibi kritik tarihlerin Gantt şemasıyla planlanmasıdır.",
+          "desc": "Abstract (bildiri) özetlerinin son kabul tarihi, erken kayıt (early-bird) avantajlarının bitişi gibi kritik tarihlerin Gantt şemasıyla planlanmasını ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Kongreye 6 ay kala 'Erken Kayıt' indiriminin sona ereceğinin duyurulması ve sunum yapacak akademisyenler için bildiri kabulünün 3 ay kala tamamen durdurulacağının takvime işlenmesidir."
+            "Örnekle Pekiştirelim: Kongreye 6 ay kala erken kayıt indiriminin sona ereceği duyurulmuş, akademisyenler için bildiri kabul tarihi takvime işlenmiştir."
           ]
         }
       ],
@@ -118,7 +118,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "Sponsorluk Kategorileri",
           "desc": "Kongre bütçesine katkı sağlayan şirketlere sunulan Platin, Altın, Gümüş ve Bronz gibi farklı reklam ve görünürlük hakları paketleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Büyük bir ilaç firmasının 50.000 Euro ödeyerek ana salona adını vermesi ve delege çantalarında logosunun yer almasıyla 'Platin Sponsor' haklarını elde etmesidir."
+            "Örnekle Pekiştirelim: Büyük bir ilaç firması 50.000 Euro ödeyerek ana salona adını vermiş ve delege çantalarında logosuyla yer alarak Platin Sponsor haklarını kazanmıştır."
           ]
         },
         {
@@ -132,7 +132,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "Bildiri Özetleri (Abstracts)",
           "desc": "Akademisyenlerin kongrede sunmak istedikleri bilimsel araştırmaların, hakem heyeti (bilim kurulu) tarafından değerlendirilmek üzere gönderilen kısa özet metinleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir doçentin hazırladığı kanser tedavisi konulu 300 kelimelik araştırmasını, kongrede sunum hakkı kazanmak için bilim kuruluna e-posta ile incelemeye göndermesidir."
+            "Örnekle Pekiştirelim: Bir doçent hazırladığı 300 kelimelik araştırmasını, kongrede sunum hakkı kazanmak için bilim kuruluna e-posta ile göndermiştir."
           ]
         }
       ],
@@ -148,7 +148,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "Kurumsal (Corporate) Etkinlikler",
           "desc": "Şirketlerin marka bilinirliğini artırmak veya iç iletişimi güçlemek için yaptığı ürün lansmanları (tanıtım), ödül törenleri, yıl sonu toplantıları ve basın lansmanlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir cep telefonu üreticisinin yeni modelini yüzlerce gazeteci ve teknoloji bloggerının katılımıyla lüks bir otelin balo salonunda sahne şovlarıyla dünyaya duyurmasıdır."
+            "Örnekle Pekiştirelim: Bir cep telefonu üreticisi yeni modelini, gazeteci ve teknoloji yazarlarının katılımıyla lüks otelin balo salonunda dünyaya duyurmuştur."
           ]
         },
         {
@@ -162,7 +162,7 @@ const Map<String, dynamic> kongreEtkinlikUnit1 = {
           "name": "Deneyim Tasarımı",
           "desc": "Etkinlikte sadece oturup dinlemek yerine; katılımcının tüm duyularına hitap eden (koku, müzik, interaktif oyunlar) unutulmaz anlar yaratılması sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kahve markasının lansmanında salonun girişine taze çekilmiş kahve kokusu püskürtülmesi, kahve çekirdeklerinden yapılmış devasa heykeller sergilenmesi ve interaktif kahve demleme istasyonları kurulmasıdır."
+            "Örnekle Pekiştirelim: Kahve lansmanında salon girişine kahve kokusu püskürtülmüş, kahve çekirdeğinden heykeller sergilenmiş ve demleme istasyonları kurulmuştur."
           ]
         }
       ],
@@ -187,7 +187,7 @@ const Map<String, dynamic> kongreEtkinlikUnit2 = {
           "name": "Çok Amaçlı Salon (Ballroom / Balo Salonu)",
           "desc": "Gerektiğinde hareketli paravan duvarlarla (panel) ikiye veya üçe bölünebilen, yüksek tavanlı, sütunsuz, gala yemeğinden kongreye kadar her etkinliğe uygun büyük salonlardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Oteldeki 1000 metrekarelik dev salonun, ortasındaki ses yalıtımlı bölmeler çekilerek aynı anda hem konferans salonu hem de akşamki gala yemeği için ayrı iki salona dönüştürülmesidir."
+            "Örnekle Pekiştirelim: Oteldeki 1000 metrekarelik dev balo salonunun ortasındaki ses yalıtımlı paravanlar çekilmiş; salon hem konferans hem de gala yemeği için iki ayrı alana dönüştürülmüştür."
           ]
         },
         {
@@ -201,7 +201,7 @@ const Map<String, dynamic> kongreEtkinlikUnit2 = {
           "name": "Simültane Tercüme Sistemi",
           "desc": "Uluslararası toplantılarda konuşmacının sözlerinin, salondaki kabinlerde (booths) oturan tercümanlar tarafından eş zamanlı çevrilerek delegelerin kulaklıklarına aktarılması sistemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: İngiliz profesörün sahnedeki sunumunu, salondaki kabinde oturan tercümanın mikrofonla Türkçeye çevirmesi ve Türk dinleyicilerin kulaklıktan anında Türkçe duymasıdır."
+            "Örnekle Pekiştirelim: İngiliz profesörün sahnedeki sunumunu kabindeki tercüman Türkçeye çevirmiş, salondaki dinleyiciler kulaklıktan anında Türkçe dinlemiştir."
           ]
         }
       ],
@@ -304,7 +304,7 @@ const Map<String, dynamic> kongreEtkinlikUnit2 = {
           ]
         }
       ],
-      "caseStudy": "Ön Büro, aynı anda otobüslerle gelen 150 kişilik bir kongre grubunun giriş gününde oda anahtarlarını önceden zarflara koyup hazırlamazsa (Pre-registration), lobide saatler süren yığılmalar ve çok büyük müşteri memnuniyetsizliği oluşur. Ön büro bu operasyona önceden hazırlanmalıdır.",
+      "caseStudy": "Ön Büro, aynı anda otobüslerle gelen 150 kişilik bir kongre grubunun giriş gününde oda anahtarlarını önceden zarflara koyup hazırlamazsa (Pre-registration), lobide saatler süren yığılmalar ve çok büyük misafir memnuniyetsizliği oluşur. Ön büro bu operasyona önceden hazırlanmalıdır.",
       "tip": "Grup Check-in başarısı = Önceden oda ataması (blokaj) + Hazır zarflanmış oda anahtarları + Toplu kayıt formları."
     },
     {

@@ -2,3153 +2,4156 @@ import 'package:turizm_egitim_uygulamasi/features/terminology/data/models/term_m
 export 'package:turizm_egitim_uygulamasi/features/terminology/data/models/term_model.dart';
 
 const List<Term> terminologyData = [
-
   // ── KONAKLAMA VE MİSAFİRPERVERLİK HİZMETLERİ TERİMLERİ ──
   Term(
     word: 'No-Show',
-    definition: 'Rezervasyon yaptırdığı halde otele gelmeyen ve rezervasyonunu iptal ettirmeyen konuk.',
-    example: 'Bu akşam No-Show olan oda için standart gece ücreti tahsil edildi.',
+    definition:
+        'Rezervasyon yaptırdığı halde otele gelmeyen ve rezervasyonunu iptal ettirmeyen konuk.',
+    example:
+        'Bu akşam No-Show olan oda için standart gece ücreti tahsil edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/No-Show.mp3',
   ),
   Term(
     word: 'Overbooking',
-    definition: 'Bir otelin veya uçağın kapasitesinden daha fazla rezervasyon alması durumu.',
-    example: 'Acenta entegrasyon hatası yüzünden bu gece 3 odalık bir overbooking krizi yaşıyoruz.',
+    definition:
+        'Bir otelin veya uçağın kapasitesinden daha fazla rezervasyon alması durumu.',
+    example:
+        'Acenta entegrasyon hatası yüzünden bu gece 3 odalık bir overbooking krizi yaşıyoruz.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Overbooking.mp3',
   ),
   Term(
     word: 'Voucher',
-    definition: 'Seyahat acentesinin misafire verdiği, hizmetin ödendiğini ve alınacağını gösteren belge.',
-    example: 'Giriş işlemlerini yapabilmemiz için lütfen acentenizden aldığınız voucher belgesini gösteriniz.',
+    definition:
+        'Seyahat acentesinin misafire verdiği, hizmetin ödendiğini ve alınacağını gösteren belge.',
+    example:
+        'Giriş işlemlerini yapabilmemiz için lütfen acentenizden aldığınız voucher belgesini gösteriniz.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Voucher.mp3',
   ),
   Term(
     word: 'Pax',
-    definition: 'Turizm ve havacılık sektöründe \'kişi\', \'yolcu\' veya \'konuk\' anlamına gelen kısaltma.',
-    example: 'Akşamki gala yemeği grubu toplamda 120 pax olarak güncellendi.',
+    definition:
+        'Turizm ve havacılık sektöründe \'kişi\', \'yolcu\' veya \'konuk\' sayısını ifade eden uluslararası kısaltmadır.',
+    example:
+        'Akşam düzenlenecek gala yemeği grubunun kişi sayısı toplamda 120 pax olarak güncellenmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Pax.mp3',
   ),
   Term(
     word: 'Walk-In',
-    definition: 'Rezervasyonu olmadan, doğrudan otel kapısından gelerek oda talep eden konuk.',
-    example: 'Gece yarısı gelen walk-in konuğa resepsiyonda kalan son suit odayı sattık.',
+    definition:
+        'Önceden rezervasyonu bulunmadan, doğrudan otel kapısından gelerek oda talep eden konuktur.',
+    example:
+        'Gece yarısı otele gelen walk-in konuğa resepsiyonda boş kalan son suit oda satılmıştır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Walk-In.mp3',
   ),
   Term(
     word: 'Upgrade',
-    definition: 'Konuğa, ödediği ücretin üzerinde, daha üst segmentte bir oda veya hizmetin ücretsiz verilmesi.',
-    example: 'Balayı çiftimizin standart odasını, jest olarak deniz manzaralı suit odaya upgrade ettik.',
+    definition:
+        'Konuğa, ödediği ücretin üzerinde, daha üst segmentte bir oda veya hizmetin ücretsiz verilmesi işlemidir.',
+    example:
+        'Balayı çiftinin standart odası, otelimizin jesti olarak deniz manzaralı suit odaya upgrade edilmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Upgrade.mp3',
   ),
   Term(
     word: 'Downgrade',
-    definition: 'Elde olmayan nedenlerle konuğa rezerve ettiğinden daha alt segmentte bir oda veya hizmet verilmesi.',
-    example: 'Teknik arıza nedeniyle konuğu downgrade etmek zorunda kaldık ve aradaki ücret farkını iade ettik.',
+    definition:
+        'Elde olmayan teknik veya operasyonel nedenlerle konuğa rezerve ettiğinden daha alt segmentte bir oda veya hizmet sunulması durumudur.',
+    example:
+        'Odadaki teknik arıza nedeniyle konuk zorunlu olarak downgrade edilmiş ve aradaki ücret farkı kendisine anında iade edilmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Downgrade.mp3',
   ),
   Term(
     word: 'Folio',
-    definition: 'Konuğun otelde yaptığı tüm harcamaların (oda, restoran, spa vb.) anlık olarak kaydedildiği hesap cetveli.',
-    example: 'Resepsiyonist, check-out sırasında konuğun foliosunu yazdırarak harcamaları tek tek kontrol ettirdi.',
+    definition:
+        'Konuğun otelde gerçekleştirdiği tüm harcamaların (oda, restoran, spa vb.) anlık olarak kaydedildiği kişisel hesap dökümüdür.',
+    example:
+        'Resepsiyonist, çıkış (check-out) sırasında konuğun foliosunu yazdırarak harcamaları tek tek kontrol ettirmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Folio.mp3',
   ),
   Term(
     word: 'Late Check-Out',
-    definition: 'Otelin onayıyla, konuğun odadan standart çıkış saatinden daha geç ayrılması durumu.',
-    example: 'Uçağı akşam olan konuğumuza talebi üzerine saat 15:00\'e kadar late check-out izni verdik.',
+    definition:
+        'Otelin onayıyla, konuğun odadan standart çıkış saatinden daha geç ayrılması durumu.',
+    example:
+        'Uçağı akşam olan konuğumuza talebi üzerine saat 15:00\'e kadar late check-out izni verdik.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Late Check-Out.mp3',
   ),
   Term(
     word: 'Early Check-In',
-    definition: 'Konuğun otele standart giriş saatinden önce gelmesi ve odasına yerleştirilmesi.',
-    example: 'Sabah 07:00\'de gelen konuğa, müsait oda olduğu için early check-in kolaylığı sağladık.',
+    definition:
+        'Konuğun otele standart giriş saatinden önce gelmesi ve müsaitlik doğrultusunda odasına erken yerleştirilmesi işlemidir.',
+    example:
+        'Sabah 07:00\'de otele ulaşan konuğa, müsait oda bulunması sayesinde erken giriş (early check-in) imkânı sunulmuştur.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Early Check-In.mp3',
   ),
   Term(
     word: 'All Inclusive',
-    definition: '(Her Şey Dahil) Konaklama, ana yemekler ve gün boyu yerli içeceklerin fiyata dahil olduğu sistem.',
-    example: 'Antalya\'daki tesisimiz bu yaz tamamen her şey dahil (all inclusive) olarak hizmet verecek.',
+    definition:
+        '(Her Şey Dahil) Konaklama, ana yemekler ve gün boyu yerli içeceklerin fiyata dahil olduğu sistem.',
+    example:
+        'Antalya\'daki tesisimiz bu yaz tamamen her şey dahil (all inclusive) olarak hizmet verecek.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/All Inclusive.mp3',
   ),
   Term(
     word: 'Room Only',
-    definition: '(Sadece Oda) Fiyata hiçbir yeme-içme hizmetinin dahil olmadığı, sadece konaklama ücretini kapsayan sistem.',
-    example: 'Sırt çantalı gezginler bütçelerini korumak için room only seçeneğini tercih etti.',
+    definition:
+        '(Sadece Oda) Fiyata hiçbir yeme-içme hizmetinin dahil olmadığı, sadece konaklama ücretini kapsayan sistem.',
+    example:
+        'Sırt çantalı gezginler bütçelerini korumak için room only seçeneğini tercih etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Room Only.mp3',
   ),
   Term(
     word: 'Housekeeping',
-    definition: 'Otelde odaların ve genel alanların temizlik, bakım & düzeninden sorumlu departman.',
-    example: 'Konuğun talebi üzerine housekeeping departmanı odaya ekstra havlu ve yastık bıraktı.',
+    definition:
+        'Otelde odaların ve genel alanların temizlik, bakım & düzeninden sorumlu departman.',
+    example:
+        'Konuğun talebi üzerine housekeeping departmanı odaya ekstra havlu ve yastık bıraktı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Housekeeping.mp3',
   ),
   Term(
     word: 'Out of Order',
-    definition: 'Büyük bir arıza, tadilat veya boya nedeniyle satışa kapatılmış oda durumu.',
-    example: 'Tavanı su sızdıran 214 numaralı oda, teknik servis müdahale edene kadar Out of Order yapıldı.',
+    definition:
+        'Büyük bir arıza, tadilat veya boya nedeniyle satışa kapatılmış oda durumu.',
+    example:
+        'Tavanı su sızdıran 214 numaralı oda, teknik servis müdahale edene kadar Out of Order yapıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Out of Order.mp3',
   ),
   Term(
     word: 'Out of Service',
-    definition: 'Küçük bir arıza (ampul patlaması, tv kumandası eksikliği) nedeniyle geçici olarak satışa kapatılan oda.',
-    example: 'Bataryası sızdıran oda OOS konumuna alındı, tesisatçı yarım saatte sorunu çözdü.',
+    definition:
+        'Küçük bir arıza (ampul patlaması, tv kumandası eksikliği) nedeniyle geçici olarak satışa kapatılan oda.',
+    example:
+        'Bataryası sızdıran oda OOS konumuna alındı, tesisatçı yarım saatte sorunu çözdü.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Out of Service.mp3',
   ),
   Term(
     word: 'Black List',
-    definition: 'Hesabını ödemeden giden veya otel işletmesine alınması sakıncalı görülen tehlikeli/sorunlu kişiler için tutulan kara listedir.',
-    example: 'Otelde daha önce taşkınlık çıkaran bir konuğun ismi sisteme "black list" olarak işlenmiş ve yeni rezervasyon talebi anında reddedilmiştir.',
+    definition:
+        'Hesabını ödemeden giden veya otel işletmesine alınması sakıncalı görülen tehlikeli/sorunlu kişiler için tutulan kara listedir.',
+    example:
+        'Otelde daha önce taşkınlık çıkaran bir konuğun ismi sisteme "black list" olarak işlenmiş ve yeni rezervasyon talebi anında reddedilmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Black List.mp3',
   ),
   Term(
     word: 'Door Rate',
-    definition: 'Otellerde önceden rezervasyon yaptırmadan, kapıdan doğrudan giriş yapan (walk-in) konuklara uygulanan en yüksek fiyattır.',
-    example: 'Gece yarısı otele rezervasyonsuz gelen yabancı turiste hiçbir indirim yapılmamış, odanın o günkü resmi "door rate" fiyatı uygulanmıştır.',
+    definition:
+        'Otellerde önceden rezervasyon yaptırmadan, kapıdan doğrudan giriş yapan (walk-in) konuklara uygulanan en yüksek fiyattır.',
+    example:
+        'Gece yarısı otele rezervasyonsuz gelen yabancı turiste hiçbir indirim yapılmamış, odanın o günkü resmi "door rate" fiyatı uygulanmıştır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Door Rate.mp3',
   ),
   Term(
     word: 'Konfirmasyon',
-    definition: 'Alınan rezervasyon talebinin otel tarafından yazılı olarak onaylanması, doğrulanması ve geçerlenmesi işlemidir.',
-    example: 'Rezervasyon kesinleştiğinde misafirin e-postasına "Rezervasyon Konfirmasyon Belgesi" sistem tarafından otomatik gönderilmiştir.',
+    definition:
+        'Alınan rezervasyon talebinin otel tarafından yazılı olarak onaylanması, doğrulanması ve geçerlenmesi işlemidir.',
+    example:
+        'Rezervasyon kesinleştiğinde misafirin e-postasına "Rezervasyon Konfirmasyon Belgesi" sistem tarafından otomatik gönderilmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Opsiyon',
-    definition: 'Ödeme garantisi olmayan rezervasyonlarda, otelin odayı misafir için bekletmeyi kabul ettiği son gün ve saat sınırıdır (bekletme süresi).',
-    example: 'Kapora ödemeyen misafire giriş günü saat 18:00\'e kadar "opsiyon" tanınmış, o saate kadar gelmeyince odası iptal edilmiştir.',
+    definition:
+        'Ödeme garantisi olmayan rezervasyonlarda, otelin odayı misafir için bekletmeyi kabul ettiği son gün ve saat sınırıdır (bekletme süresi).',
+    example:
+        'Kapora ödemeyen misafire giriş günü saat 18:00\'e kadar "opsiyon" tanınmış, o saate kadar gelmeyince odası iptal edilmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Rack Rate',
-    definition: 'Bir otelde indirimler uygulanmadan önce, her bir oda tipi için belirlenmiş olan standart, yalın ve en yüksek tavan oda ücretidir.',
-    example: 'Otelin internet sitesinde standart odanın hiçbir promosyon içermeyen ham fiyatı "rack rate" olarak 3.000 TL olarak listelenmiştir.',
+    definition:
+        'Bir otelde indirimler uygulanmadan önce, her bir oda tipi için belirlenmiş olan standart, yalın ve en yüksek tavan oda ücretidir.',
+    example:
+        'Otelin internet sitesinde standart odanın hiçbir promosyon içermeyen ham fiyatı "rack rate" olarak 3.000 TL olarak listelenmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Rack Rate.mp3',
   ),
   Term(
     word: 'IFS',
-    definition: 'Uluslararası Gıda Standardı; gıda ürünlerini işleme, taşıma ve ambalajlama faaliyetlerini yürüten işletmeler için denetleme standardı.',
-    example: 'Gıda depolarımızın IFS standartlarına uygunluğu, ürünlerin depolanma ve nakliye süreçlerinde bozulmasını önlemektedir.',
+    definition:
+        'Uluslararası Gıda Standardı; gıda ürünlerini işleme, taşıma ve ambalajlama faaliyetlerini yürüten işletmeler için denetleme standardı.',
+    example:
+        'Gıda depolarımızın IFS standartlarına uygunluğu, ürünlerin depolanma ve nakliye süreçlerinde bozulmasını önlemektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/IFS.mp3',
   ),
   Term(
     word: 'Konuk Memnuniyeti',
-    definition: 'İşletmenin, konukların istek ve beklentilerini etkin bir şekilde karşılayarak tesisin kalitesini hissettirmesi durumu.',
-    example: 'Check-out esnasında konuk memnuniyeti anketini dolduran misafirlerin olumlu geri bildirimleri, otelimizin hizmet kalitesini tescilledi.',
+    definition:
+        'İşletmenin, konukların istek ve beklentilerini etkin bir şekilde karşılayarak tesisin kalitesini hissettirmesi durumu.',
+    example:
+        'Check-out esnasında konuk memnuniyeti anketini dolduran misafirlerin olumlu geri bildirimleri, otelimizin hizmet kalitesini tescilledi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Şikayet Yönetimi',
-    definition: 'Konuk memnuniyetsizliğini bir uyarı olarak görüp, sorunu dinleme, anlama ve hızla çözüme kavuşturma süreci.',
-    example: 'Misafir ilişkileri müdürü, odadaki gürültüden şikayet eden konuğa şikayet yönetimi prosedürlerine uygun olarak alternatif bir oda sunup tatlı ikram etti.',
+    definition:
+        'Konuk memnuniyetsizliğini bir uyarı olarak görüp, sorunu dinleme, anlama ve hızla çözüme kavuşturma süreci.',
+    example:
+        'Misafir ilişkileri müdürü, odadaki gürültüden şikayet eden konuğa şikayet yönetimi prosedürlerine uygun olarak alternatif bir oda sunup tatlı ikram etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Danışma (Concierge)',
-    definition: 'Konaklama tesisinde konuklara bilgi veren, isteklerini karşılayan ve tesise ilk girişte onları yönlendiren ön büro alt birimi.',
-    example: 'Tarihi yarımadayı gezmek isteyen misafirler için concierge görevlisi en uygun gezi rotasını çizdi ve akşam yemeği için restoran rezervasyonu yaptı.',
+    definition:
+        'Konaklama tesisinde konuklara bilgi veren, isteklerini karşılayan ve tesise ilk girişte onları yönlendiren ön büro alt birimi.',
+    example:
+        'Tarihi yarımadayı gezmek isteyen misafirler için concierge görevlisi en uygun gezi rotasını çizdi ve akşam yemeği için restoran rezervasyonu yaptı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Bellboy (Bagaj Taşıyıcı)',
-    definition: 'Konukların bagajlarını taşıyan, onlara odalarına kadar eşlik eden ve oda tanıtımını yapan üniformalı görevli.',
-    example: 'Resepsiyondaki check-in işleminin ardından bellboy konukları odalarına götürdü, klimaların ve kasaların nasıl çalışacağını detaylıca anlattı.',
+    definition:
+        'Konukların bagajlarını taşıyan, onlara odalarına kadar eşlik eden ve oda tanıtımını yapan üniformalı görevli.',
+    example:
+        'Resepsiyondaki check-in işleminin ardından bellboy konukları odalarına götürdü, klimaların ve kasaların nasıl çalışacağını detaylıca anlattı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: '10 Adım 5 Adım Kuralı',
-    definition: 'Konuk 10 adım yaklaştığında göz teması kurup gülümseme, 5 adım yaklaştığında ise sözlü olarak selamlama kuralı.',
-    example: 'Beş yıldızlı otel standartlarımız gereği, koridorda misafirle karşılaşan her çalışan 10 adım 5 adım kuralını uygulamakla yükümlüdür.',
+    definition:
+        'Konuk 10 adım yaklaştığında göz teması kurup gülümseme, 5 adım yaklaştığında ise sözlü olarak selamlama kuralı.',
+    example:
+        'Beş yıldızlı otel standartlarımız gereği, koridorda misafirle karşılaşan her çalışan 10 adım 5 adım kuralını uygulamakla yükümlüdür.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'VIP Konuk',
-    definition: 'Çok Önemli Kişi (Very Important Person); işletme için özel statüde olan ve ayrıcalıklı hizmet sunulan konuk.',
-    example: 'Halkla ilişkiler müdürü, otele giriş yapan VIP konukları kapıda karşılayarak doğrudan odalarında giriş işlemlerini gerçekleştirdi.',
+    definition:
+        'Çok Önemli Kişi (Very Important Person); işletme için özel statüde olan ve ayrıcalıklı hizmet sunulan konuk.',
+    example:
+        'Halkla ilişkiler müdürü, otele giriş yapan VIP konukları kapıda karşılayarak doğrudan odalarında giriş işlemlerini gerçekleştirdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/VIP.mp3',
   ),
   Term(
     word: 'VVIP Konuk',
-    definition: 'Çok Çok Önemli Kişi (Very Very Important Person); devlet başkanları, büyük ortaklar gibi en üst düzey protokole tabi konuk.',
-    example: 'Başbakan ve beraberindeki heyetin otelimizdeki konaklaması, VVIP konuk statüsünde değerlendirilerek özel güvenlik önlemleri altında yürütüldü.',
+    definition:
+        'Çok Çok Önemli Kişi (Very Very Important Person); devlet başkanları, büyük ortaklar gibi en üst düzey protokole tabi konuk.',
+    example:
+        'Başbakan ve beraberindeki heyetin otelimizdeki konaklaması, VVIP konuk statüsünde değerlendirilerek özel güvenlik önlemleri altında yürütüldü.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/VIP.mp3',
   ),
   Term(
     word: 'Bagaj Etiketi/Fişi',
-    definition: 'Konuk bagajlarının karışmasını önlemek amacıyla üzerine oda numarası, isim ve bagaj sayısının yazıldığı tanıma aracı.',
-    example: 'Bellboy, yoğun grup girişlerinde bagajların karışmaması için her bavula ayrı bir bagaj etiketi/fişi iliştirdi.',
+    definition:
+        'Konuk bagajlarının karışmasını önlemek amacıyla üzerine oda numarası, isim ve bagaj sayısının yazıldığı tanıma aracı.',
+    example:
+        'Bellboy, yoğun grup girişlerinde bagajların karışmaması için her bavula ayrı bir bagaj etiketi/fişi iliştirdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Emanet Bagaj',
-    definition: 'Çıkış işlemlerini yapan ancak tesisten daha sonra ayrılacak olan konukların eşyalarının muhafaza edildiği sistem.',
-    example: 'Uçuş saatine kadar şehirde gezmek isteyen konuklar, valizlerini resepsiyonun yanındaki emanet bagaj odasına güvenle teslim ettiler.',
+    definition:
+        'Çıkış işlemlerini yapan ancak tesisten daha sonra ayrılacak olan konukların eşyalarının muhafaza edildiği sistem.',
+    example:
+        'Uçuş saatine kadar şehirde gezmek isteyen konuklar, valizlerini resepsiyonun yanındaki emanet bagaj odasına güvenle teslim ettiler.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Skipper',
-    definition: 'Otel dilinde şüpheli konuk; bagajsız veya sahte/hafif bagajla gelerek ödeme yapmadan tesisten kaçma ihtimali olan kişi.',
-    example: 'Gece yarısı çıkış yapmadan otelden ayrılmaya çalışan skipper konuk, ön büro şefinin dikkati sayesinde güvenlik tarafından durduruldu.',
+    definition:
+        'Otel dilinde şüpheli konuk; bagajsız veya sahte/hafif bagajla gelerek ödeme yapmadan tesisten kaçma ihtimali olan kişi.',
+    example:
+        'Gece yarısı çıkış yapmadan otelden ayrılmaya çalışan skipper konuk, ön büro şefinin dikkati sayesinde güvenlik tarafından durduruldu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Skipper.mp3',
   ),
   Term(
     word: 'Up Bell / Down Bell',
-    definition: 'Bagajların lobi/bagaj odasından konuk odalarına taşınması (Up Bell) ve konuk odalarından lobiye indirilmesi (Down Bell) işlemi.',
-    example: 'Resepsiyonist, check-in yapan konuklar için bellboy telsizinden up bell anonsu geçerek valizlerin odaya çıkarılmasını istedi.',
+    definition:
+        'Bagajların lobi/bagaj odasından konuk odalarına taşınması (Up Bell) ve konuk odalarından lobiye indirilmesi (Down Bell) işlemi.',
+    example:
+        'Resepsiyonist, check-in yapan konuklar için bellboy telsizinden up bell anonsu geçerek valizlerin odaya çıkarılmasını istedi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Up Bell  Down Bell.mp3',
   ),
   Term(
     word: 'Çekicilik (Attraction)',
-    definition: 'Bir destinasyonu turistler için cazip ve ziyaret edilmeye değer kılan doğal, tarihi, kültürel veya yapay (tema parkı vb.) unsurlar.',
-    example: 'Kapadokya\'nın peri bacaları ve sıcak hava balonları, bölgenin uluslararası pazardaki en güçlü çekicilik unsurlarıdır.',
+    definition:
+        'Bir destinasyonu turistler için cazip ve ziyaret edilmeye değer kılan doğal, tarihi, kültürel veya yapay (tema parkı vb.) unsurlar.',
+    example:
+        'Kapadokya\'nın peri bacaları ve sıcak hava balonları, bölgenin uluslararası pazardaki en güçlü çekicilik unsurlarıdır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Housekeeper',
-    definition: 'Kat hizmetleri yöneticisi; otelin temizlik, düzen ve çamaşırhane operasyonlarından sorumlu en üst düzey personel.',
-    example: 'Otel genel müdürü, yüksek sezon öncesinde tüm genel temizlik ve oda düzeni standartlarını gözden geçirmek üzere Housekeeper ile bir araya geldi.',
+    definition:
+        'Kat hizmetleri yöneticisi; otelin temizlik, düzen ve çamaşırhane operasyonlarından sorumlu en üst düzey personel.',
+    example:
+        'Otel genel müdürü, yüksek sezon öncesinde tüm genel temizlik ve oda düzeni standartlarını gözden geçirmek üzere Housekeeper ile bir araya geldi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Housekeeper.mp3',
   ),
   Term(
     word: 'Maid',
-    definition: 'Kat veya oda görevlisi; misafir odalarının standartlara uygun bir şekilde temizlenmesi ve düzenlenmesinden sorumlu personel.',
-    example: 'Kat şefi, check-out yapılan odaların temizliğini kontrol ederken Maid arkadaşımıza banyo bukletlerinin eksiksiz yerleştirilmesi gerektiğini hatırlattı.',
+    definition:
+        'Kat veya oda görevlisi; misafir odalarının standartlara uygun bir şekilde temizlenmesi ve düzenlenmesinden sorumlu personel.',
+    example:
+        'Kat şefi, check-out yapılan odaların temizliğini kontrol ederken Maid arkadaşımıza banyo bukletlerinin eksiksiz yerleştirilmesi gerektiğini hatırlattı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Maid.mp3',
   ),
   Term(
     word: 'Single Room',
-    definition: 'Tek kişilik yatağı olan ve genellikle tek kişinin konakladığı oda tipi.',
-    example: 'İş seyahatine tek başına çıkan acente yetkilisine, talebi doğrultusunda konforlu bir single room oda tahsis edilerek check-in işlemi yapıldı.',
+    definition:
+        'Tek kişilik yatağı olan ve genellikle tek kişinin konakladığı oda tipi.',
+    example:
+        'İş seyahatine tek başına çıkan acente yetkilisine, talebi doğrultusunda konforlu bir single room oda tahsis edilerek check-in işlemi yapıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Single Room.mp3',
   ),
   Term(
     word: 'Double Room',
-    definition: 'Çift kişilik büyük yatağı bulunan, iki kişinin konaklayabileceği oda.',
-    example: 'Evlilik yıldönümü için rezervasyon yaptıran konuklarımızı, büyük yatağı olan geniş bir double room odaya yerleştirip meyve sepeti ikram ettik.',
+    definition:
+        'Çift kişilik büyük yatağı bulunan, iki kişinin konaklayabileceği oda.',
+    example:
+        'Evlilik yıldönümü için rezervasyon yaptıran konuklarımızı, büyük yatağı olan geniş bir double room odaya yerleştirip meyve sepeti ikram ettik.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Double Room.mp3',
   ),
   Term(
     word: 'Twin Room',
     definition: 'İki ayrı tek kişilik yatağı bulunan çift kişilik oda.',
-    example: 'Kongreye katılan iki şirket temsilcisi, oda arkadaşı olmak istediklerini belirterek iki ayrı tek kişilik yatağı bulunan bir twin room tercih ettiler.',
+    example:
+        'Kongreye katılan iki şirket temsilcisi, oda arkadaşı olmak istediklerini belirterek iki ayrı tek kişilik yatağı bulunan bir twin room tercih ettiler.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Twin Room.mp3',
   ),
   Term(
     word: 'Suite Room',
-    definition: 'En az bir yatak odası ve bir oturma alanından oluşan, geniş ve daha konforlu oda tipi.',
-    example: 'Çocuklu ve geniş aileler, tatillerini daha rahat geçirebilmek için oturma odası ve yatak odası ayrı olan suite room seçeneğini tercih ediyor.',
+    definition:
+        'En az bir yatak odası ve bir oturma alanından oluşan, geniş ve daha konforlu oda tipi.',
+    example:
+        'Çocuklu ve geniş aileler, tatillerini daha rahat geçirebilmek için oturma odası ve yatak odası ayrı olan suite room seçeneğini tercih ediyor.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Suite Room.mp3',
   ),
   Term(
     word: 'King Suite',
     definition: 'Otelin en büyük, en lüks ve en pahalı kral dairesi.',
-    example: 'Otelin en üst katında yer alan ve özel jakuzisi, geniş terası bulunan King Suite, bu hafta ünlü bir sanatçı grubu tarafından kiralandı.',
+    example:
+        'Otelin en üst katında yer alan ve özel jakuzisi, geniş terası bulunan King Suite, bu hafta ünlü bir sanatçı grubu tarafından kiralandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/King Suite.mp3',
   ),
   Term(
     word: 'Connected Room (Bağlantılı Oda)',
-    definition: 'İçeriden birbirine geçiş kapısı bulunan, genellikle kalabalık ailelerin tercih ettiği odalar.',
-    example: 'Resepsiyonist, kalabalık gelen aile grubuna, aradaki kapı vasıtasıyla içeriden birbirine geçiş sağlayan iki adet connected room odası önerdi.',
+    definition:
+        'İçeriden birbirine geçiş kapısı bulunan, genellikle kalabalık ailelerin tercih ettiği odalar.',
+    example:
+        'Resepsiyonist, kalabalık gelen aile grubuna, aradaki kapı vasıtasıyla içeriden birbirine geçiş sağlayan iki adet connected room odası önerdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Crib / Cot',
     definition: 'Misafir talebi üzerine odaya kurulan bebek yatağı.',
-    example: 'Bebekli misafirimiz check-in yaparken, ön büro görevlisi kat hizmetlerine anons geçerek odaya acilen bir crib bebek yatağı kurulmasını istedi.',
+    example:
+        'Bebekli misafirimiz check-in yaparken, ön büro görevlisi kat hizmetlerine anons geçerek odaya acilen bir crib bebek yatağı kurulmasını istedi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Crib  Cot.mp3',
   ),
   Term(
     word: 'Vacant (Boş Oda)',
     definition: 'Temizlenmiş, satılmaya hazır, içinde misafir bulunmayan oda.',
-    example: 'Ön büro ekranında vacant temiz olarak görünen 302 numaralı odaya, kapıda bekleyen yeni giriş yapacak misafirin anahtarı teslim edildi.',
+    example:
+        'Ön büro ekranında vacant temiz olarak görünen 302 numaralı odaya, kapıda bekleyen yeni giriş yapacak misafirin anahtarı teslim edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Occupied (Dolu Oda)',
     definition: 'İçinde misafir konaklayan oda.',
-    example: 'Sistemde occupied (dolu) görünen odaya temizlik amacıyla girmeden önce, kat görevlisi kapıyı üç kez çalarak kendini tanıttı.',
+    example:
+        'Sistemde occupied (dolu) görünen odaya temizlik amacıyla girmeden önce, kat görevlisi kapıyı üç kez çalarak kendini tanıttı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Check-out (C/O) Oda',
-    definition: 'Misafirinin hesabı kapatıp ayrıldığı, henüz temizlenmemiş kirli oda.',
-    example: 'Misafirin sabah 11:00\'de ayrılmasıyla sisteme check-out oda olarak düşen 115 numara, kat görevlisi tarafından temizliğe alındı.',
+    definition:
+        'Misafirinin hesabı kapatıp ayrıldığı, henüz temizlenmemiş kirli oda.',
+    example:
+        'Misafirin sabah 11:00\'de ayrılmasıyla sisteme check-out oda olarak düşen 115 numara, kat görevlisi tarafından temizliğe alındı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'No Luggage (N/L)',
-    definition: 'Giriş yapmış ancak beraberinde hiç bagajı bulunmayan, şüpheli olabilecek misafir odası.',
-    example: 'Yanında hiç çantası veya valizi olmadan otele giriş yapan NL statüsündeki konuk, ön büro ve güvenlik tarafından yakın takibe alındı.',
+    definition:
+        'Giriş yapmış ancak beraberinde hiç bagajı bulunmayan, şüpheli olabilecek misafir odası.',
+    example:
+        'Yanında hiç çantası veya valizi olmadan otele giriş yapan NL statüsündeki konuk, ön büro ve güvenlik tarafından yakın takibe alındı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/No Luggage NL.mp3',
   ),
   Term(
     word: 'Linen (Bez Material)',
-    definition: 'Otelde kullanılan çarşaf, nevresim, yastık kılıfı, masa örtüsü gibi pamuklu/kumaş tekstil ürünleri.',
-    example: 'Kat hizmetleri deposunda bulunan tüm çarşaf, nevresim ve yastık kılıfı gibi bez malzemelerin (linen) haftalık sayımları yapıldı.',
+    definition:
+        'Otelde kullanılan çarşaf, nevresim, yastık kılıfı, masa örtüsü gibi pamuklu/kumaş tekstil ürünleri.',
+    example:
+        'Kat hizmetleri deposunda bulunan tüm çarşaf, nevresim ve yastık kılıfı gibi bez malzemelerin (linen) haftalık sayımları yapıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Terry (Havlu Grubu)',
-    definition: 'Banyo havlusu, el havlusu, ayak havlusu ve bornoz gibi suyu emen bukleli tekstil ürünleri.',
-    example: 'Yıkama ve kurutma işlemlerinden çıkan terry (havlu grubu) ürünler, yumuşaklıklarını kaybetmemeleri için özel yumuşatıcılarla yıkandı.',
+    definition:
+        'Banyo havlusu, el havlusu, ayak havlusu ve bornoz gibi suyu emen bukleli tekstil ürünleri.',
+    example:
+        'Yıkama ve kurutma işlemlerinden çıkan terry (havlu grubu) ürünler, yumuşaklıklarını kaybetmemeleri için özel yumuşatıcılarla yıkandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Spotting (Leke Çıkarma)',
-    definition: 'Yıkama öncesinde kumaş üzerindeki lekelerin özel kimyasal çözücülerle lokal olarak temizlenmesi işlemi.',
-    example: 'Masa örtüsüne dökülen meyve suyu lekesi, çamaşırhanede yıkama öncesi spotting masasında özel leke çözücülerle temizlendi.',
+    definition:
+        'Yıkama öncesinde kumaş üzerindeki lekelerin özel kimyasal çözücülerle lokal olarak temizlenmesi işlemi.',
+    example:
+        'Masa örtüsüne dökülen meyve suyu lekesi, çamaşırhanede yıkama öncesi spotting masasında özel leke çözücülerle temizlendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Dry Cleaning (Kuru Temizleme)',
-    definition: 'Tekstil ürünlerinin su kullanılmadan, özel solventler ve kimyasallar yardımıyla temizlenmesi yöntemi.',
-    example: 'Takım elbise ve ipek elbiselerin yıpranmaması için su kullanılmadan, özel kimyasal solventlerle kuru temizleme işlemi uygulandı.',
+    definition:
+        'Tekstil ürünlerinin su kullanılmadan, özel solventler ve kimyasallar yardımıyla temizlenmesi yöntemi.',
+    example:
+        'Takım elbise ve ipek elbiselerin yıpranmaması için su kullanılmadan, özel kimyasal solventlerle kuru temizleme işlemi uygulandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Extractor (Sıkma Makinesi)',
-    definition: 'Yıkanan tekstil ürünlerinin suyunu merkezkaç kuvvetiyle sıkan sanayi tipi güçlü makine.',
-    example: 'Yıkanan ağır nevresimlerin fazla suyu, yüksek devirli extractor (sıkma makinesi) vasıtasıyla merkezkaç kuvvetiyle süzüldü.',
+    definition:
+        'Yıkanan tekstil ürünlerinin suyunu merkezkaç kuvvetiyle sıkan sanayi tipi güçlü makine.',
+    example:
+        'Yıkanan ağır nevresimlerin fazla suyu, yüksek devirli extractor (sıkma makinesi) vasıtasıyla merkezkaç kuvvetiyle süzüldü.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Mangle (Silindir Ütü)',
-    definition: 'Çarşaf, nevresim ve masa örtüsü gibi büyük, düz parça tekstillerin silindirler arasından geçirilerek ütülendiği dev makine.',
-    example: 'Yıkama ve kurutmadan çıkan devasa çarşaf ve nevresimler, mangle makinesinden geçirilerek jilet gibi ütülenip katlandı.',
+    definition:
+        'Çarşaf, nevresim ve masa örtüsü gibi büyük, düz parça tekstillerin silindirler arasından geçirilerek ütülendiği dev makine.',
+    example:
+        'Yıkama ve kurutmadan çıkan devasa çarşaf ve nevresimler, mangle makinesinden geçirilerek jilet gibi ütülenip katlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Check-in (Otel)',
-    definition: 'Misafirin otele gelişinde yapılan kimlik bildirimi, kayıt ve oda tahsisini içeren giriş işlemi.',
-    example: 'Resepsiyonist, yoğun grup girişlerinde check-in (C/I) işlemlerini hızlandırmak için önceden oda blokajlarını tamamladı.',
+    definition:
+        'Misafirin otele gelişinde yapılan kimlik bildirimi, kayıt ve oda tahsisini içeren giriş işlemi.',
+    example:
+        'Resepsiyonist, yoğun grup girişlerinde check-in (C/I) işlemlerini hızlandırmak için önceden oda blokajlarını tamamladı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Check-out (C/O)',
-    definition: 'Misafirin otelden ayrılışında oda anahtarını teslim ettiği ve hesabını kapattığı çıkış işlemi.',
-    example: 'Misafirimizin hesabı kontrol edildikten sonra ödeme alındı ve check-out (C/O) işlemiyle oda anahtarı teslim alındı.',
+    definition:
+        'Misafirin otelden ayrılışında oda anahtarını teslim ettiği ve hesabını kapattığı çıkış işlemi.',
+    example:
+        'Misafirimizin hesabı kontrol edildikten sonra ödeme alındı ve check-out (C/O) işlemiyle oda anahtarı teslim alındı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Allotment',
-    definition: 'Otelin, sözleşmeli seyahat acentelerine belirli bir süre ve fiyat garantisiyle ayırdığı oda kontenjanı.',
-    example: 'Otelimiz, ana partner seyahat acentesine yaz sezonu için günlük 15 odalık bir allotment kontenjanı tanımlamıştır.',
+    definition:
+        'Otelin, sözleşmeli seyahat acentelerine belirli bir süre ve fiyat garantisiyle ayırdığı oda kontenjanı.',
+    example:
+        'Otelimiz, ana partner seyahat acentesine yaz sezonu için günlük 15 odalık bir allotment kontenjanı tanımlamıştır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Allotment.mp3',
   ),
   Term(
     word: 'Rooming List',
-    definition: 'Grup konaklamalarında, acente veya şirket tarafından otele gönderilen; misafir isimlerini ve oda dağılımlarını gösteren liste.',
-    example: 'Acente, yarın giriş yapacak olan 40 kişilik turist grubunun oda dağılımlarını gösteren rooming list belgesini ön büroya e-posta ile iletti.',
+    definition:
+        'Grup konaklamalarında, acente veya şirket tarafından otele gönderilen; misafir isimlerini ve oda dağılımlarını gösteren liste.',
+    example:
+        'Acente, yarın giriş yapacak olan 40 kişilik turist grubunun oda dağılımlarını gösteren rooming list belgesini ön büroya e-posta ile iletti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Rooming List.mp3',
   ),
   Term(
     word: 'PMS (Property Management System)',
-    definition: 'Otelin tüm ön büro, muhasebe ve departman operasyonlarını entegre şekilde yönettiği bilgisayar otomasyon sistemi (Örn: Fidelio, Opera, Elektra).',
-    example: 'Ön büro ekibi, rezervasyon girişlerini, oda durumlarını ve faturalandırma işlemlerini entegre PMS otomasyon sistemi üzerinden gerçekleştirmektedir.',
+    definition:
+        'Otelin tüm ön büro, muhasebe ve departman operasyonlarını entegre şekilde yönettiği bilgisayar otomasyon sistemi (Örn: Fidelio, Opera, Elektra).',
+    example:
+        'Ön büro ekibi, rezervasyon girişlerini, oda durumlarını ve faturalandırma işlemlerini entegre PMS otomasyon sistemi üzerinden gerçekleştirmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/PMS Property Management System.mp3',
   ),
   Term(
     word: 'Registration Card (Konaklama Belgesi)',
-    definition: 'Misafirin check-in sırasında yasal zorunluluk gereği kendi kimlik bilgileriyle doldurup imzaladığı resmî kayıt formu.',
-    example: 'Check-in esnasında misafirden yasal kimlik bildirim yükümlülüğü gereğince registration card formunu doldurup imzalamasını rica ettik.',
+    definition:
+        'Misafirin check-in sırasında yasal zorunluluk gereği kendi kimlik bilgileriyle doldurup imzaladığı resmî kayıt formu.',
+    example:
+        'Check-in esnasında misafirden yasal kimlik bildirim yükümlülüğü gereğince registration card formunu doldurup imzalamasını rica ettik.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Pre-registration',
-    definition: 'Özellikle VIP veya büyük gruplar için, misafir otele gelmeden önce sistemde oda numarasının belirlenip kaydının açılması işlemi.',
-    example: 'Öğleden sonra giriş yapacak VIP konuğumuzun resepsiyonda beklememesi için pre-registration işlemiyle odası önceden hazırlandı ve kaydı açıldı.',
+    definition:
+        'Özellikle VIP veya büyük gruplar için, misafir otele gelmeden önce sistemde oda numarasının belirlenip kaydının açılması işlemi.',
+    example:
+        'Öğleden sonra giriş yapacak VIP konuğumuzun resepsiyonda beklememesi için pre-registration işlemiyle odası önceden hazırlandı ve kaydı açıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Pre-registration.mp3',
   ),
   Term(
     word: 'Room Rack (Oda Panosu)',
-    definition: 'Oteldeki tüm odaların anlık durumunu (dolu, boş, kirli, arızalı vb.) gösteren fiziksel veya dijital bilgi tablosu.',
-    example: 'Resepsiyon şefi, kat şefiyle görüşerek sistemdeki temiz/kirli oda durumlarını dijital room rack panosu üzerinden anlık olarak teyit etti.',
+    definition:
+        'Oteldeki tüm odaların anlık durumunu (dolu, boş, kirli, arızalı vb.) gösteren fiziksel veya dijital bilgi tablosu.',
+    example:
+        'Resepsiyon şefi, kat şefiyle görüşerek sistemdeki temiz/kirli oda durumlarını dijital room rack panosu üzerinden anlık olarak teyit etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Upselling',
-    definition: 'Ön büro personelinin, misafire rezervasyon yaptığı standart oda yerine aradaki fiyat farkını ödeyerek daha üst düzey bir odayı satma ikna çabası.',
-    example: 'Giriş esnasında resepsiyonistin ikna kabiliyeti sayesinde yapılan upselling ile konuğa farkı karşılığında deniz manzaralı süit oda satıldı.',
+    definition:
+        'Ön büro personelinin, misafire rezervasyon yaptığı standart oda yerine aradaki fiyat farkını ödeyerek daha üst düzey bir odayı satma ikna çabası.',
+    example:
+        'Giriş esnasında resepsiyonistin ikna kabiliyeti sayesinde yapılan upselling ile konuğa farkı karşılığında deniz manzaralı süit oda satıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Upselling.mp3',
   ),
   Term(
     word: 'No-post',
-    definition: 'Misafirin hesabına otel içindeki satış noktalarından ekstra harcama yazdırılmaması için (genellikle kredisiz/şüpheli misafirlere) açılan sistem kısıtlaması.',
-    example: 'Ekstra harcamalar için teminat bırakmayan veya kredisiz çalışan misafirlerin odası sistemde no-post statüsüne alınarak departman harcamalarına kapatılır.',
+    definition:
+        'Misafirin hesabına otel içindeki satış noktalarından ekstra harcama yazdırılmaması için (genellikle kredisiz/şüpheli misafirlere) açılan sistem kısıtlaması.',
+    example:
+        'Ekstra harcamalar için teminat bırakmayan veya kredisiz çalışan misafirlerin odası sistemde no-post statüsüne alınarak departman harcamalarına kapatılır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/No-post.mp3',
   ),
   Term(
     word: 'Night Auditor (Gece Denetçisi)',
-    definition: 'Otelin günlük tüm finansal ve ön büro işlemlerini gece vardiyasında denetleyen, gün sonu (end of day) işlemini yaparak sistemi yeni güne devreden görevli.',
-    example: 'Gece vardiyasında çalışan Night Auditor, tüm departmanların günlük finansal raporlarını denetleyip gün sonu işlemini tamamlayarak sistemi yeni güne devretti.',
+    definition:
+        'Otelin günlük tüm finansal ve ön büro işlemlerini gece vardiyasında denetleyen, gün sonu (end of day) işlemini yaparak sistemi yeni güne devreden görevli.',
+    example:
+        'Gece vardiyasında çalışan Night Auditor, tüm departmanların günlük finansal raporlarını denetleyip gün sonu işlemini tamamlayarak sistemi yeni güne devretti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Night Audit.mp3',
   ),
   Term(
     word: 'B&B (Bed and Breakfast)',
-    definition: 'Oda + Kahvaltı; ödenen fiyata sadece oda konaklaması ve sabah kahvaltısının dâhil olduğu pansiyon durumu.',
-    example: 'Şehir dışından gelen misafirlerimiz, sadece geceleme ve sabah kahvaltısını kapsayan B&B (Bed and Breakfast) konseptinde rezervasyon yaptırdılar.',
+    definition:
+        'Oda + Kahvaltı; ödenen fiyata sadece oda konaklaması ve sabah kahvaltısının dâhil olduğu pansiyon durumu.',
+    example:
+        'Şehir dışından gelen misafirlerimiz, sadece geceleme ve sabah kahvaltısını kapsayan B&B (Bed and Breakfast) konseptinde rezervasyon yaptırdılar.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/BB Bed and Breakfast.mp3',
   ),
   Term(
     word: 'UAI (Ultra All Inclusive)',
-    definition: 'Her şey dâhil sisteminin en geniş hâli; belirli yabancı ithal içecekler, ücretsiz minibar kullanımı ve 24 saat kesintisiz yiyecek-içecek hizmetinin fiyata dâhil olduğu konaklama konsepti.',
-    example: 'Misafirlerimiz, 24 saat boyunca ithal içeceklerin ve tüm büfelerin ücretsiz sunulduğu lüks UAI (Ultra Her Şey Dahil) otelimizde harika bir tatil geçirdiler.',
+    definition:
+        'Her şey dâhil sisteminin en geniş hâli; belirli yabancı ithal içecekler, ücretsiz minibar kullanımı ve 24 saat kesintisiz yiyecek-içecek hizmetinin fiyata dâhil olduğu konaklama konsepti.',
+    example:
+        'Misafirlerimiz, 24 saat boyunca ithal içeceklerin ve tüm büfelerin ücretsiz sunulduğu lüks UAI (Ultra Her Şey Dahil) otelimizde harika bir tatil geçirdiler.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/UAI Ultra All Inclusive.mp3',
   ),
   Term(
     word: 'Luggage Room (Bagaj Odası)',
-    definition: 'Erken gelen (odası hazır olmayan) veya geç ayrılacak misafirlerin emanet bagajlarının fiş karşılığı güvenle muhafaza edildiği özel kilitli oda.',
-    example: 'Otele sabah erken saatte gelen misafirlerimizin valizleri, odaları hazır olana kadar emanet alınarak kilitli luggage room bagaj odasında muhafaza edildi.',
+    definition:
+        'Erken gelen (odası hazır olmayan) veya geç ayrılacak misafirlerin emanet bagajlarının fiş karşılığı güvenle muhafaza edildiği özel kilitli oda.',
+    example:
+        'Otele sabah erken saatte gelen misafirlerimizin valizleri, odaları hazır olana kadar emanet alınarak kilitli luggage room bagaj odasında muhafaza edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Garantili Rezervasyon',
-    definition: 'Misafirin otele gelmemesi (no-show) durumunda bile konaklama bedelinin kredi kartı, şirket veya acente sözleşmesiyle güvence altına alındığı, sabaha kadar geçerli olan rezervasyon türü.',
-    example: 'Misafir otele gece yarısından sonra geleceğini bildirdiği için, kredi kartı bilgileriyle garantili rezervasyon kaydı oluşturuldu.',
+    definition:
+        'Misafirin otele gelmemesi (no-show) durumunda bile konaklama bedelinin kredi kartı, şirket veya acente sözleşmesiyle güvence altına alındığı, sabaha kadar geçerli olan rezervasyon türü.',
+    example:
+        'Misafir otele gece yarısından sonra geleceğini bildirdiği için, kredi kartı bilgileriyle garantili rezervasyon kaydı oluşturuldu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Garantisiz Rezervasyon',
-    definition: 'Ödeme veya kredi kartı güvencesi olmayan, otelin belirlediği opsiyon saatine kadar (genelde 18:00) geçerli olan rezervasyon türü.',
-    example: 'Garantisiz rezervasyon yaptıran misafirimiz saat 18:00\'e kadar otele giriş yapmadığı için odası otomatik olarak iptal edildi.',
+    definition:
+        'Ödeme veya kredi kartı güvencesi olmayan, otelin belirlediği opsiyon saatine kadar (genelde 18:00) geçerli olan rezervasyon türü.',
+    example:
+        'Garantisiz rezervasyon yaptıran misafirimiz saat 18:00\'e kadar otele giriş yapmadığı için odası otomatik olarak iptal edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Opsiyon Saati (Release Time)',
-    definition: 'Garantisiz rezervasyonlarda misafirin otele giriş yapması için tanınan en son saat sınırı. Bu saatten sonra oda başkasına satılabilir.',
-    example: 'Garantisiz rezervasyonların iptal edilerek odaların satışa açılacağı opsiyon saati (release time) ön büro tarafından saat 18:00 olarak belirlenmiştir.',
+    definition:
+        'Garantisiz rezervasyonlarda misafirin otele giriş yapması için tanınan en son saat sınırı. Bu saatten sonra oda başkasına satılabilir.',
+    example:
+        'Garantisiz rezervasyonların iptal edilerek odaların satışa açılacağı opsiyon saati (release time) ön büro tarafından saat 18:00 olarak belirlenmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Kayıp Rezervasyon (Lost Reservation)',
-    definition: 'Misafirin rezervasyon yaptırdığını iddia etmesine rağmen otel PMS sisteminde veya dosyalarında o isme ait hiçbir kaydın bulunamaması durumu.',
-    example: 'Otele giriş yapmak isteyen konuğun adı sistemde bulunamayınca, durum kayıp rezervasyon (lost reservation) prosedürüne göre incelendi.',
+    definition:
+        'Misafirin rezervasyon yaptırdığını iddia etmesine rağmen otel PMS sisteminde veya dosyalarında o isme ait hiçbir kaydın bulunamaması durumu.',
+    example:
+        'Otele giriş yapmak isteyen konuğun adı sistemde bulunamayınca, durum kayıp rezervasyon (lost reservation) prosedürüne göre incelendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Bekleme Listesi (Waiting List)',
-    definition: 'Otelin tamamen dolu olduğu dönemlerde rezervasyon yapmak isteyen ancak yer olmadığı için yedek sıraya alınan misafirlerin listesi.',
-    example: 'Kongre haftasında otelimiz tamamen dolduğu için, yeni rezervasyon talepleri bekleme listesine (waiting list) sırayla kaydedildi.',
+    definition:
+        'Otelin tamamen dolu olduğu dönemlerde rezervasyon yapmak isteyen ancak yer olmadığı için yedek sıraya alınan misafirlerin listesi.',
+    example:
+        'Kongre haftasında otelimiz tamamen dolduğu için, yeni rezervasyon talepleri bekleme listesine (waiting list) sırayla kaydedildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'CRS (Computerized Reservation System)',
-    definition: 'Zincir otellerin kendi içlerinde kullandıkları, tüm şubelerin envanterini merkezi bir yerden yöneten bilgisayarlı rezervasyon sistemi.',
-    example: 'Zincir otel grubumuzun tüm şubelerindeki boş oda kontenjanları, merkezi CRS rezervasyon yazılımı üzerinden anlık olarak yönetilmektedir.',
+    definition:
+        'Zincir otellerin kendi içlerinde kullandıkları, tüm şubelerin envanterini merkezi bir yerden yöneten bilgisayarlı rezervasyon sistemi.',
+    example:
+        'Zincir otel grubumuzun tüm şubelerindeki boş oda kontenjanları, merkezi CRS rezervasyon yazılımı üzerinden anlık olarak yönetilmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/CRS Computerized Reservation System.mp3',
   ),
   Term(
     word: 'Cancellation (İptal)',
-    definition: 'Misafirin veya acentenin, önceden yaptırmış olduğu onaylı rezervasyonu otel iptal kuralları çerçevesinde sonlandırması işlemi.',
-    example: 'Giriş gününe 24 saat kala gelen cancellation (iptal) talebi doğrultusunda, misafirin depozitosu kurallar çerçevesinde iade edildi.',
+    definition:
+        'Misafirin veya acentenin, önceden yaptırmış olduğu onaylı rezervasyonu otel iptal kuralları çerçevesinde sonlandırması işlemi.',
+    example:
+        'Giriş gününe 24 saat kala gelen cancellation (iptal) talebi doğrultusunda, misafirin depozitosu kurallar çerçevesinde iade edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Amendment (Değişiklik)',
-    definition: 'Mevcut bir rezervasyon kaydının tarih, kişi sayısı, pansiyon tipi veya oda kategorisi gibi detaylarında yapılan değişiklikler.',
-    example: 'Misafirimizin talebi doğrultusunda, rezervasyon kaydında oda tipi ve konaklama tarihi detaylarında amendment (değişiklik) yapıldı.',
+    definition:
+        'Mevcut bir rezervasyon kaydının tarih, kişi sayısı, pansiyon tipi veya oda kategorisi gibi detaylarında yapılan değişiklikler.',
+    example:
+        'Misafirimizin talebi doğrultusunda, rezervasyon kaydında oda tipi ve konaklama tarihi detaylarında amendment (değişiklik) yapıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Double Booking',
-    definition: 'Aynı otel odasının yanlışlıkla veya sistemsel bir hata sonucu iki farklı kişiye/gruba aynı tarihler için satılması durumu.',
-    example: 'Sistemsel bir senkronizasyon hatası nedeniyle 204 numaralı oda için double booking (çifte satış) krizi yaşandı ve konuk süit odaya alındı.',
+    definition:
+        'Aynı otel odasının yanlışlıkla veya sistemsel bir hata sonucu iki farklı kişiye/gruba aynı tarihler için satılması durumu.',
+    example:
+        'Sistemsel bir senkronizasyon hatası nedeniyle 204 numaralı oda için double booking (çifte satış) krizi yaşandı ve konuk süit odaya alındı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Double Booking.mp3',
   ),
   Term(
     word: 'SPA Rezervasyonu',
-    definition: 'Otel bünyesindeki masaj, terapi veya hamam hizmetleri için konaklayan veya dışarıdan gelen misafirler adına alınan ön randevu.',
-    example: 'Misafir ilişkileri görevlisi, yoğunluk yaşanmaması için konuğumuz adına saat 16:00\'ya bir SPA rezervasyonu oluşturdu.',
+    definition:
+        'Otel bünyesindeki masaj, terapi veya hamam hizmetleri için konaklayan veya dışarıdan gelen misafirler adına alınan ön randevu.',
+    example:
+        'Misafir ilişkileri görevlisi, yoğunluk yaşanmaması için konuğumuz adına saat 16:00\'ya bir SPA rezervasyonu oluşturdu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Tentative Reservation',
-    definition: 'Henüz tam olarak kesinleşmemiş, ödeme garantisi (depozito/kredi kartı vb.) alınmamış şüpheli veya geçici rezervasyon kaydı.',
-    example: 'Acentenin henüz ödeme garantisi göndermediği grup talebi, sistemde geçici olarak tentative reservation statüsünde bekletilmektedir.',
+    definition:
+        'Henüz tam olarak kesinleşmemiş, ödeme garantisi (depozito/kredi kartı vb.) alınmamış şüpheli veya geçici rezervasyon kaydı.',
+    example:
+        'Acentenin henüz ödeme garantisi göndermediği grup talebi, sistemde geçici olarak tentative reservation statüsünde bekletilmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Tentative Reservation.mp3',
   ),
   Term(
     word: 'Incognito (Gizli Konuk)',
-    definition: 'Kimliğinin, otelde kaldığının veya oda numarasının diğer misafirlerden veya dışarıdan arayanlardan gizli tutulmasını talep eden misafir.',
-    example: 'Tanınmış sanatçı, otelde kaldığının gizli tutulmasını talep ettiği için sisteme incognito (gizli konuk) olarak kaydedildi.',
+    definition:
+        'Kimliğinin, otelde kaldığının veya oda numarasının diğer misafirlerden veya dışarıdan arayanlardan gizli tutulmasını talep eden misafir.',
+    example:
+        'Tanınmış sanatçı, otelde kaldığının gizli tutulmasını talep ettiği için sisteme incognito (gizli konuk) olarak kaydedildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'History Card (Konuk Sicil Kartı)',
-    definition: 'Daha önce otelde konaklamış misafirlerin iletişim, fatura, özel istek ve şikayet geçmişlerinin kaydedildiği veri tabanı profili.',
-    example: 'Rezervasyon görevlisi, sürekli gelen misafirin yastık tercihini ve sevdiği içecekleri history card profilinden kontrol etti.',
+    definition:
+        'Daha önce otelde konaklamış misafirlerin iletişim, fatura, özel istek ve şikayet geçmişlerinin kaydedildiği veri tabanı profili.',
+    example:
+        'Rezervasyon görevlisi, sürekli gelen misafirin yastık tercihini ve sevdiği içecekleri history card profilinden kontrol etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Front Desk (Ön Büro Bankosu)',
-    definition: 'Misafirlerin otele giriş (check-in) ve çıkış (check-out) işlemlerinin yapıldığı, resepsiyon görevlilerinin çalıştığı ana banko.',
-    example: 'Otele giriş yapan konuklar, işlemlerini gerçekleştirmek üzere lobi alanındaki şık front desk bankosuna yönlendirildiler.',
+    definition:
+        'Misafirlerin otele giriş (check-in) ve çıkış (check-out) işlemlerinin yapıldığı, resepsiyon görevlilerinin çalıştığı ana banko.',
+    example:
+        'Otele giriş yapan konuklar, işlemlerini gerçekleştirmek üzere lobi alanındaki şık front desk bankosuna yönlendirildiler.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Extension (Uzun Kalış)',
-    definition: 'Misafirin rezervasyon yaptırırken belirttiği check-out tarihinden daha ileri bir tarihe kadar otelde kalış süresini uzatması talebi ve işlemi.',
-    example: 'Tatilini iki gün daha uzatmak isteyen misafirimizin talebi üzerine sistemde extension işlemi yapıldı.',
+    definition:
+        'Misafirin rezervasyon yaptırırken belirttiği check-out tarihinden daha ileri bir tarihe kadar otelde kalış süresini uzatması talebi ve işlemi.',
+    example:
+        'Tatilini iki gün daha uzatmak isteyen misafirimizin talebi üzerine sistemde extension işlemi yapıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Early Check-out',
-    definition: 'Misafirin, rezervasyonunda veya check-in sırasında belirttiği çıkış tarihinden daha önceki bir gün/tarihte otelden ayrılması durumu.',
-    example: 'İş toplantısı erken biten misafirimiz, planlanandan iki gün önce early check-out yaparak otelden ayrıldı.',
+    definition:
+        'Misafirin, rezervasyonunda veya check-in sırasında belirttiği çıkış tarihinden daha önceki bir gün/tarihte otelden ayrılması durumu.',
+    example:
+        'İş toplantısı erken biten misafirimiz, planlanandan iki gün önce early check-out yaparak otelden ayrıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Early Check-out.mp3',
   ),
   Term(
     word: 'Night Audit',
-    definition: 'Gece vardiyasında çalışan ön büro veya muhasebe personelinin, gün içindeki tüm harcama ve konaklama bedellerini (Room Charge) misafir folyolarına işlediği gün sonu (End of Day) işlemi.',
-    example: 'Gece vardiyasında gerçekleştirilen night audit işlemiyle, tüm odaların konaklama bedelleri sorunsuz şekilde folyolara yansıtıldı.',
+    definition:
+        'Gece vardiyasında çalışan ön büro veya muhasebe personelinin, gün içindeki tüm harcama ve konaklama bedellerini (Room Charge) misafir folyolarına işlediği gün sonu (End of Day) işlemi.',
+    example:
+        'Gece vardiyasında gerçekleştirilen night audit işlemiyle, tüm odaların konaklama bedelleri sorunsuz şekilde folyolara yansıtıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Night Audit.mp3',
   ),
   Term(
     word: 'Dekorasyon',
-    definition: 'Otel odası veya genel mekanların estetik, fonksiyonel ve göze hoş gelecek şekilde renk, mobilya ve aksesuarlarla düzenlenmesi sanatı.',
-    example: 'Lobi alanının dekorasyon çalışmalarında, okyanus esintilerini yansıtan mavi ve turkuaz tonlarında aksesuarlar tercih edildi.',
+    definition:
+        'Otel odası veya genel mekanların estetik, fonksiyonel ve göze hoş gelecek şekilde renk, mobilya ve aksesuarlarla düzenlenmesi sanatı.',
+    example:
+        'Lobi alanının dekorasyon çalışmalarında, okyanus esintilerini yansıtan mavi ve turkuaz tonlarında aksesuarlar tercih edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Balayı Odası (Honeymoon Suite)',
-    definition: 'Yeni evli çiftler için özel olarak dekore edilen, genellikle bornoz, meyve sepeti, özel ikramlar, yatakta gül yaprakları (kalp motifi) gibi süslemelerle hazırlanan oda.',
-    example: 'Yeni evli çiftimiz için balayı odası (Honeymoon Suite), kırmızı güller, kalp figürlü havlu katlamaları ve özel çikolata ikramıyla hazırlandı.',
+    definition:
+        'Yeni evli çiftler için özel olarak dekore edilen, genellikle bornoz, meyve sepeti, özel ikramlar, yatakta gül yaprakları (kalp motifi) gibi süslemelerle hazırlanan oda.',
+    example:
+        'Yeni evli çiftimiz için balayı odası (Honeymoon Suite), kırmızı güller, kalp figürlü havlu katlamaları ve özel çikolata ikramıyla hazırlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Stripper (Cila Sökücü)',
-    definition: 'Eskimiş, kararmış veya çizilmiş mevcut polimer cilayı zeminden tamamen sökmek ve yüzeyi yeni cilaya hazırlamak için kullanılan güçlü bazik kimyasal.',
-    example: 'Yıllar içinde kararan eski polimer cilayı sökmek için yüzeye stripper (cila sökücü) sürülerek zemin yeni cila uygulamasına hazırlandı.',
+    definition:
+        'Eskimiş, kararmış veya çizilmiş mevcut polimer cilayı zeminden tamamen sökmek ve yüzeyi yeni cilaya hazırlamak için kullanılan güçlü bazik kimyasal.',
+    example:
+        'Yıllar içinde kararan eski polimer cilayı sökmek için yüzeye stripper (cila sökücü) sürülerek zemin yeni cila uygulamasına hazırlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Perkloretilen (Perc)',
-    definition: 'Kuru temizleme sektöründe en yaygın kullanılan, yağı ve kiri kumaştan mükemmel şekilde çözen uçucu ve güçlü bir solvent (çözücü) kimyasal.',
-    example: 'Misafirin hassas kumaşlı ceketindeki yağ lekesini çıkarmak amacıyla kuru temizleme makinesinde Perkloretilen solventi kullanıldı.',
+    definition:
+        'Kuru temizleme sektöründe en yaygın kullanılan, yağı ve kiri kumaştan mükemmel şekilde çözen uçucu ve güçlü bir solvent (çözücü) kimyasal.',
+    example:
+        'Misafirin hassas kumaşlı ceketindeki yağ lekesini çıkarmak amacıyla kuru temizleme makinesinde Perkloretilen solventi kullanıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Pres Ütü',
-    definition: 'Pantolon, ceket, gömlek gibi misafir kıyafetlerinin ve üniformaların preslenerek ütülendiği buharlı cihaz.',
-    example: 'Misafirimizin ütülenmesini istediği kumaş pantolon, pres ütü makinesinde saniyeler içinde jilet gibi ütülendi.',
+    definition:
+        'Pantolon, ceket, gömlek gibi misafir kıyafetlerinin ve üniformaların preslenerek ütülendiği buharlı cihaz.',
+    example:
+        'Misafirimizin ütülenmesini istediği kumaş pantolon, pres ütü makinesinde saniyeler içinde jilet gibi ütülendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Manken Ütü',
-    definition: 'Ceket, palto veya gömleklerin giydirildiği, içeriden sıcak buhar ve hava üfleyerek kırışıklıkları açan ve giysiye form veren özel ütü makinesi.',
-    example: 'Yıkanan personel ceketleri ve misafir takım elbiseleri, formlarını kaybetmemeleri için manken ütü ünitesine giydirilerek buharlandı.',
+    definition:
+        'Ceket, palto veya gömleklerin giydirildiği, içeriden sıcak buhar ve hava üfleyerek kırışıklıkları açan ve giysiye form veren özel ütü makinesi.',
+    example:
+        'Yıkanan personel ceketleri ve misafir takım elbiseleri, formlarını kaybetmemeleri için manken ütü ünitesine giydirilerek buharlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kolalama (Starching)',
-    definition: 'Masa örtüsü, peçete veya şef ünforması gibi tekstil ürünlerinin daha dik, parlak durması ve kir tutmasının geciktirilmesi amacıyla uygulanan apre işlemi.',
-    example: 'A la carte restoranda kullanılacak masa örtüleri ve peçeteler, dik ve parlak durmaları için son aşamada kolalama işleminden geçirildi.',
+    definition:
+        'Masa örtüsü, peçete veya şef ünforması gibi tekstil ürünlerinin daha dik, parlak durması ve kir tutmasının geciktirilmesi amacıyla uygulanan apre işlemi.',
+    example:
+        'A la carte restoranda kullanılacak masa örtüleri ve peçeteler, dik ve parlak durmaları için son aşamada kolalama işleminden geçirildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Envanter (Inventory)',
-    definition: 'İşletmenin elinde bulunan tüm demirbaş, tekstil, makine ve tüketim malzemelerinin kalem kalem listesi ve parasal değeri.',
-    example: 'Kat hizmetleri departmanı, yıl sonu mali kapanış öncesinde tüm kat depolarındaki havlu ve çarşafların envanter listesini çıkardı.',
+    definition:
+        'İşletmenin elinde bulunan tüm demirbaş, tekstil, makine ve tüketim malzemelerinin kalem kalem listesi ve parasal değeri.',
+    example:
+        'Kat hizmetleri departmanı, yıl sonu mali kapanış öncesinde tüm kat depolarındaki havlu ve çarşafların envanter listesini çıkardı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Depo (Store)',
-    definition: 'İşletmede kullanılacak her türlü kimyasal, buklet, tekstil veya makinenin düzenli, güvenli ve iklimlendirme şartlarına uygun olarak muhafaza edildiği alan.',
-    example: 'Kimyasal temizlik ürünleri ve yedek buklet malzemeleri, nemsiz ve havalandırmalı ana depoda (store) güvenli şekilde muhafaza edilmektedir.',
+    definition:
+        'İşletmede kullanılacak her türlü kimyasal, buklet, tekstil veya makinenin düzenli, güvenli ve iklimlendirme şartlarına uygun olarak muhafaza edildiği alan.',
+    example:
+        'Kimyasal temizlik ürünleri ve yedek buklet malzemeleri, nemsiz ve havalandırmalı ana depoda (store) güvenli şekilde muhafaza edilmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Purchase Requisition (Satınalma Talebi)',
-    definition: 'Kat Hizmetleri departmanının stokta azalan veya biten malzemeler için satın alma departmanına yazdığı resmi malzeme istek fişi.',
-    example: 'Stoklarda şampuan ve sabunun azaldığını gören kat şefi, satın alma departmanına iletilmek üzere bir purchase requisition belgesi hazırladı.',
+    definition:
+        'Kat Hizmetleri departmanının stokta azalan veya biten malzemeler için satın alma departmanına yazdığı resmi malzeme istek fişi.',
+    example:
+        'Stoklarda şampuan ve sabunun azaldığını gören kat şefi, satın alma departmanına iletilmek üzere bir purchase requisition belgesi hazırladı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Housekeeper Raporu',
-    definition: 'Kat Hizmetleri yöneticisinin odaların fiziksel durumu (temiz, kirli, arızalı) hakkında hazırladığı ve resepsiyon kayıtlarıyla karşılaştırılan günlük rapor.',
-    example: 'Ön büro ile kat hizmetleri arasındaki oda durum çelişkilerini çözmek amacıyla her öğleden sonra Housekeeper Raporu çıkartılır.',
+    definition:
+        'Kat Hizmetleri yöneticisinin odaların fiziksel durumu (temiz, kirli, arızalı) hakkında hazırladığı ve resepsiyon kayıtlarıyla karşılaştırılan günlük rapor.',
+    example:
+        'Ön büro ile kat hizmetleri arasındaki oda durum çelişkilerini çözmek amacıyla her öğleden sonra Housekeeper Raporu çıkartılır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Housekeeper.mp3',
   ),
   Term(
     word: 'Wake-up List (Uyandırma Listesi)',
-    definition: 'Misafirlerin sabah uyandırılmak istedikleri saatlerin kronolojik olarak kaydedildiği ve santral veya resepsiyon personeli tarafından takip edilen liste.',
-    example: 'Sabah erken uçuşu olan misafirlerin talepleri doğrultusunda santral görevlisi tüm uyandırma saatlerini tek tek uyandırma listesine (wake-up list) kaydetti.',
+    definition:
+        'Misafirlerin sabah uyandırılmak istedikleri saatlerin kronolojik olarak kaydedildiği ve santral veya resepsiyon personeli tarafından takip edilen liste.',
+    example:
+        'Sabah erken uçuşu olan misafirlerin talepleri doğrultusunda santral görevlisi tüm uyandırma saatlerini tek tek uyandırma listesine (wake-up list) kaydetti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'House Use (H/Use)',
-    definition: 'Otel müdürü, üst düzey otel yöneticileri veya görevli otel personelinin operasyonel nedenlerle ücretsiz olarak konakladığı oda statüsü.',
-    example: 'Yeni atanan genel müdürümüz, kendi lojmanı hazırlanana kadar geçici olarak sisteme House Use (H/Use) olarak işlenen 501 numaralı odada konaklamaktadır.',
+    definition:
+        'Otel müdürü, üst düzey otel yöneticileri veya görevli otel personelinin operasyonel nedenlerle ücretsiz olarak konakladığı oda statüsü.',
+    example:
+        'Yeni atanan genel müdürümüz, kendi lojmanı hazırlanana kadar geçici olarak sisteme House Use (H/Use) olarak işlenen 501 numaralı odada konaklamaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'No Baggage (N/B)',
-    definition: 'Dolu bir odada konaklayan misafire ait odada hiçbir bagaj, valiz veya şahsi eşyanın bulunmaması durumu.',
-    example: 'Kat görevlisi oda temizliği için girdiğinde içeride hiç eşya olmadığını görünce, odanın durumunu sistemde No Baggage (N/B) olarak güncelledi ve resepsiyona haber verdi.',
+    definition:
+        'Dolu bir odada konaklayan misafire ait odada hiçbir bagaj, valiz veya şahsi eşyanın bulunmaması durumu.',
+    example:
+        'Kat görevlisi oda temizliği için girdiğinde içeride hiç eşya olmadığını görünce, odanın durumunu sistemde No Baggage (N/B) olarak güncelledi ve resepsiyona haber verdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/No Baggage NB.mp3',
   ),
   Term(
     word: 'Gün Sonu İşlemi (End of Day)',
-    definition: 'Otel otomasyon sisteminde gün içindeki tüm finansal işlemlerin, oda ücretlerinin ve departman gelirlerinin kapatılarak sistemin yeni günün tarihine devredilmesi işlemi.',
-    example: 'Saat 24:00\'ü gösterdiğinde gece denetçisi gün sonu işlemini (end of day) başlatarak otel otomasyon sistemini bir sonraki güne başarıyla devretti.',
+    definition:
+        'Otel otomasyon sisteminde gün içindeki tüm finansal işlemlerin, oda ücretlerinin ve departman gelirlerinin kapatılarak sistemin yeni günün tarihine devredilmesi işlemi.',
+    example:
+        'Saat 24:00\'ü gösterdiğinde gece denetçisi gün sonu işlemini (end of day) başlatarak otel otomasyon sistemini bir sonraki güne başarıyla devretti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Şeref Defteri',
-    definition: 'Otelde konaklayan devlet büyükleri, diplomatlar, ünlü sanatçılar veya özel konukların otel hakkındaki duygu, düşünce ve takdirlerini kendi el yazılarıyla yazdıkları tarihi anı defteri.',
-    example: 'Otelimizde konaklayan cumhurbaşkanı, ayrılmadan önce lobi alanında özel olarak ayrılan şeref defterini imzalayarak teşekkürlerini yazdı.',
+    definition:
+        'Otelde konaklayan devlet büyükleri, diplomatlar, ünlü sanatçılar veya özel konukların otel hakkındaki duygu, düşünce ve takdirlerini kendi el yazılarıyla yazdıkları tarihi anı defteri.',
+    example:
+        'Otelimizde konaklayan cumhurbaşkanı, ayrılmadan önce lobi alanında özel olarak ayrılan şeref defterini imzalayarak teşekkürlerini yazdı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Oda Doluluk Oranı (Occupancy Rate)',
-    definition: 'Belirli bir dönemde otelde satılan oda sayısının, satışa hazır toplam oda sayısına bölünüp 100 ile çarpılmasıyla bulunan yüzde değeri.',
-    example: 'Rezervasyon müdürü, bayram tatili boyunca otelimizin oda doluluk oranının (occupancy rate) %98\'e ulaştığını müjdeledi.',
+    definition:
+        'Belirli bir dönemde otelde satılan oda sayısının, satışa hazır toplam oda sayısına bölünüp 100 ile çarpılmasıyla bulunan yüzde değeri.',
+    example:
+        'Rezervasyon müdürü, bayram tatili boyunca otelimizin oda doluluk oranının (occupancy rate) %98\'e ulaştığını müjdeledi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'ADR (Average Daily Rate)',
-    definition: 'Günlük ortalama oda gelirini ifade eden, belirli bir gündeki toplam oda gelirinin o gün satılan oda sayısına bölünmesiyle bulunan istatistiksel değer.',
-    example: 'Otelimizin bu ayki toplam oda gelirini satılan oda sayısına böldüğümüzde, ortalama oda fiyatımız (ADR) 120 Euro olarak gerçekleşti.',
+    definition:
+        'Günlük ortalama oda gelirini ifade eden, belirli bir gündeki toplam oda gelirinin o gün satılan oda sayısına bölünmesiyle bulunan istatistiksel değer.',
+    example:
+        'Otelimizin bu ayki toplam oda gelirini satılan oda sayısına böldüğümüzde, ortalama oda fiyatımız (ADR) 120 Euro olarak gerçekleşti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/ADR Average Daily Rate.mp3',
   ),
   Term(
     word: 'Günlük Müşteri Listesi',
-    definition: 'Konaklama işletmelerinde her gün konaklayan tüm misafirlerin oda numarası, adı, soyadı, ücreti gibi bilgileri gösteren ve emniyete de iletilen resmi liste.',
-    example: 'Resepsiyonist, her gece yarısı o gün konaklayan tüm misafirlerin bilgilerini içeren günlük müşteri listesini hazırlayıp arşivledi.',
+    definition:
+        'Konaklama işletmelerinde her gün konaklayan tüm misafirlerin oda numarası, adı, soyadı, ücreti gibi bilgileri gösteren ve emniyete de iletilen resmi liste.',
+    example:
+        'Resepsiyonist, her gece yarısı o gün konaklayan tüm misafirlerin bilgilerini içeren günlük müşteri listesini hazırlayıp arşivledi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Sürdürülebilir Otel (Yeşil Bina)',
-    definition: 'İnşaatından işletmesine kadar çevreye olan olumsuz etkileri en aza indiren, su ve enerji tasarrufu sağlayan, çevre dostu malzemeler ve yenilenebilir enerji kullanan konaklama tesisi.',
-    example: 'Sıfır karbon salınımı hedefleyen otelimiz, uluslararası standartlarda sürdürülebilir otel (yeşil bina) sertifikası almaya hak kazandı.',
+    definition:
+        'İnşaatından işletmesine kadar çevreye olan olumsuz etkileri en aza indiren, su ve enerji tasarrufu sağlayan, çevre dostu malzemeler ve yenilenebilir enerji kullanan konaklama tesisi.',
+    example:
+        'Sıfır karbon salınımı hedefleyen otelimiz, uluslararası standartlarda sürdürülebilir otel (yeşil bina) sertifikası almaya hak kazandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Otel (Hotel)',
-    definition: 'Asıl işlevleri misafirlerin konaklama ihtiyacını karşılamak olan, bunun yanında yeme içme, toplantı, spor, eğlence vb. birimleri de bünyelerinde bulundurabilen işletmelerdir.',
-    example: 'Şehir merkezindeki 5 yıldızlı otel, iş seyahatindeki konuklarına konaklama dışında geniş toplantı ve konferans salonları da sunmaktadır.',
+    definition:
+        'Asıl işlevleri misafirlerin konaklama ihtiyacını karşılamak olan, bunun yanında yeme içme, toplantı, spor, eğlence vb. birimleri de bünyelerinde bulundurabilen işletmelerdir.',
+    example:
+        'Şehir merkezindeki 5 yıldızlı otel, iş seyahatindeki konuklarına konaklama dışında geniş toplantı ve konferans salonları da sunmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Motel',
-    definition: 'Genellikle yerleşim merkezlerinin dışında, işlek karayolları üzerinde kurulan, motorlu araçlarla seyahat edenlerin park, yeme içme ve konaklama ihtiyaçlarını karşılayan en az on odalı işletmelerdir.',
-    example: 'Uzun karayolu yolculuğumuz sırasında geceyi dinlenerek geçirmek için yol kenarındaki konforlu bir motel tesisinde oda ayırttık.',
+    definition:
+        'Genellikle yerleşim merkezlerinin dışında, işlek karayolları üzerinde kurulan, motorlu araçlarla seyahat edenlerin park, yeme içme ve konaklama ihtiyaçlarını karşılayan en az on odalı işletmelerdir.',
+    example:
+        'Uzun karayolu yolculuğumuz sırasında geceyi dinlenerek geçirmek için yol kenarındaki konforlu bir motel tesisinde oda ayırttık.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Apart Otel',
-    definition: 'Konukların kendi yiyecek ve içeceklerini hazırlayabilmesi için mutfak ve gerekli araç gereçlerle donatılmış, ev konseptinde en az on odalı konaklama işletmeleridir.',
-    example: 'Uzun süreli konaklama yapacak aileler, kendi yemeklerini pişirebilmek amacıyla mutfaklı apart otel seçeneğini tercih ettiler.',
+    definition:
+        'Konukların kendi yiyecek ve içeceklerini hazırlayabilmesi için mutfak ve gerekli araç gereçlerle donatılmış, ev konseptinde en az on odalı konaklama işletmeleridir.',
+    example:
+        'Uzun süreli konaklama yapacak aileler, kendi yemeklerini pişirebilmek amacıyla mutfaklı apart otel seçeneğini tercih ettiler.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Butik Otel',
-    definition: 'Yüksek standartlar ve özgün tasarıma sahip, deneyimli personelle kişiye özel hizmet veren, genellikle en az 10 ve en fazla 60 odalı şık konaklama işletmeleridir.',
-    example: 'Kapadokya\'nın tarihi dokusunu yansıtan taş tasarımlı butik otel, misafirlerine tamamen kişiselleştirilmiş bir balayı deneyimi yaşatıyor.',
+    definition:
+        'Yüksek standartlar ve özgün tasarıma sahip, deneyimli personelle kişiye özel hizmet veren, genellikle en az 10 ve en fazla 60 odalı şık konaklama işletmeleridir.',
+    example:
+        'Kapadokya\'nın tarihi dokusunu yansıtan taş tasarımlı butik otel, misafirlerine tamamen kişiselleştirilmiş bir balayı deneyimi yaşatıyor.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Buz Otel (Ice Hotel)',
-    definition: 'Kış sezonunda turistik etkinlikler düzenlemek amacıyla her yıl sonbaharda kar ve buz blokları kullanılarak inşa edilen geçici konaklama işletmeleridir.',
-    example: 'Kuzey Avrupa\'da her yıl yeniden inşa edilen ünlü buz otel (ice hotel), macera arayan turistlere sıfırın altındaki sıcaklıkta uyuma deneyimi sunuyor.',
+    definition:
+        'Kış sezonunda turistik etkinlikler düzenlemek amacıyla her yıl sonbaharda kar ve buz blokları kullanılarak inşa edilen geçici konaklama işletmeleridir.',
+    example:
+        'Kuzey Avrupa\'da her yıl yeniden inşa edilen ünlü buz otel (ice hotel), macera arayan turistlere sıfırın altındaki sıcaklıkta uyuma deneyimi sunuyor.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kapsül Otel',
-    definition: 'Kapsül adı verilen küçük, modüler yatak ünitelerinden oluşan, uygun fiyatlı ve minimum alan kullanımı odaklı Japonya kökenli otel türüdür.',
-    example: 'Tokyo gezisinde havalimanına yakın bir kapsül otel tercih ederek sadece geceleme ihtiyacımız için ekonomik bir çözüm bulduk.',
+    definition:
+        'Kapsül adı verilen küçük, modüler yatak ünitelerinden oluşan, uygun fiyatlı ve minimum alan kullanımı odaklı Japonya kökenli otel türüdür.',
+    example:
+        'Tokyo gezisinde havalimanına yakın bir kapsül otel tercih ederek sadece geceleme ihtiyacımız için ekonomik bir çözüm bulduk.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Resort Otel',
-    definition: 'Geniş araziler üzerine kurulu, deniz, kum, güneş (3S) veya kış sporları odaklı, dinlenme, eğlence, spor üniteleri barındıran büyük tatil otelleridir.',
-    example: 'Beş yıldızlı resort otel, açık havuzları, SPA merkezi, tenis kortları ve özel plajıyla misafirlerine tam kapsamlı bir dinlenme imkanı sunuyor.',
+    definition:
+        'Geniş araziler üzerine kurulu, deniz, kum, güneş (3S) veya kış sporları odaklı, dinlenme, eğlence, spor üniteleri barındıran büyük tatil otelleridir.',
+    example:
+        'Beş yıldızlı resort otel, açık havuzları, SPA merkezi, tenis kortları ve özel plajıyla misafirlerine tam kapsamlı bir dinlenme imkanı sunuyor.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Zincir Oteller (Chain Hotels)',
-    definition: 'Aynı marka adı, kurumsal kimlik ve kalite standartları altında birden fazla şehirde veya ülkede faaliyet gösteren, merkezi bir yönetim sistemine sahip oteller grubudur.',
-    example: 'Dünyaca ünlü zincir oteller (chain hotels) grubu, prestijini korumak için tüm ülkelerdeki şubelerinde aynı yatak ve kahvaltı standardını uygulamaktadır.',
+    definition:
+        'Aynı marka adı, kurumsal kimlik ve kalite standartları altında birden fazla şehirde veya ülkede faaliyet gösteren, merkezi bir yönetim sistemine sahip oteller grubudur.',
+    example:
+        'Dünyaca ünlü zincir oteller (chain hotels) grubu, prestijini korumak için tüm ülkelerdeki şubelerinde aynı yatak ve kahvaltı standardını uygulamaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Franchising (İmtiyaz)',
-    definition: 'Başarılı ve tanınmış bir otel markasının isim hakkını, logosunu ve operasyonel sistemini belirli bir giriş ücreti ve yıllık kâr payı karşılığında bağımsız bir yatırımcıya kullandırmasıdır.',
-    example: 'Yerli yatırımcı, otel projesinin bilinirliğini artırmak için uluslararası bir zincir marka ile franchising (imtiyaz) anlaşması imzaladı.',
+    definition:
+        'Başarılı ve tanınmış bir otel markasının isim hakkını, logosunu ve operasyonel sistemini belirli bir giriş ücreti ve yıllık kâr payı karşılığında bağımsız bir yatırımcıya kullandırmasıdır.',
+    example:
+        'Yerli yatırımcı, otel projesinin bilinirliğini artırmak için uluslararası bir zincir marka ile franchising (imtiyaz) anlaşması imzaladı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Management Contract',
-    definition: 'Otel mülk sahibinin, otelin tüm işletme ve operasyon yönetimini belirli bir yönetim ücreti veya kâr payı karşılığında profesyonel bir otel yönetim şirketine devrettiği yönetim sözleşmesidir.',
-    example: 'Mülk sahibi otelcilik deneyimi olmadığı için, yeni yapılan oteli 10 yıllığına bir işletme şirketine management contract sözleşmesi ile devretti.',
+    definition:
+        'Otel mülk sahibinin, otelin tüm işletme ve operasyon yönetimini belirli bir yönetim ücreti veya kâr payı karşılığında profesyonel bir otel yönetim şirketine devrettiği yönetim sözleşmesidir.',
+    example:
+        'Mülk sahibi otelcilik deneyimi olmadığı için, yeni yapılan oteli 10 yıllığına bir işletme şirketine management contract sözleşmesi ile devretti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Management Contract.mp3',
   ),
   Term(
     word: 'Ön Büro (Front Office)',
-    definition: 'Resepsiyon, karşılama, check-in, check-out, oda blokajı, santral ve ön kasa işlemlerinin yürütüldüğü, konukla ilk temasın sağlandığı beyni ve vitrini konumundaki departmandır.',
-    example: 'Misafirin otele attığı ilk adımdan itibaren yaşadığı deneyim, ön büro (front office) ekibinin profesyonelliği ve güler yüzlülüğüyle şekillenir.',
+    definition:
+        'Resepsiyon, karşılama, check-in, check-out, oda blokajı, santral ve ön kasa işlemlerinin yürütüldüğü, konukla ilk temasın sağlandığı beyni ve vitrini konumundaki departmandır.',
+    example:
+        'Misafirin otele attığı ilk adımdan itibaren yaşadığı deneyim, ön büro (front office) ekibinin profesyonelliği ve güler yüzlülüğüyle şekillenir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Front Office.mp3',
   ),
   Term(
     word: 'Teknik Servis',
-    definition: 'Otel binasının, odaların, elektrik, tesisat, ısıtma-soğutma, asansör ve havuz sistemlerinin arızasız çalışmasını ve periyodik bakımlarını sağlayan departmandır.',
-    example: '304 numaralı odanın sıcak su bataryasındaki sızıntı, kat görevlisinin anonsu üzerine teknik servis ekibi tarafından yarım saatte onarıldı.',
+    definition:
+        'Otel binasının, odaların, elektrik, tesisat, ısıtma-soğutma, asansör ve havuz sistemlerinin arızasız çalışmasını ve periyodik bakımlarını sağlayan departmandır.',
+    example:
+        '304 numaralı odanın sıcak su bataryasındaki sızıntı, kat görevlisinin anonsu üzerine teknik servis ekibi tarafından yarım saatte onarıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Yield Management',
-    definition: 'Talebin yüksek olduğu yüksek sezonda oda fiyatlarını artırarak, düşük olduğu ölü sezonda ise düşürerek otel gelirini maksimize etme (getiri yönetimi) stratejisidir.',
-    example: 'Ön büro müdürü, bayram döneminde artan talebi analiz ederek yield management taktiğiyle oda fiyatlarını kademeli olarak yükseltti.',
+    definition:
+        'Talebin yüksek olduğu yüksek sezonda oda fiyatlarını artırarak, düşük olduğu ölü sezonda ise düşürerek otel gelirini maksimize etme (getiri yönetimi) stratejisidir.',
+    example:
+        'Ön büro müdürü, bayram döneminde artan talebi analiz ederek yield management taktiğiyle oda fiyatlarını kademeli olarak yükseltti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Yield Management.mp3',
   ),
   Term(
     word: 'Terzi (Tailor)',
-    definition: 'Konukların veya otel personelinin kıyafetlerindeki yırtık, sökük, fermuar değişimi, paça boyu kısaltma gibi küçük tadilat ve dikim işlerini yapan görevli.',
-    example: 'Kat görevlisi, misafirin yırtılan ceket astarını tamir ettirmek üzere çamaşırhane bölümündeki terziye (tailor) teslim etti.',
+    definition:
+        'Konukların veya otel personelinin kıyafetlerindeki yırtık, sökük, fermuar değişimi, paça boyu kısaltma gibi küçük tadilat ve dikim işlerini yapan görevli.',
+    example:
+        'Kat görevlisi, misafirin yırtılan ceket astarını tamir ettirmek üzere çamaşırhane bölümündeki terziye (tailor) teslim etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Washer Extractor (Yıkama - Sıkma Makinesi)',
-    definition: 'Çamaşırları sıcak su, mekanik hareket ve kimyasallarla yıkadıktan sonra, yüksek merkezkaç kuvvetiyle sıkarak içindeki fazla suyu atan endüstriyel tip çamaşır makinesi.',
-    example: 'Çamaşırhanedeki 100 kg kapasiteli yeni washer extractor makinesi, çarşafları yüksek devirde sıkarak kurutma süresini yarı yarıya azalttı.',
+    definition:
+        'Çamaşırları sıcak su, mekanik hareket ve kimyasallarla yıkadıktan sonra, yüksek merkezkaç kuvvetiyle sıkarak içindeki fazla suyu atan endüstriyel tip çamaşır makinesi.',
+    example:
+        'Çamaşırhanedeki 100 kg kapasiteli yeni washer extractor makinesi, çarşafları yüksek devirde sıkarak kurutma süresini yarı yarıya azalttı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Katlama Makinesi (Folder)',
-    definition: 'Silindir ütüden (mangle) çıkan büyük ebatlardaki düz tekstil ürünlerini (çarşaf, masa örtüsü vb.) el değmeden otomatik ve simetrik olarak katlayan endüstriyel makine.',
-    example: 'Silindir ütünün çıkışına entegre edilen katlama makinesi (folder) sayesinde yüzlerce çarşaf saniyeler içinde mükemmel bir şekilde katlanarak raflara hazır hale getirildi.',
+    definition:
+        'Silindir ütüden (mangle) çıkan büyük ebatlardaki düz tekstil ürünlerini (çarşaf, masa örtüsü vb.) el değmeden otomatik ve simetrik olarak katlayan endüstriyel makine.',
+    example:
+        'Silindir ütünün çıkışına entegre edilen katlama makinesi (folder) sayesinde yüzlerce çarşaf saniyeler içinde mükemmel bir şekilde katlanarak raflara hazır hale getirildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Dry Cleaning Machine (Kuru Temizleme Makinesi)',
-    definition: 'Su yerine organik solventler kullanarak tekstil elyaflarının çekmesini veya bozulmasını önleyen kapalı devre çalışan sanayi tipi kuru temizleme ünitesi.',
-    example: 'Misafirin hassas yün takımı, liflerin zarar görmemesi ve çekmemesi için çamaşırhanedeki kuru temizleme makinesinde solventle temizlendi.',
+    definition:
+        'Su yerine organik çözücüler (solvent) kullanarak kumaş liflerinin çekmesini veya yapısının bozulmasını önleyen kapalı devre sanayi tipi temizleme ünitesidir.',
+    example:
+        'Misafirin hassas yünlü takımı, kumaş liflerinin zarar görmemesi amacıyla çamaşırhane ünitesindeki kuru temizleme makinesinde solventle temizlenmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Spotting Board (Leke Çıkarma Masası)',
-    definition: 'Üzerinde buhar tabancası, vakum emiş sistemi ve lokal leke sökücü kimyasalların bulunduğu, yıkama öncesi lokal lekelere müdahale etmek için tasarlanmış özel çalışma tezgahı.',
-    example: 'Restorandan gelen meyve suyu lekeli masa örtüleri, ana yıkamaya girmeden önce leke çıkarma masasında (spotting board) ön işlemden geçirildi.',
+    definition:
+        'Üzerinde buhar tabancası, vakum emiş sistemi ve lokal leke sökücü kimyasalların bulunduğu, yıkama öncesi lokal lekelere müdahale etmek için tasarlanmış özel çalışma tezgahı.',
+    example:
+        'Restorandan gelen meyve suyu lekeli masa örtüleri, ana yıkamaya girmeden önce leke çıkarma masasında (spotting board) ön işlemden geçirildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Sert Su',
-    definition: 'İçerisinde yüksek miktarda kalsiyum ve magnezyum iyonları barındıran, temizlik kimyasallarının köpürmesini zorlaştırarak tüketimi artıran ve makinelerde kireçlenmeye yol açan su.',
-    example: 'Şehir şebekesinden gelen sert su sebebiyle çamaşırhanedeki rezistansların kireçlenmesini önlemek için su arıtma ünitesinin tuz seviyesi artırıldı.',
+    definition:
+        'İçerisinde yüksek miktarda kalsiyum ve magnezyum iyonları barındıran, temizlik kimyasallarının köpürmesini zorlaştırarak tüketimi artıran ve makinelerde kireçlenmeye yol açan su.',
+    example:
+        'Şehir şebekesinden gelen sert su sebebiyle çamaşırhanedeki rezistansların kireçlenmesini önlemek için su arıtma ünitesinin tuz seviyesi artırıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Yumuşak Su',
-    definition: 'Kalsiyum ve magnezyum gibi sertlik iyonlarından arıtılmış, temizlik kalitesini artıran ve kimyasal tüketiminde tasarruf sağlayan yıkama için ideal su.',
-    example: 'Yumuşak su kullanımı sayesinde yıkamada hem deterjan sarfiyatı %30 oranında azaldı hem de çarşaflarımız ilk günkü yumuşaklığını korudu.',
+    definition:
+        'Kalsiyum ve magnezyum gibi sertlik iyonlarından arıtılmış, temizlik kalitesini artıran ve kimyasal tüketiminde tasarruf sağlayan yıkama için ideal su.',
+    example:
+        'Yumuşak su kullanımı sayesinde yıkamada hem deterjan sarfiyatı %30 oranında azaldı hem de çarşaflarımız ilk günkü yumuşaklığını korudu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Ön Yıkama (Pre wash)',
-    definition: 'Çok kirli, kanlı, yağlı veya protein lekeli tekstillerin asıl yıkamaya geçmeden önce ılık su ve az miktarda deterjanla kaba kirlerinden arındırıldığı ilk kısa yıkama evresi.',
-    example: 'Mutfak personelinin aşırı yağlı üniformaları, lekelerin kumaşa sabitlenmesini önlemek amacıyla soğuk suyla ön yıkama (pre wash) işlemine tabi tutuldu.',
+    definition:
+        'Çok kirli, kanlı, yağlı veya protein lekeli tekstillerin asıl yıkamaya geçmeden önce ılık su ve az miktarda deterjanla kaba kirlerinden arındırıldığı ilk kısa yıkama evresi.',
+    example:
+        'Mutfak personelinin aşırı yağlı üniformaları, lekelerin kumaşa sabitlenmesini önlemek amacıyla soğuk suyla ön yıkama (pre wash) işlemine tabi tutuldu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Ana Yıkama (Main Wash)',
-    definition: 'Deterjan, alkali yardımcılar ve leke çıkarıcı kimyasalların katıldığı, su sıcaklığının kumaş türüne göre en üst seviyeye ulaştığı asıl temizleme aşaması.',
-    example: 'Beyaz nevresimlerin ana yıkama (main wash) aşaması, lekelerin tamamen çözülmesi için 85 derece sıcaklıkta and alkali takviyesiyle gerçekleştirildi.',
+    definition:
+        'Deterjan, alkali yardımcılar ve leke çıkarıcı kimyasalların katıldığı, su sıcaklığının kumaş türüne göre en üst seviyeye ulaştığı asıl temizleme aşaması.',
+    example:
+        'Beyaz nevresimlerin ana yıkama (main wash) aşaması, lekelerin tamamen çözülmesi için 85 derece sıcaklıkta and alkali takviyesiyle gerçekleştirildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Durulama (Rinse)',
-    definition: 'Ana yıkama sonrasında çamaşırların üzerinde kalan deterjan, alkali ve kir kalıntılarının temiz su ile akıtılarak tekstilden uzaklaştırılması işlemi.',
-    example: 'Yıkama programının durulama (rinse) aşamasında, çamaşırların kimyasallardan tamamen arınması için makineye üç kez temiz su çekildi.',
+    definition:
+        'Ana yıkama sonrasında çamaşırların üzerinde kalan deterjan, alkali ve kir kalıntılarının temiz su ile akıtılarak tekstilden uzaklaştırılması işlemi.',
+    example:
+        'Yıkama programının durulama (rinse) aşamasında, çamaşırların kimyasallardan tamamen arınması için makineye üç kez temiz su çekildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Klorlu Ağartıcı',
-    definition: 'Sadece dayanıklı beyaz pamuklu tekstillerde kullanılan, düşük sıcaklıklarda lekeleri çıkaran ancak tekstil liflerini yıpratma payı yüksek olan klor bazlı güçlü ağartıcı kimyasal.',
-    example: 'Sararmış beyaz çarşaflardaki lekeleri ağartmak için klorlu ağartıcı kullanıldı, ancak kumaşın yıpranmaması için dozaja çok dikkat edildi.',
+    definition:
+        'Sadece dayanıklı beyaz pamuklu tekstillerde kullanılan, düşük sıcaklıklarda lekeleri çıkaran ancak tekstil liflerini yıpratma payı yüksek olan klor bazlı güçlü ağartıcı kimyasal.',
+    example:
+        'Sararmış beyaz çarşaflardaki lekeleri ağartmak için klorlu ağartıcı kullanıldı, ancak kumaşın yıpranmaması için dozaja çok dikkat edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Oksijenli Ağartıcı',
-    definition: 'Renkli çamaşırlarda da güvenle kullanılabilen, yüksek sıcaklıklarda aktifleşen ve kumaş liflerini klora göre çok daha az yıpratan oksijen bazlı ağartıcı.',
-    example: 'Renkli nevresim ve havluların renk canlılığını koruyarak lekelerden arınması için yıkamada oksijenli ağartıcı tercih edildi.',
+    definition:
+        'Renkli çamaşırlarda da güvenle kullanılabilen, yüksek sıcaklıklarda aktifleşen ve kumaş liflerini klora göre çok daha az yıpratan oksijen bazlı ağartıcı.',
+    example:
+        'Renkli nevresim ve havluların renk canlılığını koruyarak lekelerden arınması için yıkamada oksijenli ağartıcı tercih edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Alkali Yardımcı Yıkama Maddesi',
-    definition: 'Deterjanın kir çözme gücünü artırmak, suyun sertliğini kırmak ve yağ bazlı lekeleri sabunlaştırarak çözmek için kullanılan yüksek pH derecesine sahip bazik kimyasal.',
-    example: 'Masa örtülerindeki yoğun yağ ve salça lekelerini çözebilmek için yıkama suyuna alkali yardımcı yıkama maddesi ilave edildi.',
+    definition:
+        'Deterjanın kir çözme gücünü artırmak, suyun sertliğini kırmak ve yağ bazlı lekeleri sabunlaştırarak çözmek için kullanılan yüksek pH derecesine sahip bazik kimyasal.',
+    example:
+        'Masa örtülerindeki yoğun yağ ve salça lekelerini çözebilmek için yıkama suyuna alkali yardımcı yıkama maddesi ilave edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Yumuşatıcı (Softener)',
-    definition: 'Yıkamanın son durulama aşamasında çamaşırlara hoş koku vermek, statik elektriklenmeyi önlemek, dokuyu yumuşatmak ve ütülemeyi kolaylaştırmak için eklenen apre kimyasalı.',
-    example: 'Havluların kurutma sonrasında sertleşmesini önlemek ve misafirlere yumuşak sunmak amacıyla son durulamada kaliteli bir yumuşatıcı (softener) kullanıldı.',
+    definition:
+        'Yıkamanın son durulama aşamasında çamaşırlara hoş koku vermek, statik elektriklenmeyi önlemek, dokuyu yumuşatmak ve ütülemeyi kolaylaştırmak için eklenen apre kimyasalı.',
+    example:
+        'Havluların kurutma sonrasında sertleşmesini önlemek ve misafirlere yumuşak sunmak amacıyla son durulamada kaliteli bir yumuşatıcı (softener) kullanıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Leke Çözücü (Spotter)',
-    definition: 'Standart yıkama ile çıkmayan pas, mürekkep, ruj, kahve gibi inatçı lekelerin cinsine ve kumaş yapısına uygun olarak bölgesel müdahaleyle çıkarılması için kullanılan özel kimyasallar.',
-    example: 'Kuru temizleme ustası, misafirin ipek gömleğindeki tükenmez kalem mürekkebini temizlemek için özel bir leke çözücü (spotter) kullandı.',
+    definition:
+        'Standart yıkama ile çıkmayan pas, mürekkep, ruj, kahve gibi inatçı lekelerin cinsine ve kumaş yapısına uygun olarak bölgesel müdahaleyle çıkarılması için kullanılan özel kimyasallar.',
+    example:
+        'Kuru temizleme ustası, misafirin ipek gömleğindeki tükenmez kalem mürekkebini temizlemek için özel bir leke çözücü (spotter) kullandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Dozajlama Sistemi',
-    definition: 'Sanayi tipi çamaşır makinelerinde, yıkama programına ve çamaşır miktarına göre sıvı deterjan ve kimyasalları otomatik olarak makineye pompalayan bilgisayarlı sıvı aktarım sistemi.',
-    example: 'Otomatik dozajlama sistemi sayesinde, personelin manuel deterjan eklemesine gerek kalmadan her programda doğru miktarda kimyasal kullanımı garanti altına alındı.',
+    definition:
+        'Sanayi tipi çamaşır makinelerinde, yıkama programına ve çamaşır miktarına göre sıvı deterjan ve kimyasalları otomatik olarak makineye pompalayan bilgisayarlı sıvı aktarım sistemi.',
+    example:
+        'Otomatik dozajlama sistemi sayesinde, personelin manuel deterjan eklemesine gerek kalmadan her programda doğru miktarda kimyasal kullanımı garanti altına alındı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Solvent (Çözücü)',
-    definition: 'Kuru temizleme işleminde su yerine kullanılan, yağ, kir ve lekeleri kumaşı yıpratmadan, çekme yaptırmadan çözme yeteneğine sahip kimyasal sıvı.',
-    example: 'Kuru temizleme makinesinin tankındaki solvent (çözücü) seviyesi kontrol edilerek eksilen miktar tamamlandı.',
+    definition:
+        'Kuru temizleme işleminde su yerine kullanılan, yağ, kir ve lekeleri kumaşı yıpratmadan, çekme yaptırmadan çözme yeteneğine sahip kimyasal sıvı.',
+    example:
+        'Kuru temizleme makinesinin tankındaki solvent (çözücü) seviyesi kontrol edilerek eksilen miktar tamamlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Kuru Temizleme',
-    definition: 'Dokuma ve liflerin doku, biçim ve renklerini korumalarını sağlayan; içine işlemeyen yağ çözücülerle (solventlerle) su kullanılmadan yapılan profesyonel temizleme işlemi.',
-    example: 'İpek ve yünlü kıyafetlerin yıpranmasını önlemek amacıyla otelimizde kuru temizleme hizmeti tercih edilmektedir.',
+    definition:
+        'Dokuma ve liflerin doku, biçim ve renklerini korumalarını sağlayan; içine işlemeyen yağ çözücülerle (solventlerle) su kullanılmadan yapılan profesyonel temizleme işlemi.',
+    example:
+        'İpek ve yünlü kıyafetlerin yıpranmasını önlemek amacıyla otelimizde kuru temizleme hizmeti tercih edilmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kuru Temizleme İşletmesi (Bölümleri)',
-    definition: 'Temizlenecek ürünü teslim alma, kayıt ve etiketleme, leke çıkartma masaları, kuru temizleme makineleri alanı, havalandırma, ütüleme, terzihane ve ambalajlama bölümlerinden oluşan tesis.',
-    example: 'Büyük ölçekli bir kuru temizleme işletmesi (bölümleri), tekstillerin teslim alınmasından ambalajlanmasına kadar geniş bir hizmet alanına sahiptir.',
+    definition:
+        'Temizlenecek ürünü teslim alma, kayıt ve etiketleme, leke çıkartma masaları, kuru temizleme makineleri alanı, havalandırma, ütüleme, terzihane ve ambalajlama bölümlerinden oluşan tesis.',
+    example:
+        'Büyük ölçekli bir kuru temizleme işletmesi (bölümleri), tekstillerin teslim alınmasından ambalajlanmasına kadar geniş bir hizmet alanına sahiptir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kuru Temizleme Görevlisi',
-    definition: 'İşletmelerde hijyen ve sanitasyon kuralları doğrultusunda tekstilleri gruplandıran, leke çıkaran, yıkama, kurutma ve ütüleme işlemlerini fiilen uygulayan personel (Seviye 3).',
-    example: 'Deneyimli kuru temizleme görevlisi, hassas kumaştan üretilen abiyelerin temizliğini başarıyla tamamladı.',
+    definition:
+        'İşletmelerde hijyen ve sanitasyon kuralları doğrultusunda tekstilleri gruplandıran, leke çıkaran, yıkama, kurutma ve ütüleme işlemlerini fiilen uygulayan personel (Seviye 3).',
+    example:
+        'Deneyimli kuru temizleme görevlisi, hassas kumaştan üretilen abiyelerin temizliğini başarıyla tamamladı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Perkloroetilen (PERC)',
-    definition: 'Kuru temizleme sektöründe en yaygın kullanılan, renksiz, şeffaf, kloroforma benzer kokusu olan, sudan ağır (sıvı hâldeyken), buhar hâlindeyken havadan ağır organik klorlu solvent (çözücü).',
-    example: 'Perkloroetilen (PERC) solventinin havaya karışmasını önlemek amacıyla yeni nesil kapalı devre kuru temizleme makineleri kullanılmaktadır.',
+    definition:
+        'Kuru temizleme sektöründe en yaygın kullanılan, renksiz, şeffaf, kloroforma benzer kokusu olan, sudan ağır (sıvı hâldeyken), buhar hâlindeyken havadan ağır organik klorlu solvent (çözücü).',
+    example:
+        'Perkloroetilen (PERC) solventinin havaya karışmasını önlemek amacıyla yeni nesil kapalı devre kuru temizleme makineleri kullanılmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Korozif Madde',
-    definition: 'Aşındırıcı, yıpratıcı ve çürütücü etkiye sahip olan; yetersiz havalandırılmış alanlarda ciddi solunum yolu hasarlarına yol açabilen tehlikeli kimyasal maddeler.',
-    example: 'Leke çıkarmada kullanılan bazı asidik kimyasallar korozif madde sınıfında yer aldığı için maske ile kullanılmalıdır.',
+    definition:
+        'Aşındırıcı, yıpratıcı ve çürütücü etkiye sahip olan; yetersiz havalandırılmış alanlarda ciddi solunum yolu hasarlarına yol açabilen tehlikeli kimyasal maddeler.',
+    example:
+        'Leke çıkarmada kullanılan bazı asidik kimyasallar korozif madde sınıfında yer aldığı için maske ile kullanılmalıdır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kişisel Koruyucu Donanım (KKD)',
-    definition: 'İşletmede yürütülen işten kaynaklanan risklere karşı çalışanın sağlık ve güvenliğini koruyan maske, özel eldiven, gözlük, kulaklık ve bone gibi donanımlar.',
-    example: 'Solvent dolumu yapan personelin kişisel koruyucu donanım (KKD) standartlarına uygun maske ve eldiven takması zorunludur.',
+    definition:
+        'İşletmede yürütülen işten kaynaklanan risklere karşı çalışanın sağlık ve güvenliğini koruyan maske, özel eldiven, gözlük, kulaklık ve bone gibi donanımlar.',
+    example:
+        'Solvent dolumu yapan personelin kişisel koruyucu donanım (KKD) standartlarına uygun maske ve eldiven takması zorunludur.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Risk Piktogramları',
-    definition: 'Kimyasal maddelerin üzerinde yer alan, maddenin zararlarını (yanıcı, aşındırıcı, tahriş edici vb.) gösteren sağlık ve güvenlik amaçlı temel uyarı işaretleri.',
-    example: 'Kimyasal depolarındaki şişelerin üzerinde yer alan risk piktogramları, personelin acil durumlarda nasıl davranması gerektiğini gösterir.',
+    definition:
+        'Kimyasal maddelerin üzerinde yer alan, maddenin zararlarını (yanıcı, aşındırıcı, tahriş edici vb.) gösteren sağlık ve güvenlik amaçlı temel uyarı işaretleri.',
+    example:
+        'Kimyasal depolarındaki şişelerin üzerinde yer alan risk piktogramları, personelin acil durumlarda nasıl davranması gerektiğini gösterir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'D5 Sıvı Silikon Teknolojisi',
-    definition: 'Perkloroetilene alternatif olarak üretilen, doğaya kum olarak geri karışabilen, çevre ve insan sağlığına çok daha az zararı olan yeni nesil ekolojik kuru temizleme kimyasalı.',
-    example: 'Ekolojik temizlik ilkelerini benimseyen otelimiz, kuru temizleme ünitesinde D5 sıvı silikon teknolojisi kullanmaktadır.',
+    definition:
+        'Perkloroetilene alternatif olarak üretilen, doğaya kum olarak geri karışabilen, çevre ve insan sağlığına çok daha az zararı olan yeni nesil ekolojik kuru temizleme kimyasalı.',
+    example:
+        'Ekolojik temizlik ilkelerini benimseyen otelimiz, kuru temizleme ünitesinde D5 sıvı silikon teknolojisi kullanmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Leke',
-    definition: 'Tekstil yüzeyinde su bazlı içecekler, yağ, kimyasal vb. nedenlerle oluşmuş lokal kirlenmelere ve renk değişikliklerine verilen genel ad.',
-    example: 'Masa örtüsündeki vişne suyu lekesi, kumaşın yapısına uygun bir ön temizleme işlemiyle tamamen giderildi.',
+    definition:
+        'Tekstil yüzeyinde su bazlı içecekler, yağ, kimyasal vb. nedenlerle oluşmuş lokal kirlenmelere ve renk değişikliklerine verilen genel ad.',
+    example:
+        'Masa örtüsündeki vişne suyu lekesi, kumaşın yapısına uygun bir ön temizleme işlemiyle tamamen giderildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Su Bazlı Lekeler',
-    definition: 'Meyve suyu, meşrubat, çay, kahve gibi, genellikle su ile yıkama sonucunda kolayca uzaklaştırılabilen lekeler.',
-    example: 'Çay ve kahve dökülmesiyle oluşan su bazlı lekeler, çamaşırhanedeki standart yıkama programı ile kolayca çıkarıldı.',
+    definition:
+        'Meyve suyu, meşrubat, çay, kahve gibi, genellikle su ile yıkama sonucunda kolayca uzaklaştırılabilen lekeler.',
+    example:
+        'Çay ve kahve dökülmesiyle oluşan su bazlı lekeler, çamaşırhanedeki standart yıkama programı ile kolayca çıkarıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kimyasal Bazlı Lekeler',
-    definition: 'Yağ, boya, pas, oje, tükenmez kalem gibi su ile uzaklaştırılamayan, kimyasal çözücüler (solventler) kullanılarak çıkarılabilen inatçı lekeler.',
-    example: 'Gömlek yakasındaki tükenmez kalem izi gibi kimyasal bazlı lekeler, özel solventler yardımıyla leke masasında temizlendi.',
+    definition:
+        'Yağ, boya, pas, oje, tükenmez kalem gibi su ile uzaklaştırılamayan, kimyasal çözücüler (solventler) kullanılarak çıkarılabilen inatçı lekeler.',
+    example:
+        'Gömlek yakasındaki tükenmez kalem izi gibi kimyasal bazlı lekeler, özel solventler yardımıyla leke masasında temizlendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Ön Leke Çıkarma İşlemi',
-    definition: 'Kuru temizleme veya yıkama öncesinde, tekstil üzerindeki inatçı lekelerin tespit edilip, uygun leke fırçası ve kimyasalla lokal olarak temizlenmesi/yumuşatılması işlemi.',
-    example: 'Leke masasına alınan şef ceketine, yıkama öncesinde yağ izlerini yumuşatmak için ön leke çıkarma işlemi uygulandı.',
+    definition:
+        'Kuru temizleme veya yıkama öncesinde, tekstil üzerindeki inatçı lekelerin tespit edilip, uygun leke fırçası ve kimyasalla lokal olarak temizlenmesi/yumuşatılması işlemi.',
+    example:
+        'Leke masasına alınan şef ceketine, yıkama öncesinde yağ izlerini yumuşatmak için ön leke çıkarma işlemi uygulandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Maskeleme Bandı',
-    definition: 'Lekelerin temizlik esnasında rahat bulunabilmesi ve gözden kaçmaması için lekenin yanına veya üzerine yapıştırılarak işaretlenmesini sağlayan kâğıt bant.',
-    example: 'Görevli, giysiyi makineye atmadan önce tespit ettiği küçük lekelerin yanına maskeleme bandı yapıştırarak işaretledi.',
+    definition:
+        'Lekelerin temizlik esnasında rahat bulunabilmesi ve gözden kaçmaması için lekenin yanına veya üzerine yapıştırılarak işaretlenmesini sağlayan kâğıt bant.',
+    example:
+        'Görevli, giysiyi makineye atmadan önce tespit ettiği küçük lekelerin yanına maskeleme bandı yapıştırarak işaretledi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Gruplandırma',
-    definition: 'Teslim alınan kirli tekstillerin yıkama ve kuru temizleme işlemi öncesi renk, kumaş cinsi, kirlilik derecesi ve büyüklüklerine göre ayrılarak sınıflandırılması işlemi.',
-    example: 'Yünlü ve ipekli tekstillerin zarar görmemesi için yıkama öncesinde hassas bir gruplandırma işlemi yapıldı.',
+    definition:
+        'Teslim alınan kirli tekstillerin yıkama ve kuru temizleme işlemi öncesi renk, kumaş cinsi, kirlilik derecesi ve büyüklüklerine göre ayrılarak sınıflandırılması işlemi.',
+    example:
+        'Yünlü ve ipekli tekstillerin zarar görmemesi için yıkama öncesinde hassas bir gruplandırma işlemi yapıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Sabitleme Tabancası (Kılçık Tabancası)',
-    definition: 'Ürünlerin karışmaması için müşteri ve ürün bilgilerini içeren etiket numarasının, giysinin görünmeyen bir yerine özel bir ip/kılçık ile zımbalanmasını sağlayan el aleti.',
-    example: 'Kabul departmanındaki görevli, gelen takımların karışmasını önlemek için sabitleme tabancası (kılçık tabancası) kullanarak fiş numaralarını etiketledi.',
+    definition:
+        'Ürünlerin karışmaması için misafir ve ürün bilgilerini içeren etiket numarasının, giysinin görünmeyen bir yerine özel bir ip/kılçık ile zımbalanmasını sağlayan el aleti.',
+    example:
+        'Kabul departmanındaki görevli, gelen takımların karışmasını önlemek için sabitleme tabancası (kılçık tabancası) kullanarak fiş numaralarını etiketledi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Distilasyon (Damıtma) Ünitesi',
-    definition: 'Kuru temizlemede kullanılıp kirlenen kimyasalların (solventin) ısıtılarak buharlaştırıldığı, ardından yoğuşturularak arıtılıp yeniden kullanıma hazır, saf hâle getirildiği ayrıştırma sistemi.',
-    example: 'Kuru temizleme makinesindeki distilasyon (damıtma) ünitesi sayesinde kirli solvent arıtılarak tekrar kullanılabilir hale getirilir.',
+    definition:
+        'Kuru temizlemede kullanılıp kirlenen kimyasalların (solventin) ısıtılarak buharlaştırıldığı, ardından yoğuşturularak arıtılıp yeniden kullanıma hazır, saf hâle getirildiği ayrıştırma sistemi.',
+    example:
+        'Kuru temizleme makinesindeki distilasyon (damıtma) ünitesi sayesinde kirli solvent arıtılarak tekrar kullanılabilir hale getirilir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Çamur Tankı',
-    definition: 'Distilasyon işlemi sonrasında solventten ayrışan kirlerin, tortuların ve kimyasal artıkların biriktiği, makinenin en arka tarafında bulunan ve düzenli temizlenmesi gereken depo.',
-    example: 'Kuru temizleme makinesinin filtreleme performansını korumak için çamur tankı her hafta düzenli olarak boşaltılmaktadır.',
+    definition:
+        'Distilasyon işlemi sonrasında solventten ayrışan kirlerin, tortuların ve kimyasal artıkların biriktiği, makinenin en arka tarafında bulunan ve düzenli temizlenmesi gereken depo.',
+    example:
+        'Kuru temizleme makinesinin filtreleme performansını korumak için çamur tankı her hafta düzenli olarak boşaltılmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Düğme Süzgeci',
-    definition: 'Kuru temizleme işlemi sırasında kopan düğme, bozuk para veya sert cisimlerin makinenin iç aksamına zarar vermesini engellemek için bu cisimleri yakalayan filtre mekanizması.',
-    example: 'Makineden gelen tıkırtı sesi üzerine teknik servis, düğme süzgeci filtresini açarak içine kaçan metal ataşları temizledi.',
+    definition:
+        'Kuru temizleme işlemi sırasında kopan düğme, bozuk para veya sert cisimlerin makinenin iç aksamına zarar vermesini engellemek için bu cisimleri yakalayan filtre mekanizması.',
+    example:
+        'Makineden gelen tıkırtı sesi üzerine teknik servis, düğme süzgeci filtresini açarak içine kaçan metal ataşları temizledi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Tüy Torbası / Tüy Filtresi',
-    definition: 'Giysilerden kopan hav, tüy ve kumaş döküntülerinin biriktiği; temizlenmediğinde makinenin performansını düşüren ve koku üreten filtre torbası.',
-    example: 'Kurutma makinesinin hava sirkülasyonunu korumak amacıyla tüy torbası / tüy filtresi her vardiya sonunda temizlenir.',
+    definition:
+        'Giysilerden kopan hav, tüy ve kumaş döküntülerinin biriktiği; temizlenmediğinde makinenin performansını düşüren ve koku üreten filtre torbası.',
+    example:
+        'Kurutma makinesinin hava sirkülasyonunu korumak amacıyla tüy torbası / tüy filtresi her vardiya sonunda temizlenir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Su Ayırma Ünitesi',
-    definition: 'Yıkama işleminden sonra solventin içindeki suyu fiziksel olarak ayrıştıran; arıtılmış solventi makineye geri gönderirken, kirli suyu dışarı atan makine bölümü.',
-    example: 'Su ayırma ünitesi, solventin saflık derecesini koruyarak kıyafetlerde su lekesi kalmasını önler.',
+    definition:
+        'Yıkama işleminden sonra solventin içindeki suyu fiziksel olarak ayrıştıran; arıtılmış solventi makineye geri gönderirken, kirli suyu dışarı atan makine bölümü.',
+    example:
+        'Su ayırma ünitesi, solventin saflık derecesini koruyarak kıyafetlerde su lekesi kalmasını önler.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Paskala (Basınçlı) Ütü',
-    definition: 'Buharı oluşturmak ve depolamak için özel bir kazanı olan, altındaki vakum pedalı sayesinde tekstili masaya yapıştırarak kaymasını engelleyen, 4-5 kat kumaşı aynı anda ütüleyebilen endüstriyel ütü.',
-    example: 'Terzihanedeki görevli, ceket astarlarını düzeltmek için vakum özellikli paskala (basınçlı) ütü ünitesini kullandı.',
+    definition:
+        'Buharı oluşturmak ve depolamak için özel bir kazanı olan, altındaki vakum pedalı sayesinde tekstili masaya yapıştırarak kaymasını engelleyen, 4-5 kat kumaşı aynı anda ütüleyebilen endüstriyel ütü.',
+    example:
+        'Terzihanedeki görevli, ceket astarlarını düzeltmek için vakum özellikli paskala (basınçlı) ütü ünitesini kullandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Dikey Ütü',
-    definition: 'Giysileri askıdayken ütülemeye yarayan, özellikle kırışıklık gidermek veya perde gibi büyük ürünler için kullanılan portatif buharlı ütü.',
-    example: 'Kat hizmetleri personeli, odalardaki stor perdelerin kırışıklıklarını gidermek için dikey ütü kullandı.',
+    definition:
+        'Giysileri askıdayken ütülemeye yarayan, özellikle kırışıklık gidermek veya perde gibi büyük ürünler için kullanılan portatif buharlı ütü.',
+    example:
+        'Kat hizmetleri personeli, odalardaki stor perdelerin kırışıklıklarını gidermek için dikey ütü kullandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Manken Ütü',
-    definition: 'Özellikle ceket, gömlek ve kaban gibi giysilerin içine sıcak buhar üfleyerek şişiren ve formunu bozmadan ütülenmesini sağlayan insan gövdesi şeklindeki sanayi tipi ütü makinesi.',
-    example: 'Kuru temizlemeden çıkan takım elbiselerin omuz kısımları, manken ütü makinesinde formuna uygun şekilde buharlandı.',
+    definition:
+        'Özellikle ceket, gömlek ve kaban gibi giysilerin içine sıcak buhar üfleyerek şişiren ve formunu bozmadan ütülenmesini sağlayan insan gövdesi şeklindeki sanayi tipi ütü makinesi.',
+    example:
+        'Kuru temizlemeden çıkan takım elbiselerin omuz kısımları, manken ütü makinesinde formuna uygun şekilde buharlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Silindir Ütü',
-    definition: 'Otel işletmelerinde çarşaf, nevresim ve masa örtüsü gibi büyük, düz ve düzlemsel tekstil ürünlerini sıcak dönen silindirler arasından geçirerek hızla ütüleyen endüstriyel makine.',
-    example: 'Çamaşırhaneye gelen yüzlerce restoran masa örtüsü, hızlıca kurutulup silindir ütü makinesinden geçirilerek katlandı.',
+    definition:
+        'Otel işletmelerinde çarşaf, nevresim ve masa örtüsü gibi büyük, düz ve düzlemsel tekstil ürünlerini sıcak dönen silindirler arasından geçirerek hızla ütüleyen endüstriyel makine.',
+    example:
+        'Çamaşırhaneye gelen yüzlerce restoran masa örtüsü, hızlıca kurutulup silindir ütü makinesinden geçirilerek katlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Ambalajlama (Askılı Ürün Paketleme) Makinesi',
-    definition: 'Ütülenmiş ve askıya asılmış tekstil ürünlerini dış etkenlerden, tozdan ve kirlenmeden korumak amacıyla şeffaf film poşetle (sıcak kesme yöntemiyle) kaplayan makine.',
-    example: 'Kuru temizleme işlemi tamamlanan misafir kıyafetleri, ambalajlama (askılı ürün paketleme) makinesi ile poşetlenerek servise hazırlandı.',
+    definition:
+        'Ütülenmiş ve askıya asılmış tekstil ürünlerini dış etkenlerden, tozdan ve kirlenmeden korumak amacıyla şeffaf film poşetle (sıcak kesme yöntemiyle) kaplayan makine.',
+    example:
+        'Kuru temizleme işlemi tamamlanan misafir kıyafetleri, ambalajlama (askılı ürün paketleme) makinesi ile poşetlenerek servise hazırlandı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Tekstil',
-    definition: 'Bitkisel, hayvansal veya sentetik liflerin eğrilmesiyle oluşan ipliklerden veya yarı mamullerden üretilen yün, pamuk, keten, ipek vb. dokuma ürünlerinin genel adı.',
-    example: 'Otelimizde kullanılan nevresim takımları, pamuklu tekstil ürünleri arasından özenle seçilmiştir.',
+    definition:
+        'Bitkisel, hayvansal veya sentetik liflerin eğrilmesiyle oluşan ipliklerden veya yarı mamullerden üretilen yün, pamuk, keten, ipek vb. dokuma ürünlerinin genel adı.',
+    example:
+        'Otelimizde kullanılan nevresim takımları, pamuklu tekstil ürünleri arasından özenle seçilmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Lif',
-    definition: 'Tekstil endüstrisinde kullanılan, belirli uzunluk ve incelikte, bükülmeye/eğrilmeye uygun, ipliğin ve kumaşın en küçük temel yapı taşı.',
-    example: 'Doğal lif yapısına sahip olan keten kumaşlar, yaz aylarında serin tutma özelliğiyle bilinir.',
+    definition:
+        'Tekstil endüstrisinde kullanılan, belirli uzunluk ve incelikte, bükülmeye/eğrilmeye uygun, ipliğin ve kumaşın en küçük temel yapı taşı.',
+    example:
+        'Doğal lif yapısına sahip olan keten kumaşlar, yaz aylarında serin tutma özelliğiyle bilinir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Elyaf',
-    definition: 'Liflerin bir araya gelerek oluşturduğu lif demetleri; pamuk, keten veya sentetik ham maddelerin işlenmiş, dokumaya hazır hâli.',
-    example: 'Yastık dolgusu olarak kullanılan elyaf malzemesi, hijyen standartlarına uygun ve yıkanabilir yapıda seçildi.',
+    definition:
+        'Liflerin bir araya gelerek oluşturduğu lif demetleri; pamuk, keten veya sentetik ham maddelerin işlenmiş, dokumaya hazır hâli.',
+    example:
+        'Yastık dolgusu olarak kullanılan elyaf malzemesi, hijyen standartlarına uygun ve yıkanabilir yapıda seçildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Geri Dönüşüm (Recycling)',
-    definition: 'Kullanılmış tekstil ürünlerinin veya ambalajların yeniden işlenerek yeni bir ham maddeye veya ürüne dönüştürülmesi, tekrar doğaya/ekonomiye kazandırılması.',
-    example: 'Eski otel çarşafları geri dönüşüm (recycling) tesisine gönderilerek endüstriyel temizlik bezlerine dönüştürüldü.',
+    definition:
+        'Kullanılmış tekstil ürünlerinin veya ambalajların yeniden işlenerek yeni bir ham maddeye veya ürüne dönüştürülmesi, tekrar doğaya/ekonomiye kazandırılması.',
+    example:
+        'Eski otel çarşafları geri dönüşüm (recycling) tesisine gönderilerek endüstriyel temizlik bezlerine dönüştürüldü.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Bakım Etiketi',
-    definition: 'Giysinin bozulmadan uzun süre kullanılması için, uluslararası sembollerle (yıkama, kuru temizleme, ütüleme, ağartma) tekstilin nasıl temizleneceğini gösteren \'kullanma kılavuzu\' etiketi.',
-    example: 'Kuru temizleme görevlisi, kıyafete zarar vermemek için öncelikle yaka kısmındaki bakım etiketi sembollerini kontrol etti.',
+    definition:
+        'Giysinin bozulmadan uzun süre kullanılması için, uluslararası sembollerle (yıkama, kuru temizleme, ütüleme, ağartma) tekstilin nasıl temizleneceğini gösteren \'kullanma kılavuzu\' etiketi.',
+    example:
+        'Kuru temizleme görevlisi, kıyafete zarar vermemek için öncelikle yaka kısmındaki bakım etiketi sembollerini kontrol etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Çamaşır Hijyeni',
-    definition: 'Yıkanan çamaşırların sadece kir ve lekelerden değil, taşıdığı gözle görülmeyen mikroorganizmalardan (bakteri, virüs vb.) de tamamen arındırılarak steril hâle getirilmesi.',
-    example: 'Hastane çamaşırlarının yıkanmasında yüksek ısı ve dezenfektanlar kullanılarak en üst düzeyde çamaşır hijyeni sağlanmaktadır.',
+    definition:
+        'Yıkanan çamaşırların sadece kir ve lekelerden değil, taşıdığı gözle görülmeyen mikroorganizmalardan (bakteri, virüs vb.) de tamamen arındırılarak steril hâle getirilmesi.',
+    example:
+        'Hastane çamaşırlarının yıkanmasında yüksek ısı ve dezenfektanlar kullanılarak en üst düzeyde çamaşır hijyeni sağlanmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Ağartıcı (Çamaşır Suyu/Klor)',
-    definition: 'Tekstillerin üzerindeki boyar maddeleri ve inatçı kirleri kimyasal yolla çözerek rengi açan (beyazlatan) ancak yanlış kullanımda kumaşı çürütebilen güçlü yıkama kimyasalı.',
-    example: 'Ağartıcı (çamaşır suyu/klor) içeren kimyasalların renkli kumaşlarda kullanılması, giysilerde kalıcı renk kaybına neden olur.',
+    definition:
+        'Tekstillerin üzerindeki boyar maddeleri ve inatçı kirleri kimyasal yolla çözerek rengi açan (beyazlatan) ancak yanlış kullanımda kumaşı çürütebilen güçlü yıkama kimyasalı.',
+    example:
+        'Ağartıcı (çamaşır suyu/klor) içeren kimyasalların renkli kumaşlarda kullanılması, giysilerde kalıcı renk kaybına neden olur.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kolalama',
-    definition: 'Kumaşın (özellikle peçete, masa örtüsü veya gömlek yakalarının) daha dik durması, parlaması ve geç kirlenmesi için pirinç veya sentetik nişasta içeren bir sıvıyla sertleştirilmesi işlemi.',
-    example: 'Gala yemeğinde kullanılacak kumaş peçeteler, şık bir sunum katlaması yapılabilmesi için kolalama işleminden geçirildi.',
+    definition:
+        'Kumaşın (özellikle peçete, masa örtüsü veya gömlek yakalarının) daha dik durması, parlaması ve geç kirlenmesi için pirinç veya sentetik nişasta içeren bir sıvıyla sertleştirilmesi işlemi.',
+    example:
+        'Gala yemeğinde kullanılacak kumaş peçeteler, şık bir sunum katlaması yapılabilmesi için kolalama işleminden geçirildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Tur Operatörü',
-    definition: 'Ulaşım, konaklama ve rehberlik gibi hizmetleri birleştirip paket tur haline getiren ve toptan satan büyük şirket.',
-    example: 'Almanya\'nın en büyük tur operatörü, bu yıl Ege bölgesine ekstra uçak seferleri koydu.',
+    definition:
+        'Ulaşım, konaklama ve rehberlik gibi hizmetleri birleştirip paket tur haline getiren ve toptan satan büyük şirket.',
+    example:
+        'Almanya\'nın en büyük tur operatörü, bu yıl Ege bölgesine ekstra uçak seferleri koydu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'İskonto',
-    definition: 'Otel fiyatı veya ekstra harcamalar üzerinden misafire yapılan indirimdir.',
+    definition:
+        'Otel fiyatı veya ekstra harcamalar üzerinden misafire yapılan indirimdir.',
     example: '',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Ön Ödeme (Kapora / Depozito)',
-    definition: 'Hizmet veya oda satın almak için, toplam maddi bedelin önceden ödenen ve odayı kapora veren kişiye kesin olarak ayıran ön ödemedir (güvenmelik).',
-    example: 'Ahmet Bey, yaz tatili rezervasyonunun iptal olmaması için bir gecelik oda ücretini otele "kapora" olarak havale etmiştir.',
+    definition:
+        'Hizmet veya oda satın almak için, toplam maddi bedelin önceden ödenen ve odayı kapora veren kişiye kesin olarak ayıran ön ödemedir (güvenmelik).',
+    example:
+        'Ahmet Bey, yaz tatili rezervasyonunun iptal olmaması için bir gecelik oda ücretini otele "kapora" olarak havale etmiştir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Prosedür',
-    definition: 'Otel içindeki işlerin hatasız yürümesi için takip edilmesi zorunlu olan resmi işlem basamakları ve yöntemleridir.',
+    definition:
+        'Otel içindeki işlerin hatasız yürümesi için takip edilmesi zorunlu olan resmi işlem basamakları ve yöntemleridir.',
     example: '',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'KKD (Kişisel Koruyucu Donanım)',
-    definition: 'Çalışanı, yürütülen işten kaynaklanan, sağlık ve güvenliği etkileyen bir veya birden fazla riske karşı koruyan, çalışan tarafından giyilen veya takılan araçlar (Baret, gözlük, eldiven vb.).',
-    example: 'Teknik servis personeli, elektrik panolarına müdahale ederken mutlaka yalıtkan çizme ve koruyucu gözlük gibi KKD unsurlarını kullanmalıdır.',
+    definition:
+        'Çalışanı, yürütülen işten kaynaklanan, sağlık ve güvenliği etkileyen bir veya birden fazla riske karşı koruyan, çalışan tarafından giyilen veya takılan araçlar (Baret, gözlük, eldiven vb.).',
+    example:
+        'Teknik servis personeli, elektrik panolarına müdahale ederken mutlaka yalıtkan çizme ve koruyucu gözlük gibi KKD unsurlarını kullanmalıdır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Geri Dönüşüm (Recycle)',
-    definition: 'Kullanım ömrünü tamamlamış atık materyallerin fiziksel ve kimyasal işlemlerden geçirilerek yeni bir ham maddeye dönüştürülmesi.',
-    example: 'Restoran ve odalardan toplanan cam şişelerin geri dönüşüm kutularına gönderilmesi, sıfır atık projemizin ilk adımıdır.',
+    definition:
+        'Kullanım ömrünü tamamlamış atık materyallerin fiziksel ve kimyasal işlemlerden geçirilerek yeni bir ham maddeye dönüştürülmesi.',
+    example:
+        'Restoran ve odalardan toplanan cam şişelerin geri dönüşüm kutularına gönderilmesi, sıfır atık projemizin ilk adımıdır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Telif Hakkı (Copyright)',
-    definition: 'Edebiyat, sanat, müzik veya yazılım gibi özgün eser sahiplerine tanınan mali ve manevi hakların tümü.',
-    example: 'Otel lobisinde ve odalarda çalınan müzikler için telif hakkı meslek birliklerine (MÜYAP vb.) yıllık telif ödemesi yapılmaktadır.',
+    definition:
+        'Edebiyat, sanat, müzik veya yazılım gibi özgün eser sahiplerine tanınan mali ve manevi hakların tümü.',
+    example:
+        'Otel lobisinde ve odalarda çalınan müzikler için telif hakkı meslek birliklerine (MÜYAP vb.) yıllık telif ödemesi yapılmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Copyright.mp3',
   ),
   Term(
     word: 'Üstyapı',
-    definition: 'Altyapısı tamamlanmış alanlarda kurulan konaklama, yeme-içme, eğlence ve alışveriş gibi turistik tesisler.',
-    example: 'Modern bir destinasyon yaratmak için yol ve su ağlarının yanında, lüks oteller ve restoranlar gibi üstyapı yatırımlarının da kalitesi yüksek olmalıdır.',
+    definition:
+        'Altyapısı tamamlanmış alanlarda kurulan konaklama, yeme-içme, eğlence ve alışveriş gibi turistik tesisler.',
+    example:
+        'Modern bir destinasyon yaratmak için yol ve su ağlarının yanında, lüks oteller ve restoranlar gibi üstyapı yatırımlarının da kalitesi yüksek olmalıdır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'GDS (Küresel Dağıtım Sistemi)',
-    definition: 'Amadeus, Galileo, Sabre gibi havayolu şirketleri ve otellerin envanterlerini anlık olarak gösteren devasa rezervasyon sistemleri ağı.',
-    example: 'Acentemiz, dünya genelindeki binlerce otel odasını ve uçak koltuğunu anlık olarak rezerve edebilmek için Amadeus GDS sistemine bağlı çalışmaktadır.',
+    definition:
+        'Amadeus, Galileo, Sabre gibi havayolu şirketleri ve otellerin envanterlerini anlık olarak gösteren devasa rezervasyon sistemleri ağı.',
+    example:
+        'Acentemiz, dünya genelindeki binlerce otel odasını ve uçak koltuğunu anlık olarak rezerve edebilmek için Amadeus GDS sistemine bağlı çalışmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Rezervasyon',
-    definition: 'Turistlerin veya acentelerin konaklama, ulaşım veya diğer hizmetleri (restoran, tur) belirli bir tarih için önceden ayırtma ve garantileme işlemi.',
-    example: 'Yüksek sezondaki yoğunluktan etkilenmemek için, konuklarımız aylar öncesinden erken rezervasyon fırsatlarını kullanarak odalarını ayırttılar.',
+    definition:
+        'Turistlerin veya acentelerin konaklama, ulaşım veya diğer hizmetleri (restoran, tur) belirli bir tarih için önceden ayırtma ve garantileme işlemi.',
+    example:
+        'Yüksek sezondaki yoğunluktan etkilenmemek için, konuklarımız aylar öncesinden erken rezervasyon fırsatlarını kullanarak odalarını ayırttılar.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Master Folio (Ana Hesap)',
-    definition: 'Grup veya şirket konaklamalarında, grubun ortak harcamalarının (toplu yemek, toplantı salonu vb.) işlendiği genel hesap.',
-    example: 'Kongre grubunun tüm oda konaklama bedelleri acente tarafından ödeneceği için, bu harcamalar doğrudan master folio hesabına aktarıldı.',
+    definition:
+        'Grup veya şirket konaklamalarında, grubun ortak harcamalarının (toplu yemek, toplantı salonu vb.) işlendiği genel hesap.',
+    example:
+        'Kongre grubunun tüm oda konaklama bedelleri acente tarafından ödeneceği için, bu harcamalar doğrudan master folio hesabına aktarıldı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Folio.mp3',
   ),
   Term(
     word: 'Main Courante (Ön Kasa)',
-    definition: 'Ön büroda misafir hesaplarının (folyoların) tutulduğu, faturaların kesildiği, döviz bozma ve ödeme işlemlerinin yapıldığı departman.',
-    example: 'Ön büro ön kasasında (Main Courante) görevli resepsiyonist, gün boyunca yapılan oda satış faturalarını ve döviz işlemlerini sisteme kaydetti.',
+    definition:
+        'Ön büroda misafir hesaplarının (folyoların) tutulduğu, faturaların kesildiği, döviz bozma ve ödeme işlemlerinin yapıldığı departman.',
+    example:
+        'Ön büro ön kasasında (Main Courante) görevli resepsiyonist, gün boyunca yapılan oda satış faturalarını ve döviz işlemlerini sisteme kaydetti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Paid Out (Kasa Çıkışı)',
-    definition: 'Misafir adına (kurye, taksi vb.) veya otelin acil küçük ihtiyaçları için ön kasadan yapılan belgeli nakit çıkışı işlemi.',
-    example: 'Misafirimizin talebi üzerine çağrılan taksinin ücreti, misafirin hesabına yansıtılmak üzere ön kasadan paid out (kasa çıkışı) olarak ödendi.',
+    definition:
+        'Misafir adına (kurye, taksi vb.) veya otelin acil küçük ihtiyaçları için ön kasadan yapılan belgeli nakit çıkışı işlemi.',
+    example:
+        'Misafirimizin talebi üzerine çağrılan taksinin ücreti, misafirin hesabına yansıtılmak üzere ön kasadan paid out (kasa çıkışı) olarak ödendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'No-show Faturası',
-    definition: 'Garantili rezervasyon yaptırdığı hâlde otele gelmeyen misafire veya acenteye, anlaşma gereği (genellikle ilk gece konaklama bedeli) kesilen ceza faturası.',
-    example: 'Rezervasyonunu iptal etmeyen ve otele gelmeyen garantili oda için seyahat acentesine bir gecelik no-show faturası kesildi.',
+    definition:
+        'Garantili rezervasyon yaptırdığı hâlde otele gelmeyen misafire veya acenteye, anlaşma gereği (genellikle ilk gece konaklama bedeli) kesilen ceza faturası.',
+    example:
+        'Rezervasyonunu iptal etmeyen ve otele gelmeyen garantili oda için seyahat acentesine bir gecelik no-show faturası kesildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/No-Show.mp3',
   ),
   Term(
     word: 'Voucher Tahsilatı',
-    definition: 'Acente aracılığıyla gelen misafirlerin konaklama belgesi olan voucher\'ın, ön büro tarafından alınıp acenteye fatura kesilmek üzere muhasebeye (city ledger\'a) iletilmesi.',
-    example: 'Ön büro görevlisi, check-in esnasında teslim aldığı voucher belgesini tahsilat işlemleri için muhasebe servisine teslim etti.',
+    definition:
+        'Acente aracılığıyla gelen misafirlerin konaklama belgesi olan voucher\'ın, ön büro tarafından alınıp acenteye fatura kesilmek üzere muhasebeye (city ledger\'a) iletilmesi.',
+    example:
+        'Ön büro görevlisi, check-in esnasında teslim aldığı voucher belgesini tahsilat işlemleri için muhasebe servisine teslim etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Voucher.mp3',
   ),
   Term(
     word: 'POS Makinesi',
-    definition: 'Kredi kartı veya banka kartı ile ödeme alınmasını sağlayan, gün sonunda banka sistemi ile otel sisteminin mutabakatını gerçekleştiren elektronik ödeme cihazı.',
-    example: 'Konuk check-out esnasında konaklama bedelini ödemek için kredi kartını resepsiyondaki POS makinesine okuttu.',
+    definition:
+        'Kredi kartı veya banka kartı ile ödeme alınmasını sağlayan, gün sonunda banka sistemi ile otel sisteminin mutabakatını gerçekleştiren elektronik ödeme cihazı.',
+    example:
+        'Konuk check-out esnasında konaklama bedelini ödemek için kredi kartını resepsiyondaki POS makinesine okuttu.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Gider Pusulası',
-    definition: 'Vergi mükellefi olmayan (fatura düzenleyemeyen) kişilerden alınan mal veya hizmetler karşılığında otel (vergi mükellefi) tarafından düzenlenen fatura hükmündeki yasal belge.',
-    example: 'Otel bahçesindeki budama işleri için geçici olarak çalışan serbest işçiye yaptığı hizmet karşılığında muhasebe tarafından gider pusulası düzenlendi.',
+    definition:
+        'Vergi mükellefi olmayan (fatura düzenleyemeyen) kişilerden alınan mal veya hizmetler karşılığında otel (vergi mükellefi) tarafından düzenlenen fatura hükmündeki yasal belge.',
+    example:
+        'Otel bahçesindeki budama işleri için geçici olarak çalışan serbest işçiye yaptığı hizmet karşılığında muhasebe tarafından gider pusulası düzenlendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Pansiyon (Pension)',
-    definition: 'Konaklama işletmelerinin asgari özelliklerine sahip, yeme içme ihtiyacının işletme tarafından karşılandığı ya da konukların kendi yemeklerini hazırlamasına imkân veren en az 5, en fazla 25 odalı konaklama tesisleridir.',
-    example: 'Ege kıyısındaki küçük bir köyde, aile sıcaklığı sunan ve sabah kahvaltısı dahil hizmet veren şirin bir pansiyonda konakladık.',
+    definition:
+        'Konaklama işletmelerinin asgari özelliklerine sahip, yeme içme ihtiyacının işletme tarafından karşılandığı ya da konukların kendi yemeklerini hazırlamasına imkân veren en az 5, en fazla 25 odalı konaklama tesisleridir.',
+    example:
+        'Ege kıyısındaki küçük bir köyde, aile sıcaklığı sunan ve sabah kahvaltısı dahil hizmet veren şirin bir pansiyonda konakladık.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Özel Konaklama Tesisleri',
-    definition: 'Ülke turizmine katkıda bulunan, tarihi veya doğal güzelliğe sahip, kültürel miras yansıtan mimari, tefriş, yapı ve dekorasyon özelliklerine sahip konaklama işletmeleridir.',
-    example: 'Osmanlı döneminden kalma restore edilmiş tarihi konak, Kültür Bakanlığı onaylı özel konaklama tesisleri statüsünde hizmet vendirmektedir.',
+    definition:
+        'Ülke turizmine katkıda bulunan, tarihi veya doğal güzelliğe sahip, kültürel miras yansıtan mimari, tefriş, yapı ve dekorasyon özelliklerine sahip konaklama işletmeleridir.',
+    example:
+        'Osmanlı döneminden kalma restore edilmiş tarihi konak, Kültür Bakanlığı onaylı özel konaklama tesisleri statüsünde hizmet vendirmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Yüzer Tesis',
-    definition: 'Denize elverişlilik belgesine sahip, kendi motor gücüyle hareket eden veya çekilen deniz araçları üzerinde turizm amaçlı konaklama ve yeme-içme sunan işletmelerdir.',
-    example: 'Körfezde demirleyen lüks yüzer tesis, akşam yemeklerinde hem deniz yolculuğu hem de şık bir konaklama hizmeti sunmaktadır.',
+    definition:
+        'Denize elverişlilik belgesine sahip, kendi motor gücüyle hareket eden veya çekilen deniz araçları üzerinde turizm amaçlı konaklama ve yeme-içme sunan işletmelerdir.',
+    example:
+        'Körfezde demirleyen lüks yüzer tesis, akşam yemeklerinde hem deniz yolculuğu hem de şık bir konaklama hizmeti sunmaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Golf Tesisleri',
-    definition: 'Uluslararası standartlarda golf sahalarına sahip olan, bünyesinde konaklama, yeme-içme, spor ve kulüp ünitelerini barındıran tematik turizm işletmeleridir.',
-    example: 'Belek bölgesindeki lüks golf tesisleri, her yıl yüzlerce Avrupalı profesyonel golf oyuncusunu turnuvalar kapsamında ağırlamaktadır.',
+    definition:
+        'Uluslararası standartlarda golf sahalarına sahip olan, bünyesinde konaklama, yeme-içme, spor ve kulüp ünitelerini barındıran tematik turizm işletmeleridir.',
+    example:
+        'Belek bölgesindeki lüks golf tesisleri, her yıl yüzlerce Avrupalı profesyonel golf oyuncusunu turnuvalar kapsamında ağırlamaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Güvenlik (Security)',
-    definition: 'Otel binasının, çalışanların ve konukların can ve mal güvenliğini 7/24 esasına göre kamera sistemleri ve fiziki devriyelerle sağlayan departmandır.',
-    example: 'Lobide unutulan sahipsiz çanta, güvenlik (security) ekipleri tarafından kamera kayıtları (CCTV) incelenerek sahibine teslim edildi.',
+    definition:
+        'Otel binasının, çalışanların ve konukların can ve mal güvenliğini 7/24 esasına göre kamera sistemleri ve fiziki devriyelerle sağlayan departmandır.',
+    example:
+        'Lobide unutulan sahipsiz çanta, güvenlik (security) ekipleri tarafından kamera kayıtları (CCTV) incelenerek sahibine teslim edildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Satın Alma',
-    definition: 'Otel departmanlarının ihtiyaç duyduğu gıda, temizlik malzemesi, kimyasal ve demirbaş ürünlerini piyasa araştırması yaparak en uygun fiyata tedarik eden departmandır.',
-    example: 'Mutfak için alınacak tonlarca et ve sebze, satın alma departmanının onayladığı sertifikalı tedarikçilerden soğuk zincirle teslim alındı.',
+    definition:
+        'Otel departmanlarının ihtiyaç duyduğu gıda, temizlik malzemesi, kimyasal ve demirbaş ürünlerini piyasa araştırması yaparak en uygun fiyata tedarik eden departmandır.',
+    example:
+        'Mutfak için alınacak tonlarca et ve sebze, satın alma departmanının onayladığı sertifikalı tedarikçilerden soğuk zincirle teslim alındı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Oryantasyon',
-    definition: 'İşe yeni başlayan personelin otel kültürüne, çalışma arkadaşlarına, departman kurallarına ve görevine uyum sağlaması amacıyla düzenlenen işe alıştırma eğitimidir.',
-    example: 'Stajyer öğrenciler, resepsiyonda aktif göreve başlamadan önce 3 günlük yoğun bir oryantasyon eğitiminden geçirildi.',
+    definition:
+        'İşe yeni başlayan personelin otel kültürüne, çalışma arkadaşlarına, departman kurallarına ve görevine uyum sağlaması amacıyla düzenlenen işe alıştırma eğitimidir.',
+    example:
+        'Stajyer öğrenciler, resepsiyonda aktif göreve başlamadan önce 3 günlük yoğun bir oryantasyon eğitiminden geçirildi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Outsourcing',
-    definition: 'Otel işletmesinin temizlik, güvenlik, peyzaj veya çamaşırhane gibi bazı temel olmayan iş süreçlerini kendi personeli yerine uzman taşeron firmalardan satın almasıdır (Dış kaynak kullanımı).',
-    example: 'Otel yönetimi, güvenlik kadrosunu kendi bünyesinde kurmak yerine bu hizmeti outsourcing yöntemiyle profesyonel bir güvenlik firmasından almaktadır.',
+    definition:
+        'Otel işletmesinin temizlik, güvenlik, peyzaj veya çamaşırhane gibi bazı temel olmayan iş süreçlerini kendi personeli yerine uzman taşeron firmalardan satın almasıdır (Dış kaynak kullanımı).',
+    example:
+        'Otel yönetimi, güvenlik kadrosunu kendi bünyesinde kurmak yerine bu hizmeti outsourcing yöntemiyle profesyonel bir güvenlik firmasından almaktadır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
+    audioPath: 'assets/sounds/terms/Outsourcing.mp3',
   ),
   Term(
     word: 'Havaalanı Sorumlusu',
-    definition: 'Acentenin havaalanındaki bütün operasyonlarının (karşılama, yönlendirme, bagaj sorunları) başında bulunan ve operasyonlerin eksiksiz yürütülmesini sağlayan personel.',
-    example: 'Uçağı inen yabancı turist grubunun bagaj kaybı sorununu çözmek için acentemizin havaalanı sorumlusu devreye girdi.',
+    definition:
+        'Acentenin havaalanındaki bütün operasyonlarının (karşılama, yönlendirme, bagaj sorunları) başında bulunan ve operasyonlerin eksiksiz yürütülmesini sağlayan personel.',
+    example:
+        'Uçağı inen yabancı turist grubunun bagaj kaybı sorununu çözmek için acentemizin havaalanı sorumlusu devreye girdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Baggage / Luggage (Bagaj)',
-    definition: 'Yolcuların kargo bölümüne teslim ettiği (Kayıtlı bagaj) veya uçağa yanına aldığı (El / Kabin bagajı) eşyaların bütünü.',
-    example: 'Uçaktan inen misafirlerin bagajları (baggage) bantlardan alınarak sırayla transfer aracının bagaj bölmesine yüklendi.',
+    definition:
+        'Yolcuların kargo bölümüne teslim ettiği (Kayıtlı bagaj) veya uçağa yanına aldığı (El / Kabin bagajı) eşyaların bütünü.',
+    example:
+        'Uçaktan inen misafirlerin bagajları (baggage) bantlardan alınarak sırayla transfer aracının bagaj bölmesine yüklendi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Baggage Tag (Bagaj Etiketi)',
-    definition: 'Bagaj teslim aşamasında valize yapıştırılan, uçuş numarası, güzergâh ve yolcu ismini barındıran IATA standartlı barkodlu bagaj kimliği.',
-    example: 'Transferman, otobüse yüklenen valizlerin üzerindeki bagaj etiketi (baggage tag) numaralarını yolcu listesiyle eşleştirdi.',
+    definition:
+        'Bagaj teslim aşamasında valize yapıştırılan, uçuş numarası, güzergâh ve yolcu ismini barındıran IATA standartlı barkodlu bagaj kimliği.',
+    example:
+        'Transferman, otobüse yüklenen valizlerin üzerindeki bagaj etiketi (baggage tag) numaralarını yolcu listesiyle eşleştirdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Turizm',
-    definition: 'İnsanların sürekli ikamet ettikleri yer dışında, ticari bir amaç gütmeden, dinlenme, eğlenme, kültürel vb. amaçlarla yaptıkları seyahat ve konaklama faaliyetlerinin tümü.',
-    example: 'Akdeniz bölgesinde gelişen turizm, bölge ekonomisinin canlanmasına ve binlerce kişiye yeni istihdam imkanları doğmasına olanak sağlamıştır.',
+    definition:
+        'İnsanların sürekli ikamet ettikleri yer dışında, ticari bir amaç gütmeden, dinlenme, eğlenme, kültürel vb. amaçlarla yaptıkları seyahat ve konaklama faaliyetlerinin tümü.',
+    example:
+        'Akdeniz bölgesinde gelişen turizm, bölge ekonomisinin canlanmasına ve binlerce kişiye yeni istihdam imkanları doğmasına olanak sağlamıştır.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Ürünü',
-    definition: 'Turistin seyahate çıkışından dönüşüne kadar satın aldığı mal ve hizmetlerin (ulaşım, konaklama, eğlence vb.) toplamı.',
-    example: 'Kapadokya için hazırladığımız uçak bileti, mağara otel konaklaması ve balon turundan oluşan paket, çok satan bir turizm ürünü haline geldi.',
+    definition:
+        'Turistin seyahate çıkışından dönüşüne kadar satın aldığı mal ve hizmetlerin (ulaşım, konaklama, eğlence vb.) toplamı.',
+    example:
+        'Kapadokya için hazırladığımız uçak bileti, mağara otel konaklaması ve balon turundan oluşan paket, çok satan bir turizm ürünü haline geldi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'TÜROB (TUROB)',
-    definition: 'Türkiye Otelciler Birliği; konaklama sektöründeki yatırımcı ve işletmecilerin oluşturduğu sivil toplum kuruluşu.',
-    example: 'TÜROB üyesi olan otelimiz, birlik tarafından düzenlenen sektörel toplantılara katılarak konaklama pazarındaki yeni trendleri takip etmektedir.',
+    definition:
+        'Türkiye Otelciler Birliği; konaklama sektöründeki yatırımcı ve işletmecilerin oluşturduğu sivil toplum kuruluşu.',
+    example:
+        'TÜROB üyesi olan otelimiz, birlik tarafından düzenlenen sektörel toplantılara katılarak konaklama pazarındaki yeni trendleri takip etmektedir.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Kırsal Turizm Tesisleri',
-    definition: 'Dağlarda veya yaylalarda kurulan, kırsal hayatı ve tarımsal faaliyetleri deneyimleme imkanı sunan çiftlik evi, yayla evi veya dağ evi biçimindeki konaklama işletmeleridir.',
-    example: 'Şehrin gürültüsünden kaçarak Karadeniz yaylalarındaki kırsal turizm tesislerinde ahşap yayla evlerinde konakladık.',
+    definition:
+        'Dağlarda veya yaylalarda kurulan, kırsal hayatı ve tarımsal faaliyetleri deneyimleme imkanı sunan çiftlik evi, yayla evi veya dağ evi biçimindeki konaklama işletmeleridir.',
+    example:
+        'Şehrin gürültüsünden kaçarak Karadeniz yaylalarındaki kırsal turizm tesislerinde ahşap yayla evlerinde konakladık.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Kompleksleri',
-    definition: 'İşletme bünyesinde en az 500 yataklı beş yıldızlı otel veya tatil köyüne ek olarak kongre, fuar, alışveriş veya eğlence merkezi gibi dev ünitelerin bulunduğu entegre turizm alanlarıdır.',
-    example: 'Şehir dışındaki büyük turizm kompleksleri, hem bin kişilik tıp kongresine ev sahipliği yapıyor hem de konuklarını lüks villalarda ağırlıyor.',
+    definition:
+        'İşletme bünyesinde en az 500 yataklı beş yıldızlı otel veya tatil köyüne ek olarak kongre, fuar, alışveriş veya eğlence merkezi gibi dev ünitelerin bulunduğu entegre turizm alanlarıdır.',
+    example:
+        'Şehir dışındaki büyük turizm kompleksleri, hem bin kişilik tıp kongresine ev sahipliği yapıyor hem de konuklarını lüks villalarda ağırlıyor.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Rezervasyon Sorumlusu',
-    definition: 'Tura katılanların konaklama, yeme-içme ve ulaşımla ilgili tüm rezervasyonlarını yapıp, evrakları muhasebeye ve tur listelerini operasyona ileten kişi.',
-    example: 'Rezervasyon sorumlusu, VIP grubun uçak biletlerini ve otel odalarını konfirme ederek operasyon birimine aktardı.',
+    definition:
+        'Tura katılanların konaklama, yeme-içme ve ulaşımla ilgili tüm rezervasyonlarını yapıp, evrakları muhasebeye ve tur listelerini operasyona ileten kişi.',
+    example:
+        'Rezervasyon sorumlusu, VIP grubun uçak biletlerini ve otel odalarını konfirme ederek operasyon birimine aktardı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Rep (Ağırlayıcı / Otel Rehberi)',
-    definition: 'Paket turların düzenlendiği otellerde tur operatörünü temsil eden, Welcome Meeting düzenleyen ve konukların sorunlarıyla ilgilenen, genellikle turistin kendi ülkesinden olan görevli (Representative).',
-    example: 'Otelde görev yapan rep (ağırlayıcı / otel rehberi), misafirlerimize çevre turları hakkında detaylı bilgi verdi.',
+    definition:
+        'Paket turların düzenlendiği otellerde tur operatörünü temsil eden, Welcome Meeting düzenleyen ve konukların sorunlarıyla ilgilenen, genellikle turistin kendi ülkesinden olan görevli (Representative).',
+    example:
+        'Otelde görev yapan rep (ağırlayıcı / otel rehberi), misafirlerimize çevre turları hakkında detaylı bilgi verdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Oda Tahsis (Kontenjan) Sözleşmesi',
-    definition: 'Tur operatörlerinin konaklama işletmelerinden belirli bir sezon veya süre için önceden çok sayıda odayı bloke ettiği (ayırttığı) sözleşme.',
-    example: 'Acentemiz, yaz sezonu başlamadan önce Kemer\'deki beş yıldızlı otelle 50 odalık bir oda tahsis (kontenjan) sözleşmesi imzaladı.',
+    definition:
+        'Tur operatörlerinin konaklama işletmelerinden belirli bir sezon veya süre için önceden çok sayıda odayı bloke ettiği (ayırttığı) sözleşme.',
+    example:
+        'Acentemiz, yaz sezonu başlamadan önce Kemer\'deki beş yıldızlı otelle 50 odalık bir oda tahsis (kontenjan) sözleşmesi imzaladı.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
     isEnglish: false,
   ),
   Term(
     word: 'Acente Info Görevlisi (Otel Rehberi)',
-    definition: 'Otellerde yeni gelen konukları karşılayan, turları tanıtan, satış yapan, şikayetlerle ilgilenen ve konuklara ülkede kılavuzluk eden personel.',
-    example: 'Acente info görevlisi (otel rehberi), otele giriş yapan misafirlerimize lobideki taze meyve suyu ikramı eşliğinde çevre turları hakkında bilgi verdi.',
+    definition:
+        'Otellerde yeni gelen konukları karşılayan, turları tanıtan, satış yapan, şikayetlerle ilgilenen ve konuklara ülkede kılavuzluk eden personel.',
+    example:
+        'Acente info görevlisi (otel rehberi), otele giriş yapan misafirlerimize lobideki taze meyve suyu ikramı eşliğinde çevre turları hakkında bilgi verdi.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
 
   // ── SEYAHAT ACENTECİLİĞİ VE ULAŞTİRMA TERİMLERİ ──
   Term(
     word: 'VIP',
-    definition: 'Önemli devlet görevlileri, sanatçılar veya otelin sürekli gelen çok özel konukları.',
-    example: 'Bugün 302 numaralı odaya giriş yapacak VIP konuğumuz için özel ikram tepsisi hazırlandı.',
+    definition:
+        'Önemli devlet görevlileri, sanatçılar veya otelin sürekli gelen çok özel konukları.',
+    example:
+        'Bugün 302 numaralı odaya giriş yapacak VIP konuğumuz için özel ikram tepsisi hazırlandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/VIP.mp3',
   ),
   Term(
     word: 'Turndown Service',
-    definition: 'Akşam saatlerinde konuğun odasının uykuya hazır hale getirilmesi (yatağın açılması, perdelerin kapatılması) hizmeti.',
-    example: 'Kat hizmetleri personeli, VIP odalarda her akşam titizlikle turndown service uygular.',
+    definition:
+        'Akşam saatlerinde konuğun odasının uykuya hazır hale getirilmesi (yatağın açılması, perdelerin kapatılması) hizmeti.',
+    example:
+        'Kat hizmetleri personeli, VIP odalarda her akşam titizlikle turndown service uygular.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Turndown Service.mp3',
   ),
   Term(
     word: 'Clean',
-    definition: 'Odalar için temiz ve satışa hazır durumunu belirten rapor kodu.',
-    example: 'Sistemde 105 numaralı oda \'Clean\' göründüğü için yeni konuğu hemen giriş yaptırdık.',
+    definition:
+        'Odalar için temiz ve satışa hazır durumunu belirten rapor kodu.',
+    example:
+        'Sistemde 105 numaralı oda \'Clean\' göründüğü için yeni konuğu hemen giriş yaptırdık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Clean.mp3',
   ),
   Term(
     word: 'Dirty',
-    definition: 'Boşalan veya konaklanan odanın temizlenmesi gerektiğini belirten durum kodu.',
-    example: 'Öğle saatlerinde boşalan tüm odalar kat şefi tarafından sisteme \'Dirty\' olarak girildi.',
+    definition:
+        'Boşalan veya konaklanan odanın temizlenmesi gerektiğini belirten durum kodu.',
+    example:
+        'Öğle saatlerinde boşalan tüm odalar kat şefi tarafından sisteme \'Dirty\' olarak girildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Dirty.mp3',
   ),
   Term(
     word: 'Blokaj',
-    definition: 'Bir kişi ya da grup adına, oteldeki belirli bir odanın önceden tahsis edilmesi/ayrılması işlemidir.',
-    example: 'Rezervasyon görevlisi, yarın gelecek balayı çifti için en güzel deniz manzaralı 405 numaralı odaya erkenden "blokaj" yapmıştır.',
+    definition:
+        'Bir kişi ya da grup adına, oteldeki belirli bir odanın önceden tahsis edilmesi/ayrılması işlemidir.',
+    example:
+        'Rezervasyon görevlisi, yarın gelecek balayı çifti için en güzel deniz manzaralı 405 numaralı odaya erkenden "blokaj" yapmıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Bloke Etmek',
-    definition: 'Bir odayı, hesabı veya satışı geçici olarak kapatmak, dondurmak veya durdurmak.',
+    definition:
+        'Bir odayı, hesabı veya satışı geçici olarak kapatmak, dondurmak veya durdurmak.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Teyit Etmek',
-    definition: 'Bir rezervasyonun veya işlemin doğruluğunu belgelerle ortaya koymak, doğrulamak, gerçeklemek.',
+    definition:
+        'Bir rezervasyonun veya işlemin doğruluğunu belgelerle ortaya koymak, doğrulamak, gerçeklemek.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Kişisel Hijyen',
-    definition: 'Kişilerin sağlıklı olmaları ve yaşamları boyunca sağlıklı kalmaları için yaptıkları öz bakım işlemlerinin tümü.',
-    example: 'Otelimizin beş yıldızlı restoranında görev yapan servis personelinin kişisel hijyen kurallarına uyması, gıda güvenliği zincirinin ilk ve en önemli halkasıdır.',
+    definition:
+        'Kişilerin sağlıklı olmaları ve yaşamları boyunca sağlıklı kalmaları için yaptıkları öz bakım işlemlerinin tümü.',
+    example:
+        'Otelimizin beş yıldızlı restoranında görev yapan servis personelinin kişisel hijyen kurallarına uyması, gıda güvenliği zincirinin ilk ve en önemli halkasıdır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Vücut Temizliği',
-    definition: 'Beden bütünlüğü ve sağlığı için alınan önlemleri ifade eden, vücudun mikroorganizma ve kirlerden arındırılması işlemi.',
-    example: 'Kat hizmetleri çalışanlarının mesai öncesi vücut temizliği ve hijyen standartlarına dikkat etmesi, konuklarla olan doğrudan temaslarda profesyonel bir izlenim yaratır.',
+    definition:
+        'Beden bütünlüğü ve sağlığı için alınan önlemleri ifade eden, vücudun mikroorganizma ve kirlerden arındırılması işlemi.',
+    example:
+        'Kat hizmetleri çalışanlarının mesai öncesi vücut temizliği ve hijyen standartlarına dikkat etmesi, konuklarla olan doğrudan temaslarda profesyonel bir izlenim yaratır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'pH Değeri',
-    definition: 'Banyo sabunlarında cilt sağlığı için önerilen ideal asitlik/bazlık derecesi (Cilt için ideal değer: 5,5).',
-    example: 'Konuk odalarındaki banyo buklet malzemelerini seçerken, misafirlerin cilt sağlığını korumak adına nötr pH değeri 5.5 olan kaliteli sabun ve şampuanları tercih ettik.',
+    definition:
+        'Banyo sabunlarında cilt sağlığı için önerilen ideal asitlik/bazlık derecesi (Cilt için ideal değer: 5,5).',
+    example:
+        'Konuk odalarındaki banyo buklet malzemelerini seçerken, misafirlerin cilt sağlığını korumak adına nötr pH değeri 5.5 olan kaliteli sabun ve şampuanları tercih ettik.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'El Dezenfektanı',
-    definition: 'Eller yıkandıktan sonra deride kalan bakteri sayısını azaltmak veya susuz ortamlarda hijyen sağlamak amacıyla kullanılan antiseptik sıvı/jel.',
-    example: 'Resepsiyon bankosu, asansör girişleri ve restoran girişlerinde konukların kullanımı için otomatik el dezenfektanı üniteleri yerleştirildi.',
+    definition:
+        'Eller yıkandıktan sonra deride kalan bakteri sayısını azaltmak veya susuz ortamlarda hijyen sağlamak amacıyla kullanılan antiseptik sıvı/jel.',
+    example:
+        'Resepsiyon bankosu, asansör girişleri ve restoran girişlerinde konukların kullanımı için otomatik el dezenfektanı üniteleri yerleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Tırnak Bakımı',
-    definition: 'Tırnakların haftada en az bir kez kesilmesi; el tırnaklarının yarım ay, ayak tırnaklarının düz kesilmesi kuralı.',
-    example: 'Yiyecek-içecek departmanında çalışan aşçıların ve servis elemanlarının el tırnak bakımı rutinleri, hijyen denetimlerinde titizlikle kontrol edilmektedir.',
+    definition:
+        'Tırnakların haftada en az bir kez kesilmesi; el tırnaklarının yarım ay, ayak tırnaklarının düz kesilmesi kuralı.',
+    example:
+        'Yiyecek-içecek departmanında çalışan aşçıların ve servis elemanlarının el tırnak bakımı rutinleri, hijyen denetimlerinde titizlikle kontrol edilmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ağız ve Diş Bakımı',
-    definition: 'Günde en az iki kez, iki dakika boyunca doğru fırçalama tekniği ve diş ipi kullanılarak yapılan sağlık uygulaması.',
-    example: 'Konuklarla sürekli yüz yüze iletişimde olan resepsiyonistlerimizin ağız ve diş bakımı konusunda hassasiyet göstermesi, kurumsal temsil kalitesini artırır.',
+    definition:
+        'Günde en az iki kez, iki dakika boyunca doğru fırçalama tekniği ve diş ipi kullanılarak yapılan sağlık uygulaması.',
+    example:
+        'Konuklarla sürekli yüz yüze iletişimde olan resepsiyonistlerimizin ağız ve diş bakımı konusunda hassasiyet göstermesi, kurumsal temsil kalitesini artırır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Üniforma',
-    definition: 'Aynı işi yapan kişilerin giydiği, kurum kimliğini yansıtan, disiplin ve temizlik göstergesi olan bir örnek iş kıyafeti.',
-    example: 'Tüm kat hizmetleri personelinin ütülü ve temiz bir üniforma ile görev yapması, otelimizin kurumsal standartlarının ve ciddiyetinin bir göstergesidir.',
+    definition:
+        'Aynı işi yapan kişilerin giydiği, kurum kimliğini yansıtan, disiplin ve temizlik göstergesi olan bir örnek iş kıyafeti.',
+    example:
+        'Tüm kat hizmetleri personelinin ütülü ve temiz bir üniforma ile görev yapması, otelimizin kurumsal standartlarının ve ciddiyetinin bir göstergesidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Vücut Mekaniği',
-    definition: 'Çalışırken iskelet ve kas sistemini korumak için doğru duruş, oturuş ve ağırlık kaldırma tekniklerinin bütünü.',
-    example: 'Kat görevlilerine ağır çamaşır sepetlerini veya yatakları kaldırırken bellerini korumaları için vücut mekaniği eğitimi verildi.',
+    definition:
+        'Çalışırken iskelet ve kas sistemini korumak için doğru duruş, oturuş ve ağırlık kaldırma tekniklerinin bütünü.',
+    example:
+        'Kat görevlilerine ağır çamaşır sepetlerini veya yatakları kaldırırken bellerini korumaları için vücut mekaniği eğitimi verildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Hijyen',
-    definition: 'İnsan sağlığını korumak ve geliştirmek için gereken önlemleri kapsayan bilim dalı.',
-    example: 'Mutfak alanlarında hijyen koşullarının en üst düzeyde tutulması, gıda kaynaklı zehirlenme risklerini tamamen ortadan kaldırır.',
+    definition:
+        'İnsan sağlığını korumak ve geliştirmek için gereken önlemleri kapsayan bilim dalı.',
+    example:
+        'Mutfak alanlarında hijyen koşullarının en üst düzeyde tutulması, gıda kaynaklı zehirlenme risklerini tamamen ortadan kaldırır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sanitasyon',
-    definition: 'Sağlıklı koşulların oluşmasını sağlamak amacıyla zararlı mikroorganizmaları ve etmenleri ortamdan uzaklaştırma ve yok etme işlemleri.',
-    example: 'Spa ve ıslak alanların sanitasyon işlemleri, özel kimyasallar kullanılarak periyodik olarak gece vardiyasında gerçekleştirilmektedir.',
+    definition:
+        'Sağlıklı koşulların oluşmasını sağlamak amacıyla zararlı mikroorganizmaları ve etmenleri ortamdan uzaklaştırma ve yok etme işlemleri.',
+    example:
+        'Spa ve ıslak alanların sanitasyon işlemleri, özel kimyasallar kullanılarak periyodik olarak gece vardiyasında gerçekleştirilmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Gıda Güvenliği',
-    definition: 'Gıdalarda olabilecek fiziksel, kimyasal ve biyolojik her türlü zararın bertaraf edilmesi için alınan tedbirler bütünü.',
-    example: 'Tüm tedarik zincirinden tabağa kadar olan süreçte gıda güvenliği kurallarının uygulanması, otel restoranımızın prestijini korur.',
+    definition:
+        'Gıdalarda olabilecek fiziksel, kimyasal ve biyolojik her türlü zararın bertaraf edilmesi için alınan tedbirler bütünü.',
+    example:
+        'Tüm tedarik zincirinden tabağa kadar olan süreçte gıda güvenliği kurallarının uygulanması, otel restoranımızın prestijini korur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'HACCP',
-    definition: 'Tehlike Analizleri ve Kritik Kontrol Noktaları; gıda güvenliğinde potansiyel tehlikeleri belirleyici ve önleyici risk yönetim sistemi.',
-    example: 'Otel mutfağımız, gıda güvenliği standartlarını en üst düzeyde tutmak amacıyla HACCP sertifikasyon kurallarına göre düzenli olarak denetlenmektedir.',
+    definition:
+        'Tehlike Analizleri ve Kritik Kontrol Noktaları; gıda güvenliğinde potansiyel tehlikeleri belirleyici ve önleyici risk yönetim sistemi.',
+    example:
+        'Otel mutfağımız, gıda güvenliği standartlarını en üst düzeyde tutmak amacıyla HACCP sertifikasyon kurallarına göre düzenli olarak denetlenmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/HACCP.mp3',
   ),
   Term(
     word: 'ISO 22000',
-    definition: 'Gıda Güvenliği Yönetim Sistemi; gıda zincirindeki tüm süreçleri kontrol altında tutmayı amaçlayan uluslararası standart.',
-    example: 'Uluslararası tur operatörleri ile yaptığımız sözleşmelerde, otelimizin mutfağında ISO 22000 gıda güvenliği management sisteminin kurulu olması şart koşulmuştur.',
+    definition:
+        'Gıda Güvenliği Yönetim Sistemi; gıda zincirindeki tüm süreçleri kontrol altında tutmayı amaçlayan uluslararası standart.',
+    example:
+        'Uluslararası tur operatörleri ile yaptığımız sözleşmelerde, otelimizin mutfağında ISO 22000 gıda güvenliği management sisteminin kurulu olması şart koşulmuştur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/ISO 22000.mp3',
   ),
   Term(
     word: 'BRC (Gıda Güvenliği Standardı)',
-    definition: 'İngiliz Perakende Konsorsiyumu; gıda imalatında güvenlik, kalite ve operasyon kıstaslarını belirleyen uluslararası standart.',
-    example: 'Restoranımızda kullandığımız dondurulmuş gıda ürünlerinin BRC standartlarına uygun üretim yapan sertifikalı tedarikçilerden alınmasına özen gösteriyoruz.',
+    definition:
+        'İngiliz Perakende Konsorsiyumu; gıda imalatında güvenlik, kalite ve operasyon kıstaslarını belirleyen uluslararası standart.',
+    example:
+        'Restoranımızda kullandığımız dondurulmuş gıda ürünlerinin BRC standartlarına uygun üretim yapan sertifikalı tedarikçilerden alınmasına özen gösteriyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'EFSA',
-    definition: 'Avrupa Gıda Güvenliği Otoritesi; Avrupa\'da gıda güvenliği politikalarını belirleyen ve insan sağlığını koruyan kurum.',
-    example: 'Otel mutfağımızda kullanılan ithal sosların ve gıda katkı maddelerinin EFSA onaylı olmasına dikkat ediyoruz.',
+    definition:
+        'Avrupa Gıda Güvenliği Otoritesi; Avrupa\'da gıda güvenliği politikalarını belirleyen ve insan sağlığını koruyan kurum.',
+    example:
+        'Otel mutfağımızda kullanılan ithal sosların ve gıda katkı maddelerinin EFSA onaylı olmasına dikkat ediyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/EFSA.mp3',
   ),
   Term(
     word: 'Kokuşma',
-    definition: 'Proteince zengin besinlerde mikroorganizmaların proteinleri parçalayarak kükürtlü bileşikler ve kötü koku oluşturması durumu.',
-    example: 'Soğuk zinciri bozulan çiğ etlerde meydana gelen kokuşma, ürünün bozulduğunu gösterir ve mutfak şefi tarafından anında imha edilir.',
+    definition:
+        'Proteince zengin besinlerde mikroorganizmaların proteinleri parçalayarak kükürtlü bileşikler ve kötü koku oluşturması durumu.',
+    example:
+        'Soğuk zinciri bozulan çiğ etlerde meydana gelen kokuşma, ürünün bozulduğunu gösterir ve mutfak şefi tarafından anında imha edilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Çürüme',
-    definition: 'Meyve ve sebzelerde mekanik zedelenme veya mikroorganizma faaliyeti sonucu dokunun sertliğini sağlayan pektinin parçalanması.',
-    example: 'Nem oranı yüksek depoda uzun süre bekleyen domateslerde başlayan çürüme, diğer sebzelere yayılmadan önce ayıklandı.',
+    definition:
+        'Meyve ve sebzelerde mekanik zedelenme veya mikroorganizma faaliyeti sonucu dokunun sertliğini sağlayan pektinin parçalanması.',
+    example:
+        'Nem oranı yüksek depoda uzun süre bekleyen domateslerde başlayan çürüme, diğer sebzelere yayılmadan önce ayıklandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ekşime',
-    definition: 'Karbonhidrat ve proteince zengin besinlerde asit oluşumu sonucu tat ve kokunun bozulması durumu.',
-    example: 'Açık büfede oda sıcaklığında uzun süre bekleyen yoğurtlu mezelerin ekşime yapmaması için soğutmalı büfe üniteleri kullanılmaktadır.',
+    definition:
+        'Karbonhidrat ve proteince zengin besinlerde asit oluşumu sonucu tat ve kokunun bozulması durumu.',
+    example:
+        'Açık büfede oda sıcaklığında uzun süre bekleyen yoğurtlu mezelerin ekşime yapmaması için soğutmalı büfe üniteleri kullanılmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Küflenme',
-    definition: 'Uygun olmayan nem ve ısı koşullarında, havadan bulaşan mantarların gıda üzerinde üremesi.',
-    example: 'Ekmeklik unların depolandığı kilerde havalandırma yetersizliği nedeniyle oluşan nem, çuvallarda küflenmeye yol açtı.',
+    definition:
+        'Uygun olmayan nem ve ısı koşullarında, havadan bulaşan mantarların gıda üzerinde üremesi.',
+    example:
+        'Ekmeklik unların depolandığı kilerde havalandırma yetersizliği nedeniyle oluşan nem, çuvallarda küflenmeye yol açtı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Çapraz Bulaşma',
-    definition: 'Çiğ besinlerdeki bakterilerin pişmiş veya tüketime hazır besinlere çalışma yüzeyleri, eller veya ekipmanlar aracılığıyla bulaşması.',
-    example: 'Çiğ tavuk kesilen tahtada marul doğranması sonucu oluşan çapraz bulaşma, gıda zehirlenmesine yol açabileceği için mutfakta renk kodlu tahta sistemi kullanılır.',
+    definition:
+        'Çiğ besinlerdeki bakterilerin pişmiş veya tüketime hazır besinlere çalışma yüzeyleri, eller veya ekipmanlar aracılığıyla bulaşması.',
+    example:
+        'Çiğ tavuk kesilen tahtada marul doğranması sonucu oluşan çapraz bulaşma, gıda zehirlenmesine yol açabileceği için mutfakta renk kodlu tahta sistemi kullanılır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Protokol',
-    definition: 'Diplomatik ve resmî törenlerde, kamusal ve sosyal yaşamda uyulması zorunlu olan, nezaket ve saygı temelli kurallar bütünü.',
-    example: 'Uluslararası devlet zirvesine ev sahipliği yapacak otelimizin tüm ön büro ve servis kadrosuna üst düzey protokol kuralları eğitimi verildi.',
+    definition:
+        'Diplomatik ve resmî törenlerde, kamusal ve sosyal yaşamda uyulması zorunlu olan, nezaket ve saygı temelli kurallar bütünü.',
+    example:
+        'Uluslararası devlet zirvesine ev sahipliği yapacak otelimizin tüm ön büro ve servis kadrosuna üst düzey protokol kuralları eğitimi verildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Bayrak Protokolü',
-    definition: 'Türk bayrağının çekilmesi, indirilmesi ve korunması ile ilgili 2893 sayılı kanun ve tüzükte belirtilen kurallar.',
-    example: 'Otel girişindeki gönderde yer alan Türk Bayrağı\'nın yıpranmamış olmasına ve bayrak protokolü kurallarına uygun şekilde aydınlatılmasına özen gösterilir.',
+    definition:
+        'Türk bayrağının çekilmesi, indirilmesi ve korunması ile ilgili 2893 sayılı kanun ve tüzükte belirtilen kurallar.',
+    example:
+        'Otel girişindeki gönderde yer alan Türk Bayrağı\'nın yıpranmamış olmasına ve bayrak protokolü kurallarına uygun şekilde aydınlatılmasına özen gösterilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Masa Düzeni (Protokol)',
-    definition: 'Resmi yemeklerde onur konuğunun, ev sahibinin ve diğer konukların protokol sırasına göre yerleştirilmesi.',
-    example: 'Dışişleri Bakanlığı heyetinin ağırlanacağı resmi akşam yemeğinde, masa düzeni protokol kurallarına göre en ince detayına kadar kontrol edildi.',
+    definition:
+        'Resmi yemeklerde onur konuğunun, ev sahibinin ve diğer konukların protokol sırasına göre yerleştirilmesi.',
+    example:
+        'Dışişleri Bakanlığı heyetinin ağırlanacağı resmi akşam yemeğinde, masa düzeni protokol kurallarına göre en ince detayına kadar kontrol edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kahya (Butler)',
-    definition: 'Özellikle üst düzey (VIP/VVIP) konuklara özel, kişiselleştirilmiş hizmet ve oda servisi sunan özel hizmet görevlisidir.',
-    example: 'Kral dairesinde konaklayan misafirimize tatili boyunca özel bir Kahya (Butler) eşlik etti.',
+    definition:
+        'Özellikle üst düzey (VIP/VVIP) konuklara özel, kişiselleştirilmiş hizmet ve oda servisi sunan özel hizmet görevlisidir.',
+    example:
+        'Kral dairesinde konaklayan misafirimize tatili boyunca özel bir Kahya (Butler) eşlik etti.',
     category: 'Konaklama ve Misafirperverlik Hizmetleri',
   ),
   Term(
     word: 'Proaktif Olmak',
-    definition: 'Sorunlar ortaya çıkmadan önce öngörerek gerekli tedbirleri alma ve inisiyatif kullanma becerisi.',
-    example: 'Hava durumunun yağışlı olacağını öngören resepsiyonistin dışarı çıkan konuklara şemsiye sunması, proaktif olmanın mükemmel bir örneğidir.',
+    definition:
+        'Sorunlar ortaya çıkmadan önce öngörerek gerekli tedbirleri alma ve inisiyatif kullanma becerisi.',
+    example:
+        'Hava durumunun yağışlı olacağını öngören resepsiyonistin dışarı çıkan konuklara şemsiye sunması, proaktif olmanın mükemmel bir örneğidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Doorman (Kapı Görevlisi)',
-    definition: 'Tesis girişinde konukları karşılayan, araç kapısını açan, trafiği düzenleyen ve güvenliği gözlemleyen personel.',
-    example: 'Güler yüzlü doorman, otele lüks aracıyla yanaşan konukları selamlayıp valizlerin bellboy tarafından alınmasını sağladı.',
+    definition:
+        'Tesis girişinde konukları karşılayan, araç kapısını açan, trafiği düzenleyen ve güvenliği gözlemleyen personel.',
+    example:
+        'Güler yüzlü doorman, otele lüks aracıyla yanaşan konukları selamlayıp valizlerin bellboy tarafından alınmasını sağladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'CCTV',
-    definition: 'Kapalı Devre Televizyon Sistemi (Close Circuit Television); tesisin iç ve dış güvenliğini sağlamak için kurulan kamera ağı.',
-    example: 'Otel güvenlik şefi, lobi alanında kaybolan çanta olayını aydınlatmak için CCTV kayıtlarını geriye dönük olarak inceledi.',
+    definition:
+        'Kapalı Devre Televizyon Sistemi (Close Circuit Television); tesisin iç ve dış güvenliğini sağlamak için kurulan kamera ağı.',
+    example:
+        'Otel güvenlik şefi, lobi alanında kaybolan çanta olayını aydınlatmak için CCTV kayıtlarını geriye dönük olarak inceledi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/CCTV.mp3',
   ),
   Term(
     word: 'French Bed',
     definition: 'Çift kişilik tek parça büyük yatak.',
-    example: 'Oda rezervasyon detayında çift kişilik yatak talep eden misafirlerimizin odasına, standartlara uygun olarak geniş bir French bed yerleştirildi.',
+    example:
+        'Oda rezervasyon detayında çift kişilik yatak talep eden misafirlerimizin odasına, standartlara uygun olarak geniş bir French bed yerleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/French Bed.mp3',
   ),
   Term(
     word: 'Rollaway Bed',
-    definition: 'İhtiyaç hâlinde odaya eklenen tekerlekli ve katlanabilir ilave yatak.',
-    example: '3 kişilik aile grubu ek ücret ödeyerek odaya üçüncü yatak istediğinde, kat görevlisi odaya tekerlekli ve katlanabilir bir rollaway bed ekledi.',
+    definition:
+        'İhtiyaç hâlinde odaya eklenen tekerlekli ve katlanabilir ilave yatak.',
+    example:
+        '3 kişilik aile grubu ek ücret ödeyerek odaya üçüncü yatak istediğinde, kat görevlisi odaya tekerlekli ve katlanabilir bir rollaway bed ekledi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Rollaway Bed.mp3',
   ),
   Term(
     word: 'Sleep Out (S/O)',
-    definition: 'Misafirin eşyalarının odada olduğu ancak geceyi odada geçirmediği tespit edilen durum.',
-    example: 'Maid, temizlik için girdiği odadaki yatağın hiç bozulmadığını fakat eşyaların odada olduğunu görünce durumu sleep out olarak şefe rapor etti.',
+    definition:
+        'Misafirin eşyalarının odada olduğu ancak geceyi odada geçirmediği tespit edilen durum.',
+    example:
+        'Maid, temizlik için girdiği odadaki yatağın hiç bozulmadığını fakat eşyaların odada olduğunu görünce durumu sleep out olarak şefe rapor etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Sleep Out SO.mp3',
   ),
   Term(
     word: 'Luggage In (L/I)',
-    definition: 'Misafirin bagajının odaya girdiği ancak misafirin henüz odayı kullanmaya başlamadığı durum.',
-    example: 'Konuğun valizleri odaya çıkarılmış olmasına rağmen konuk henüz odayı kullanmaya başlamadığı için sistemde luggage in kodu görüntülendi.',
+    definition:
+        'Misafirin bagajının odaya girdiği ancak misafirin henüz odayı kullanmaya başlamadığı durum.',
+    example:
+        'Konuğun valizleri odaya çıkarılmış olmasına rağmen konuk henüz odayı kullanmaya başlamadığı için sistemde luggage in kodu görüntülendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Luggage In LI.mp3',
   ),
   Term(
     word: 'Make Up Room',
-    definition: 'Kapı koluna asılan veya ışıklı panoda yanan \'Odamı temizleyin\' uyarısı.',
-    example: 'Kapısına Make Up Room kartı asarak odasının temizlenmesini talep eden konuğun odası, Maid tarafından öncelikle temizlendi.',
+    definition:
+        'Kapı koluna asılan veya ışıklı panoda yanan \'Odamı temizleyin\' uyarısı.',
+    example:
+        'Kapısına Make Up Room kartı asarak odasının temizlenmesini talep eden konuğun odası, Maid tarafından öncelikle temizlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Make Up Room.mp3',
   ),
   Term(
     word: 'Buklet (Amenity)',
-    definition: 'Odada ve banyoda misafirin kullanımına sunulan şampuan, sabun, duş jeli, bone, dikiş seti gibi bedelsiz malzemeler.',
-    example: 'Misafir banyosuna şampuan, saç kremi, sabun, duş jeli ve bone gibi bedelsiz buklet malzemeleri şık bir sunumla yerleştirildi.',
+    definition:
+        'Odada ve banyoda misafirin kullanımına sunulan şampuan, sabun, duş jeli, bone, dikiş seti gibi bedelsiz malzemeler.',
+    example:
+        'Misafir banyosuna şampuan, saç kremi, sabun, duş jeli ve bone gibi bedelsiz buklet malzemeleri şık bir sunumla yerleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Mise en Place (Mizanplas)',
-    definition: 'Kat görevlisinin mesai öncesi kat arabasını eksiksiz bir şekilde hazırlaması işlemi.',
-    example: 'Sabah vardiyasına başlayan kat görevlisi, odaları temizlemeye gitmeden önce trolley üzerinde mise en place hazırlıklarını tamamladı.',
+    definition:
+        'Kat görevlisinin mesai öncesi kat arabasını eksiksiz bir şekilde hazırlaması işlemi.',
+    example:
+        'Sabah vardiyasına başlayan kat görevlisi, odaları temizlemeye gitmeden önce trolley üzerinde mise en place hazırlıklarını tamamladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Grand Master Key',
-    definition: 'Oteldeki bütün odaları, depoları ve kilitli alanları açabilen en üst düzey anahtar.',
-    example: 'Otel genelinde teknik, temizlik ve acil durumlarda tüm kilitli kapıları açabilen Grand Master Key, yalnızca nöbetçi müdürde bulunur.',
+    definition:
+        'Oteldeki bütün odaları, depoları ve kilitli alanları açabilen en üst düzey anahtar.',
+    example:
+        'Otel genelinde teknik, temizlik ve acil durumlarda tüm kilitli kapıları açabilen Grand Master Key, yalnızca nöbetçi müdürde bulunur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Grand Master Key.mp3',
   ),
   Term(
     word: 'Lost and Found (Kayıp Eşya)',
-    definition: 'Otelde unutulan eşyaların tutanakla yasal prosedüre göre kaydedilip belirli bir süre saklandığı bölüm.',
-    example: 'Misafirin check-out sonrası odada unuttuğu cep telefonu şarj aleti, Lost and Found birimine teslim edilerek tutanakla kayıt altına alındı.',
+    definition:
+        'Otelde unutulan eşyaların tutanakla yasal prosedüre göre kaydedilip belirli bir süre saklandığı bölüm.',
+    example:
+        'Misafirin check-out sonrası odada unuttuğu cep telefonu şarj aleti, Lost and Found birimine teslim edilerek tutanakla kayıt altına alındı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Tumbler (Kurutma Makinesi)',
-    definition: 'Çamaşırları dönerek ve sıcak hava sirkülasyonu kullanarak kurutan sanayi tipi cihaz.',
-    example: 'Sıkma işleminden çıkan nemli havlular, tumbler kurutma makinesine atılarak sıcak hava sirkülasyonuyla kısa sürede kurutuldu.',
+    definition:
+        'Çamaşırları dönerek ve sıcak hava sirkülasyonu kullanarak kurutan sanayi tipi cihaz.',
+    example:
+        'Sıkma işleminden çıkan nemli havlular, tumbler kurutma makinesine atılarak sıcak hava sirkülasyonuyla kısa sürede kurutuldu.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Chute (Çamaşır Şaftı)',
-    definition: 'Kirli çamaşırların üst katlardan çamaşırhaneye hızlı ve kolay bir şekilde ulaştırılması için kullanılan baca veya boru sistemi.',
-    example: 'Kat görevlisi, odalardan topladığı kirli çarşaf ve havluları katlardaki kapaktan çamaşır şaftına (chute) atarak doğrudan bodruma ulaştırdı.',
+    definition:
+        'Kirli çamaşırların üst katlardan çamaşırhaneye hızlı ve kolay bir şekilde ulaştırılması için kullanılan baca veya boru sistemi.',
+    example:
+        'Kat görevlisi, odalardan topladığı kirli çarşaf ve havluları katlardaki kapaktan çamaşır şaftına (chute) atarak doğrudan bodruma ulaştırdı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Vakum Makinesi',
-    definition: 'Halı ve sert zeminlerdeki tozu, kiri veya sıvıları vakumlayarak temizleyen sanayi tipi elektrikli süpürge.',
-    example: 'Meydancı, lobideki ve koridorlardaki kalın halıların tozunu derinlemesine temizlemek için sanayi tipi güçlü bir vakum makinesi kullandı.',
+    definition:
+        'Halı ve sert zeminlerdeki tozu, kiri veya sıvıları vakumlayarak temizleyen sanayi tipi elektrikli süpürge.',
+    example:
+        'Meydancı, lobideki ve koridorlardaki kalın halıların tozunu derinlemesine temizlemek için sanayi tipi güçlü bir vakum makinesi kullandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Cila Makinesi',
-    definition: 'Sert zeminleri dış etkenlerden korumak ve parlatmak amacıyla özel cila kimyasalı uygulamak için kullanılan cihaz.',
-    example: 'Restoran girişindeki mermer zeminlerin parlaklığını korumak amacıyla, gece vardiyasında cila makinesi ile parlatma işlemi yapıldı.',
+    definition:
+        'Sert zeminleri dış etkenlerden korumak ve parlatmak amacıyla özel cila kimyasalı uygulamak için kullanılan cihaz.',
+    example:
+        'Restoran girişindeki mermer zeminlerin parlaklığını korumak amacıyla, gece vardiyasında cila makinesi ile parlatma işlemi yapıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Mop (Paspas)',
-    definition: 'Islak veya nemli zemin temizliğinde kullanılan saplı temizlik aracı.',
-    example: 'Meydancı, asansör önünde dökülen kahve lekesini nemli bir mop (paspas) kullanarak anında temizledi ve kaygan zemin tabelası koydu.',
+    definition:
+        'Islak veya nemli zemin temizliğinde kullanılan saplı temizlik aracı.',
+    example:
+        'Meydancı, asansör önünde dökülen kahve lekesini nemli bir mop (paspas) kullanarak anında temizledi ve kaygan zemin tabelası koydu.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Güvenlik Bilgi Formları (SDS / MSDS)',
-    definition: 'Temizlik kimyasallarının güvenli kullanımı, riskleri, depolanması ve acil durum ilk yardım adımlarını içeren Malzeme Güvenlik Bilgi Formudur.',
-    example: 'Kat hizmetleri personeli yeni temizlik kimyasalını kullanmadan önce Güvenlik Bilgi Formunu (SDS) inceledi.',
+    definition:
+        'Temizlik kimyasallarının güvenli kullanımı, riskleri, depolanması ve acil durum ilk yardım adımlarını içeren Malzeme Güvenlik Bilgi Formudur.',
+    example:
+        'Kat hizmetleri personeli yeni temizlik kimyasalını kullanmadan önce Güvenlik Bilgi Formunu (SDS) inceledi.',
     category: 'Kat Hizmetleri ve Temizlik Operasyonları',
   ),
   Term(
     word: 'pH Skalası',
-    definition: 'Temizlik kimyasallarının asidik, nötr veya bazik olma durumunu 0-14 arası sayılarla gösteren ölçü birimi.',
-    example: 'Ahşap ve mermer zeminlerin zarar görmemesi için, temizlik solüsyonunun pH skalasındaki değerinin nötr (7.0 civarı) olmasına dikkat edildi.',
+    definition:
+        'Temizlik kimyasallarının asidik, nötr veya bazik olma durumunu 0-14 arası sayılarla gösteren ölçü birimi.',
+    example:
+        'Ahşap ve mermer zeminlerin zarar görmemesi için, temizlik solüsyonunun pH skalasındaki değerinin nötr (7.0 civarı) olmasına dikkat edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Pest Kontrol',
-    definition: 'Oteldeki haşere, böcek ve kemirgenlere karşı yapılan periyodik ilaçlama ve mücadele çalışması.',
-    example: 'Gıda depolarında ve misafir odalarında haşere oluşumunu engellemek amacıyla lisanslı bir firma ile aylık pest kontrol sözleşmesi yapıldı.',
+    definition:
+        'Oteldeki haşere, böcek ve kemirgenlere karşı yapılan periyodik ilaçlama ve mücadele çalışması.',
+    example:
+        'Gıda depolarında ve misafir odalarında haşere oluşumunu engellemek amacıyla lisanslı bir firma ile aylık pest kontrol sözleşmesi yapıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Çapraz Bulaşma (Cross Contamination)',
-    definition: 'Kirli bir alandaki hastalık yapıcı mikropların, kullanılan aynı temizlik bezi veya eldivenle temiz bir alana taşınması durumu.',
-    example: 'Kat görevlisi, banyo temizliğinde kullandığı bezi oda tozunu alırken kullanmayarak olası bir çapraz bulaşma riskini tamamen önledi.',
+    definition:
+        'Kirli bir alandaki hastalık yapıcı mikropların, kullanılan aynı temizlik bezi veya eldivenle temiz bir alana taşınması durumu.',
+    example:
+        'Kat görevlisi, banyo temizliğinde kullandığı bezi oda tozunu alırken kullanmayarak olası bir çapraz bulaşma riskini tamamen önledi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Renk Kodlaması',
-    definition: 'Çapraz bulaşmayı önlemek için her alanda farklı renkte temizlik bezi ve kova kullanılması.',
-    example: 'Temizlik bezlerinde renk kodlaması kuralına göre, kırmızı bezler tuvalet temizliğinde, mavi bezler ise toz alma işlemlerinde kullanılır.',
+    definition:
+        'Çapraz bulaşmayı önlemek için her alanda farklı renkte temizlik bezi ve kova kullanılması.',
+    example:
+        'Temizlik bezlerinde renk kodlaması kuralına göre, kırmızı bezler tuvalet temizliğinde, mavi bezler ise toz alma işlemlerinde kullanılır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Dezenfektan',
-    definition: 'Yüzeylerdeki hastalık yapıcı virüs, bakteri ve mikroorganizmaları öldürmek veya üremelerini durdurmak için kullanılan kimyasal madde.',
-    example: 'Konuk odalarındaki kapı kolları, telefon ahizeleri ve kumandalar gibi çok temas edilen yüzeyler dezenfektan sıkılarak sterilize edildi.',
+    definition:
+        'Yüzeylerdeki hastalık yapıcı virüs, bakteri ve mikroorganizmaları öldürmek veya üremelerini durdurmak için kullanılan kimyasal madde.',
+    example:
+        'Konuk odalarındaki kapı kolları, telefon ahizeleri ve kumandalar gibi çok temas edilen yüzeyler dezenfektan sıkılarak sterilize edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'CIP (Commercially Important Person)',
-    definition: 'Ticari açıdan önemli kişi (Büyük acente sahipleri, medya mensupları, şirket ceoları vb.).',
-    example: 'Otelimizde konaklayacak olan CIP (ticari öneme sahip) iş insanı misafirimiz için VIP ikramlar ve havaalanı transferi organize edildi.',
+    definition:
+        'Ticari açıdan önemli kişi (Büyük acente sahipleri, medya mensupları, şirket ceoları vb.).',
+    example:
+        'Otelimizde konaklayacak olan CIP (ticari öneme sahip) iş insanı misafirimiz için VIP ikramlar ve havaalanı transferi organize edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/CIP Commercially Important Person.mp3',
   ),
   Term(
     word: 'Wake-up Call (Uyandırma Servisi)',
-    definition: 'Misafirlerin resepsiyona veya santrale bıraktıkları not üzerine, sabah istenilen saatte telefonla uyandırılması hizmeti.',
-    example: 'Sabah 06:00\'da uçuşu olan misafirimizin talebi doğrultusunda, santral görevlisi tarafından wake-up call (uyandırma servisi) araması gerçekleştirildi.',
+    definition:
+        'Misafirlerin resepsiyona veya santrale bıraktıkları not üzerine, sabah istenilen saatte telefonla uyandırılması hizmeti.',
+    example:
+        'Sabah 06:00\'da uçuşu olan misafirimizin talebi doğrultusunda, santral görevlisi tarafından wake-up call (uyandırma servisi) araması gerçekleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Safe Deposit Box',
-    definition: 'Misafirlerin kıymetli eşya ve paralarını güvenle saklamaları için odalarda veya resepsiyonda bulunan güvenlik kasası.',
-    example: 'Misafirlerimize, pasaport ve değerli eşyalarını odalarında bulunan şifreli safe deposit box kasasında saklamaları tavsiye edilir.',
+    definition:
+        'Misafirlerin kıymetli eşya ve paralarını güvenle saklamaları için odalarda veya resepsiyonda bulunan güvenlik kasası.',
+    example:
+        'Misafirlerimize, pasaport ve değerli eşyalarını odalarında bulunan şifreli safe deposit box kasasında saklamaları tavsiye edilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Safe Deposit Box.mp3',
   ),
   Term(
     word: 'Forecasting',
-    definition: 'Otelin gelecekteki doluluk oranlarını, gelirlerini ve personel ihtiyacını geçmiş ve mevcut verilere dayanarak istatistiksel olarak tahmin etme işlemi.',
-    example: 'Ön büro müdürü, gelecek ayın doluluk oranlarını ve personel ihtiyaçlarını planlamak amacıyla geçmiş yıl verilerini baz alan forecasting raporu hazırladı.',
+    definition:
+        'Otelin gelecekteki doluluk oranlarını, gelirlerini ve personel ihtiyacını geçmiş ve mevcut verilere dayanarak istatistiksel olarak tahmin etme işlemi.',
+    example:
+        'Ön büro müdürü, gelecek ayın doluluk oranlarını ve personel ihtiyaçlarını planlamak amacıyla geçmiş yıl verilerini baz alan forecasting raporu hazırladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Forecasting.mp3',
   ),
   Term(
     word: 'Cut-off Date',
-    definition: 'Grup rezervasyonlarında veya acente kontenjanlarında (allotment), opsiyonlu tutulan ve satılmayan odaların otele şartsız iade edilmesi gereken son tarih.',
-    example: 'Acente, kontenjanındaki satılmayan odaları cut-off date tarihine kadar otele iade etmediği için kalan odaların ücretini ödemekle yükümlü tutuldu.',
+    definition:
+        'Grup rezervasyonlarında veya acente kontenjanlarında (allotment), opsiyonlu tutulan ve satılmayan odaların otele şartsız iade edilmesi gereken son tarih.',
+    example:
+        'Acente, kontenjanındaki satılmayan odaları cut-off date tarihine kadar otele iade etmediği için kalan odaların ücretini ödemekle yükümlü tutuldu.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Cut-off Date.mp3',
   ),
   Term(
     word: 'Kontrast Renkler',
-    definition: 'Renk çarkında birbirinin tam karşısında yer alan, birlikte kullanıldıklarında mekanda veya aranjmanda en yüksek zıtlığı ve canlılığı yaratan renkler (Örn: Sarı-Mor).',
-    example: 'Restoranın perde ve masa örtüsü seçimlerinde kontrast renkler (sarı ve mor) kullanılarak mekanda dinamik bir canlılık yaratıldı.',
+    definition:
+        'Renk çarkında birbirinin tam karşısında yer alan, birlikte kullanıldıklarında mekanda veya aranjmanda en yüksek zıtlığı ve canlılığı yaratan renkler (Örn: Sarı-Mor).',
+    example:
+        'Restoranın perde ve masa örtüsü seçimlerinde kontrast renkler (sarı ve mor) kullanılarak mekanda dinamik bir canlılık yaratıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sıcak Renkler',
-    definition: 'İnsanda enerji, canlılık ve sıcaklık hissi uyandıran renk grubu (Kırmızı, Turuncu, Sarı).',
-    example: 'Çocuk kulübü ve oyun alanlarının duvarlarında, enerji ve neşe aşılaması için kırmızı ve sarı gibi sıcak renkler tercih edildi.',
+    definition:
+        'İnsanda enerji, canlılık ve sıcaklık hissi uyandıran renk grubu (Kırmızı, Turuncu, Sarı).',
+    example:
+        'Çocuk kulübü ve oyun alanlarının duvarlarında, enerji ve neşe aşılaması için kırmızı ve sarı gibi sıcak renkler tercih edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Soğuk Renkler',
-    definition: 'Mekanlarda sakinlik, huzur ve ferahlık hissi yaratan renk grubu (Mavi, Yeşil, Mor).',
-    example: 'SPA ve masaj odalarında misafirlerin huzur bulması ve gevşemesi için mavi ve yeşil gibi soğuk renkler kullanıldı.',
+    definition:
+        'Mekanlarda sakinlik, huzur ve ferahlık hissi yaratan renk grubu (Mavi, Yeşil, Mor).',
+    example:
+        'SPA ve masaj odalarında misafirlerin huzur bulması ve gevşemesi için mavi ve yeşil gibi soğuk renkler kullanıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Polimer Cila',
-    definition: 'PVC, linolyum, epoksi gibi sentetik zeminlere paspas yardımıyla sürülen ve kuruduğunda zemini dış etkenlerden koruyan film tabakası oluşturan cila türü.',
-    example: 'Ofis ve koridor zeminlerindeki PVC kaplamaların aşınmasını önlemek amacıyla paspas yardımıyla polimer cila uygulaması yapıldı.',
+    definition:
+        'PVC, linolyum, epoksi gibi sentetik zeminlere paspas yardımıyla sürülen ve kuruduğunda zemini dış etkenlerden koruyan film tabakası oluşturan cila türü.',
+    example:
+        'Ofis ve koridor zeminlerindeki PVC kaplamaların aşınmasını önlemek amacıyla paspas yardımıyla polimer cila uygulaması yapıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sprey Cila Yöntemi',
-    definition: 'Mevcut cilalı yüzeydeki küçük çizikleri gidermek ve parlatmak için cila makinesi ve kırmızı ped eşliğinde cila solüsyonu püskürtülerek yapılan bakım işlemi.',
-    example: 'Zemindeki hafif matlıkları gidermek için cila makinesiyle sprey cila yöntemi uygulanarak lokal parlatma işlemi gerçekleştirildi.',
+    definition:
+        'Mevcut cilalı yüzeydeki küçük çizikleri gidermek ve parlatmak için cila makinesi ve kırmızı ped eşliğinde cila solüsyonu püskürtülerek yapılan bakım işlemi.',
+    example:
+        'Zemindeki hafif matlıkları gidermek için cila makinesiyle sprey cila yöntemi uygulanarak lokal parlatma işlemi gerçekleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Siyah Ped',
-    definition: 'Cila makinesinin altına takılan, zemin yıkama ve eski cila sökme işlemlerinde kullanılan en sert ve aşındırıcı temizlik pedi.',
-    example: 'Meydancı, mermer zemindeki eski cilayı ve inatçı kirleri tamamen kazımak için cila makinesinin altına siyah ped taktı.',
+    definition:
+        'Cila makinesinin altına takılan, zemin yıkama ve eski cila sökme işlemlerinde kullanılan en sert ve aşındırıcı temizlik pedi.',
+    example:
+        'Meydancı, mermer zemindeki eski cilayı ve inatçı kirleri tamamen kazımak için cila makinesinin altına siyah ped taktı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kırmızı Ped',
-    definition: 'Sprey temizlik, hafif yıkama ve parlatma işlemlerinde kullanılan orta sertlikte temizlik pedi.',
-    example: 'Zemindeki hafif çizikleri gidermek ve sprey cila yapmak amacıyla makineye orta sertlikteki kırmızı ped monte edildi.',
+    definition:
+        'Sprey temizlik, hafif yıkama ve parlatma işlemlerinde kullanılan orta sertlikte temizlik pedi.',
+    example:
+        'Zemindeki hafif çizikleri gidermek ve sprey cila yapmak amacıyla makineye orta sertlikteki kırmızı ped monte edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Beyaz Ped',
-    definition: 'Zemini parlatmak (cila son kat parlatması) için kullanılan en yumuşak, aşındırıcı özelliği olmayan ped.',
-    example: 'Cila işleminin son aşamasında, mermerin cam gibi parlamasını sağlamak amacıyla yumuşak beyaz ped kullanılarak son kat geçildi.',
+    definition:
+        'Zemini parlatmak (cila son kat parlatması) için kullanılan en yumuşak, aşındırıcı özelliği olmayan ped.',
+    example:
+        'Cila işleminin son aşamasında, mermerin cam gibi parlamasını sağlamak amacıyla yumuşak beyaz ped kullanılarak son kat geçildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Halı Şampuanlama',
-    definition: 'Halı yüzeyindeki kirlerin özel fırçalı makine ve köpüren halı şampuanı ile fırçalanarak temizlenmesi yöntemi.',
-    example: 'Otel koridorlarındaki halıların temizliği, yoğun köpük üreten halı şampuanlama makinesiyle gece vardiyasında yapıldı.',
+    definition:
+        'Halı yüzeyindeki kirlerin özel fırçalı makine ve köpüren halı şampuanı ile fırçalanarak temizlenmesi yöntemi.',
+    example:
+        'Otel koridorlarındaki halıların temizliği, yoğun köpük üreten halı şampuanlama makinesiyle gece vardiyasında yapıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ekstraksiyon (Püskürtme-Emme)',
-    definition: 'Halının derinliklerine basınçlı su ve deterjan püskürtüp, kirli suyun anında güçlü bir vakumla makineye geri çekilmesi prensibiyle çalışan derinlemesine temizlik yöntemi.',
-    example: 'Lobi koltuklarında biriken derin kirler, yüksek basınçlı su püskürtüp geri çeken ekstraksiyon makinesiyle tamamen temizlendi.',
+    definition:
+        'Halının derinliklerine basınçlı su ve deterjan püskürtüp, kirli suyun anında güçlü bir vakumla makineye geri çekilmesi prensibiyle çalışan derinlemesine temizlik yöntemi.',
+    example:
+        'Lobi koltuklarında biriken derin kirler, yüksek basınçlı su püskürtüp geri çeken ekstraksiyon makinesiyle tamamen temizlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kuru Köpük Yöntemi',
-    definition: 'Neme karşı hassas olan halılarda, makinenin ürettiği çok düşük nemli (kuru) köpüğün halıya fırçalanıp kuruduktan sonra vakumlanması işlemi.',
-    example: 'Neme hassas yün halıların zarar görmemesi ve kısa sürede kuruması için temizlikte kuru köpük yöntemi tercih edildi.',
+    definition:
+        'Neme karşı hassas olan halılarda, makinenin ürettiği çok düşük nemli (kuru) köpüğün halıya fırçalanıp kuruduktan sonra vakumlanması işlemi.',
+    example:
+        'Neme hassas yün halıların zarar görmemesi ve kısa sürede kuruması için temizlikte kuru köpük yöntemi tercih edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ayırma (Tasnif)',
-    definition: 'Çamaşırhaneye gelen kirli çamaşırların yıkanmadan önce renklerine, kumaş türlerine ve kirlilik derecelerine göre sınıflandırılması işlemi.',
-    example: 'Çamaşırhaneye gelen tonlarca kirli çarşaf, yıkanmadan önce renklerine ve kumaş türlerine göre tasnif (ayırma) işlemine tabi tutuldu.',
+    definition:
+        'Çamaşırhaneye gelen kirli çamaşırların yıkanmadan önce renklerine, kumaş türlerine ve kirlilik derecelerine göre sınıflandırılması işlemi.',
+    example:
+        'Çamaşırhaneye gelen tonlarca kirli çarşaf, yıkanmadan önce renklerine ve kumaş türlerine göre tasnif (ayırma) işlemine tabi tutuldu.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Nötralizasyon',
-    definition: 'Yıkama işleminin son aşamasında, çamaşır üzerinde kalan deterjan veya klor kalıntılarını nötralize ederek sararmayı ve cilt tahrişini önlemek için asit (ekşi) kullanılması işlemi.',
-    example: 'Çamaşırların durulama aşamasında, deterjan kalıntılarının tamamen arındırılması ve sertliğin önlenmesi için asidik nötralizasyon işlemi uygulandı.',
+    definition:
+        'Yıkama işleminin son aşamasında, çamaşır üzerinde kalan deterjan veya klor kalıntılarını nötralize ederek sararmayı ve cilt tahrişini önlemek için asit (ekşi) kullanılması işlemi.',
+    example:
+        'Çamaşırların durulama aşamasında, deterjan kalıntılarının tamamen arındırılması ve sertliğin önlenmesi için asidik nötralizasyon işlemi uygulandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sayım',
-    definition: 'Belirli periyotlarla (aylık, yıllık) depolardaki ve kullanım alanlarındaki fiziksel malzemenin tek tek sayılarak bilgisayar kayıtlarıyla karşılaştırılması işlemi.',
-    example: 'Her ayın son gününde çamaşırhanedeki ve katlardaki tekstil malzemelerinin fiziki sayımı yapılarak sistem kayıtlarıyla karşılaştırılır.',
+    definition:
+        'Belirli periyotlarla (aylık, yıllık) depolardaki ve kullanım alanlarındaki fiziksel malzemenin tek tek sayılarak bilgisayar kayıtlarıyla karşılaştırılması işlemi.',
+    example:
+        'Her ayın son gününde çamaşırhanedeki ve katlardaki tekstil malzemelerinin fiziki sayımı yapılarak sistem kayıtlarıyla karşılaştırılır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Amortisman (Yıpranma Payı)',
-    definition: 'Makine, yatak, mobilya gibi demirbaşların zaman içinde kullanımdan kaynaklı değer kaybetmesi ve bu kaybın yıllara bölünerek maliyete yansıtılması.',
-    example: 'Otel çamaşırhanesindeki sanayi tipi kurutma makinelerinin 10 yıllık amortisman (yıpranma) payı bütçe raporlarında gider olarak gösterildi.',
+    definition:
+        'Makine, yatak, mobilya gibi demirbaşların zaman içinde kullanımdan kaynaklı değer kaybetmesi ve bu kaybın yıllara bölünerek maliyete yansıtılması.',
+    example:
+        'Otel çamaşırhanesindeki sanayi tipi kurutma makinelerinin 10 yıllık amortisman (yıpranma) payı bütçe raporlarında gider olarak gösterildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Fire (Zayiat)',
-    definition: 'Yırtılma, kalıcı lekelenme, kırılma veya çalınma gibi sebeplerle kullanılamaz duruma gelip envanterden (stoktan) düşülen malzeme miktarı.',
-    example: 'Yıkama esnasında yırtılan veya lekesi çıkmayan 15 adet el havlusu, fire (zayiat) olarak ayrılıp envanter kayıtlarından düşüldü.',
+    definition:
+        'Yırtılma, kalıcı lekelenme, kırılma veya çalınma gibi sebeplerle kullanılamaz duruma gelip envanterden (stoktan) düşülen malzeme miktarı.',
+    example:
+        'Yıkama esnasında yırtılan veya lekesi çıkmayan 15 adet el havlusu, fire (zayiat) olarak ayrılıp envanter kayıtlarından düşüldü.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Birim Maliyet',
-    definition: 'Bir ürünün veya sunulan bir hizmetin (örneğin bir odanın temizlenmesinin) işletmeye mal olduğu tekil harcama tutarı.',
-    example: 'Kat hizmetleri müdürü, deterjan ve su giderlerini analiz ederek bir odanın temizlenmesinin birim maliyetini 45 TL olarak hesapladı.',
+    definition:
+        'Bir ürünün veya sunulan bir hizmetin (örneğin bir odanın temizlenmesinin) işletmeye mal olduğu tekil harcama tutarı.',
+    example:
+        'Kat hizmetleri müdürü, deterjan ve su giderlerini analiz ederek bir odanın temizlenmesinin birim maliyetini 45 TL olarak hesapladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Gri Su',
-    definition: 'Tuvalet (kara su) haricinde duş, lavabo ve küvetlerden gelen, arıtılarak bahçe sulamasında veya rezervuarlarda tekrar kullanılabilen az kirli evsel atık su.',
-    example: 'Lavabo ve duşlardan toplanan gri su, arıtma ünitesinden geçirilerek otel bahçesinin peyzaj sulamasında tekrar kullanıldı.',
+    definition:
+        'Tuvalet (kara su) haricinde duş, lavabo ve küvetlerden gelen, arıtılarak bahçe sulamasında veya rezervuarlarda tekrar kullanılabilen az kirli evsel atık su.',
+    example:
+        'Lavabo ve duşlardan toplanan gri su, arıtma ünitesinden geçirilerek otel bahçesinin peyzaj sulamasında tekrar kullanıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Polis Defteri / KBS (Kimlik Bildirim Sistemi)',
-    definition: 'Otelde konaklayan tüm misafirlerin kimlik bilgilerinin yasal zorunluluk gereği anlık olarak Emniyet Genel Müdürlüğü veri tabanına iletildiği yasal kayıt ve bildirim sistemi.',
-    example: 'Resepsiyonist, otele yeni giriş yapan konukların pasaport ve kimlik detaylarını yasal süre sınırı içinde KBS (Kimlik Bildirim Sistemi) portalına kaydetti.',
+    definition:
+        'Otelde konaklayan tüm misafirlerin kimlik bilgilerinin yasal zorunluluk gereği anlık olarak Emniyet Genel Müdürlüğü veri tabanına iletildiği yasal kayıt ve bildirim sistemi.',
+    example:
+        'Resepsiyonist, otele yeni giriş yapan konukların pasaport ve kimlik detaylarını yasal süre sınırı içinde KBS (Kimlik Bildirim Sistemi) portalına kaydetti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Şikayet ve Memnuniyet Defteri',
-    definition: 'Misafirlerin işletme hakkındaki olumlu veya olumsuz görüşlerini, şikayetlerini ve önerilerini el yazısıyla yazdıkları noter tasdikli yasal defter.',
-    example: 'Restorandaki hizmetten memnun kalmayan konuk, şikayet ve memnuniyet defterini talep ederek yaşadığı aksaklığı resmi olarak yazılı hale getirdi.',
+    definition:
+        'Misafirlerin işletme hakkındaki olumlu veya olumsuz görüşlerini, şikayetlerini ve önerilerini el yazısıyla yazdıkları noter tasdikli yasal defter.',
+    example:
+        'Restorandaki hizmetten memnun kalmayan konuk, şikayet ve memnuniyet defterini talep ederek yaşadığı aksaklığı resmi olarak yazılı hale getirdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Tüy Toplayıcı',
-    definition: 'Giysi, halı, koltuk ve döşemelerdeki kıl, tüy ve topaklaşmayı toplamaya yarayan, rulo, tarak ya da makine şeklindeki temizlik aleti.',
-    example: 'Ütüleme işlemi biten siyah ceketlerin üzerindeki hav kalıntıları, yapışkanlı tüy toplayıcı rulo ile temizlendi.',
+    definition:
+        'Giysi, halı, koltuk ve döşemelerdeki kıl, tüy ve topaklaşmayı toplamaya yarayan, rulo, tarak ya da makine şeklindeki temizlik aleti.',
+    example:
+        'Ütüleme işlemi biten siyah ceketlerin üzerindeki hav kalıntıları, yapışkanlı tüy toplayıcı rulo ile temizlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Seyahat Acentesi',
-    definition: 'Tur operatörlerinin hazırladığı paket turları veya otel odalarını tüketiciye perakende olarak satan aracı işletme.',
-    example: 'Misafirimiz yaz tatili rezervasyonunu mahallemizdeki yerel seyahat acentesinden yaptırdı.',
+    definition:
+        'Tur operatörlerinin hazırladığı paket turları veya otel odalarını tüketiciye perakende olarak satan aracı işletme.',
+    example:
+        'Misafirimiz yaz tatili rezervasyonunu mahallemizdeki yerel seyahat acentesinden yaptırdı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Transfer',
-    definition: 'Konukların havalimanı, otel veya otogar arasında araçlarla taşınması operasyonu.',
-    example: 'Gelen yolcuların havalimanından otele transfer işlemleri lüks minibüslerle sorunsuz gerçekleştirildi.',
+    definition:
+        'Konukların havalimanı, otel veya otogar arasında araçlarla taşınması operasyonu.',
+    example:
+        'Gelen yolcuların havalimanından otele transfer işlemleri lüks minibüslerle sorunsuz gerçekleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Transfer Report.mp3',
   ),
   Term(
     word: 'Info Tour',
-    definition: 'Seyahat acenteleri ve rehberlerin, bölgeyi ve otelleri tanımaları için düzenlenen ücretsiz tanıtım gezisi.',
-    example: 'Yeni açılan otelimiz, sezon başında acente yetkililerine yönelik şık bir info tour düzenledi.',
+    definition:
+        'Seyahat acentesi temsilcilerine ve sektörel yetkililere bölgeyi ve tesisleri tanıtmak amacıyla düzenlenen tanıma ve bilgilendirme gezisidir.',
+    example:
+        'Bölgede yeni açılan otelleri tanıtmak amacıyla acente yetkililerine yönelik 3 günlük kapsayıcı bir info turu düzenlenmiştir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Info Tour.mp3',
   ),
   Term(
     word: 'City Ledger',
-    definition: 'Otelde konaklayan acente gruplarının veya şirket misafirlerinin, otelden ayrıldıktan sonra kurumları tarafından ödenecek olan kredili hesap bakiyeleridir.',
-    example: 'X Acentesi ile gelen turist grubunun 50.000 TL\'lik konaklama faturası, nakit alınmayıp acentenin kredili hesabına (city ledger) aktarılmıştır.',
+    definition:
+        'Otelde konaklayan acente gruplarının veya şirket misafirlerinin, otelden ayrıldıktan sonra kurumları tarafından ödenecek olan kredili hesap bakiyeleridir.',
+    example:
+        'X Acentesi ile gelen turist grubunun 50.000 TL\'lik konaklama faturası, nakit alınmayıp acentenin kredili hesabına (city ledger) aktarılmıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/City Ledger.mp3',
   ),
   Term(
     word: 'Depozito',
-    definition: 'Misafirin otelde kalacağı süre boyunca odaya veya otele verebileceği olası zararlara karşı alınan güvence akçesidir.',
+    definition:
+        'Misafirin otelde kalacağı süre boyunca odaya veya otele verebileceği olası zararlara karşı alınan güvence akçesidir.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Konsültasyon',
-    definition: 'Otelcilikte, karmaşık bir sorunu veya durumu çözmek için birden fazla uzmanın bir araya gelerek görüş alışverişinde bulunmasıdır.',
+    definition:
+        'Otelcilikte, karmaşık bir sorunu veya durumu çözmek için birden fazla uzmanın bir araya gelerek görüş alışverişinde bulunmasıdır.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Literatür',
-    definition: 'Turizm ve otelcilik alanında yayınlanmış olan tüm ulusal ve uluslararası kaynaklar, akademik kitaplar ve belgeler bütünüdür.',
+    definition:
+        'Turizm ve otelcilik alanında yayınlanmış olan tüm ulusal ve uluslararası kaynaklar, akademik kitaplar ve belgeler bütünüdür.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Manuel',
-    definition: 'Bilgisayar sistemi kullanmadan, tamamen elle ve eski usul çizelgelerle işletilen yöntem.',
+    definition:
+        'Bilgisayar sistemi kullanmadan, tamamen elle ve eski usul çizelgelerle işletilen yöntem.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Rumuz',
-    definition: 'Otomasyon programlarında veya formlarda personelin ya da departmanların kullandığı kısa simge, kod veya takma ad.',
+    definition:
+        'Otomasyon programlarında veya formlarda personelin ya da departmanların kullandığı kısa simge, kod veya takma ad.',
     example: '',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Etik',
-    definition: 'İnsanların ahlaki davranışlarını, neyin doğru neyin yanlış olduğunu inceleyen felsefe dalı; meslek ahlakı.',
-    example: 'Konukların kişisel verilerinin korunması ve gizliliği, otelimizin mesleki etik kurallarının en önemli yapı taşını oluşturur.',
+    definition:
+        'İnsanların ahlaki davranışlarını, neyin doğru neyin yanlış olduğunu inceleyen felsefe dalı; meslek ahlakı.',
+    example:
+        'Konukların kişisel verilerinin korunması ve gizliliği, otelimizin mesleki etik kurallarının en önemli yapı taşını oluşturur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Pabucu Dama Atılmak',
-    definition: 'Ahilikte, hatalı veya hileli mal üreten esnafın meslekten men edilerek dükkanının kapatılması uygulaması (Deyim).',
-    example: 'Kalitesiz malzeme kullanarak misafir memnuniyetini hiçe sayan tedarikçinin otelle olan sözleşmesi iptal edilince, sektörde adeta pabucu dama atıldı.',
-    category: 'Seyahat Acenteciliği ve Ulaştırma',
-    isEnglish: false,
-  ),
-  Term(
-    word: 'Fütüvvet',
-    definition: 'Ahiliğin temelini oluşturan; cömertlik, fedakarlık ve yiğitlik gibi ahlaki prensipleri içeren felsefe.',
-    example: 'Otel personelimizin misafirlere karşı sergilediği cömertlik ve içten misafirperverlik, özünde fütüvvet felsefesinin günümüzdeki yansımasıdır.',
+    definition:
+        'Ahilikte, hatalı veya hileli mal üreten esnafın meslekten men edilerek dükkanının kapatılması uygulaması (Deyim).',
+    example:
+        'Kalitesiz malzeme kullanarak misafir memnuniyetini hiçe sayan tedarikçinin otelle olan sözleşmesi iptal edilince, sektörde adeta pabucu dama atıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Usta',
-    definition: 'Bir mesleğin tüm inceliklerini öğrenmiş, bağımsız iş yapabilen ve çırak/kalfa yetiştiren yetkin kişi.',
-    example: 'Mutfak şefimiz, hazırladığı özgün reçeteler ve genç aşçılara verdiği eğitimlerle otel mutfağının baş ustası olarak kabul edilir.',
+    definition:
+        'Bir mesleğin tüm inceliklerini öğrenmiş, bağımsız iş yapabilen ve çırak/kalfa yetiştiren yetkin kişi.',
+    example:
+        'Mutfak şefimiz, hazırladığı özgün reçeteler ve genç aşçılara verdiği eğitimlerle otel mutfağının baş ustası olarak kabul edilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath:
+        'assets/sounds/terms/Global Sustainable Tourism Council GSTC.mp3',
   ),
   Term(
     word: 'Kalfa',
-    definition: 'Çırak ve kalfalık eğitimlerini tamamlayarak ustalık yolunda ilerleyen yetkin personeldir.',
-    example: 'Ön bürodaki genç kalfa, check-in işlemlerini tek başına başarıyla yürüterek resepsiyonist olma yolunda büyük ilerleme kaydetti.',
+    definition:
+        'Çırak ve kalfalık eğitimlerini tamamlayarak ustalık yolunda ilerleyen yetkin personeldir.',
+    example:
+        'Ön bürodaki genç kalfa, check-in işlemlerini tek başına başarıyla yürüterek resepsiyonist olma yolunda büyük ilerleme kaydetti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Çırak',
-    definition: 'Bir mesleği öğrenmek üzere ustanın yanında eğitime yeni başlamış kişi.',
-    example: 'Turizm lisesi stajyeri, servis departmanında işe çırak olarak başladı ve tepsi taşıma tekniklerini öğrenmeye çalışıyor.',
-    category: 'Seyahat Acenteciliği ve Ulaştırma',
-    isEnglish: false,
-  ),
-  Term(
-    word: 'Şed Kuşanma',
-    definition: 'Çıraklıktan kalfalığa veya kalfalıktan ustalığa geçişte düzenlenen ahlaki ve mesleki tören.',
-    example: 'Yıl sonu gala gecesinde, başarı gösterip departman sorumluluğuna yükselen otel çalışanlarımız için modern bir şed kuşanma töreni düzenledik.',
+    definition:
+        'Bir mesleği öğrenmek üzere ustanın yanında eğitime yeni başlamış kişi.',
+    example:
+        'Turizm lisesi stajyeri, servis departmanında işe çırak olarak başladı ve tepsi taşıma tekniklerini öğrenmeye çalışıyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İSG (İş Sağlığı ve Güvenliği)',
-    definition: 'İş yerinde çalışanların sağlığını ve güvenliğini korumak, kazaları ve hastalıkları önlemek için yapılan sistematik çalışmalar.',
-    example: 'Kat hizmetleri departmanında çalışanların kimyasal deterjanlardan etkilenmesini önlemek amacıyla İSG kurallarına uygun maske ve eldiven dağıtıldı.',
+    definition:
+        'İş yerinde çalışanların sağlığını ve güvenliğini korumak, kazaları ve hastalıkları önlemek için yapılan sistematik çalışmalar.',
+    example:
+        'Kat hizmetleri departmanında çalışanların kimyasal deterjanlardan etkilenmesini önlemek amacıyla İSG kurallarına uygun maske ve eldiven dağıtıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İş Kazası',
-    definition: 'İş yerinde veya işin yürütümü sırasında meydana gelen, çalışanı bedenen veya ruhen zarara uğratan beklenmedik olay.',
-    example: 'Çamaşırhanedeki ıslak zeminde kayarak düşen personelin yaşadığı durum, resmi olarak iş kazası raporuyla kayıt altına alındı.',
+    definition:
+        'İş yerinde veya işin yürütümü sırasında meydana gelen, çalışanı bedenen veya ruhen zarara uğratan beklenmedik olay.',
+    example:
+        'Çamaşırhanedeki ıslak zeminde kayarak düşen personelin yaşadığı durum, resmi olarak iş kazası raporuyla kayıt altına alındı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Meslek Hastalığı',
-    definition: 'Çalışanın yürüttüğü işin niteliğine veya çalışma ortamının koşullarına bağlı olarak tekrarlanan sebeplerle ortaya çıkan hastalık.',
-    example: 'Sürekli olarak ağır bavulları taşıyan bellboylarda yıllar içinde oluşan bel fıtığı rahatsızlığı, tipik bir meslek hastalığı örneğidir.',
+    definition:
+        'Çalışanın yürüttüğü işin niteliğine veya çalışma ortamının koşullarına bağlı olarak tekrarlanan sebeplerle ortaya çıkan hastalık.',
+    example:
+        'Sürekli olarak ağır bavulları taşıyan bellboylarda yıllar içinde oluşan bel fıtığı rahatsızlığı, tipik bir meslek hastalığı örneğidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Risk',
-    definition: 'Tehlikeden kaynaklanacak kayıp, yaralanma ya da başka zararlı sonuç meydana gelme ihtimali.',
-    example: 'Otel mutfağındaki bıçakların düzensiz saklanması, aşçıların yaralanması riskini ciddi ölçüde artırmaktadır.',
+    definition:
+        'Tehlikeden kaynaklanacak kayıp, yaralanma ya da başka zararlı sonuç meydana gelme ihtimali.',
+    example:
+        'Otel mutfağındaki bıçakların düzensiz saklanması, aşçıların yaralanması riskini ciddi ölçüde artırmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Tehlike',
-    definition: 'İş yerinde var olan ya da dışarıdan gelebilecek, çalışana veya iş yerine zarar verme potansiyeli olan durum.',
-    example: 'Restoran zeminindeki kırık ve kaygan seramikler, hem konuklar hem de servis personeli için büyük bir tehlike oluşturur.',
+    definition:
+        'İş yerinde var olan ya da dışarıdan gelebilecek, çalışana veya iş yerine zarar verme potansiyeli olan durum.',
+    example:
+        'Restoran zeminindeki kırık ve kaygan seramikler, hem konuklar hem de servis personeli için büyük bir tehlike oluşturur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ramak Kala Olay',
-    definition: 'İş yerinde meydana gelen; çalışana, ekipmana veya iş yerine zarar verme potansiyeli olduğu halde zarara uğratmayan olay (Kıl payı atlatılan olay).',
-    example: 'Temizlik sırasında merdivenin kayması sonucu düşmekten son anda kurtulan kat görevlisinin bu durumu, ramak kala olay olarak İSG birimine bildirildi.',
+    definition:
+        'İş yerinde meydana gelen; çalışana, ekipmana veya iş yerine zarar verme potansiyeli olduğu halde zarara uğratmayan olay (Kıl payı atlatılan olay).',
+    example:
+        'Temizlik sırasında merdivenin kayması sonucu düşmekten son anda kurtulan kat görevlisinin bu durumu, ramak kala olay olarak İSG birimine bildirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ergonomi',
-    definition: 'Çalışma ortamının, araç-gereçlerin ve işin, insanın fiziksel ve psikolojik özelliklerine uygun olarak tasarlanması bilimi.',
-    example: 'Resepsiyondaki bilgisayarların ve sandalyelerin ergonomi kurallarına göre seçilmesi, 8 saatlik vardiyada çalışan personelin yorulmasını engeller.',
+    definition:
+        'Çalışma ortamının, araç-gereçlerin ve işin, insanın fiziksel ve psikolojik özelliklerine uygun olarak tasarlanması bilimi.',
+    example:
+        'Resepsiyondaki bilgisayarların ve sandalyelerin ergonomi kurallarına göre seçilmesi, 8 saatlik vardiyada çalışan personelin yorulmasını engeller.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'OSGB (Ortak Sağlık ve Güvenlik Birimi)',
-    definition: 'İş yerlerine iş sağlığı ve güvenliği hizmetlerini sunmak üzere kurulan, yetkilendirilmiş kuruluş.',
-    example: 'Otel yönetimi, yasal zorunlulukları yerine getirmek ve çalışanlara iş güvenliği eğitimi aldırmak için yetkili bir OSGB ile sözleşme imzaladı.',
+    definition:
+        'İş yerlerine iş sağlığı ve güvenliği hizmetlerini sunmak üzere kurulan, yetkilendirilmiş kuruluş.',
+    example:
+        'Otel yönetimi, yasal zorunlulukları yerine getirmek ve çalışanlara iş güvenliği eğitimi aldırmak için yetkili bir OSGB ile sözleşme imzaladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Endüstri 1.0',
-    definition: 'Su ve buhar gücünün kullanılarak mekanik üretim tesislerinin kurulduğu Birinci Sanayi Devrimi (18. yy sonu).',
-    example: 'Endüstri 1.0 ile başlayan buharlı makineler dönemi, seyahat sektöründe demiryolu ağlarının gelişmesine ve kitle turizminin ilk tohumlarının atılmasına yol açtı.',
+    definition:
+        'Su ve buhar gücünün kullanılarak mekanik üretim tesislerinin kurulduğu Birinci Sanayi Devrimi (18. yy sonu).',
+    example:
+        'Endüstri 1.0 ile başlayan buharlı makineler dönemi, seyahat sektöründe demiryolu ağlarının gelişmesine ve kitle turizminin ilk tohumlarının atılmasına yol açtı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Endüstri 2.0',
-    definition: 'Elektrik enerjisi yardımıyla seri üretime (üretim bandı) geçildiği İkinci Sanayi Devrimi (19. yy sonu).',
-    example: 'Endüstri 2.0 sayesinde elektrik enerjisinin otellere girmesiyle birlikte, asansörler ve aydınlatma sistemleri konaklama standartlarını tamamen değiştirdi.',
+    definition:
+        'Elektrik enerjisi yardımıyla seri üretime (üretim bandı) geçildiği İkinci Sanayi Devrimi (19. yy sonu).',
+    example:
+        'Endüstri 2.0 sayesinde elektrik enerjisinin otellere girmesiyle birlikte, asansörler ve aydınlatma sistemleri konaklama standartlarını tamamen değiştirdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Endüstri 3.0',
-    definition: 'Üretimde bilgisayarların, elektronik sistemlerin ve otomasyonun kullanıldığı Üçüncü Sanayi Devrimi (1970\'ler).',
-    example: 'Endüstri 3.0 ile bilgisayarların otellere girmesi, rezervasyonların dijital ortamda (GDS) tutulmasını ve manuel sistemlerin terk edilmesini sağladı.',
+    definition:
+        'Üretimde bilgisayarların, elektronik sistemlerin ve otomasyonun kullanıldığı Üçüncü Sanayi Devrimi (1970\'ler).',
+    example:
+        'Endüstri 3.0 ile bilgisayarların otellere girmesi, rezervasyonların dijital ortamda (GDS) tutulmasını ve manuel sistemlerin terk edilmesini sağladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Otonom Sistemler',
-    definition: 'Dışarıdan bir insan müdahalesi olmadan kendi kararlarını verebilen ve uygulayabilen akıllı sistemler (Sürücüsüz araçlar vb.).',
-    example: 'Yeni nesil akıllı otel konseptimizde, katlar arasında temizlik ve dezenfeksiyon yapan otonom robotlar görev almaktadır.',
+    definition:
+        'Dışarıdan bir insan müdahalesi olmadan kendi kararlarını verebilen ve uygulayabilen akıllı sistemler (Sürücüsüz araçlar vb.).',
+    example:
+        'Yeni nesil akıllı otel konseptimizde, katlar arasında temizlik ve dezenfeksiyon yapan otonom robotlar görev almaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Nesnelerin İnterneti (IoT)',
-    definition: 'Fiziksel nesnelerin (makineler, araçlar, ev aletleri) internet üzerinden birbirleriyle ve insanlarla veri alışverişi yapabilmesi.',
-    example: 'Minibar ve oda aydınlatmalarının IoT teknolojisi ile entegre edilmesi, enerji tüketimini optimize etmemize yardımcı oluyor.',
+    definition:
+        'Fiziksel nesnelerin (makineler, araçlar, ev aletleri) internet üzerinden birbirleriyle ve insanlarla veri alışverişi yapabilmesi.',
+    example:
+        'Minibar ve oda aydınlatmalarının IoT teknolojisi ile entegre edilmesi, enerji tüketimini optimize etmemize yardımcı oluyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Bulut Bilişim (Cloud Computing)',
-    definition: 'Verilerin yerel cihazlar yerine internet üzerindeki uzak sunucularda depolanması ve işlenmesi teknolojisi.',
-    example: 'Bulut bilişim altyapısına sahip PMS (Otel Yönetim Sistemi) sayesinde, doluluk oranlarımızı cep telefonumuzdan anlık olarak takip edebiliyoruz.',
+    definition:
+        'Verilerin yerel cihazlar yerine internet üzerindeki uzak sunucularda depolanması ve işlenmesi teknolojisi.',
+    example:
+        'Bulut bilişim altyapısına sahip PMS (Otel Yönetim Sistemi) sayesinde, doluluk oranlarımızı cep telefonumuzdan anlık olarak takip edebiliyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İnovasyon (Yenileşim)',
-    definition: 'Yeni veya önemli ölçüde değiştirilmiş bir ürünün, hizmetin veya sürecin ticari olarak uygulanması; değer yaratan yenilik.',
-    example: 'Oda anahtarlarını mobil uygulamaya entegre ederek konukların resepsiyona uğramadan giriş yapmasını sağlamak, otelimiz için harika bir inovasyon oldu.',
+    definition:
+        'Yeni veya önemli ölçüde değiştirilmiş bir ürünün, hizmetin veya sürecin ticari olarak uygulanması; değer yaratan yenilik.',
+    example:
+        'Oda anahtarlarını mobil uygulamaya entegre ederek konukların resepsiyona uğramadan giriş yapmasını sağlamak, otelimiz için harika bir inovasyon oldu.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Siber-Fiziksel Sistemler',
-    definition: 'Fiziksel süreçlerin yazılımlar ve algoritmalar tarafından izlendiği ve kontrol edildiği entegre ağlar.',
-    example: 'Akıllı iklimlendirme sistemimiz, dış ortam sıcaklığı ve odadaki kişi sayısına göre enerji harcamasını yöneten bir siber-fiziksel sistemdir.',
+    definition:
+        'Fiziksel süreçlerin yazılımlar ve algoritmalar tarafından izlendiği ve kontrol edildiği entegre ağlar.',
+    example:
+        'Akıllı iklimlendirme sistemimiz, dış ortam sıcaklığı ve odadaki kişi sayısına göre enerji harcamasını yöneten bir siber-fiziksel sistemdir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sürdürülebilirlik',
-    definition: 'Gelecek nesillerin ihtiyaçlarını karşılama yeteneğinden ödün vermeden bugünün ihtiyaçlarını karşılayan üretim ve tüketim modeli.',
-    example: 'Su tasarruflu armatürler ve güneş panelleri kullanan tesisimiz, yeşil otel belgesi alarak sürdürülebilirlik hedeflerine ulaştı.',
+    definition:
+        'Gelecek nesillerin ihtiyaçlarını karşılama yeteneğinden ödün vermeden bugünün ihtiyaçlarını karşılayan üretim ve tüketim modeli.',
+    example:
+        'Su tasarruflu armatürler ve güneş panelleri kullanan tesisimiz, yeşil otel belgesi alarak sürdürülebilirlik hedeflerine ulaştı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İleri Dönüşüm (Upcycle)',
-    definition: 'Atık veya kullanılmayan ürünlerin, daha yüksek kaliteye veya çevresel değere sahip yeni ürünlere dönüştürülmesi.',
-    example: 'Atık lüks ve şık duran boş cam şişelerinin otel bahçesinde dekoratif bir aydınlatma aracına dönüştürülmesi.',
+    definition:
+        'Atık veya kullanılmayan ürünlerin, daha yüksek kaliteye veya çevresel değere sahip yeni ürünlere dönüştürülmesi.',
+    example:
+        'Atık lüks ve şık duran boş cam şişelerinin otel bahçesinde dekoratif bir aydınlatma aracına dönüştürülmesi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Küresel Isınma',
-    definition: 'İnsan faaliyetleri sonucu atmosfere salınan sera gazlarının artmasıyla dünya genelinde ortalama sıcaklıkların yükselmesi.',
-    example: 'Küresel ısınma nedeniyle kış turizmi merkezlerimizdeki kar yağışının gecikmesi, kayak otellerinin sezon açılış tarihlerini olumsuz etkiliyor.',
+    definition:
+        'İnsan faaliyetleri sonucu atmosfere salınan sera gazlarının artmasıyla dünya genelinde ortalama sıcaklıkların yükselmesi.',
+    example:
+        'Küresel ısınma nedeniyle kış turizmi merkezlerimizdeki kar yağışının gecikmesi, kayak otellerinin sezon açılış tarihlerini olumsuz etkiliyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sıfır Atık',
-    definition: 'İsrafın önlenmesini, kaynakların daha verimli kullanılmasını ve atık oluşumunun engellenmesini/azaltılmasını hedefleyen atık yönetim felsefesi.',
-    example: 'Otel mutfağımızda uygulanan sıfır atık projesi sayesinde organik atıklardan kompost gübre üreterek bahçe peyzajında kullanıyoruz.',
+    definition:
+        'İsrafın önlenmesini, kaynakların daha verimli kullanılmasını ve atık oluşumunun engellenmesini/azaltılmasını hedefleyen atık yönetim felsefesi.',
+    example:
+        'Otel mutfağımızda uygulanan sıfır atık projesi sayesinde organik atıklardan kompost gübre üreterek bahçe peyzajında kullanıyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: '3R İlkesi',
-    definition: 'Azalt (Reduce), Yeniden Kullan (Reuse), Geri Dönüştür (Recycle) adımlarından oluşan atık hiyerarşisi kuralı.',
-    example: 'Tesisimizde plastik kullanımını azaltmak (reduce) ve cam şişeleri temizleyip yeniden kullanmak (reuse) için 3R ilkesini personel eğitimlerine ekledik.',
+    definition:
+        'Azalt (Reduce), Yeniden Kullan (Reuse), Geri Dönüştür (Recycle) adımlarından oluşan atık hiyerarşisi kuralı.',
+    example:
+        'Tesisimizde plastik kullanımını azaltmak (reduce) ve cam şişeleri temizleyip yeniden kullanmak (reuse) için 3R ilkesini personel eğitimlerine ekledik.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Biyokütle Enerjisi',
-    definition: 'Bitkisel ve hayvansal kökenli organik atıkların yakılması veya dönüştürülmesiyle elde edilen yenilenebilir enerji türü.',
-    example: 'Eko-otelimiz, çevredeki çiftliklerden toplanan organik atıklardan elde edilen biyokütle enerjisi ile elektrik ihtiyacının bir kısmını karşılıyor.',
+    definition:
+        'Bitkisel ve hayvansal kökenli organik atıkların yakılması veya dönüştürülmesiyle elde edilen yenilenebilir enerji türü.',
+    example:
+        'Eko-otelimiz, çevredeki çiftliklerden toplanan organik atıklardan elde edilen biyokütle enerjisi ile elektrik ihtiyacının bir kısmını karşılıyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Girişimci',
-    definition: 'Piyasadaki fırsatları görerek risk alan, sermaye, emek ve doğal kaynakları bir araya getirerek yeni bir mal veya hizmet üreten kişi.',
-    example: 'Bölgedeki termal su kaynağını değerlendiren genç girişimci, modern bir termal otel ve SPA merkezi kurarak büyük başarı elde etti.',
+    definition:
+        'Piyasadaki fırsatları görerek risk alan, sermaye, emek ve doğal kaynakları bir araya getirerek yeni bir mal veya hizmet üreten kişi.',
+    example:
+        'Bölgedeki termal su kaynağını değerlendiren genç girişimci, modern bir termal otel ve SPA merkezi kurarak büyük başarı elde etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Girişimcilik',
-    definition: 'Kâr amacı güderek veya sosyal bir fayda sağlamak için risk alarak yeni bir iş kurma veya mevcut işi geliştirme süreci.',
-    example: 'Gastronomi alanındaki girişimcilik fikirleri sayesinde, unutulmaya yüz tutmuş yöresel lezzetleri sunan yeni nesil restoran zincirleri kuruluyor.',
+    definition:
+        'Kâr amacı güderek veya sosyal bir fayda sağlamak için risk alarak yeni bir iş kurma veya mevcut işi geliştirme süreci.',
+    example:
+        'Gastronomi alanındaki girişimcilik fikirleri sayesinde, unutulmaya yüz tutmuş yöresel lezzetleri sunan yeni nesil restoran zincirleri kuruluyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sermaye',
-    definition: 'Bir işletmeyi kurmak ve faaliyetlerini sürdürmek için gereken maddi varlıkların (para, makine, bina vb.) tümü.',
-    example: 'Otelin yenileme (renovasyon) çalışmaları için gerekli olan sermaye, yeni ortakların katılımı sayesinde bütçeye başarıyla aktarıldı.',
+    definition:
+        'Bir işletmeyi kurmak ve faaliyetlerini sürdürmek için gereken maddi varlıkların (para, makine, bina vb.) tümü.',
+    example:
+        'Otelin yenileme (renovasyon) çalışmaları için gerekli olan sermaye, yeni ortakların katılımı sayesinde bütçeye başarıyla aktarıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Talep',
-    definition: 'Belirli bir piyasada, tüketicilerin belirli bir fiyattan satın alma isteği ve gücüne sahip oldukları mal veya hizmet miktarı.',
-    example: 'Yaz sezonunun gelmesiyle birlikte, Ege ve Akdeniz kıyısındaki beş yıldızlı otellere yönelik yerli turist talebinde patlama yaşandı.',
+    definition:
+        'Belirli bir piyasada, tüketicilerin belirli bir fiyattan satın alma isteği ve gücüne sahip oldukları mal veya hizmet miktarı.',
+    example:
+        'Yaz sezonunun gelmesiyle birlikte, Ege ve Akdeniz kıyısındaki beş yıldızlı otellere yönelik yerli turist talebinde patlama yaşandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Maliyet',
-    definition: 'Bir mal veya hizmetin üretilmesi, sunulması veya satılması için harcanan kaynakların parasal değeri.',
-    example: 'Yiyecek malzemesi fiyatlarındaki artış, restorandaki menü fiyatlarının belirlenmesindeki temel maliyet unsurudur.',
+    definition:
+        'Bir mal veya hizmetin üretilmesi, sunulması veya satılması için harcanan kaynakların parasal değeri.',
+    example:
+        'Yiyecek malzemesi fiyatlarındaki artış, restorandaki menü fiyatlarının belirlenmesindeki temel maliyet unsurudur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Fırsat Maliyeti',
-    definition: 'Herhangi bir karar alındığında, vazgeçilmek zorunda kalınan en iyi ikinci alternatifin sağladığı fayda (Alternatif Maliyet).',
-    example: 'Sermayemizi otel tadilatına harcamayı seçtiğimizde, vazgeçtiğimiz yeni bir şube açma alternatifinin geliri bizim fırsat maliyetimizdir.',
+    definition:
+        'Herhangi bir karar alındığında, vazgeçilmek zorunda kalınan en iyi ikinci alternatifin sağladığı fayda (Alternatif Maliyet).',
+    example:
+        'Sermayemizi otel tadilatına harcamayı seçtiğimizde, vazgeçtiğimiz yeni bir şube açma alternatifinin geliri bizim fırsat maliyetimizdir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Fizibilite (Yapılabilirlik)',
-    definition: 'Bir iş fikrinin veya yatırımın teknik, mali, hukuki ve ekonomik açılardan uygulanabilir olup olmadığının araştırılması çalışması.',
-    example: 'Kapadokya bölgesinde yeni bir butik otel yapmadan önce, yatırımın geri dönüş süresini hesaplamak için fizibilite raporu hazırlattık.',
+    definition:
+        'Bir iş fikrinin veya yatırımın teknik, mali, hukuki ve ekonomik açılardan uygulanabilir olup olmadığının araştırılması çalışması.',
+    example:
+        'Kapadokya bölgesinde yeni bir butik otel yapmadan önce, yatırımın geri dönüş süresini hesaplamak için fizibilite raporu hazırlattık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'KOBİ',
-    definition: 'Küçük ve Orta Büyüklükteki İşletmeler (Çalışan sayısı ve yıllık net satış hasılatı belirli sınırların altında olan işletmeler).',
-    example: 'Turizm bölgelerindeki butik oteller ve seyahat acentelerinin büyük kısmı, KOBİ sınıfına giren dinamik işletmelerdir.',
+    definition:
+        'Küçük ve Orta Büyüklükteki İşletmeler (Çalışan sayısı ve yıllık net satış hasılatı belirli sınırların altında olan işletmeler).',
+    example:
+        'Turizm bölgelerindeki butik oteller ve seyahat acentelerinin büyük kısmı, KOBİ sınıfına giren dinamik işletmelerdir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Bilanço',
-    definition: 'Bir işletmenin belirli bir tarihteki varlıklarını (aktifler) ve bu varlıkların kaynaklarını (pasifler/borçlar ve özkaynaklar) gösteren finansal tablo.',
-    example: 'Yıl sonu finansal değerlendirme toplantısında, otelimizin aktif ve pasif dengesini gösteren bilançoyu ortaklarımıza sunduk.',
+    definition:
+        'Bir işletmenin belirli bir tarihteki varlıklarını (aktifler) ve bu varlıkların kaynaklarını (pasifler/borçlar ve özkaynaklar) gösteren finansal tablo.',
+    example:
+        'Yıl sonu finansal değerlendirme toplantısında, otelimizin aktif ve pasif dengesini gösteren bilançoyu ortaklarımıza sunduk.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ciro',
-    definition: 'Bir işletmenin belirli bir dönemde (örneğin 1 yıl) gerçekleştirdiği toplam satışların parasal tutarı.',
-    example: 'Kongre turizmi sayesinde otelimizin bu ay elde ettiği ciro, geçen yılın aynı dönemine göre %30 artış gösterdi.',
+    definition:
+        'Bir işletmenin belirli bir dönemde (örneğin 1 yıl) gerçekleştirdiği toplam satışların parasal tutarı.',
+    example:
+        'Kongre turizmi sayesinde otelimizin bu ay elde ettiği ciro, geçen yılın aynı dönemine göre %30 artış gösterdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Enflasyon',
-    definition: 'Fiyatlar genel düzeyinin sürekli ve hissedilir bir şekilde yükselmesi, buna bağlı olarak paranın satın alma gücünün düşmesi.',
-    example: 'Yüksek enflasyon sebebiyle otel tedarik masraflarının artması, oda konaklama fiyatlarını da yukarı yönlü revize etmemize yol açtı.',
+    definition:
+        'Fiyatlar genel düzeyinin sürekli ve hissedilir bir şekilde yükselmesi, buna bağlı olarak paranın satın alma gücünün düşmesi.',
+    example:
+        'Yüksek enflasyon sebebiyle otel tedarik masraflarının artması, oda konaklama fiyatlarını da yukarı yönlü revize etmemize yol açtı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Hedef Kitle',
-    definition: 'Bir işletmenin ürün veya hizmetlerini pazarlamayı ve satmayı planladığı, belirli özelliklere sahip tüketici grubu.',
-    example: 'Yeni açtığımız macera ve kamp otelinin hedef kitlesini, doğa sporlarına ilgi duyan genç gezginler oluşturmaktadır.',
+    definition:
+        'Bir işletmenin ürün veya hizmetlerini pazarlamayı ve satmayı planladığı, belirli özelliklere sahip tüketici grubu.',
+    example:
+        'Yeni açtığımız macera ve kamp otelinin hedef kitlesini, doğa sporlarına ilgi duyan genç gezginler oluşturmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'İşletme İflası ve Tasfiye',
-    definition: 'Bir ticari işletmenin borçlarını ödeyemez hale gelmesi ve hukuki olarak ticari faaliyetlerinin sona ermesi durumu.',
-    example: 'Kötü yönetim ve yanlış yatırım kararları yüzünden borçlarını ödeyemeyen seyahat acentesi mahkeme kararıyla iflas etti.',
+    definition:
+        'Bir ticari işletmenin borçlarını ödeyemez hale gelmesi ve hukuki olarak ticari faaliyetlerinin sona ermesi durumu.',
+    example:
+        'Kötü yönetim ve yanlış yatırım kararları yüzünden borçlarını ödeyemeyen seyahat acentesi mahkeme kararıyla iflas etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Hizmet İhracatı ve Turizm Geliri',
-    definition: 'Bir ülkede üretilen mal veya hizmetlerin, döviz karşılığında yabancı ülkelere (dış pazarlara) satılması (Dış Satım).',
-    example: 'Yabancı turistlere otel hizmeti sunarak döviz girdisi sağlamamız, görünmeyen bir hizmet exports faaliyeti olarak kabul edilir.',
+    definition:
+        'Bir ülkede üretilen mal veya hizmetlerin, döviz karşılığında yabancı ülkelere (dış pazarlara) satılması (Dış Satım).',
+    example:
+        'Yabancı turistlere otel hizmeti sunarak döviz girdisi sağlamamız, görünmeyen bir hizmet exports faaliyeti olarak kabul edilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İthalat',
-    definition: 'Yabancı ülkelerde üretilen mal veya hizmetlerin, yurt içi pazarda kullanılmak üzere satın alınması (Dış Alım).',
-    example: 'Oteldeki lüks restoranda sunulmak üzere İtalya\'dan getirilen özel soslar ve makarnalar, otel mutfağının ithalat giderleridir.',
+    definition:
+        'Yabancı ülkelerde üretilen mal veya hizmetlerin, yurt içi pazarda kullanılmak üzere satın alınması (Dış Alım).',
+    example:
+        'Oteldeki lüks restoranda sunulmak üzere İtalya\'dan getirilen özel soslar ve makarnalar, otel mutfağının ithalat giderleridir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kâr',
-    definition: 'Bir işletmenin toplam gelirleri ile bu gelirleri elde etmek için katlandığı toplam maliyetler (giderler) arasındaki pozitif fark.',
-    example: 'Sezon sonunda tüm giderlerimizi düştükten sonra elde ettiğimiz kâr, yeni sezonda yapacağımız havuz inşaatı için kullanılacak.',
+    definition:
+        'Bir işletmenin toplam gelirleri ile bu gelirleri elde etmek için katlandığı toplam maliyetler (giderler) arasındaki pozitif fark.',
+    example:
+        'Sezon sonunda tüm giderlerimizi düştükten sonra elde ettiğimiz kâr, yeni sezonda yapacağımız havuz inşaatı için kullanılacak.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Paydaş',
-    definition: 'Bir işletmenin faaliyetlerinden doğrudan veya dolaylı olarak etkilenen veya işletmeyi etkileyen kişi, grup veya kurumlar (Müşteri, çalışan, tedarikçi vb.).',
-    example: 'Yerel halk, belediyeler ve esnaflar, otelimizin yürüttüğü sürdürülebilir turizm projelerinin en önemli dış paydaşlarıdır.',
+    definition:
+        'Bir işletmenin faaliyetlerinden doğrudan veya dolaylı olarak etkilenen veya işletmeyi etkileyen kişi, grup veya kurumlar (Misafir, çalışan, tedarikçi vb.).',
+    example:
+        'Yerel halk, belediyeler ve esnaflar, otelimizin yürüttüğü sürdürülebilir turizm projelerinin en önemli dış paydaşlarıdır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Rekabet',
-    definition: 'Aynı pazarda faaliyet gösteren işletmelerin, daha fazla müşteri çekmek ve kâr elde etmek için birbirleriyle girdikleri ekonomik yarış.',
-    example: 'Şehirdeki beş yıldızlı oteller arasındaki hizmet kalitesi rekabeti, misafir memnuniyetini artıran en önemli dinamiktir.',
+    definition:
+        'Aynı pazarda faaliyet gösteren işletmelerin, daha fazla misafir çekmek ve kâr elde etmek için birbirleriyle girdikleri ekonomik yarış.',
+    example:
+        'Şehirdeki beş yıldızlı oteller arasındaki hizmet kalitesi rekabeti, misafir memnuniyetini artıran en önemli dinamiktir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Stok',
-    definition: 'Bir işletmenin üretimde kullanmak veya doğrudan satmak amacıyla elinde bulundurduğu ham madde, yarı mamul veya mamul mallar.',
-    example: 'Kat şefi, yoğun geçecek hafta sonu öncesi şampuan, sabun ve çarşaf stok durumunu depodan kontrol etti.',
+    definition:
+        'Bir işletmenin üretimde kullanmak veya doğrudan satmak amacıyla elinde bulundurduğu ham madde, yarı mamul veya mamul mallar.',
+    example:
+        'Kat şefi, yoğun geçecek hafta sonu öncesi şampuan, sabun ve çarşaf stok durumunu depodan kontrol etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İşletme',
-    definition: 'İnsan ihtiyaçlarını karşılamak amacıyla üretim faktörlerini bir araya getirerek mal veya hizmet üreten ve kâr amacı güden ekonomik birim.',
-    example: 'Aile pansiyonu olarak kurulan işletmemiz, zamanla profesyonel bir yönetim kadrosuna sahip modern bir otel işletmesine dönüştü.',
+    definition:
+        'İnsan ihtiyaçlarını karşılamak amacıyla üretim faktörlerini bir araya getirerek mal veya hizmet üreten ve kâr amacı güden ekonomik birim.',
+    example:
+        'Aile pansiyonu olarak kurulan işletmemiz, zamanla profesyonel bir yönetim kadrosuna sahip modern bir otel işletmesine dönüştü.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'SWOT Analizi',
-    definition: 'Bir projenin, kurumun veya kişinin Güçlü (Strengths), Zayıf (Weaknesses) yönlerini ile Fırsatları (Opportunities) ve Tehditleri (Threats) değerlendirme aracı.',
-    example: 'Yeni bir pazara girmeden önce, otelin güçlü yönlerini ve piyasadaki potansiyel fırsatları görmek için SWOT analizi yaptık.',
+    definition:
+        'Bir projenin, kurumun veya kişinin Güçlü (Strengths), Zayıf (Weaknesses) yönlerini ile Fırsatları (Opportunities) ve Tehditleri (Threats) değerlendirme aracı.',
+    example:
+        'Yeni bir pazara girmeden önce, otelin güçlü yönlerini ve piyasadaki potansiyel fırsatları görmek için SWOT analizi yaptık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Patent',
-    definition: 'Buluş sahibine, icadının üretimi, kullanımı ve satışı üzerinde belirli bir süre için (genelde 20 yıl) devlet tarafından verilen tekel hakkı.',
-    example: 'Geliştirdiğimiz özgün valiz taşıma robotunun tasarımı ve yazılımı için Türk Patent ve Marka Kurumu\'na başvurarak patent aldık.',
+    definition:
+        'Buluş sahibine, icadının üretimi, kullanımı ve satışı üzerinde belirli bir süre için (genelde 20 yıl) devlet tarafından verilen tekel hakkı.',
+    example:
+        'Geliştirdiğimiz özgün valiz taşıma robotunun tasarımı ve yazılımı için Türk Patent ve Marka Kurumu\'na başvurarak patent aldık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Faydalı Model',
-    definition: 'Patent verilemeyecek kadar büyük bir yenilik içermeyen ancak endüstriye uygulanabilen küçük icatları koruyan, patente göre daha kısa süreli hak (Küçük Patent).',
-    example: 'Temizlik arabalarına eklediğimiz pratik paspas sıkma aparatı için patent yerine daha hızlı sonuçlanan faydalı model belgesi aldık.',
+    definition:
+        'Patent verilemeyecek kadar büyük bir yenilik içermeyen ancak endüstriye uygulanabilen küçük icatları koruyan, patente göre daha kısa süreli hak (Küçük Patent).',
+    example:
+        'Temizlik arabalarına eklediğimiz pratik paspas sıkma aparatı için patent yerine daha hızlı sonuçlanan faydalı model belgesi aldık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'WIPO (Dünya Fikri Mülkiyet Örgütü)',
-    definition: 'Dünya çapında fikri mülkiyet haklarının korunmasını ve teşvik edilmesini sağlayan Birleşmiş Milletler uzmanlık kuruluşu.',
-    example: 'Otel yazılımımızın uluslararası arenada korunmasını sağlamak amacıyla WIPO nezdindeki patent süreçlerini başlattık.',
+    definition:
+        'Dünya çapında fikri mülkiyet haklarının korunmasını ve teşvik edilmesini sağlayan Birleşmiş Milletler uzmanlık kuruluşu.',
+    example:
+        'Otel yazılımımızın uluslararası arenada korunmasını sağlamak amacıyla WIPO nezdindeki patent süreçlerini başlattık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'MEB',
     definition: 'Türkiye Cumhuriyeti Millî Eğitim Bakanlığı.',
-    example: 'Otelimiz, nitelikli personel yetiştirmek üzere MEB onaylı turizm meslek liseleriyle staj ve istihdam iş birliği protokolü imzalamıştır.',
+    example:
+        'Otelimiz, nitelikli personel yetiştirmek üzere MEB onaylı turizm meslek liseleriyle staj ve istihdam iş birliği protokolü imzalamıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'TÜİK',
-    definition: 'Türkiye İstatistik Kurumu; ülkenin demografik, sosyal ve ekonomik istatistiklerini derleyen ve yayınlayan resmi kurum.',
-    example: 'Gelecek bütçesini planlarken TÜİK tarafından yayınlanan turizm gelirleri ve konaklama istatistiklerini referans aldık.',
+    definition:
+        'Türkiye İstatistik Kurumu; ülkenin demografik, sosyal ve ekonomik istatistiklerini derleyen ve yayınlayan resmi kurum.',
+    example:
+        'Gelecek bütçesini planlarken TÜİK tarafından yayınlanan turizm gelirleri ve konaklama istatistiklerini referans aldık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'WHO / DSÖ',
     definition: 'Dünya Sağlık Örgütü (World Health Organization).',
-    example: 'Pandemi sürecinde otel restoranlarında ve odalarında uygulanacak hijyen kurallarını belirlerken DSÖ yönergelerini harfiyen takip ettik.',
+    example:
+        'Pandemi sürecinde otel restoranlarında ve odalarında uygulanacak hijyen kurallarını belirlerken DSÖ yönergelerini harfiyen takip ettik.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'TOBB',
-    definition: 'Türkiye Odalar ve Borsalar Birliği; ticaret, sanayi, deniz ticaret odaları ve ticaret borsalarının üst kuruluşu.',
-    example: 'Bölgedeki turizm ticaretinin canlandırılmasına yönelik yeni projelerimizi TOBB bünyesindeki turizm meclisine sunduk.',
+    definition:
+        'Türkiye Odalar ve Borsalar Birliği; ticaret, sanayi, deniz ticaret odaları ve ticaret borsalarının üst kuruluşu.',
+    example:
+        'Bölgedeki turizm ticaretinin canlandırılmasına yönelik yeni projelerimizi TOBB bünyesindeki turizm meclisine sunduk.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'KOSGEB Girişimcilik Destekleri',
-    definition: 'Küçük ve Orta Ölçekli İşletmeleri Geliştirme ve Destekleme İdaresi Başkanlığı; girişimcilere ve KOBİ\'lere hibe/kredi desteği sağlayan kurum.',
-    example: 'Eko-turizm alanında butik bir otel açmak isteyen girişimci kadın, KOSGEB hibesi alarak kendi işletmesini kurmayı başardı.',
+    definition:
+        'Küçük ve Orta Ölçekli İşletmeleri Geliştirme ve Destekleme İdaresi Başkanlığı; girişimcilere ve KOBİ\'lere hibe/kredi desteği sağlayan kurum.',
+    example:
+        'Eko-turizm alanında butik bir otel açmak isteyen girişimci kadın, KOSGEB hibesi alarak kendi işletmesini kurmayı başardı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'SGK',
-    definition: 'Sosyal Güvenlik Kurumu; vatandaşların sağlık, emeklilik ve sigorta hizmetlerini yürüten devlet kurumu.',
-    example: 'İşe yeni başlayan tüm personelimizin SGK giriş bildirgeleri, yasal süre olan işe başlamadan en geç bir gün önce tamamlanmıştır.',
+    definition:
+        'Sosyal Güvenlik Kurumu; vatandaşların sağlık, emeklilik ve sigorta hizmetlerini yürüten devlet kurumu.',
+    example:
+        'İşe yeni başlayan tüm personelimizin SGK giriş bildirgeleri, yasal süre olan işe başlamadan en geç bir gün önce tamamlanmıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İŞKUR',
-    definition: 'Türkiye İş Kurumu; istihdamı korumak, geliştirmek ve işsizliği önlemekle görevli kamu kuruluşu.',
-    example: 'Otelimiz, kat hizmetleri departmanındaki personel ihtiyacını karşılamak için İŞKUR’un işbaşı eğitim programlarından yararlandı.',
+    definition:
+        'Türkiye İş Kurumu; istihdamı korumak, geliştirmek ve işsizliği önlemekle görevli kamu kuruluşu.',
+    example:
+        'Otelimiz, kat hizmetleri departmanındaki personel ihtiyacını karşılamak için İŞKUR’un işbaşı eğitim programlarından yararlandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'UNWTO',
     definition: 'Birleşmiş Milletler Dünya Turizm Örgütü.',
-    example: 'UNWTO verilerine göre, Türkiye bu yıl dünya genelinde en çok ziyaret edilen ilk 5 turizm ülkesi arasında yer almayı başarmıştır.',
+    example:
+        'UNWTO verilerine göre, Türkiye bu yıl dünya genelinde en çok ziyaret edilen ilk 5 turizm ülkesi arasında yer almayı başarmıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/UNWTO.mp3',
   ),
   Term(
     word: 'Günübirlikçi (Excursionist)',
-    definition: 'Gittiği yerde 24 saatten az kalan, geceleme yapmayan ziyaretçi.',
-    example: 'Kruvaziyer limanımıza sabah yanaşan ve akşam ayrılan gemideki yolcular, şehri günübirlikçi olarak ziyaret edip hediyelik eşya alışverişi yaptılar.',
+    definition:
+        'Gittiği yerde 24 saatten az kalan, geceleme yapmayan ziyaretçi.',
+    example:
+        'Kruvaziyer limanımıza sabah yanaşan ve akşam ayrılan gemideki yolcular, şehri günübirlikçi olarak ziyaret edip hediyelik eşya alışverişi yaptılar.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Excursionist.mp3',
   ),
   Term(
     word: 'Görünmeyen İhracat',
-    definition: 'Turizm sektörünün, fiziksel bir mal ihraç etmeden, ülkeye gelen turistler aracılığıyla ülkeye döviz kazandırması özelliği.',
-    example: 'Turizm sektörü, sınır dışına hiçbir ürün göndermeden ülkemize milyarlarca dolar döviz girdisi sağladığı için en önemli görünmeyen ihracat kalemidir.',
+    definition:
+        'Turizm sektörünün, fiziksel bir mal ihraç etmeden, ülkeye gelen turistler aracılığıyla ülkeye döviz kazandırması özelliği.',
+    example:
+        'Turizm sektörü, sınır dışına hiçbir ürün göndermeden ülkemize milyarlarca dolar döviz girdisi sağladığı için en önemli görünmeyen ihracat kalemidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İstihdam',
-    definition: 'Çalışma yaş ve gücünde olanların gelir getirici bir işte çalıştırılması (Turizmin emek-yoğun yapısı istihdamı artırır).',
-    example: 'Yaz sezonunun açılmasıyla birlikte kıyı otellerimizin binlerce gence sunduğu iş imkanları, ülkendeki genç istihdam oranlarına çok olumlu yansımaktadır.',
+    definition:
+        'Çalışma yaş ve gücünde olanların gelir getirici bir işte çalıştırılması (Turizmin emek-yoğun yapısı istihdamı artırır).',
+    example:
+        'Yaz sezonunun açılmasıyla birlikte kıyı otellerimizin binlerce gence sunduğu iş imkanları, ülkendeki genç istihdam oranlarına çok olumlu yansımaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Altyapı',
-    definition: 'Bir bölgenin gelişmesi için gerekli olan yol, su, elektrik, kanalizasyon, haberleşme gibi temel fiziksel sistemler.',
-    example: 'Yeni turizm merkezinde otel inşaatları başlamadan önce, belediye tarafından yol ve kanalizasyon gibi altyapı çalışmaları tamamlandı.',
+    definition:
+        'Bir bölgenin gelişmesi için gerekli olan yol, su, elektrik, kanalizasyon, haberleşme gibi temel fiziksel sistemler.',
+    example:
+        'Yeni turizm merkezinde otel inşaatları başlamadan önce, belediye tarafından yol ve kanalizasyon gibi altyapı çalışmaları tamamlandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Pasaport',
-    definition: 'Vatandaşların yurt dışına çıkarken kullanmaları için kendi devletleri tarafından verilen, uluslararası kimlik yerine geçen resmi belge.',
-    example: 'Resepsiyonist, check-in işlemi sırasında yabancı konukların pasaport bilgilerini Kriminal Veri Bildirim Sistemi\'ne (KBS) girmekle yükümlüdür.',
+    definition:
+        'Vatandaşların yurt dışına çıkarken kullanmaları için kendi devletleri tarafından verilen, uluslararası kimlik yerine geçen resmi belge.',
+    example:
+        'Resepsiyonist, check-in işlemi sırasında yabancı konukların pasaport bilgilerini Kriminal Veri Bildirim Sistemi\'ne (KBS) girmekle yükümlüdür.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Umumi Pasaport (Bordo)',
-    definition: 'Herhangi bir resmi statüsü olmayan Türk vatandaşlarına (herkese) verilen standart pasaport.',
-    example: 'Acentemizden yurt dışı tur paketi satın alan misafirimizin umumi pasaport (bordo) sahibi olması nedeniyle vize başvuru işlemlerini başlattık.',
+    definition:
+        'Herhangi bir resmi statüsü olmayan Türk vatandaşlarına (herkese) verilen standart pasaport.',
+    example:
+        'Acentemizden yurt dışı tur paketi satın alan misafirimizin umumi pasaport (bordo) sahibi olması nedeniyle vize başvuru işlemlerini başlattık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Hususi Pasaport (Yeşil)',
-    definition: 'Belirli derecedeki devlet memurlarına, eski milletvekillerine ve belediye başkanlarına verilen, birçok ülkeye vizesiz giriş sağlayan pasaport.',
-    example: 'Devlet okulundan emirli öğretmen olan misafirimiz, hususi pasaport (yeşil) sahibi olduğu için vizeye ihtiyaç duymadan Schengen ülkelerine seyahat edebildi.',
+    definition:
+        'Belirli derecedeki devlet memurlarına, eski milletvekillerine ve belediye başkanlarına verilen, birçok ülkeye vizesiz giriş sağlayan pasaport.',
+    example:
+        'Devlet okulundan emirli öğretmen olan misafirimiz, hususi pasaport (yeşil) sahibi olduğu için vizeye ihtiyaç duymadan Schengen ülkelerine seyahat edebildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Hizmet Pasaportu (Gri)',
-    definition: 'Devlet adına resmi bir görevle yurt dışına gönderilen kişilere sadece görev süresince verilen pasaport.',
-    example: 'Otelcilik eğitimi için resmi bir proje kapsamında yurt dışına gönderilen meslek lisesi öğretmenlerine devlet tarafından hizmet pasaportu (gri) tahsis edildi.',
+    definition:
+        'Devlet adına resmi bir görevle yurt dışına gönderilen kişilere sadece görev süresince verilen pasaport.',
+    example:
+        'Otelcilik eğitimi için resmi bir proje kapsamında yurt dışına gönderilen meslek lisesi öğretmenlerine devlet tarafından hizmet pasaportu (gri) tahsis edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Diplomatik Pasaport (Siyah)',
-    definition: 'Dışişleri Bakanlığı tarafından üst düzey devlet görevlilerine (Bakanlar, elçiler, valiler vb.) ve diplomatlara verilen pasaport.',
-    example: 'Büyükelçi düzeyindeki VVIP konuğumuzun diplomatik pasaport (siyah) bilgileri, protokol müdürü tarafından gizlilik esaslarına uygun şekilde işlendi.',
+    definition:
+        'Dışişleri Bakanlığı tarafından üst düzey devlet görevlilerine (Bakanlar, elçiler, valiler vb.) ve diplomatlara verilen pasaport.',
+    example:
+        'Büyükelçi düzeyindeki VVIP konuğumuzun diplomatik pasaport (siyah) bilgileri, protokol müdürü tarafından gizlilik esaslarına uygun şekilde işlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Vize',
-    definition: 'Bir ülkeye girmek veya o ülkeden geçmek için o ülkeden yetkili makamlarından (konsolosluk/büyükelçilik) alınan resmi giriş veya geçiş izni.',
-    example: 'Seyahat öncesinde konsolosluğa başvurarak turistik vize onayını alan konuk, seyahat acentesinden paket tur rezervasyonunu kesinleştirdi.',
+    definition:
+        'Bir ülkeye girmek veya o ülkeden geçmek için o ülkeden yetkili makamlarından (konsolosluk/büyükelçilik) alınan resmi giriş veya geçiş izni.',
+    example:
+        'Seyahat öncesinde konsolosluğa başvurarak turistik vize onayını alan konuk, seyahat acentesinden paket tur rezervasyonunu kesinleştirdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Transit Vize',
-    definition: 'Asıl gidilecek ülkeye ulaşmak için güzergâh üzerindeki başka bir ülkeden alınan çok kısa süreli geçiş izni.',
-    example: 'Uçuşu Almanya aktarmalı olan Amerika yolcumuz, havalimanı transit bölgesinden çıkmayacağı için havalimanı transit vize kurallarını kontrol etti.',
+    definition:
+        'Asıl gidilecek ülkeye ulaşmak için güzergâh üzerindeki başka bir ülkeden alınan çok kısa süreli geçiş izni.',
+    example:
+        'Uçuşu Almanya aktarmalı olan Amerika yolcumuz, havalimanı transit bölgesinden çıkmayacağı için havalimanı transit vize kurallarını kontrol etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Schengen Vizesi',
-    definition: 'Schengen anlaşmasına dahil olan Avrupa ülkeleri arasında sınır kontrolü olmadan serbest dolaşım sağlayan vize türü.',
-    example: 'Acentemizden Paris-Roma turu satın alan misafirlerimizin, seyahatleri boyunca sorun yaşamamaları için geçerli bir Schengen vizesi almalarını sağladık.',
+    definition:
+        'Schengen anlaşmasına dahil olan Avrupa ülkeleri arasında sınır kontrolü olmadan serbest dolaşım sağlayan vize türü.',
+    example:
+        'Acentemizden Paris-Roma turu satın alan misafirlerimizin, seyahatleri boyunca sorun yaşamamaları için geçerli bir Schengen vizesi almalarını sağladık.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Gümrük',
-    definition: 'Ülkeler arası giriş-çıkış yapan eşya, mal ve araçların denetlendiği ve mevzuata göre vergilendirildiği sınır kontrol sistemi.',
-    example: 'Otel mutfağı için ithal edilen özel peynirler, gümrük denetiminden geçerek soğuk zincir bozulmadan teslim alındı.',
+    definition:
+        'Ülkeler arası giriş-çıkış yapan eşya, mal ve araçların denetlendiği ve mevzuata göre vergilendirildiği sınır kontrol sistemi.',
+    example:
+        'Otel mutfağı için ithal edilen özel peynirler, gümrük denetiminden geçerek soğuk zincir bozulmadan teslim alındı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sınır Kapısı',
-    definition: 'İki komşu ülke arasındaki geçişlerin yapıldığı resmi kara, hava veya deniz pasaport ve gümrük kontrol noktası.',
-    example: 'Kapıkule Sınır Kapısı\'nda bayram yoğunluğu yaşanması üzerine, Bulgaristan\'dan gelen turist otobüsleri için ek gümrük peronları açıldı.',
+    definition:
+        'İki komşu ülke arasındaki geçişlerin yapıldığı resmi kara, hava veya deniz pasaport ve gümrük kontrol noktası.',
+    example:
+        'Kapıkule Sınır Kapısı\'nda bayram yoğunluğu yaşanması üzerine, Bulgaristan\'dan gelen turist otobüsleri için ek gümrük peronları açıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Check-in (Uçuş)',
-    definition: 'Uçuş öncesi yolcunun bilet kontrolünün yapıldığı, bagajını teslim ettiği ve biniş kartını (Boarding Pass) aldığı işlem.',
-    example: 'Yolcuların havalimanında sıra beklememesi için, uçuş saatinden 24 saat önce mobil uygulama üzerinden online check-in yapmaları tavsiye edilir.',
+    definition:
+        'Uçuş öncesi yolcunun bilet kontrolünün yapıldığı, bagajını teslim ettiği ve biniş kartını (Boarding Pass) aldığı işlem.',
+    example:
+        'Yolcuların havalimanında sıra beklememesi için, uçuş saatinden 24 saat önce mobil uygulama üzerinden online check-in yapmaları tavsiye edilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'ICAO',
-    definition: 'Uluslararası Sivil Havacılık Örgütü; uluslararası hava seyrüseferinin güvenli, emniyetli ve düzenli gelişimini sağlayan BM kuruluşu.',
-    example: 'Uçuş güvenliği standartlarının küresel düzeyde belirlenmesi, ICAO yönergeleri çerçevesinde sivil havacılık otoritelerince denetlenir.',
+    definition:
+        'Uluslararası Sivil Havacılık Örgütü; uluslararası hava seyrüseferinin güvenli, emniyetli ve düzenli gelişimini sağlayan BM kuruluşu.',
+    example:
+        'Uçuş güvenliği standartlarının küresel düzeyde belirlenmesi, ICAO yönergeleri çerçevesinde sivil havacılık otoritelerince denetlenir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/ICAO.mp3',
   ),
   Term(
     word: 'TTYD',
-    definition: 'Türkiye Turizm Yatırımcıları Derneği; turizm sektörüne büyük ölçekli yatırım yapan girişimcilerin oluşturduğu birlik.',
-    example: 'TTYD tarafından hazırlanan turizm raporu, ülkemize yeni marina ve lüks resort yatırımları çekmek için yol haritası sunmaktadır.',
+    definition:
+        'Türkiye Turizm Yatırımcıları Derneği; turizm sektörüne büyük ölçekli yatırım yapan girişimcilerin oluşturduğu birlik.',
+    example:
+        'TTYD tarafından hazırlanan turizm raporu, ülkemize yeni marina ve lüks resort yatırımları çekmek için yol haritası sunmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'TGA (Türkiye Turizm Tanıtım ve Geliştirme Ajansı)',
-    definition: 'Türkiye Turizm Tanıtım ve Geliştirme Ajansı; Türkiye\'nin turizm potansiyelini uluslararası alanda tanıtmak ve markalaşmasını sağlamakla görevli kurum.',
-    example: 'TGA öncülüğünde yürütülen "Go Türkiye" kampanyası, ülkemizin e-turizm alanında dünya genelinde milyonlarca gezgine ulaşmasını sağlamıştır.',
+    definition:
+        'Türkiye Turizm Tanıtım ve Geliştirme Ajansı; Türkiye\'nin turizm potansiyelini uluslararası alanda tanıtmak ve markalaşmasını sağlamakla görevli kurum.',
+    example:
+        'TGA öncülüğünde yürütülen "Go Türkiye" kampanyası, ülkemizin e-turizm alanında dünya genelinde milyonlarca gezgine ulaşmasını sağlamıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sezonluk Dalgalanma',
-    definition: 'Turizm faaliyetlerinin yılın belirli dönemlerinde (örneğin yaz aylarında deniz turizmi) aşırı yoğunlaşıp, diğer dönemlerde keskin bir şekilde azalması durumu.',
-    example: 'Yaz sezonundaki aşırı doluluk ile kışın yaşanan durgunluk, kıyı otellerimizin personel yönetimini zorlaştıran bir sezonluk dalgalanma örneğidir.',
+    definition:
+        'Turizm faaliyetlerinin yılın belirli dönemlerinde (örneğin yaz aylarında deniz turizmi) aşırı yoğunlaşıp, diğer dönemlerde keskin bir şekilde azalması durumu.',
+    example:
+        'Yaz sezonundaki aşırı doluluk ile kışın yaşanan durgunluk, kıyı otellerimizin personel yönetimini zorlaştıran bir sezonluk dalgalanma örneğidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ölü Sezon (Low Season)',
-    definition: 'Turizm talebinin ve ziyaretçi sayısının en düşük seviyede olduğu, buna bağlı olarak fiyatların genellikle ucuzladığı dönem.',
-    example: 'Bodrum\'daki butik otelimiz, kasım ve şubat ayları arasındaki ölü sezon boyunca fiyatlarında %50 indirim yaparak misafir çekmeye çalışmaktadır.',
+    definition:
+        'Turizm talebinin ve ziyaretçi sayısının en düşük seviyede olduğu, buna bağlı olarak fiyatların genellikle ucuzladığı dönem.',
+    example:
+        'Bodrum\'daki butik otelimiz, kasım ve şubat ayları arasındaki ölü sezon boyunca fiyatlarında %50 indirim yaparak misafir çekmeye çalışmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Taşıma Kapasitesi',
-    definition: 'Bir turistik destinasyonun, çevresel, sosyal, kültürel ve ekonomik bozulmaya uğramadan sağlıklı bir şekilde ağırlayabileceği maksimum turist sayısı.',
-    example: 'Karaköy limanındaki aşırı yığılmayı önlemek için, tarihi yarımadanın günlük taşıma kapasitesi sınırlarına uygun turist kabul edilmektedir.',
+    definition:
+        'Bir turistik destinasyonun, çevresel, sosyal, kültürel ve ekonomik bozulmaya uğramadan sağlıklı bir şekilde ağırlayabileceği maksimum turist sayısı.',
+    example:
+        'Karaköy limanındaki aşırı yığılmayı önlemek için, tarihi yarımadanın günlük taşıma kapasitesi sınırlarına uygun turist kabul edilmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/SITE.mp3',
   ),
   Term(
     word: 'Animasyon',
-    definition: 'Turistik tesislerde konukların konaklamaları süresince hoşça vakit geçirmelerini sağlamak amacıyla gün boyu ve gece düzenlenen eğlence, spor ve kültürel etkinliklerin tümü.',
-    example: 'Otelimizin geniş animasyon ekibi, gündüz havuz oyunları ve spor turnuvaları, gece ise profesyonel amfitiyatro şovları düzenlemektedir.',
+    definition:
+        'Turistik tesislerde konukların konaklamaları süresince hoşça vakit geçirmelerini sağlamak amacıyla gün boyu ve gece düzenlenen eğlence, spor ve kültürel etkinliklerin tümü.',
+    example:
+        'Otelimizin geniş animasyon ekibi, gündüz havuz oyunları ve spor turnuvaları, gece ise profesyonel amfitiyatro şovları düzenlemektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Cittaslow (Sakin Şehir)',
-    definition: 'Küreselleşmenin getirdiği hızlı yaşama ve tek tipleşmeye karşı çıkarak, kendi yerel kimliğini, mimarisini geleneklerini ve lezzetlerini korumaya yemin etmiş şehirler ağı.',
-    example: 'Türkiye\'nin ilk sakin şehri olan Seferihisar, Cittaslow kriterleri sayesinde betonlaşmadan uzak, sakin ve geleneksel turizm modeliyle öne çıkmaktadır.',
+    definition:
+        'Küreselleşmenin getirdiği hızlı yaşama ve tek tipleşmeye karşı çıkarak, kendi yerel kimliğini, mimarisini geleneklerini ve lezzetlerini korumaya yemin etmiş şehirler ağı.',
+    example:
+        'Türkiye\'nin ilk sakin şehri olan Seferihisar, Cittaslow kriterleri sayesinde betonlaşmadan uzak, sakin ve geleneksel turizm modeliyle öne çıkmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Fatura (Invoice)',
-    definition: 'Satılan mal veya yapılan hizmet karşılığında, misafirin ödemekle yükümlü olduğu meblağı gösteren, Maliye Bakanlığı onaylı resmi mali belge.',
-    example: 'Misafirimizin konaklama ve ekstra harcamalarını gösteren resmi fatura (invoice) check-out esnasında kendisine teslim edildi.',
+    definition:
+        'Satılan mal veya yapılan hizmet karşılığında, misafirin ödemekle yükümlü olduğu meblağı gösteren, Maliye Bakanlığı onaylı resmi mali belge.',
+    example:
+        'Misafirimizin konaklama ve ekstra harcamalarını gösteren resmi fatura (invoice) check-out esnasında kendisine teslim edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Invoice.mp3',
   ),
   Term(
     word: 'Açık Fatura',
-    definition: 'Bedeli henüz tahsil edilmemiş, veresiye (kredili) olarak kesilen ve işletmenin kaşe/imzasının faturanın üst kısmına vurulduğu fatura türü.',
-    example: 'Acenteden ödemesi sonra alınacak olan kredili konaklama harcamaları için ön büroda açık fatura düzenlendi.',
+    definition:
+        'Bedeli henüz tahsil edilmemiş, veresiye (kredili) olarak kesilen ve işletmenin kaşe/imzasının faturanın üst kısmına vurulduğu fatura türü.',
+    example:
+        'Acenteden ödemesi sonra alınacak olan kredili konaklama harcamaları için ön büroda açık fatura düzenlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kapalı Fatura',
-    definition: 'Bedeli peşin (nakit veya kredi kartı ile) tahsil edilmiş, işletmenin kaşe/imzasının faturanın alt kısmına vurulduğu fatura türü.',
-    example: 'Oda ücretini nakit ödeyerek otelden ayrılan misafirimize ön kasada kaşelenmiş kapalı fatura teslim edildi.',
+    definition:
+        'Bedeli peşin (nakit veya kredi kartı ile) tahsil edilmiş, işletmenin kaşe/imzasının faturanın alt kısmına vurulduğu fatura türü.',
+    example:
+        'Oda ücretini nakit ödeyerek otelden ayrılan misafirimize ön kasada kaşelenmiş kapalı fatura teslim edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'E-Fatura',
-    definition: 'Kağıt fatura ile aynı hukuki niteliklere sahip olan, elektronik ortamda oluşturulan, iletilen ve saklanan fatura formatı.',
-    example: 'Check-out esnasında misafire basılı kağıt vermek yerine, e-fatura sistem üzerinden e-posta adresine anında gönderildi.',
+    definition:
+        'Kağıt fatura ile aynı hukuki niteliklere sahip olan, elektronik ortamda oluşturulan, iletilen ve saklanan fatura formatı.',
+    example:
+        'Check-out esnasında misafire basılı kağıt vermek yerine, e-fatura sistem üzerinden e-posta adresine anında gönderildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Z Raporu',
-    definition: 'Yazar kasadan veya POS cihazından alınan, o güne ait tüm satışların toplamını, KDV oranlarını ve departman gelirlerini gösteren mali gün sonu raporu.',
-    example: 'Restoran şefi, gece kapanışında yazar kasadan günün son Z raporunu alarak o günkü toplam nakit ve kredi kartı cirosunu doğruladı.',
+    definition:
+        'Yazar kasadan veya POS cihazından alınan, o güne ait tüm satışların toplamını, KDV oranlarını ve departman gelirlerini gösteren mali gün sonu raporu.',
+    example:
+        'Restoran şefi, gece kapanışında yazar kasadan günün son Z raporunu alarak o günkü toplam nakit ve kredi kartı cirosunu doğruladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'X Raporu',
-    definition: 'Yazar kasadan veya POS cihazından gün içinde kasa sıfırlanmadan, ilgili kasiyerin o ana kadar yaptığı satışların toplamını gösteren ara kontrol raporu.',
-    example: 'Vardiya değişimi sırasında giden kasiyer, kasadaki nakit parayı yeni gelen arkadaşına devrederken doğrulamak amacıyla bir X raporu aldı.',
+    definition:
+        'Yazar kasadan veya POS cihazından gün içinde kasa sıfırlanmadan, ilgili kasiyerin o ana kadar yaptığı satışların toplamını gösteren ara kontrol raporu.',
+    example:
+        'Vardiya değişimi sırasında giden kasiyer, kasadaki nakit parayı yeni gelen arkadaşına devrederken doğrulamak amacıyla bir X raporu aldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Satış Fiyatı',
-    definition: 'Maliyetin üzerine hedeflenen kâr payının eklenmesiyle elde edilen, mal veya hizmetin misafire satıldığı nihai fiyat.',
-    example: 'Satış müdürü, bir odanın maliyetine %40 kâr marjı ekleyerek sezonluk oda satış fiyatını gecelik 150 Dolar olarak belirledi.',
+    definition:
+        'Maliyetin üzerine hedeflenen kâr payının eklenmesiyle elde edilen, mal veya hizmetin misafire satıldığı nihai fiyat.',
+    example:
+        'Satış müdürü, bir odanın maliyetine %40 kâr marjı ekleyerek sezonluk oda satış fiyatını gecelik 150 Dolar olarak belirledi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Basit Faiz',
-    definition: 'Sadece başlangıçtaki anapara tutarı üzerinden, vade sonuna kadar belirli bir faiz oranıyla hesaplanan kira veya getiri bedeli.',
-    example: 'Otelimizin bankadaki yatırım hesabında bulunan nakit varlığı için yıllık %15 oranıyla basit faiz getirisi hesaplandı.',
+    definition:
+        'Sadece başlangıçtaki anapara tutarı üzerinden, vade sonuna kadar belirli bir faiz oranıyla hesaplanan kira veya getiri bedeli.',
+    example:
+        'Otelimizin bankadaki yatırım hesabında bulunan nakit varlığı için yıllık %15 oranıyla basit faiz getirisi hesaplandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Bileşik Faiz',
-    definition: 'Her dönem sonunda kazanılan faizin anaparaya eklenmesi ve bir sonraki dönemde toplam tutar (anapara+faiz) üzerinden faiz hesaplanması yöntemi.',
-    example: 'Otel tadilatı için bankadan çekilen kredinin geri ödemelerinde, faiz tutarının anaparaya katılmasıyla hesaplanan bileşik faiz yöntemi uygulandı.',
+    definition:
+        'Her dönem sonunda kazanılan faizin anaparaya eklenmesi ve bir sonraki dönemde toplam tutar (anapara+faiz) üzerinden faiz hesaplanması yöntemi.',
+    example:
+        'Otel tadilatı için bankadan çekilen kredinin geri ödemelerinde, faiz tutarının anaparaya katılmasıyla hesaplanan bileşik faiz yöntemi uygulandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Baliğ',
-    definition: 'Faiz hesaplamalarında, vade sonundaki anapara ile kazanılan faiz tutarının toplamı (Ulaşılan toplam değer).',
-    example: 'Bankaya yatırılan 100.000 TL\'lik yatırım, vade sonunda 15.000 TL faiz getirisiyle birlikte baliğ olarak 115.000 TL\'ye ulaştı.',
+    definition:
+        'Faiz hesaplamalarında, vade sonundaki anapara ile kazanılan faiz tutarının toplamı (Ulaşılan toplam değer).',
+    example:
+        'Bankaya yatırılan 100.000 TL\'lik yatırım, vade sonunda 15.000 TL faiz getirisiyle birlikte baliğ olarak 115.000 TL\'ye ulaştı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sevk İrsaliyesi',
-    definition: 'Satılmış ya da satılmak üzere olan bir malın bir adresten diğerine taşınması sırasında düzenlenen, malın cinsi, miktarı ve taşıma detaylarını gösteren resmi sevk belgesi.',
-    example: 'Satın alma şefi, çamaşırhane için sipariş edilen yeni nevresimlerin teslimatında gelen ürünlerin sevk irsaliyesi ile eşleştiğini kontrol etti.',
+    definition:
+        'Satılmış ya da satılmak üzere olan bir malın bir adresten diğerine taşınması sırasında düzenlenen, malın cinsi, miktarı ve taşıma detaylarını gösteren resmi sevk belgesi.',
+    example:
+        'Satın alma şefi, çamaşırhane için sipariş edilen yeni nevresimlerin teslimatında gelen ürünlerin sevk irsaliyesi ile eşleştiğini kontrol etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Müstahsil Makbuzu',
-    definition: 'Gerçek usulde vergiye tabi olmayan çiftçilerden veya üreticilerden satın alınan tarımsal ve hayvansal ürünler karşılığında düzenlenen fatura yerine geçen resmi belge.',
-    example: 'Otel mutfağına doğrudan yerel üretici olan köylüden alınan taze meyve ve sebzeler için muhasebe departmanı tarafından müstahsil makbuzu düzenlendi.',
+    definition:
+        'Gerçek usulde vergiye tabi olmayan çiftçilerden veya üreticilerden satın alınan tarımsal ve hayvansal ürünler karşılığında düzenlenen fatura yerine geçen resmi belge.',
+    example:
+        'Otel mutfağına doğrudan yerel üretici olan köylüden alınan taze meyve ve sebzeler için muhasebe departmanı tarafından müstahsil makbuzu düzenlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Yeşil Küre (Green Globe)',
-    definition: 'Seyahat ve turizm sektöründe faaliyet gösteren tesislerin sürdürülebilirlik performanslarını, atık, su ve enerji tasarruflarını değerlendiren uluslararası sertifikalandırma programı.',
-    example: 'Çevre yönetimi ve yerel kültürü koruma standartlarını karşılayan otelimiz, denetimler sonucunda prestijli Yeşil Küre (Green Globe) sertifikasını aldı.',
+    definition:
+        'Seyahat ve turizm sektöründe faaliyet gösteren tesislerin sürdürülebilirlik performanslarını, atık, su ve enerji tasarruflarını değerlendiren uluslararası sertifikalandırma programı.',
+    example:
+        'Çevre yönetimi ve yerel kültürü koruma standartlarını karşılayan otelimiz, denetimler sonucunda prestijli Yeşil Küre (Green Globe) sertifikasını aldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Kamping',
-    definition: 'Doğal güzelliklere sahip yerlerde kurulan, konukların çadır, karavan gibi ünitelerde kendi yeme içme ve dinlenme ihtiyaçlarını karşıladığı en az on üniteli açık hava işletmeleridir.',
-    example: 'Ege kıyısındaki kamping alanında karavanımızı gölgeye park edip çam ağaçları altında çadırımızı kurduk.',
+    definition:
+        'Doğal güzelliklere sahip yerlerde kurulan, konukların çadır, karavan gibi ünitelerde kendi yeme içme ve dinlenme ihtiyaçlarını karşıladığı en az on üniteli açık hava işletmeleridir.',
+    example:
+        'Ege kıyısındaki kamping alanında karavanımızı gölgeye park edip çam ağaçları altında çadırımızı kurduk.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/MPI.mp3',
   ),
   Term(
     word: 'Personel Eğitim Tesisleri',
-    definition: 'Turizm ve otelcilik sektörünün nitelikli ve eğitimli personel ihtiyacını karşılamak amacıyla kurulan, teorik ve uygulamalı otelcilik eğitiminin verildiği en az 120 öğrenci kapasiteli uygulama tesisleridir.',
-    example: 'Turizm meslek lisesi bünyesindeki personel eğitim tesisleri, öğrencilerin gerçek misafirlerle çalışarak deneyim kazanmasını sağlamaktadır.',
+    definition:
+        'Turizm ve otelcilik sektörünün nitelikli ve eğitimli personel ihtiyacını karşılamak amacıyla kurulan, teorik ve uygulamalı otelcilik eğitiminin verildiği en az 120 öğrenci kapasiteli uygulama tesisleridir.',
+    example:
+        'Turizm meslek lisesi bünyesindeki personel eğitim tesisleri, öğrencilerin gerçek misafirlerle çalışarak deneyim kazanmasını sağlamaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Muhasebe (Accounting)',
-    definition: 'Otelin tüm finansal hareketlerini, gelir-gider faturalarını, personel maaşlarını, vergi ödemelerini kayıt altına alan ve mali raporları hazırlayan departmandır.',
-    example: 'Check-out sırasında faturada hata olduğunu belirten misafirin folyosu, resepsiyonist tarafından muhasebe (accounting) departmanına danışılarak düzeltildi.',
+    definition:
+        'Otelin tüm finansal hareketlerini, gelir-gider faturalarını, personel maaşlarını, vergi ödemelerini kayıt altına alan ve mali raporları hazırlayan departmandır.',
+    example:
+        'Check-out sırasında faturada hata olduğunu belirten misafirin folyosu, resepsiyonist tarafından muhasebe (accounting) departmanına danışılarak düzeltildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Yönetim',
-    definition: 'İşletme hedeflerine ulaşmak amacıyla insan, para, malzeme ve zaman kaynaklarının planlanması, organize edilmesi, yönlendirilmesi ve denetlenmesi süreçlerinin bütünüdür.',
-    example: 'Genel müdür öncülüğündeki otel yönetimi, haftalık operasyon toplantısında doluluk oranlarını ve konuk memnuniyeti anketlerini değerlendirdi.',
+    definition:
+        'İşletme hedeflerine ulaşmak amacıyla insan, para, malzeme ve zaman kaynaklarının planlanması, organize edilmesi, yönlendirilmesi ve denetlenmesi süreçlerinin bütünüdür.',
+    example:
+        'Genel müdür öncülüğündeki otel yönetimi, haftalık operasyon toplantısında doluluk oranlarını ve konuk memnuniyeti anketlerini değerlendirdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Emir Komuta Zinciri',
-    definition: 'İşletmedeki emir, talimat ve bilgi akışının en üst yöneticiden başlayarak kademe kademe aşağıya doğru iletilmesini sağlayan yönetim ilkesidir.',
-    example: 'Kat hizmetlerindeki bir kararın uygulanması, emir komuta zinciri gereğince housekeeper müdüründen şeflere, oradan da kat görevlilerine iletilir.',
+    definition:
+        'İşletmedeki emir, talimat ve bilgi akışının en üst yöneticiden başlayarak kademe kademe aşağıya doğru iletilmesini sağlayan yönetim ilkesidir.',
+    example:
+        'Kat hizmetlerindeki bir kararın uygulanması, emir komuta zinciri gereğince housekeeper müdüründen şeflere, oradan da kat görevlilerine iletilir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Motivasyon',
-    definition: 'Çalışanların işletme amaçları doğrultusunda daha istekli, verimli ve mutlu çalışmalarını sağlamak amacıyla uygulanan maddi ve manevi teşviklerin bütünüdür.',
-    example: 'Ayın personeli seçilen kat görevlisine verilen plaket ve ikramiye ödülü, tüm ekip üzerinde olumlu bir motivasyon yarattı.',
+    definition:
+        'Çalışanların işletme amaçları doğrultusunda daha istekli, verimli ve mutlu çalışmalarını sağlamak amacıyla uygulanan maddi ve manevi teşviklerin bütünüdür.',
+    example:
+        'Ayın personeli seçilen kat görevlisine verilen plaket ve ikramiye ödülü, tüm ekip üzerinde olumlu bir motivasyon yarattı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Performans Değerlendirme',
-    definition: 'Çalışanların işteki başarılarını, hedeflere ulaşma derecelerini, iş disiplini ve verimliliklerini objektif kriterlere göre ölçen ve analiz eden sistemdir.',
-    example: 'Yıl sonu performans değerlendirme sonuçlarına göre, yüksek başarı gösteren resepsiyon görevlileri terfi ettirilerek resepsiyon şefi yapıldı.',
+    definition:
+        'Çalışanların işteki başarılarını, hedeflere ulaşma derecelerini, iş disiplini ve verimliliklerini objektif kriterlere göre ölçen ve analiz eden sistemdir.',
+    example:
+        'Yıl sonu performans değerlendirme sonuçlarına göre, yüksek başarı gösteren resepsiyon görevlileri terfi ettirilerek resepsiyon şefi yapıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Liderlik',
-    definition: 'Belirli bir vizyon doğrultusunda insanları etkileyerek, motive ederek ve onlara ilham vererek ortak hedeflere yönlendirebilme ve sürükleme sanatıdır.',
-    example: 'Housekeeper müdürümüzün kriz anlarında gösterdiği yapıcı liderlik, tüm ekibin stres altında bile sakin kalıp işini yapmasını sağladı.',
+    definition:
+        'Belirli bir vizyon doğrultusunda insanları etkileyerek, motive ederek ve onlara ilham vererek ortak hedeflere yönlendirebilme ve sürükleme sanatıdır.',
+    example:
+        'Housekeeper müdürümüzün kriz anlarında gösterdiği yapıcı liderlik, tüm ekibin stres altında bile sakin kalıp işini yapmasını sağladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Misyon',
-    definition: 'Bir işletmenin varoluş nedenini, temel amacını, ne yaptığını ve hangi değerlere hizmet ettiğini belirten kurumsal açıklamadır.',
-    example: 'Otelimizin misyon bildirgesinde, Türk misafirperverliğini uluslararası hizmet standartlarıyla birleştirerek konuklarımıza sunmak en temel amaçtır.',
+    definition:
+        'Bir işletmenin varoluş nedenini, temel amacını, ne yaptığını ve hangi değerlere hizmet ettiğini belirten kurumsal açıklamadır.',
+    example:
+        'Otelimizin misyon bildirgesinde, Türk misafirperverliğini uluslararası hizmet standartlarıyla birleştirerek konuklarımıza sunmak en temel amaçtır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Vizyon',
-    definition: 'Bir işletmenin gelecekte ulaşmak istediği nihai hedefi, uzun vadeli ülküsünü ve sektördeki konumlanma hayalini ifade eden bildirgedir.',
-    example: 'Otelimizin vizyonu, önümüzdeki 5 yıl içinde bölgenin en çevre dostu ve en yüksek misafir sadakatine sahip yeşil oteli olmaktır.',
+    definition:
+        'Bir işletmenin gelecekte ulaşmak istediği nihai hedefi, uzun vadeli ülküsünü ve sektördeki konumlanma hayalini ifade eden bildirgedir.',
+    example:
+        'Otelimizin vizyonu, önümüzdeki 5 yıl içinde bölgenin en çevre dostu ve en yüksek misafir sadakatine sahip yeşil oteli olmaktır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Toplam Kalite Yönetimi',
-    definition: 'Müşteri memnuniyetini odak noktası alan, işletmedeki tüm departman ve çalışanların katılımıyla süreçlerin sürekli iyileştirilmesini hedefleyen yönetim felsefesidir.',
-    example: 'Toplam kalite yönetimi standartları çerçevesinde, oteldeki tüm iş adımları ve servis kalitesi aylık iç denetimlerle ölçülmektedir.',
+    definition:
+        'Misafir memnuniyetini odak noktası alan, işletmedeki tüm departman ve çalışanların katılımıyla süreçlerin sürekli iyileştirilmesini hedefleyen yönetim felsefesidir.',
+    example:
+        'Toplam kalite yönetimi standartları çerçevesinde, oteldeki tüm iş adımları ve servis kalitesi aylık iç denetimlerle ölçülmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
-    word: 'Müşteri Memnuniyeti',
-    definition: 'Sunulan otelcilik hizmetinin kalitesinin, misafirin istek, beklenti ve ihtiyaçlarını karşılama veya bu beklentilerin üzerine çıkma derecesidir.',
-    example: 'Misafir anketlerinde elde ettiğimiz %95\'lik yüksek müşteri memnuniyeti oranı, hizmet kalitemizin doğruluğunu kanıtlamaktadır.',
+    word: 'Misafir Memnuniyeti',
+    definition:
+        'Sunulan otelcilik hizmetinin kalitesinin, misafirin istek, beklenti ve ihtiyaçlarını karşılama veya bu beklentilerin üzerine çıkma derecesidir.',
+    example:
+        'Misafir anketlerinde elde ettiğimiz %95\'lik yüksek misafir memnuniyeti oranı, hizmet kalitemizin doğruluğunu kanıtlamaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İmece',
-    definition: 'Türk kültüründe, köylülerin veya mahallelinin bir işi yardımlaşarak, karşılıksız ve sırayla el birliğiyle yapması (yardımseverlik örneği).',
-    example: 'Köy halkı, hasat zamanı ürünleri toplamak için imece usulü çalışarak işleri kısa sürede bitirdi.',
+    definition:
+        'Türk kültüründe, köylülerin veya mahallelinin bir işi yardımlaşarak, karşılıksız ve sırayla el birliğiyle yapması (yardımseverlik örneği).',
+    example:
+        'Köy halkı, hasat zamanı ürünleri toplamak için imece usulü çalışarak işleri kısa sürede bitirdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Islıklı Ok (Çavuş Oku)',
-    definition: 'Metehan tarafından icat edilen, atıldığında çıkardığı sesle ordunun yönünü belirleyen ve düşmanı korkutan stratejik silah.',
-    example: 'Askeri müzede sergilenen ıslıklı ok tasarımları, Hun İmparatorluğu\'nun savaş teknolojisindeki dehasını kanıtlamaktadır.',
+    definition:
+        'Metehan tarafından icat edilen, atıldığında çıkardığı sesle ordunun yönünü belirleyen ve düşmanı korkutan stratejik silah.',
+    example:
+        'Askeri müzede sergilenen ıslıklı ok tasarımları, Hun İmparatorluğu\'nun savaş teknolojisindeki dehasını kanıtlamaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Tropikal İklim',
-    definition: 'Sıcaklık ortalamasının yüksek olduğu, kışların tamamen kurak, yağışların ise sadece yaz aylarında görüldüğü geçiş iklimi.',
-    example: 'Savan örtüsüyle kaplı tropikal iklim bölgelerinde, yaz yağışlarıyla birlikte otlaklar hızla yeşerir.',
+    definition:
+        'Sıcaklık ortalamasının yüksek olduğu, kışların tamamen kurak, yağışların ise sadece yaz aylarında görüldüğü geçiş iklimi.',
+    example:
+        'Savan örtüsüyle kaplı tropikal iklim bölgelerinde, yaz yağışlarıyla birlikte otlaklar hızla yeşerir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İklim',
-    definition: 'Çok geniş bir alanda, uzun bir zaman periyodu (en az 30-40 yıl) içinde gözlemlenen hava olaylarının genel toplamı ve ortalaması.',
-    example: 'Karadeniz kıyılarının nemli ve her mevsim yağışlı iklimi, gür ormanların yetişmesini sağlamıştır.',
+    definition:
+        'Çok geniş bir alanda, uzun bir zaman periyodu (en az 30-40 yıl) içinde gözlemlenen hava olaylarının genel toplamı ve ortalaması.',
+    example:
+        'Karadeniz kıyılarının nemli ve her mevsim yağışlı iklimi, gür ormanların yetişmesini sağlamıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Küresel Isınma',
-    definition: 'Fosil yakıt kullanımı ve sanayileşme sonucu atmosferdeki sera gazı oranının hızla artmasıyla dünya genel ortalama sıcaklığının yükselmesi olayı.',
-    example: 'Küresel ısınma nedeniyle kutup bölgelerindeki buzulların erimesi, kıyı şehirlerini su altında kalma tehlikesiyle karşı karşıya bırakıyor.',
+    definition:
+        'Fosil yakıt kullanımı ve sanayileşme sonucu atmosferdeki sera gazı oranının hızla artmasıyla dünya genel ortalama sıcaklığının yükselmesi olayı.',
+    example:
+        'Küresel ısınma nedeniyle kutup bölgelerindeki buzulların erimesi, kıyı şehirlerini su altında kalma tehlikesiyle karşı karşıya bırakıyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İklim Değişikliği',
-    definition: 'Küresel ısınmaya bağlı olarak buzulların erimesi, okyanus seviyesinin yükselmesi, aşırı hava olayları ve bölgesel kuraklık gibi büyük çevresel bozulmalar.',
-    example: 'İklim değişikliği ile mücadele kapsamında, otelimizde yenilenebilir enerji kaynaklarının kullanımını artırmayı hedefliyoruz.',
+    definition:
+        'Küresel ısınmaya bağlı olarak buzulların erimesi, okyanus seviyesinin yükselmesi, aşırı hava olayları ve bölgesel kuraklık gibi büyük çevresel bozulmalar.',
+    example:
+        'İklim değişikliği ile mücadele kapsamında, otelimizde yenilenebilir enerji kaynaklarının kullanımını artırmayı hedefliyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Ödemeler Dengesi Etkisi',
-    definition: 'Turizm faaliyetlerinden kaynaklanan dış döviz giriş ve çıkışlarının, cari açık veren bir ülkenin diğer ülkelerle olan toplam ekonomik işlemler tablosuna sağladığı pozitif ekonomik katkı.',
-    example: 'Yaz sezonunda elde edilen yüksek döviz gelirleri, ülkemizin ödemeler dengesi etkisi üzerinde son derece olumlu ve destekleyici bir rol oynamaktadır.',
+    definition:
+        'Turizm faaliyetlerinden kaynaklanan dış döviz giriş ve çıkışlarının, cari açık veren bir ülkenin diğer ülkelerle olan toplam ekonomik işlemler tablosuna sağladığı pozitif ekonomik katkı.',
+    example:
+        'Yaz sezonunda elde edilen yüksek döviz gelirleri, ülkemizin ödemeler dengesi etkisi üzerinde son derece olumlu ve destekleyici bir rol oynamaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'D2 Yetki Belgesi',
-    definition: 'Ticari ve tarifesiz olarak yurt içinde otobüsle (veya minibüsle) turizm amaçlı yolcu taşımacılığı yapacak işletmelere verilen Karayolları yetki belgesi.',
-    example: 'Acentemiz, turlarda kullanacağı tüm araçların D2 yetki belgesi kontrollerini her sezon öncesi titizlikle yapar.',
+    definition:
+        'Ticari ve tarifesiz olarak yurt içinde otobüsle (veya minibüsle) turizm amaçlı yolcu taşımacılığı yapacak işletmelere verilen Karayolları yetki belgesi.',
+    example:
+        'Acentemiz, turlarda kullanacağı tüm araçların D2 yetki belgesi kontrollerini her sezon öncesi titizlikle yapar.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'A Yetki Belgesi',
-    definition: 'Otomobille ticari yolcu taşımacılığı yapan firmalara verilen yetki belgesi.',
-    example: 'VIP transfer hizmeti sunan lüks binek otomobillerimiz için Karayolları\'ndan A yetki belgesi temin ettik.',
+    definition:
+        'Otomobille ticari yolcu taşımacılığı yapan firmalara verilen yetki belgesi.',
+    example:
+        'VIP transfer hizmeti sunan lüks binek otomobillerimiz için Karayolları\'ndan A yetki belgesi temin ettik.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'B2 Yetki Belgesi',
-    definition: 'Ticari ve tarifesiz olarak uluslararası yolcu taşımacılığı yapacak olan işletmelere verilen yetki belgesi.',
-    example: 'Bulgaristan ve Yunanistan turlarında yolcu taşıyabilmek için otobüs işletmesinin B2 yetki belgesine sahip olması şarttır.',
+    definition:
+        'Ticari ve tarifesiz olarak uluslararası yolcu taşımacılığı yapacak olan işletmelere verilen yetki belgesi.',
+    example:
+        'Bulgaristan ve Yunanistan turlarında yolcu taşıyabilmek için otobüs işletmesinin B2 yetki belgesine sahip olması şarttır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'F Yetki Belgesi (F1/F2)',
-    definition: 'Ticari amaçla yolcu taşımacılığı alanında acentelik yapacak gerçek ve tüzel kişilerin aldığı belge (F1 yurt içi, F2 yurt dışı ve yurt içi).',
-    example: 'Seyahat acentemiz, otobüs biletleri kesebilmek ve aracılık yapabilmek için F1 yetki belgesi almıştır.',
+    definition:
+        'Ticari amaçla yolcu taşımacılığı alanında acentelik yapacak gerçek ve tüzel kişilerin aldığı belge (F1 yurt içi, F2 yurt dışı ve yurt içi).',
+    example:
+        'Seyahat acentemiz, otobüs biletleri kesebilmek ve aracılık yapabilmek için F1 yetki belgesi almıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'SRC Belgesi',
-    definition: 'Ticari amaçla yolcu veya yük taşıyan sürücülerin alması zorunlu olan Mesleki Yeterlilik Belgesi (SRC1 Uluslararası Yolcu, SRC2 Yurt İçi Yolcu).',
-    example: 'Tur otobüsü şoförlerinin yolcu taşımak için geçerli bir SRC belgesi ve sürücü lisansına sahip olması zorunludur.',
+    definition:
+        'Ticari amaçla yolcu veya yük taşıyan sürücülerin alması zorunlu olan Mesleki Yeterlilik Belgesi (SRC1 Uluslararası Yolcu, SRC2 Yurt İçi Yolcu).',
+    example:
+        'Tur otobüsü şoförlerinin yolcu taşımak için geçerli bir SRC belgesi ve sürücü lisansına sahip olması zorunludur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Psikoteknik Raporu',
-    definition: 'Ticari araç sürücülerinin algı, refleks ve muhakeme yeteneklerinin yeterli olduğunu gösteren, her 5 yılda bir yenilenen psiko-analiz raporu.',
-    example: 'Acente şoförümüz, yasal denetimlerde sorun yaşamamak için psikoteknik raporu belgesini araçta bulundurmaktadır.',
+    definition:
+        'Ticari araç sürücülerinin algı, refleks ve muhakeme yeteneklerinin yeterli olduğunu gösteren, her 5 yılda bir yenilenen psiko-analiz raporu.',
+    example:
+        'Acente şoförümüz, yasal denetimlerde sorun yaşamamak için psikoteknik raporu belgesini araçta bulundurmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Taşıma Sözleşmesi',
-    definition: 'Tarifesiz yolcu taşımacılığında firmayla yolcu/grup arasında yapılan; güzergâh, saat ve taşıma ücretini belirten yasal sözleşme.',
-    example: 'Transfer operasyon müdürü, yarınki havalimanı transferleri için taşıma şirketiyle resmi taşıma sözleşmesi imzaladı.',
+    definition:
+        'Tarifesiz yolcu taşımacılığında firmayla yolcu/grup arasında yapılan; güzergâh, saat ve taşıma ücretini belirten yasal sözleşme.',
+    example:
+        'Transfer operasyon müdürü, yarınki havalimanı transferleri için taşıma şirketiyle resmi taşıma sözleşmesi imzaladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Transfer Operasyon Yöneticisi',
-    definition: 'Transfer işlemlerinin tümünü planlayan, araçları ve personeli (şoför, transferman) koordine eden, yüksek yabancı dil ve yönetim becerisine sahip yetkili.',
-    example: 'Transfer operasyon yöneticisi, uçakların rötar durumlarını takip ederek havalimanındaki araç planlamasını anlık olarak güncelledi.',
+    definition:
+        'Transfer işlemlerinin tümünü planlayan, araçları ve personeli (şoför, transferman) koordine eden, yüksek yabancı dil ve yönetim becerisine sahip yetkili.',
+    example:
+        'Transfer operasyon yöneticisi, uçakların rötar durumlarını takip ederek havalimanındaki araç planlamasını anlık olarak güncelledi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Airport (Havalimanı)',
-    definition: 'İç ve dış hatlar terminalini barındıran, pasaport kontrolü, gümrük ofisleri ve lounge bölümleri olan uluslararası havacılık standartlarındaki (IATA/ICAO) tesis.',
-    example: 'Şehrimize yeni yapılan modern havalimanı (airport), genişletilmiş terminal binasıyla turist akışını büyük oranda kolaylaştırdı.',
+    definition:
+        'İç ve dış hatlar terminalini barındıran, pasaport kontrolü, gümrük ofisleri ve lounge bölümleri olan uluslararası havacılık standartlarındaki (IATA/ICAO) tesis.',
+    example:
+        'Şehrimize yeni yapılan modern havalimanı (airport), genişletilmiş terminal binasıyla turist akışını büyük oranda kolaylaştırdı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Apron',
-    definition: 'Havaalanlarında uçakların park pozisyonlarını aldığı, yakıt ikmali yapıldığı ve yolcu/yük bindirildiği, girişin özel izne tabi olduğu halka kapalı alan.',
-    example: 'Yolcular, uçaktan indikten sonra özel transfer otobüsleriyle apron üzerinden geçerek geliş terminaline taşındı.',
+    definition:
+        'Havaalanlarında uçakların park pozisyonlarını aldığı, yakıt ikmali yapıldığı ve yolcu/yük bindirildiği, girişin özel izne tabi olduğu halka kapalı alan.',
+    example:
+        'Yolcular, uçaktan indikten sonra özel transfer otobüsleriyle apron üzerinden geçerek geliş terminaline taşındı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Apron.mp3',
   ),
   Term(
     word: 'Gate (Kapı)',
-    definition: 'Check-in ve güvenlik işlemlerini tamamlayan yolcuların bekleme salonundan uçağa geçiş yaptıkları (bazen jet bridge / körük ile bağlanan) alan.',
-    example: 'İstanbul uçuşu için son çağrı yapıldığında yolcular 212 numaralı kapıdan (gate) uçağa binmeye başladılar.',
+    definition:
+        'Check-in ve güvenlik işlemlerini tamamlayan yolcuların bekleme salonundan uçağa geçiş yaptıkları (bazen jet bridge / körük ile bağlanan) alan.',
+    example:
+        'İstanbul uçuşu için son çağrı yapıldığında yolcular 212 numaralı kapıdan (gate) uçağa binmeye başladılar.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Customs (Gümrük)',
-    definition: 'Ülke sınırlarından giriş ve çıkış yapan yolcuların kişisel eşyalarının, malların ve nakliye araçlarının denetlendiği, vergilendirildiği devlet ofisi.',
-    example: 'Yabancı misafirlerin ülkeye getirdiği hediyelik eşyalar, gümrük (customs) mevzuatındaki muafiyet limitlerine göre denetlendi.',
+    definition:
+        'Ülke sınırlarından giriş ve çıkış yapan yolcuların kişisel eşyalarının, malların ve nakliye araçlarının denetlendiği, vergilendirildiği devlet ofisi.',
+    example:
+        'Yabancı misafirlerin ülkeye getirdiği hediyelik eşyalar, gümrük (customs) mevzuatındaki muafiyet limitlerine göre denetlendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Duty Free',
-    definition: 'Dış hatlar terminallerinde bulunan, yolcuların pasaportlarını ibraz ederek limitler dâhilinde vergiden muaf (vergisiz) alışveriş yapabildikleri mağazalar.',
-    example: 'Yolcular, pasaport kontrolünden geçtikten sonra duty free mağazasından yöresel çikolata ve geleneksel Türk lokumu satın aldılar.',
+    definition:
+        'Dış hatlar terminallerinde bulunan, yolcuların pasaportlarını ibraz ederek limitler dâhilinde vergiden muaf (vergisiz) alışveriş yapabildikleri mağazalar.',
+    example:
+        'Yolcular, pasaport kontrolünden geçtikten sonra duty free mağazasından yöresel çikolata ve geleneksel Türk lokumu satın aldılar.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Duty Free.mp3',
   ),
   Term(
     word: 'Lost and Found (Kayıp ve Bulunan Eşya)',
-    definition: 'Yolcuların bagajlarının geç teslim edilmesi, hasar görmesi veya eşya unutulması gibi aksaklık durumlarında başvurdukları ve rapor tuttukları ofis.',
-    example: 'Valizi bagaj bandından çıkmayan misafirimizle birlikte lost and found (kayıp eşya) ofisine giderek rapor doldurduk.',
+    definition:
+        'Yolcuların bagajlarının geç teslim edilmesi, hasar görmesi veya eşya unutulması gibi aksaklık durumlarında başvurdukları ve rapor tuttukları ofis.',
+    example:
+        'Valizi bagaj bandından çıkmayan misafirimizle birlikte lost and found (kayıp eşya) ofisine giderek rapor doldurduk.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Meeting Point (Buluşma Noktası)',
-    definition: 'Havalimanlarında gelen yolcular ile onları karşılayacak transfermenlerin, üzerinde acente isimlerinin yazılı olduğu board\'larla bir araya geldikleri özel karşılama holü.',
-    example: 'Yolcular, terminal çıkışındaki meeting point (buluşma noktası) alanında acentemizin logosunu taşıyan görevliyle buluştular.',
+    definition:
+        'Havalimanlarında gelen yolcular ile onları karşılayacak transfermenlerin, üzerinde acente isimlerinin yazılı olduğu board\'larla bir araya geldikleri özel karşılama holü.',
+    example:
+        'Yolcular, terminal çıkışındaki meeting point (buluşma noktası) alanında acentemizin logosunu taşıyan görevliyle buluştular.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'E-Bilet (Elektronik Bilet)',
-    definition: 'Yolcunun uçuş rezervasyon bilgilerinin hava yolu şirketinin sistemlerinde dijital olarak tutulduğu, kağıt bilete ihtiyaç bırakmayan elektronik belge (e-bilet / PNR).',
-    example: 'Seyahat acentesi, rezervasyon işlemlerinin ardından müşterinin e-posta adresine e-bilet (elektronik bilet) onay kodunu gönderdi.',
+    definition:
+        'Yolcunun uçuş rezervasyon bilgilerinin hava yolu şirketinin sistemlerinde dijital olarak tutulduğu, kağıt bilete ihtiyaç bırakmayan elektronik belge (e-bilet / PNR).',
+    example:
+        'Seyahat acentesi, rezervasyon işlemlerinin ardından misafirin e-posta adresine e-bilet (elektronik bilet) onay kodunu gönderdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'VIP Transfer',
-    definition: 'Önemli kişilere (VIP) veya özel konfor talep eden konuklara tahsis edilmiş lüks, geniş hacimli ve teknolojik donanımlı araçlarla sağlanan özel ve direkt transfer hizmeti.',
-    example: 'Protokol heyeti, havalimanından otele taze sıkılmış meyve suları ve özel ikramlar eşliğinde VIP transfer araçlarıyla taşındı.',
+    definition:
+        'Önemli kişilere (VIP) veya özel konfor talep eden konuklara tahsis edilmiş lüks, geniş hacimli ve teknolojik donanımlı araçlarla sağlanan özel ve direkt transfer hizmeti.',
+    example:
+        'Protokol heyeti, havalimanından otele taze sıkılmış meyve suları ve özel ikramlar eşliğinde VIP transfer araçlarıyla taşındı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/VIP.mp3',
   ),
   Term(
     word: 'Otomobil (Turizmde)',
-    definition: 'Şoför koltuğuyla beraber en fazla 9 oturma yeri olan, genellikle bireysel ve VIP transferlerde kullanılan motorlu taşıt (Örn: Lüks sedan, VIP minivan).',
-    example: 'İki kişilik balayı çiftinin transferini gerçekleştirmek üzere havalimanına şık bir binek otomobil yönlendirildi.',
+    definition:
+        'Şoför koltuğuyla beraber en fazla 9 oturma yeri olan, genellikle bireysel ve VIP transferlerde kullanılan motorlu taşıt (Örn: Lüks sedan, VIP minivan).',
+    example:
+        'İki kişilik balayı çiftinin transferini gerçekleştirmek üzere havalimanına şık bir binek otomobil yönlendirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Minibüs (Küçük Otobüs)',
-    definition: 'Şoför koltuğu dâhil 10 ile 17 arasında oturma yeri olan ve orta büyüklükteki turist gruplarının transferini sağlayan ticari taşıt.',
-    example: '12 kişilik aile grubu için transfer departmanımız tarafından geniş bagaj hacmine sahip bir minibüs tahsis edildi.',
+    definition:
+        'Şoför koltuğu dâhil 10 ile 17 arasında oturma yeri olan ve orta büyüklükteki turist gruplarının transferini sağlayan ticari taşıt.',
+    example:
+        '12 kişilik aile grubu için transfer departmanımız tarafından geniş bagaj hacmine sahip bir minibüs tahsis edildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Otobüs (2+1 / 2+2 Koltuk Düzeni)',
-    definition: 'Şoför dâhil 17\'den fazla koltuğu olan büyük taşıtlar. Koltuklar 2+2 veya daha konforlu turlar için 2+1 düzeninde olabilir.',
-    example: 'Kültür turumuzda misafirlerin daha geniş alanda seyahat etmesi için 2+1 koltuk düzenine sahip konforlu bir otobüs kiralandı.',
+    definition:
+        'Şoför dâhil 17\'den fazla koltuğu olan büyük taşıtlar. Koltuklar 2+2 veya daha konforlu turlar için 2+1 düzeninde olabilir.',
+    example:
+        'Kültür turumuzda misafirlerin daha geniş alanda seyahat etmesi için 2+1 koltuk düzenine sahip konforlu bir otobüs kiralandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Engelsiz Turizm',
-    definition: 'Engelli bireylerin tekerlekli sandalye asansörü (rampa) bulunan özel donanımlı araçlarla ve eğitimli rehberlerle seyahat edebilmesini öngören turizm modeli.',
-    example: 'Engelsiz turizm standartlarına uygun olarak tasarlanan otobüsümüz sayesinde tekerlekli sandalyeli misafirimiz tura kolayca katıldı.',
+    definition:
+        'Engelli bireylerin tekerlekli sandalye asansörü (rampa) bulunan özel donanımlı araçlarla ve eğitimli rehberlerle seyahat edebilmesini öngören turizm modeli.',
+    example:
+        'Engelsiz turizm standartlarına uygun olarak tasarlanan otobüsümüz sayesinde tekerlekli sandalyeli misafirimiz tura kolayca katıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Transfer İnfosu',
-    definition: 'Havaalanından çıkıldıktan sonra transfermen tarafından araç mikrofonuyla verilen; ülkenin para birimi, dönüş saatleri, otel giriş işlemleri ve genel kurallar hakkındaki hoş geldin bilgilendirmesi.',
-    example: 'Transfermen, yolculuk başlar başlamaz mikrofonu alarak misafirlerimize bölgenin iklimi ve otel check-in saatleri hakkında transfer infosu verdi.',
+    definition:
+        'Havaalanından çıkıldıktan sonra transfermen tarafından araç mikrofonuyla verilen; ülkenin para birimi, dönüş saatleri, otel giriş işlemleri ve genel kurallar hakkındaki hoş geldin bilgilendirmesi.',
+    example:
+        'Transfermen, yolculuk başlar başlamaz mikrofonu alarak misafirlerimize bölgenin iklimi ve otel check-in saatleri hakkında transfer infosu verdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Elektronik Yolcu Listesi (E-Yolcu Listesi)',
-    definition: 'Karayolları mevzuatı gereği U-ETDS (Ulaştırma Elektronik Takip ve Denetim Sistemi) vb. üzerinden düzenlenen, yolcu pasaport/kimlik bilgilerini içeren dijital taşıma listesi.',
-    example: 'Trafik kontrol noktasında durdurulan otobüsün şoförü, kolluk kuvvetlerine dijital ortamdaki e-yolcu listesini gösterdi.',
+    definition:
+        'Karayolları mevzuatı gereği U-ETDS (Ulaştırma Elektronik Takip ve Denetim Sistemi) vb. üzerinden düzenlenen, yolcu pasaport/kimlik bilgilerini içeren dijital taşıma listesi.',
+    example:
+        'Trafik kontrol noktasında durdurulan otobüsün şoförü, kolluk kuvvetlerine dijital ortamdaki e-yolcu listesini gösterdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kayıp Eşya (Unutulan Eşya) Formu',
-    definition: 'Transfer aracında konuklar tarafından unutulan eşyaların kayıt altına alınarak koltuk numarası ve transfer tarihiyle birlikte acenteye teslim edildiği tutanak.',
-    example: 'Şoför, koltuk arkası cepte bulduğu fotoğraf makinesini kayıp eşya formu doldurarak transfer ofisine teslim etti.',
+    definition:
+        'Transfer aracında konuklar tarafından unutulan eşyaların kayıt altına alınarak koltuk numarası ve transfer tarihiyle birlikte acenteye teslim edildiği tutanak.',
+    example:
+        'Şoför, koltuk arkası cepte bulduğu fotoğraf makinesini kayıp eşya formu doldurarak transfer ofisine teslim etti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İnovatif Turizm',
-    definition: 'Turizm sektöründe turist deneyimini artırmak veya maliyetleri düşürmek için dijitalleşme, otonom sistemler veya yeni iş modellerinin kullanılması.',
-    example: 'Sanal gerçeklik gözlükleri ile misafirlere antik kentleri rehber eşliğinde gezdirmek, acentemizin sunduğu en yeni inovatif turizm ürünüdür.',
+    definition:
+        'Turizm sektöründe turist deneyimini artırmak veya maliyetleri düşürmek için dijitalleşme, otonom sistemler veya yeni iş modellerinin kullanılması.',
+    example:
+        'Sanal gerçeklik gözlükleri ile misafirlere antik kentleri rehber eşliğinde gezdirmek, acentemizin sunduğu en yeni inovatif turizm ürünüdür.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'DND (Do Not Disturb)',
-    definition: 'Konuğun rahatsız edilmek istemediğini belirten \'Rahatsız Etmeyin\' uyarısı.',
-    example: 'Kapısında DND kartı asılı olan veya sistemde DND olarak işaretlenen odaların temizliği yapılmaz ve konuk kesinlikle telefonla aranmaz.',
+    definition:
+        'Konuğun rahatsız edilmek istemediğini belirten \'Rahatsız Etmeyin\' uyarısı.',
+    example:
+        'Kapısında DND kartı asılı olan veya sistemde DND olarak işaretlenen odaların temizliği yapılmaz ve konuk kesinlikle telefonla aranmaz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/DND Do Not Disturb.mp3',
   ),
   Term(
     word: 'Turist',
-    definition: 'Gittiği yerde en az 24 saat (veya 1 gece) konaklayan, turizm faaliyetlerine katılan ve gelir elde etme amacı gütmeyen kişi.',
-    example: 'Otelimize check-in yapan her yabancı turist, bölgedeki yerel restoranları ve tarihi mekanları ziyaret ederek yerel esnafa doğrudan katkı sağlamaktadır.',
+    definition:
+        'Gittiği yerde en az 24 saat (veya 1 gece) konaklayan, turizm faaliyetlerine katılan ve gelir elde etme amacı gütmeyen kişi.',
+    example:
+        'Otelimize check-in yapan her yabancı turist, bölgedeki yerel restoranları ve tarihi mekanları ziyaret ederek yerel esnafa doğrudan katkı sağlamaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İç Turizm',
-    definition: 'Bir ülke vatandaşlarının, kendi ülke sınırları içerisinde yaptıkları turizm hareketleri.',
-    example: 'Erken rezervasyon kampanyaları ve resmi tatillerin uzatılması, ülkemizde iç turizm talebinin ciddi oranda artmasını sağladı.',
+    definition:
+        'Bir ülke vatandaşlarının, kendi ülke sınırları içerisinde yaptıkları turizm hareketleri.',
+    example:
+        'Erken rezervasyon kampanyaları ve resmi tatillerin uzatılması, ülkemizde iç turizm talebinin ciddi oranda artmasını sağladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Dış Turizm',
-    definition: 'Kişilerin sürekli yaşadıkları ülke sınırları dışına yaptıkları turizm hareketleri.',
-    example: 'Acentemiz, bu yıl dış turizm kapsamında İtalya ve İspanya turlarına katılan Türk misafirlerimiz için özel rehberli gezi paketleri hazırladı.',
+    definition:
+        'Kişilerin sürekli yaşadıkları ülke sınırları dışına yaptıkları turizm hareketleri.',
+    example:
+        'Acentemiz, bu yıl dış turizm kapsamında İtalya ve İspanya turlarına katılan Türk misafirlerimiz için özel rehberli gezi paketleri hazırladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Aktif Turizm',
-    definition: 'Bir ülkeye dışarıdan gelen turistlerin oluşturduğu turizm hareketi (Döviz kazandırıcı özellik taşır).',
-    example: 'Ülkemizin tarihi ve doğal güzelliklerinin yurt dışında iyi tanıtılması, aktif turizm girdilerimizin ve döviz rezervlerimizin artmasına katkı sunmaktadır.',
+    definition:
+        'Bir ülkeye dışarıdan gelen turistlerin oluşturduğu turizm hareketi (Döviz kazandırıcı özellik taşır).',
+    example:
+        'Ülkemizin tarihi ve doğal güzelliklerinin yurt dışında iyi tanıtılması, aktif turizm girdilerimizin ve döviz rezervlerimizin artmasına katkı sunmaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Pasif Turizm',
-    definition: 'Bir ülke vatandaşlarının başka ülkelere turistik amaçla gitmesi (Döviz kaybettirici özellik taşır).',
-    example: 'Vatandaşlarımızın yurt dışı tatillerine olan yoğun ilgisi, pasif turizm harcamalarının artmasına ve dış ticaret dengesinde turizm gideri yazılmasına neden olur.',
+    definition:
+        'Bir ülke vatandaşlarının başka ülkelere turistik amaçla gitmesi (Döviz kaybettirici özellik taşır).',
+    example:
+        'Vatandaşlarımızın yurt dışı tatillerine olan yoğun ilgisi, pasif turizm harcamalarının artmasına ve dış ticaret dengesinde turizm gideri yazılmasına neden olur.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Talebi',
-    definition: 'Belirli bir dönemde, belirli bir fiyattan turistik mal ve hizmetleri satın alma isteği ve gücüne sahip kişi veya gruplar.',
-    example: 'Ekonomik dalgalanmalar ve döviz kurlarındaki değişimler, yabancı turistlerin ülkemize olan turizm talebi üzerinde belirleyici bir etkiye sahiptir.',
+    definition:
+        'Belirli bir dönemde, belirli bir fiyattan turistik mal ve hizmetleri satın alma isteği ve gücüne sahip kişi veya gruplar.',
+    example:
+        'Ekonomik dalgalanmalar ve döviz kurlarındaki değişimler, yabancı turistlerin ülkemize olan turizm talebi üzerinde belirleyici bir etkiye sahiptir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Potansiyeli',
-    definition: 'Bir bölgenin sahip olduğu, ancak henüz turizme kazandırılmamış doğal, tarihi ve kültürel kaynakların tümü.',
-    example: 'Doğu Karadeniz\'in el değmemiş yaylaları ve tarihi konakları, doğru yatırımlarla eko-turizme kazandırılabilecek büyük bir turizm potansiyeli taşımaktadır.',
+    definition:
+        'Bir bölgenin sahip olduğu, ancak henüz turizme kazandırılmamış doğal, tarihi ve kültürel kaynakların tümü.',
+    example:
+        'Doğu Karadeniz\'in el değmemiş yaylaları ve tarihi konakları, doğru yatırımlarla eko-turizme kazandırılabilecek büyük bir turizm potansiyeli taşımaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Sağlık Turizmi (Medikal)',
-    definition: 'Tedavi olmak, ameliyat veya rehabilitasyon hizmeti almak amacıyla başka bir ülke/bölgeye yapılan seyahatler.',
-    example: 'İstanbul\'daki tam teşekküllü hastaneler ve uzman hekimler, her yıl saç ekimi ve diş tedavisi için gelen binlerce yabancıya sağlık turizmi kapsamında hizmet vermektedir.',
+    definition:
+        'Tedavi olmak, ameliyat veya rehabilitasyon hizmeti almak amacıyla başka bir ülke/bölgeye yapılan seyahatler.',
+    example:
+        'İstanbul\'daki tam teşekküllü hastaneler ve uzman hekimler, her yıl saç ekimi ve diş tedavisi için gelen binlerce yabancıya sağlık turizmi kapsamında hizmet vermektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kırsal Turizm (Agroturizm)',
-    definition: 'Kırsal alanlarda, çiftliklerde veya köylerde tarımsal faaliyetlere katılarak doğayla iç içe vakit geçirmek amacıyla yapılan turizm.',
-    example: 'Agroturizm çiftliğimize gelen misafirler, sabah kendi elleriyle organik domates toplayıp inek sağarak kırsal turizm deneyimi yaşıyorlar.',
+    definition:
+        'Kırsal alanlarda, çiftliklerde veya köylerde tarımsal faaliyetlere katılarak doğayla iç içe vakit geçirmek amacıyla yapılan turizm.',
+    example:
+        'Agroturizm çiftliğimize gelen misafirler, sabah kendi elleriyle organik domates toplayıp inek sağarak kırsal turizm deneyimi yaşıyorlar.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İnanç Turizmi',
-    definition: 'Kişilerin mensup oldukları dinin kutsal saydığı mekânları ziyaret etmek (hac, umre vb.) veya dini ritüelleri yerine getirmek amacıyla yaptıkları seyahatler.',
-    example: 'Meryem Ana Evi ve Hatay Sen Piyer Kilisesi, Hristiyan dünyasından gelen ziyaretçiler için inanç turizmi kapsamında çok önemli kutsal duraklardır.',
+    definition:
+        'Kişilerin mensup oldukları dinin kutsal saydığı mekânları ziyaret etmek (hac, umre vb.) veya dini ritüelleri yerine getirmek amacıyla yaptıkları seyahatler.',
+    example:
+        'Meryem Ana Evi ve Hatay Sen Piyer Kilisesi, Hristiyan dünyasından gelen ziyaretçiler için inanç turizmi kapsamında çok önemli kutsal duraklardır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Spor Turizmi',
-    definition: 'Uluslararası veya ulusal spor organizasyonlarını (Olimpiyatlar, Dünya Kupası vb.) izlemek veya aktif olarak spor yapmak amacıyla gerçekleştirilen turizm.',
-    example: 'Antalya\'daki futbol sahaları ve tenis kortları, kış kampı döneminde dünyanın dört bir yanından spor kulüplerini spor turizmi kapsamında ağırlamaktadır.',
+    definition:
+        'Uluslararası veya ulusal spor organizasyonlarını (Olimpiyatlar, Dünya Kupası vb.) izlemek veya aktif olarak spor yapmak amacıyla gerçekleştirilen turizm.',
+    example:
+        'Antalya\'daki futbol sahaları ve tenis kortları, kış kampı döneminde dünyanın dört bir yanından spor kulüplerini spor turizmi kapsamında ağırlamaktadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Üçüncü Yaş Turizmi',
-    definition: 'Genellikle 65 yaş ve üzeri, emekli, geniş boş zamanı ve geliri olan kişilerin katıldığı turizm hareketleri.',
-    example: 'Avrupalı emekli turist grupları, sakin ve konforlu bir tatil geçirmek için sezon dışı dönemlerde üçüncü yaş turizmi paketlerimizi tercih etmektedir.',
+    definition:
+        'Genellikle 65 yaş ve üzeri, emekli, geniş boş zamanı ve geliri olan kişilerin katıldığı turizm hareketleri.',
+    example:
+        'Avrupalı emekli turist grupları, sakin ve konforlu bir tatil geçirmek için sezon dışı dönemlerde üçüncü yaş turizmi paketlerimizi tercih etmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Gençlik Turizmi',
-    definition: '15-24 yaş arası gençlerin, genellikle kısıtlı bütçelerle eğitim, eğlence veya spor amacıyla yaptıkları seyahatler.',
-    example: 'Otelimizin sunduğu paylaşımlı oda ve sırt çantalı gezgin dostu fiyatlar, gençlik turizmi segmentindeki üniversite öğrencilerini cezbetmektedir.',
+    definition:
+        '15-24 yaş arası gençlerin, genellikle kısıtlı bütçelerle eğitim, eğlence veya spor amacıyla yaptıkları seyahatler.',
+    example:
+        'Otelimizin sunduğu paylaşımlı oda ve sırt çantalı gezgin dostu fiyatlar, gençlik turizmi segmentindeki üniversite öğrencilerini cezbetmektedir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kış Turizmi',
-    definition: 'Kar yağışı alan dağlık bölgelerde kayak, snowboard gibi kış sporları yapmak amacıyla gerçekleştirilen turizm.',
-    example: 'Uludağ ve Erciyes\'teki telesiyej ve pist yatırımları, ülkemizde kış turizmi sezonunun kalitesini uluslararası standartlara taşımıştır.',
+    definition:
+        'Kar yağışı alan dağlık bölgelerde kayak, snowboard gibi kış sporları yapmak amacıyla gerçekleştirilen turizm.',
+    example:
+        'Uludağ ve Erciyes\'teki telesiyej ve pist yatırımları, ülkemizde kış turizmi sezonunun kalitesini uluslararası standartlara taşımıştır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Kruvaziyer Turizmi',
-    definition: 'Yüksek standartlı, eğlence ve konaklama imkânı sunan büyük ve lüks yolcu gemileriyle yapılan deniz turizmi.',
-    example: 'Kuşadası limanına yanaşan dev kruvaziyer gemilerinden inen binlerce turist, kruvaziyer turizmi sayesinde liman esnafına büyük canlılık kazandırdı.',
+    definition:
+        'Yüksek standartlı, eğlence ve konaklama imkânı sunan büyük ve lüks yolcu gemileriyle yapılan deniz turizmi.',
+    example:
+        'Kuşadası limanına yanaşan dev kruvaziyer gemilerinden inen binlerce turist, kruvaziyer turizmi sayesinde liman esnafına büyük canlılık kazandırdı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Alternatif Turizm',
-    definition: 'Kitle turizminin (deniz-kum-güneş) dışında kalan, daha butik, doğaya ve çevreye duyarlı olarak yapılan tüm niş turizm türlerinin genel adı.',
-    example: 'Doğa yürüyüşü, rafting ve mağaracılık gibi macera dolu aktiviteleri bir araya getirerek misafirlerimize alternatif turizm seçenekleri sunuyoruz.',
+    definition:
+        'Kitle turizminin (deniz-kum-güneş) dışında kalan, daha butik, doğaya ve çevreye duyarlı olarak yapılan tüm niş turizm türlerinin genel adı.',
+    example:
+        'Doğa yürüyüşü, rafting ve mağaracılık gibi macera dolu aktiviteleri bir araya getirerek misafirlerimize alternatif turizm seçenekleri sunuyoruz.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Sürdürülebilir Turizm',
-    definition: 'Doğal ve kültürel kaynakları tüketmeden, gelecek nesillerin de aynı imkânlardan yararlanabileceği şekilde turizm faaliyetlerinin planlanmasını ve ekosistemin korunması.',
-    example: 'Plastik atıkları sıfırlayan ve yerel üreticileri destekleyen otelimiz, sürdürülebilir turizm ilkelerini benimseyen bir yeşil anahtar tesisidir.',
+    definition:
+        'Doğal ve kültürel kaynakları tüketmeden, gelecek nesillerin de aynı imkânlardan yararlanabileceği şekilde turizm faaliyetlerinin planlanmasını ve ekosistemin korunması.',
+    example:
+        'Plastik atıkları sıfırlayan ve yerel üreticileri destekleyen otelimiz, sürdürülebilir turizm ilkelerini benimseyen bir yeşil anahtar tesisidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Turnover',
-    definition: 'Belirli bir dönemde (genellikle bir yılda) işten ayrılan personelin, toplam çalışan sayısına oranını ifade eden personel devir hızı istatistiğidir.',
-    example: 'İnsan kaynakları müdürü, oteldeki yüksek personel turnover (devir hızı) oranını düşürmek için çalışma koşullarını iyileştirme kararı aldı.',
+    definition:
+        'Belirli bir dönemde (genellikle bir yılda) işten ayrılan personelin, toplam çalışan sayısına oranını ifade eden personel devir hızı istatistiğidir.',
+    example:
+        'İnsan kaynakları müdürü, oteldeki yüksek personel turnover (devir hızı) oranını düşürmek için çalışma koşullarını iyileştirme kararı aldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/Turnover.mp3',
   ),
   Term(
     word: 'Yat ve Kruvaziyer Turizmi',
-    definition: 'Özel yatlar veya yüksek yolcu kapasiteli lüks kruvaziyer gemileriyle limanları, koyları, adaları ziyaret ederek gerçekleştirilen deniz turizmi türü.',
-    example: 'Kuşadası Ege Port limanına yanaşan dev gemiden inen binlerce turist, yat ve kruvaziyer turizmi kapsamında esnafa hareketlilik kazandırdı.',
+    definition:
+        'Özel yatlar veya yüksek yolcu kapasiteli lüks kruvaziyer gemileriyle limanları, koyları, adaları ziyaret ederek gerçekleştirilen deniz turizmi türü.',
+    example:
+        'Kuşadası Ege Port limanına yanaşan dev gemiden inen binlerce turist, yat ve kruvaziyer turizmi kapsamında esnafa hareketlilik kazandırdı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Golf Turizmi',
-    definition: 'Ulusal standartlardaki golf sahalarında spor yapmak, turnuvaları izlemek veya iş seyahatleriyle golfü birleştirmek amacıyla yapılan yüksek harcama potansiyelli turizm türü.',
-    example: 'Antalya Belek, her yıl binlerce yabancı oyuncuyu ağırlayan dünyanın en prestijli golf turizmi destinasyonlarından biridir.',
+    definition:
+        'Ulusal standartlardaki golf sahalarında spor yapmak, turnuvaları izlemek veya iş seyahatleriyle golfü birleştirmek amacıyla yapılan yüksek harcama potansiyelli turizm türü.',
+    example:
+        'Antalya Belek, her yıl binlerce yabancı oyuncuyu ağırlayan dünyanın en prestijli golf turizmi destinasyonlarından biridir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Av Turizmi',
-    definition: 'Yasal mevzuat ve kotalar çerçevesinde, avcılık belgesine sahip kişilerin belirli dönemlerde doğada yaban hayvanlarını avlamak amacıyla katıldıkları kontrollü turizm türü.',
-    example: 'Tarım ve Orman Bakanlığı\'nın belirlediği kotalar dahilinde açılan yaban keçisi avı sezonu, bölgeye av turizmi kapsamında yabancı turistler çekti.',
+    definition:
+        'Yasal mevzuat ve kotalar çerçevesinde, avcılık belgesine sahip kişilerin belirli dönemlerde doğada yaban hayvanlarını avlamak amacıyla katıldıkları kontrollü turizm türü.',
+    example:
+        'Tarım ve Orman Bakanlığı\'nın belirlediği kotalar dahilinde açılan yaban keçisi avı sezonu, bölgeye av turizmi kapsamında yabancı turistler çekti.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Su Altı Dalış Turizmi',
-    definition: 'Deniz ve göllerdeki su altı faunasını, batıkları, resifleri ve arkeolojik kalıntıları görmek amacıyla profesyonel dalış ekipmanlarıyla yapılan turizm faaliyeti.',
-    example: 'Çanakkale\'deki tarihi savaş batıklarını görmek için bölgeye gelen dalgıçlar, su altı dalış turizmi hareketliliğini artırdı.',
+    definition:
+        'Deniz ve göllerdeki su altı faunasını, batıkları, resifleri ve arkeolojik kalıntıları görmek amacıyla profesyonel dalış ekipmanlarıyla yapılan turizm faaliyeti.',
+    example:
+        'Çanakkale\'deki tarihi savaş batıklarını görmek için bölgeye gelen dalgıçlar, su altı dalış turizmi hareketliliğini artırdı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İpek Yolu Turizmi',
-    definition: 'Tarihi İpek Yolu güzergahındaki kervansaraylar, hanlar ve antik ticaret yollarına yeni turistik işlevler kazandırarak kültürel miras rotalarını izlemeyi amaçlayan turizm.',
-    example: 'Anadolu\'daki Selçuklu kervansaraylarını kapsayan İpek Yolu turizmi turları, tarih meraklısı turistlerden yoğun ilgi görüyor.',
+    definition:
+        'Tarihi İpek Yolu güzergahındaki kervansaraylar, hanlar ve antik ticaret yollarına yeni turistik işlevler kazandırarak kültürel miras rotalarını izlemeyi amaçlayan turizm.',
+    example:
+        'Anadolu\'daki Selçuklu kervansaraylarını kapsayan İpek Yolu turizmi turları, tarih meraklısı turistlerden yoğun ilgi görüyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Uzay Turizmi',
-    definition: 'Özel uzay araçları veya mekiklerle atmosferin dışına veya yörüngeye, bilimsel amaçtan ziyade macera, heyecan ve eğlence odaklı yapılan çok yüksek maliyetli seyahatler.',
-    example: 'Teknoloji şirketlerinin sunduğu yörünge altı uçuş biletlerini satın alan milyarderler, uzay turizmi çağını resmen başlattı.',
+    definition:
+        'Özel uzay araçları veya mekiklerle atmosferin dışına veya yörüngeye, bilimsel amaçtan ziyade macera, heyecan ve eğlence odaklı yapılan çok yüksek maliyetli seyahatler.',
+    example:
+        'Teknoloji şirketlerinin sunduğu yörünge altı uçuş biletlerini satın alan milyarderler, uzay turizmi çağını resmen başlattı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Yavaş Turizm (Slow Tourism)',
-    definition: 'Hızlı tüketim ve koşturmaca yerine, gidilen bölgenin yerel kültürüne, yaşam ritmine, yemeklerine uyum sağlayarak, sindirerek seyahat etmeyi hedefleyen turizm felsefesi.',
-    example: 'Sakin şehir (Cittaslow) ilan edilen Halfeti\'de yapılan yavaş turizm (slow tourism) gezileri, turistlerin yerel yaşamı derinden hissetmesini sağlıyor.',
+    definition:
+        'Hızlı tüketim ve koşturmaca yerine, gidilen bölgenin yerel kültürüne, yaşam ritmine, yemeklerine uyum sağlayarak, sindirerek seyahat etmeyi hedefleyen turizm felsefesi.',
+    example:
+        'Sakin şehir (Cittaslow) ilan edilen Halfeti\'de yapılan yavaş turizm (slow tourism) gezileri, turistlerin yerel yaşamı derinden hissetmesini sağlıyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Slow Tourism.mp3',
   ),
   Term(
     word: 'Askerî Turizm',
-    definition: 'Tarihi savaş alanlarının, cephelerin, siperlerin, askeri üslerin ve müzelerin askeri stratejileri ve geçmişteki savunma olaylarını anlamak amacıyla ziyaret edilmesi.',
-    example: 'Sarıkamış Harekatı\'nın gerçekleştiği dağlık cephelerin ve şehitliklerin tarih rehberleri eşliğinde gezilmesi askerî turizm kapsamındadır.',
+    definition:
+        'Tarihi savaş alanlarının, cephelerin, siperlerin, askeri üslerin ve müzelerin askeri stratejileri ve geçmişteki savunma olaylarını anlamak amacıyla ziyaret edilmesi.',
+    example:
+        'Sarıkamış Harekatı\'nın gerçekleştiği dağlık cephelerin ve şehitliklerin tarih rehberleri eşliğinde gezilmesi askerî turizm kapsamındadır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Gecekondu / Yoksulluk Turizmi (Slum Tourism)',
-    definition: 'Sosyo-ekonomik açıdan dezavantajlı olan, çarpık kentleşmenin ve yoksulluğun yoğun olduğu mahallelerin sosyolojik gözlem ve yerel kalkınmaya destek amacıyla ziyaret edilmesi.',
-    example: 'Brezilya\'daki favelalara düzenlenen rehberli turlar, gecekondu turizmi (slum tourism) kapsamında yerel rehberlere doğrudan gelir kapısı oluşturuyor.',
+    definition:
+        'Sosyo-ekonomik açıdan dezavantajlı olan, çarpık kentleşmenin ve yoksulluğun yoğun olduğu mahallelerin sosyolojik gözlem ve yerel kalkınmaya destek amacıyla ziyaret edilmesi.',
+    example:
+        'Brezilya\'daki favelalara düzenlenen rehberli turlar, gecekondu turizmi (slum tourism) kapsamında yerel rehberlere doğrudan gelir kapısı oluşturuyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Helal Turizm',
-    definition: 'İslami kurallara uygun olarak tasarlanmış, alkolsüz hizmet veren, mahremiyeti gözeten ayrı plaj/havuz alanlarına ve ibadethanelere sahip tesislerin tercih edildiği turizm sektörü.',
-    example: 'Aile mahremiyetine önem veren muhafazakar aileler, yaz tatili için kadınlara özel plajı olan helal turizm sertifikalı otelleri tercih ettiler.',
+    definition:
+        'İslami kurallara uygun olarak tasarlanmış, alkolsüz hizmet veren, mahremiyeti gözeten ayrı plaj/havuz alanlarına ve ibadethanelere sahip tesislerin tercih edildiği turizm sektörü.',
+    example:
+        'Aile mahremiyetine önem veren muhafazakar aileler, yaz tatili için kadınlara özel plajı olan helal turizm sertifikalı otelleri tercih ettiler.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Diaspora (Kopuntu) Turizmi',
-    definition: 'Geçmişte anavatanlarından göç etmiş kişilerin veya sonraki nesillerinin köklerini bulmak, akrabalarını ziyaret etmek ve kültürel bağları tazelemek amacıyla yaptıkları nostaljik seyahatler.',
-    example: 'Almanya\'da yaşayan üçüncü nesil Türk gençlerinin yaz aylarında dedelerinin memleketini ziyaret etmesi diaspora (kopuntu) turizmi hareketliliğidir.',
+    definition:
+        'Geçmişte anavatanlarından göç etmiş kişilerin veya sonraki nesillerinin köklerini bulmak, akrabalarını ziyaret etmek ve kültürel bağları tazelemek amacıyla yaptıkları nostaljik seyahatler.',
+    example:
+        'Almanya\'da yaşayan üçüncü nesil Türk gençlerinin yaz aylarında dedelerinin memleketini ziyaret etmesi diaspora (kopuntu) turizmi hareketliliğidir.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Oryantiring Turizmi',
-    definition: 'Harita ve pusula yardımıyla hedef bulma esasına dayanan oryantiring spor yarışmalarına katılmak veya antrenman yapmak amacıyla sporcuların gerçekleştirdiği seyahatler.',
-    example: 'Karadeniz ormanlarında düzenlenen uluslararası yarışma, oryantiring turizmi kapsamında yüzlerce harita okuma sporcusunu bölgeye getirdi.',
+    definition:
+        'Harita ve pusula yardımıyla hedef bulma esasına dayanan oryantiring spor yarışmalarına katılmak veya antrenman yapmak amacıyla sporcuların gerçekleştirdiği seyahatler.',
+    example:
+        'Karadeniz ormanlarında düzenlenen uluslararası yarışma, oryantiring turizmi kapsamında yüzlerce harita okuma sporcusunu bölgeye getirdi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'İştira',
-    definition: 'Yabancı bir banka veya çek kuruluşuna ait döviz üzerinden düzenlenmiş çeklerin ibraz edildiği anda müşteriye nakden ödenmesi veya hesaba aktarılması işlemi.',
-    example: 'Yabancı misafirin ödeme yapmak için sunduğu döviz çekinin iştira işlemi banka şubesinde gerçekleştirildi.',
+    definition:
+        'Yabancı bir banka veya çek kuruluşuna ait döviz üzerinden düzenlenmiş çeklerin ibraz edildiği anda misafire nakden ödenmesi veya hesaba aktarılması işlemi.',
+    example:
+        'Yabancı misafirin ödeme yapmak için sunduğu döviz çekinin iştira işlemi banka şubesinde gerçekleştirildi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Otantik Deneyim',
-    definition: 'Turistlerin seyahatleri sırasında, gittikleri destinasyonun tamamen orijinal olan yerel kültürüne, mimarisine, yemeklerine ve doğal yaşantısına bozulmamış asıl hâliyle bizzat dâhil olması.',
-    example: 'Köy evinde konaklayıp yerel halkla birlikte geleneksel ekmek pişirme sürecine katılmak, turistler için unutulmaz bir otantik deneyim oldu.',
+    definition:
+        'Turistlerin seyahatleri sırasında, gittikleri destinasyonun tamamen orijinal olan yerel kültürüne, mimarisine, yemeklerine ve doğal yaşantısına bozulmamış asıl hâliyle bizzat dâhil olması.',
+    example:
+        'Köy evinde konaklayıp yerel halkla birlikte geleneksel ekmek pişirme sürecine katılmak, turistler için unutulmaz bir otantik deneyim oldu.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
   ),
   Term(
     word: 'Kriz ve Risk Yönetimi',
-    definition: 'Turistik bölgelerde doğal afetler, salgın hastalıklar veya siyasi belirsizlikler gibi durumlarda güvenliği sağlamak, iletişim kurmak ve bölge imajını korumak için izlenen stratejiler.',
-    example: 'Turizm Bakanlığı, afet sonrasında bölgenin güvenli olduğunu duyurmak amacıyla etkin kriz ve risk yönetimi uyguladı.',
+    definition:
+        'Turistik bölgelerde doğal afetler, salgın hastalıklar veya siyasi belirsizlikler gibi durumlarda güvenliği sağlamak, iletişim kurmak ve bölge imajını korumak için izlenen stratejiler.',
+    example:
+        'Turizm Bakanlığı, afet sonrasında bölgenin güvenli olduğunu duyurmak amacıyla etkin kriz ve risk yönetimi uyguladı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'DMAI',
-    definition: 'Uluslararası Destinasyon Pazarlama Birliği. Dünya genelindeki turizm destinasyonlarının küresel çapta tanıtımını ve pazarlanmasını destekleyen kuruluş.',
-    example: 'Turizm Tanıtım Ajansı, destinasyon pazarlama stratejilerini geliştirmek için DMAI standartlarını yakından takip ediyor.',
+    definition:
+        'Uluslararası Destinasyon Pazarlama Birliği. Dünya genelindeki turizm destinasyonlarının küresel çapta tanıtımını ve pazarlanmasını destekleyen kuruluş.',
+    example:
+        'Turizm Tanıtım Ajansı, destinasyon pazarlama stratejilerini geliştirmek için DMAI standartlarını yakından takip ediyor.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/DMAI.mp3',
   ),
   Term(
     word: 'SITE',
-    definition: 'Teşvik ve Seyahat Yöneticileri Derneği. Şirketlerin personeli motive etmek için düzenlediği teşvik seyahatlerini yöneten profesyonellerin birliği.',
-    example: 'SITE üyeleri, şirketlerin çalışan bağlılığını artırmak için düzenlediği ödül seyahatlerinin tasarımında uzmanlaşmışlardır.',
+    definition:
+        'Teşvik ve Seyahat Yöneticileri Derneği. Şirketlerin personeli motive etmek için düzenlediği teşvik seyahatlerini yöneten profesyonellerin birliği.',
+    example:
+        'SITE üyeleri, şirketlerin çalışan bağlılığını artırmak için düzenlediği ödül seyahatlerinin tasarımında uzmanlaşmışlardır.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
+    audioPath: 'assets/sounds/terms/SITE.mp3',
   ),
   Term(
     word: 'Sınıf Düzeni',
-    definition: 'Eğitim veya seminerlerde katılımcıların masa ve sandalyelerde oturarak eğitmeni takip etmelerine olanak sağlayan fiziksel oturma düzeni.',
-    example: 'Not almayı gerektiren teknik eğitim toplantısı için salon, katılımcıların rahat çalışabileceği sınıf düzeninde hazırlandı.',
+    definition:
+        'Eğitim veya seminerlerde katılımcıların masa ve sandalyelerde oturarak eğitmeni takip etmelerine olanak sağlayan fiziksel oturma düzeni.',
+    example:
+        'Not almayı gerektiren teknik eğitim toplantısı için salon, katılımcıların rahat çalışabileceği sınıf düzeninde hazırlandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'U Düzeni',
-    definition: 'Katılımcılar arasındaki yüz yüze etkileşimi artırmak ve tartışma ortamı yaratmak amacıyla masaların \'U\' harfi şeklinde konumlandırıldığı oturma düzeni.',
-    example: 'Yönetim kurulu üyelerinin birbirini rahatça görebilmesi ve interaktif tartışabilmesi için toplantı odasında U düzeni uygulandı.',
+    definition:
+        'Katılımcılar arasındaki yüz yüze etkileşimi artırmak ve tartışma ortamı yaratmak amacıyla masaların \'U\' harfi şeklinde konumlandırıldığı oturma düzeni.',
+    example:
+        'Yönetim kurulu üyelerinin birbirini rahatça görebilmesi ve interaktif tartışabilmesi için toplantı odasında U düzeni uygulandı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'Simultane Çeviri',
-    definition: 'Uluslararası etkinliklerde, konuşmacının sözlerinin kapalı bir kabin içindeki tercüman tarafından aynı anda eş zamanlı olarak farklı bir dile çevrilerek kulaklıklara aktarılması işlemi.',
-    example: 'Farklı ülkelerden gelen hekimlerin sunumları, simultane çeviri sayesinde tüm katılımcılar tarafından kendi dillerinde anlaşıldı.',
+    definition:
+        'Uluslararası etkinliklerde, konuşmacının sözlerinin kapalı bir kabin içindeki tercüman tarafından aynı anda eş zamanlı olarak farklı bir dile çevrilerek kulaklıklara aktarılması işlemi.',
+    example:
+        'Farklı ülkelerden gelen hekimlerin sunumları, simultane çeviri sayesinde tüm katılımcılar tarafından kendi dillerinde anlaşıldı.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
   Term(
     word: 'LCV (Lütfen Cevap Veriniz)',
-    definition: 'Davetiyelerde, davetlinin katılıp katılmayacağını bildirmesi gerektiğini ifade eden kısaltma.',
-    example: 'Otelde düzenlenecek yılbaşı balosu için gönderilen davetiyelerin altına, salon düzenini ve catering kişi sayısını belirlemek adına LCV notu eklendi.',
+    definition:
+        'Davetiyelerde, davetlinin katılıp katılmayacağını bildirmesi gerektiğini ifade eden kısaltma.',
+    example:
+        'Otelde düzenlenecek yılbaşı balosu için gönderilen davetiyelerin altına, salon düzenini ve catering kişi sayısını belirlemek adına LCV notu eklendi.',
     category: 'Seyahat Acenteciliği ve Ulaştırma',
     isEnglish: false,
   ),
@@ -3156,286 +4159,383 @@ const List<Term> terminologyData = [
   // ── TUR OPERATÖRLÜĞÜ VE REHBERLİK TERİMLERİ ──
   Term(
     word: 'Discrepancy',
-    definition: 'Ön büro (resepsiyon) kayıtları ile kat hizmetleri (housekeeping) raporları arasındaki oda durumu uyumsuzluğu.',
-    example: 'Resepsiyonda boş görünen odanın katta dolu çıkması üzerine kat şefi discrepancy raporu tuttu.',
+    definition:
+        'Ön büro (resepsiyon) kayıtları ile kat hizmetleri (housekeeping) raporları arasındaki oda durumu uyumsuzluğu.',
+    example:
+        'Resepsiyonda boş görünen odanın katta dolu çıkması üzerine kat şefi discrepancy raporu tuttu.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Discrepancy.mp3',
   ),
   Term(
     word: 'Repeat Guest',
-    definition: 'Oteli daha önce kullanmış ve konaklama işletmesini sık sık tercih eden sadık (devamlı) misafir.',
-    example: 'Tesisimizi bu yaz 5. kez tercih eden repeat guest misafirimiz için odaya özel karşılama mektubu ve meyve tabağı bırakıldı.',
+    definition:
+        'Oteli daha önce kullanmış ve konaklama işletmesini sık sık tercih eden sadık (devamlı) misafir.',
+    example:
+        'Tesisimizi bu yaz 5. kez tercih eden repeat guest misafirimiz için odaya özel karşılama mektubu ve meyve tabağı bırakıldı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Repeat Guest.mp3',
   ),
   Term(
     word: 'İş Planı',
-    definition: 'Bir girişimcinin iş fikrini hayata geçirmeden önce pazar analizini, finansal öngörüleri ve operasyonel adımları detaylandırdığı yazılı yol haritası.',
-    example: 'Bankadan otel yatırımı için kredi talep etmeden önce, detaylı bir iş planı hazırlayıp kurul heyetine sunduk.',
+    definition:
+        'Bir girişimcinin iş fikrini hayata geçirmeden önce pazar analizini, finansal öngörüleri ve operasyonel adımları detaylandırdığı yazılı yol haritası.',
+    example:
+        'Bankadan otel yatırımı için kredi talep etmeden önce, detaylı bir iş planı hazırlayıp kurul heyetine sunduk.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Cancelled (İptal)',
-    definition: 'Uçuşun çeşitli mücbir veya ağır operasyonel/hava şartları gibi nedenlerle havalimanı panolarında gerçekleştirilemeyeceğinin bildirilmesi durumu.',
-    example: 'Şiddetli kar fırtınası nedeniyle uçuşların iptal (cancelled) olduğu bilgisi gelince, misafirler otellerine geri transfer edildi.',
+    definition:
+        'Uçuşun çeşitli mücbir veya ağır operasyonel/hava şartları gibi nedenlerle havalimanı panolarında gerçekleştirilemeyeceğinin bildirilmesi durumu.',
+    example:
+        'Şiddetli kar fırtınası nedeniyle uçuşların iptal (cancelled) olduğu bilgisi gelince, misafirler otellerine geri transfer edildi.',
     category: 'Tur Operatörlüğü ve Rehberlik',
   ),
   Term(
     word: 'TÜRSAB',
     definition: 'Türkiye Seyahat Acentaları Birliği.',
-    example: 'Havalimanından misafirlerimizi otele getirmek için kullandığımız transfer araçlarının tamamı TÜRSAB belgeli ve onaylıdır.',
+    example:
+        'Havalimanından misafirlerimizi otele getirmek için kullandığımız transfer araçlarının tamamı TÜRSAB belgeli ve onaylıdır.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'IATA',
-    definition: 'Uluslararası Hava Taşımacılığı Birliği; havayolu şirketlerinin uçuş standartlarını, biletleme sistemlerini ve güvenlik kurallarını belirleyen küresel örgüt.',
-    example: 'Acentemizin uluslararası uçak bileti kesebilmesi için resmi IATA yetki belgesine ve teminat şartlarına sahip olması gerekir.',
+    definition:
+        'Uluslararası Hava Taşımacılığı Birliği; havayolu şirketlerinin uçuş standartlarını, biletleme sistemlerini ve güvenlik kurallarını belirleyen küresel örgüt.',
+    example:
+        'Acentemizin uluslararası uçak bileti kesebilmesi için resmi IATA yetki belgesine ve teminat şartlarına sahip olması gerekir.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/IATA.mp3',
   ),
   Term(
     word: 'TUREB',
-    definition: 'Turist Rehberleri Birliği; Türkiye\'deki profesyonel turist rehberlerinin meslek odalarını tek çatı altında toplayan kamu kurumu niteliğinde üst kuruluş.',
-    example: 'Turlarda görevlendirdiğimiz tüm rehberlerin, TUREB tarafından verilen güncel çalışma kartına sahip kokartlı rehberler olmasına özen gösteriyoruz.',
+    definition:
+        'Turist Rehberleri Birliği; Türkiye\'deki profesyonel turist rehberlerinin meslek odalarını tek çatı altında toplayan kamu kurumu niteliğinde üst kuruluş.',
+    example:
+        'Turlarda görevlendirdiğimiz tüm rehberlerin, TUREB tarafından verilen güncel çalışma kartına sahip kokartlı rehberler olmasına özen gösteriyoruz.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'UFTAA',
-    definition: 'Dünya Seyahat Acentaları Birlikleri Federasyonu; ulusal seyahat acentaları birliklerini dünya çapında temsil eden en büyük çatı örgüt.',
-    example: 'TÜRSAB\'ın da üyesi olduğu UFTAA, seyahat acentelerinin küresel haklarını ve mesleki standartlarını savunmaktadır.',
+    definition:
+        'Dünya Seyahat Acentaları Birlikleri Federasyonu; ulusal seyahat acentaları birliklerini dünya çapında temsil eden en büyük çatı örgüt.',
+    example:
+        'TÜRSAB\'ın da üyesi olduğu UFTAA, seyahat acentelerinin küresel haklarını ve mesleki standartlarını savunmaktadır.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/UFTAA.mp3',
   ),
   Term(
     word: 'Paket Tur',
-    definition: 'Ulaşım, konaklama, yeme-içme ve rehberlik gibi birbirinden farklı hizmetlerin bir araya getirilerek tek bir fiyattan satıldığı seyahat ürünü.',
-    example: 'Acentemizin sunduğu 7 gecelik İtalya paket turu; uçak biletleri, 4 yıldızlı otel konaklamaları ve tüm şehir turlarını kapsamaktadır.',
+    definition:
+        'Ulaşım, konaklama, yeme-içme ve rehberlik gibi birbirinden farklı hizmetlerin bir araya getirilerek tek bir fiyattan satıldığı seyahat ürünü.',
+    example:
+        'Acentemizin sunduğu 7 gecelik İtalya paket turu; uçak biletleri, 4 yıldızlı otel konaklamaları ve tüm şehir turlarını kapsamaktadır.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Turist Rehberi',
-    definition: 'Turistlere seyahatleri boyunca eşlik eden, onlara bölgenin tarihi, kültürü, doğası ve coğrafyası hakkında doğru ve doyurucu bilgi veren Bakanlık kokartlı (lisanslı) profesyonel.',
-    example: 'Efes turlarında konuklarımıza eşlik eden profesyonel turist rehberi, antik kentin tarihini ve mimari detaylarını mükemmel bir dille aktardı.',
+    definition:
+        'Turistlere seyahatleri boyunca eşlik eden, onlara bölgenin tarihi, kültürü, doğası ve coğrafyası hakkında doğru ve doyurucu bilgi veren Bakanlık kokartlı (lisanslı) profesyonel.',
+    example:
+        'Efes turlarında konuklarımıza eşlik eden profesyonel turist rehberi, antik kentin tarihini ve mimari detaylarını mükemmel bir dille aktardı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Thomas Cook (1840)',
-    definition: 'Çağdaş anlamda turist rehberliğini başlatan, ilk toplu seyahat organizasyonunu gerçekleştiren kişi.',
-    example: 'Thomas Cook (1840), demir yolu taşımacılığını kullanarak düzenlediği ilk grup gezisiyle modern tur operatörlüğünün temelini atmıştır.',
+    definition:
+        'Çağdaş anlamda turist rehberliğini başlatan, ilk toplu seyahat organizasyonunu gerçekleştiren kişi.',
+    example:
+        'Thomas Cook (1840), demir yolu taşımacılığını kullanarak düzenlediği ilk grup gezisiyle modern tur operatörlüğünün temelini atmıştır.',
     category: 'Tur Operatörlüğü ve Rehberlik',
   ),
   Term(
     word: 'Tercüman Rehber',
-    definition: 'Ülkemizde profesyonel turist rehberliği yasalaşmadan önce turist rehberlerine verilen ilk isim.',
-    example: 'Cumhuriyetin ilk yıllarında yabancı heyetleri gezdiren tercüman rehber kadroları, zamanla profesyonel bir meslek grubuna dönüştü.',
+    definition:
+        'Ülkemizde profesyonel turist rehberliği yasalaşmadan önce turist rehberlerine verilen ilk isim.',
+    example:
+        'Cumhuriyetin ilk yıllarında yabancı heyetleri gezdiren tercüman rehber kadroları, zamanla profesyonel bir meslek grubuna dönüştü.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Turist Rehberliği Meslek Kanunu (6326 Sayılı)',
-    definition: '2012 yılında çıkarılan, rehberliğin sadece dil bilmekten ibaret olmadığını belirten ve mesleğin çerçevesini çizen yasa.',
-    example: '6326 sayılı Turist Rehberliği Meslek Kanunu sayesinde rehberlik resmi bir meslek olarak tanımlanmış ve standartları netleşmiştir.',
+    definition:
+        '2012 yılında çıkarılan, rehberliğin sadece dil bilmekten ibaret olmadığını belirten ve mesleğin çerçevesini çizen yasa.',
+    example:
+        '6326 sayılı Turist Rehberliği Meslek Kanunu sayesinde rehberlik resmi bir meslek olarak tanımlanmış ve standartları netleşmiştir.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'TUREB',
-    definition: 'Turist Rehberleri Birliği. Turist rehberliği sertifika programlarını düzenleyen ve denetleyen yetkili kurum.',
-    example: 'TUREB tarafından düzenlenen eğitim gezilerini başarıyla tamamlayan adaylar, ruhsatnamelerini alarak mesleğe başladılar.',
+    definition:
+        'Turist Rehberleri Birliği. Turist rehberliği sertifika programlarını düzenleyen ve denetleyen yetkili kurum.',
+    example:
+        'TUREB tarafından düzenlenen eğitim gezilerini başarıyla tamamlayan adaylar, ruhsatnamelerini alarak mesleğe başladılar.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'TÜRSAB',
-    definition: 'Türkiye Seyahat Acentaları Birliği. Seyahat acentelerinin bağlı olduğu, araç plakaları ve belgeleri onaylayan resmi meslek örgütü.',
-    example: 'Acentemiz, turlarda kullanılacak otobüslerin yasal kontrolleri için TÜRSAB plakalarını araçlara yerleştirdi.',
+    definition:
+        'Türkiye Seyahat Acentaları Birliği. Seyahat acentelerinin bağlı olduğu, araç plakaları ve belgeleri onaylayan resmi meslek örgütü.',
+    example:
+        'Acentemiz, turlarda kullanılacak otobüslerin yasal kontrolleri için TÜRSAB plakalarını araçlara yerleştirdi.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'UFTAA',
-    definition: 'Dünya Seyahat Acenteleri Federasyonu. 1966 yılında değişik ülkelerdeki seyahat acentelerinin bir araya gelerek kurduğu birlik.',
-    example: 'Seyahat acentemiz, küresel gelişmeleri takip etmek ve uluslararası iş birlikleri kurmak için UFTAA kongrelerine katılmaktadır.',
+    definition:
+        'Dünya Seyahat Acenteleri Federasyonu. 1966 yılında değişik ülkelerdeki seyahat acentelerinin bir araya gelerek kurduğu birlik.',
+    example:
+        'Seyahat acentemiz, küresel gelişmeleri takip etmek ve uluslararası iş birlikleri kurmak için UFTAA kongrelerine katılmaktadır.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/UFTAA.mp3',
   ),
   Term(
     word: 'IATA',
-    definition: 'Uluslararası Hava Taşımacılığı Birliği. Paket turlarda uçuşların organize edildiği hava yolu şirketlerinin bağlı olduğu uluslararası birlik.',
-    example: 'IATA üyesi olan seyahat acentemiz, tüm dünya genelindeki hava yollarına ait uçak biletlerini doğrudan kesme yetkisine sahiptir.',
+    definition:
+        'Uluslararası Hava Taşımacılığı Birliği. Paket turlarda uçuşların organize edildiği hava yolu şirketlerinin bağlı olduğu uluslararası birlik.',
+    example:
+        'IATA üyesi olan seyahat acentemiz, tüm dünya genelindeki hava yollarına ait uçak biletlerini doğrudan kesme yetkisine sahiptir.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/IATA.mp3',
   ),
   Term(
     word: 'Operasyon Müdürü',
-    definition: 'Tur operasyonları kapsamında yapılacak bütün işlerden sorumlu olan, programları üst yönetime raporlayan ve dokümanları tasarlatan en üst düzey yönetici.',
-    example: 'Operasyon müdürü, yüksek sezon öncesinde tüm otel ve transfer anlaşmalarını kontrol ederek onayladı.',
+    definition:
+        'Tur operasyonları kapsamında yapılacak bütün işlerden sorumlu olan, programları üst yönetime raporlayan ve dokümanları tasarlatan en üst düzey yönetici.',
+    example:
+        'Operasyon müdürü, yüksek sezon öncesinde tüm otel ve transfer anlaşmalarını kontrol ederek onayladı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Operasyon Sorumlusu',
-    definition: 'Tur başlamadan önce gerekli ekipman ve hazırlıkları kontrol eden, eksikleri gideren ve birimler arası koordinasyonu sağlayan çalışan.',
-    example: 'Operasyon sorumlusu, yarın başlayacak Likya turu için araçların ve rehberlerin görev belgelerini hazırladı.',
+    definition:
+        'Tur başlamadan önce gerekli ekipman ve hazırlıkları kontrol eden, eksikleri gideren ve birimler arası koordinasyonu sağlayan çalışan.',
+    example:
+        'Operasyon sorumlusu, yarın başlayacak Likya turu için araçların ve rehberlerin görev belgelerini hazırladı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Tur Eskortu',
-    definition: 'Turun başlama noktasından bitiş noktasına kadar tur operatörü adına sadece gruba eşlik eden, rehberlik yapmayan görevli.',
-    example: 'Tur eskortu, gezi boyunca grubun otel giriş işlemlerini ve bagaj transferlerini organize etti.',
+    definition:
+        'Turun başlama noktasından bitiş noktasına kadar tur operatörü adına sadece gruba eşlik eden, rehberlik yapmayan görevli.',
+    example:
+        'Tur eskortu, gezi boyunca grubun otel giriş işlemlerini ve bagaj transferlerini organize etti.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Bölge Temsilcisi (Yöneticisi)',
-    definition: 'Tur operatörünün tur düzenlediği tatil yöresindeki (destinasyon) ofislerinden ve orada çalışan elemanlardan sorumlu en yetkili kişi.',
-    example: 'Bölge temsilcisi (yöneticisi), Ege kıyılarında konaklayan misafirlerin memnuniyet durumlarını haftalık raporlarla merkeze iletti.',
+    definition:
+        'Tur operatörünün tur düzenlediği tatil yöresindeki (destinasyon) ofislerinden ve orada çalışan elemanlardan sorumlu en yetkili kişi.',
+    example:
+        'Bölge temsilcisi (yöneticisi), Ege kıyılarında konaklayan misafirlerin memnuniyet durumlarını haftalık raporlarla merkeze iletti.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Transfer Elemanı (Transferman)',
-    definition: 'Tur başlangıcında havaalanında grubu karşılayan, otobüse bindiren, bagajları kontrol edip yol boyunca temel bilgileri (info) vererek konukları otele yerleştiren görevli.',
-    example: 'Transfer elemanı (transferman), havalimanında karşıladığı misafirlere yolculuk boyunca otel kuralları ve hava durumu hakkında bilgi verdi.',
+    definition:
+        'Tur başlangıcında havaalanında grubu karşılayan, otobüse bindiren, bagajları kontrol edip yol boyunca temel bilgileri (info) vererek konukları otele yerleştiren görevli.',
+    example:
+        'Transfer elemanı (transferman), havalimanında karşıladığı misafirlere yolculuk boyunca otel kuralları ve hava durumu hakkında bilgi verdi.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Profesyonel Turist Rehberi',
-    definition: 'Yönetmeliğe uygun meslek icra yetkisi kazanmış, acente adına turu yöneten, Türkiye\'yi temsil eden lisanslı rehber.',
-    example: 'Profesyonel turist rehberi, Efes Antik Kenti\'ni gezen gruba dönemin sosyo-kültürel yapısını akıcı bir dille anlattı.',
+    definition:
+        'Yönetmeliğe uygun meslek icra yetkisi kazanmış, acente adına turu yöneten, Türkiye\'yi temsil eden lisanslı rehber.',
+    example:
+        'Profesyonel turist rehberi, Efes Antik Kenti\'ni gezen gruba dönemin sosyo-kültürel yapısını akıcı bir dille anlattı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Bölgesel Turist Rehberi',
-    definition: 'Ruhsatnamesinde ve çalışma kartında sadece belirli bir coğrafi bölge veya bölgelerde çalışma yetkisi olan rehber.',
-    example: 'Sadece Karadeniz Bölgesi için lisansı olan bölgesel turist rehberi, Trabzon ve Rize turlarında uzman olarak görev almaktadır.',
+    definition:
+        'Ruhsatnamesinde ve çalışma kartında sadece belirli bir coğrafi bölge veya bölgelerde çalışma yetkisi olan rehber.',
+    example:
+        'Sadece Karadeniz Bölgesi için lisansı olan bölgesel turist rehberi, Trabzon ve Rize turlarında uzman olarak görev almaktadır.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Ülkesel Turist Rehberi',
-    definition: 'Ruhsatnamesinde ve çalışma kartında Türkiye\'nin tüm ülke genelinde çalışma hak ve yetkisine sahip olduğu belirtilen rehber.',
-    example: 'Ülkesel turist rehberi, İstanbul\'dan başlayıp Kapadokya ve Antalya\'yı kapsayan kültür turunu başarıyla tamamladı.',
+    definition:
+        'Ruhsatnamesinde ve çalışma kartında Türkiye\'nin tüm ülke genelinde çalışma hak ve yetkisine sahip olduğu belirtilen rehber.',
+    example:
+        'Ülkesel turist rehberi, İstanbul\'dan başlayıp Kapadokya ve Antalya\'yı kapsayan kültür turunu başarıyla tamamladı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Uzman Rehberler',
-    definition: 'Kuş gözlemciliği, Hititoloji, dağcılık veya su altı sporları gibi belirli bir alanda (niş) tamamen uzmanlaşmış rehberler.',
-    example: 'Kuş gözlemciliği turumuz için TUREB veri tabanından alanında yetkin uzman rehberler ile çalışmayı tercih ettik.',
+    definition:
+        'Kuş gözlemciliği, Hititoloji, dağcılık veya su altı sporları gibi belirli bir alanda (niş) tamamen uzmanlaşmış rehberler.',
+    example:
+        'Kuş gözlemciliği turumuz için TUREB veri tabanından alanında yetkin uzman rehberler ile çalışmayı tercih ettik.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Temsil Görevi',
-    definition: 'Rehberin sadece acentesini değil, yabancı misafirlere karşı ülkesini ve kültürünü temsil eden bir propagandacı/reklamcı olma görevi.',
-    example: 'Turist rehberi, yabancı konuklara Türk misafirperverliğini göstererek mesleğin temsil görevini en iyi şekilde yerine getirdi.',
+    definition:
+        'Rehberin sadece acentesini değil, yabancı misafirlere karşı ülkesini ve kültürünü temsil eden bir propagandacı/reklamcı olma görevi.',
+    example:
+        'Turist rehberi, yabancı konuklara Türk misafirperverliğini göstererek mesleğin temsil görevini en iyi şekilde yerine getirdi.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Referans Görevi',
-    definition: 'Turistlerin eksik veya yanlış bilgilerini düzelterek onlara doğru bilgiyi sağlayan örnek kişi rolü.',
-    example: 'Rehberimiz, bölgedeki gelenekler hakkında sorulan sorulara doğru yanıtlar vererek mesleğin referans görevini uyguladı.',
+    definition:
+        'Turistlerin eksik veya yanlış bilgilerini düzelterek onlara doğru bilgiyi sağlayan örnek kişi rolü.',
+    example:
+        'Rehberimiz, bölgedeki gelenekler hakkında sorulan sorulara doğru yanıtlar vererek mesleğin referans görevini uyguladı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Yönlendirme Görevi',
-    definition: 'Rehberin grubun yapısına, yaşına ve eğilimlerine göre gezi, dinlenme ve eğlenme sürelerini dengeli bir şekilde paylaştırması.',
-    example: 'Yaşlı turistlerden oluşan grubun yorulmaması için rehberimiz yönlendirme görevi çerçevesinde dinlenme molalarını artırdı.',
+    definition:
+        'Rehberin grubun yapısına, yaşına ve eğilimlerine göre gezi, dinlenme ve eğlenme sürelerini dengeli bir şekilde paylaştırması.',
+    example:
+        'Yaşlı turistlerden oluşan grubun yorulmaması için rehberimiz yönlendirme görevi çerçevesinde dinlenme molalarını artırdı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'IT (Inclusive Tour)',
-    definition: 'Ulaştırma ve konaklama hizmetlerini barındıran paket turun TEK KİŞİ fiyatı.',
-    example: 'Acentenin broşüründe belirtilen IT (inclusive tour) fiyatı, çift kişilik odada kalacak tek bir misafirin ödemesi gereken tutarı ifade eder.',
+    definition:
+        'Ulaştırma ve konaklama hizmetlerini barındıran paket turun TEK KİŞİ fiyatı.',
+    example:
+        'Acentenin broşüründe belirtilen IT (inclusive tour) fiyatı, çift kişilik odada kalacak tek bir misafirin ödemesi gereken tutarı ifade eder.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/IT Inclusive Tour.mp3',
   ),
   Term(
     word: 'GIT (Group Inclusive Tour)',
-    definition: 'Ulaştırma ve konaklama hizmetlerini barındıran paket turun GRUP fiyatı.',
-    example: 'En az 15 kişilik okul grubu için havayolundan GIT (group inclusive tour) kapsamında indirimli grup fiyatı talep ettik.',
+    definition:
+        'Ulaştırma ve konaklama hizmetlerini barındıran paket turun GRUP fiyatı.',
+    example:
+        'En az 15 kişilik okul grubu için havayolundan GIT (group inclusive tour) kapsamında indirimli grup fiyatı talep ettik.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/GIT Group Inclusive Tour.mp3',
   ),
   Term(
     word: 'ITX (Inclusive Tour Excursion)',
-    definition: 'Paket turun normal tarifeli uçakla yapılması durumundaki bireysel fiyatı.',
-    example: 'Tarifeli Türk Hava Yolları seferiyle hazırladığımız İtalya paket turu için ITX fiyatlandırma modülünü kullandık.',
+    definition:
+        'Paket turun normal tarifeli uçakla yapılması durumundaki bireysel fiyatı.',
+    example:
+        'Tarifeli Türk Hava Yolları seferiyle hazırladığımız İtalya paket turu için ITX fiyatlandırma modülünü kullandık.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/ITX Inclusive Tour Excursion.mp3',
   ),
   Term(
     word: 'GITX (Group Inclusive Tour Excursion)',
-    definition: 'Paket turun normal tarifeli uçakla yapılması durumundaki gruplara özel fiyatı.',
-    example: 'Seyahat acentesi, 20 kişilik kongre delegasyonu için havayolu şirketinden GITX kapsamında özel bir fiyat teklifi aldı.',
+    definition:
+        'Paket turun normal tarifeli uçakla yapılması durumundaki gruplara özel fiyatı.',
+    example:
+        'Seyahat acentesi, 20 kişilik kongre delegasyonu için havayolu şirketinden GITX kapsamında özel bir fiyat teklifi aldı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/GITX Group Inclusive Tour Excursion.mp3',
   ),
   Term(
     word: 'HT (Hosted Tours)',
-    definition: 'Karşılayıcılı turlar; gidilen bölgede acente görevlisinin grubu sadece karşıladığı turlar.',
-    example: 'Misafirlerin bağımsız gezmeyi tercih ettiği Paris programımız, yerel temsilcimizin sadece havalimanında karşılama yaptığı HT (hosted tours) konseptindedir.',
+    definition:
+        'Karşılayıcılı turlar; gidilen bölgede acente görevlisinin grubu sadece karşıladığı turlar.',
+    example:
+        'Misafirlerin bağımsız gezmeyi tercih ettiği Paris programımız, yerel temsilcimizin sadece havalimanında karşılama yaptığı HT (hosted tours) konseptindedir.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/HT Hosted Tours.mp3',
   ),
   Term(
     word: 'CT (Counted Tours)',
-    definition: 'Tamamen belirli ve kesin bir program dâhilinde, sınırları net çizilmiş olarak gerçekleştirilen turlar.',
-    example: 'Müze giriş saatlerinin ve yemek mekanlarının dakika dakika planlandığı CT (counted tours) programlarında zaman kaybı yaşanmaz.',
+    definition:
+        'Tamamen belirli ve kesin bir program dâhilinde, sınırları net çizilmiş olarak gerçekleştirilen turlar.',
+    example:
+        'Müze giriş saatlerinin ve yemek mekanlarının dakika dakika planlandığı CT (counted tours) programlarında zaman kaybı yaşanmaz.',
     category: 'Tur Operatörlüğü ve Rehberlik',
+    audioPath: 'assets/sounds/terms/CT Counted Tours.mp3',
   ),
   Term(
     word: 'Şahıs Çekleri',
-    definition: 'Banka garantisi olmadığı ve provizyon (karşılık) alınması zor olduğu için turizm operasyonlarında ödeme aracı olarak en riskli kabul edilen çek türü.',
-    example: 'Muhasebe departmanımız, tahsilat riskini azaltmak amacıyla turlarda şahıs çekleri ile ödeme kabul etmemektedir.',
+    definition:
+        'Banka garantisi olmadığı ve provizyon (karşılık) alınması zor olduğu için turizm operasyonlarında ödeme aracı olarak en riskli kabul edilen çek türü.',
+    example:
+        'Muhasebe departmanımız, tahsilat riskini azaltmak amacıyla turlarda şahıs çekleri ile ödeme kabul etmemektedir.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Seyahat Çeki',
-    definition: 'Para taşıma riskine karşı bedeli bankaya peşin ödenerek alınan, üzerinde sahibinin imzası bulunan ve başkası tarafından kesinlikle kullanılamayan güvenilir çek.',
-    example: 'Güvenlik gerekçesiyle yanında nakit taşımak istemeyen konuk, ödemelerini seyahat çeki kullanarak yaptı.',
+    definition:
+        'Para taşıma riskine karşı bedeli bankaya peşin ödenerek alınan, üzerinde sahibinin imzası bulunan ve başkası tarafından kesinlikle kullanılamayan güvenilir çek.',
+    example:
+        'Güvenlik gerekçesiyle yanında nakit taşımak istemeyen konuk, ödemelerini seyahat çeki kullanarak yaptı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Euro Çek (EC)',
-    definition: 'Avrupa ve Akdeniz ülkelerini kapsayan, çekin ve garanti banka kartının mutlaka birlikte ibraz edilmesiyle geçerli olan bir ödeme sistemi.',
-    example: 'Avrupalı turistler, ülkemize seyahat ederken yanlarında taşıdıkları Euro çek (EC) belgelerini bankalarda kolayca nakde çevirebilirler.',
+    definition:
+        'Avrupa ve Akdeniz ülkelerini kapsayan, çekin ve garanti banka kartının mutlaka birlikte ibraz edilmesiyle geçerli olan bir ödeme sistemi.',
+    example:
+        'Avrupalı turistler, ülkemize seyahat ederken yanlarında taşıdıkları Euro çek (EC) belgelerini bankalarda kolayca nakde çevirebilirler.',
     category: 'Tur Operatörlüğü ve Rehberlik',
   ),
   Term(
     word: 'Müşteri Trafiği Listesi',
-    definition: 'Tur operasyonu yazışmalarında tarih, saat, araç, rehber ve konuk sayısı gibi bilgilerin anlık olarak yer aldığı detaylı akış belgesi.',
-    example: 'Operasyon birimi, günlük transferlerin takibi için güncel müşteri trafiği listesi tablosunu panoya astı.',
+    definition:
+        'Tur operasyonu yazışmalarında tarih, saat, araç, rehber ve konuk sayısı gibi bilgilerin anlık olarak yer aldığı detaylı akış belgesi.',
+    example:
+        'Operasyon birimi, günlük transferlerin takibi için güncel müşteri trafiği listesi tablosunu panoya astı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Infobook (Bilgi Kitabı)',
-    definition: 'Otel resepsiyonu veya lobisinde bulunan, acentenin logosunu taşıyan, repin çalışma saatlerini, acil numaraları ve tur detaylarını barındıran rehber klasör.',
-    example: 'Misafirler, dönüş uçuş saatlerini kontrol etmek için lobideki seyahat acentesine ait infobook (bilgi kitabı) klasörünü incelediler.',
+    definition:
+        'Otel resepsiyonu veya lobisinde bulunan, acentenin logosunu taşıyan, repin çalışma saatlerini, acil numaraları ve tur detaylarını barındıran rehber klasör.',
+    example:
+        'Misafirler, dönüş uçuş saatlerini kontrol etmek için lobideki seyahat acentesine ait infobook (bilgi kitabı) klasörünü incelediler.',
     category: 'Tur Operatörlüğü ve Rehberlik',
   ),
   Term(
     word: 'Mücbir Sebep',
-    definition: 'Deprem, savaş, salgın, grev veya zorlu hava şartları gibi tarafların öngöremeyeceği ve engelleyemeyeceği, sözleşmenin iptaline gerekçe sayılan olağanüstü hâller.',
-    example: 'Havalimanındaki grev nedeniyle iptal edilen uçuşlar mücbir sebep kapsamında değerlendirilerek yolculara ücretsiz bilet değişimi yapıldı.',
+    definition:
+        'Deprem, savaş, salgın, grev veya zorlu hava şartları gibi tarafların öngöremeyeceği ve engelleyemeyeceği, sözleşmenin iptaline gerekçe sayılan olağanüstü hâller.',
+    example:
+        'Havalimanındaki grev nedeniyle iptal edilen uçuşlar mücbir sebep kapsamında değerlendirilerek yolculara ücretsiz bilet değişimi yapıldı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Geliş Transferi',
-    definition: 'Misafirlerin havalimanı, terminal veya limandan alınıp bagajlarıyla birlikte konaklayacakları otele güvenli bir şekilde yerleştirilmesi süreci.',
-    example: 'Havalimanına inen yabancı turist grubu, geliş transferi için bekleyen konforlu otobüslerimizle otellerine ulaştırıldı.',
+    definition:
+        'Misafirlerin havalimanı, terminal veya limandan alınıp bagajlarıyla birlikte konaklayacakları otele güvenli bir şekilde yerleştirilmesi süreci.',
+    example:
+        'Havalimanına inen yabancı turist grubu, geliş transferi için bekleyen konforlu otobüslerimizle otellerine ulaştırıldı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
   Term(
     word: 'Dönüş Transferi',
-    definition: 'Tatili biten misafirlerin, uçuş/hareket saatlerine uygun olarak otellerinden zamanında alınıp havalimanına götürülmesi işlemi.',
-    example: 'Uçuş kartları kontrol edilen konukların dönüş transferi işlemleri, uçuştan üç saat önce otelden hareket edecek şekilde planlandı.',
+    definition:
+        'Tatili biten misafirlerin, uçuş/hareket saatlerine uygun olarak otellerinden zamanında alınıp havalimanına götürülmesi işlemi.',
+    example:
+        'Uçuş kartları kontrol edilen konukların dönüş transferi işlemleri, uçuştan üç saat önce otelden hareket edecek şekilde planlandı.',
     category: 'Tur Operatörlüğü ve Rehberlik',
     isEnglish: false,
   ),
@@ -3443,670 +4543,867 @@ const List<Term> terminologyData = [
   // ── TURİZM COĞRAFYASİ VE ÇEVRE TERİMLERİ ──
   Term(
     word: 'Konuk Sadakati',
-    definition: 'İşletmeden memnun ayrılan konuğun, tesisi tekrar tercih etmesi ve başkalarına tavsiye etmesi durumu.',
-    example: 'Her yıl aynı dönemde otelimizde konaklayan ve bizi arkadaşlarına öneren sadık misafirlerimiz, konuk sadakati programımızın başarısını göstermektedir.',
+    definition:
+        'İşletmeden memnun ayrılan konuğun, tesisi tekrar tercih etmesi ve başkalarına tavsiye etmesi durumu.',
+    example:
+        'Her yıl aynı dönemde otelimizde konaklayan ve bizi arkadaşlarına öneren sadık misafirlerimiz, konuk sadakati programımızın başarısını göstermektedir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Acil Eylem Planı',
-    definition: 'Yangın, deprem, kaza gibi olağan dışı durumlarda personelin ve konukların güvenliğini sağlamak için hazırlanan prosedür.',
-    example: 'Deprem sarsıntısı başladığında, otel personeli önceden tatbikatı yapılan acil eylem planı adımlarını uygulayarak konukları güvenli tahliye noktasına yönlendirdi.',
+    definition:
+        'Yangın, deprem, kaza gibi olağan dışı durumlarda personelin ve konukların güvenliğini sağlamak için hazırlanan prosedür.',
+    example:
+        'Deprem sarsıntısı başladığında, otel personeli önceden tatbikatı yapılan acil eylem planı adımlarını uygulayarak konukları güvenli tahliye noktasına yönlendirdi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'İkebana (Japon Çiçek Düzenleme Sanatı)',
-    definition: 'Japonlara özgü, doğa ile insanı birleştiren felsefi bir temele dayanan geleneksel ve minimalist çiçek düzenleme sanatı.',
-    example: 'Kat hizmetleri departmanı, oda dekorasyonunda sadelik sağlamak için personele geleneksel İkebana çiçek düzenleme sanatı eğitimi aldırdı.',
+    definition:
+        'Japonlara özgü, doğa ile insanı birleştiren felsefi bir temele dayanan geleneksel ve minimalist çiçek düzenleme sanatı.',
+    example:
+        'Kat hizmetleri departmanı, oda dekorasyonunda sadelik sağlamak için personele geleneksel İkebana çiçek düzenleme sanatı eğitimi aldırdı.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Floral Köpük (Oasis)',
-    definition: 'Su tutma kapasitesi yüksek olan, kesme çiçek aranjmanlarında çiçeklerin saplarını sabitlemek ve canlı kalmalarını sağlamak için kullanılan sünger.',
-    example: 'Garson, hazırlayacağı masaüstü çiçek aranjmanındaki güllerin taze kalması için vazonun tabanına ıslatılmış floral köpük (oasis) yerleştirdi.',
+    definition:
+        'Su tutma kapasitesi yüksek olan, kesme çiçek aranjmanlarında çiçeklerin saplarını sabitlemek ve canlı kalmalarını sağlamak için kullanılan sünger.',
+    example:
+        'Garson, hazırlayacağı masaüstü çiçek aranjmanındaki güllerin taze kalması için vazonun tabanına ıslatılmış floral köpük (oasis) yerleştirdi.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Kristalize Cila',
-    definition: 'Mermer, traverten gibi kalsiyum karbonat içeren doğal taş yüzeylere özel kimyasal ve çelik tel ped kullanılarak uygulanan, zemine nüfuz eden parlak ve dayanıklı cila türü.',
-    example: 'Lobi zeminindeki aşınmış mermerler, parlatma makinesi ve çelik tel yardımıyla kristalize cila uygulamasıyle ilk günkü parlaklığına kavuşturuldu.',
+    definition:
+        'Mermer, traverten gibi kalsiyum karbonat içeren doğal taş yüzeylere özel kimyasal ve çelik tel ped kullanılarak uygulanan, zemine nüfuz eden parlak ve dayanıklı cila türü.',
+    example:
+        'Lobi zeminindeki aşınmış mermerler, parlatma makinesi ve çelik tel yardımıyla kristalize cila uygulamasıyle ilk günkü parlaklığına kavuşturuldu.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Kaya (Mağara) Otel',
-    definition: 'Kayalara oyulmuş odalara sahip veya yer altı mağaralarının üzerine inşa edilmiş, doğal taş ve otantik mimariyi yansıtan, özellikle Kapadokya bölgesinde yaygın otellerdir.',
-    example: 'Kaya (mağara) otel odamızın yazın doğal olarak serin kalması, dışarıdaki aşırı sıcağa karşı harika bir yalıtım sağladı.',
+    definition:
+        'Kayalara oyulmuş odalara sahip veya yer altı mağaralarının üzerine inşa edilmiş, doğal taş ve otantik mimariyi yansıtan, özellikle Kapadokya bölgesinde yaygın otellerdir.',
+    example:
+        'Kaya (mağara) otel odamızın yazın doğal olarak serin kalması, dışarıdaki aşırı sıcağa karşı harika bir yalıtım sağladı.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Termal (Kaplıca) Otel',
-    definition: 'Doğal şifalı termal suların, çamur banyolarının ve kaplıca tedavi yöntemlerinin hekim kontrolünde sunulduğu sağlık ve konaklama odaklı otellerdir.',
-    example: 'Eklem ağrılarına iyi gelen mineralli sularından yararlanmak için hafta sonu termal (kaplıca) otel rezervasyonu yaptırdık.',
+    definition:
+        'Doğal şifalı termal suların, çamur banyolarının ve kaplıca tedavi yöntemlerinin hekim kontrolünde sunulduğu sağlık ve konaklama odaklı otellerdir.',
+    example:
+        'Eklem ağrılarına iyi gelen mineralli sularından yararlanmak için hafta sonu termal (kaplıca) otel rezervasyonu yaptırdık.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ekolojik Tekstil (Eko Tekstil)',
-    definition: 'Elyaf hâlinden bitmiş ürün oluncaya dek üretim aşamalarında çevreyi gözeten, doğaya zararlı toksin yaymayan ve geri dönüştürülebilir/biyobozunur yapıdaki tekstil ürünleri.',
-    example: 'Otelimiz, sürdürülebilirlik sertifikası kapsamında odalarında tamamen ekolojik tekstil (eko tekstil) havluları kullanmaktadır.',
+    definition:
+        'Elyaf hâlinden bitmiş ürün oluncaya dek üretim aşamalarında çevreyi gözeten, doğaya zararlı toksin yaymayan ve geri dönüştürülebilir/biyobozunur yapıdaki tekstil ürünleri.',
+    example:
+        'Otelimiz, sürdürülebilirlik sertifikası kapsamında odalarında tamamen ekolojik tekstil (eko tekstil) havluları kullanmaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ekolojik Denge',
-    definition: 'İnsan ve diğer canlıların varlıklarını sürdürebilmeleri için doğadaki canlı ve cansız unsurlar arasındaki kusursuz uyum.',
-    example: 'Yayla turizmi düzenlerken doğaya çöp bırakılmaması ve ekolojik dengenin korunması, yerel endemik bitki türlerinin yok olmasını önler.',
+    definition:
+        'İnsan ve diğer canlıların varlıklarını sürdürebilmeleri için doğadaki canlı ve cansız unsurlar arasındaki kusursuz uyum.',
+    example:
+        'Yayla turizmi düzenlerken doğaya çöp bırakılmaması ve ekolojik dengenin korunması, yerel endemik bitki türlerinin yok olmasını önler.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Yenilenebilir Enerji',
-    definition: 'Güneş, rüzgar, jeotermal, su gibi doğada sürekli var olan ve tükenmeyen kaynaklardan elde edilen temiz enerji.',
-    example: 'Otel çatısına kurduğumuz güneş panelleri sayesinde, tesisimizin tüm sıcak su ihtiyacını yenilenebilir enerji ile üreten sisteme sahibiz.',
+    definition:
+        'Güneş, rüzgar, jeotermal, su gibi doğada sürekli var olan ve tükenmeyen kaynaklardan elde edilen temiz enerji.',
+    example:
+        'Otel çatısına kurduğumuz güneş panelleri sayesinde, tesisimizin tüm sıcak su ihtiyacını yenilenebilir enerji ile üreten sisteme sahibiz.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Coğrafi İşaret',
-    definition: 'Belirgin bir niteliği, ünü veya diğer özellikleri itibarıyla belirli bir coğrafi yere özdeşleşmiş ürünleri koruyan tescil işareti (Örn: Antep Baklavası).',
-    example: 'Restoran menümüzde özellikle yöresel coğrafi işaret tescili bulunan ürünleri kullanarak gastronomi turizmine katkı sağlıyoruz.',
+    definition:
+        'Belirgin bir niteliği, ünü veya diğer özellikleri itibarıyla belirli bir coğrafi yere özdeşleşmiş ürünleri koruyan tescil işareti (Örn: Antep Baklavası).',
+    example:
+        'Restoran menümüzde özellikle yöresel coğrafi işaret tescili bulunan ürünleri kullanarak gastronomi turizmine katkı sağlıyoruz.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'TPE / TÜRKPATENT',
-    definition: 'Türkiye\'de patent, marka, tasarım ve coğrafi işaretlerin tescilini ve korunmasını sağlayan resmi kurum (Türk Patent ve Marka Kurumu).',
-    example: 'Otel zincirimizin yeni alt markasının logo tescili için doğrudan TÜRKPATENT kurumuna resmi başvuru yaptık.',
+    definition:
+        'Türkiye\'de patent, marka, tasarım ve coğrafi işaretlerin tescilini ve korunmasını sağlayan resmi kurum (Türk Patent ve Marka Kurumu).',
+    example:
+        'Otel zincirimizin yeni alt markasının logo tescili için doğrudan TÜRKPATENT kurumuna resmi başvuru yaptık.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Destinasyon',
-    definition: 'Turistlerin seyahat ettiği, çeşitli turizm arz kaynaklarına (konaklama, ulaşım, cazibe merkezleri) sahip coğrafi bölge veya varış noktası.',
-    example: 'Tarihi dokusu ve eşsiz doğası ile Kapadokya, Türkiye\'nin dünyada en çok ilgi gören turizm destinasyonlarından biridir.',
+    definition:
+        'Turistlerin seyahat ettiği, çeşitli turizm arz kaynaklarına (konaklama, ulaşım, cazibe merkezleri) sahip coğrafi bölge veya varış noktası.',
+    example:
+        'Tarihi dokusu ve eşsiz doğası ile Kapadokya, Türkiye\'nin dünyada en çok ilgi gören turizm destinasyonlarından biridir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Milli Park',
-    definition: 'Bilimsel, estetik, kültürel veya tarihi değeri çok yüksek olan, nadir bulunan ekosistemlerin korunması amacıyla devlet tarafından özel statüye alınarak korunan doğal alanlar.',
-    example: 'Göreme Tarihi Milli Parkı sınırları içerisinde yürütülen tüm turizm yatırımları, doğayı korumak adına çok sıkı denetim kurallarına tabidir.',
+    definition:
+        'Bilimsel, estetik, kültürel veya tarihi değeri çok yüksek olan, nadir bulunan ekosistemlerin korunması amacıyla devlet tarafından özel statüye alınarak korunan doğal alanlar.',
+    example:
+        'Göreme Tarihi Milli Parkı sınırları içerisinde yürütülen tüm turizm yatırımları, doğayı korumak adına çok sıkı denetim kurallarına tabidir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Mavi Bayrak',
-    definition: 'Çevre yönetimi, deniz suyu kalitesi, can güvenliği ve çevre eğitimi kriterlerine eksiksiz uyan temiz plaj ve marinalara verilen uluslararası çevre ödülü.',
-    example: 'Plajımızın bu yıl da Mavi Bayrak ödülünü koruması, otelimizin çevre hijyeni ve deniz temizliği standartlarının bir kanıtıdır.',
+    definition:
+        'Çevre yönetimi, deniz suyu kalitesi, can güvenliği ve çevre eğitimi kriterlerine eksiksiz uyan temiz plaj ve marinalara verilen uluslararası çevre ödülü.',
+    example:
+        'Plajımızın bu yıl da Mavi Bayrak ödülünü koruması, otelimizin çevre hijyeni ve deniz temizliği standartlarının bir kanıtıdır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Akdeniz Çanağı',
-    definition: 'Dünya genelindeki turist hareketliliğinin yaklaşık üçte birini barındıran, zengin kıyı ekosistemine sahip ancak yoğun turizm ve sanayi baskısı nedeniyle kirlilik tehdidi altında olan coğrafi bölge.',
-    example: 'Sürdürülebilir kalkınma raporuna göre, Akdeniz Çanağı ülkeleri kıyı erozyonu ve deniz kirliliğiyle ortaklaşa mücadele etmek zorundadır.',
+    definition:
+        'Dünya genelindeki turist hareketliliğinin yaklaşık üçte birini barındıran, zengin kıyı ekosistemine sahip ancak yoğun turizm ve sanayi baskısı nedeniyle kirlilik tehdidi altında olan coğrafi bölge.',
+    example:
+        'Sürdürülebilir kalkınma raporuna göre, Akdeniz Çanağı ülkeleri kıyı erozyonu ve deniz kirliliğiyle ortaklaşa mücadele etmek zorundadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'UNEP',
-    definition: 'Birleşmiş Milletler Çevre Programı; küresel düzeyde çevre politikalarını belirleyen ve sürdürülebilir turizmin ekolojik, sosyal ve ekonomik ilkelerini yayınlayan uluslararası kuruluş.',
-    example: 'Otelimizin atık yönetimi politikası, UNEP tarafından yayımlanan yeşil turizm rehberindeki kriterler temel alınarak güncellendi.',
+    definition:
+        'Birleşmiş Milletler Çevre Programı; küresel düzeyde çevre politikalarını belirleyen ve sürdürülebilir turizmin ekolojik, sosyal ve ekonomik ilkelerini yayınlayan uluslararası kuruluş.',
+    example:
+        'Otelimizin atık yönetimi politikası, UNEP tarafından yayımlanan yeşil turizm rehberindeki kriterler temel alınarak güncellendi.',
     category: 'Turizm Coğrafyası ve Çevre',
+    audioPath: 'assets/sounds/terms/UNEP.mp3',
   ),
   Term(
     word: 'Beyaz Yıldız',
-    definition: 'Türkiye Otelciler Federasyonu (TÜROFED) tarafından konaklama tesislerini su, enerji tasarrufu ve atık yönetimi konularında sürdürülebilirliğe teşvik etmek amacıyla yürütülen çevre projesi ve sertifikası.',
-    example: 'Enerji ve su verimliliği projelerimizi başarıyla tamamlayan otelimize TÜROFED yetkilileri tarafından Beyaz Yıldız sertifikası takdim edildi.',
+    definition:
+        'Türkiye Otelciler Federasyonu (TÜROFED) tarafından konaklama tesislerini su, enerji tasarrufu ve atık yönetimi konularında sürdürülebilirliğe teşvik etmek amacıyla yürütülen çevre projesi ve sertifikası.',
+    example:
+        'Enerji ve su verimliliği projelerimizi başarıyla tamamlayan otelimize TÜROFED yetkilileri tarafından Beyaz Yıldız sertifikası takdim edildi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Tatil Köyü (Holiday Village)',
-    definition: 'Konaklama ve yeme-içmenin yanı sıra çeşitli spor, eğlence ve rekreasyon hizmetlerinin sunulduğu, doğa ile iç içe, genellikle en fazla üç katlı yapılardan oluşan konaklama işletmeleridir.',
-    example: 'Çocuklu ailelerin en çok tercih ettiği bu tatil köyü (holiday village), yeşillikler içindeki bungalovları ve su parkıyla harika bir yaz tatili sunuyor.',
+    definition:
+        'Konaklama ve yeme-içmenin yanı sıra çeşitli spor, eğlence ve rekreasyon hizmetlerinin sunulduğu, doğa ile iç içe, genellikle en fazla üç katlı yapılardan oluşan konaklama işletmeleridir.',
+    example:
+        'Çocuklu ailelerin en çok tercih ettiği bu tatil köyü (holiday village), yeşillikler içindeki bungalovları ve su parkıyla harika bir yaz tatili sunuyor.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Oberj (Dağ Evi)',
-    definition: 'Kış sporları veya doğa sporları yapmak amacıyla yapılan seyahatlerde konaklama ihtiyacını karşılayan, asgari bir yıldızlı otel niteliğindeki dağ tesisleridir.',
-    example: 'Alpler\'deki kayak tatilimizde pistlerin hemen yanındaki şirin bir oberj (dağ evi) tesisinde konaklayarak kayak keyfi yaptık.',
+    definition:
+        'Kış sporları veya doğa sporları yapmak amacıyla yapılan seyahatlerde konaklama ihtiyacını karşılayan, asgari bir yıldızlı otel niteliğindeki dağ tesisleridir.',
+    example:
+        'Alpler\'deki kayak tatilimizde pistlerin hemen yanındaki şirin bir oberj (dağ evi) tesisinde konaklayarak kayak keyfi yaptık.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Jeomorfoloji (Yüzey Şekilleri Bilimi)',
-    definition: 'Yeryüzü şekillerinin oluşumunu, gelişimini ve yeryüzündeki coğrafi dağılımlarını neden-sonuç ilişkisiyle araştıran bilim dalı.',
-    example: 'Kapadokya\'daki peri bacalarının rüzgar ve su aşındırmasıyla nasıl oluştuğunu jeomorfoloji bilimi açıklar.',
+    definition:
+        'Yeryüzü şekillerinin oluşumunu, gelişimini ve yeryüzündeki coğrafi dağılımlarını neden-sonuç ilişkisiyle araştıran bilim dalı.',
+    example:
+        'Kapadokya\'daki peri bacalarının rüzgar ve su aşındırmasıyla nasıl oluştuğunu jeomorfoloji bilimi açıklar.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Klimatoloji (İklim Bilgisi)',
-    definition: 'Atmosfer içinde meydana gelen hava olayları ile yeryüzünde görülen iklim tiplerini ve bunların yeryüzündeki dağılımını inceleyen bilim.',
-    example: 'Klimatoloji çalışmaları, son otuz yılda bölgemizde yaşanan mevsim kaymalarını bilimsel verilerle ortaya koymaktadır.',
+    definition:
+        'Atmosfer içinde meydana gelen hava olayları ile yeryüzünde görülen iklim tiplerini ve bunların yeryüzündeki dağılımını inceleyen bilim.',
+    example:
+        'Klimatoloji çalışmaları, son otuz yılda bölgemizde yaşanan mevsim kaymalarını bilimsel verilerle ortaya koymaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Çöl İklimi',
-    definition: 'Yağışın yok denecek kadar az, sıcaklığın ve günlük ani ısı değişimlerinin çok yüksek olduğu kurak iklim tipi.',
-    example: 'Çöl ikliminde yaşayan canlılar, gündüz aşırı sıcağa ve gece dondurucu soğuğa uyum sağlayacak fizyolojik özelliklere sahiptir.',
+    definition:
+        'Yağışın yok denecek kadar az, sıcaklığın ve günlük ani ısı değişimlerinin çok yüksek olduğu kurak iklim tipi.',
+    example:
+        'Çöl ikliminde yaşayan canlılar, gündüz aşırı sıcağa ve gece dondurucu soğuğa uyum sağlayacak fizyolojik özelliklere sahiptir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Muson İklimi',
-    definition: 'Yazları okyanustan karaya, kışları karadan okyanusa esen mevsimlik rüzgârlarla belirlenen, dünyanın en yağışlı iklim tipi.',
-    example: 'Muson ikliminin hakim olduğu bölgelerde yaz mevsiminde görülen şiddetli yağışlar büyük taşkınlara yol açabilmektedir.',
+    definition:
+        'Yazları okyanustan karaya, kışları karadan okyanusa esen mevsimlik rüzgârlarla belirlenen, dünyanın en yağışlı iklim tipi.',
+    example:
+        'Muson ikliminin hakim olduğu bölgelerde yaz mevsiminde görülen şiddetli yağışlar büyük taşkınlara yol açabilmektedir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ekvatoral İklim',
-    definition: 'Mevsim geçişlerinde sıcaklık farkının çok az olduğu, her mevsimin düzenli yağışlı ve yıllık sıcaklık ortalamasının sürekli yüksek olduğu iklim.',
-    example: 'Ekvatoral iklimin görüldüğü Amazon havzasında, yıl boyunca yüksek sıcaklık ve nem nedeniyle gür ormanlar yetişir.',
+    definition:
+        'Mevsim geçişlerinde sıcaklık farkının çok az olduğu, her mevsimin düzenli yağışlı ve yıllık sıcaklık ortalamasının sürekli yüksek olduğu iklim.',
+    example:
+        'Ekvatoral iklimin görüldüğü Amazon havzasında, yıl boyunca yüksek sıcaklık ve nem nedeniyle gür ormanlar yetişir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Akdeniz İklimi',
-    definition: 'Yaz mevsimlerinin sıcak ve kurak, kışların ise ılık ve yağışlı geçtiği; özellikle yaz deniz turizmi için en elverişli koşulları sunan iklim tipi.',
-    example: 'Akdeniz iklimi sayesinde ülkemizin güney kıyılarında turizm sezonu nisan ayından kasım ayına kadar uzamaktadır.',
+    definition:
+        'Yaz mevsimlerinin sıcak ve kurak, kışların ise ılık ve yağışlı geçtiği; özellikle yaz deniz turizmi için en elverişli koşulları sunan iklim tipi.',
+    example:
+        'Akdeniz iklimi sayesinde ülkemizin güney kıyılarında turizm sezonu nisan ayından kasım ayına kadar uzamaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Okyanus İklimi',
-    definition: 'Batı rüzgârları ve sıcak okyanus akıntılarının etkisiyle yazların serin, kışların ılık geçtiği ve yılın her ayı düzenli yağış alan ılıman iklim.',
-    example: 'Okyanus ikliminin nemli ve ılıman yapısı, yaprak döken geniş yapraklı ormanların gelişimi için mükemmel bir ortam sunar.',
+    definition:
+        'Batı rüzgârları ve sıcak okyanus akıntılarının etkisiyle yazların serin, kışların ılık geçtiği ve yılın her ayı düzenli yağış alan ılıman iklim.',
+    example:
+        'Okyanus ikliminin nemli ve ılıman yapısı, yaprak döken geniş yapraklı ormanların gelişimi için mükemmel bir ortam sunar.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Step (Bozkır) İklimi',
-    definition: 'İlkbaharın yağışlı, yazların kurak geçtiği, doğal bitki örtüsünün kısa boylu otlardan oluştuğu ılıman/karasal geçiş iklimi.',
-    example: 'İç Anadolu bölgesinde etkili olan step iklimi, küçükbaş hayvancılık faaliyetleri için doğal otlak zemin oluşturur.',
+    definition:
+        'İlkbaharın yağışlı, yazların kurak geçtiği, doğal bitki örtüsünün kısa boylu otlardan oluştuğu ılıman/karasal geçiş iklimi.',
+    example:
+        'İç Anadolu bölgesinde etkili olan step iklimi, küçükbaş hayvancılık faaliyetleri için doğal otlak zemin oluşturur.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Savan (Subtropikal) İklimi',
-    definition: 'Her iki yarım kürede 10 ile 20 derece enlemleri arasında görülen, yıllık sıcaklık ortalaması 20 derece civarında olan uzun boylu otluk iklim.',
-    example: 'Savan ikliminde yaşayan aslan, zebra ve zürafa gibi yaban hayvanları, kurak dönemde su bulabilmek için büyük göçler gerçekleştirir.',
+    definition:
+        'Her iki yarım kürede 10 ile 20 derece enlemleri arasında görülen, yıllık sıcaklık ortalaması 20 derece civarında olan uzun boylu otluk iklim.',
+    example:
+        'Savan ikliminde yaşayan aslan, zebra ve zürafa gibi yaban hayvanları, kurak dönemde su bulabilmek için büyük göçler gerçekleştirir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Tundra İklimi',
-    definition: 'Kışın toprakların tamamen donduğu, yazın ise buzların çözülerek bataklık hâline geldiği, bitki örtüsü yosun ve cılız çalılıklardan oluşan soğuk iklim.',
-    example: 'Kuzey Kutup dairesine yakın tundralarda, kısa yaz döneminde buzların erimesiyle ortaya çıkan yosunlar ren geyiklerinin temel besinidir.',
+    definition:
+        'Kışın toprakların tamamen donduğu, yazın ise buzların çözülerek bataklık hâline geldiği, bitki örtüsü yosun ve cılız çalılıklardan oluşan soğuk iklim.',
+    example:
+        'Kuzey Kutup dairesine yakın tundralarda, kısa yaz döneminde buzların erimesiyle ortaya çıkan yosunlar ren geyiklerinin temel besinidir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Krater / Krater Gölü',
-    definition: 'Yanardağların tepe kısmında patlamalarla oluşan ağız boşluğu (krater) ve bu boşluğun zamanla yağmur sularıyla dolması sonucu oluşan göl.',
-    example: 'Meke Gölü, sönmüş bir yanardağ kraterinin suyla dolmasıyla oluşmuş ve eşsiz görüntüsüyle \'dünyanın nazar boncuğu\' olarak anılmıştır.',
+    definition:
+        'Yanardağların tepe kısmında patlamalarla oluşan ağız boşluğu (krater) ve bu boşluğun zamanla yağmur sularıyla dolması sonucu oluşan göl.',
+    example:
+        'Meke Gölü, sönmüş bir yanardağ kraterinin suyla dolmasıyla oluşmuş ve eşsiz görüntüsüyle \'dünyanın nazar boncuğu\' olarak anılmıştır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Salar (Tuz Düzlüğü)',
-    definition: 'Yüksek rakımlı kurak bölgelerde bulunan, sular buharlaştıktan sonra geriye devasa beyaz bir tuz zemini bırakan kurumuş tuz gölü yatakları.',
-    example: 'Bolivya\'daki devasa tuz düzlüğü (salar), yağmur sonrası gökyüzünü yansıtan dev bir ayna görüntüsü oluşturarak turistleri büyüler.',
+    definition:
+        'Yüksek rakımlı kurak bölgelerde bulunan, sular buharlaştıktan sonra geriye devasa beyaz bir tuz zemini bırakan kurumuş tuz gölü yatakları.',
+    example:
+        'Bolivya\'daki devasa tuz düzlüğü (salar), yağmur sonrası gökyüzünü yansıtan dev bir ayna görüntüsü oluşturarak turistleri büyüler.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Lagün (Deniz Kulağı)',
-    definition: 'Denizden ince bir kıyı kordonu (kum kordonu) veya resiflerle kısmen veya tamamen ayrılmış, sığ ve genellikle kuş gözlemciliğine elverişli kıyı gölleri.',
-    example: 'Muğla Fethiye\'de bulunan Ölüdeniz lagünü, dalgasız ve sığ yapısıyla deniz turizmi için dünyaca ünlü bir doğal güzelliktir.',
+    definition:
+        'Denizden ince bir kıyı kordonu (kum kordonu) veya resiflerle kısmen veya tamamen ayrılmış, sığ ve genellikle kuş gözlemciliğine elverişli kıyı gölleri.',
+    example:
+        'Muğla Fethiye\'de bulunan Ölüdeniz lagünü, dalgasız ve sığ yapısıyla deniz turizmi için dünyaca ünlü bir doğal güzelliktir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Buzul (Glacier)',
-    definition: 'Yüksek enlemlerde veya çok yüksek dağ zirvelerinde yağan karların erimeyip üst üste birikerek sıkışmasıyla oluşan ve yerçekimi etkisiyle çok yavaş hareket eden dev buz kütleleri.',
-    example: 'İsviçre Alpleri\'ne tırmanan dağcılar, hareket halindeki devasa buzul çatlaklarını aşmak için özel ekipmanlar kullandı.',
+    definition:
+        'Yüksek enlemlerde veya çok yüksek dağ zirvelerinde yağan karların erimeyip üst üste birikerek sıkışmasıyla oluşan ve yerçekimi etkisiyle çok yavaş hareket eden dev buz kütleleri.',
+    example:
+        'İsviçre Alpleri\'ne tırmanan dağcılar, hareket halindeki devasa buzul çatlaklarını aşmak için özel ekipmanlar kullandı.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Biyoçeşitlilik (Biyolojik Çeşitlilik)',
-    definition: 'Bir bölgedeki tüm canlı organizmaların, bitki, hayvan ve mikroorganizma türlerinin kendi genetik yapıları ve içinde bulundukları ekosistem düzeyindeki genel zenginliği.',
-    example: 'Sulak alanların korunması, su kuşlarının yaşam döngüsünü sürdürmesi ve su ekosistemindeki biyoçeşitlilik dengesinin korunması için hayati önem taşır.',
+    definition:
+        'Bir bölgedeki tüm canlı organizmaların, bitki, hayvan ve mikroorganizma türlerinin kendi genetik yapıları ve içinde bulundukları ekosistem düzeyindeki genel zenginliği.',
+    example:
+        'Sulak alanların korunması, su kuşlarının yaşam döngüsünü sürdürmesi ve su ekosistemindeki biyoçeşitlilik dengesinin korunması için hayati önem taşır.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Prehistorik (Tarih Öncesi) Dönem',
-    definition: 'İnsanlığın yazıyı henüz icat etmediği, ilk araç gereçlerin taştan ve kemikten yapıldığı, insanların kaya sığınaklarını ve mağaraları yerleşim olarak kullandığı en eski devir.',
-    example: 'Prehistorik dönem insanlarının mağara duvarlarına çizdiği av sahneleri resimleri, sanat tarihinin bilinen ilk örneklerini oluşturur.',
+    definition:
+        'İnsanlığın yazıyı henüz icat etmediği, ilk araç gereçlerin taştan ve kemikten yapıldığı, insanların kaya sığınaklarını ve mağaraları yerleşim olarak kullandığı en eski devir.',
+    example:
+        'Prehistorik dönem insanlarının mağara duvarlarına çizdiği av sahneleri resimleri, sanat tarihinin bilinen ilk örneklerini oluşturur.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Buzul Devri (Buzul Çağı)',
-    definition: 'Dünya genel sıcaklıklarının ciddi oranda düşerek yeryüzünün çok büyük bir bölümünün kalın buz tabakalarıyla (örtü buzullarıyla) kaplandığı uzun jeolojik zaman dilimi.',
-    example: 'Son buzul devri sırasında deniz seviyelerinin düşmesi, eski kıtalar arasında kara köprülerinin oluşmasını ve canlıların göç etmesini kolaylaştırmıştır.',
+    definition:
+        'Dünya genel sıcaklıklarının ciddi oranda düşerek yeryüzünün çok büyük bir bölümünün kalın buz tabakalarıyla (örtü buzullarıyla) kaplandığı uzun jeolojik zaman dilimi.',
+    example:
+        'Son buzul devri sırasında deniz seviyelerinin düşmesi, eski kıtalar arasında kara köprülerinin oluşmasını ve canlıların göç etmesini kolaylaştırmıştır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Antik Çağ (İlk Çağ)',
-    definition: 'Yazının icadından başlayarak Batı Roma İmparatorluğu\'nun yıkılışına kadar olan, özellikle Mezopotamya, Mısır, Yunan ve Roma uygarlıklarının yükseldiği tarihi dönem.',
-    example: 'Antik Çağ medeniyetlerine ait tapınaklar ve tiyatrolar, Akdeniz havzasında kültür turizminin en büyük çekim merkezleridir.',
+    definition:
+        'Yazının icadından başlayarak Batı Roma İmparatorluğu\'nun yıkılışına kadar olan, özellikle Mezopotamya, Mısır, Yunan ve Roma uygarlıklarının yükseldiği tarihi dönem.',
+    example:
+        'Antik Çağ medeniyetlerine ait tapınaklar ve tiyatrolar, Akdeniz havzasında kültür turizminin en büyük çekim merkezleridir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Sömürgecilik Dönemi',
-    definition: 'Güçlü, genellikle sanayileşmiş devletlerin, deniz aşırı diğer toplumların topraklarını siyasi ve ekonomik olarak kendi çıkarları için egemenlikleri altına aldıkları tarihi dönem.',
-    example: 'Sömürgecilik dönemi boyunca deniz aşırı kıtalardan taşınan ham maddeler, Avrupa\'daki sanayi devriminin itici gücü olmuştur.',
+    definition:
+        'Güçlü, genellikle sanayileşmiş devletlerin, deniz aşırı diğer toplumların topraklarını siyasi ve ekonomik olarak kendi çıkarları için egemenlikleri altına aldıkları tarihi dönem.',
+    example:
+        'Sömürgecilik dönemi boyunca deniz aşırı kıtalardan taşınan ham maddeler, Avrupa\'daki sanayi devriminin itici gücü olmuştur.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Termal Turizm',
-    definition: 'Şifalı maden suları, çamur banyoları ve kaplıcalardan yararlanmak amacıyla yapılan turizm türü.',
-    example: 'Afyonkarahisar\'daki termal otellerimiz, şifalı sıcak su havuzları ve çamur banyoları ile kış aylarında termal turizm odağı olmaktadır.',
+    definition:
+        'Şifalı maden suları, çamur banyoları ve kaplıcalardan yararlanmak amacıyla yapılan turizm türü.',
+    example:
+        'Afyonkarahisar\'daki termal otellerimiz, şifalı sıcak su havuzları ve çamur banyoları ile kış aylarında termal turizm odağı olmaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ekoturizm',
-    definition: 'Doğal çevreyi koruyan, yerel halkın refahını gözeten ve turistlere doğayı anlama fırsatı sunan sürdürülebilir çevre dostu turizm türü.',
-    example: 'Doğa yürüyüşü ve kuş gözlemciliği gibi aktiviteleri içeren ekoturizm turları, çevre bilincine sahip gezginler tarafından yoğun ilgi görüyor.',
+    definition:
+        'Doğal çevreyi koruyan, yerel halkın refahını gözeten ve turistlere doğayı anlama fırsatı sunan sürdürülebilir çevre dostu turizm türü.',
+    example:
+        'Doğa yürüyüşü ve kuş gözlemciliği gibi aktiviteleri içeren ekoturizm turları, çevre bilincine sahip gezginler tarafından yoğun ilgi görüyor.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Yayla Turizmi',
-    definition: 'Özellikle yaz aylarında serinlemek, doğa ile iç içe olmak ve bozulmamış yerel kültürü tanımak için yüksek rakımlı yerleşimlere yapılan seyahatler.',
-    example: 'Rize Ayder Yaylası, temiz havası ve geleneksel yayla evleri konseptiyle yaz sıcağından kaçan yerli ve yabancı konukların yayla turizmi merkezidir.',
+    definition:
+        'Özellikle yaz aylarında serinlemek, doğa ile iç içe olmak ve bozulmamış yerel kültürü tanımak için yüksek rakımlı yerleşimlere yapılan seyahatler.',
+    example:
+        'Rize Ayder Yaylası, temiz havası ve geleneksel yayla evleri konseptiyle yaz sıcağından kaçan yerli ve yabancı konukların yayla turizmi merkezidir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ekoturist',
-    definition: 'Çevre bilincine sahip, doğal alanların korunmasına katkıda bulunan, yerel halkın kültürüne ve refahına saygılı seyahat eden turist profili.',
-    example: 'Tesisimizi tercih eden ekoturist misafirler, bölgenin endemik bitki türlerini korumak için düzenlenen doğa turlarına katıldılar.',
+    definition:
+        'Çevre bilincine sahip, doğal alanların korunmasına katkıda bulunan, yerel halkın kültürüne ve refahına saygılı seyahat eden turist profili.',
+    example:
+        'Tesisimizi tercih eden ekoturist misafirler, bölgenin endemik bitki türlerini korumak için düzenlenen doğa turlarına katıldılar.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Planlaması',
-    definition: 'Bir destinasyonda turizmin dengeli, kontrollü ve sürdürülebilir bir şekilde gelişmesi için hedeflerin, altyapı, konaklama, çevre koruma ve kaynak dağılımının stratejik olarak belirlenmesi süreci.',
-    example: 'Yerel yönetimin hazırladığı uzun vadeli turizm planlaması sayesinde, kıyı şeridinde aşırı yapılaşmanın ve doğa tahribatının önüne geçildi.',
+    definition:
+        'Bir destinasyonda turizmin dengeli, kontrollü ve sürdürülebilir bir şekilde gelişmesi için hedeflerin, altyapı, konaklama, çevre koruma ve kaynak dağılımının stratejik olarak belirlenmesi süreci.',
+    example:
+        'Yerel yönetimin hazırladığı uzun vadeli turizm planlaması sayesinde, kıyı şeridinde aşırı yapılaşmanın ve doğa tahribatının önüne geçildi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Doğa Sporları Turizmi',
-    definition: 'Doğal ortamlarda, motor gücü olmadan insan kas gücü ve becerisiyle yapılan dağcılık, kaya tırmanışı, kanyon geçişi, rafting ve kampçılık gibi macera dolu turizm etkinlikleri.',
-    example: 'Köprülü Kanyon\'da düzenlenen rafting turları, yaz aylarında doğa sporları turizmi arayan macera severleri bir araya getiriyor.',
+    definition:
+        'Doğal ortamlarda, motor gücü olmadan insan kas gücü ve becerisiyle yapılan dağcılık, kaya tırmanışı, kanyon geçişi, rafting ve kampçılık gibi macera dolu turizm etkinlikleri.',
+    example:
+        'Köprülü Kanyon\'da düzenlenen rafting turları, yaz aylarında doğa sporları turizmi arayan macera severleri bir araya getiriyor.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Mağara Turizmi',
-    definition: 'Doğal sarkıt-dikit yapıları, karstik boşlukları veya astım gibi hastalıklara iyi gelen şifalı havaları nedeniyle mağaraları keşfetmek amacıyla yapılan turizm türü.',
-    example: 'Alanya\'daki Damlataş Mağarası, mikroklima havasıyla solunum yolları rahatsızlığı olanların mağara turizmi kapsamında uğrak yeridir.',
+    definition:
+        'Doğal sarkıt-dikit yapıları, karstik boşlukları veya astım gibi hastalıklara iyi gelen şifalı havaları nedeniyle mağaraları keşfetmek amacıyla yapılan turizm türü.',
+    example:
+        'Alanya\'daki Damlataş Mağarası, mikroklima havasıyla solunum yolları rahatsızlığı olanların mağara turizmi kapsamında uğrak yeridir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Dağ ve Doğa Yürüyüşü (Trekking) Turizmi',
-    definition: 'Belirli doğal parkurlarda (Likya Yolu, Frig Vadisi vb.) tempolu ve sportif bir şekilde, rehber eşliğinde doğa ile baş başa yapılan uzun yürüyüş turizmi.',
-    example: 'Tarihi Likya Yolu\'nu yürümek üzere gelen turist grubu, dağ ve doğa yürüyüşü (trekking) turizmi kapsamında köylerde mola verdi.',
+    definition:
+        'Belirli doğal parkurlarda (Likya Yolu, Frig Vadisi vb.) tempolu ve sportif bir şekilde, rehber eşliğinde doğa ile baş başa yapılan uzun yürüyüş turizmi.',
+    example:
+        'Tarihi Likya Yolu\'nu yürümek üzere gelen turist grubu, dağ ve doğa yürüyüşü (trekking) turizmi kapsamında köylerde mola verdi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Trekking.mp3',
   ),
   Term(
     word: 'Botanik (Flora) Turizmi',
-    definition: 'Doğal bitki örtüsünü, endemik çiçek türlerini, ormanları ve botanik bahçelerini incelemek, bilimsel araştırma veya fotoğraf çekimi yapmak amacıyla yapılan turizm.',
-    example: 'Toroslar\'daki endemik orkide ve çiğdem türlerini fotoğraflamak için gelen yabancı bilim insanları botanik (flora) turizmi gerçekleştirdi.',
+    definition:
+        'Doğal bitki örtüsünü, endemik çiçek türlerini, ormanları ve botanik bahçelerini incelemek, bilimsel araştırma veya fotoğraf çekimi yapmak amacıyla yapılan turizm.',
+    example:
+        'Toroslar\'daki endemik orkide ve çiğdem türlerini fotoğraflamak için gelen yabancı bilim insanları botanik (flora) turizmi gerçekleştirdi.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Kuş Gözlemciliği (Ornito Turizm)',
-    definition: 'Kuşların doğal yaşam alanlarında, sulak alanlarda ve göç yolları üzerinde dürbün veya teleskop yardımıyla izlenmesine ve fotoğraflanmasına dayalı doğa turizmi.',
-    example: 'Manyas Kuş Cenneti, göç döneminde yüzlerce farklı kuş türünü ağırlayarak kuş gözlemciliği (ornito turizm) meraklılarının buluşma noktası olur.',
+    definition:
+        'Kuşların doğal yaşam alanlarında, sulak alanlarda ve göç yolları üzerinde dürbün veya teleskop yardımıyla izlenmesine ve fotoğraflanmasına dayalı doğa turizmi.',
+    example:
+        'Manyas Kuş Cenneti, göç döneminde yüzlerce farklı kuş türünü ağırlayarak kuş gözlemciliği (ornito turizm) meraklılarının buluşma noktası olur.',
     category: 'Turizm Coğrafyası ve Çevre',
   ),
   Term(
     word: 'Akarsu Turizmi',
-    definition: 'Yüksek debili çay ve nehirlerde kano, rafting ve nehir kayağı gibi macera araçlarıyla yapılan, hıza ve debiye karşı mücadele içeren su turizmi.',
-    example: 'Artvin\'deki Çoruh Nehri, debisinin yüksekliği ve zorlu parkurları ile akarsu turizmi tutkunları için küresel bir öneme sahiptir.',
+    definition:
+        'Yüksek debili çay ve nehirlerde kano, rafting ve nehir kayağı gibi macera araçlarıyla yapılan, hıza ve debiye karşı mücadele içeren su turizmi.',
+    example:
+        'Artvin\'deki Çoruh Nehri, debisinin yüksekliği ve zorlu parkurları ile akarsu turizmi tutkunları için küresel bir öneme sahiptir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Glamping Turizmi',
-    definition: 'Büyüleyici ("glamorous") ve kamp yapmanın ("camping") birleşiminden oluşan, doğa içinde lüks ve yüksek konforlu çadırlarda veya özel tasarlanmış butik ünitelerde kamp yapma deneyimi.',
-    example: 'Orman içindeki lüks kubbe çadırlarda, jakuzi ve klima konforuyla yapılan glamping turizmi, doğaseverlerin yeni gözdesi oldu.',
+    definition:
+        'Büyüleyici ("glamorous") ve kamp yapmanın ("camping") birleşiminden oluşan, doğa içinde lüks ve yüksek konforlu çadırlarda veya özel tasarlanmış butik ünitelerde kamp yapma deneyimi.',
+    example:
+        'Orman içindeki lüks kubbe çadırlarda, jakuzi ve klima konforuyla yapılan glamping turizmi, doğaseverlerin yeni gözdesi oldu.',
     category: 'Turizm Coğrafyası ve Çevre',
+    audioPath: 'assets/sounds/terms/MPI.mp3',
   ),
   Term(
     word: 'Kıyamet Turizmi (Doom Tourism)',
-    definition: 'Küresel ısınma, iklim krizi veya doğal afetler nedeniyle yakın gelecekte yok olma ya da su altında kalma tehlikesi olan ekosistemleri (buzullar vb.) son kez görmek amacıyla yapılan turizm.',
-    example: 'İklim kriziyle hızla eriyen kutup buzullarını veya Venedik kanallarını yerinde görmek isteyenlerin yaptığı seyahatler kıyamet turizmi (doom tourism) olarak adlandırılır.',
+    definition:
+        'Küresel ısınma, iklim krizi veya doğal afetler nedeniyle yakın gelecekte yok olma ya da su altında kalma tehlikesi olan ekosistemleri (buzullar vb.) son kez görmek amacıyla yapılan turizm.',
+    example:
+        'İklim kriziyle hızla eriyen kutup buzullarını veya Venedik kanallarını yerinde görmek isteyenlerin yaptığı seyahatler kıyamet turizmi (doom tourism) olarak adlandırılır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Y Kuşağı Turizmi',
-    definition: '1980-1999 arası doğumlu, dijital teknolojiye adapte olmuş, çevre bilinci yüksek ve otantik deneyimler aramayı seven kitlenin dinamik seyahat alışkanlıklarını kapsayan turizm.',
-    example: 'Y kuşağı turizmi eğilimlerini analiz eden otelimiz, odalara yüksek hızlı internet bağlantısı ve dijital rehber ekranları entegre etti.',
+    definition:
+        '1980-1999 arası doğumlu, dijital teknolojiye adapte olmuş, çevre bilinci yüksek ve otantik deneyimler aramayı seven kitlenin dinamik seyahat alışkanlıklarını kapsayan turizm.',
+    example:
+        'Y kuşağı turizmi eğilimlerini analiz eden otelimiz, odalara yüksek hızlı internet bağlantısı ve dijital rehber ekranları entegre etti.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Macera Turizmi',
-    definition: 'Risk barındıran, fiziksel güç, dayanıklılık ve özel beceriler gerektiren, bungee jumping, rafting, heliski gibi heyecan düzeyi yüksek doğa aktivitelerini içeren turizm.',
-    example: 'Kaçkar Dağları\'nda helikopterle zirveye çıkıp dik yamaçlardan kayarak yapılan heliski sporu, macera turizmi segmentinde yer alır.',
+    definition:
+        'Risk barındıran, fiziksel güç, dayanıklılık ve özel beceriler gerektiren, bungee jumping, rafting, heliski gibi heyecan düzeyi yüksek doğa aktivitelerini içeren turizm.',
+    example:
+        'Kaçkar Dağları\'nda helikopterle zirveye çıkıp dik yamaçlardan kayarak yapılan heliski sporu, macera turizmi segmentinde yer alır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Doğa Turları (Eko-Turlar)',
-    definition: 'Sürdürülebilirliğe dayanan; flora-fauna tanıtımı, macera, dağcılık ve doğa fotoğrafçılığı gibi faaliyetleri içeren turlar.',
-    example: 'Kaçkar Dağları\'na düzenlenen doğa turları (eko-turlar) sayesinde katılımcılar endemik bitki türlerini fotoğrafladılar.',
+    definition:
+        'Sürdürülebilirliğe dayanan; flora-fauna tanıtımı, macera, dağcılık ve doğa fotoğrafçılığı gibi faaliyetleri içeren turlar.',
+    example:
+        'Kaçkar Dağları\'na düzenlenen doğa turları (eko-turlar) sayesinde katılımcılar endemik bitki türlerini fotoğrafladılar.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Sera Etkisi',
-    definition: 'Atmosferdeki bazı gazların (karbondioksit, metan vb.) yeryüzünden yansıyan ısıyı tutarak dünyanın ısınmasına neden olması durumu.',
-    example: 'İklim krizini tetikleyen sera etkisi sebebiyle kıyı bölgelerimizdeki deniz sıcaklıklarının artması, yaz turizmi sezonunun kaymasına yol açmaktadır.',
+    definition:
+        'Atmosferdeki bazı gazların (karbondioksit, metan vb.) yeryüzünden yansıyan ısıyı tutarak dünyanın ısınmasına neden olması durumu.',
+    example:
+        'İklim krizini tetikleyen sera etkisi sebebiyle kıyı bölgelerimizdeki deniz sıcaklıklarının artması, yaz turizmi sezonunun kaymasına yol açmaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Fiziki Coğrafya',
-    definition: 'İnsanın içinde yaşadığı ve etkileşim içinde bulunduğu doğal çevreyi (iklim, yeryüzü şekilleri, sular, canlılar) inceleyen coğrafya ana dalı.',
-    example: 'Fiziki coğrafya derslerinde dağların oluşumunu ve iklimlerin yeryüzündeki dağılışını haritalar üzerinden inceliyoruz.',
+    definition:
+        'İnsanın içinde yaşadığı ve etkileşim içinde bulunduğu doğal çevreyi (iklim, yeryüzü şekilleri, sular, canlılar) inceleyen coğrafya ana dalı.',
+    example:
+        'Fiziki coğrafya derslerinde dağların oluşumunu ve iklimlerin yeryüzündeki dağılışını haritalar üzerinden inceliyoruz.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Biyocoğrafya (Canlılar Coğrafyası)',
-    definition: 'Yeryüzünde yer alan bitki (flora) ve hayvanların (fauna) coğrafi dağılımını ve bu dağılımı etkileyen fiziki koşulları inceleyen bilim dalı.',
-    example: 'Biyocoğrafya araştırmaları, ekvatordan kutuplara doğru gidildikçe canlı çeşitliliğinin neden azaldığını inceler.',
+    definition:
+        'Yeryüzünde yer alan bitki (flora) ve hayvanların (fauna) coğrafi dağılımını ve bu dağılımı etkileyen fiziki koşulları inceleyen bilim dalı.',
+    example:
+        'Biyocoğrafya araştırmaları, ekvatordan kutuplara doğru gidildikçe canlı çeşitliliğinin neden azaldığını inceler.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Hidrografya (Sular Coğrafyası)',
-    definition: 'Denizler, akarsular, göller ve yer altı sularının yeryüzündeki dağılımlarını, oluşumlarını ve insan yaşamına etkilerini inceleyen bilim.',
-    example: 'Ülkemizin su kaynakları potansiyelini planlamak için hidrografya verilerinden ve nehir debi ölçümlerinden yararlanılır.',
+    definition:
+        'Denizler, akarsular, göller ve yer altı sularının yeryüzündeki dağılımlarını, oluşumlarını ve insan yaşamına etkilerini inceleyen bilim.',
+    example:
+        'Ülkemizin su kaynakları potansiyelini planlamak için hidrografya verilerinden ve nehir debi ölçümlerinden yararlanılır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Beşerî Coğrafya',
-    definition: 'Çevrenin insan yaşamına etkisi ile insanın mekânda yaptığı tarım, sanayi, yerleşme ve ulaşım gibi değişiklikleri inceleyen coğrafya ana dalı.',
-    example: 'Beşerî coğrafya, sanayileşmeyle birlikte kırsal alanlardan şehirlere doğru yaşanan göç dalgalarını analiz eder.',
+    definition:
+        'Çevrenin insan yaşamına etkisi ile insanın mekânda yaptığı tarım, sanayi, yerleşme ve ulaşım gibi değişiklikleri inceleyen coğrafya ana dalı.',
+    example:
+        'Beşerî coğrafya, sanayileşmeyle birlikte kırsal alanlardan şehirlere doğru yaşanan göç dalgalarını analiz eder.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Nüfus Coğrafyası',
-    definition: 'İnsanların sayıları, dağılışları, nüfus hareketleri (göçler) ve niteliklerini neden-sonuç bağlamında inceleyen bilim dalı.',
-    example: 'Nüfus coğrafyası araştırmaları, verimli tarım toprakları ve sanayi merkezlerinin çevresinde nüfusun neden yoğunlaştığını açıklar.',
+    definition:
+        'İnsanların sayıları, dağılışları, nüfus hareketleri (göçler) ve niteliklerini neden-sonuç bağlamında inceleyen bilim dalı.',
+    example:
+        'Nüfus coğrafyası araştırmaları, verimli tarım toprakları ve sanayi merkezlerinin çevresinde nüfusun neden yoğunlaştığını açıklar.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Yerleşme Coğrafyası',
-    definition: 'Şehirsel ve kırsal yerleşim alanlarının oluşmasında etkili olan doğal ve beşerî şartları, mekânsal organizasyonları inceleyen bilim.',
-    example: 'Dağlık bölgelerde kırsal yerleşmelerin dağınık dokulu olması yerleşme coğrafyasının konusudur.',
+    definition:
+        'Şehirsel ve kırsal yerleşim alanlarının oluşmasında etkili olan doğal ve beşerî şartları, mekânsal organizasyonları inceleyen bilim.',
+    example:
+        'Dağlık bölgelerde kırsal yerleşmelerin dağınık dokulu olması yerleşme coğrafyasının konusudur.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Siyasi Coğrafya',
-    definition: 'Sınırlarda ve belirli coğrafi özelliklere sahip alanlarda yaşayan insan topluluklarının siyasi organizasyon süreçlerini inceleyen bilim.',
-    example: 'Ülkelerin coğrafi konumlarının dış politikaları üzerindeki etkilerini siyasi coğrafya bilimi inceler.',
+    definition:
+        'Sınırlarda ve belirli coğrafi özelliklere sahip alanlarda yaşayan insan topluluklarının siyasi organizasyon süreçlerini inceleyen bilim.',
+    example:
+        'Ülkelerin coğrafi konumlarının dış politikaları üzerindeki etkilerini siyasi coğrafya bilimi inceler.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Tarihî Coğrafya',
-    definition: 'Tarihsel olaylarda coğrafi faktörlerin etkisini, geçmişteki insan-mekân-zaman ilişkisini mekânsal bazda inceleyen coğrafya dalı.',
-    example: 'Tarihî coğrafya çalışmaları, antik ticaret yollarının geçtiği güzergahlardaki eski yerleşim yerlerini tespit etmemizi sağlar.',
+    definition:
+        'Tarihsel olaylarda coğrafi faktörlerin etkisini, geçmişteki insan-mekân-zaman ilişkisini mekânsal bazda inceleyen coğrafya dalı.',
+    example:
+        'Tarihî coğrafya çalışmaları, antik ticaret yollarının geçtiği güzergahlardaki eski yerleşim yerlerini tespit etmemizi sağlar.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ziraat Coğrafyası',
-    definition: 'İnsan-besin ilişkisini, hayvan-bitki tarımı üzerindeki coğrafi etkileri ve tarımsal faaliyetlerin dağılışını inceleyen bilim dalı.',
-    example: 'Çay ve fındık tarımının sadece Doğu Karadeniz kıyı şeridinde yoğunlaşması ziraat coğrafyasının inceleme alanına girer.',
+    definition:
+        'İnsan-besin ilişkisini, hayvan-bitki tarımı üzerindeki coğrafi etkileri ve tarımsal faaliyetlerin dağılışını inceleyen bilim dalı.',
+    example:
+        'Çay ve fındık tarımının sadece Doğu Karadeniz kıyı şeridinde yoğunlaşması ziraat coğrafyasının inceleme alanına girer.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Sanayi Coğrafyası',
-    definition: 'Endüstri ve imalat sanayisinin mekânsal ekonomik yapısını, coğrafi dağılışını ve insan üzerindeki etkilerini inceleyen bilim.',
-    example: 'Demir-çelik fabrikalarının ham madde ve enerji kaynaklarına yakın alanlarda kurulması sanayi coğrafyası ilkeleriyle açıklanır.',
+    definition:
+        'Endüstri ve imalat sanayisinin mekânsal ekonomik yapısını, coğrafi dağılışını ve insan üzerindeki etkilerini inceleyen bilim.',
+    example:
+        'Demir-çelik fabrikalarının ham madde ve enerji kaynaklarına yakın alanlarda kurulması sanayi coğrafyası ilkeleriyle açıklanır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ticaret Coğrafyası',
-    definition: 'Ham madde ve mamul madde üretimi, değiş-tokuş işlemleri ve küresel ticaret değişimlerini insan-mekân çerçevesinde inceleyen bilim.',
-    example: 'Süveyş Kanalı\'nın açılmasıyla Akdeniz limanlarının yeniden önem kazanması ticaret coğrafyasının en bilinen örneklerindendir.',
+    definition:
+        'Ham madde ve mamul madde üretimi, değiş-tokuş işlemleri ve küresel ticaret değişimlerini insan-mekân çerçevesinde inceleyen bilim.',
+    example:
+        'Süveyş Kanalı\'nın açılmasıyla Akdeniz limanlarının yeniden önem kazanması ticaret coğrafyasının en bilinen örneklerindendir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Enerji Coğrafyası',
-    definition: 'Tüketilen enerji kaynaklarının türlerini, üretim-tüketim oranlarını ve bunların insan-mekân üzerindeki etkilerini inceleyen bilim dalı.',
-    example: 'Rüzgar ve güneş enerjisi santrallerinin kurulacağı en verimli bölgelerin belirlenmesinde enerji coğrafyası analizlerinden yararlanılır.',
+    definition:
+        'Tüketilen enerji kaynaklarının türlerini, üretim-tüketim oranlarını ve bunların insan-mekân üzerindeki etkilerini inceleyen bilim dalı.',
+    example:
+        'Rüzgar ve güneş enerjisi santrallerinin kurulacağı en verimli bölgelerin belirlenmesinde enerji coğrafyası analizlerinden yararlanılır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Ulaşım Coğrafyası',
-    definition: 'Kara, demir, deniz, hava yolu ve boru hatları taşımacılığının gelişimi ile bu ağların insan ve mekân üzerindeki etkilerini inceleyen bilim.',
-    example: 'Hızlı tren hatlarının açılmasıyla şehirler arası seyahat sürelerinin kısalması ulaşım coğrafyası kapsamında değerlendirilir.',
+    definition:
+        'Kara, demir, deniz, hava yolu ve boru hatları taşımacılığının gelişimi ile bu ağların insan ve mekân üzerindeki etkilerini inceleyen bilim.',
+    example:
+        'Hızlı tren hatlarının açılmasıyla şehirler arası seyahat sürelerinin kısalması ulaşım coğrafyası kapsamında değerlendirilir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Coğrafyası',
-    definition: 'Coğrafi koşulların turizme etkilerini, turistik alanların mekânsal dağılımını, turizmin insan, ekonomi ve çevre üzerindeki etkilerini araştıran bilim dalı.',
-    example: 'Doğal mağaralar ve şelalelerin bulunduğu bölgelerin turizm merkezine dönüştürülmesi turizm coğrafyasının araştırma alanıdır.',
+    definition:
+        'Coğrafi koşulların turizme etkilerini, turistik alanların mekânsal dağılımını, turizmin insan, ekonomi ve çevre üzerindeki etkilerini araştıran bilim dalı.',
+    example:
+        'Doğal mağaralar ve şelalelerin bulunduğu bölgelerin turizm merkezine dönüştürülmesi turizm coğrafyasının araştırma alanıdır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Hava Durumu',
-    definition: 'Belirli ve dar bir alanda, kısa bir zaman periyodunda (günlük veya haftalık) gözlemlenen geçici atmosfer koşulları.',
-    example: 'Yarın için hava durumu tahmininde sağanak yağış beklendiğinden, dış mekan turlarımızı müzelerle değiştirdik.',
+    definition:
+        'Belirli ve dar bir alanda, kısa bir zaman periyodunda (günlük veya haftalık) gözlemlenen geçici atmosfer koşulları.',
+    example:
+        'Yarın için hava durumu tahmininde sağanak yağış beklendiğinden, dış mekan turlarımızı müzelerle değiştirdik.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Sera Etkisi',
-    definition: 'Atmosferdeki su buharı, metan ve karbondioksit gibi gazların, yeryüzünden yansıyan güneş ışınlarını tutarak dünyayı ısıtması mekanizması.',
-    example: 'Fosil yakıtların aşırı kullanımı sera etkisini artırarak küresel ölçekte sıcaklık artışlarına yol açmaktadır.',
+    definition:
+        'Atmosferdeki su buharı, metan ve karbondioksit gibi gazların, yeryüzünden yansıyan güneş ışınlarını tutarak dünyayı ısıtması mekanizması.',
+    example:
+        'Fosil yakıtların aşırı kullanımı sera etkisini artırarak küresel ölçekte sıcaklık artışlarına yol açmaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Fiyort',
-    definition: 'Buzulların binlerce yıl boyunca aşındırmasıyla oluşan, denizin karaların içine doğru girdiği, yüksek dağlar veya tepeler arasında kalan uzun, dar ve derin koylar.',
-    example: 'Norveç kıyılarına düzenlenen gemi turlarında, devasa fiyort oluşumlarının büyüleyici manzaralarını fotoğrafladık.',
+    definition:
+        'Buzulların binlerce yıl boyunca aşındırmasıyla oluşan, denizin karaların içine doğru girdiği, yüksek dağlar veya tepeler arasında kalan uzun, dar ve derin koylar.',
+    example:
+        'Norveç kıyılarına düzenlenen gemi turlarında, devasa fiyort oluşumlarının büyüleyici manzaralarını fotoğrafladık.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Kanyon',
-    definition: 'Akarsuların özellikle kireçtaşlı (karstik) arazileri derinlemesine aşındırmasıyla oluşturduğu, dik yamaçlı ve çok derin boğaz vadiler.',
-    example: 'Uşak\'ta bulunan ve dünyanın en uzun kanyonlarından biri olan Ulubey Kanyonu, doğa yürüyüşü severlerin uğrak noktasıdır.',
+    definition:
+        'Akarsuların özellikle kireçtaşlı (karstik) arazileri derinlemesine aşındırmasıyla oluşturduğu, dik yamaçlı ve çok derin boğaz vadiler.',
+    example:
+        'Uşak\'ta bulunan ve dünyanın en uzun kanyonlarından biri olan Ulubey Kanyonu, doğa yürüyüşü severlerin uğrak noktasıdır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Traverten',
-    definition: 'Yer altından yüzeye çıkan kalsiyum karbonat açısından zengin sıcak suların, havayla teması sonucu çökelerek oluşturduğu beyaz teras basamakları.',
-    example: 'Denizli\'deki Pamukkale travertenleri, eşsiz beyaz terasları ve şifalı termal sularıyla her yıl milyonlarca yerli ve yabancı turist çekmektedir.',
+    definition:
+        'Yer altından yüzeye çıkan kalsiyum karbonat açısından zengin sıcak suların, havayla teması sonucu çökelerek oluşturduğu beyaz teras basamakları.',
+    example:
+        'Denizli\'deki Pamukkale travertenleri, eşsiz beyaz terasları ve şifalı termal sularıyla her yıl milyonlarca yerli ve yabancı turist çekmektedir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Obruk',
-    definition: 'Yeraltı sularının kireçtaşını zamanla eritmesi ve oluşan mağara tavanlarının aniden çökmesi sonucu meydana gelen derin, doğal çukurlar.',
-    example: 'Konya Ovası\'nda yer altı sularının kontrolsüz kullanımı nedeniyle son yıllarda yeni obruk oluşumları hızlanmıştır.',
+    definition:
+        'Yeraltı sularının kireçtaşını zamanla eritmesi ve oluşan mağara tavanlarının aniden çökmesi sonucu meydana gelen derin, doğal çukurlar.',
+    example:
+        'Konya Ovası\'nda yer altı sularının kontrolsüz kullanımı nedeniyle son yıllarda yeni obruk oluşumları hızlanmıştır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Kaldera',
-    definition: 'Güçlü bir volkanik patlama veya volkan konisinin içe çökmesi sonucu dağın tepe kısmında oluşan, çoğu zaman sularla dolarak göl oluşturan devasa çukurluk.',
-    example: 'Nemrut Dağı\'nın tepesindeki kaldera gölü, dünyanın en büyük ikinci krater gölü olma özelliğini taşımaktadır.',
+    definition:
+        'Güçlü bir volkanik patlama veya volkan konisinin içe çökmesi sonucu dağın tepe kısmında oluşan, çoğu zaman sularla dolarak göl oluşturan devasa çukurluk.',
+    example:
+        'Nemrut Dağı\'nın tepesindeki kaldera gölü, dünyanın en büyük ikinci krater gölü olma özelliğini taşımaktadır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Mercan Resifi',
-    definition: 'Sıcak, temiz ve sığ tropik sularda mercan adı verilen deniz canlılarının iskeletlerinin binlerce yıl birikmesiyle oluşan, zengin biyoçeşitliliğe sahip sualtı yapıları.',
-    example: 'Kızıldeniz\'de düzenlenen dalış turunda, mercan resifi etrafında yaşayan binlerce farklı renkteki balığı yakından gözlemledik.',
+    definition:
+        'Sıcak, temiz ve sığ tropik sularda mercan adı verilen deniz canlılarının iskeletlerinin binlerce yıl birikmesiyle oluşan, zengin biyoçeşitliliğe sahip sualtı yapıları.',
+    example:
+        'Kızıldeniz\'de düzenlenen dalış turunda, mercan resifi etrafında yaşayan binlerce farklı renkteki balığı yakından gözlemledik.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Yağmur Ormanları',
-    definition: 'Ekvatoral bölgelerde yer alan, yüksek biyolojik çeşitliliğe sahip, yıl boyu sıcak ve bol yağış alan yoğun, katmanlı orman ekosistemleri.',
-    example: 'Yağmur ormanları, dünyadaki oksijen üretiminin büyük bir kısmını karşıladığı için \'dünyanın akciğerleri\' olarak nitelendirilir.',
+    definition:
+        'Ekvatoral bölgelerde yer alan, yüksek biyolojik çeşitliliğe sahip, yıl boyu sıcak ve bol yağış alan yoğun, katmanlı orman ekosistemleri.',
+    example:
+        'Yağmur ormanları, dünyadaki oksijen üretiminin büyük bir kısmını karşıladığı için \'dünyanın akciğerleri\' olarak nitelendirilir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Jeomorfoturizm',
-    definition: 'Volkanlar, kanyonlar, mağaralar, peribacaları, travertenler gibi yeryüzü şekillerinin oluşum özellikleri ve görsel güzelliklerinden yararlanılarak yapılan turizm çeşidi.',
-    example: 'Nevşehir\'deki peri bacaları turları ve Pamukkale travertenleri gezisi, jeomorfoturizm etkinliklerine verilebilecek en iyi örneklerdir.',
+    definition:
+        'Volkanlar, kanyonlar, mağaralar, peribacaları, travertenler gibi yeryüzü şekillerinin oluşum özellikleri ve görsel güzelliklerinden yararlanılarak yapılan turizm çeşidi.',
+    example:
+        'Nevşehir\'deki peri bacaları turları ve Pamukkale travertenleri gezisi, jeomorfoturizm etkinliklerine verilebilecek en iyi örneklerdir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Kıyı Turizmi',
-    definition: 'İklim şartlarının uygun olduğu, alçak kumsallarda (plajlarda) güneş, deniz ve kum (3S) çekiciliğine dayanan, genellikle yaz aylarında gelişen kitlesel deniz turizmi.',
-    example: 'Ege ve Akdeniz kıyılarımız, elverişli iklim şartları ve temiz plajları sayesinde kıyı turizmi açısından küresel bir cazibe merkezidir.',
+    definition:
+        'İklim şartlarının uygun olduğu, alçak kumsallarda (plajlarda) güneş, deniz ve kum (3S) çekiciliğine dayanan, genellikle yaz aylarında gelişen kitlesel deniz turizmi.',
+    example:
+        'Ege ve Akdeniz kıyılarımız, elverişli iklim şartları ve temiz plajları sayesinde kıyı turizmi açısından küresel bir cazibe merkezidir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Göl Turizmi',
-    definition: 'İç kesimlerdeki göl kıyılarında, kitle turizminden uzak, kırsal özellik gösteren ve kuş gözlemciliği, kamp gibi sakin doğa aktivitelerine olanak tanıyan turizm türü.',
-    example: 'Bolu\'daki Abant Gölü çevresinde yapılan yürüyüşler ve göl turizmi etkinlikleri, hafta sonu şehirden kaçış için çok popülerdir.',
+    definition:
+        'İç kesimlerdeki göl kıyılarında, kitle turizminden uzak, kırsal özellik gösteren ve kuş gözlemciliği, kamp gibi sakin doğa aktivitelerine olanak tanıyan turizm türü.',
+    example:
+        'Bolu\'daki Abant Gölü çevresinde yapılan yürüyüşler ve göl turizmi etkinlikleri, hafta sonu şehirden kaçış için çok popülerdir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Rafting',
-    definition: 'Akıntısı çok hızlı, tehlikeli ve engebeli nehirlerde, özel şişme botlar (raft) üzerinde ekip hâlinde senkronize kürek çekerek yapılan heyecan verici su sporu.',
-    example: 'Rize Fırtına Deresi\'nde düzenlenen profesyonel rafting yarışları, adrenalin tutkunu yerli ve yabancı sporcuları bir araya getirdi.',
+    definition:
+        'Akıntısı çok hızlı, tehlikeli ve engebeli nehirlerde, özel şişme botlar (raft) üzerinde ekip hâlinde senkronize kürek çekerek yapılan heyecan verici su sporu.',
+    example:
+        'Rize Fırtına Deresi\'nde düzenlenen profesyonel rafting yarışları, adrenalin tutkunu yerli ve yabancı sporcuları bir araya getirdi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Kano',
-    definition: 'Kısa bir eğitimin ardından her yaş grubunun yapabileceği, tek veya çift kişilik hafif teknelerle akarsu veya durgun suda kürek çekilerek yapılan su sporu.',
-    example: 'Durgun göl sularında gün batımına karşı kano yapmak, doğayla baş başa kalmak isteyen misafirlerimiz için huzurlu bir etkinliktir.',
+    definition:
+        'Kısa bir eğitimin ardından her yaş grubunun yapabileceği, tek veya çift kişilik hafif teknelerle akarsu veya durgun suda kürek çekilerek yapılan su sporu.',
+    example:
+        'Durgun göl sularında gün batımına karşı kano yapmak, doğayla baş başa kalmak isteyen misafirlerimiz için huzurlu bir etkinliktir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Manzara Turizmi',
-    definition: 'Doğal alanların veya estetik mimariye sahip şehirlerin, yüksek bir perspektiften görünen etkileyici, panoramik görüntülerini seyretmek ve kaydetmek için yapılan turizm.',
-    example: 'Kapadokya\'da sabahın erken saatlerinde balonlarla havalanan turistler, manzara turizmi kapsamında peri bacaları vadilerini yukarıdan izledi.',
+    definition:
+        'Doğal alanların veya estetik mimariye sahip şehirlerin, yüksek bir perspektiften görünen etkileyici, panoramik görüntülerini seyretmek ve kaydetmek için yapılan turizm.',
+    example:
+        'Kapadokya\'da sabahın erken saatlerinde balonlarla havalanan turistler, manzara turizmi kapsamında peri bacaları vadilerini yukarıdan izledi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Klimatizm',
-    definition: 'Açık ve temiz havanın, yüksek oksijenin veya iyotlu deniz havasının şifa verici etkisinden yararlanmak için dağ istasyonları veya sahil kenarlarında uygulanan doğal tedavi yöntemi.',
-    example: 'Astım hastası olan konuğumuz, temiz hava ve yüksek oksijen oranından yararlanmak amacıyla klimatizm merkezi olan yayla otelimizi tercih etti.',
+    definition:
+        'Açık ve temiz havanın, yüksek oksijenin veya iyotlu deniz havasının şifa verici etkisinden yararlanmak için dağ istasyonları veya sahil kenarlarında uygulanan doğal tedavi yöntemi.',
+    example:
+        'Astım hastası olan konuğumuz, temiz hava ve yüksek oksijen oranından yararlanmak amacıyla klimatizm merkezi olan yayla otelimizi tercih etti.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Endemik',
-    definition: 'Sadece çok belirli ve sınırlı bir coğrafi bölgeye özgü olan, dünyanın başka hiçbir yerinde doğal şartlarda yetişmeyen nadir bitki veya hayvan türü.',
-    example: 'Toros dağlarında yetişen bazı ters lale türleri, sadece ülkemize özgü endemik bitki zenginlikleri arasında yer alır.',
+    definition:
+        'Sadece çok belirli ve sınırlı bir coğrafi bölgeye özgü olan, dünyanın başka hiçbir yerinde doğal şartlarda yetişmeyen nadir bitki veya hayvan türü.',
+    example:
+        'Toros dağlarında yetişen bazı ters lale türleri, sadece ülkemize özgü endemik bitki zenginlikleri arasında yer alır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Flora',
-    definition: 'Belli bir bölgede, coğrafyada veya jeolojik devirde doğal olarak yetişen, o bölgeye ait bitki türlerinin tamamını ifade eden genel kavram (Bitki örtüsü).',
-    example: 'Milli parkın zengin florasını inceleyen botanikçiler, yüzlerce farklı çiçek ve ağaç türünü kayıt altına aldı.',
+    definition:
+        'Belli bir bölgede, coğrafyada veya jeolojik devirde doğal olarak yetişen, o bölgeye ait bitki türlerinin tamamını ifade eden genel kavram (Bitki örtüsü).',
+    example:
+        'Milli parkın zengin florasını inceleyen botanikçiler, yüzlerce farklı çiçek ve ağaç türünü kayıt altına aldı.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Fauna',
-    definition: 'Belli bir coğrafi bölgede veya özel bir yaşam alanında (habitat) doğal olarak yaşayan, o bölgeye adapte olmuş hayvan türlerinin tamamı.',
-    example: 'Avustralya kıtasının kendine has faunası, kanguru ve koala gibi dünyanın başka hiçbir yerinde bulunmayan keseli hayvanları barındırır.',
+    definition:
+        'Belli bir coğrafi bölgede veya özel bir yaşam alanında (habitat) doğal olarak yaşayan, o bölgeye adapte olmuş hayvan türlerinin tamamı.',
+    example:
+        'Avustralya kıtasının kendine has faunası, kanguru ve koala gibi dünyanın başka hiçbir yerinde bulunmayan keseli hayvanları barındırır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Rezerv Alanı',
-    definition: 'Nadir biyoçeşitliliği, nesli tükenmekte olan yaban hayatını veya özel doğal kaynakları korumak amacıyla insan müdahalesine tamamen kapatılmış veya kısıtlanmış doğa koruma bölgesi.',
-    example: 'Nesli tükenme tehlikesindeki deniz kaplumbağalarının yumurtlama alanı olan kumsal, koruma altındaki resmi bir rezerv alanı olarak ilan edilmiştir.',
+    definition:
+        'Nadir biyoçeşitliliği, nesli tükenmekte olan yaban hayatını veya özel doğal kaynakları korumak amacıyla insan müdahalesine tamamen kapatılmış veya kısıtlanmış doğa koruma bölgesi.',
+    example:
+        'Nesli tükenme tehlikesindeki deniz kaplumbağalarının yumurtlama alanı olan kumsal, koruma altındaki resmi bir rezerv alanı olarak ilan edilmiştir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Helenistik Dönem',
-    definition: 'Büyük İskender\'in doğu seferleri ve fetihleriyle başlayan, Antik Yunan kültürü ile Doğu (Mısır/Pers) kültürlerinin sentezlendiği tarihi, sanatsal ve felsefi dönem.',
-    example: 'İzmir yakınlarındaki antik Bergama Kütüphanesi, Helenistik dönem mimarisinin ve bilimsel birikiminin en önemli simgelerindendir.',
+    definition:
+        'Büyük İskender\'in doğu seferleri ve fetihleriyle başlayan, Antik Yunan kültürü ile Doğu (Mısır/Pers) kültürlerinin sentezlendiği tarihi, sanatsal ve felsefi dönem.',
+    example:
+        'İzmir yakınlarındaki antik Bergama Kütüphanesi, Helenistik dönem mimarisinin ve bilimsel birikiminin en önemli simgelerindendir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Roma Dönemi',
-    definition: 'Antik Roma İmparatorluğu\'nun egemen olduğu, mimaride kemer yapısı, su kanalları (akuadükler), devasa amfitiyatrolar ve taş köprülerle öne çıkan güçlü mimari dönem.',
-    example: 'Antalya\'daki Aspendos Tiyatrosu, Roma dönemi mühendisliğinin ve akustik başarısının günümüze kadar sapasağlam ulaşmış en görkemli örneğidir.',
+    definition:
+        'Antik Roma İmparatorluğu\'nun egemen olduğu, mimaride kemer yapısı, su kanalları (akuadükler), devasa amfitiyatrolar ve taş köprülerle öne çıkan güçlü mimari dönem.',
+    example:
+        'Antalya\'daki Aspendos Tiyatrosu, Roma dönemi mühendisliğinin ve akustik başarısının günümüze kadar sapasağlam ulaşmış en görkemli örneğidir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Orta Çağ',
-    definition: 'Batı Roma\'nın yıkılışından başlayıp, büyük imparatorlukların parçalandığı ve eski kervan yollarının (İpek Yolu vb.) ticarette en aktif şekilde kullanıldığı tarihsel dönem.',
-    example: 'Orta Çağ boyunca İpek Yolu üzerindeki kervansaraylar, tüccarların güvenli konaklamasını ve kültürel etkileşimi sağlayan önemli merkezlerdi.',
+    definition:
+        'Batı Roma\'nın yıkılışından başlayıp, büyük imparatorlukların parçalandığı ve eski kervan yollarının (İpek Yolu vb.) ticarette en aktif şekilde kullanıldığı tarihsel dönem.',
+    example:
+        'Orta Çağ boyunca İpek Yolu üzerindeki kervansaraylar, tüccarların güvenli konaklamasını ve kültürel etkileşimi sağlayan önemli merkezlerdi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Rönesans Dönemi',
-    definition: '15. ve 16. yüzyıllarda İtalya\'da (özellikle Toskana bölgesinde) başlayıp tüm Avrupa\'ya yayılan; sanat, mimari, bilim ve edebiyatta \'Yeniden Doğuş\'u ifade eden aydınlanma dönemi.',
-    example: 'Floransa şehri, Rönesans dönemi sanatçılarının elinden çıkan devasa katedraller ve heykellerle adeta açık hava müzesi görünümündedir.',
+    definition:
+        '15. ve 16. yüzyıllarda İtalya\'da (özellikle Toskana bölgesinde) başlayıp tüm Avrupa\'ya yayılan; sanat, mimari, bilim ve edebiyatta \'Yeniden Doğuş\'u ifade eden aydınlanma dönemi.',
+    example:
+        'Floransa şehri, Rönesans dönemi sanatçılarının elinden çıkan devasa katedraller ve heykellerle adeta açık hava müzesi görünümündedir.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Viyadük',
-    definition: 'Özellikle engebeli ve dağlık arazilerde veya geniş vadilerde, kara yolları ile demir yollarının geçişini sağlamak için inşa edilen, çok ayaklı yüksek köprü yapıları.',
-    example: 'Karadeniz otoyolu projesindeki dev viyadük köprüleri, dik vadileri en kısa yoldan aşarak seyahat güvenliğini ve konforunu artırmıştır.',
+    definition:
+        'Özellikle engebeli ve dağlık arazilerde veya geniş vadilerde, kara yolları ile demir yollarının geçişini sağlamak için inşa edilen, çok ayaklı yüksek köprü yapıları.',
+    example:
+        'Karadeniz otoyolu projesindeki dev viyadük köprüleri, dik vadileri en kısa yoldan aşarak seyahat güvenliğini ve konforunu artırmıştır.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Radar (Örümcek Ağ) Grafiği',
-    definition: 'Birbiriyle ilişkili üç veya daha fazla nicel değişkenin, merkezden dışa doğru yayılan eksenler üzerinde çizilerek çok yönlü performans karşılaştırması yapılmasını sağlayan grafik.',
-    example: 'Aday personelin yabancı dil, iletişim, problem çözme ve ekip çalışması yetkinliklerini radar (örümcek ağ) grafiği ile karşılaştırdık.',
+    definition:
+        'Birbiriyle ilişkili üç veya daha fazla nicel değişkenin, merkezden dışa doğru yayılan eksenler üzerinde çizilerek çok yönlü performans karşılaştırması yapılmasını sağlayan grafik.',
+    example:
+        'Aday personelin yabancı dil, iletişim, problem çözme ve ekip çalışması yetkinliklerini radar (örümcek ağ) grafiği ile karşılaştırdık.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
   Term(
     word: 'Yada Taşı',
-    definition: 'Şamanist geleneklerde yağmur yağdırma, fırtına çıkarma veya durdurma gücüne sahip olduğuna inanılan kutsal mitolojik taş.',
-    example: 'Eski Türk mitolojisinde, kuraklık dönemlerinde yağmur yağdırmak için yada taşı kullanılarak ayinler düzenlenirdi.',
+    definition:
+        'Şamanist geleneklerde yağmur yağdırma, fırtına çıkarma veya durdurma gücüne sahip olduğuna inanılan kutsal mitolojik taş.',
+    example:
+        'Eski Türk mitolojisinde, kuraklık dönemlerinde yağmur yağdırmak için yada taşı kullanılarak ayinler düzenlenirdi.',
     category: 'Turizm Coğrafyası ve Çevre',
     isEnglish: false,
   ),
@@ -4114,347 +5411,449 @@ const List<Term> terminologyData = [
   // ── GASTRONOMİ VE YİYECEK-İÇECEK TERİMLERİ ──
   Term(
     word: 'Master Key (Şef Anahtarı)',
-    definition: 'Belirli bir kattaki veya bölümdeki tüm kapıları açabilen anahtar.',
-    example: 'Kattaki tüm odaların kapılarını açabilen master key, kat şefi tarafından güvenlik protokolleri gereği zimmetle teslim alınır.',
+    definition:
+        'Belirli bir kattaki veya bölümdeki tüm kapıları açabilen anahtar.',
+    example:
+        'Kattaki tüm odaların kapılarını açabilen master key, kat şefi tarafından güvenlik protokolleri gereği zimmetle teslim alınır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Cross-selling',
-    definition: 'Oda satışı gerçekleşirken veya konaklama sırasında misafire otelin SPA, a la carte restoran, transfer gibi diğer ücretli hizmetlerini de pazarlama işlemi.',
-    example: 'Oda anahtarını teslim eden resepsiyonist, misafire otelin a la carte restoranında akşam yemeği rezervasyonu önererek cross-selling gerçekleştirdi.',
+    definition:
+        'Oda satışı gerçekleşirken veya konaklama sırasında misafire otelin SPA, a la carte restoran, transfer gibi diğer ücretli hizmetlerini de pazarlama işlemi.',
+    example:
+        'Oda anahtarını teslim eden resepsiyonist, misafire otelin a la carte restoranında akşam yemeği rezervasyonu önererek cross-selling gerçekleştirdi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Cross-selling.mp3',
   ),
   Term(
     word: 'E.P. (European Plan)',
-    definition: 'Sadece oda; ödenen fiyata hiçbir yiyecek-içecek (öğün) hizmetinin dâhil olmadığı (Room Only) konaklama tipi.',
-    example: 'Sadece konaklama hizmeti sunulan ve yeme-içmenin tamamen ekstra ücretlendirildiği E.P. (European Plan) pansiyon tipi iş seyahatlerinde sıkça tercih edilir.',
+    definition:
+        'Sadece oda; ödenen fiyata hiçbir yiyecek-içecek (öğün) hizmetinin dâhil olmadığı (Room Only) konaklama tipi.',
+    example:
+        'Sadece konaklama hizmeti sunulan ve yeme-içmenin tamamen ekstra ücretlendirildiği E.P. (European Plan) pansiyon tipi iş seyahatlerinde sıkça tercih edilir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Memorandum',
-    definition: 'Konaklama işletmesinde farklı departmanlar (ön büro, kat hizmetleri, yiyecek-içecek) arasında iletişimi, özel notları ve emirleri yazılı olarak bildiren form.',
-    example: 'Ön büro müdürü, VIP grubun özel isteklerini kat hizmetleri departmanına resmi bir memorandum yazarak resmen bildirdi.',
+    definition:
+        'Konaklama işletmesinde farklı departmanlar (ön büro, kat hizmetleri, yiyecek-içecek) arasında iletişimi, özel notları ve emirleri yazılı olarak bildiren form.',
+    example:
+        'Ön büro müdürü, VIP grubun özel isteklerini kat hizmetleri departmanına resmi bir memorandum yazarak resmen bildirdi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Laundry Manager (Çamaşırhane Şefi)',
-    definition: 'Çamaşırhane bölümünün tüm operasyonel işleyişinden, bütçelenmesinden, makinelerin bakım takibinden ve personel sevk-idaresinden sorumlu olan departman yöneticisi.',
-    example: 'Otelimizin çamaşırhane şefi (laundry manager), nevresim yıkama kapasitesini artırmak için yeni otomatik dozajlama sistemine geçiş planını onayladı.',
+    definition:
+        'Çamaşırhane bölümünün tüm operasyonel işleyişinden, bütçelenmesinden, makinelerin bakım takibinden ve personel sevk-idaresinden sorumlu olan departman yöneticisi.',
+    example:
+        'Otelimizin çamaşırhane şefi (laundry manager), nevresim yıkama kapasitesini artırmak için yeni otomatik dozajlama sistemine geçiş planını onayladı.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Komisyon',
-    definition: 'Otel odasını satan seyahat acentelerine, aracılara veya bir işte aracılık yapan kimseye bırakılan yüzde şeklindeki paydır.',
+    definition:
+        'Otel odasını satan seyahat acentelerine, aracılara veya bir işte aracılık yapan kimseye bırakılan yüzde şeklindeki paydır.',
     example: '',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Adisyon',
-    definition: 'Misafirin otel içindeki satış noktalarında (restoran, bar, SPA) yaptığı harcamaların tutarını gösteren ve misafir tarafından imzalanan harcama fişi.',
-    example: 'Misafirimiz restoranda yediği akşam yemeği bedelinin oda hesabına yazılması için adisyon fişini imzalayarak garsona teslim etti.',
+    definition:
+        'Misafirin otel içindeki satış noktalarında (restoran, bar, SPA) yaptığı harcamaların tutarını gösteren ve misafir tarafından imzalanan harcama fişi.',
+    example:
+        'Misafirimiz restoranda yediği akşam yemeği bedelinin oda hesabına yazılması için adisyon fişini imzalayarak garsona teslim etti.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Su Ayak İzi',
-    definition: 'Bir bireyin, topluluğun veya işletmenin (örneğin bir otelin) faaliyetleri doğrultusunda doğrudan veya dolaylı olarak tükettiği toplam tatlı su miktarı.',
-    example: 'Otelimiz, su ayak izini azaltmak amacıyla odalardaki tüm musluklara su tasarruflu perlatörler taktı.',
+    definition:
+        'Bir bireyin, topluluğun veya işletmenin (örneğin bir otelin) faaliyetleri doğrultusunda doğrudan veya dolaylı olarak tükettiği toplam tatlı su miktarı.',
+    example:
+        'Otelimiz, su ayak izini azaltmak amacıyla odalardaki tüm musluklara su tasarruflu perlatörler taktı.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'TaTuTa Projesi',
-    definition: 'Ekolojik çiftliklerde tarım turizmi ve gönüllü bilgi, tecrübe takasını amaçlayan; organik tarım yapan çiftliklerde gönüllü çalışılarak doğayla iç içe tatil yapılmasını sağlayan turizm projesi.',
-    example: 'Şehir hayatından bunalan gençler, TaTuTa projesi kapsamında organik zeytin çiftliğinde gönüllü çalışarak hem tarımı öğrendi hem de tatil yaptı.',
+    definition:
+        'Ekolojik çiftliklerde tarım turizmi ve gönüllü bilgi, tecrübe takasını amaçlayan; organik tarım yapan çiftliklerde gönüllü çalışılarak doğayla iç içe tatil yapılmasını sağlayan turizm projesi.',
+    example:
+        'Şehir hayatından bunalan gençler, TaTuTa projesi kapsamında organik zeytin çiftliğinde gönüllü çalışarak hem tarımı öğrendi hem de tatil yaptı.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Yiyecek İçecek (F&B)',
-    definition: 'Otel bünyesindeki restoranlar, barlar, oda servisi, mutfak, ziyafet ve banket organizasyonlarının tüm yiyecek ve içecek hazırlık ve sunum süreçlerini yöneten departmandır.',
-    example: 'Düğün organizasyonundaki 500 kişilik akşam yemeğinin sorunsuz servis edilmesi için yiyecek içecek (F&B) müdürü ekstra personel görevlendirdi.',
+    definition:
+        'Otel bünyesindeki restoranlar, barlar, oda servisi, mutfak, ziyafet ve banket organizasyonlarının tüm yiyecek ve içecek hazırlık ve sunum süreçlerini yöneten departmandır.',
+    example:
+        'Düğün organizasyonundaki 500 kişilik akşam yemeğinin sorunsuz servis edilmesi için yiyecek içecek (F&B) müdürü ekstra personel görevlendirdi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Gurme (Tatbilir)',
-    definition: 'Yiyecek ve içecekler hakkında detaylı bilgi sahibi olan, farklı lezzetleri değerlendirebilen, malzemelerin uyumunu ve pişirme tekniklerini bilen mutfak uzmanı.',
-    example: 'Ünlü gurme, yöresel çorbaların baharat dengesini ve yapım tekniklerini detaylıca değerlendirdi.',
+    definition:
+        'Yiyecek ve içecekler hakkında detaylı bilgi sahibi olan, farklı lezzetleri değerlendirebilen, malzemelerin uyumunu ve pişirme tekniklerini bilen mutfak uzmanı.',
+    example:
+        'Ünlü gurme, yöresel çorbaların baharat dengesini ve yapım tekniklerini detaylıca değerlendirdi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Degüstatör (Tadım Uzmanı)',
-    definition: 'Yiyecek ve içeceklerin tat, koku, renk ve kalitesi üzerine detaylı değerlendirme yapabilen profesyonel tadım uzmanı (Örn: zeytinyağı, baharat, peynir, kahve).',
-    example: 'Zeytinyağı degüstatörü, numunelerin asitlik derecesini ve meyvemsi kokusunu tadım yaparak belirledi.',
+    definition:
+        'Yiyecek ve içeceklerin tat, koku, renk ve kalitesi üzerine detaylı değerlendirme yapabilen profesyonel tadım uzmanı (Örn: zeytinyağı, baharat, peynir, kahve).',
+    example:
+        'Zeytinyağı degüstatörü, numunelerin asitlik derecesini ve meyvemsi kokusunu tadım yaparak belirledi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Vegan / Vejetaryen Beslenme',
-    definition: 'Etik, sağlık, çevre veya inanç sebepleriyle hayvansal gıdaların sınırlandırıldığı veya tamamen reddedildiği, ağırlıklı olarak bitkisel kaynaklı beslenme eğilimi.',
-    example: 'Restoranımızda vegan misafirlerimiz için bitkisel sütler ve baklagillerle hazırlanmış zengin bir menü seçeneği sunuyoruz.',
+    definition:
+        'Etik, sağlık, çevre veya inanç sebepleriyle hayvansal gıdaların sınırlandırıldığı veya tamamen reddedildiği, ağırlıklı olarak bitkisel kaynaklı beslenme eğilimi.',
+    example:
+        'Restoranımızda vegan misafirlerimiz için bitkisel sütler ve baklagillerle hazırlanmış zengin bir menü seçeneği sunuyoruz.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Küresel Tohum Deposu (Kıyamet Ambarı)',
-    definition: 'Küresel afetler, nükleer saldırılar veya iklim krizlerine karşı yeryüzündeki bitki çeşitliliğini korumak amacıyla yerin çok altında inşa edilmiş devasa tohum saklama tesisi.',
-    example: 'Kuzey Kutbu\'na yakın Svalbard\'da bulunan küresel tohum deposu, gelecekteki olası felaketlere karşı tarımsal çeşitliliği güvence altına alır.',
+    definition:
+        'Küresel afetler, nükleer saldırılar veya iklim krizlerine karşı yeryüzündeki bitki çeşitliliğini korumak amacıyla yerin çok altında inşa edilmiş devasa tohum saklama tesisi.',
+    example:
+        'Kuzey Kutbu\'na yakın Svalbard\'da bulunan küresel tohum deposu, gelecekteki olası felaketlere karşı tarımsal çeşitliliği güvence altına alır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Melceü\'t-Tabbâhîn (Aşçıların Sığınağı)',
-    definition: '1844 yılında taş baskı olarak yayımlanan, Osmanlı mutfağından ve Batı tarzı tariflerden oluşan ilk basılı Türkçe yemek kitabı.',
-    example: 'Melceü\'t-Tabbâhîn kitabını inceleyen şefler, saray mutfağına ait unutulmuş zeytinyağlı dolma tariflerini aslına uygun olarak yeniden hazırladılar.',
+    definition:
+        '1844 yılında taş baskı olarak yayımlanan, Osmanlı mutfağından ve Batı tarzı tariflerden oluşan ilk basılı Türkçe yemek kitabı.',
+    example:
+        'Melceü\'t-Tabbâhîn kitabını inceleyen şefler, saray mutfağına ait unutulmuş zeytinyağlı dolma tariflerini aslına uygun olarak yeniden hazırladılar.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Kuruyan ve Kavrulan Et (Pastırma/Sucuk)',
-    definition: 'Göçebe Türklerin zorlu coğrafi koşullarda bozulmadan saklamak amacıyla etleri güneşte/rüzgârda kurutma ve tuzlama teknikleriyle ürettikleri geleneksel kışlık yiyecekler.',
-    example: 'Kuruyan ve kavrulan et teknikleri, göçebe Türklerin soğuk kış aylarında protein ihtiyaçlarını korumak için geliştirdikleri harika bir gıda saklama yöntemidir.',
+    definition:
+        'Göçebe Türklerin zorlu coğrafi koşullarda bozulmadan saklamak amacıyla etleri güneşte/rüzgârda kurutma ve tuzlama teknikleriyle ürettikleri geleneksel kışlık yiyecekler.',
+    example:
+        'Kuruyan ve kavrulan et teknikleri, göçebe Türklerin soğuk kış aylarında protein ihtiyaçlarını korumak için geliştirdikleri harika bir gıda saklama yöntemidir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Sous Vide (Vakumla Pişirme)',
-    definition: 'Yiyeceklerin hava almayan plastik vakumlu poşetler içine konularak, çok hassas bir şekilde kontrol edilen düşük sıcaklıktaki su banyosunda uzun süre pişirilmesi tekniği.',
-    example: 'Sous vide (vakumla pişirme) tekniği sayesinde etler suyunu kaybetmeden ve iç sıcaklığı tam istenen derecede kalarak lokum gibi pişti.',
+    definition:
+        'Yiyeceklerin hava almayan plastik vakumlu poşetler içine konularak, çok hassas bir şekilde kontrol edilen düşük sıcaklıktaki su banyosunda uzun süre pişirilmesi tekniği.',
+    example:
+        'Sous vide (vakumla pişirme) tekniği sayesinde etler suyunu kaybetmeden ve iç sıcaklığı tam istenen derecede kalarak lokum gibi pişti.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronomi Turizmi',
-    definition: 'Bir bölgenin veya ülkenin yerel yemek kültürünü, yöresel içeceklerini, yemek yapım tekniklerini ve yöresel lezzetlerini deneyimlemek amacıyla yapılan turizm.',
-    example: 'Gaziantep mutfağına özel kebap ve baklava tadım atölyeleri içeren turlarımız, gastronomi turizmi meraklıları için özel olarak tasarlanmıştır.',
+    definition:
+        'Bir bölgenin veya ülkenin yerel yemek kültürünü, yöresel içeceklerini, yemek yapım tekniklerini ve yöresel lezzetlerini deneyimlemek amacıyla yapılan turizm.',
+    example:
+        'Gaziantep mutfağına özel kebap ve baklava tadım atölyeleri içeren turlarımız, gastronomi turizmi meraklıları için özel olarak tasarlanmıştır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Kent Turizmi',
-    definition: 'Turistlerin büyük metropollerin ve kent merkezlerinin tarihi dokusunu, mimarisini, alışveriş, gurme lezzetler ve kültür-sanat etkinliklerini deneyimlemek amacıyla yaptıkları kısa süreli seyahatler.',
-    example: 'İstanbul\'da hafta sonu düzenlenen ve müze ziyaretleri ile boğaz turunu kapsayan hafta sonu gezisi tipik bir kent turizmi etkinliğidir.',
+    definition:
+        'Turistlerin büyük metropollerin ve kent merkezlerinin tarihi dokusunu, mimarisini, alışveriş, gurme lezzetler ve kültür-sanat etkinliklerini deneyimlemek amacıyla yaptıkları kısa süreli seyahatler.',
+    example:
+        'İstanbul\'da hafta sonu düzenlenen ve müze ziyaretleri ile boğaz turunu kapsayan hafta sonu gezisi tipik bir kent turizmi etkinliğidir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Transfer Şefi',
-    definition: 'Havaalanından otele ve otelden havaalanına konukların ulaşımını sağlayan araçları ve personeli organize eden sorumlu.',
-    example: 'Transfer şefi, uçak saatlerindeki rötarları takip ederek havalimanındaki araçların çıkış saatlerini güncelledi.',
+    definition:
+        'Havaalanından otele ve otelden havaalanına konukların ulaşımını sağlayan araçları ve personeli organize eden sorumlu.',
+    example:
+        'Transfer şefi, uçak saatlerindeki rötarları takip ederek havalimanındaki araçların çıkış saatlerini güncelledi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronomi Turları',
-    definition: 'Gastro turistlerin, seyahat edilen destinasyonun mutfak kültürüyle tanıştırıldığı ve yöresel lezzetleri deneyimlediği özel ilgi turları.',
-    example: 'Gaziantep ve Hatay\'a düzenlenen gastronomi turları boyunca misafirlerimize yöresel yemekler ve şerbetler sunulmaktadır.',
+    definition:
+        'Gastro turistlerin, seyahat edilen destinasyonun mutfak kültürüyle tanıştırıldığı ve yöresel lezzetleri deneyimlediği özel ilgi turları.',
+    example:
+        'Gaziantep ve Hatay\'a düzenlenen gastronomi turları boyunca misafirlerimize yöresel yemekler ve şerbetler sunulmaktadır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronomi',
-    definition: 'Yiyecek ve içeceklerin hijyen, sanitasyon ve estetik kurallar çerçevesinde hazırlanarak göz ve damak tadına hitap edecek şekilde sunulduğu yemek sanatı ve bilimi.',
-    example: 'Gastronomi eğitimi alan öğrencilerimiz, mutfakta hem hijyen kurallarını hem de sanatsal sunum tekniklerini öğreniyorlar.',
+    definition:
+        'Yiyecek ve içeceklerin tarihi, kültürü, sanatı ve hazırlanma süreçlerini bir bütün olarak inceleyen lezzet bilimidir.',
+    example:
+        'Gaziantep destinasyonu, zengin mutfak kültürü ve tescilli lezzetleriyle gastronomi turizminin en önemli merkezlerinden biridir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gurman',
-    definition: 'Yemek yemeyi sadece doymak olarak gören, yemek kültürüne, hijyene, sunuma ve lezzet kriterlerine önem vermeyen kişi.',
-    example: 'Yemeği sadece karın doyurmak için tüketen gurman karakterli tüketiciler, gurmelerin aksine sunum detaylarıyla ilgilenmezler.',
+    definition:
+        'Yemek yemeyi sadece doymak olarak gören, yemek kültürüne, hijyene, sunuma ve lezzet kriterlerine önem vermeyen kişi.',
+    example:
+        'Yemeği sadece karın doyurmak için tüketen gurman karakterli tüketiciler, gurmelerin aksine sunum detaylarıyla ilgilenmezler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronom',
-    definition: 'Damak zevki gelişmiş, iyi yemekten anlayan, gastronomi konusunda teori ve uygulamayı birleştirebilen ve yemeğin nasıl servis edileceğini bilen sanatçı/uzman kişi.',
-    example: 'Otelimizin baş gastronomu, yeni menüyü hazırlarken hem yerel lezzetleri korudu hem de modern sunumlar geliştirdi.',
+    definition:
+        'Damak zevki gelişmiş, iyi yemekten anlayan, gastronomi konusunda teori ve uygulamayı birleştirebilen ve yemeğin nasıl servis edileceğini bilen sanatçı/uzman kişi.',
+    example:
+        'Otelimizin baş gastronomu, yeni menüyü hazırlarken hem yerel lezzetleri korudu hem de modern sunumlar geliştirdi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastro Turist',
-    definition: 'Temel seyahat motivasyonu gittikleri destinasyonların yiyecek ve içecek kültürünü deneyimlemek olan, yeniliklere açık ve eğitim/gelir seviyesi yüksek turist.',
-    example: 'Hatay\'a sadece tepsi kebabı ve künefe yemek için seyahat eden gastro turist grubu, yerel esnafa önemli bir gelir sağladı.',
+    definition:
+        'Temel seyahat motivasyonu gittikleri destinasyonların yiyecek ve içecek kültürünü deneyimlemek olan, yeniliklere açık ve eğitim/gelir seviyesi yüksek turist.',
+    example:
+        'Hatay\'a sadece tepsi kebabı ve künefe yemek için seyahat eden gastro turist grubu, yerel esnafa önemli bir gelir sağladı.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronomik Kimlik',
-    definition: 'Bir bölgenin yeme-içme özelliklerinin çevre ve kültür tarafından şekillendirildiğini vurgulayan, mutfak mirasının nesilden nesile aktarılmasını sağlayan kimlik.',
-    example: 'Zeytinyağlı yemekler ve taze otlar, Ege bölgesinin gastronomik kimliğinin en belirgin unsurlarıdır.',
+    definition:
+        'Bir bölgenin yeme-içme özelliklerinin çevre ve kültür tarafından şekillendirildiğini vurgulayan, mutfak mirasının nesilden nesile aktarılmasını sağlayan kimlik.',
+    example:
+        'Zeytinyağlı yemekler ve taze otlar, Ege bölgesinin gastronomik kimliğinin en belirgin unsurlarıdır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Teorik Gastronomi',
-    definition: 'Yemek pişirme ve servisi, yeme-içmenin farklı yönleriyle ilgili olarak yazılmış kitap, reçete ve makaleleri kapsayan bilimsel/teorik arka plan.',
-    example: 'Teorik gastronomi kitapları, antik çağlardan günümüze kadar gelen yemek tariflerinin tarihsel gelişimini inceler.',
+    definition:
+        'Yemek pişirme ve servisi, yeme-içmenin farklı yönleriyle ilgili olarak yazılmış kitap, reçete ve makaleleri kapsayan bilimsel/teorik arka plan.',
+    example:
+        'Teorik gastronomi kitapları, antik çağlardan günümüze kadar gelen yemek tariflerinin tarihsel gelişimini inceler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Uygulamalı Gastronomi',
-    definition: 'Doğada bulunan kaynakların yiyecek ve içeceklere dönüştürülmesi ve yiyeceklerin hazırlanması, pişirilmesi, servis edilmesi uygulamalarının standartları.',
-    example: 'Uygulamalı gastronomi dersinde öğrenciler, profesyonel mutfak ekipmanlarını kullanarak sos yapım tekniklerini pratik ettiler.',
+    definition:
+        'Doğada bulunan kaynakların yiyecek ve içeceklere dönüştürülmesi ve yiyeceklerin hazırlanması, pişirilmesi, servis edilmesi uygulamalarının standartları.',
+    example:
+        'Uygulamalı gastronomi dersinde öğrenciler, profesyonel mutfak ekipmanlarını kullanarak sos yapım tekniklerini pratik ettiler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Teknik Gastronomi',
-    definition: 'Evlerde hazırlanan yiyeceklerin yüzlerce kişi için nasıl hazırlanacağının (endüstriyel üretim) incelenmesi; büyük mutfakların kurulması ve hizmet aşamalarının teknik değerlendirmesi.',
-    example: 'Beş yıldızlı otellerin mutfak projeleri tasarlanırken endüstriyel üretime uygun teknik gastronomi kuralları temel alınır.',
+    definition:
+        'Evlerde hazırlanan yiyeceklerin yüzlerce kişi için nasıl hazırlanacağının (endüstriyel üretim) incelenmesi; büyük mutfakların kurulması ve hizmet aşamalarının teknik değerlendirmesi.',
+    example:
+        'Beş yıldızlı otellerin mutfak projeleri tasarlanırken endüstriyel üretime uygun teknik gastronomi kuralları temel alınır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Bilimsel Gastronomi',
-    definition: 'Yiyecek ve içeceklerin besin değerlerini, kimyasal ve fiziksel yapılarını inceleyen, aynı zamanda gastronominin tarihsel gelişimini araştıran bilim alanı.',
-    example: 'Bilimsel gastronomi araştırmaları, sebzelerin buharda pişirildiğinde vitamin değerlerini nasıl koruduğunu fiziki verilerle kanıtlar.',
+    definition:
+        'Yiyecek ve içeceklerin besin değerlerini, kimyasal ve fiziksel yapılarını inceleyen, aynı zamanda gastronominin tarihsel gelişimini araştıran bilim alanı.',
+    example:
+        'Bilimsel gastronomi araştırmaları, sebzelerin buharda pişirildiğinde vitamin değerlerini nasıl koruduğunu fiziki verilerle kanıtlar.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Nörogastronomi',
-    definition: 'Yemek yerken duyuların beyni nasıl harekete geçirdiğini ve yiyeceklerin renk, koku ve ses gibi farklı uyarıcılarla nasıl algılandığını inceleyen bilim dalı.',
-    example: 'Nörogastronomi uzmanları, tabak renginin ve arka plandaki müziğin yemeğin lezzet algısını nasıl değiştirdiğini inceler.',
+    definition:
+        'Yemek yerken duyuların beyni nasıl harekete geçirdiğini ve yiyeceklerin renk, koku ve ses gibi farklı uyarıcılarla nasıl algılandığını inceleyen bilim dalı.',
+    example:
+        'Nörogastronomi uzmanları, tabak renginin ve arka plandaki müziğin yemeğin lezzet algısını nasıl değiştirdiğini inceler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Moleküler Gastronomi (Mutfak)',
-    definition: 'Gıdaların pişirilmesi esnasında gerçekleşen fiziksel ve kimyasal süreçleri inceleyen, sıvı nitrojen veya yoğun duman gibi bilimsel yöntemlerin kullanıldığı pişirme akımı.',
-    example: 'Moleküler gastronomi şefleri, jelleştirme ve kürekleme teknikleriyle meyve sularını havyar görünümünde boncuklara dönüştürdüler.',
+    definition:
+        'Gıdaların pişirilmesi esnasında gerçekleşen fiziksel ve kimyasal süreçleri inceleyen, sıvı nitrojen veya yoğun duman gibi bilimsel yöntemlerin kullanıldığı pişirme akımı.',
+    example:
+        'Moleküler gastronomi şefleri, jelleştirme ve kürekleme teknikleriyle meyve sularını havyar görünümünde boncuklara dönüştürdüler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Füzyon Mutfak',
-    definition: 'Yeni ve özgün lezzetler oluşturmak amacıyla farklı dünya mutfaklarına ait malzeme, pişirme tekniği ve geleneklerin tek bir tabakta sentezlenerek (birleştirilerek) sunulması.',
-    example: 'Geleneksel Türk mantısını Uzak Doğu buharda pişirme tekniğiyle hazırlayıp sunmak, füzyon mutfak çalışmasına güzel bir örnektir.',
+    definition:
+        'Yeni ve özgün lezzetler oluşturmak amacıyla farklı dünya mutfaklarına ait malzeme, pişirme tekniği ve geleneklerin tek bir tabakta sentezlenerek (birleştirilerek) sunulması.',
+    example:
+        'Geleneksel Türk mantısını Uzak Doğu buharda pişirme tekniğiyle hazırlayıp sunmak, füzyon mutfak çalışmasına güzel bir örnektir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Fast Food (Hızlı Yemek)',
-    definition: 'İnsanların yoğun iş ve yaşam temposu nedeniyle tercih ettiği, düşük maliyetli, hızlı hazırlanan, ayaküstü tüketilen pratik yemek akımı.',
-    example: 'Şehir merkezlerinde çalışan kesimin öğle aralarında zaman kazanmak için sıklıkla fast food ürünlerini tercih ettiği görülmektedir.',
+    definition:
+        'İnsanların yoğun iş ve yaşam temposu nedeniyle tercih ettiği, düşük maliyetli, hızlı hazırlanan, ayaküstü tüketilen pratik yemek akımı.',
+    example:
+        'Şehir merkezlerinde çalışan kesimin öğle aralarında zaman kazanmak için sıklıkla fast food ürünlerini tercih ettiği görülmektedir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Slow Food (Yavaş Yemek)',
-    definition: 'Hızlı yemek (Fast Food) akımına tepki olarak doğan; yerel gelenekleri korumayı, yiyeceklerin kaynağını ve tüketiminin dünyayı nasıl etkilediğini fark etmeyi amaçlayan akım.',
-    example: 'Slow Food hareketi, yerel üreticileri destekleyerek unutulmaya yüz tutmuş geleneksel tohumların korunmasını savunur.',
+    definition:
+        'Hızlı yemek (Fast Food) akımına tepki olarak doğan; yerel gelenekleri korumayı, yiyeceklerin kaynağını ve tüketiminin dünyayı nasıl etkilediğini fark etmeyi amaçlayan akım.',
+    example:
+        'Slow Food hareketi, yerel üreticileri destekleyerek unutulmaya yüz tutmuş geleneksel tohumların korunmasını savunur.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Organik Tarım',
-    definition: 'Doğanın dengesini korumayı, kimyasal ilaç kullanmadan toprak verimliliğini sağlayarak insan, çevre ve ekonomik açıdan sürdürülebilir nitelik taşıyan tarımsal üretim sistemi.',
-    example: 'Organik tarım yöntemleriyle yetiştirilen sebzeler, otelimizin sağlıklı yaşam menülerinde öncelikli olarak tercih edilmektedir.',
+    definition:
+        'Doğanın dengesini korumayı, kimyasal ilaç kullanmadan toprak verimliliğini sağlayarak insan, çevre ve ekonomik açıdan sürdürülebilir nitelik taşıyan tarımsal üretim sistemi.',
+    example:
+        'Organik tarım yöntemleriyle yetiştirilen sebzeler, otelimizin sağlıklı yaşam menülerinde öncelikli olarak tercih edilmektedir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Raw Food (Çiğ Yemek)',
-    definition: 'Organik yetiştirilen sebze ve meyvelerin içerisindeki vitamin ve minerallerin ısı nedeniyle kayba uğramaması için yiyeceklerin çiğ veya çok az pişmiş tüketilmesi akımı.',
-    example: 'Raw food akımını benimseyen konuklarımız için pişirilmeden hazırlanan çiğ sebze salataları ve kuruyemiş ezmeleri servis edildi.',
+    definition:
+        'Organik yetiştirilen sebze ve meyvelerin içerisindeki vitamin ve minerallerin ısı nedeniyle kayba uğramaması için yiyeceklerin çiğ veya çok az pişmiş tüketilmesi akımı.',
+    example:
+        'Raw food akımını benimseyen konuklarımız için pişirilmeden hazırlanan çiğ sebze salataları ve kuruyemiş ezmeleri servis edildi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Sürdürülebilir Gastronomi',
-    definition: 'Yiyecek üretiminde ekolojik dengenin korunması, yerel tarımın desteklenmesi, geleneksel mutfak bilgisinin ve damak tadının gelecek kuşaklara aktarılmasını hedefleyen yaklaşım.',
-    example: 'Sürdürülebilir gastronomi ilkeleri çerçevesinde, otel mutfağındaki gıda atıklarını kompost gübreye dönüştürerek bahçemizde kullanıyoruz.',
+    definition:
+        'Yiyecek üretiminde ekolojik dengenin korunması, yerel tarımın desteklenmesi, geleneksel mutfak bilgisinin ve damak tadının gelecek kuşaklara aktarılmasını hedefleyen yaklaşım.',
+    example:
+        'Sürdürülebilir gastronomi ilkeleri çerçevesinde, otel mutfağındaki gıda atıklarını kompost gübreye dönüştürerek bahçemizde kullanıyoruz.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Menşe Adı',
-    definition: 'Ürünün tüm niteliklerinin bulunduğu yörenin doğal ve beşerî unsurlarından geldiği, üretimin ve işlenmesinin tamamen o coğrafi sınırlar içinde yapılması gereken coğrafi işaret tescili.',
-    example: 'Sadece o bölgenin ikliminde ve toprak yapısında yetişen Malatya kayısısı, coğrafi işaret olarak menşe adı tesciline sahiptir.',
+    definition:
+        'Ürünün tüm niteliklerinin bulunduğu yörenin doğal ve beşerî unsurlarından geldiği, üretimin ve işlenmesinin tamamen o coğrafi sınırlar içinde yapılması gereken coğrafi işaret tescili.',
+    example:
+        'Sadece o bölgenin ikliminde ve toprak yapısında yetişen Malatya kayısısı, coğrafi işaret olarak menşe adı tesciline sahiptir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronomi Rotası',
-    definition: 'Belli bir coğrafi bölgenin turizm rehberlerinde listelenen restoranlar, yiyecek imalathaneleri, müzeler ve çiftlikleri kapsayan özel temalı (Örn: Çay, Peynir) gezi yolu.',
-    example: 'Karadeniz bölgesine düzenlenen gastronomi rotası turumuzda, misafirlerimiz çay bahçelerini ve yerel peynir yapım atölyelerini ziyaret ettiler.',
+    definition:
+        'Belli bir coğrafi bölgenin turizm rehberlerinde listelenen restoranlar, yiyecek imalathaneleri, müzeler ve çiftlikleri kapsayan özel temalı (Örn: Çay, Peynir) gezi yolu.',
+    example:
+        'Karadeniz bölgesine düzenlenen gastronomi rotası turumuzda, misafirlerimiz çay bahçelerini ve yerel peynir yapım atölyelerini ziyaret ettiler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Sokak Lezzetleri (Street Food)',
-    definition: 'Dünyanın her yerinde yerel mutfak kültürünün bir parçası olan, genellikle açık hava pazarlarında veya seyyar tezgâhlarda satılan, kültürel mirası yansıtan pratik yiyecekler.',
-    example: 'İstanbul Boğazı kıyısında satılan taze simit ve balık-ekmek, şehrin en popüler sokak lezzetleri (street food) arasındadır.',
+    definition:
+        'Dünyanın her yerinde yerel mutfak kültürünün bir parçası olan, genellikle açık hava pazarlarında veya seyyar tezgâhlarda satılan, kültürel mirası yansıtan pratik yiyecekler.',
+    example:
+        'İstanbul Boğazı kıyısında satılan taze simit ve balık-ekmek, şehrin en popüler sokak lezzetleri (street food) arasındadır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Gastronomi Festivali',
-    definition: 'Bir bölgenin en ünlü ürünü (meyve, sebze, peynir vb.) veya yerel mutfak kültürü için genellikle hasat zamanında düzenlenen, tadım ve gösteriler içeren büyük şenlik/etkinlik.',
-    example: 'Adana Lezzet Festivali, her yıl binlerce ziyaretçiyi yöresel kebaplar ve şerbet tadımları etrafında buluşturan büyük bir gastronomi festivalidir.',
+    definition:
+        'Bir bölgenin en ünlü ürünü (meyve, sebze, peynir vb.) veya yerel mutfak kültürü için genellikle hasat zamanında düzenlenen, tadım ve gösteriler içeren büyük şenlik/etkinlik.',
+    example:
+        'Adana Lezzet Festivali, her yıl binlerce ziyaretçiyi yöresel kebaplar ve şerbet tadımları etrafında buluşturan büyük bir gastronomi festivalidir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Gastronomi Müzesi',
-    definition: 'Yiyecek ve içeceklerin tarihçesini, üretim araçlarını ve sunum süreçlerini sergileyen; kültürel yeme-içme alışkanlıklarını gelecek nesillere aktaran tematik müzeler.',
-    example: 'Zeytinyağı müzesini gezen turistler, antik çağlarda zeytinin nasıl ezilip yağa dönüştürüldüğünü gösteren tarihi presleri incelediler.',
+    definition:
+        'Yiyecek ve içeceklerin tarihçesini, üretim araçlarını ve sunum süreçlerini sergileyen; kültürel yeme-içme alışkanlıklarını gelecek nesillere aktaran tematik müzeler.',
+    example:
+        'Zeytinyağı müzesini gezen turistler, antik çağlarda zeytinin nasıl ezilip yağa dönüştürüldüğünü gösteren tarihi presleri incelediler.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Michelin Yıldızı',
-    definition: 'Özel bir kuruluş tarafından restoranların yemek kalitesi, malzeme uyumu ve şefin ustalığı gibi kriterler üzerinden değerlendirilip 1, 2 veya 3 yıldız ile sınıflandırıldığı dünyaca ünlü prestij ödülü.',
-    example: 'Menüsünde yerel lezzetleri modern tekniklerle sunan şefimizin restoranı, bu yıl ilk Michelin yıldızını almaya hak kazandı.',
+    definition:
+        'Özel bir kuruluş tarafından restoranların yemek kalitesi, malzeme uyumu ve şefin ustalığı gibi kriterler üzerinden değerlendirilip 1, 2 veya 3 yıldız ile sınıflandırıldığı dünyaca ünlü prestij ödülü.',
+    example:
+        'Menüsünde yerel lezzetleri modern tekniklerle sunan şefimizin restoranı, bu yıl ilk Michelin yıldızını almaya hak kazandı.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Bib Gourmand',
-    definition: 'Michelin Rehberi\'nde, en yüksek kaliteyi nispeten uygun fiyata sunan, \'paranızın karşılığını hak eden restoranlar\' kategorisi için kullanılan değerlendirme terimi.',
-    example: 'Bib Gourmand ödüllü yerel restoran, hem bütçe dostu fiyatları hem de yüksek lezzet standartlarıyla gezginlerin favorisi oldu.',
+    definition:
+        'Michelin Rehberi\'nde, en yüksek kaliteyi nispeten uygun fiyata sunan, \'paranızın karşılığını hak eden restoranlar\' kategorisi için kullanılan değerlendirme terimi.',
+    example:
+        'Bib Gourmand ödüllü yerel restoran, hem bütçe dostu fiyatları hem de yüksek lezzet standartlarıyla gezginlerin favorisi oldu.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'HORECA',
-    definition: 'Otel, restoran ve kafelerin (Hotel, Restaurant, Cafe) baş harflerinden oluşan, konaklama ve yiyecek-içecek sektörünü genel olarak tanımlayan uluslararası kısaltma.',
-    example: 'Endüstriyel mutfak ekipmanı üreten firmamız, HORECA sektörünün tüm ihtiyaçlarına yönelik yenilikçi çözümler sunmaktadır.',
+    definition:
+        'Otel, restoran ve kafelerin (Hotel, Restaurant, Cafe) baş harflerinden oluşan, konaklama ve yiyecek-içecek sektörünü genel olarak tanımlayan uluslararası kısaltma.',
+    example:
+        'Endüstriyel mutfak ekipmanı üreten firmamız, HORECA sektörünün tüm ihtiyaçlarına yönelik yenilikçi çözümler sunmaktadır.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Apicius',
-    definition: 'Antik Çağ\'ın bilinen en eski gastronomu tarafından yazıldığı düşünülen, Roma dönemindeki baharat kullanımı ve yemek pişirme sanatına dair bilgilerin yer aldığı ilk yemek kitabı.',
-    example: 'Tarihçiler, antik Roma yemek kültürünü ve dönemin mutfak teknolojisini anlamak için Apicius kitabındaki tarifleri analiz ediyorlar.',
+    definition:
+        'Antik Çağ\'ın bilinen en eski gastronomu tarafından yazıldığı düşünülen, Roma dönemindeki baharat kullanımı ve yemek pişirme sanatına dair bilgilerin yer aldığı ilk yemek kitabı.',
+    example:
+        'Tarihçiler, antik Roma yemek kültürünü ve dönemin mutfak teknolojisini anlamak için Apicius kitabındaki tarifleri analiz ediyorlar.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Topık Sünğük',
-    definition: 'Orta Asya göçebe Türk kültüründe sıklıkla tüketilen, etin kemikle kaynatılmasına dayanan geleneksel \'paça çorbası\'.',
-    example: 'Eti kemikle kaynatarak elde edilen bu geleneksel paça çorbası, göçebe Türk kültürünün besleyici kış yemeklerindendir.',
+    definition:
+        'Orta Asya göçebe Türk kültüründe sıklıkla tüketilen, etin kemikle kaynatılmasına dayanan geleneksel \'paça çorbası\'.',
+    example:
+        'Eti kemikle kaynatarak elde edilen bu geleneksel paça çorbası, göçebe Türk kültürünün besleyici kış yemeklerindendir.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
   Term(
     word: 'Chopstick (Yemek Çubuğu)',
-    definition: 'Uzak Doğu Asya mutfağında, yiyecekleri küçük lokmalar hâlinde tüketmek için kullanılan, geleneksel çatal-bıçak yerine geçen ahşap/metal çubuklar.',
-    example: 'Uzak Doğu restoranına giden misafirlerimize, noodle ve suşi tüketiminde kolaylık sağlaması için chopstick (yemek çubuğu) sunuldu.',
+    definition:
+        'Uzak Doğu Asya mutfağında, yiyecekleri küçük lokmalar hâlinde tüketmek için kullanılan, geleneksel çatal-bıçak yerine geçen ahşap/metal çubuklar.',
+    example:
+        'Uzak Doğu restoranına giden misafirlerimize, noodle ve suşi tüketiminde kolaylık sağlaması için chopstick (yemek çubuğu) sunuldu.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Tapas',
-    definition: 'İçeceklerin yanında eşlikçi olarak sunulan, ayaküstü veya kafelerde tüketilen çok çeşitli küçük porsiyonlu geleneksel sıcak/soğuk atıştırmalık kültürü.',
-    example: 'Geleneksel tapas kültüründe, küçük tabaklarda servis edilen zeytinyağlı mezeler ve peynir atıştırmalıkları misafirlerin beğenisine sunulur.',
+    definition:
+        'İçeceklerin yanında eşlikçi olarak sunulan, ayaküstü veya kafelerde tüketilen çok çeşitli küçük porsiyonlu geleneksel sıcak/soğuk atıştırmalık kültürü.',
+    example:
+        'Geleneksel tapas kültüründe, küçük tabaklarda servis edilen zeytinyağlı mezeler ve peynir atıştırmalıkları misafirlerin beğenisine sunulur.',
     category: 'Gastronomi ve Yiyecek-İçecek',
   ),
   Term(
     word: 'Kokteyl ve Resepsiyon',
-    definition: 'Etkinliklerin açılış veya kapanışlarında genellikle ayakta servis edilen hafif içecekler ve aperatif yiyeceklerin (kanepe vb.) sunulduğu sosyalleşme organizasyonu.',
-    example: 'Zirvenin açılış akşamında düzenlenen kokteyl ve resepsiyonda misafirlere alkolsüz serinletici içecekler ve taze meyveli kanepeler ikram edildi.',
+    definition:
+        'Etkinliklerin açılış veya kapanışlarında genellikle ayakta servis edilen hafif içecekler ve aperatif yiyeceklerin (kanepe vb.) sunulduğu sosyalleşme organizasyonu.',
+    example:
+        'Zirvenin açılış akşamında düzenlenen kokteyl ve resepsiyonda misafirlere alkolsüz serinletici içecekler ve taze meyveli kanepeler ikram edildi.',
     category: 'Gastronomi ve Yiyecek-İçecek',
     isEnglish: false,
   ),
@@ -4462,344 +5861,462 @@ const List<Term> terminologyData = [
   // ── KONGRE VE ETKİNLİK YÖNETİMİ TERİMLERİ ──
   Term(
     word: 'B2B (Business to Business)',
-    definition: 'Şirketten şirkete (örneğin otelden seyahat acentesine) yapılan toptan satış ve pazarlama faaliyetleri.',
-    example: 'Otelimiz ile seyahat acenteleri arasında yürütülen toptan oda satış ve anlaşma süreçleri B2B pazarlama faaliyetleri kapsamındadır.',
+    definition:
+        'Turizm işletmelerinin (oteller, seyahat acenteleri, tur operatörleri) kendi aralarında yürüttüğü ticari ve dijital iş birliği modelidir.',
+    example:
+        'Tesisimiz, B2B rezervasyon portalı üzerinden yetkili seyahat acentelerine özel oda fiyatları tanımlamıştır.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/B2B Business to Business.mp3',
   ),
   Term(
     word: 'Organizasyon',
-    definition: 'Ortak bir amaç çerçevesinde insan kaynağı kullanılarak oluşturulmuş, ortak bir çalışma düzenine sahip olan, kendi verimini yönetebilen yapı.',
-    example: 'Kuru temizleme ünitesindeki iş akışının aksamaması için personel arasında iyi bir organizasyon planı hazırlandı.',
+    definition:
+        'Ortak bir amaç çerçevesinde insan kaynağı kullanılarak oluşturulmuş, ortak bir çalışma düzenine sahip olan, kendi verimini yönetebilen yapı.',
+    example:
+        'Kuru temizleme ünitesindeki iş akışının aksamaması için personel arasında iyi bir organizasyon planı hazırlandı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'MICE',
-    definition: 'Kongre, toplantı, teşvik gezileri ve etkinlik turizmini kapsayan turizm dalı (Meetings, Incentives, Conferences, Exhibitions).',
-    example: 'Otelimizin geniş kongre salonları sayesinde, özellikle kış aylarında uluslararası tıp kongreleri gibi büyük MICE gruplarını ağırlıyoruz.',
+    definition:
+        'Kongre, toplantı, teşvik gezileri ve etkinlik turizmini kapsayan turizm dalı (Meetings, Incentives, Conferences, Exhibitions).',
+    example:
+        'Otelimizin geniş kongre salonları sayesinde, özellikle kış aylarında uluslararası tıp kongreleri gibi büyük MICE gruplarını ağırlıyoruz.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/MICE.mp3',
   ),
   Term(
     word: 'Yüksek Sezon (High Season)',
-    definition: 'Turizm talebinin zirve yaptığı, tesislerin en yüksek doluluk oranına ulaştığı ve hizmet fiyatlarının en yüksek olduğu dönem.',
-    example: 'Temmuz ve ağustos aylarını kapsayan yüksek sezon boyunca, Antalya otellerindeki doluluk oranları neredeyse %100 seviyelerine ulaştı.',
+    definition:
+        'Turizm talebinin zirve yaptığı, tesislerin en yüksek doluluk oranına ulaştığı ve hizmet fiyatlarının en yüksek olduğu dönem.',
+    example:
+        'Temmuz ve ağustos aylarını kapsayan yüksek sezon boyunca, Antalya otellerindeki doluluk oranları neredeyse %100 seviyelerine ulaştı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Organizasyon Şeması',
-    definition: 'Oteldeki tüm departmanların, görev pozisyonlarının, sorumlulukların ve yetki kademelerinin hiyerarşik ilişkilerini gösteren şematik tablodur.',
-    example: 'İşe yeni başlayan resepsiyoniste, hangi durumda kime raporlama yapacağını anlaması için ön büro organizasyon şeması gösterildi.',
+    definition:
+        'Oteldeki tüm departmanların, görev pozisyonlarının, sorumlulukların ve yetki kademelerinin hiyerarşik ilişkilerini gösteren şematik tablodur.',
+    example:
+        'İşe yeni başlayan resepsiyoniste, hangi durumda kime raporlama yapacağını anlaması için ön büro organizasyon şeması gösterildi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Shuttle Transfer (Paylaşımlı Servis)',
-    definition: 'Birden çok ve farklı müşterinin aynı aracı paylaştığı, belirli saatlerde/periyotlarda ve güzergâhlarca havalimanından otele ekonomik ulaşım sağlayan transfer tipi.',
-    example: 'Tek başına seyahat eden sırt çantalı gezginler, havalimanından otele gitmek için ekonomik shuttle transfer hizmetini seçti.',
+    definition:
+        'Birden çok ve farklı misafirin aynı aracı paylaştığı, belirli saatlerde/periyotlarda ve güzergâhlarca havalimanından otele ekonomik ulaşım sağlayan transfer tipi.',
+    example:
+        'Tek başına seyahat eden sırt çantalı gezginler, havalimanından otele gitmek için ekonomik shuttle transfer hizmetini seçti.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Kongre Turizmi (MICE)',
-    definition: 'Bilimsel, mesleki veya ticari amaçlarla düzenlenen toplantı, kongre, sempozyum ve fuarlara katılmak için yapılan seyahatler.',
-    example: 'Otelimiz bünyesindeki 2000 kişilik oditoryum ve teknolojik salonlar, uluslararası kongre turizmi organizasyonlarına profesyonel ev sahipliği yapmaktadır.',
+    definition:
+        'Bilimsel, mesleki veya ticari amaçlarla düzenlenen toplantı, kongre, sempozyum ve fuarlara katılmak için yapılan seyahatler.',
+    example:
+        'Otelimiz bünyesindeki 2000 kişilik oditoryum ve teknolojik salonlar, uluslararası kongre turizmi organizasyonlarına profesyonel ev sahipliği yapmaktadır.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/MICE.mp3',
   ),
   Term(
     word: 'Etkinlik Turizmi',
-    definition: 'Ulusal veya uluslararası düzeyde düzenlenen sanat festivalleri, karnavallar, spor şampiyonaları ve tematik şenliklere katılmak amacıyla yapılan seyahatler.',
-    example: 'Rio Karnavalı veya Adana Portakal Çiçeği Karnavalı, her yıl milyonlarca insanı çeken en popüler etkinlik turizmi örnekleridir.',
+    definition:
+        'Ulusal veya uluslararası düzeyde düzenlenen sanat festivalleri, karnavallar, spor şampiyonaları ve tematik şenliklere katılmak amacıyla yapılan seyahatler.',
+    example:
+        'Rio Karnavalı veya Adana Portakal Çiçeği Karnavalı, her yıl milyonlarca insanı çeken en popüler etkinlik turizmi örnekleridir.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Konferansçı Rehberler',
-    definition: 'Uzman rehberlik eğitimi almış, uzun turlarda konuklara bilimsel sunumlar gerçekleştiren rehberler.',
-    example: 'Otobüs yolculuğu sırasında konferansçı rehberler, grubumuza Anadolu uygarlıkları üzerine ilgi çekici bir sunum yaptı.',
+    definition:
+        'Uzman rehberlik eğitimi almış, uzun turlarda konuklara bilimsel sunumlar gerçekleştiren rehberler.',
+    example:
+        'Otobüs yolculuğu sırasında konferansçı rehberler, grubumuza Anadolu uygarlıkları üzerine ilgi çekici bir sunum yaptı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Kongre ve Konferans Turları',
-    definition: 'Müşterek bir konu etrafında toplanan kişilerin, bilgilendirme toplantıları dışında kalan boş zamanlarında bölgeyi gezdiği turizm hareketi.',
-    example: 'Tıp kongresine katılan hekimler için akşam saatlerinde şehri tanıtıcı özel kongre ve konferans turları düzenlendi.',
+    definition:
+        'Müşterek bir konu etrafında toplanan kişilerin, bilgilendirme toplantıları dışında kalan boş zamanlarında bölgeyi gezdiği turizm hareketi.',
+    example:
+        'Tıp kongresine katılan hekimler için akşam saatlerinde şehri tanıtıcı özel kongre ve konferans turları düzenlendi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Welcome Meeting (Hoş Geldin Toplantısı)',
-    definition: 'Konuklar otele yerleştikten sonra Rep tarafından düzenlenen; otel kurallarının anlatıldığı, ekstra turların tanıtıldığı ve satıldığı ilk tanışma toplantısı.',
-    example: 'Otele yerleşen turistler için ilk sabah lobide welcome meeting (hoş geldin toplantısı) düzenlenerek bölge haritaları dağıtıldı.',
+    definition:
+        'Konuklar otele yerleştikten sonra Rep tarafından düzenlenen; otel kurallarının anlatıldığı, ekstra turların tanıtıldığı ve satıldığı ilk tanışma toplantısı.',
+    example:
+        'Otele yerleşen turistler için ilk sabah lobide welcome meeting (hoş geldin toplantısı) düzenlenerek bölge haritaları dağıtıldı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Toplantı',
-    definition: 'Birden çok kişinin bilgi alışverişi, sorun çözme, planlama veya karar alma gibi belirli amaçlarla bir araya gelerek gerçekleştirdiği etkinlik.',
-    example: 'Proje ekibi, haftalık değerlendirme toplantısı için pazartesi sabahı konferans salonunda toplandı.',
+    definition:
+        'Birden çok kişinin bilgi alışverişi, sorun çözme, planlama veya karar alma gibi belirli amaçlarla bir araya gelerek gerçekleştirdiği etkinlik.',
+    example:
+        'Proje ekibi, haftalık değerlendirme toplantısı için pazartesi sabahı konferans salonunda toplandı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Bilgilendirme Toplantıları',
-    definition: 'Katılımcılara yeni gelişmeler, olaylar, kararlar, veriler veya politikalar hakkında tek yönlü bilgi aktarmak amacıyla düzenlenen toplantılar.',
-    example: 'Otel yönetimi, yeni iş sağlığı ve güvenliği yönetmeliği hakkında personele yönelik bilgilendirme toplantıları düzenledi.',
+    definition:
+        'Katılımcılara yeni gelişmeler, olaylar, kararlar, veriler veya politikalar hakkında tek yönlü bilgi aktarmak amacıyla düzenlenen toplantılar.',
+    example:
+        'Otel yönetimi, yeni iş sağlığı ve güvenliği yönetmeliği hakkında personele yönelik bilgilendirme toplantıları düzenledi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Planlama Toplantıları',
-    definition: 'Bir organizasyonun veya kuruluşun kısa, orta ve uzun vadedeki hedeflerini saptamak ve bu hedeflere ulaşma yollarını belirlemek için yapılan toplantılar.',
-    example: 'Gelecek sezonun tanıtım stratejilerini belirlemek amacıyla departman şefleriyle planlama toplantıları gerçekleştirildi.',
+    definition:
+        'Bir organizasyonun veya kuruluşun kısa, orta ve uzun vadedeki hedeflerini saptamak ve bu hedeflere ulaşma yollarını belirlemek için yapılan toplantılar.',
+    example:
+        'Gelecek sezonun tanıtım stratejilerini belirlemek amacıyla departman şefleriyle planlama toplantıları gerçekleştirildi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Problem Çözme Toplantıları',
-    definition: 'İş hayatında veya kurum içinde karşılaşılan mevcut sorunları tartışmak, analiz etmek ve bunlara ortak çözümler üretmek amacıyla düzenlenen toplantılar.',
-    example: 'Müşteri memnuniyeti oranlarındaki düşüşü engellemek adına acil problem çözme toplantıları yapıldı.',
+    definition:
+        'İş hayatında veya kurum içinde karşılaşılan mevcut sorunları tartışmak, analiz etmek ve bunlara ortak çözümler üretmek amacıyla düzenlenen toplantılar.',
+    example:
+        'Misafir memnuniyeti oranlarındaki düşüşü engellemek adına acil problem çözme toplantıları yapıldı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Değerlendirme Toplantıları',
-    definition: 'Planlama veya sorun çözme sürecinin ardından, alınan sonuçların analiz edildiği ve sürecin gözden geçirildiği geri bildirim toplantıları.',
-    example: 'Gerçekleştirilen büyük kongrenin ardından, organizasyon komitesiyle başarı durumunu ele alan değerlendirme toplantıları yapıldı.',
+    definition:
+        'Planlama veya sorun çözme sürecinin ardından, alınan sonuçların analiz edildiği ve sürecin gözden geçirildiği geri bildirim toplantıları.',
+    example:
+        'Gerçekleştirilen büyük kongrenin ardından, organizasyon komitesiyle başarı durumunu ele alan değerlendirme toplantıları yapıldı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Eğitim Toplantıları',
-    definition: 'Bir grubun üyelerinin mesleki bilgilerini zenginleştirmek, becerilerini artırmak ya da belirli bir konuda tutum değişikliği yaratmak için yapılan etkinlikler.',
-    example: 'Kat hizmetleri personeline yeni temizlik teknolojilerini öğretmek için haftalık eğitim toplantıları düzenlenmektedir.',
+    definition:
+        'Bir grubun üyelerinin mesleki bilgilerini zenginleştirmek, becerilerini artırmak ya da belirli bir konuda tutum değişikliği yaratmak için yapılan etkinlikler.',
+    example:
+        'Kat hizmetleri personeline yeni temizlik teknolojilerini öğretmek için haftalık eğitim toplantıları düzenlenmektedir.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Konferans',
-    definition: 'Bilimsel, teknik veya ticari konularda alanında uzman bir veya birkaç kişinin bilgi verdiği, genellikle soru-cevap bölümüyle sonlanan geniş katılımlı toplantı.',
-    example: 'Çevre mühendisliği alanındaki yeni gelişmeleri paylaşmak üzere düzenlenen uluslararası konferans başarıyla tamamlandı.',
+    definition:
+        'Bilimsel, teknik veya ticari konularda alanında uzman bir veya birkaç kişinin bilgi verdiği, genellikle soru-cevap bölümüyle sonlanan geniş katılımlı toplantı.',
+    example:
+        'Çevre mühendisliği alanındaki yeni gelişmeleri paylaşmak üzere düzenlenen uluslararası konferans başarıyla tamamlandı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Sempozyum (Bilgi Şöleni)',
-    definition: 'Belirli bir konu üzerinde ulusal veya uluslararası düzeyde birden çok uzman konuşmacının farklı bakış açılarını sunduğu, tartışma ve çözüm üretme odaklı toplantı.',
-    example: 'Turizmde dijitalleşme konusunun ele alındığı sempozyum (bilgi şöleni) akademisyenler tarafından yoğun ilgi gördü.',
+    definition:
+        'Belirli bir konu üzerinde ulusal veya uluslararası düzeyde birden çok uzman konuşmacının farklı bakış açılarını sunduğu, tartışma ve çözüm üretme odaklı toplantı.',
+    example:
+        'Turizmde dijitalleşme konusunun ele alındığı sempozyum (bilgi şöleni) akademisyenler tarafından yoğun ilgi gördü.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Seminer',
-    definition: 'Uzman bir yöneticinin rehberliğinde, genellikle 30 kişiden az katılımcı ile gerçekleştirilen; bireylerin araştırma yapıp bulgularını paylaştığı interaktif toplantı.',
-    example: 'Yeni pazarlama tekniklerinin tartışıldığı seminer çalışmasında tüm katılımcılar kendi araştırmalarını sundu.',
+    definition:
+        'Uzman bir yöneticinin rehberliğinde, genellikle 30 kişiden az katılımcı ile gerçekleştirilen; bireylerin araştırma yapıp bulgularını paylaştığı interaktif toplantı.',
+    example:
+        'Yeni pazarlama tekniklerinin tartışıldığı seminer çalışmasında tüm katılımcılar kendi araştırmalarını sundu.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Çalıştay (Workshop)',
-    definition: 'Önceden belirlenmiş uzman katılımcılarla yapılan, problem çözmeye, strateji veya ürün geliştirmeye odaklanılan, analiz tekniklerinin kullanıldığı uygulamalı toplantı.',
-    example: 'Sürdürülebilir turizm kriterlerinin belirlenmesi amacıyla sektörel uzmanlarla üç günlük bir çalıştay (workshop) düzenlendi.',
+    definition:
+        'Önceden belirlenmiş uzman katılımcılarla yapılan, problem çözmeye, strateji veya ürün geliştirmeye odaklanılan, analiz tekniklerinin kullanıldığı uygulamalı toplantı.',
+    example:
+        'Sürdürülebilir turizm kriterlerinin belirlenmesi amacıyla sektörel uzmanlarla üç günlük bir çalıştay (workshop) düzenlendi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Workshop.mp3',
   ),
   Term(
     word: 'Panel',
-    definition: 'Bir moderatör (yönetici) eşliğinde, iki veya daha fazla uzman konuşmacının belirli bir konuyu dinleyiciler önünde kendi aralarında tartıştıkları toplantı.',
-    example: 'Enerji verimliliği konulu panel oturumunda uzmanlar, farklı teknolojik yaklaşımları dinleyicilere aktardı.',
+    definition:
+        'Bir moderatör (yönetici) eşliğinde, iki veya daha fazla uzman konuşmacının belirli bir konuyu dinleyiciler önünde kendi aralarında tartıştıkları toplantı.',
+    example:
+        'Enerji verimliliği konulu panel oturumunda uzmanlar, farklı teknolojik yaklaşımları dinleyicilere aktardı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Forum',
-    definition: 'Panelin devamında veya bağımsız olarak, belirli bir konu üzerinde dinleyicilerin de tartışmaya aktif olarak katılabildiği, soru sorup fikir beyan edebildiği geniş katılımlı toplantı.',
-    example: 'Panel sonrasında açılan forum bölümünde, dinleyiciler de söz alarak kendi görüşlerini ve sorularını ilettiler.',
+    definition:
+        'Panelin devamında veya bağımsız olarak, belirli bir konu üzerinde dinleyicilerin de tartışmaya aktif olarak katılabildiği, soru sorup fikir beyan edebildiği geniş katılımlı toplantı.',
+    example:
+        'Panel sonrasında açılan forum bölümünde, dinleyiciler de söz alarak kendi görüşlerini ve sorularını ilettiler.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Zirve (Summit)',
-    definition: 'Devlet başkanları, bakanlar veya üst düzey resmî/özel görevlilerin katılımıyla gerçekleştirilen yüksek seviyeli stratejik toplantı.',
-    example: 'Akdeniz ülkelerinin çevre bakanları, iklim kriziyle mücadele planı hazırlamak için düzenlenen zirve (summit) toplantısında buluştu.',
+    definition:
+        'Devlet başkanları, bakanlar veya üst düzey resmî/özel görevlilerin katılımıyla gerçekleştirilen yüksek seviyeli stratejik toplantı.',
+    example:
+        'Akdeniz ülkelerinin çevre bakanları, iklim kriziyle mücadele planı hazırlamak için düzenlenen zirve (summit) toplantısında buluştu.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Konvansiyon (Convention)',
-    definition: 'Meslek kuruluşları, dernekler, federasyonlar veya büyük şirketlerin belirli bir konu/sektör etrafında düzenli aralıklarla bilgi alışverişi için bir araya geldiği dev organizasyon.',
-    example: 'Uluslararası seyahat acenteleri birliği, yıllık büyük konvansiyon (convention) toplantısını bu yıl İstanbul\'da düzenleyecek.',
+    definition:
+        'Meslek kuruluşları, dernekler, federasyonlar veya büyük şirketlerin belirli bir konu/sektör etrafında düzenli aralıklarla bilgi alışverişi için bir araya geldiği dev organizasyon.',
+    example:
+        'Uluslararası seyahat acenteleri birliği, yıllık büyük konvansiyon (convention) toplantısını bu yıl İstanbul\'da düzenleyecek.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Kolokyum',
-    definition: 'Uzman kişilerin bir araya gelerek belirli bir bilimsel konuyu tartıştığı, herkesin kendi görüşünü sunup diğer fikirleri değerlendirdiği akademik toplantı.',
-    example: 'Tıp fakültesindeki araştırmacılar, yeni tedavi yöntemlerini tartışmak üzere bilimsel bir kolokyum gerçekleştirdiler.',
+    definition:
+        'Uzman kişilerin bir araya gelerek belirli bir bilimsel konuyu tartıştığı, herkesin kendi görüşünü sunup diğer fikirleri değerlendirdiği akademik toplantı.',
+    example:
+        'Tıp fakültesindeki araştırmacılar, yeni tedavi yöntemlerini tartışmak üzere bilimsel bir kolokyum gerçekleştirdiler.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Kongre',
-    definition: 'Belirli bir alanda bilgi paylaşımı, deneyim aktarımı ve sorun çözme amacıyla, ulusal veya uluslararası düzeyde çok sayıda kişinin katılımıyla (genellikle yıllık) düzenlenen dev toplantı.',
-    example: 'Kardiyoloji uzmanlarını bir araya getiren uluslararası tıp kongresi, bu yıl beş binden fazla hekimin katılımıyla gerçekleşti.',
+    definition:
+        'Belirli bir alanda bilgi paylaşımı, deneyim aktarımı ve sorun çözme amacıyla, ulusal veya uluslararası düzeyde çok sayıda kişinin katılımıyla (genellikle yıllık) düzenlenen dev toplantı.',
+    example:
+        'Kardiyoloji uzmanlarını bir araya getiren uluslararası tıp kongresi, bu yıl beş binden fazla hekimin katılımıyla gerçekleşti.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Şirket Toplantıları',
-    definition: 'Kâr amacı gütmek üzere kurulan firmaların, genellikle katılımı zorunlu tuttuğu, masraflarını karşıladığı ve yılın her dönemi düzenleyebildiği toplantılar.',
-    example: 'Teknoloji holdingi, yıllık satış hedeflerini gözden geçirmek üzere tüm bölge müdürleri için şirket toplantıları organize etti.',
+    definition:
+        'Kâr amacı gütmek üzere kurulan firmaların, genellikle katılımı zorunlu tuttuğu, masraflarını karşıladığı ve yılın her dönemi düzenleyebildiği toplantılar.',
+    example:
+        'Teknoloji holdingi, yıllık satış hedeflerini gözden geçirmek üzere tüm bölge müdürleri için şirket toplantıları organize etti.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Dernek Toplantıları',
-    definition: 'Sosyal veya mesleki amaçlarla kurulan organizasyonların, katılımın gönüllü olduğu, genellikle ilkbahar/sonbahar aylarında düzenlenen geniş çaplı toplantıları.',
-    example: 'Türk Tabipleri Birliği\'nin düzenlediği dernek toplantıları, mesleki dayanışmayı ve bilgi paylaşımını artırmayı hedefler.',
+    definition:
+        'Sosyal veya mesleki amaçlarla kurulan organizasyonların, katılımın gönüllü olduğu, genellikle ilkbahar/sonbahar aylarında düzenlenen geniş çaplı toplantıları.',
+    example:
+        'Türk Tabipleri Birliği\'nin düzenlediği dernek toplantıları, mesleki dayanışmayı ve bilgi paylaşımını artırmayı hedefler.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'MICE',
-    definition: 'Meetings (Toplantılar), Incentives (Teşvik Gezileri), Conferences (Kongreler) ve Exhibitions (Sergiler/Fuarlar) kelimelerinin baş harflerinden oluşan, iş ve kongre turizmi endüstrisi.',
-    example: 'MICE endüstrisi, yüksek harcama eğilimine sahip iş insanlarını çektiği için destinasyonlara büyük ekonomik gelir sağlar.',
+    definition:
+        'Meetings (Toplantılar), Incentives (Teşvik Gezileri), Conferences (Kongreler) ve Exhibitions (Sergiler/Fuarlar) kelimelerinin baş harflerinden oluşan, iş ve kongre turizmi endüstrisi.',
+    example:
+        'MICE endüstrisi, yüksek harcama eğilimine sahip iş insanlarını çektiği için destinasyonlara büyük ekonomik gelir sağlar.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/MICE.mp3',
   ),
   Term(
     word: 'PCO (Professional Congress Organizer)',
-    definition: 'Ulusal ve uluslararası kongrelerin teknik, mali ve tanıtım süreçlerini baştan sona planlayan, yürüten ve yöneten Profesyonel Kongre Organizatörleri.',
-    example: 'Derneğimiz, önümüzdeki yıl düzenlenecek tıp kongresinin lojistik süreçlerini yönetmesi için deneyimli bir PCO ile anlaştı.',
+    definition:
+        'Ulusal ve uluslararası kongrelerin teknik, mali ve tanıtım süreçlerini baştan sona planlayan, yürüten ve yöneten Profesyonel Kongre Organizatörleri.',
+    example:
+        'Derneğimiz, önümüzdeki yıl düzenlenecek tıp kongresinin lojistik süreçlerini yönetmesi için deneyimli bir PCO ile anlaştı.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/PCO Professional Congress Organizer.mp3',
   ),
   Term(
     word: 'ICCA',
-    definition: 'Uluslararası Kongre ve Toplantı Birliği. Dünya genelinde kongre turizmini geliştiren, standartlar belirleyen ve global pazarlama desteği sunan en büyük çatı kuruluş (1963).',
-    example: 'ICCA üyesi olan kongre merkezimiz, dünya genelindeki büyük toplantıların istatistiki verilerine doğrudan erişim sağlayabilmektedir.',
+    definition:
+        'Uluslararası Kongre ve Toplantı Birliği. Dünya genelinde kongre turizmini geliştiren, standartlar belirleyen ve global pazarlama desteği sunan en büyük çatı kuruluş (1963).',
+    example:
+        'ICCA üyesi olan kongre merkezimiz, dünya genelindeki büyük toplantıların istatistiki verilerine doğrudan erişim sağlayabilmektedir.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/ICCA.mp3',
   ),
   Term(
     word: 'UIA',
-    definition: 'Uluslararası Dernekler Birliği. Dünya çapında uluslararası derneklerin bilgilerini toplayan, her yıl toplantı takvimlerini yayımlayan Belçika merkezli bağımsız kuruluş (1907).',
-    example: 'UIA tarafından yayınlanan yıllık raporlar, ülkelerin uluslararası dernek kongrelerine ev sahipliği yapma sıralamasını gösterir.',
+    definition:
+        'Uluslararası Dernekler Birliği. Dünya çapında uluslararası derneklerin bilgilerini toplayan, her yıl toplantı takvimlerini yayımlayan Belçika merkezli bağımsız kuruluş (1907).',
+    example:
+        'UIA tarafından yayınlanan yıllık raporlar, ülkelerin uluslararası dernek kongrelerine ev sahipliği yapma sıralamasını gösterir.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/UIA.mp3',
   ),
   Term(
     word: 'IAPCO',
-    definition: 'Uluslararası Profesyonel Kongre Organizatörleri Birliği. Kongre planlayıcılarının mesleki standartlarını yükselten, eğitim ve sertifikasyon sağlayan uluslararası yapı.',
-    example: 'IAPCO akreditasyonuna sahip organizasyon firması, uluslararası standartlarda profesyonel hizmet sunar.',
+    definition:
+        'Uluslararası Profesyonel Kongre Organizatörleri Birliği. Kongre planlayıcılarının mesleki standartlarını yükselten, eğitim ve sertifikasyon sağlayan uluslararası yapı.',
+    example:
+        'IAPCO akreditasyonuna sahip organizasyon firması, uluslararası standartlarda profesyonel hizmet sunar.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/IAPCO.mp3',
   ),
   Term(
     word: 'JMIC',
-    definition: 'Birleşik Toplantı Endüstrisi Konseyi. Toplantı sektöründeki uluslararası kuruluşları tek çatıda buluşturarak iş birliğini güçlendiren ve ortak standartlar belirleyen konsey.',
-    example: 'JMIC, küresel iklim kriziyle mücadelede kongre sektörünün karbon ayak izini azaltmaya yönelik ortak bir deklarasyon yayınladı.',
+    definition:
+        'Birleşik Toplantı Endüstrisi Konseyi. Toplantı sektöründeki uluslararası kuruluşları tek çatıda buluşturarak iş birliğini güçlendiren ve ortak standartlar belirleyen konsey.',
+    example:
+        'JMIC, küresel iklim kriziyle mücadelede kongre sektörünün karbon ayak izini azaltmaya yönelik ortak bir deklarasyon yayınladı.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/JMIC.mp3',
   ),
   Term(
     word: 'MPI',
-    definition: 'Uluslararası Toplantı Profesyonelleri. Toplantı planlayıcılarının mesleki gelişimini destekleyen, ağ kurma (networking) ve iş fırsatları sunan organizasyon (1972).',
-    example: 'MPI platformu sayesinde genç etkinlik planlayıcıları, sektörün deneyimli liderleriyle iletişim kurma şansı buluyor.',
+    definition:
+        'Uluslararası Toplantı Profesyonelleri. Toplantı planlayıcılarının mesleki gelişimini destekleyen, ağ kurma (networking) ve iş fırsatları sunan organizasyon (1972).',
+    example:
+        'MPI platformu sayesinde genç etkinlik planlayıcıları, sektörün deneyimli liderleriyle iletişim kurma şansı buluyor.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/MPI.mp3',
   ),
   Term(
     word: 'AIIC',
-    definition: 'Uluslararası Konferans Tercümanları Birliği. Toplantılardaki simultane çevirmenlerin haklarını koruyan, çalışma koşullarını ve çeviri standartlarını belirleyen meslek birliği (1953).',
-    example: 'Uluslararası zirvede görev alacak simultane çevirmenlerin AIIC standartlarına uygun şartlarda çalışması sağlandı.',
+    definition:
+        'Uluslararası Konferans Tercümanları Birliği. Toplantılardaki simultane çevirmenlerin haklarını koruyan, çalışma koşullarını ve çeviri standartlarını belirleyen meslek birliği (1953).',
+    example:
+        'Uluslararası zirvede görev alacak simultane çevirmenlerin AIIC standartlarına uygun şartlarda çalışması sağlandı.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/AIIC.mp3',
   ),
   Term(
     word: 'Fuar',
-    definition: 'Ticareti geliştirmek, ürün ve hizmetleri tanıtmak, alıcı ve satıcıları bir araya getirmek amacıyla düzenli aralıklarla kurulan büyük çaplı ticari tanıtım pazarı.',
-    example: 'Yıllık yapı fuarı, inşaat sektöründeki üreticiler ile toptancıları bir araya getiren büyük bir ticari pazardır.',
+    definition:
+        'Ticareti geliştirmek, ürün ve hizmetleri tanıtmak, alıcı ve satıcıları bir araya getirmek amacıyla düzenli aralıklarla kurulan büyük çaplı ticari tanıtım pazarı.',
+    example:
+        'Yıllık yapı fuarı, inşaat sektöründeki üreticiler ile toptancıları bir araya getiren büyük bir ticari pazardır.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Panayır',
-    definition: 'Halkın bir araya geldiği, yiyecek, içecek ve eşya tezgâhlarının kurulduğu, geleneksel kültürel eğlencelerin yer aldığı etkinlik (Örn: Pavli Panayırı).',
-    example: 'Pavli Panayırı, bölgenin yerel ürünlerinin satıldığı ve kültürel dansların sergilendiği asırlık bir etkinliktir.',
+    definition:
+        'Halkın bir araya geldiği, yiyecek, içecek ve eşya tezgâhlarının kurulduğu, geleneksel kültürel eğlencelerin yer aldığı etkinlik (Örn: Pavli Panayırı).',
+    example:
+        'Pavli Panayırı, bölgenin yerel ürünlerinin satıldığı ve kültürel dansların sergilendiği asırlık bir etkinliktir.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'B2B (Business to Business) Fuarları',
-    definition: 'Firmaların ürün, hizmet ve yeniliklerini doğrudan diğer firmalara (şirketten şirkete) tanıttığı ve iş ortaklıkları kurduğu ticari fuarlar.',
-    example: 'Yazılım firmaları, yeni geliştirdikleri otomasyon programlarını tanıtmak için B2B (business to business) fuarlarına katıldılar.',
+    definition:
+        'Firmaların ürün, hizmet ve yeniliklerini doğrudan diğer firmalara (şirketten şirkete) tanıttığı ve iş ortaklıkları kurduğu ticari fuarlar.',
+    example:
+        'Yazılım firmaları, yeni geliştirdikleri otomasyon programlarını tanıtmak için B2B (business to business) fuarlarına katıldılar.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/B2B Business to Business.mp3',
   ),
   Term(
     word: 'Tüketici Elektroniği Fuarları (CES)',
-    definition: 'Önde gelen teknoloji markalarının en son teknolojiye sahip elektronik ürünlerini sergilediği uluslararası teknoloji ve inovasyon fuarları.',
-    example: 'CES fuarında sergilenen yapay zekalı ev aletleri ve otonom araçlar katılımcılardan büyük ilgi gördü.',
+    definition:
+        'Önde gelen teknoloji markalarının en son teknolojiye sahip elektronik ürünlerini sergilediği uluslararası teknoloji ve inovasyon fuarları.',
+    example:
+        'CES fuarında sergilenen yapay zekalı ev aletleri ve otonom araçlar katılımcılardan büyük ilgi gördü.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Turizm ve Seyahat Fuarları',
-    definition: 'Oteller, acenteler, hava yolları ve destinasyon ofislerinin yeni tatil paketlerini ve bölgelerini tanıttığı etkinlikler (Örn: EMITT).',
-    example: 'Her yıl düzenlenen turizm ve seyahat fuarlarında acenteler, yeni sezon için erken rezervasyon anlaşmaları imzalarlar.',
+    definition:
+        'Oteller, acenteler, hava yolları ve destinasyon ofislerinin yeni tatil paketlerini ve bölgelerini tanıttığı etkinlikler (Örn: EMITT).',
+    example:
+        'Her yıl düzenlenen turizm ve seyahat fuarlarında acenteler, yeni sezon için erken rezervasyon anlaşmaları imzalarlar.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Gıda ve İçecek Fuarları',
-    definition: 'Gıda endüstrisi profesyonellerinin yeni gastronomi ürünlerini, inovatif yiyecekleri ve lezzet eğilimlerini tanıttığı etkinlikler.',
-    example: 'Gıda ve içecek fuarlarında sergilenen organik ve glütensiz ürünler, sağlıklı beslenme trendlerini gözler önüne serdi.',
+    definition:
+        'Gıda endüstrisi profesyonellerinin yeni gastronomi ürünlerini, inovatif yiyecekleri ve lezzet eğilimlerini tanıttığı etkinlikler.',
+    example:
+        'Gıda ve içecek fuarlarında sergilenen organik ve glütensiz ürünler, sağlıklı beslenme trendlerini gözler önüne serdi.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Savunma ve Güvenlik Fuarları',
-    definition: 'Savunma sanayi şirketleri, askeri yetkililer ve güvenlik uzmanlarının teknolojik silah ve savunma araçlarını sergilediği uluslararası organizasyonlar.',
-    example: 'Savunma ve güvenlik fuarlarında sergilenen yerli insansız hava araçları, yabancı askeri delegasyonların ilgisini çekti.',
+    definition:
+        'Savunma sanayi şirketleri, askeri yetkililer ve güvenlik uzmanlarının teknolojik silah ve savunma araçlarını sergilediği uluslararası organizasyonlar.',
+    example:
+        'Savunma ve güvenlik fuarlarında sergilenen yerli insansız hava araçları, yabancı askeri delegasyonların ilgisini çekti.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Bayi Toplantısı',
-    definition: 'Bir şirketin, ürünlerini satan bayileriyle bir araya gelerek yeni ürünlerini tanıttığı, satış stratejilerini konuştuğu, bilgi ve motivasyon sağladığı kurum içi etkinlik.',
-    example: 'Teknoloji firması, yeni işletim sistemini tanıtmak ve bayilerine satış teknikleri eğitimi vermek için Antalya\'da bayi toplantısı düzenledi.',
+    definition:
+        'Bir şirketin, ürünlerini satan bayileriyle bir araya gelerek yeni ürünlerini tanıttığı, satış stratejilerini konuştuğu, bilgi ve motivasyon sağladığı kurum içi etkinlik.',
+    example:
+        'Teknoloji firması, yeni işletim sistemini tanıtmak ve bayilerine satış teknikleri eğitimi vermek için Antalya\'da bayi toplantısı düzenledi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Sektör Toplantısı',
-    definition: 'Belirli bir endüstride (örneğin teknoloji) faaliyet gösteren şirketler, tedarikçiler ve müşterilerin bir araya gelip sektörel eğilimleri, sorunları ve fırsatları tartıştığı geniş çaplı toplantı.',
-    example: 'Yenilenebilir enerji alanındaki son düzenlemeleri ve teşvikleri ele almak üzere geniş katılımlı bir sektör toplantısı gerçekleştirildi.',
+    definition:
+        'Belirli bir endüstride (örneğin teknoloji) faaliyet gösteren şirketler, tedarikçiler ve misafirlerin bir araya gelip sektörel eğilimleri, sorunları ve fırsatları tartıştığı geniş çaplı toplantı.',
+    example:
+        'Yenilenebilir enerji alanındaki son düzenlemeleri ve teşvikleri ele almak üzere geniş katılımlı bir sektör toplantısı gerçekleştirildi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Sportif Organizasyonlar',
-    definition: 'Olimpiyatlar, şampiyonalar gibi spor yarışmaları ile bunlara bağlı seminer, kamp ve toplantıların geniş bir topluluk (sporcu, medya, hakem) eşliğinde yönetildiği süreçler.',
-    example: 'Ülkemizin ev sahipliği yapacağı uluslararası atletizm şampiyonası için tüm sportif organizasyonlar eksiksiz planlandı.',
+    definition:
+        'Olimpiyatlar, şampiyonalar gibi spor yarışmaları ile bunlara bağlı seminer, kamp ve toplantıların geniş bir topluluk (sporcu, medya, hakem) eşliğinde yönetildiği süreçler.',
+    example:
+        'Ülkemizin ev sahipliği yapacağı uluslararası atletizm şampiyonası için tüm sportif organizasyonlar eksiksiz planlandı.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Shuttle (Karşılıklı Servis)',
-    definition: 'Kongre katılımcılarını havalimanı, otel ve etkinlik merkezi arasında düzenli ve sürekli seferlerle taşıyan özel yolcu transfer aracı.',
-    example: 'Konukların ulaşımını kolaylaştırmak amacıyla havalimanı ile otel arasında saat başı hareket eden ücretsiz shuttle (karşılıklı servis) araçları tahsis edildi.',
+    definition:
+        'Kongre katılımcılarını havalimanı, otel ve etkinlik merkezi arasında düzenli ve sürekli seferlerle taşıyan özel yolcu transfer aracı.',
+    example:
+        'Konukların ulaşımını kolaylaştırmak amacıyla havalimanı ile otel arasında saat başı hareket eden ücretsiz shuttle (karşılıklı servis) araçları tahsis edildi.',
     category: 'Kongre ve Etkinlik Yönetimi',
   ),
   Term(
     word: 'Kahve Molası (Coffee Break)',
-    definition: 'Uzun toplantı aralarında fuaye alanında çay, kahve ve hafif atıştırmalıkların sunulduğu, katılımcıların dinlenip networking (ağ kurma) yaptığı kısa aralar.',
-    example: 'İki oturum arasındaki kahve molası (coffee break) sırasında konuklar, taze meyve suları ve kuru pastalar eşliğinde dinlendiler.',
+    definition:
+        'Uzun toplantı aralarında fuaye alanında çay, kahve ve hafif atıştırmalıkların sunulduğu, katılımcıların dinlenip networking (ağ kurma) yaptığı kısa aralar.',
+    example:
+        'İki oturum arasındaki kahve molası (coffee break) sırasında konuklar, taze meyve suları ve kuru pastalar eşliğinde dinlendiler.',
     category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Coffee Break.mp3',
   ),
   Term(
     word: 'Gala Yemeği',
-    definition: 'Kongre veya bayi toplantılarının genellikle sonunda düzenlenen, katılımcılar için özel olarak planmanmış menü, dekorasyon ve bazen müzikli eğlence içeren kapanış yemeği.',
-    example: 'Başarılı geçen kongrenin gala yemeğinde, katılımcılara yöresel mutfağımızdan seçkin yemekler ve geleneksel şerbetler ikram edildi.',
+    definition:
+        'Kongre veya bayi toplantılarının genellikle sonunda düzenlenen, katılımcılar için özel olarak planmanmış menü, dekorasyon ve bazen müzikli eğlence içeren kapanış yemeği.',
+    example:
+        'Başarılı geçen kongrenin gala yemeğinde, katılımcılara yöresel mutfağımızdan seçkin yemekler ve geleneksel şerbetler ikram edildi.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Fuaye Alanı',
-    definition: 'Toplantı salonlarının hemen dışında bulunan; katılımcıların oturum aralarında dinlendiği, kayıt masalarının kurulduğu ve ikramların yapıldığı geniş alan.',
-    example: 'Kayıt masalarının ve çay-kahve büfelerinin yer aldığı fuaye alanı, oturum aralarında katılımcıların ana buluşma noktası oldu.',
+    definition:
+        'Toplantı salonlarının hemen dışında bulunan; katılımcıların oturum aralarında dinlendiği, kayıt masalarının kurulduğu ve ikramların yapıldığı geniş alan.',
+    example:
+        'Kayıt masalarının ve çay-kahve büfelerinin yer aldığı fuaye alanı, oturum aralarında katılımcıların ana buluşma noktası oldu.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
   Term(
     word: 'Katılımcı Anketi / Raporlama',
-    definition: 'Toplantı sonunda organizasyonun başarısını, memnuniyet düzeyini, lojistik ve finansal durumu değerlendirmek için katılımcılara uygulanan ölçüm ve geri bildirim araçları.',
-    example: 'Organizasyon komitesi, bir sonraki etkinliği geliştirmek adına katılımcı anketi / raporlama verilerini detaylıca analiz etti.',
+    definition:
+        'Toplantı sonunda organizasyonun başarısını, memnuniyet düzeyini, lojistik ve finansal durumu değerlendirmek için katılımcılara uygulanan ölçüm ve geri bildirim araçları.',
+    example:
+        'Organizasyon komitesi, bir sonraki etkinliği geliştirmek adına katılımcı anketi / raporlama verilerini detaylıca analiz etti.',
     category: 'Kongre ve Etkinlik Yönetimi',
     isEnglish: false,
   ),
@@ -4807,1089 +6324,1443 @@ const List<Term> terminologyData = [
   // ── DİJİTAL TURİZM VE SOSYAL MEDYA TERİMLERİ ──
   Term(
     word: 'Full Board',
-    definition: '(Tam Pansiyon) Konaklama ücretine sadece sabah kahvaltısı, öğle yemeği ve akşam yemeğinin dahil olduğu konsept.',
+    definition:
+        '(Tam Pansiyon) Konaklama ücretine sadece sabah kahvaltısı, öğle yemeği ve akşam yemeğinin dahil olduğu konsept.',
     example: 'Misafirlerimiz otelde tam pansiyon olarak konaklayacaklar.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Full Board.mp3',
   ),
   Term(
     word: 'Half Board',
-    definition: '(Yarım Pansiyon) Konaklama ücretine sadece sabah kahvaltısı ve akşam yemeğinin dahil olduğu sistem.',
-    example: 'Şehir otellerinde genellikle yarım pansiyon konsepti tercih ediliyor.',
+    definition:
+        '(Yarım Pansiyon) Konaklama ücretine sadece sabah kahvaltısı ve akşam yemeğinin dahil olduğu sistem.',
+    example:
+        'Şehir otellerinde genellikle yarım pansiyon konsepti tercih ediliyor.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Half Board.mp3',
   ),
   Term(
     word: 'Complimentary',
-    definition: 'Otel tarafından konuktan ücret alınmayan, ağırlama veya jest amaçlı verilen ücretsiz oda/hizmet.',
-    example: 'Yönetim kurulu kararıyla gelen akademisyen grubuna complimentary konaklama sağlandı.',
+    definition:
+        'Otel tarafından konuktan ücret alınmayan, ağırlama veya jest amaçlı verilen ücretsiz oda/hizmet.',
+    example:
+        'Yönetim kurulu kararıyla gelen akademisyen grubuna complimentary konaklama sağlandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Complimentary.mp3',
   ),
   Term(
     word: 'Chart',
-    definition: 'Otellerde doluluk oranlarını ve ileriye dönük verileri takip etmek için kullanılan aylık/yıllık tahmin çizelgesi ve tablosudur.',
-    example: 'Ön büro müdürü, önümüzdeki ayın doluluk tahminlerini görmek için bilgisayardan dijital "chart" tablosunu açıp incelemiştir.',
+    definition:
+        'Otellerde doluluk oranlarını ve ileriye dönük verileri takip etmek için kullanılan aylık/yıllık tahmin çizelgesi ve tablosudur.',
+    example:
+        'Ön büro müdürü, önümüzdeki ayın doluluk tahminlerini görmek için bilgisayardan dijital "chart" tablosunu açıp incelemiştir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Chart.mp3',
   ),
   Term(
     word: 'Codex Alimentarius',
-    definition: 'Dünya genelinde gıda ile ilgili uygulamaların sağlık ve teknoloji yönünden standartlaştırılmasını sağlayan komisyon ve doküman.',
-    example: 'Uluslararası açık büfe menümüzü hazırlarken, tüm gıda güvenliği ve etiketleme kurallarını Codex Alimentarius standartlarına göre uyarladık.',
+    definition:
+        'Dünya genelinde gıda ile ilgili uygulamaların sağlık ve teknoloji yönünden standartlaştırılmasını sağlayan komisyon ve doküman.',
+    example:
+        'Uluslararası açık büfe menümüzü hazırlarken, tüm gıda güvenliği ve etiketleme kurallarını Codex Alimentarius standartlarına göre uyarladık.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Codex Alimentarius.mp3',
   ),
   Term(
     word: 'Tehlikeli Sıcaklık Aralığı',
-    definition: 'Bakterilerin hızla çoğaldığı 5°C ile 65°C arasındaki sıcaklık aralığı.',
-    example: 'Açık büfe yemeklerinin bakteriyel risk oluşturmaması için tehlikeli sıcaklık aralığından uzak tutularak 65°C üzerinde servis edilmesi zorunludur.',
+    definition:
+        'Bakterilerin hızla çoğaldığı 5°C ile 65°C arasındaki sıcaklık aralığı.',
+    example:
+        'Açık büfe yemeklerinin bakteriyel risk oluşturmaması için tehlikeli sıcaklık aralığından uzak tutularak 65°C üzerinde servis edilmesi zorunludur.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Benmari (Bain-marie)',
-    definition: 'Sıcak tutulması gereken yemeklerin 65°C ila 75°C aralığında, sıcak su buharı ile ısıtıldığı sistem.',
-    example: 'Açık büfedeki sıcak çorbalar ve soslu et yemekleri, servis süresince sıcaklıklarını korumaları için benmari ünitelerine yerleştirildi.',
+    definition:
+        'Sıcak tutulması gereken yemeklerin 65°C ila 75°C aralığında, sıcak su buharı ile ısıtıldığı sistem.',
+    example:
+        'Açık büfedeki sıcak çorbalar ve soslu et yemekleri, servis süresince sıcaklıklarını korumaları için benmari ünitelerine yerleştirildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Görgü Kuralları',
-    definition: 'Toplum içinde insanların birbirleriyle olan ilişkilerinde uymaları gereken, saygı ve inceliğe dayanan davranış kalıpları.',
-    example: 'Misafir ilişkileri departmanı çalışanlarının görgü kuralları çerçevesinde sergilediği kibar tutum, konuk şikayetlerini çözmede en büyük etkendir.',
+    definition:
+        'Toplum içinde insanların birbirleriyle olan ilişkilerinde uymaları gereken, saygı ve inceliğe dayanan davranış kalıpları.',
+    example:
+        'Misafir ilişkileri departmanı çalışanlarının görgü kuralları çerçevesinde sergilediği kibar tutum, konuk şikayetlerini çözmede en büyük etkendir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Öncelik-Sonralık Hiyerarşisi',
-    definition: 'Devlet veya kurum içi protokolde makamların ve kişilerin önem sırasına göre diziliş kuralı.',
-    example: 'Gala yemeğindeki masa oturma planı, davetli bürokratların öncelik-sonralık hiyerarşisi göz önünde bulundurularak protokol müdürü tarafından yapıldı.',
+    definition:
+        'Devlet veya kurum içi protokolde makamların ve kişilerin önem sırasına göre diziliş kuralı.',
+    example:
+        'Gala yemeğindeki masa oturma planı, davetli bürokratların öncelik-sonralık hiyerarşisi göz önünde bulundurularak protokol müdürü tarafından yapıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tanıştırma Kuralları',
-    definition: 'Astın üste, erkeğin kadına, yaşça küçüğün büyüğe, yeni gelenin mevcut topluluğa tanıştırılması kuralı.',
-    example: 'Otel genel müdürünün katıldığı kokteylde resepsiyon şefi, yeni başlayan stajyerleri tanıştırma kuralları çerçevesinde genel müdüre takdim etti.',
+    definition:
+        'Astın üste, erkeğin kadına, yaşça küçüğün büyüğe, yeni gelenin mevcut topluluğa tanıştırılması kuralı.',
+    example:
+        'Otel genel müdürünün katıldığı kokteylde resepsiyon şefi, yeni başlayan stajyerleri tanıştırma kuralları çerçevesinde genel müdüre takdim etti.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Netiket',
-    definition: 'İnternet ortamında (e-posta, sosyal medya) uyulması gereken yazışma, nezaket ve saygı kuralları (İnternet adabı).',
-    example: 'Rezervasyon e-postalarını yanıtlarken netiket kurallarına uygun olarak tamamı büyük harfle yazmaktan kaçınmalı ve saygılı bir dil kullanmalıyız.',
+    definition:
+        'İnternet ortamında (e-posta, sosyal medya) uyulması gereken yazışma, nezaket ve saygı kuralları (İnternet adabı).',
+    example:
+        'Rezervasyon e-postalarını yanıtlarken netiket kurallarına uygun olarak tamamı büyük harfle yazmaktan kaçınmalı ve saygılı bir dil kullanmalıyız.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Houseman (Meydancı)',
-    definition: 'Otel içerisindeki lobi, koridor, restoran gibi genel alanların temizliğinden sorumlu olan temizlik personeli.',
-    example: 'Lobi alanındaki yoğun mermer zeminlerin cilalanması ve camların silinmesi işlemlerini Houseman ekibimiz büyük bir titizlikle yürüttü.',
+    definition:
+        'Otel içerisindeki lobi, koridor, restoran gibi genel alanların temizliğinden sorumlu olan temizlik personeli.',
+    example:
+        'Lobi alanındaki yoğun mermer zeminlerin cilalanması ve camların silinmesi işlemlerini Houseman ekibimiz büyük bir titizlikle yürüttü.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Trolley (Kat Arabası)',
-    definition: 'Kat görevlisinin odaları temizlerken ihtiyaç duyduğu tüm temizlik malzemelerini, temiz tekstil ve bukletleri taşıdığı çok raflı araba.',
-    example: 'Temizlik görevlisi, koridora çıkmadan önce kat arabasını (trolley) temiz çarşaflar, havlular ve buklet malzemeleriyle eksiksiz doldurdu.',
+    definition:
+        'Kat görevlisinin odaları temizlerken ihtiyaç duyduğu tüm temizlik malzemelerini, temiz tekstil ve bukletleri taşıdığı çok raflı araba.',
+    example:
+        'Temizlik görevlisi, koridora çıkmadan önce kat arabasını (trolley) temiz çarşaflar, havlular ve buklet malzemeleriyle eksiksiz doldurdu.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Passe-partout (Paspastur)',
-    definition: 'Kat görevlisinin sadece kendi sorumluluk alanındaki odaları açabildiği çalışma anahtarı.',
-    example: 'Kat görevlisi, sadece kendi temizlik yapacağı kattaki odaları açmaya yetkili olan paspastur anahtarını vardiya sonunda teslim etti.',
+    definition:
+        'Kat görevlisinin sadece kendi sorumluluk alanındaki odaları açabildiği çalışma anahtarı.',
+    example:
+        'Kat görevlisi, sadece kendi temizlik yapacağı kattaki odaları açmaya yetkili olan paspastur anahtarını vardiya sonunda teslim etti.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Key Card',
-    definition: 'Elektronik kapı kilit sistemlerinde kullanılan, misafirin odasına girmesini sağlayan manyetik veya çipli anahtar kartı.',
-    example: 'Misafirimiz lobi bar çıkışında key card anahtar kartını kaybettiğini belirtince, resepsiyonda eski kart iptal edilerek yeni bir kart kodlandı.',
+    definition:
+        'Elektronik kapı kilit sistemlerinde kullanılan, misafirin odasına girmesini sağlayan manyetik veya çipli anahtar kartı.',
+    example:
+        'Misafirimiz lobi bar çıkışında key card anahtar kartını kaybettiğini belirtince, resepsiyonda eski kart iptal edilerek yeni bir kart kodlandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Key Card.mp3',
   ),
   Term(
     word: 'Log Book (Vardiya Defteri)',
-    definition: 'Ön büro personelinin vardiya değişimlerinde bir sonraki vardiyaya devretmek istedikleri önemli notları ve olayları yazdıkları iletişim defteri.',
-    example: 'Akşam vardiyasını devralan resepsiyonist, bir önceki vardiyadaki önemli olayları ve takipleri öğrenmek için vardiya defterini (log book) dikkatle okudu.',
+    definition:
+        'Ön büro personelinin vardiya değişimlerinde bir sonraki vardiyaya devretmek istedikleri önemli notları ve olayları yazdıkları iletişim defteri.',
+    example:
+        'Akşam vardiyasını devralan resepsiyonist, bir önceki vardiyadaki önemli olayları ve takipleri öğrenmek için vardiya defterini (log book) dikkatle okudu.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'F.O.C (Free of Charge)',
-    definition: 'Otel yönetimi tarafından misafire konaklama, yemek veya diğer hizmetlerin ücretsiz (ikram) olarak sunulması.',
-    example: 'Otelimizi ziyaret eden acente yetkililerinin akşam yemeği harcamaları, genel müdür onayıyla F.O.C (ücretsiz) olarak kapatıldı.',
+    definition:
+        'Otel yönetimi tarafından misafire konaklama, yemek veya diğer hizmetlerin ücretsiz (ikram) olarak sunulması.',
+    example:
+        'Otelimizi ziyaret eden acente yetkililerinin akşam yemeği harcamaları, genel müdür onayıyla F.O.C (ücretsiz) olarak kapatıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'OTA (Online Travel Agency)',
-    definition: 'Booking.com, Expedia, Agoda gibi internet üzerinden konaklama, bilet ve seyahat satışı yapan çevrim içi seyahat acenteleri.',
-    example: 'Otelimiz, oda satış hacmini artırmak için Booking.com ve Expedia gibi popüler OTA kanallarıyla entegre çalışmaktadır.',
+    definition:
+        'Booking.com, Expedia, Agoda gibi internet üzerinden konaklama, bilet ve seyahat satışı yapan çevrim içi seyahat acenteleri.',
+    example:
+        'Otelimiz, oda satış hacmini artırmak için Booking.com ve Expedia gibi popüler OTA kanallarıyla entegre çalışmaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/OTA Online Travel Agency.mp3',
   ),
   Term(
     word: 'B2C (Business to Consumer)',
-    definition: 'Şirketten doğrudan son tüketiciye (otelden doğrudan misafire) yapılan satış faaliyetleri.',
-    example: 'Otelimizin kendi web sitesi üzerinden doğrudan misafire yaptığı oda satışları, B2C perakende pazarlama modeline mükemmel bir örnektir.',
+    definition:
+        'Şirketten doğrudan son tüketiciye (otelden doğrudan misafire) yapılan satış faaliyetleri.',
+    example:
+        'Otelimizin kendi web sitesi üzerinden doğrudan misafire yaptığı oda satışları, B2C perakende pazarlama modeline mükemmel bir örnektir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/B2C Business to Consumer.mp3',
   ),
   Term(
     word: 'Arrival List',
-    definition: 'Otele aynı gün giriş yapacak misafirlerin isimlerini, oda tiplerini ve geliş detaylarını gösteren günlük liste.',
-    example: 'Resepsiyon şefi, sabah vardiyasında otele giriş yapacak tüm misafirlerin detaylarını incelemek için arrival list belgesini yazdırdı.',
+    definition:
+        'Otele aynı gün giriş yapacak misafirlerin isimlerini, oda tiplerini ve geliş detaylarını gösteren günlük liste.',
+    example:
+        'Resepsiyon şefi, sabah vardiyasında otele giriş yapacak tüm misafirlerin detaylarını incelemek için arrival list belgesini yazdırdı.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Arrival List.mp3',
   ),
   Term(
     word: 'Full Complimentary',
-    definition: 'Konaklama, yiyecek-içecek ve diğer tüm ekstra hizmetlerin işletme tarafından tamamen ücretsiz sağlandığı konuk durumu.',
-    example: 'Otelin açılışına katılan turizm yazarı, yönetim kurulu kararıyla full complimentary olarak otelimizde misafir edildi.',
+    definition:
+        'Konaklama, yiyecek-içecek ve diğer tüm ekstra hizmetlerin işletme tarafından tamamen ücretsiz sağlandığı konuk durumu.',
+    example:
+        'Otelin açılışına katılan turizm yazarı, yönetim kurulu kararıyla full complimentary olarak otelimizde misafir edildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Full Complimentary.mp3',
   ),
   Term(
     word: 'Departure List',
-    definition: 'O gün otelden çıkış yapacak (check-out) olan misafirlerin isimlerini, oda numaralarını ve hesap durumlarını gösteren ayrılacaklar listesi.',
-    example: 'Nöbetçi resepsiyonist, o gün çıkış yapacak odaların hesap bakiyelerini kontrol etmek için departure list tablosunu inceledi.',
+    definition:
+        'O gün otelden çıkış yapacak (check-out) olan misafirlerin isimlerini, oda numaralarını ve hesap durumlarını gösteren ayrılacaklar listesi.',
+    example:
+        'Nöbetçi resepsiyonist, o gün çıkış yapacak odaların hesap bakiyelerini kontrol etmek için departure list tablosunu inceledi.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Departure List.mp3',
   ),
   Term(
     word: 'Aranjman',
-    definition: 'Kesme çiçeklerin, yaprakların ve diğer doğal/yapay malzemelerin belirli bir estetik kuralla kaplar içinde düzenlenmesi (Çiçek tanzimi).',
-    example: 'Resepsiyon bankosu üzerine, konukları karşılamak amacıyla taze kesme çiçeklerden oluşan şık bir aranjman yerleştirildi.',
+    definition:
+        'Kesme çiçeklerin, yaprakların ve diğer doğal/yapay malzemelerin belirli bir estetik kuralla kaplar içinde düzenlenmesi (Çiçek tanzimi).',
+    example:
+        'Resepsiyon bankosu üzerine, konukları karşılamak amacıyla taze kesme çiçeklerden oluşan şık bir aranjman yerleştirildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tali (Yardımcı) Yeşillik',
-    definition: 'Çiçek aranjmanlarında boşlukları doldurmak, asıl çiçekleri ön plana çıkarmak ve arka plan oluşturmak için kullanılan cipso, okaliptüs gibi yaprak/dallar.',
-    example: 'Çiçekçiden gelen güllerin aralarını doldurmak ve cipsolarla kontrast yaratmak için aranjmanda tali (yardımcı) yeşillik kullanıldı.',
+    definition:
+        'Çiçek aranjmanlarında boşlukları doldurmak, asıl çiçekleri ön plana çıkarmak ve arka plan oluşturmak için kullanılan cipso, okaliptüs gibi yaprak/dallar.',
+    example:
+        'Çiçekçiden gelen güllerin aralarını doldurmak ve cipsolarla kontrast yaratmak için aranjmanda tali (yardımcı) yeşillik kullanıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Terrarium (Teraryum)',
-    definition: 'Genellikle cam fanuslar içinde, nemi seven minyatür bitkilerin (sukulent, kaktüs, yosun vb.) yetiştirildiği kapalı eko-sistem peyzajı.',
-    example: 'Otel lobisindeki dinlenme alanlarında bulunan masaların üzerine, dekoratif cam fanuslarda terrarium (teraryum) tasarımları yerleştirildi.',
+    definition:
+        'Genellikle cam fanuslar içinde, nemi seven minyatür bitkilerin (sukulent, kaktüs, yosun vb.) yetiştirildiği kapalı eko-sistem peyzajı.',
+    example:
+        'Otel lobisindeki dinlenme alanlarında bulunan masaların üzerine, dekoratif cam fanuslarda terrarium (teraryum) tasarımları yerleştirildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'VIP Setup (VIP İkram)',
-    definition: 'VIP misafirlerin odalarına, konuk otele gelmeden önce yerleştirilen özel meyve sepeti, çikolata, çerez, özel buklet malzemeleri gibi ekstralar.',
-    example: 'Kat şefi, otele giriş yapacak ünlü sanatçının odasındaki VIP Setup ikram tepsisini ve meyve sepetini bizzat kontrol etti.',
+    definition:
+        'VIP misafirlerin odalarına, konuk otele gelmeden önce yerleştirilen özel meyve sepeti, çikolata, çerez, özel buklet malzemeleri gibi ekstralar.',
+    example:
+        'Kat şefi, otele giriş yapacak ünlü sanatçının odasındaki VIP Setup ikram tepsisini ve meyve sepetini bizzat kontrol etti.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/VIP.mp3',
   ),
   Term(
     word: 'Markalama',
-    definition: 'Otel dışından (misafirlerden) gelen kirli çamaşırların karışmamasını sağlamak amacıyla üzerine misafirin oda numarası ve isminin yazılı olduğu etiketlerin basılması/zımbalanması işlemi.',
-    example: 'Çamaşırhaneye teslim edilen misafir kıyafetlerinin karışmasını önlemek amacıyla yaka içlerine oda numarasıyla markalama yapıldı.',
+    definition:
+        'Otel dışından (misafirlerden) gelen kirli çamaşırların karışmamasını sağlamak amacıyla üzerine misafirin oda numarası ve isminin yazılı olduğu etiketlerin basılması/zımbalanması işlemi.',
+    example:
+        'Çamaşırhaneye teslim edilen misafir kıyafetlerinin karışmasını önlemek amacıyla yaka içlerine oda numarasıyla markalama yapıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Ağartma (Bleaching)',
-    definition: 'Beyaz tekstil ürünlerindeki inatçı lekeleri çıkarmak ve kumaşı beyazlatmak için klorlu veya oksijen bazlı kimyasalların kullanılması.',
-    example: 'Sararmış nevresimlerin ilk günkü gibi bembeyaz olması için yıkama esnasında klor bazlı ağartma (bleaching) kimyasalı kullanıldı.',
+    definition:
+        'Beyaz tekstil ürünlerindeki inatçı lekeleri çıkarmak ve kumaşı beyazlatmak için klorlu veya oksijen bazlı kimyasalların kullanılması.',
+    example:
+        'Sararmış nevresimlerin ilk günkü gibi bembeyaz olması için yıkama esnasında klor bazlı ağartma (bleaching) kimyasalı kullanıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Par Stock (Optimum Stok)',
-    definition: 'Operasyonun aksamaması için otel departmanlarında her an hazır bulunması gereken ideal tekstil, buklet veya kimyasal stok miktarı (Örn: Otelde genelde 3 par çarşaf bulunur).',
-    example: 'Otelimizde operasyonun aksamaması adına, her oda için 3 katı oranında (1 katta, 1 depoda, 1 çamaşırhanede) par stock çarşaf bulundurulur.',
+    definition:
+        'Operasyonun aksamaması için otel departmanlarında her an hazır bulunması gereken ideal tekstil, buklet veya kimyasal stok miktarı (Örn: Otelde genelde 3 par çarşaf bulunur).',
+    example:
+        'Otelimizde operasyonun aksamaması adına, her oda için 3 katı oranında (1 katta, 1 depoda, 1 çamaşırhanede) par stock çarşaf bulundurulur.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Anahtar Kayıt Defteri',
-    definition: 'Otel içindeki departmanlara ait master (genel) veya özel oda anahtarlarının personel tarafından teslim alınıp verilirken imzalanarak kaydedildiği güvenlik takip defteri.',
-    example: 'Kat görevlisi, sabah vardiyasında kendi katındaki odaları açabilmesi için teslim aldığı paspastur anahtarını anahtar kayıt defterine imzalayarak kaydettirdi.',
+    definition:
+        'Otel içindeki departmanlara ait master (genel) veya özel oda anahtarlarının personel tarafından teslim alınıp verilirken imzalanarak kaydedildiği güvenlik takip defteri.',
+    example:
+        'Kat görevlisi, sabah vardiyasında kendi katındaki odaları açabilmesi için teslim aldığı paspastur anahtarını anahtar kayıt defterine imzalayarak kaydettirdi.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'RevPAR (Revenue Per Available Room)',
-    definition: 'Satışa hazır oda başına düşen geliri ifade eden, toplam oda gelirinin oteldeki toplam (satılabilir) oda sayısına bölünmesiyle bulunan performans göstergesi.',
-    example: 'Ön büro müdürü, sadece satılan odaların değil, boş kalan odaların da performansını ölçmek için bu haftaki RevPAR değerini hesapladı.',
+    definition:
+        'Satışa hazır oda başına düşen geliri ifade eden, toplam oda gelirinin oteldeki toplam (satılabilir) oda sayısına bölünmesiyle bulunan performans göstergesi.',
+    example:
+        'Ön büro müdürü, sadece satılan odaların değil, boş kalan odaların da performansını ölçmek için bu haftaki RevPAR değerini hesapladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/RevPAR Revenue Per Available Room.mp3',
   ),
   Term(
     word: 'Satış ve Pazarlama',
-    definition: 'Otelin oda, toplantı salonu ve etkinlik alanlarının tur operatörlerine, şirketlere ve bireylere tanıtılması, fiyatlandırılması ve satışının gerçekleştirilmesinden sorumlu departmandır.',
-    example: 'Satış ve pazarlama departmanı, kış aylarındaki doluluğu artırmak için yerel seyahat acentelerine özel indirimli grup paketleri sundu.',
+    definition:
+        'Otelin oda, toplantı salonu ve etkinlik alanlarının tur operatörlerine, şirketlere ve bireylere tanıtılması, fiyatlandırılması ve satışının gerçekleştirilmesinden sorumlu departmandır.',
+    example:
+        'Satış ve pazarlama departmanı, kış aylarındaki doluluğu artırmak için yerel seyahat acentelerine özel indirimli grup paketleri sundu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Charter',
-    definition: 'Belirli bir turizm operasyonu için bir uçak veya geminin tamamının acenta tarafından kiralanması.',
-    example: 'Rusya\'dan Antalya\'ya kalkacak ilk charter uçuşu yerel saatle 10:00\'da iniş yapacak.',
+    definition:
+        'Belirli bir turizm operasyonu için bir uçak veya geminin tamamının acenta tarafından kiralanması.',
+    example:
+        'Rusya\'dan Antalya\'ya kalkacak ilk charter uçuşu yerel saatle 10:00\'da iniş yapacak.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Charter.mp3',
   ),
   Term(
     word: 'Paravan',
-    definition: 'Otel lobilerinde, süit odalarda veya salonlarda bazı bölümleri birbirinden ayırmak için kullanılan, taşınabilir katlanır şık çerçeveli perde veya panodur.',
+    definition:
+        'Otel lobilerinde, süit odalarda veya salonlarda bazı bölümleri birbirinden ayırmak için kullanılan, taşınabilir katlanır şık çerçeveli perde veya panodur.',
     example: '',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Vardiya',
-    definition: 'Otellerin 7/24 açık olması sebebiyle, personelin belirli saat grupları (postalar) halinde sırayla çalışması sistemidir (Sabah, akşam, gece vardiyası).',
+    definition:
+        'Otellerin 7/24 açık olması sebebiyle, personelin belirli saat grupları (postalar) halinde sırayla çalışması sistemidir (Sabah, akşam, gece vardiyası).',
     example: '',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Ahi Evran',
-    definition: 'Ahilik teşkilatının kurucusu olan, esnaf ve sanatkarları bir çatı altında toplayan tarihi şahsiyet.',
-    example: 'Yiyecek-içecek bölümü çalışanlarına, meslek ahlakının önemini anlatırken Ahi Evran\'ın öğretilerinden ve dürüst ticaret ilkelerinden örnekler verdik.',
+    definition:
+        'Ahilik teşkilatının kurucusu olan, esnaf ve sanatkarları bir çatı altında toplayan tarihi şahsiyet.',
+    example:
+        'Yiyecek-içecek bölümü çalışanlarına, meslek ahlakının önemini anlatırken Ahi Evran\'ın öğretilerinden ve dürüst ticaret ilkelerinden örnekler verdik.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'İlk Yardım',
-    definition: 'Herhangi bir kaza veya yaşamı tehlikeye düşüren durumda, sağlık görevlileri gelinceye kadar hayatın kurtarılması için eldeki imkanlarla yapılan ilaçsız müdahale.',
-    example: 'Havuz başında nefes borusuna yemek kaçan konuğa, cankurtaran tarafından yapılan Heimlich manevrası hayat kurtarıcı bir ilk yardım müdahalesidir.',
+    definition:
+        'Herhangi bir kaza veya yaşamı tehlikeye düşüren durumda, sağlık görevlileri gelinceye kadar hayatın kurtarılması için eldeki imkanlarla yapılan ilaçsız müdahale.',
+    example:
+        'Havuz başında nefes borusuna yemek kaçan konuğa, cankurtaran tarafından yapılan Heimlich manevrası hayat kurtarıcı bir ilk yardım müdahalesidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Endüstri 4.0',
-    definition: 'Siber-fiziksel sistemler, nesnelerin interneti ve yapay zeka ile akıllı fabrikaların kurulduğu Dördüncü Sanayi Devrimi.',
-    example: 'Otelcilikte Endüstri 4.0 uygulamaları sayesinde, misafirler odaya girdiği anda sıcaklık ve aydınlatma tercihleri otomatik olarak ayarlanmaktadır.',
+    definition:
+        'Siber-fiziksel sistemler, nesnelerin interneti ve yapay zeka ile akıllı fabrikaların kurulduğu Dördüncü Sanayi Devrimi.',
+    example:
+        'Otelcilikte Endüstri 4.0 uygulamaları sayesinde, misafirler odaya girdiği anda sıcaklık ve aydınlatma tercihleri otomatik olarak ayarlanmaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Yapay Zeka (AI)',
-    definition: 'İnsan zekasına özgü olan algılama, öğrenme, mantık yürütme ve sorun çözme gibi yetenekleri makinelere kazandırma teknolojisi.',
-    example: 'Otelimizin web sitesindeki yapay zeka tabanlı sohbet robotu (chatbot), konukların rezervasyon sorularını 24 saat boyunca yanıtlıyor.',
+    definition:
+        'İnsan zekasına özgü olan algılama, öğrenme, mantık yürütme ve sorun çözme gibi yetenekleri makinelere kazandırma teknolojisi.',
+    example:
+        'Otelimizin web sitesindeki yapay zeka tabanlı sohbet robotu (chatbot), konukların rezervasyon sorularını 24 saat boyunca yanıtlıyor.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Siber Güvenlik',
-    definition: 'Bilgisayar sistemlerini, ağları ve verileri dijital saldırılara ve yetkisiz erişimlere karşı koruma uygulamaları.',
-    example: 'Misafirlerin kredi kartı bilgilerini hacker saldırılarından korumak için otel veri tabanında siber güvenlik önlemlerini üst düzeye çıkardık.',
+    definition:
+        'Bilgisayar sistemlerini, ağları ve verileri dijital saldırılara ve yetkisiz erişimlere karşı koruma uygulamaları.',
+    example:
+        'Misafirlerin kredi kartı bilgilerini hacker saldırılarından korumak için otel veri tabanında siber güvenlik önlemlerini üst düzeye çıkardık.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Karanlık Fabrikalar',
-    definition: 'İnsan iş gücüne ihtiyaç duymadan, tamamen robotlar ve otomasyon sistemleriyle 7/24 üretim yapan ışıksız tesisler.',
-    example: 'Çamaşırhanedeki katlama ve tasnif işlemlerini tamamen insansız yürüten karanlık fabrikalar benzeri bir otomasyon sistemine geçiş yapıyoruz.',
+    definition:
+        'İnsan iş gücüne ihtiyaç duymadan, tamamen robotlar ve otomasyon sistemleriyle 7/24 üretim yapan ışıksız tesisler.',
+    example:
+        'Çamaşırhanedeki katlama ve tasnif işlemlerini tamamen insansız yürüten karanlık fabrikalar benzeri bir otomasyon sistemine geçiş yapıyoruz.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Karbon Ayak İzi',
-    definition: 'Bir bireyin, kurumun veya ürünün doğrudan ya da dolaylı olarak atmosfere yaydığı sera gazı miktarının karbondioksit eşdeğeri cinsinden ölçüsü.',
-    example: 'Otelimizin karbon ayak izini azaltmak için fosil yakıtlı araçlar yerine misafirlerimize elektrikli bisiklet kiralama hizmeti sunmaya başladık.',
+    definition:
+        'Bir bireyin, kurumun veya ürünün doğrudan ya da dolaylı olarak atmosfere yaydığı sera gazı miktarının karbondioksit eşdeğeri cinsinden ölçüsü.',
+    example:
+        'Otelimizin karbon ayak izini azaltmak için fosil yakıtlı araçlar yerine misafirlerimize elektrikli bisiklet kiralama hizmeti sunmaya başladık.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Arz',
-    definition: 'Belirli bir piyasada, belirli bir fiyattan üreticilerin satmaya hazır oldukları mal veya hizmet miktarı.',
-    example: 'Bayram tatili döneminde bölgedeki otellerin yatak arzı sabit kalırken, talebin aşırı artması oda fiyatlarını tırmandırdı.',
+    definition:
+        'Belirli bir piyasada, belirli bir fiyattan üreticilerin satmaya hazır oldukları mal veya hizmet miktarı.',
+    example:
+        'Bayram tatili döneminde bölgedeki otellerin yatak arzı sabit kalırken, talebin aşırı artması oda fiyatlarını tırmandırdı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'İnsan Kaynakları (İK)',
-    definition: 'Bir işletmede çalışanların işe alınması, eğitilmesi, değerlendirilmesi ve yönetilmesi süreçleriyle ilgilenen departman.',
-    example: 'İnsan kaynakları departmanı, sezon başında kat hizmetleri ekibine müşteri memnuniyeti eğitimleri düzenledi.',
+    definition:
+        'Bir işletmede çalışanların işe alınması, eğitilmesi, değerlendirilmesi ve yönetilmesi süreçleriyle ilgilenen departman.',
+    example:
+        'İnsan kaynakları departmanı, sezon başında kat hizmetleri ekibine misafir memnuniyeti eğitimleri düzenledi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'AR-GE (Araştırma ve Geliştirme)',
-    definition: 'Bilgi dağarcığını artırmak ve bu bilgiyi yeni ürünler, hizmetler veya süreçler yaratmak için sistemik olarak yürütülen yaratıcı çalışmalar.',
-    example: 'Otel otomasyon yazılımımızı geliştiren teknoloji firması, AR-GE departmanı bütçesini bu yıl iki katına çıkardı.',
+    definition:
+        'Bilgi dağarcığını artırmak ve bu bilgiyi yeni ürünler, hizmetler veya süreçler yaratmak için sistemik olarak yürütülen yaratıcı çalışmalar.',
+    example:
+        'Otel otomasyon yazılımımızı geliştiren teknoloji firması, AR-GE departmanı bütçesini bu yıl iki katına çıkardı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Marka',
-    definition: 'Bir işletmenin mal veya hizmetlerini diğer işletmelerinkinden ayırmaya yarayan isim, logo, şekil, harf veya amblem gibi işaretler.',
-    example: 'Tesisimizin logosunu ve ismini tescil ettirerek, otelimizi ulusal pazarda tanınan güçlü bir otel zinciri markası haline getirdik.',
+    definition:
+        'Bir işletmenin mal veya hizmetlerini diğer işletmelerinkinden ayırmaya yarayan isim, logo, şekil, harf veya amblem gibi işaretler.',
+    example:
+        'Tesisimizin logosunu ve ismini tescil ettirerek, otelimizi ulusal pazarda tanınan güçlü bir otel zinciri markası haline getirdik.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Endüstriyel Tasarım',
-    definition: 'Bir ürünün dış görünüşünün (çizgi, şekil, renk, doku vb.) estetik özelliklerinin korunması hakkı.',
-    example: 'Restoranımızda kullanılan özel yapım seramik tabakların özgün şekilleri, endüstriyel tasarım tescili ile koruma altına alınmıştır.',
+    definition:
+        'Bir ürünün dış görünüşünün (çizgi, şekil, renk, doku vb.) estetik özelliklerinin korunması hakkı.',
+    example:
+        'Restoranımızda kullanılan özel yapım seramik tabakların özgün şekilleri, endüstriyel tasarım tescili ile koruma altına alınmıştır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'ILO (Uluslararası Çalışma Örgütü)',
-    definition: 'Çalışma koşullarını iyileştirmek, iş standartlarını belirlemek ve sosyal adaleti sağlamakla görevli Birleşmiş Milletler kuruluşu.',
-    example: 'Otelimizde insana yakışır iş standartlarını sağlamak amacıyla, ILO standartlarına uygun çalışma süreleri ve dinlenme hakları uyguluyoruz.',
+    definition:
+        'Çalışma koşullarını iyileştirmek, iş standartlarını belirlemek ve sosyal adaleti sağlamakla görevli Birleşmiş Milletler kuruluşu.',
+    example:
+        'Otelimizde insana yakışır iş standartlarını sağlamak amacıyla, ILO standartlarına uygun çalışma süreleri ve dinlenme hakları uyguluyoruz.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'TÜBİTAK',
-    definition: 'Türkiye Bilimsel ve Teknolojik Araştırma Kurumu; bilim ve teknoloji politikalarını belirleyen ve Ar-Ge projelerini destekleyen kurum.',
-    example: 'Otelimizin atık sularını arıtan akıllı sistem projesi, TÜBİTAK AR-GE destekleme programından fon almaya hak kazandı.',
+    definition:
+        'Türkiye Bilimsel ve Teknolojik Araştırma Kurumu; bilim ve teknoloji politikalarını belirleyen ve Ar-Ge projelerini destekleyen kurum.',
+    example:
+        'Otelimizin atık sularını arıtan akıllı sistem projesi, TÜBİTAK AR-GE destekleme programından fon almaya hak kazandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Ziyaretçi',
-    definition: 'Turist ve günübirlikçi kavramlarını kapsayan, ikametgahı dışına seyahat eden kişi.',
-    example: 'Efes Antik Kenti müze müdürlüğü, bayram tatili boyunca bölgeyi ziyaret eden toplam ziyaretçi sayısının 50 bine ulaştığını açıkladı.',
+    definition:
+        'Turist ve günübirlikçi kavramlarını kapsayan, ikametgahı dışına seyahat eden kişi.',
+    example:
+        'Efes Antik Kenti müze müdürlüğü, bayram tatili boyunca bölgeyi ziyaret eden toplam ziyaretçi sayısının 50 bine ulaştığını açıkladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Çarpan Etkisi (Mülteplier)',
-    definition: 'Turizm yoluyla elde edilen gelirin, ekonomideki diğer sektörlere el değiştirerek yayılması ve toplam geliri katlayarak artırması durumu.',
-    example: 'Otelimizde konaklayan turistlerin yerel taksicileri kullanması, çiftçiden alınan gıdalar ve hediyelik eşya dükkanlarından yaptığı harcamalar turizmin çarpan etkisi sayesinde şehri kalkındırır.',
+    definition:
+        'Turizm yoluyla elde edilen gelirin, ekonomideki diğer sektörlere el değiştirerek yayılması ve toplam geliri katlayarak artırması durumu.',
+    example:
+        'Otelimizde konaklayan turistlerin yerel taksicileri kullanması, çiftçiden alınan gıdalar ve hediyelik eşya dükkanlarından yaptığı harcamalar turizmin çarpan etkisi sayesinde şehri kalkındırır.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Enformasyon Memuru',
-    definition: 'Turizm danışma bürolarında turistlere bölge hakkında bilgi veren, harita ve broşür sağlayan görevli.',
-    example: 'Havalimanı danışma masasında görevli enformasyon memuru, yabancı konuklara şehir içi ulaşım kartları ve gezi broşürleri konusunda yardımcı oldu.',
+    definition:
+        'Turizm danışma bürolarında turistlere bölge hakkında bilgi veren, harita ve broşür sağlayan görevli.',
+    example:
+        'Havalimanı danışma masasında görevli enformasyon memuru, yabancı konuklara şehir içi ulaşım kartları ve gezi broşürleri konusunda yardımcı oldu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Late Charge (Geç Gelen Harcama)',
-    definition: 'Misafir otelden check-out yapıp ayrıldıktan sonra ön kasaya ve hesabına ulaşan, tahsilatı zorlaşan harcama (Örn: Minibar veya oda servisi harcaması).',
-    example: 'Misafir otelden ayrıldıktan sonra restorandan gelen minibar adisyonu, geç gelen harcama (late charge) olarak misafirin kredi kartından tahsil edildi.',
+    definition:
+        'Misafir otelden check-out yapıp ayrıldıktan sonra ön kasaya ve hesabına ulaşan, tahsilatı zorlaşan harcama (Örn: Minibar veya oda servisi harcaması).',
+    example:
+        'Misafir otelden ayrıldıktan sonra restorandan gelen minibar adisyonu, geç gelen harcama (late charge) olarak misafirin kredi kartından tahsil edildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Kredi Kartı Provizyonu',
-    definition: 'Misafirin kredi kartından, otelde yapabileceği olası harcamalara veya konaklama bedeline karşılık check-in sırasında alınan ön onaylı bloke tutarı.',
-    example: 'Misafirin check-in işlemi sırasında, otelde yapacağı olası ekstra harcamalara teminat oluşturması adına kredi kartı provizyonu alındı.',
+    definition:
+        'Misafirin kredi kartından, otelde yapabileceği olası harcamalara veya konaklama bedeline karşılık check-in sırasında alınan ön onaylı bloke tutarı.',
+    example:
+        'Misafirin check-in işlemi sırasında, otelde yapacağı olası ekstra harcamalara teminat oluşturması adına kredi kartı provizyonu alındı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Zarar',
-    definition: 'Bir malın veya hizmetin satış fiyatının, o malın maliyet fiyatından düşük olması durumunda aradaki negatif kayıp farkı.',
-    example: 'Rezervasyonların çok düşük olduğu ölü sezonda, oteli açık tutma maliyeti oda gelirlerini aştığı için bu ayı zarar ile kapattık.',
+    definition:
+        'Bir malın veya hizmetin satış fiyatının, o malın maliyet fiyatından düşük olması durumunda aradaki negatif kayıp farkı.',
+    example:
+        'Rezervasyonların çok düşük olduğu ölü sezonda, oteli açık tutma maliyeti oda gelirlerini aştığı için bu ayı zarar ile kapattık.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Perakende Satış Belgesi (Yazar Kasa Fişi)',
-    definition: 'Fatura düzenleme sınırının altındaki küçük bedelli peşin satışlarda restoran, bar vb. satış noktalarından yazar kasa cihazından kesilerek misafire verilen mali belge.',
-    example: 'Lobi bardan bir adet kahve satın alıp nakit ödeme yapan misafire yazar kasadan kesilen perakende satış belgesi (yazar kasa fişi) takdim edildi.',
+    definition:
+        'Fatura düzenleme sınırının altındaki küçük bedelli peşin satışlarda restoran, bar vb. satış noktalarından yazar kasa cihazından kesilerek misafire verilen mali belge.',
+    example:
+        'Lobi bardan bir adet kahve satın alıp nakit ödeme yapan misafire yazar kasadan kesilen perakende satış belgesi (yazar kasa fişi) takdim edildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Mangrovlar',
-    definition: 'Tropikal ve alttropikal bölgelerin çamurlu kıyılarında, haliçlerde yetişen, biyolojik çeşitliliğe ev sahipliği yapan ancak plansız kıyı turizmi yapılaşmaları nedeniyle yok olma tehlikesi altındaki sulak alan ormanları.',
-    example: 'Kıyı oteli projesinin ÇED raporunda, bölgedeki mangrovların ve mercan resiflerinin korunması için kıyıdan 200 metre geriye çekilmesi gerektiği belirtildi.',
+    definition:
+        'Tropikal ve alttropikal bölgelerin çamurlu kıyılarında, haliçlerde yetişen, biyolojik çeşitliliğe ev sahipliği yapan ancak plansız kıyı turizmi yapılaşmaları nedeniyle yok olma tehlikesi altındaki sulak alan ormanları.',
+    example:
+        'Kıyı oteli projesinin ÇED raporunda, bölgedeki mangrovların ve mercan resiflerinin korunması için kıyıdan 200 metre geriye çekilmesi gerektiği belirtildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Arboretum (Ağaç Parkı)',
-    definition: 'Bilimsel araştırmalar, eğitim ve koruma amacıyla kurulan, dünyanın farklı coğrafyalarından getirilen odunsu ve exotic bitki/ağaç türlerinin bir arada yetiştirildiği canlı bitki müzesi.',
-    example: 'Doğa turlarına katılan misafirlerimiz, rehber eşliğinde bölgedeki arboretumu (ağaç parkı) ziyaret ederek nesli tükenmekte olan ağaç türlerini inceledi.',
+    definition:
+        'Bilimsel araştırmalar, eğitim ve koruma amacıyla kurulan, dünyanın farklı coğrafyalarından getirilen odunsu ve exotic bitki/ağaç türlerinin bir arada yetiştirildiği canlı bitki müzesi.',
+    example:
+        'Doğa turlarına katılan misafirlerimiz, rehber eşliğinde bölgedeki arboretumu (ağaç parkı) ziyaret ederek nesli tükenmekte olan ağaç türlerini inceledi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Devre Mülk (Timeshare)',
-    definition: 'Bir daire, konut veya villanın yılın belirli dönemlerinde (haftalık/aylık) kullanım hakkının satın alınarak tapuya tescil edildiği mülkiyet ve konaklama sistemi.',
-    example: 'Termal bölgedeki devre mülk (timeshare) dairemizin kullanım sırası her yıl ağustos ayının ilk iki haftasına denk gelmektedir.',
+    definition:
+        'Bir daire, konut veya villanın yılın belirli dönemlerinde (haftalık/aylık) kullanım hakkının satın alınarak tapuya tescil edildiği mülkiyet ve konaklama sistemi.',
+    example:
+        'Termal bölgedeki devre mülk (timeshare) dairemizin kullanım sırası her yıl ağustos ayının ilk iki haftasına denk gelmektedir.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Hostel (Gençlik Yurtları)',
-    definition: 'Gençlik turizmine hitap eden, uygun fiyatlı, yatakhanelerin, banyoların ve ortak alanların paylaşımlı olarak kullanıldığı en az on odalı konaklama işletmeleridir.',
-    example: 'Avrupa turuna çıkan sırt çantalı öğrenciler, bütçelerini korumak için şehir merkezindeki popüler bir hostelde paylaşımlı odada kaldılar.',
+    definition:
+        'Gençlik turizmine hitap eden, uygun fiyatlı, yatakhanelerin, banyoların ve ortak alanların paylaşımlı olarak kullanıldığı en az on odalı konaklama işletmeleridir.',
+    example:
+        'Avrupa turuna çıkan sırt çantalı öğrenciler, bütçelerini korumak için şehir merkezindeki popüler bir hostelde paylaşımlı odada kaldılar.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Hiyerarşi',
-    definition: 'İşletmedeki makamların, yetkilerin ve ast-üst ilişkilerinin en üst yöneticiden (Genel Müdür) en alt çalışana kadar derece derece sıralanmasıdır.',
-    example: 'Otel içi disiplinin korunması adına, alınan tüm kararların ve raporlamaların hiyerarşi kurallarına uygun olarak yürütülmesine özen gösterilir.',
+    definition:
+        'İşletmedeki makamların, yetkilerin ve ast-üst ilişkilerinin en üst yöneticiden (Genel Müdür) en alt çalışana kadar derece derece sıralanmasıdır.',
+    example:
+        'Otel içi disiplinin korunması adına, alınan tüm kararların ve raporlamaların hiyerarşi kurallarına uygun olarak yürütülmesine özen gösterilir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Yetki Devri',
-    definition: 'Bir yöneticinin, sahip olduğu karar verme ve iş yaptırma yetkisinin bir kısmını sorumluluğu kendisinde kalmak şartıyla alt kademesindeki bir çalışana devretmesidir.',
-    example: 'Genel müdür, yıllık izne ayrılırken acil durumlarda imza yetkisini yetki devri protokolüyle genel müdür yardımcısına devretti.',
+    definition:
+        'Bir yöneticinin, sahip olduğu karar verme ve iş yaptırma yetkisinin bir kısmını sorumluluğu kendisinde kalmak şartıyla alt kademesindeki bir çalışana devretmesidir.',
+    example:
+        'Genel müdür, yıllık izne ayrılırken acil durumlarda imza yetkisini yetki devri protokolüyle genel müdür yardımcısına devretti.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Benchmarking',
-    definition: 'Otel işletmesinin, sektördeki en başarılı rakiplerinin iş süreçlerini, hizmet kalitesini inceleyerek kendi performansını artırmak amacıyla kıyaslama yapmasıdır.',
-    example: 'Mutfak şefimiz, açık büfe sunumlarimizi geliştirmek amacıyla dünyaca ünlü bir otelin kahvaltı konseptini benchmarking yöntemiyle inceledi.',
+    definition:
+        'Otel işletmesinin, sektördeki en başarılı rakiplerinin iş süreçlerini, hizmet kalitesini inceleyerek kendi performansını artırmak amacıyla kıyaslama yapmasıdır.',
+    example:
+        'Mutfak şefimiz, açık büfe sunumlarimizi geliştirmek amacıyla dünyaca ünlü bir otelin kahvaltı konseptini benchmarking yöntemiyle inceledi.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/Benchmarking.mp3',
   ),
   Term(
     word: 'EDEN (Avrupalı Seçkin Destinasyonlar)',
-    definition: 'Avrupa Komisyonu tarafından, az bilinen ama sürdürülebilir turizm potansiyeli yüksek destinasyonların görünürlüğünü artırmak için oluşturulan proje ağı.',
-    example: 'Nemrut Kalderası, EDEN projesi kapsamında Türkiye\'nin seçkin destinasyonlarından biri seçilmiştir.',
+    definition:
+        'Avrupa Komisyonu tarafından, az bilinen ama sürdürülebilir turizm potansiyeli yüksek destinasyonların görünürlüğünü artırmak için oluşturulan proje ağı.',
+    example:
+        'Nemrut Kalderası, EDEN projesi kapsamında Türkiye\'nin seçkin destinasyonlarından biri seçilmiştir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'İnkalar',
-    definition: 'Güney Amerika\'da And Dağları\'nda (Peru) yaşamış, Machu Picchu gibi devasa taş yapıları, teraslı tarım sistemleri ve güneşe tapınma inançlarıyla bilinen uygarlık.',
-    example: 'And Dağları\'nın zirvesinde yer alan antik İnkalar şehri Machu Picchu, her yıl milyonlarca turisti kendine çekmektedir.',
+    definition:
+        'Güney Amerika\'da And Dağları\'nda (Peru) yaşamış, Machu Picchu gibi devasa taş yapıları, teraslı tarım sistemleri ve güneşe tapınma inançlarıyla bilinen uygarlık.',
+    example:
+        'And Dağları\'nın zirvesinde yer alan antik İnkalar şehri Machu Picchu, her yıl milyonlarca turisti kendine çekmektedir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Karasal İklim',
-    definition: 'Yıllık sıcaklık farkının oldukça yüksek olduğu, yazların sıcak, kışların ise çok soğuk ve karlı geçtiği; kış turizmi için elverişli iklim türü.',
-    example: 'Karasal iklimin hüküm sürdüğü yüksek dağlık bölgeler, kış sporları merkezlerinin kurulması için ideal kar kalınlığını sağlar.',
+    definition:
+        'Yıllık sıcaklık farkının oldukça yüksek olduğu, yazların sıcak, kışların ise çok soğuk ve karlı geçtiği; kış turizmi için elverişli iklim türü.',
+    example:
+        'Karasal iklimin hüküm sürdüğü yüksek dağlık bölgeler, kış sporları merkezlerinin kurulması için ideal kar kalınlığını sağlar.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tema Park (Theme Park)',
-    definition: 'İnsanları eğlendirmek amacıyla özel olarak tasarlanmış, genellikle belirli bir konsepte veya hikâyeye (masal, film vb.) dayanan çok büyük ölçekli yapay eğlence merkezleri.',
-    example: 'İstanbul\'daki devasa tema park (theme park), barındırdığı temalı trenler ve masal şatolarıyla çocuklu ailelerin en sevdiği eğlence noktasıdır.',
+    definition:
+        'İnsanları eğlendirmek amacıyla özel olarak tasarlanmış, genellikle belirli bir konsepte veya hikâyeye (masal, film vb.) dayanan çok büyük ölçekli yapay eğlence merkezleri.',
+    example:
+        'İstanbul\'daki devasa tema park (theme park), barındırdığı temalı trenler ve masal şatolarıyla çocuklu ailelerin en sevdiği eğlence noktasıdır.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Q Bayrak (Sarı Bayrak)',
-    definition: 'Uluslararası denizcilikte, yatta bulaşıcı herhangi bir hastalık ve ölüm olmadığını belirten ve limana güvenli yanaşma izni talep edildiğini gösteren evrensel sinyal bayrağı.',
-    example: 'Limana yanaşmak isteyen yabancı bayraklı lüks yat, sağlık denetimi öncesinde gemi direğine sarı renkli Q Bayrak çekerek beklemeye başladı.',
+    definition:
+        'Uluslararası denizcilikte, yatta bulaşıcı herhangi bir hastalık ve ölüm olmadığını belirten ve limana güvenli yanaşma izni talep edildiğini gösteren evrensel sinyal bayrağı.',
+    example:
+        'Limana yanaşmak isteyen yabancı bayraklı lüks yat, sağlık denetimi öncesinde gemi direğine sarı renkli Q Bayrak çekerek beklemeye başladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Kariyer ve İstihdam Etkisi',
-    definition: 'Turizm endüstrisinin, emek yoğun doğası sayesinde doğrudan ve dolaylı olarak yeni iş olanakları (istihdam) yaratarak işsizliği azaltması ve toplumun gelir seviyesini yükseltmesi.',
-    example: 'Yeni açılan tatil köyünün sunduğu iş imkanları, bölgedeki gençlerin kariyer ve istihdam etkisi sayesinde refah düzeyini önemli ölçüde artırdı.',
+    definition:
+        'Turizm endüstrisinin, emek yoğun doğası sayesinde doğrudan ve dolaylı olarak yeni iş olanakları (istihdam) yaratarak işsizliği azaltması ve toplumun gelir seviyesini yükseltmesi.',
+    example:
+        'Yeni açılan tatil köyünün sunduğu iş imkanları, bölgedeki gençlerin kariyer ve istihdam etkisi sayesinde refah düzeyini önemli ölçüde artırdı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Mahreç İşareti',
-    definition: 'Ürünün belirgin bir niteliği veya ünü belirli bir yöreyle özdeşleşmiş olan; üretim aşamalarından en az birinin belirlenmiş o coğrafi alan içinde gerçekleşmesinin yeterli olduğu işaret türü.',
-    example: 'Yapımı belirli bir yöresel ustalığa dayanan Antep baklavası, mahreç işareti tescili ile koruma altına alınmıştır.',
+    definition:
+        'Ürünün belirgin bir niteliği veya ünü belirli bir yöreyle özdeşleşmiş olan; üretim aşamalarından en az birinin belirlenmiş o coğrafi alan içinde gerçekleşmesinin yeterli olduğu işaret türü.',
+    example:
+        'Yapımı belirli bir yöresel ustalığa dayanan Antep baklavası, mahreç işareti tescili ile koruma altına alınmıştır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tarifeli Yolcu Taşımacılığı',
-    definition: 'Önceden zamanı, fiyatı ve güzergâhı belirlenmiş, bilet karşılığı yapılan düzenli yolcu taşımacılığı.',
-    example: 'Şehirler arası otobüs firmaları, Karayolları Genel Müdürlüğü\'nün belirlediği saatlere göre tarifeli yolcu taşımacılığı yapmaktadır.',
+    definition:
+        'Önceden zamanı, fiyatı ve güzergâhı belirlenmiş, bilet karşılığı yapılan düzenli yolcu taşımacılığı.',
+    example:
+        'Şehirler arası otobüs firmaları, Karayolları Genel Müdürlüğü\'nün belirlediği saatlere göre tarifeli yolcu taşımacılığı yapmaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tarifesiz Yolcu Taşımacılığı',
-    definition: 'Bir zaman veya ücret tarifesine bağlı kalmaksızın, turistlerin/grup yolcuların taşıma sözleşmesiyle bir yerden başka yere taşınması.',
-    example: 'Turizm seyahat acentesi, kültür turuna katılan misafirler için tarifesiz yolcu taşımacılığı kapsamında otobüs kiraladı.',
+    definition:
+        'Bir zaman veya ücret tarifesine bağlı kalmaksızın, turistlerin/grup yolcuların taşıma sözleşmesiyle bir yerden başka yere taşınması.',
+    example:
+        'Turizm seyahat acentesi, kültür turuna katılan misafirler için tarifesiz yolcu taşımacılığı kapsamında otobüs kiraladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Sayısal Takograf Cihazı',
-    definition: 'Taşımacılık yapan araçlarda zorunlu olan, şoförün sürüş, dinlenme ve hız bilgilerini dijital ortamda kaydeden denetim cihazı.',
-    example: 'Trafik ekipleri, otobüsün hız sınırlarına uyup uymadığını kontrol etmek için sayısal takograf cihazı verilerini inceledi.',
+    definition:
+        'Taşımacılık yapan araçlarda zorunlu olan, şoförün sürüş, dinlenme ve hız bilgilerini dijital ortamda kaydeden denetim cihazı.',
+    example:
+        'Trafik ekipleri, otobüsün hız sınırlarına uyup uymadığını kontrol etmek için sayısal takograf cihazı verilerini inceledi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'TÜRSAB Araç Plakası',
-    definition: 'Turizm taşımacılığı yapan araçların sağ ön camında bulundurması zorunlu olan, Türkiye Seyahat Acentaları Birliği onaylı karekodlu/bandrollü plaka.',
-    example: 'Havalimanı denetiminde ceza almamak adına, transfer aracının camına güncel TÜRSAB araç plakası yapıştırıldı.',
+    definition:
+        'Turizm taşımacılığı yapan araçların sağ ön camında bulundurması zorunlu olan, Türkiye Seyahat Acentaları Birliği onaylı karekodlu/bandrollü plaka.',
+    example:
+        'Havalimanı denetiminde ceza almamak adına, transfer aracının camına güncel TÜRSAB araç plakası yapıştırıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Araç Şoförü',
-    definition: 'Transfer aracını mevzuata ve iş güvenliği kurallarına uygun olarak kullanan, aracın rutin bakımı ve temizliğinden de sorumlu olan personel.',
-    example: 'Araç şoförü, yolcular otobüse binmeden önce klimayı çalıştırarak araç içi sıcaklığını ideal seviyeye getirdi.',
+    definition:
+        'Transfer aracını mevzuata ve iş güvenliği kurallarına uygun olarak kullanan, aracın rutin bakımı ve temizliğinden de sorumlu olan personel.',
+    example:
+        'Araç şoförü, yolcular otobüse binmeden önce klimayı çalıştırarak araç içi sıcaklığını ideal seviyeye getirdi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Yardımcı Personel (Muavin)',
-    definition: 'Araç içi düzeni sağlayan, bagaj yükleme ve indirmede konuklara yardımcı olan, genellikle turizm öğrencileri arasından seçilen görevli.',
-    example: 'Yardımcı personel (muavin), transfer otobüsüne binen yaşlı misafirlerimizin el çantalarını güvenli raflara yerleştirdi.',
+    definition:
+        'Araç içi düzeni sağlayan, bagaj yükleme ve indirmede konuklara yardımcı olan, genellikle turizm öğrencileri arasından seçilen görevli.',
+    example:
+        'Yardımcı personel (muavin), transfer otobüsüne binen yaşlı misafirlerimizin el çantalarını güvenli raflara yerleştirdi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Arrival (Geliş / Varış)',
-    definition: 'İç ve dış hatlardan havalimanına iniş yapan yolcuların karşılandığı, bagaj teslim bantlarının bulunduğu geliş terminali.',
-    example: 'Acente transfermanımız, misafirleri karşılamak üzere ellerinde isim panolarıyla arrival (geliş) kapısında hazır bekliyordu.',
+    definition:
+        'İç ve dış hatlardan havalimanına iniş yapan yolcuların karşılandığı, bagaj teslim bantlarının bulunduğu geliş terminali.',
+    example:
+        'Acente transfermanımız, misafirleri karşılamak üzere ellerinde isim panolarıyla arrival (geliş) kapısında hazır bekliyordu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Departure (Gidiş / Ayrılış)',
-    definition: 'Yolcuların ülkeden veya şehirden ayrılacakları check-in işlemlerini ve dönüş uçuşlarını gerçekleştirdikleri terminal.',
-    example: 'Tatilleri biten turistler, dönüş uçuşları için havalimanının departure (gidiş) kapısına zamanında ulaştırıldı.',
+    definition:
+        'Yolcuların ülkeden veya şehirden ayrılacakları check-in işlemlerini ve dönüş uçuşlarını gerçekleştirdikleri terminal.',
+    example:
+        'Tatilleri biten turistler, dönüş uçuşları için havalimanının departure (gidiş) kapısına zamanında ulaştırıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Boarding (Uçağa Biniş)',
-    definition: 'Check-in sonrası alınan biniş kartı (Boarding Pass) ve kimlik/pasaport kontrolüyle uçağa fiziki olarak geçiş (biniş) işlemi.',
-    example: 'Havalimanı hoparlöründen Ankara uçuşu için boarding (uçağa biniş) anonsu yapılınca kapının önünde kuyruk oluştu.',
+    definition:
+        'Check-in sonrası alınan biniş kartı (Boarding Pass) ve kimlik/pasaport kontrolüyle uçağa fiziki olarak geçiş (biniş) işlemi.',
+    example:
+        'Havalimanı hoparlöründen Ankara uçuşu için boarding (uçağa biniş) anonsu yapılınca kapının önünde kuyruk oluştu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Delayed (Rötar / Gecikme)',
-    definition: 'Kötü hava koşulları, hava sahası trafiği, teknik veya operasyonel nedenlerle uçağın planlanan saatten geç kalkması veya inmesi durumu.',
-    example: 'Yoğun sis sebebiyle uçuş rötar (delayed) yapınca, transfer şoförümüz havalimanındaki bekleme süresini uzattı.',
+    definition:
+        'Kötü hava koşulları, hava sahası trafiği, teknik veya operasyonel nedenlerle uçağın planlanan saatten geç kalkması veya inmesi durumu.',
+    example:
+        'Yoğun sis sebebiyle uçuş rötar (delayed) yapınca, transfer şoförümüz havalimanındaki bekleme süresini uzattı.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'IATA Kodları',
-    definition: 'Uluslararası Hava Taşımacılığı Birliği tarafından havalimanlarına verilen üç harfli evrensel kodlar (Örn: SAW - Sabiha Gökçen, IST - İstanbul Yeni Havalimanı, AYT - Antalya vb.).',
-    example: 'Bilet kesme aşamasında hata yapmamak için sistemimize Antalya için AYT, Sabiha Gökçen için SAW gibi IATA kodları girildi.',
+    definition:
+        'Uluslararası Hava Taşımacılığı Birliği tarafından havalimanlarına verilen üç harfli evrensel kodlar (Örn: SAW - Sabiha Gökçen, IST - İstanbul Yeni Havalimanı, AYT - Antalya vb.).',
+    example:
+        'Bilet kesme aşamasında hata yapmamak için sistemimize Antalya için AYT, Sabiha Gökçen için SAW gibi IATA kodları girildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/IATA.mp3',
   ),
   Term(
     word: 'Check-List (Araç Kontrol Listesi)',
-    definition: 'Transfere çıkmadan önce aracın TÜRSAB levhası, yangın tüpü, emniyet kemerleri, kliması, temizliği ve zorunlu belgelerinin kontrol edildiği form.',
-    example: 'Şoför, yola çıkmadan önce araç kontrol listesi (check-list) üzerindeki maddeleri tek tek işaretleyerek eksiklik olmadığını beyan etti.',
+    definition:
+        'Transfere çıkmadan önce aracın TÜRSAB levhası, yangın tüpü, emniyet kemerleri, kliması, temizliği ve zorunlu belgelerinin kontrol edildiği form.',
+    example:
+        'Şoför, yola çıkmadan önce araç kontrol listesi (check-list) üzerindeki maddeleri tek tek işaretleyerek eksiklik olmadığını beyan etti.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Turizm Arzı',
-    definition: 'Turistlerin ihtiyaçlarını karşılamak üzere sunulan doğal, kültürel değerler ile ulaşım, konaklama ve yeme-içme tesislerinin bütünü.',
-    example: 'Antalya bölgesindeki geniş ve konforlu otel kapasitesi, ülkemizin en büyük turizm arzı unsurlarını oluşturur.',
+    definition:
+        'Turistlerin ihtiyaçlarını karşılamak üzere sunulan doğal, kültürel değerler ile ulaşım, konaklama ve yeme-içme tesislerinin bütünü.',
+    example:
+        'Antalya bölgesindeki geniş ve konforlu otel kapasitesi, ülkemizin en büyük turizm arzı unsurlarını oluşturur.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm Pazarı',
-    definition: 'Turistlerin (talep), turizm işletmelerinin (arz), seyahat acentelerinin ve aracı kurumların oluşturduğu turistik mal ve hizmetlerin alım satımının gerçekleştiği ekonomik alan.',
-    example: 'Pazarlama müdürü, otelimizin yeni sezonda payını artırmayı hedeflediği Avrupa turizm pazarı için yeni reklam kampanyaları hazırladı.',
+    definition:
+        'Turistlerin (talep), turizm işletmelerinin (arz), seyahat acentelerinin ve aracı kurumların oluşturduğu turistik mal ve hizmetlerin alım satımının gerçekleştiği ekonomik alan.',
+    example:
+        'Pazarlama müdürü, otelimizin yeni sezonda payını artırmayı hedeflediği Avrupa turizm pazarı için yeni reklam kampanyaları hazırladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Niş Turizm (Niş Pazar)',
-    definition: 'Toplam turizm pazarı içerisinde, ortak ve özel ilgi alanlarına (örneğin mağaracılık, gastronomi, çöl turları) sahip daha küçük turist gruplarının beklentilerini karşılayan alt pazar segmenti.',
-    example: 'Acentemiz, kitle turizminden uzaklaşarak doğayla baş başa kalmak isteyen konuklar için niş turizm kapsamında yayla turları düzenlemeye başladı.',
+    definition:
+        'Toplam turizm pazarı içerisinde, ortak ve özel ilgi alanlarına (örneğin mağaracılık, gastronomi, çöl turları) sahip daha küçük turist gruplarının beklentilerini karşılayan alt pazar segmenti.',
+    example:
+        'Acentemiz, kitle turizminden uzaklaşarak doğayla baş başa kalmak isteyen konuklar için niş turizm kapsamında yayla turları düzenlemeye başladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Kitle Turizmi',
-    definition: 'Genellikle deniz, kum ve güneş (3S) odaklı, çok büyük turist gruplarının aynı destinasyona aynı anda seyahat etmesiyle oluşan, kaynakları hızlı tüketen ve çevreye baskı oluşturan geleneksel turizm modeli.',
-    example: 'Ekolojik dengenin korunması amacıyla, kıyı bölgesindeki kitle turizmi odaklı devasa resort otel yatırımlarına sınırlama getirildi.',
+    definition:
+        'Genellikle deniz, kum ve güneş (3S) odaklı, çok büyük turist gruplarının aynı destinasyona aynı anda seyahat etmesiyle oluşan, kaynakları hızlı tüketen ve çevreye baskı oluşturan geleneksel turizm modeli.',
+    example:
+        'Ekolojik dengenin korunması amacıyla, kıyı bölgesindeki kitle turizmi odaklı devasa resort otel yatırımlarına sınırlama getirildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Kış Sporları Turizmi',
-    definition: 'Karlı ve eğimli alanlarda kayak, snowboard, kızak ve kar motoru gibi kış aktivitelerini ve buna bağlı konaklama hizmetlerini kapsayan turizm türü.',
-    example: 'Kartalkaya\'daki pistlerin kar kalınlığı yeterli seviyeye ulaştığında kış sporları turizmi sezonu resmen açıldı.',
+    definition:
+        'Karlı ve eğimli alanlarda kayak, snowboard, kızak ve kar motoru gibi kış aktivitelerini ve buna bağlı konaklama hizmetlerini kapsayan turizm türü.',
+    example:
+        'Kartalkaya\'daki pistlerin kar kalınlığı yeterli seviyeye ulaştığında kış sporları turizmi sezonu resmen açıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Hava Sporları Turizmi',
-    definition: 'Yamaç paraşütü, yelken kanat, planör, sıcak hava balonu ve paraşüt atlayışı gibi hava araçlarıyla adrenalin ve doğa odaklı yapılan turizm etkinlikleri.',
-    example: 'Muğla Fethiye\'deki Babadağ, yamaç paraşütü tutkunları için hava sporları turizmi merkezidir.',
+    definition:
+        'Yamaç paraşütü, yelken kanat, planör, sıcak hava balonu ve paraşüt atlayışı gibi hava araçlarıyla adrenalin ve doğa odaklı yapılan turizm etkinlikleri.',
+    example:
+        'Muğla Fethiye\'deki Babadağ, yamaç paraşütü tutkunları için hava sporları turizmi merkezidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Dark Turizm (Hüzün Turizmi)',
-    definition: 'İnsanlık tarihindeki büyük acıların, savaşların, büyük trajedilerin ve doğal felaketlerin yaşandığı tarihi alanların, savaş meydanlarının ve anıt mezarların ziyaret edilmesine dayanan turizm.',
-    example: 'Çanakkale Şehitliği ve Gelibolu Yarımadası, ülkemizde hüzün turizmi (dark turizm) kapsamında en çok ziyaret edilen kutsal alanlardandır.',
+    definition:
+        'İnsanlık tarihindeki büyük acıların, savaşların, büyük trajedilerin ve doğal felaketlerin yaşandığı tarihi alanların, savaş meydanlarının ve anıt mezarların ziyaret edilmesine dayanan turizm.',
+    example:
+        'Çanakkale Şehitliği ve Gelibolu Yarımadası, ülkemizde hüzün turizmi (dark turizm) kapsamında en çok ziyaret edilen kutsal alanlardandır.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'VIP Turlar',
-    definition: 'İş adamları ve yöneticiler gibi özel ilgi bekleyen kişilere, özel araçlarla, birinci sınıf hizmet ve esneklik sunulan az katılımlı turlar.',
-    example: 'İş heyeti için organize edilen VIP turlar kapsamında konuklarımıza özel yat ve helikopter transferleri sağlandı.',
+    definition:
+        'İş adamları ve yöneticiler gibi özel ilgi bekleyen kişilere, özel araçlarla, birinci sınıf hizmet ve esneklik sunulan az katılımlı turlar.',
+    example:
+        'İş heyeti için organize edilen VIP turlar kapsamında konuklarımıza özel yat ve helikopter transferleri sağlandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/VIP.mp3',
   ),
   Term(
     word: 'Muhafazakâr Turlar',
-    definition: 'Helal gıda tüketimi, ibadet alanları ve dinî bayram/kutsal gün hassasiyetlerine tam uygun olarak tasarlanıp yönetilen turlar.',
-    example: 'Acentemiz, misafirlerin namaz saatlerini ve helal yemek tercihlerini gözeterek özel muhafazakâr turlar planlamaktadır.',
+    definition:
+        'Helal gıda tüketimi, ibadet alanları ve dinî bayram/kutsal gün hassasiyetlerine tam uygun olarak tasarlanıp yönetilen turlar.',
+    example:
+        'Acentemiz, misafirlerin namaz saatlerini ve helal yemek tercihlerini gözeterek özel muhafazakâr turlar planlamaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Özel Gereksinimli Turlar (Erişilebilir Turizm)',
-    definition: 'Engelli bireylerin rahat seyahat edebilmesi için özel donanımlı araçlar ve eğitimli rehberlerle özel olarak düzenlenen turlar.',
-    example: 'Tekerlekli sandalye rampasına sahip otobüslerle yapılan özel gereksinimli turlar (erişilebilir turizm), engelsiz bir seyahat imkanı sundu.',
+    definition:
+        'Engelli bireylerin rahat seyahat edebilmesi için özel donanımlı araçlar ve eğitimli rehberlerle özel olarak düzenlenen turlar.',
+    example:
+        'Tekerlekli sandalye rampasına sahip otobüslerle yapılan özel gereksinimli turlar (erişilebilir turizm), engelsiz bir seyahat imkanı sundu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Kruvaziyer Turları',
-    definition: 'Oyun salonları, havuzlar ve lüks otel konforu sunan büyük yolcu gemileriyle (yüzen otellerle) yapılan ve limanlarda günlük turlarla desteklenen deniz seyahatleri.',
-    example: 'Kruvaziyer turları ile limanımıza yanaşan binlerce turist, günübirlik turlarla tarihi yarımadayı ziyaret etti.',
+    definition:
+        'Oyun salonları, havuzlar ve lüks otel konforu sunan büyük yolcu gemileriyle (yüzen otellerle) yapılan ve limanlarda günlük turlarla desteklenen deniz seyahatleri.',
+    example:
+        'Kruvaziyer turları ile limanımıza yanaşan binlerce turist, günübirlik turlarla tarihi yarımadayı ziyaret etti.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Teşvik Turları (Bayi Turları)',
-    definition: 'Firmaların, başarılı çalışanlarını veya kendi ürün satışını yapan bayilerini motive etmek ve ödüllendirmek amacıyla (Incentive pazar) şirket bütçesiyle düzenlediği paket turlar.',
-    example: 'Şirket, satış kotasını aşan bölge bayileri için yurt dışına yönelik teşvik turları (bayi turları) organize etti.',
+    definition:
+        'Firmaların, başarılı çalışanlarını veya kendi ürün satışını yapan bayilerini motive etmek ve ödüllendirmek amacıyla (Incentive pazar) şirket bütçesiyle düzenlediği paket turlar.',
+    example:
+        'Şirket, satış kotasını aşan bölge bayileri için yurt dışına yönelik teşvik turları (bayi turları) organize etti.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tekil Paket Turlar',
-    definition: 'Sadece dinî bayramlar veya festivaller gibi talebin çok yoğun olduğu özel dönemler için hazırlanan, ardışık olmayan risksiz turlar.',
-    example: 'Ramazan Bayramı tatili için hazırlanan tekil paket turlar, kontenjanlar açılır açılmaz hızlıca tükendi.',
+    definition:
+        'Sadece dinî bayramlar veya festivaller gibi talebin çok yoğun olduğu özel dönemler için hazırlanan, ardışık olmayan risksiz turlar.',
+    example:
+        'Ramazan Bayramı tatili için hazırlanan tekil paket turlar, kontenjanlar açılır açılmaz hızlıca tükendi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Ardışık Paket Turlar',
-    definition: 'Giden konukları bırakan ulaşım aracının (uçağın/otobüsün), dönüşte yeni gelen konukları aldığı, bir turun bittiği gün diğerinin başladığı zincirleme turlar.',
-    example: 'Antalya charter uçuşları, sezon boyunca her hafta cumartesi günleri ardışık paket turlar şeklinde kesintisiz devam eder.',
+    definition:
+        'Giden konukları bırakan ulaşım aracının (uçağın/otobüsün), dönüşte yeni gelen konukları aldığı, bir turun bittiği gün diğerinin başladığı zincirleme turlar.',
+    example:
+        'Antalya charter uçuşları, sezon boyunca her hafta cumartesi günleri ardışık paket turlar şeklinde kesintisiz devam eder.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Seri Paket Turlar',
-    definition: 'Yaz sezonu gibi uzun dönemlerde tarifeli uçak veya otobüslerle sürekli ve düzenli aralıklarla devam eden standart turlar.',
-    example: 'Acentemiz, her hafta sonu hareket eden seri paket turlar ile Karadeniz yaylalarına misafir götürmektedir.',
+    definition:
+        'Yaz sezonu gibi uzun dönemlerde tarifeli uçak veya otobüslerle sürekli ve düzenli aralıklarla devam eden standart turlar.',
+    example:
+        'Acentemiz, her hafta sonu hareket eden seri paket turlar ile Karadeniz yaylalarına misafir götürmektedir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Yönetimli (Çok Merkezli) Turlar',
-    definition: 'Ulaşım, konaklama ve gezilerin en ince ayrıntısına kadar planlandığı, kısa sürede birden fazla ülkeyi veya bölgeyi görmeyi hedefleyen turlar.',
-    example: 'Balkan ülkelerini kapsayan yönetimli (çok merkezli) turlar sayesinde konuklarımız yedi günde beş farklı ülkeyi ziyaret ettiler.',
+    definition:
+        'Ulaşım, konaklama ve gezilerin en ince ayrıntısına kadar planlandığı, kısa sürede birden fazla ülkeyi veya bölgeyi görmeyi hedefleyen turlar.',
+    example:
+        'Balkan ülkelerini kapsayan yönetimli (çok merkezli) turlar sayesinde konuklarımız yedi günde beş farklı ülkeyi ziyaret ettiler.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Gezginci Turlar',
-    definition: 'Belirli bir güzergâhı (rotayı) takip ederek o hat üzerinde yer alan tüm turistik çekicilikleri ayrıntılı görmek için düzenlenen paket turlar.',
-    example: 'Ege sahili boyunca ilerleyen gezginci turlar ile yol üzerindeki tüm antik kentler sırasıyla ziyaret edildi.',
+    definition:
+        'Belirli bir güzergâhı (rotayı) takip ederek o hat üzerinde yer alan tüm turistik çekicilikleri ayrıntılı görmek için düzenlenen paket turlar.',
+    example:
+        'Ege sahili boyunca ilerleyen gezginci turlar ile yol üzerindeki tüm antik kentler sırasıyla ziyaret edildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'ITC (Inclusive Tour Charter)',
-    definition: 'Paket turun, tarifesiz ve özel olarak kiralanmış (charter) uçaklarla yapılması durumundaki fiyatı.',
-    example: 'Charter seferleriyle düzenlenen paket turların ITC (inclusive tour charter) fiyatı, tarifeli uçuşlara göre çok daha ekonomiktir.',
+    definition:
+        'Paket turun, tarifesiz ve özel olarak kiralanmış (charter) uçaklarla yapılması durumundaki fiyatı.',
+    example:
+        'Charter seferleriyle düzenlenen paket turların ITC (inclusive tour charter) fiyatı, tarifeli uçuşlara göre çok daha ekonomiktir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/ITC Inclusive Tour Charter.mp3',
   ),
   Term(
     word: 'Gezi Aracılığı Sözleşmesi',
-    definition: 'Tüketicinin, paket tur kapsamında olmayan, ulaştırma veya konaklama gibi hizmetleri turizm bürosundan tek tek kendi adına satın aldığı sözleşme.',
-    example: 'Sadece uçak bileti ve otel rezervasyonu satın alan misafirimizle gezi aracılığı sözleşmesi imzalandı.',
+    definition:
+        'Tüketicinin, paket tur kapsamında olmayan, ulaştırma veya konaklama gibi hizmetleri turizm bürosundan tek tek kendi adına satın aldığı sözleşme.',
+    example:
+        'Sadece uçak bileti ve otel rezervasyonu satın alan misafirimizle gezi aracılığı sözleşmesi imzalandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tur Avansları Listesi',
-    definition: 'Tur ile ilgili yapılacak ödemelerin ayrıntılarını gösteren, rehbere tur öncesi tahsis edilen nakit avansın takibini sağlayan muhasebe belgesi.',
-    example: 'Muhasebe şefi, Likya turuna çıkacak olan rehbere teslim ettiği avans miktarlarını tur avansları listesi üzerinden kaydetti.',
+    definition:
+        'Tur ile ilgili yapılacak ödemelerin ayrıntılarını gösteren, rehbere tur öncesi tahsis edilen nakit avansın takibini sağlayan muhasebe belgesi.',
+    example:
+        'Muhasebe şefi, Likya turuna çıkacak olan rehbere teslim ettiği avans miktarlarını tur avansları listesi üzerinden kaydetti.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Araç Görev Formu',
-    definition: 'Transfer veya tura çıkacak aracın plakasını, şoförünü, güzergâhını ve buluşma saatlerini içeren resmî operasyonel doküman.',
-    example: 'Şoför, yola çıkmadan önce acenteden aldığı araç görev formu belgesini trafik denetiminde polise sundu.',
+    definition:
+        'Transfer veya tura çıkacak aracın plakasını, şoförünü, güzergâhını ve buluşma saatlerini içeren resmî operasyonel doküman.',
+    example:
+        'Şoför, yola çıkmadan önce acenteden aldığı araç görev formu belgesini trafik denetiminde polise sundu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Infoboard (Bilgi Panosu)',
-    definition: 'Otellerde günlük turların, dönüş/uçuş saatlerinin veya acil değişikliklerin misafirlere ilan edildiği bilgilendirme panosu.',
-    example: 'Yarınki tekne turunun hareket saati, otel lobisinde yer alan infoboard (bilgi panosu) üzerinden konuklara duyuruldu.',
+    definition:
+        'Otellerde günlük turların, dönüş/uçuş saatlerinin veya acil değişikliklerin misafirlere ilan edildiği bilgilendirme panosu.',
+    example:
+        'Yarınki tekne turunun hareket saati, otel lobisinde yer alan infoboard (bilgi panosu) üzerinden konuklara duyuruldu.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Stop Sale (Satışları Durdurma)',
-    definition: 'Konaklama işletmesinin belirli tarihlerde kapasitesinin dolması (veya overbooking riskine karşı) nedeniyle seyahat acentesine satışları durdurması yönünde verdiği kesin talimat.',
-    example: 'Otelimiz, bayram döneminde tam doluluğa ulaştığı için tüm acentelere stop sale (satışları durdurma) bildirimi gönderdi.',
+    definition:
+        'Konaklama işletmesinin belirli tarihlerde kapasitesinin dolması (veya overbooking riskine karşı) nedeniyle seyahat acentesine satışları durdurması yönünde verdiği kesin talimat.',
+    example:
+        'Otelimiz, bayram döneminde tam doluluğa ulaştığı için tüm acentelere stop sale (satışları durdurma) bildirimi gönderdi.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Ara Transfer',
-    definition: 'Tur esnasında misafirlerin bir otelden diğer bir otele veya otelden bir etkinlik alanına/özel tura götürülmesi işlemi.',
-    example: 'Konukların akşamki geleneksel Türk gecesi etkinliğine katılabilmeleri için otelden etkinlik salonuna ara transfer sağlandı.',
+    definition:
+        'Tur esnasında misafirlerin bir otelden diğer bir otele veya otelden bir etkinlik alanına/özel tura götürülmesi işlemi.',
+    example:
+        'Konukların akşamki geleneksel Türk gecesi etkinliğine katılabilmeleri için otelden etkinlik salonuna ara transfer sağlandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Charter Uçuş',
-    definition: 'Tur operatörlerinin maliyetleri düşürmek için hava yolu şirketlerinden tarifesiz olarak kiraladığı, sadece belirli tur gruplarına hizmet eden özel uçuşlar.',
-    example: 'Yaz sezonu boyunca Rusya ile Antalya arasında haftalık charter uçuş seferleri düzenlenmektedir.',
+    definition:
+        'Tur operatörlerinin maliyetleri düşürmek için hava yolu şirketlerinden tarifesiz olarak kiraladığı, sadece belirli tur gruplarına hizmet eden özel uçuşlar.',
+    example:
+        'Yaz sezonu boyunca Rusya ile Antalya arasında haftalık charter uçuş seferleri düzenlenmektedir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/Chart.mp3',
   ),
   Term(
     word: 'Paket Tur Maliyet Unsurları',
-    definition: 'Bir turun fiyatını belirleyen; ulaşım, konaklama, yemek, ören yeri giriş ücretleri, rehber ücreti, tur personeli harcamaları ve acente kâr marjı (genel giderler) bütünü.',
-    example: 'Finans müdürü, yeni sezon turlarının satış fiyatlarını belirlemek için paket tur maliyet unsurları listesini kaleme aldı.',
+    definition:
+        'Bir turun fiyatını belirleyen; ulaşım, konaklama, yemek, ören yeri giriş ücretleri, rehber ücreti, tur personeli harcamaları ve acente kâr marjı (genel giderler) bütünü.',
+    example:
+        'Finans müdürü, yeni sezon turlarının satış fiyatlarını belirlemek için paket tur maliyet unsurları listesini kaleme aldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Safari Turları',
-    definition: 'Geniş çayırlık (savan) alanlarda, özel araçlar yardımıyla yaban hayatını (büyük memeli hayvanları) doğal ekosistemlerinde uzaktan gözlemlemek amacıyla yapılan turlar.',
-    example: 'Kenya\'daki milli parkta katıldığımız üstü açık arazi araçlı safari turları sırasında aslan ve çita ailelerini yakından fotoğrafladık.',
+    definition:
+        'Geniş çayırlık (savan) alanlarda, özel araçlar yardımıyla yaban hayatını (büyük memeli hayvanları) doğal ekosistemlerinde uzaktan gözlemlemek amacıyla yapılan turlar.',
+    example:
+        'Kenya\'daki milli parkta katıldığımız üstü açık arazi araçlı safari turları sırasında aslan ve çita ailelerini yakından fotoğrafladık.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Alıcılar',
-    definition: 'Bir toplantının gerçekleşmesi için salon, hizmet, yemek veya ekipman gibi ihtiyaçları satın alan ya da kiralayan kişi veya kurumlar.',
-    example: 'Kongre düzenlemek isteyen şirket ve dernekler, MICE pazarında hizmet talep eden alıcılar olarak yer alırlar.',
+    definition:
+        'Bir toplantının gerçekleşmesi için salon, hizmet, yemek veya ekipman gibi ihtiyaçları satın alan ya da kiralayan kişi veya kurumlar.',
+    example:
+        'Kongre düzenlemek isteyen şirket ve dernekler, MICE pazarında hizmet talep eden alıcılar olarak yer alırlar.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Tedarikçiler',
-    definition: 'Toplantının yapılacağı yer ve çevresinde konaklama, yiyecek-içecek, teknoloji veya ulaşım hizmeti sağlayan firmalar (oteller, restoranlar, transfer şirketleri).',
-    example: 'Kongre merkezleri ve profesyonel ses-ışık firmaları, etkinliklerin sorunsuz geçmesini sağlayan en önemli tedarikçiler arasındadır.',
+    definition:
+        'Toplantının yapılacağı yer ve çevresinde konaklama, yiyecek-içecek, teknoloji veya ulaşım hizmeti sağlayan firmalar (oteller, restoranlar, transfer şirketleri).',
+    example:
+        'Kongre merkezleri ve profesyonel ses-ışık firmaları, etkinliklerin sorunsuz geçmesini sağlayan en önemli tedarikçiler arasındadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Aracılar',
-    definition: 'Müşterileri adına toplantı sürecini yöneten, planlayan ve yürüten profesyonel organizasyon firmaları ve seyahat acenteleri.',
-    example: 'Büyük kongre organizasyonlarında şirketler, planlama süreçlerini yürütmesi için profesyonel aracılar ile çalışmayı tercih eder.',
+    definition:
+        'Misafirleri adına toplantı sürecini yöneten, planlayan ve yürüten profesyonel organizasyon firmaları ve seyahat acenteleri.',
+    example:
+        'Büyük kongre organizasyonlarında şirketler, planlama süreçlerini yürütmesi için profesyonel aracılar ile çalışmayı tercih eder.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Katılımcılar',
-    definition: 'Toplantıya kayıt yaptırarak katılan, içeriği takip eden ve genellikle etkinlik için belirli bir ücret ödeyen kişiler.',
-    example: 'Kayıt işlemlerini tamamlayan katılımcılar, yaka kartlarını alarak kongre sunumlarının yapılacağı salonlara geçtiler.',
+    definition:
+        'Toplantıya kayıt yaptırarak katılan, içeriği takip eden ve genellikle etkinlik için belirli bir ücret ödeyen kişiler.',
+    example:
+        'Kayıt işlemlerini tamamlayan katılımcılar, yaka kartlarını alarak kongre sunumlarının yapılacağı salonlara geçtiler.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Makro Pazarlama',
-    definition: 'Uluslararası, ulusal ve bölgesel ölçekte ülkelerin veya geniş bölgelerin kongre turizmini geliştirmek için yaptığı genel tanıtım ve pazarlama çalışmaları.',
-    example: 'Türkiye\'nin kongre turizmindeki payını artırmak amacıyla yapılan uluslararası fuar katılımları makro pazarlama kapsamındadır.',
+    definition:
+        'Uluslararası, ulusal ve bölgesel ölçekte ülkelerin veya geniş bölgelerin kongre turizmini geliştirmek için yaptığı genel tanıtım ve pazarlama çalışmaları.',
+    example:
+        'Türkiye\'nin kongre turizmindeki payını artırmak amacıyla yapılan uluslararası fuar katılımları makro pazarlama kapsamındadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Mikro Pazarlama',
-    definition: 'Şehirler, oteller veya kongre merkezleri gibi daha küçük ölçekteki kurumların kendi özel hizmetlerini tanıtmak için yaptığı pazarlama faaliyetleri.',
-    example: 'Antalya\'daki kongre otelinin acentelere özel indirimler sunarak yürüttüğü tanıtım çalışmaları bir mikro pazarlama örneğidir.',
+    definition:
+        'Şehirler, oteller veya kongre merkezleri gibi daha küçük ölçekteki kurumların kendi özel hizmetlerini tanıtmak için yaptığı pazarlama faaliyetleri.',
+    example:
+        'Antalya\'daki kongre otelinin acentelere özel indirimler sunarak yürüttüğü tanıtım çalışmaları bir mikro pazarlama örneğidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Mihmandar',
-    definition: 'Büyük çaplı veya uluslararası sportif organizasyonlarda yabancı kafilelere eşlik eden, onlara rehberlik yapan ve iletişim süreçlerini yürüten görevli personel.',
-    example: 'Olimpiyat köyüne gelen yabancı sporcu grubuna, dil bilen deneyimli bir mihmandar eşlik ederek rehberlik sağladı.',
+    definition:
+        'Büyük çaplı veya uluslararası sportif organizasyonlarda yabancı kafilelere eşlik eden, onlara rehberlik yapan ve iletişim süreçlerini yürüten görevli personel.',
+    example:
+        'Olimpiyat köyüne gelen yabancı sporcu grubuna, dil bilen deneyimli bir mihmandar eşlik ederek rehberlik sağladı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Büyük Veri (Big Data)',
-    definition: 'Geleneksel veritabanı araçlarıyla işlenemeyecek kadar büyük, karmaşık ve hızlı büyüyen veri kümeleri.',
-    example: 'Geçmiş konuk tercihlerinden oluşan büyük veri analiz edilerek, bir sonraki sezon için kişiselleştirilmiş pazarlama kampanyaları hazırlandı.',
+    definition:
+        'Geleneksel veritabanı araçlarıyla işlenemeyecek kadar büyük, karmaşık ve hızlı büyüyen veri kümeleri.',
+    example:
+        'Geçmiş konuk tercihlerinden oluşan büyük veri analiz edilerek, bir sonraki sezon için kişiselleştirilmiş pazarlama kampanyaları hazırlandı.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Pazarlama Karması (4P)',
-    definition: 'Ürün (Product), Fiyat (Price), Dağıtım (Place) ve Tutundurma (Promotion) stratejilerinden oluşan pazarlama bileşenleri.',
-    example: 'Yeni SPA hizmetimizin satış başarısı için, pazarlama karması (4P) modeline uygun olarak doğru fiyatlandırma ve tanıtım stratejileri belirledik.',
+    definition:
+        'Ürün (Product), Fiyat (Price), Dağıtım (Place) ve Tutundurma (Promotion) stratejilerinden oluşan pazarlama bileşenleri.',
+    example:
+        'Yeni SPA hizmetimizin satış başarısı için, pazarlama karması (4P) modeline uygun olarak doğru fiyatlandırma ve tanıtım stratejileri belirledik.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Sürdürülebilir Pazarlama (Yeşil Pazarlama)',
-    definition: 'Kısa vadeli yüksek kâr yerine tüketiciler, sosyal çevre ve ekolojik dengeyle uzun süreli ilişkiler kurmayı, ürünlerin ve hizmetlerin çevresel etkilerini en aza indirmeyi amaçlayan pazarlama yaklaşımı.',
-    example: 'Otelimizin uyguladığı yeşil pazarlama (sürdürülebilir pazarlama) stratejileri, çevreye duyarlı seyahat eden bilinçli misafirlerin bizi tercih etmesinde etkili oldu.',
+    definition:
+        'Kısa vadeli yüksek kâr yerine tüketiciler, sosyal çevre ve ekolojik dengeyle uzun süreli ilişkiler kurmayı, ürünlerin ve hizmetlerin çevresel etkilerini en aza indirmeyi amaçlayan pazarlama yaklaşımı.',
+    example:
+        'Otelimizin uyguladığı yeşil pazarlama (sürdürülebilir pazarlama) stratejileri, çevreye duyarlı seyahat eden bilinçli misafirlerin bizi tercih etmesinde etkili oldu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'E-Ticaret',
-    definition: 'Kazanç sağlamak amacıyla mal veya hizmetlerin internet (elektronik ortam) üzerinden alınıp satılması işlemi.',
-    example: 'Geleneksel el sanatları üreticileri, ürünlerini e-ticaret siteleri üzerinden tüm dünyaya pazarlamaktadır.',
+    definition:
+        'Kazanç sağlamak amacıyla mal veya hizmetlerin internet (elektronik ortam) üzerinden alınıp satılması işlemi.',
+    example:
+        'Geleneksel el sanatları üreticileri, ürünlerini e-ticaret siteleri üzerinden tüm dünyaya pazarlamaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Doğrudan E-Ticaret',
-    definition: 'Fiziki bir mağazaya ihtiyaç duyulmadan, yazılım, müzik, film gibi dijital ürünlerin veya çevrimiçi hizmetlerin internetten satılıp anında teslim edildiği ticaret türü.',
-    example: 'Müzik ve e-kitap indirme siteleri, müşteriye anında teslimat sağlayan doğrudan e-ticaret modellerine harika birer örnektir.',
+    definition:
+        'Fiziki bir mağazaya ihtiyaç duyulmadan, yazılım, müzik, film gibi dijital ürünlerin veya çevrimiçi hizmetlerin internetten satılıp anında teslim edildiği ticaret türü.',
+    example:
+        'Müzik ve e-kitap indirme siteleri, misafire anında teslimat sağlayan doğrudan e-ticaret modellerine harika birer örnektir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Dolaylı E-Ticaret',
-    definition: 'İnternet üzerinden sipariş edilen fiziksel ürünlerin kargo, kurye veya posta yoluyla sonradan alıcıya ulaştırıldığı e-ticaret türü.',
-    example: 'İnternetten ayakkabı sipariş eden müşterinin ürünü kargo ile teslim alması dolaylı e-ticaret kapsamına girer.',
+    definition:
+        'İnternet üzerinden sipariş edilen fiziksel ürünlerin kargo, kurye veya posta yoluyla sonradan alıcıya ulaştırıldığı e-ticaret türü.',
+    example:
+        'İnternetten ayakkabı sipariş eden misafirin ürünü kargo ile teslim alması dolaylı e-ticaret kapsamına girer.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'B2C (Business to Consumer)',
-    definition: 'Şirketlerin, ürettikleri veya tedarik ettikleri ürün/hizmetleri kendi e-ticaret siteleri üzerinden doğrudan son tüketiciye sattığı e-ticaret modeli.',
-    example: 'Otelimizin web sitesi üzerinden misafirlere doğrudan oda satışı yapması B2C (business to consumer) modeline bir örnektir.',
+    definition:
+        'Şirketlerin, ürettikleri veya tedarik ettikleri ürün/hizmetleri kendi e-ticaret siteleri üzerinden doğrudan son tüketiciye sattığı e-ticaret modeli.',
+    example:
+        'Otelimizin web sitesi üzerinden misafirlere doğrudan oda satışı yapması B2C (business to consumer) modeline bir örnektir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/B2C Business to Consumer.mp3',
   ),
   Term(
     word: 'C2C (Consumer to Consumer)',
-    definition: 'Tüketicilerin, güvenilir pazar yeri platformları aracılığıyla kendi aralarında ikinci el eşya veya el emeği ürün alım satımı yaptıkları e-ticaret modeli.',
-    example: 'Kullanmadığı kıyafetleri internet üzerinden diğer tüketicilere satan kişilerin yaptığı işlemler C2C (consumer to consumer) modelidir.',
+    definition:
+        'Tüketicilerin, güvenilir pazar yeri platformları aracılığıyla kendi aralarında ikinci el eşya veya el emeği ürün alım satımı yaptıkları e-ticaret modeli.',
+    example:
+        'Kullanmadığı kıyafetleri internet üzerinden diğer tüketicilere satan kişilerin yaptığı işlemler C2C (consumer to consumer) modelidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/C2C Consumer to Consumer.mp3',
   ),
   Term(
     word: 'B2G (Business to Government)',
-    definition: 'İşletmelerin, devlet kurumlarının açtığı çevrimiçi ihalelere katılarak kamu kurumlarına ürün veya hizmet sattığı model (Örn: EKAP).',
-    example: 'Özel bir temizlik firmasının, devlet hastanesinin temizlik ihalesini internet üzerinden alması B2G (business to government) ticaretidir.',
+    definition:
+        'İşletmelerin, devlet kurumlarının açtığı çevrimiçi ihalelere katılarak kamu kurumlarına ürün veya hizmet sattığı model (Örn: EKAP).',
+    example:
+        'Özel bir temizlik firmasının, devlet hastanesinin temizlik ihalesini internet üzerinden alması B2G (business to government) ticaretidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/B2G Business to Government.mp3',
   ),
   Term(
     word: 'C2G (Consumer to Government)',
-    definition: 'Tüketicilerin (vatandaşların) vergi, ceza veya harç gibi ödemeleri e-devlet sistemleri üzerinden kamu kurumlarına gerçekleştirdiği işlemler.',
-    example: 'Sürücülerin trafik cezalarını internet bankacılığı veya e-devlet üzerinden ödemesi C2G (consumer to government) işlemidir.',
+    definition:
+        'Tüketicilerin (vatandaşların) vergi, ceza veya harç gibi ödemeleri e-devlet sistemleri üzerinden kamu kurumlarına gerçekleştirdiği işlemler.',
+    example:
+        'Sürücülerin trafik cezalarını internet bankacılığı veya e-devlet üzerinden ödemesi C2G (consumer to government) işlemidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/C2G Consumer to Government.mp3',
   ),
   Term(
     word: 'E-Ticaret İş Planı',
-    definition: 'E-ticarete başlamadan önce işletmenin finansal gereksinimlerini, hedef kitlesini, pazar analizini, tanıtım stratejilerini ve uzun vadeli hedeflerini içeren rehber doküman.',
-    example: 'Girişimciler, yatırımcılardan destek alabilmek için detaylı bir e-ticaret iş planı hazırlamak zorundadırlar.',
+    definition:
+        'E-ticarete başlamadan önce işletmenin finansal gereksinimlerini, hedef kitlesini, pazar analizini, tanıtım stratejilerini ve uzun vadeli hedeflerini içeren rehber doküman.',
+    example:
+        'Girişimciler, yatırımcılardan destek alabilmek için detaylı bir e-ticaret iş planı hazırlamak zorundadırlar.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'SEO (Arama Motoru Optimizasyonu)',
-    definition: 'E-ticaret sitesinin arama motorlarındaki organik (ücretsiz) sonuçlarda üst sıralarda çıkmasını sağlamak için yapılan tüm teknik ve içerik iyileştirmeleri.',
-    example: 'Web sitemizin arama sonuçlarında ilk sayfada çıkması için anahtar kelime odaklı SEO (arama motoru optimizasyonu) çalışması yaptık.',
+    definition:
+        'E-ticaret sitesinin arama motorlarındaki organik (ücretsiz) sonuçlarda üst sıralarda çıkmasını sağlamak için yapılan tüm teknik ve içerik iyileştirmeleri.',
+    example:
+        'Web sitemizin arama sonuçlarında ilk sayfada çıkması için anahtar kelime odaklı SEO (arama motoru optimizasyonu) çalışması yaptık.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'SEM (Arama Motoru Pazarlaması)',
-    definition: 'Ücret ödeyerek e-ticaret sitesini veya ürünleri arama motorlarının \'sponsorlu bağlantılar\' kısmında en üst sıralara çıkarma stratejisi.',
-    example: 'Yeni açılan seyahat acentemiz, hızlıca müşteri çekebilmek amacıyla Google reklamları ile SEM (arama motoru pazarlaması) bütçesi ayırdı.',
+    definition:
+        'Ücret ödeyerek e-ticaret sitesini veya ürünleri arama motorlarının \'sponsorlu bağlantılar\' kısmında en üst sıralara çıkarma stratejisi.',
+    example:
+        'Yeni açılan seyahat acentemiz, hızlıca misafir çekebilmek amacıyla Google reklamları ile SEM (arama motoru pazarlaması) bütçesi ayırdı.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Viral Pazarlama',
-    definition: 'Hazırlanan yaratıcı veya ilgi çekici bir reklam içeriğinin, internet kullanıcıları tarafından kendi istekleriyle tıpkı bir virüs gibi hızla paylaşılıp yayılması.',
-    example: 'Sosyal medyada paylaşılan esprili otel tanıtım videosu, viral pazarlama etkisiyle milyonlarca kişiye ulaştı.',
+    definition:
+        'Hazırlanan yaratıcı veya ilgi çekici bir reklam içeriğinin, internet kullanıcıları tarafından kendi istekleriyle tıpkı bir virüs gibi hızla paylaşılıp yayılması.',
+    example:
+        'Sosyal medyada paylaşılan esprili otel tanıtım videosu, viral pazarlama etkisiyle milyonlarca kişiye ulaştı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Influencer (Etkileyici) Pazarlama',
-    definition: 'Sosyal medyada yüksek takipçisi olan ve güvenilir bulunan ünlü/etkili kişilerin markalara ait ürünleri tanıttığı pazarlama yöntemi.',
-    example: 'Tanınmış gurmenin restoranımızda yemek yiyerek yaptığı paylaşım, influencer (etkileyici) pazarlama gücüyle müşteri sayımızı artırdı.',
+    definition:
+        'Sosyal medyada yüksek takipçisi olan ve güvenilir bulunan ünlü/etkili kişilerin markalara ait ürünleri tanıttığı pazarlama yöntemi.',
+    example:
+        'Tanınmış gurmenin restoranımızda yemek yiyerek yaptığı paylaşım, influencer (etkileyici) pazarlama gücüyle misafir sayımızı artırdı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'İzinli Pazarlama',
-    definition: 'Kullanıcıların kendi rızalarıyla onay verdikleri platformlar üzerinden, sadece ilgi alanlarına uygun reklam, e-posta veya anket gönderilmesi stratejisi.',
-    example: 'Web sitemize üye olurken e-posta almak istediğini belirten müşterilere izinli pazarlama kapsamında kampanya bültenleri gönderildi.',
+    definition:
+        'Kullanıcıların kendi rızalarıyla onay verdikleri platformlar üzerinden, sadece ilgi alanlarına uygun reklam, e-posta veya anket gönderilmesi stratejisi.',
+    example:
+        'Web sitemize üye olurken e-posta almak istediğini belirten misafirlere izinli pazarlama kapsamında kampanya bültenleri gönderildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'HTTPS ve SSL',
-    definition: 'İstemci ile sunucu arasında gönderilen kişisel ve finansal bilgilerin (kredi kartı şifreleri vb.) kırılmaz bir şekilde şifrelenerek aktarılmasını sağlayan güvenlik protokolleri.',
-    example: 'HTTPS ve SSL sertifikası bulunmayan e-ticaret sitelerinden alışveriş yapmak kredi kartı güvenliği açısından risklidir.',
+    definition:
+        'İstemci ile sunucu arasında gönderilen kişisel ve finansal bilgilerin (kredi kartı şifreleri vb.) kırılmaz bir şekilde şifrelenerek aktarılmasını sağlayan güvenlik protokolleri.',
+    example:
+        'HTTPS ve SSL sertifikası bulunmayan e-ticaret sitelerinden alışveriş yapmak kredi kartı güvenliği açısından risklidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'SET (Güvenli Elektronik İşlemler)',
-    definition: 'Sadece kredi/banka kartı işlemlerini güvence altına almak için geliştirilen, alıcı ve satıcı arasındaki banka ödeme süreçlerini dijital imzalarla doğrulayan şifreleme protokolü.',
-    example: 'SET (güvenli elektronik işlemler) protokolü, kart sahibinin kimliğini dijital olarak doğrulayarak sahtekarlık riskini en aza indirir.',
+    definition:
+        'Sadece kredi/banka kartı işlemlerini güvence altına almak için geliştirilen, alıcı ve satıcı arasındaki banka ödeme süreçlerini dijital imzalarla doğrulayan şifreleme protokolü.',
+    example:
+        'SET (güvenli elektronik işlemler) protokolü, kart sahibinin kimliğini dijital olarak doğrulayarak sahtekarlık riskini en aza indirir.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Güvenlik Duvarı (Firewall)',
-    definition: 'E-ticaret sunucusuna dışarıdan gelen ağ trafiğini önceden belirlenmiş filtrelere (IP, Port) göre denetleyip, zararlı ve şüpheli müdahaleleri engelleyen sistem.',
-    example: 'Şirket sunucularını siber saldırılardan korumak için güçlü bir güvenlik duvarı (firewall) altyapısı kuruldu.',
+    definition:
+        'E-ticaret sunucusuna dışarıdan gelen ağ trafiğini önceden belirlenmiş filtrelere (IP, Port) göre denetleyip, zararlı ve şüpheli müdahaleleri engelleyen sistem.',
+    example:
+        'Şirket sunucularını siber saldırılardan korumak için güçlü bir güvenlik duvarı (firewall) altyapısı kuruldu.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'IDS / IPS',
-    definition: 'Saldırı Tespit (IDS) ve Saldırı Engelleme (IPS) sistemleri; ağdaki trafiği izleyerek siber saldırıları fark edip raporlayan ve gerektiğinde anında engelleyen güvenlik yazılımları.',
-    example: 'Güvenlik ekibimiz, sunucuya yönelik şüpheli giriş denemelerini IDS / IPS yazılımları sayesinde anında tespit edip engelledi.',
+    definition:
+        'Saldırı Tespit (IDS) ve Saldırı Engelleme (IPS) sistemleri; ağdaki trafiği izleyerek siber saldırıları fark edip raporlayan ve gerektiğinde anında engelleyen güvenlik yazılımları.',
+    example:
+        'Güvenlik ekibimiz, sunucuya yönelik şüpheli giriş denemelerini IDS / IPS yazılımları sayesinde anında tespit edip engelledi.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/IDS  IPS.mp3',
   ),
   Term(
     word: 'RAID5 Teknolojisi',
-    definition: 'Sunucularda veri kaybını önlemek için en az üç disk kullanılarak oluşturulan; bir disk bozulsa bile sistemin kapanmadan diğer diskler üzerinden çalışmasını sağlayan yedekleme yapısı.',
-    example: 'Veri merkezimizdeki sunucularda veri kaybı riskini sıfıra indirmek amacıyla RAID5 teknolojisi kullanılmaktadır.',
+    definition:
+        'Sunucularda veri kaybını önlemek için en az üç disk kullanılarak oluşturulan; bir disk bozulsa bile sistemin kapanmadan diğer diskler üzerinden çalışmasını sağlayan yedekleme yapısı.',
+    example:
+        'Veri merkezimizdeki sunucularda veri kaybı riskini sıfıra indirmek amacıyla RAID5 teknolojisi kullanılmaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: '3D Secure',
-    definition: 'İnternetten yapılan ödeme esnasında bankanın, kullanıcının cep telefonuna gönderdiği tek kullanımlık SMS şifresi ile kimlik doğruladığı ek güvenlik katmanı.',
-    example: 'Online bilet alırken kart bilgilerini girdikten sonra cep telefonuma gelen 3D Secure şifresini onaylayarak işlemi tamamladım.',
+    definition:
+        'İnternetten yapılan ödeme esnasında bankanın, kullanıcının cep telefonuna gönderdiği tek kullanımlık SMS şifresi ile kimlik doğruladığı ek güvenlik katmanı.',
+    example:
+        'Online bilet alırken kart bilgilerini girdikten sonra cep telefonuma gelen 3D Secure şifresini onaylayarak işlemi tamamladım.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/3D Secure.mp3',
   ),
   Term(
     word: 'PCI DSS',
-    definition: 'Kredi kartı ile ödeme alan e-ticaret kuruluşlarının, kart verisi hırsızlığını engellemek için uyması gereken uluslararası Ödeme Kartları Endüstrisi Veri Güvenliği Standardı.',
-    example: 'Sanal pos hizmeti sunan firmamız, uluslararası güvenlik denetimlerinden geçerek PCI DSS uyumluluk sertifikası aldı.',
+    definition:
+        'Kredi kartı ile ödeme alan e-ticaret kuruluşlarının, kart verisi hırsızlığını engellemek için uyması gereken uluslararası Ödeme Kartları Endüstrisi Veri Güvenliği Standardı.',
+    example:
+        'Sanal pos hizmeti sunan firmamız, uluslararası güvenlik denetimlerinden geçerek PCI DSS uyumluluk sertifikası aldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/PCI DSS.mp3',
   ),
   Term(
     word: 'Güven Damgası',
-    definition: 'TOBB tarafından e-ticaret sitelerine verilen, asgari güvenlik ve hizmet kalite standartlarına uyan platformları işaret eden elektronik sertifikasyon.',
-    example: 'Ana sayfasında güven damgası bulunan alışveriş siteleri, tüketicilere daha güvenli bir alışveriş ortamı sunar.',
+    definition:
+        'TOBB tarafından e-ticaret sitelerine verilen, asgari güvenlik ve hizmet kalite standartlarına uyan platformları işaret eden elektronik sertifikasyon.',
+    example:
+        'Ana sayfasında güven damgası bulunan alışveriş siteleri, tüketicilere daha güvenli bir alışveriş ortamı sunar.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Warez',
-    definition: 'Telif hakkı ödenmeden, kırılmış veya korsan olarak ücretsiz dağıtılan; çoğunlukla içine zararlı yazılım, virüs veya gizli reklam kodları gizlenmiş korsan tema ve yazılımlar.',
-    example: 'Güvenilir olmayan sitelerden indirilen warez yazılımlar, e-ticaret sitelerinin veri güvenliğini tehlikeye atabilir.',
+    definition:
+        'Telif hakkı ödenmeden, kırılmış veya korsan olarak ücretsiz dağıtılan; çoğunlukla içine zararlı yazılım, virüs veya gizli reklam kodları gizlenmiş korsan tema ve yazılımlar.',
+    example:
+        'Güvenilir olmayan sitelerden indirilen warez yazılımlar, e-ticaret sitelerinin veri güvenliğini tehlikeye atabilir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Siber Zorbalık',
-    definition: 'Sosyal medya platformları üzerinden kişi veya gruplara yönelik tehdit, aşağılama, yalan haber yayma veya utandırıcı görsel paylaşma gibi dijital ortamda yapılan zorba davranışlar.',
-    example: 'Okulumuzda, öğrencilerin sosyal medyayı daha bilinçli kullanmalarını sağlamak amacıyla siber zorbalık konusunda seminerler düzenlendi.',
+    definition:
+        'Sosyal medya platformları üzerinden kişi veya gruplara yönelik tehdit, aşağılama, yalan haber yayma veya utandırıcı görsel paylaşma gibi dijital ortamda yapılan zorba davranışlar.',
+    example:
+        'Okulumuzda, öğrencilerin sosyal medyayı daha bilinçli kullanmalarını sağlamak amacıyla siber zorbalık konusunda seminerler düzenlendi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Bilişim Etiği',
-    definition: 'İnternet ve bilgisayar ağlarında uyulması gereken; bilgi doğruluğu, fikrî mülkiyet haklarına saygı ve başkalarının çalışmalarına müdahale etmeme gibi ahlaki kuralları tanımlayan normlar.',
-    example: 'Başkalarının yazdığı kodları izinsiz kopyalamak, bilişim etiği kurallarına ve fikri mülkiyet haklarına aykırıdır.',
+    definition:
+        'İnternet ve bilgisayar ağlarında uyulması gereken; bilgi doğruluğu, fikrî mülkiyet haklarına saygı ve başkalarının çalışmalarına müdahale etmeme gibi ahlaki kuralları tanımlayan normlar.',
+    example:
+        'Başkalarının yazdığı kodları izinsiz kopyalamak, bilişim etiği kurallarına ve fikri mülkiyet haklarına aykırıdır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Dijital Marka Yönetimi',
-    definition: 'Bir markanın sanal dünyada algılanmasını istediği imajın tasarlanması, sosyal medyada uygun stratejilerle tanıtılması ve sürdürülebilir kriz yönetimiyle marka güveninin korunması süreci.',
-    example: 'Şirketimiz, sosyal medyadaki olumsuz yorumları yönetmek ve itibarını korumak için profesyonel dijital marka yönetimi hizmeti alıyor.',
+    definition:
+        'Bir markanın sanal dünyada algılanmasını istediği imajın tasarlanması, sosyal medyada uygun stratejilerle tanıtılması ve sürdürülebilir kriz yönetimiyle marka güveninin korunması süreci.',
+    example:
+        'Şirketimiz, sosyal medyadaki olumsuz yorumları yönetmek ve itibarını korumak için profesyonel dijital marka yönetimi hizmeti alıyor.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Veri (Data)',
-    definition: 'Bir gözlem veya deney sonucu elde edilen, analiz veya yorumlama için bir araya toplanan ham (işlenmemiş) gerçekler ve semboller bütünü.',
-    example: 'Anket formlarından toplanan ham veri (data), veri analitiği programları yardımıyla anlamlı raporlara dönüştürüldü.',
+    definition:
+        'Bir gözlem veya deney sonucu elde edilen, analiz veya yorumlama için bir araya toplanan ham (işlenmemiş) gerçekler ve semboller bütünü.',
+    example:
+        'Anket formlarından toplanan ham veri (data), veri analitiği programları yardımıyla anlamlı raporlara dönüştürüldü.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Enformasyon (Information)',
-    definition: 'Ham verinin belirli bir amaç doğrultusunda analiz edilmesi, karşılaştırılması ve özetlenmesi sonucu ortaya çıkan, \'kim, ne, nerede, ne zaman\' sorularına yanıt veren bilgi kümesi.',
-    example: 'Satış rakamlarının aylara göre grafik haline getirilmesi, yöneticiler için karar vermeyi kolaylaştıran bir enformasyon (information) sağlar.',
+    definition:
+        'Ham verinin belirli bir amaç doğrultusunda analiz edilmesi, karşılaştırılması ve özetlenmesi sonucu ortaya çıkan, \'kim, ne, nerede, ne zaman\' sorularına yanıt veren bilgi kümesi.',
+    example:
+        'Satış rakamlarının aylara göre grafik haline getirilmesi, yöneticiler için karar vermeyi kolaylaştıran bir enformasyon (information) sağlar.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Bilgi (Knowledge)',
-    definition: 'İnsanın zekâsının veriyi ve enformasyonu yorumlayarak \'nasıl\' ve \'neden\' sorularına cevap bulduğu, deneyim ve kurallarla harmanlanmış temel anlayış/düşünce.',
-    example: 'Müşteri alışkanlıkları raporunu analiz eden pazarlama uzmanı, yeni reklam kampanyasının hangi kanallardan yapılması gerektiği bilgisini (knowledge) üretti.',
+    definition:
+        'İnsanın zekâsının veriyi ve enformasyonu yorumlayarak \'nasıl\' ve \'neden\' sorularına cevap bulduğu, deneyim ve kurallarla harmanlanmış temel anlayış/düşünce.',
+    example:
+        'Misafir alışkanlıkları raporunu analiz eden pazarlama uzmanı, yeni reklam kampanyasının hangi kanallardan yapılması gerektiği bilgisini (knowledge) üretti.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Nitel Veri',
-    definition: 'Sayısal olmayan; kelimeler, resimler veya ses kayıtları gibi özellikleri, kategorileri veya sıralamaları ifade eden veri türü.',
-    example: 'Misafirlerin otel hakkındaki memnuniyet yorumları ve yazılı geri bildirimleri nitel veri sınıfına girer.',
+    definition:
+        'Sayısal olmayan; kelimeler, resimler veya ses kayıtları gibi özellikleri, kategorileri veya sıralamaları ifade eden veri türü.',
+    example:
+        'Misafirlerin otel hakkındaki memnuniyet yorumları ve yazılı geri bildirimleri nitel veri sınıfına girer.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Sınıflanabilen (Nominal) Nitel Veri',
-    definition: 'Varlıkların sayısal üstünlük taşımadan sadece isim veya kategori olarak gruplandırıldığı verilerdir.',
-    example: 'Müşterilerin medeni hali, cinsiyeti veya meslekleri sınıflanabilen (nominal) nitel veri olarak kaydedilir.',
+    definition:
+        'Varlıkların sayısal üstünlük taşımadan sadece isim veya kategori olarak gruplandırıldığı verilerdir.',
+    example:
+        'Misafirlerin medeni hali, cinsiyeti veya meslekleri sınıflanabilen (nominal) nitel veri olarak kaydedilir.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Sıralanabilen (Ordinal) Nitel Veri',
-    definition: 'Kategoriler arasında bir büyüklük/küçüklük veya önem sırasının bulunduğu, ancak aralarındaki matematiksel farkın hesaplanamadığı veri türü.',
-    example: 'Otel yıldız sayıları veya müşterilerin eğitim seviyesi (ilkokul, lise, üniversite) sıralanabilen (ordinal) nitel veri örneğidir.',
+    definition:
+        'Kategoriler arasında bir büyüklük/küçüklük veya önem sırasının bulunduğu, ancak aralarındaki matematiksel farkın hesaplanamadığı veri türü.',
+    example:
+        'Otel yıldız sayıları veya misafirlerin eğitim seviyesi (ilkokul, lise, üniversite) sıralanabilen (ordinal) nitel veri örneğidir.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Nicel Veri',
-    definition: 'Sayılarak veya ölçülerek elde edilen, matematiksel işlemler yapılabilen sayısal veri türü.',
-    example: 'Otel odalarımızın günlük sıcaklık değerleri ve doluluk oranları nicel veri olarak analiz edilmektedir.',
+    definition:
+        'Sayılarak veya ölçülerek elde edilen, matematiksel işlemler yapılabilen sayısal veri türü.',
+    example:
+        'Otel odalarımızın günlük sıcaklık değerleri ve doluluk oranları nicel veri olarak analiz edilmektedir.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Eşit Aralıklı (Interval) Nicel Veri',
-    definition: 'Değerler arasında eşit sayısal aralıkların olduğu, ancak gerçek/mutlak bir sıfır noktasının bulunmadığı verilerdir. Oranlama yapılamaz.',
-    example: 'Santigrat derece cinsinden sıcaklık ölçümleri ve IQ skorları eşit aralıklı (interval) nicel veri grubuna girer.',
+    definition:
+        'Değerler arasında eşit sayısal aralıkların olduğu, ancak gerçek/mutlak bir sıfır noktasının bulunmadığı verilerdir. Oranlama yapılamaz.',
+    example:
+        'Santigrat derece cinsinden sıcaklık ölçümleri ve IQ skorları eşit aralıklı (interval) nicel veri grubuna girer.',
     category: 'Dijital Turizm ve Sosyal Medya',
   ),
   Term(
     word: 'Sürekli (Ratio) Nicel Veri',
-    definition: 'Gerçek ve mutlak bir sıfır noktasının olduğu, değerler arasında hem toplama/çıkarma hem de kat/oran (çarpma/bölme) hesaplarının yapılabildiği sayısal veri.',
-    example: 'Misafirlerin bagaj ağırlıkları ve boy uzunlukları sürekli (ratio) nicel veri olarak sınıflandırılır.',
+    definition:
+        'Gerçek ve mutlak bir sıfır noktasının olduğu, değerler arasında hem toplama/çıkarma hem de kat/oran (çarpma/bölme) hesaplarının yapılabildiği sayısal veri.',
+    example:
+        'Misafirlerin bagaj ağırlıkları ve boy uzunlukları sürekli (ratio) nicel veri olarak sınıflandırılır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Birincil Veri Kaynakları',
-    definition: 'Araştırmacının bizzat gözlem, deney, anket veya yüz yüze görüşme (mülakat) gibi yöntemler kullanarak doğrudan sahada topladığı veriler.',
-    example: 'Otelimizin misafir memnuniyetini ölçmek amacıyla yaptığı anket formları birincil veri kaynakları arasında yer alır.',
+    definition:
+        'Araştırmacının bizzat gözlem, deney, anket veya yüz yüze görüşme (mülakat) gibi yöntemler kullanarak doğrudan sahada topladığı veriler.',
+    example:
+        'Otelimizin misafir memnuniyetini ölçmek amacıyla yaptığı anket formları birincil veri kaynakları arasında yer alır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'İkincil Veri Kaynakları',
-    definition: 'Başka kurumlar (Örn: TÜİK) veya araştırmacılar tarafından daha önceden toplanmış, arşivlenmiş ve rapora dönüştürülmüş hazır veriler.',
-    example: 'Ülkeye gelen turist sayılarını analiz etmek için TÜİK verilerini kullanmak, ikincil veri kaynakları ile çalışmaktır.',
+    definition:
+        'Başka kurumlar (Örn: TÜİK) veya araştırmacılar tarafından daha önceden toplanmış, arşivlenmiş ve rapora dönüştürülmüş hazır veriler.',
+    example:
+        'Ülkeye gelen turist sayılarını analiz etmek için TÜİK verilerini kullanmak, ikincil veri kaynakları ile çalışmaktır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'CSV (Comma Separated Variables)',
-    definition: 'Verilerin tablolar halinde, genellikle virgül veya noktalı virgül gibi ayıraçlar kullanılarak salt metin (plain text) formatında kaydedildiği hafif veri dosyası türü.',
-    example: 'Müşteri listesini Excel programından CSV (comma separated variables) formatında dışa aktararak sisteme yükledik.',
+    definition:
+        'Verilerin tablolar halinde, genellikle virgül veya noktalı virgül gibi ayıraçlar kullanılarak salt metin (plain text) formatında kaydedildiği hafif veri dosyası türü.',
+    example:
+        'Misafir listesini Excel programından CSV (comma separated variables) formatında dışa aktararak sisteme yükledik.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/CSV Comma Separated Variables.mp3',
   ),
   Term(
     word: 'JSON (JavaScript Object Notation)',
-    definition: 'Verilerin \'isim/değer\' çiftleri halinde hiyerarşik bir düzende tutulduğu, web uygulamalarında veri alışverişi için çok sık kullanılan hafif veri saklama formatı.',
-    example: 'Mobil uygulamamız ile sunucu arasındaki veri aktarımı, veri boyutunu küçültmek amacıyla JSON formatında yapılmaktadır.',
+    definition:
+        'Verilerin \'isim/değer\' çiftleri halinde hiyerarşik bir düzende tutulduğu, web uygulamalarında veri alışverişi için çok sık kullanılan hafif veri saklama formatı.',
+    example:
+        'Mobil uygulamamız ile sunucu arasındaki veri aktarımı, veri boyutunu küçültmek amacıyla JSON formatında yapılmaktadır.',
     category: 'Dijital Turizm ve Sosyal Medya',
+    audioPath: 'assets/sounds/terms/JSON JavaScript Object Notation.mp3',
   ),
   Term(
     word: 'XML (eXtensible Markup Language)',
-    definition: 'Veri özelliklerinin iç içe geçmiş HTML benzeri etiketler kullanılarak hiyerarşik bir ağaç yapısında sunulduğu genişletilebilir işaret dili formatı.',
-    example: 'Faturalama sistemimiz, e-fatura verilerini diğer bankalarla paylaşırken XML formatını kullanır.',
+    definition:
+        'Veri özelliklerinin iç içe geçmiş HTML benzeri etiketler kullanılarak hiyerarşik bir ağaç yapısında sunulduğu genişletilebilir işaret dili formatı.',
+    example:
+        'Faturalama sistemimiz, e-fatura verilerini diğer bankalarla paylaşırken XML formatını kullanır.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/XML eXtensible Markup Language.mp3',
   ),
   Term(
     word: 'Sütun / Çubuk Grafik',
-    definition: 'Kategorik verilerin yatay (çubuk) veya dikey (sütun) dikdörtgenler kullanılarak birbirleriyle büyüklük/küçüklük açısından karşılaştırılmasını sağlayan grafik türü.',
-    example: 'Yıllara göre otel doluluk oranlarını karşılaştırmak amacıyla renkli bir sütun / çubuk grafik hazırladık.',
+    definition:
+        'Kategorik verilerin yatay (çubuk) veya dikey (sütun) dikdörtgenler kullanılarak birbirleriyle büyüklük/küçüklük açısından karşılaştırılmasını sağlayan grafik türü.',
+    example:
+        'Yıllara göre otel doluluk oranlarını karşılaştırmak amacıyla renkli bir sütun / çubuk grafik hazırladık.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Çizgi Grafik',
-    definition: 'Özellikle zaman içindeki eğilimleri, yükseliş ve düşüşleri (Örn: yıllık vefat sayısı, borsa değerleri) sürekli bir çizgi ile göstermek için kullanılan grafik türü.',
-    example: 'Acentemizin web sitesine gelen ziyaretçi trafiğinin aylık değişimini çizgi grafik üzerinde analiz ettik.',
+    definition:
+        'Özellikle zaman içindeki eğilimleri, yükseliş ve düşüşleri (Örn: yıllık vefat sayısı, borsa değerleri) sürekli bir çizgi ile göstermek için kullanılan grafik türü.',
+    example:
+        'Acentemizin web sitesine gelen ziyaretçi trafiğinin aylık değişimini çizgi grafik üzerinde analiz ettik.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Pasta / Halka Grafik',
-    definition: 'Bir bütünün veya toplam verinin parçalarını, daire dilimleri şeklinde yüzde veya oransal olarak ifade eden grafik türü.',
-    example: 'Otelimize gelen turistlerin ülkelere göre dağılım yüzdesini göstermek için pasta / halka grafik kullandık.',
+    definition:
+        'Bir bütünün veya toplam verinin parçalarını, daire dilimleri şeklinde yüzde veya oransal olarak ifade eden grafik türü.',
+    example:
+        'Otelimize gelen turistlerin ülkelere göre dağılım yüzdesini göstermek için pasta / halka grafik kullandık.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Alan Grafiği',
-    definition: 'Çizgi grafiğine benzer şekilde zaman içindeki eğilimleri gösteren, ancak çizgilerin altındaki alanın renklendirilerek hacmin vurgulandığı grafik türü.',
-    example: 'Son beş yıldaki veri trafiği hacmini ve sunucu yükünü göstermek için alan grafiği tercih edildi.',
+    definition:
+        'Çizgi grafiğine benzer şekilde zaman içindeki eğilimleri gösteren, ancak çizgilerin altındaki alanın renklendirilerek hacmin vurgulandığı grafik türü.',
+    example:
+        'Son beş yıldaki veri trafiği hacmini ve sunucu yükünü göstermek için alan grafiği tercih edildi.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Dağılım (XY) Grafiği',
-    definition: 'İki farklı sayısal değişken (Örn: Boy ve Kilo) arasındaki korelasyonu (ilişkiyi) koordinat düzlemindeki noktalarla analiz etmek için kullanılan grafik.',
-    example: 'Reklam bütçesi ile satış gelirleri arasındaki ilişkiyi incelemek için dağılım (XY) grafiği çizdik.',
+    definition:
+        'İki farklı sayısal değişken (Örn: Boy ve Kilo) arasındaki korelasyonu (ilişkiyi) koordinat düzlemindeki noktalarla analiz etmek için kullanılan grafik.',
+    example:
+        'Reklam bütçesi ile satış gelirleri arasındaki ilişkiyi incelemek için dağılım (XY) grafiği çizdik.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
   Term(
     word: 'Kabarcık Grafiği',
-    definition: 'Dağılım grafiğinin gelişmiş hâli olup, üçüncü bir değişkenin (z boyutu) veri noktasının (kabarcığın) büyüklüğü ile ifade edildiği üç boyutlu analiz grafiği.',
-    example: 'Satış rakamları, kâr oranı ve müşteri sayısını aynı anda göstermek için kabarcık grafiği kullanıldı.',
+    definition:
+        'Dağılım grafiğinin gelişmiş hâli olup, üçüncü bir değişkenin (z boyutu) veri noktasının (kabarcığın) büyüklüğü ile ifade edildiği üç boyutlu analiz grafiği.',
+    example:
+        'Satış rakamları, kâr oranı ve misafir sayısını aynı anda göstermek için kabarcık grafiği kullanıldı.',
     category: 'Dijital Turizm ve Sosyal Medya',
     isEnglish: false,
   ),
@@ -5897,569 +7768,2238 @@ const List<Term> terminologyData = [
   // ── KÜLTÜR MİRASİ VE REKREASYON TERİMLERİ ──
   Term(
     word: 'Valet (Çamaşırhane Valesi)',
-    definition: 'Misafir odalarından kirli çamaşırları teslim alan ve temizlendikten sonra geri götüren çamaşırhane görevlisi.',
-    example: 'VIP odada konaklayan misafirimiz, takım elbisesinin yıkanması için kat görevlisini arayarak çamaşırhane valesini (valet) odasına çağırdı.',
+    definition:
+        'Misafir odalarından kirli çamaşırları teslim alan ve temizlendikten sonra geri götüren çamaşırhane görevlisi.',
+    example:
+        'VIP odada konaklayan misafirimiz, takım elbisesinin yıkanması için kat görevlisini arayarak çamaşırhane valesini (valet) odasına çağırdı.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Handicapped Room',
-    definition: 'Engelli misafirlerin erişimine ve kullanımına uygun olarak özel tasarlanmış oda.',
-    example: 'Engelli misafirimiz için özel tasarlanmış olan handicapped room, banyodaki destek kolları ve geniş kapı geçişleriyle üst düzey konfor sağladı.',
+    definition:
+        'Engelli misafirlerin erişimine ve kullanımına uygun olarak özel tasarlanmış oda.',
+    example:
+        'Engelli misafirimiz için özel tasarlanmış olan handicapped room, banyodaki destek kolları ve geniş kapı geçişleriyle üst düzey konfor sağladı.',
     category: 'Kültür Mirası ve Rekreasyon',
+    audioPath: 'assets/sounds/terms/Handicapped Room.mp3',
   ),
   Term(
     word: 'Laundry (Çamaşırhane)',
-    definition: 'Otelin tüm tekstil ürünlerinin ve misafir çamaşırlarının yıkandığı, kurutulduğu ve ütülendiği bölüm.',
-    example: 'Oteldeki tüm çarşafların, havluların ve personel üniformalarının hijyenik olarak yıkanıp ütülendiği çamaşırhane 7/24 hizmet vermektedir.',
+    definition:
+        'Otelin tüm tekstil ürünlerinin ve misafir çamaşırlarının yıkandığı, kurutulduğu ve ütülendiği bölüm.',
+    example:
+        'Oteldeki tüm çarşafların, havluların ve personel üniformalarının hijyenik olarak yıkanıp ütülendiği çamaşırhane 7/24 hizmet vermektedir.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Handicapped Guest',
-    definition: 'Bedensel engelleri veya özel sağlık ihtiyaçları olan, bu nedenle özel tasarlanmış odalarda konaklaması gereken misafir (Özel Gereksinimli Konuk).',
-    example: 'Resepsiyonist, handicapped guest misafirimizin konforu için lobiye en yakın ve engelsiz banyoya sahip odayı tahsis etti.',
+    definition:
+        'Bedensel engelleri veya özel sağlık ihtiyaçları olan, bu nedenle özel tasarlanmış odalarda konaklaması gereken misafir (Özel Gereksinimli Konuk).',
+    example:
+        'Resepsiyonist, handicapped guest misafirimizin konforu için lobiye en yakın ve engelsiz banyoya sahip odayı tahsis etti.',
     category: 'Kültür Mirası ve Rekreasyon',
+    audioPath: 'assets/sounds/terms/Handicapped Guest.mp3',
   ),
   Term(
     word: 'Room Change (Oda Değişimi)',
-    definition: 'Misafirin odasındaki teknik bir arıza, manzara tercihi veya standart değiştirme talebi nedeniyle konakladığı odanın başka bir odayla değiştirilmesi işlemi.',
-    example: 'Kliması arızalanan odadaki misafirin memnuniyetini korumak amacıyla derhal room change (oda değişimi) işlemi uygulandı.',
+    definition:
+        'Misafirin odasındaki teknik bir arıza, manzara tercihi veya standart değiştirme talebi nedeniyle konakladığı odanın başka bir odayla değiştirilmesi işlemi.',
+    example:
+        'Kliması arızalanan odadaki misafirin memnuniyetini korumak amacıyla derhal room change (oda değişimi) işlemi uygulandı.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Yeşil Yıldız',
-    definition: 'Çevreye duyarlı faaliyet gösteren, su ve enerji tasarrufu yapan konaklama tesislerine Kültür ve Turizm Bakanlığı tarafından verilen sertifika / belge.',
-    example: 'Enerji ve su tasarrufu sağlayan, atıkları ayrıştıran otelimiz, Bakanlık denetimi sonucunda Yeşil Yıldız belgesi almaya hak kazandı.',
+    definition:
+        'Çevreye duyarlı faaliyet gösteren, su ve enerji tasarrufu yapan konaklama tesislerine Kültür ve Turizm Bakanlığı tarafından verilen sertifika / belge.',
+    example:
+        'Enerji ve su tasarrufu sağlayan, atıkları ayrıştıran otelimiz, Bakanlık denetimi sonucunda Yeşil Yıldız belgesi almaya hak kazandı.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Cam İglu Otel',
-    definition: 'Kuzey ışıklarının (aurora) oda konforunda izlenebilmesi amacıyla tasarlanan, 360 derece görüş açısına sahip cam kubbe biçimindeki odalardan oluşan özel konaklama işletmeleridir.',
-    example: 'Kutup dairesindeki cam iglu otel, konuklarına yataklarında uzanırken gökyüzündeki muhteşem kuzey ışıklarını izleme imkanı sunuyor.',
+    definition:
+        'Kuzey ışıklarının (aurora) oda konforunda izlenebilmesi amacıyla tasarlanan, 360 derece görüş açısına sahip cam kubbe biçimindeki odalardan oluşan özel konaklama işletmeleridir.',
+    example:
+        'Kutup dairesindeki cam iglu otel, konuklarına yataklarında uzanırken gökyüzündeki muhteşem kuzey ışıklarını izleme imkanı sunuyor.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Çamaşırhane ve Kuru Temizleme Sorumlusu',
-    definition: 'İşletmelerde iş sağlığı ve güvenliği önlemlerini alan, personel görev dağılımını yapan, malzeme giriş çıkışını kontrol eden, kalite ve hijyen kurallarını denetleyen uzman yönetici (Seviye 4).',
-    example: 'Çamaşırhane ve kuru temizleme sorumlusu, çevre yönetmeliklerine uygun solvent kullanımını ve güvenlik önlemlerini denetledi.',
+    definition:
+        'İşletmelerde iş sağlığı ve güvenliği önlemlerini alan, personel görev dağılımını yapan, malzeme giriş çıkışını kontrol eden, kalite ve hijyen kurallarını denetleyen uzman yönetici (Seviye 4).',
+    example:
+        'Çamaşırhane ve kuru temizleme sorumlusu, çevre yönetmeliklerine uygun solvent kullanımını ve güvenlik önlemlerini denetledi.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
-    word: 'Lonca',
-    definition: 'Aynı meslekte çalışan esnaf ve sanatkarların oluşturduğu, Ahilik sisteminin devamı niteliğindeki meslek odası.',
-    example: 'Bölgedeki butik otellerin ortak standartlar belirlemesi amacıyla, lonca sistemi gibi çalışan yerel turizm birliğiyle toplantı yaptık.',
+    word: 'Esnaf Teşkilatı',
+    definition:
+        'Aynı meslekte çalışan esnaf ve sanatkarların oluşturduğu, Ahilik sisteminin devamı niteliğindeki meslek odası ve teşkilatı.',
+    example:
+        'Bölgedeki butik otellerin ortak standartlar belirlemesi amacıyla, esnaf teşkilatı gibi çalışan yerel turizm birlikleriyle toplantı yaptık.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Yiğitbaşı',
-    definition: 'Ahilik teşkilatında esnaf arasındaki disiplini sağlayan, usta ve kalfalar arasındaki sorunları çözen görevli.',
-    example: 'Departmanlar arasındaki operasyonel anlaşmazlıkları gidermek için insan kaynakları müdürümüz adeta bir yiğitbaşı gibi ara buluculuk yaptı.',
+    definition:
+        'Ahilik teşkilatında esnaf arasındaki disiplini sağlayan, usta ve kalfalar arasındaki sorunları çözen görevli.',
+    example:
+        'Departmanlar arasındaki operasyonel anlaşmazlıkları gidermek için insan kaynakları müdürümüz adeta bir yiğitbaşı gibi ara buluculuk yaptı.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Antik Kent',
-    definition: 'Geçmiş uygarlıklara (Roma, Yunan, Hitit vb.) ait kalıntıların, tapınakların, tiyatroların ve eski yerleşim alanlarının bulunduğunda, genellikle sit alanı ilan edilen tarihi bölge.',
-    example: 'Hierapolis Antik Kenti kalıntılarını ve tarihi tiyatroyu gezen turistler, hemen yanındaki antik havuzda yüzme deneyimi de yaşadılar.',
+    definition:
+        'Geçmiş uygarlıklara (Roma, Yunan, Hitit vb.) ait kalıntıların, tapınakların, tiyatroların ve eski yerleşim alanlarının bulunduğunda, genellikle sit alanı ilan edilen tarihi bölge.',
+    example:
+        'Hierapolis Antik Kenti kalıntılarını ve tarihi tiyatroyu gezen turistler, hemen yanındaki antik havuzda yüzme deneyimi de yaşadılar.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Exchange (Döviz Bozma)',
-    definition: 'Yabancı misafirlerin ellerindeki dövizleri, otelin ilan ettiği güncel kur üzerinden yerel para birimine çevirme işlemi.',
-    example: 'Yabancı konuğumuz, Türk Lirası ihtiyacını karşılamak amacıyla resepsiyondaki exchange panosunda ilan edilen resmi kurdan Euro bozdurdu.',
+    definition:
+        'Yabancı misafirlerin ellerindeki dövizleri, otelin ilan ettiği güncel kur üzerinden yerel para birimine çevirme işlemi.',
+    example:
+        'Yabancı konuğumuz, Türk Lirası ihtiyacını karşılamak amacıyla resepsiyondaki exchange panosunda ilan edilen resmi kurdan Euro bozdurdu.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Medeniyet (Uygarlık)',
-    definition: 'Bir toplumun bütün unsurlarını, maddi ve manevi varlıklarını, bilimini, sanatını ve teknolojisini kapsayan, evrensel nitelikli geniş kavram.',
-    example: 'Anadolu, tarih boyunca birçok farklı medeniyete ev sahipliği yapmış zengin bir coğrafyadır.',
+    definition:
+        'Bir toplumun bütün unsurlarını, maddi ve manevi varlıklarını, bilimini, sanatını ve teknolojisini kapsayan, evrensel nitelikli geniş kavram.',
+    example:
+        'Anadolu, tarih boyunca birçok farklı medeniyete ev sahipliği yapmış zengin bir coğrafyadır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Etnomerkezcilik (Etnosentrizm)',
-    definition: 'Bireyin kendi kültürünü en iyisi olarak görüp diğer tüm kültürleri kendi kültürünün değerleriyle (genellikle küçümseyerek) yargılaması.',
-    example: 'Turizm çalışanlarının yabancı misafirlerin geleneklerini tuhaf bulması, etnomerkezcilik tuzağına düşmelerine neden olabilir.',
+    definition:
+        'Bireyin kendi kültürünü en iyisi olarak görüp diğer tüm kültürleri kendi kültürünün değerleriyle (genellikle küçümseyerek) yargılaması.',
+    example:
+        'Turizm çalışanlarının yabancı misafirlerin geleneklerini tuhaf bulması, etnomerkezcilik tuzağına düşmelerine neden olabilir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Stereotip (Kalıp Yargı)',
-    definition: 'Farklı kültürler, milletler veya cinsiyetler hakkında bilimsel kanıtı olmayan, genellikle ön yargıya dayalı basmakalıp ve genellenmiş düşünceler.',
-    example: 'Belli bir meslek grubundaki tüm çalışanların aynı karakter özelliklerine sahip olduğunu düşünmek yaygın bir kalıp yargıdır (stereotip).',
+    definition:
+        'Farklı kültürler, milletler veya cinsiyetler hakkında bilimsel kanıtı olmayan, genellikle ön yargıya dayalı basmakalıp ve genellenmiş düşünceler.',
+    example:
+        'Belli bir meslek grubundaki tüm çalışanların aynı karakter özelliklerine sahip olduğunu düşünmek yaygın bir kalıp yargıdır (stereotip).',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Gök Tanrı İnancı',
-    definition: 'İslamiyet öncesi Türklerde, göğün yedinci katında oturduğuna inanılan, her şeyi yaratan ve kağanlara devleti yönetme gücü veren tek tanrı inancı.',
-    example: 'Eski Türk destanlarında geçen Gök Tanrı İnancı, doğa güçlerine saygıyı ve tek bir yaratıcıya bağlılığı temel alıyordu.',
+    definition:
+        'İslamiyet öncesi Türklerde, göğün yedinci katında oturduğuna inanılan, her şeyi yaratan ve kağanlara devleti yönetme gücü veren tek tanrı inancı.',
+    example:
+        'Eski Türk destanlarında geçen Gök Tanrı İnancı, doğa güçlerine saygıyı ve tek bir yaratıcıya bağlılığı temel alıyordu.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Al Basması (Alkarısı)',
-    definition: 'Eski Türk inanışlarına göre özellikle lohusa kadınlara ve yeni doğan bebeklere kötülük yaptığına inanılan mitolojik kötü ruh.',
-    example: 'Geleneksel olarak lohusa kadınların yakasına kırmızı kurdele takılması, al basması inanışından kalma bir korunma yöntemidir.',
+    definition:
+        'Eski Türk inanışlarına göre özellikle lohusa kadınlara ve yeni doğan bebeklere kötülük yaptığına inanılan mitolojik kötü ruh.',
+    example:
+        'Geleneksel olarak lohusa kadınların yakasına kırmızı kurdele takılması, al basması inanışından kalma bir korunma yöntemidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Nevruz (Nardugan)',
-    definition: '21 Mart\'ta kutlanan, baharın gelişini, doğanın uyanışını ve ateşin arındırıcı gücünü simgeleyen geleneksel Orta Asya ve Orta Doğu bayramı.',
-    example: 'Nevruz kutlamalarında yakılan büyük ateşlerin üzerinden atlanması, geçmişteki arınma ritüellerini simgeler.',
+    definition:
+        '21 Mart\'ta kutlanan, baharın gelişini, doğanın uyanışını ve ateşin arındırıcı gücünü simgeleyen geleneksel Orta Asya ve Orta Doğu bayramı.',
+    example:
+        'Nevruz kutlamalarında yakılan büyük ateşlerin üzerinden atlanması, geçmişteki arınma ritüellerini simgeler.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Gökbörü (Oğlak Oyunu)',
-    definition: 'Atlıların, ayakları bağlı bir oğlağı (veya postunu) kaparak belirlenen çukura bırakmaya çalıştıkları, mücadele gücü yüksek eski bir Orta Asya (Kırgız) atlı sporu.',
-    example: 'Kırgızistan seyahatimizde izlediğimiz gökbörü (oğlak oyunu) gösterisi, atlı sporların ne kadar zor ve cesaret gerektirdiğini gösterdi.',
+    definition:
+        'Atlıların, ayakları bağlı bir oğlağı (veya postunu) kaparak belirlenen çukura bırakmaya çalıştıkları, mücadele gücü yüksek eski bir Orta Asya (Kırgız) atlı sporu.',
+    example:
+        'Kırgızistan seyahatimizde izlediğimiz gökbörü (oğlak oyunu) gösterisi, atlı sporların ne kadar zor ve cesaret gerektirdiğini gösterdi.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kutup İklimi',
-    definition: 'Bitki örtüsünün hiç olmadığı, yüzeyin devasa buzullarla kaplı olduğu, hava sıcaklığının yıl boyu sıfırın çok altında seyrettiği sert iklim.',
-    example: 'Kutup ikliminin hakim olduğu Grönland ve Antarktika\'da yerleşik insan yaşamı sadece bilimsel araştırma istasyonlarıyla sınırlıdır.',
+    definition:
+        'Bitki örtüsünün hiç olmadığı, yüzeyin devasa buzullarla kaplı olduğu, hava sıcaklığının yıl boyu sıfırın çok altında seyrettiği sert iklim.',
+    example:
+        'Kutup ikliminin hakim olduğu Grönland ve Antarktika\'da yerleşik insan yaşamı sadece bilimsel araştırma istasyonlarıyla sınırlıdır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültür Turizmi',
-    definition: 'Tarihi eserleri, müzeleri, farklı toplumların yaşayış tarzlarını, sanatını ve geleneklerini tanımak amacıyla yapılan turizm.',
-    example: 'Güneydoğu Anadolu bölgesine düzenlenen ve Göbeklitepe, Zeugma Müzesi gibi noktaları kapsayan turlar, kültür turizmi meraklılarının ilk tercihidir.',
+    definition:
+        'Tarihi eserleri, müzeleri, farklı toplumların yaşayış tarzlarını, sanatını ve geleneklerini tanımak amacıyla yapılan turizm.',
+    example:
+        'Güneydoğu Anadolu bölgesine düzenlenen ve Göbeklitepe, Zeugma Müzesi gibi noktaları kapsayan turlar, kültür turizmi meraklılarının ilk tercihidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'T.C. Kültür ve Turizm Bakanlığı',
-    definition: 'Türkiye\'nin turizm politikalarını belirleyen, turistik tesisleri belgelendiren (turizm işletme belgesi) ve kültürel mirası koruyan devlet kurumu.',
-    example: 'Otelimiz, T.C. Kültür ve Turizm Bakanlığı denetimlerinden başarıyla geçerek 5 yıldızlı turizm işletme belgesi almaya hak kazanmıştır.',
+    definition:
+        'Türkiye\'nin turizm politikalarını belirleyen, turistik tesisleri belgelendiren (turizm işletme belgesi) ve kültürel mirası koruyan devlet kurumu.',
+    example:
+        'Otelimiz, T.C. Kültür ve Turizm Bakanlığı denetimlerinden başarıyla geçerek 5 yıldızlı turizm işletme belgesi almaya hak kazanmıştır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Turizm İşletme Belgesi',
-    definition: 'Turizm mevzuatında belirtilen asgari fiziksel ve hizmet standartlarına uygunluğu onaylanan tesislere T.C. Kültür ve Turizm Bakanlığı tarafından verilen resmi ruhsat ve belgedir.',
-    example: 'Denetimleri başarıyla tamamlayan yeni otelimiz, Bakanlık tarafından verilen resmi turizm işletme belgesi belgesini resepsiyon duvarına astı.',
+    definition:
+        'Turizm mevzuatında belirtilen asgari fiziksel ve hizmet standartlarına uygunluğu onaylanan tesislere T.C. Kültür ve Turizm Bakanlığı tarafından verilen resmi ruhsat ve belgedir.',
+    example:
+        'Denetimleri başarıyla tamamlayan yeni otelimiz, Bakanlık tarafından verilen resmi turizm işletme belgesi belgesini resepsiyon duvarına astı.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürel Miras Turizmi',
-    definition: 'Toplumların geçmişten günümüze taşıdığı somut (anıtlar, binalar) ve somut olmayan (gelenekler, ritüeller, yerel diller) miras değerlerini yerinde deneyimleme ve koruma odaklı turizm.',
-    example: 'UNESCO koruması altındaki Safranbolu evlerinde konaklamak ve tarihi mahalle kültürünü yaşamak kültürel miras turizmi örneğidir.',
+    definition:
+        'Toplumların geçmişten günümüze taşıdığı somut (anıtlar, binalar) ve somut olmayan (gelenekler, ritüeller, yerel diller) miras değerlerini yerinde deneyimleme ve koruma odaklı turizm.',
+    example:
+        'UNESCO koruması altındaki Safranbolu evlerinde konaklamak ve tarihi mahalle kültürünü yaşamak kültürel miras turizmi örneğidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Genel Kültür Rehberleri',
-    definition: 'Coğrafya, arkeoloji, sanat tarihi gibi alanlarda genel bilgiye sahip olan, müze ve ören yerlerinde ülkenin tanıtımını yapan rehberler.',
-    example: 'Genel kültür rehberleri, müzedeki tarihi eserleri kronolojik sırasına göre ziyaretçilere aktardılar.',
+    definition:
+        'Coğrafya, arkeoloji, sanat tarihi gibi alanlarda genel bilgiye sahip olan, müze ve ören yerlerinde ülkenin tanıtımını yapan rehberler.',
+    example:
+        'Genel kültür rehberleri, müzedeki tarihi eserleri kronolojik sırasına göre ziyaretçilere aktardılar.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültür Turları',
-    definition: 'Müzeler, arkeolojik alanlar ve tarihî yerlerin ziyaret edildiği, rehberin bir kültür elçisi rolünü üstlendiği detaylı turlar.',
-    example: 'Göbeklitepe ve Nemrut Dağı\'nı kapsayan kültür turları, tarih meraklısı gezginlerin en çok tercih ettiği programlardandır.',
+    definition:
+        'Müzeler, arkeolojik alanlar ve tarihî yerlerin ziyaret edildiği, rehberin bir kültür elçisi rolünü üstlendiği detaylı turlar.',
+    example:
+        'Göbeklitepe ve Nemrut Dağı\'nı kapsayan kültür turları, tarih meraklısı gezginlerin en çok tercih ettiği programlardandır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Etnik Turizm',
-    definition: 'Modern hayattan uzakta kalmış, egzotik, izole veya kendi özgün yaşam tarzını (kabile yaşamı vb.) korumuş toplumların kültürünü yerinde tecrübe etmek için yapılan otantik seyahat.',
-    example: 'Afrika\'nın iç kesimlerindeki yerel kabilelerin günlük yaşamlarını ve geleneksel törenlerini incelemek etnik turizm kapsamına girer.',
+    definition:
+        'Modern hayattan uzakta kalmış, egzotik, izole veya kendi özgün yaşam tarzını (kabile yaşamı vb.) korumuş toplumların kültürünü yerinde tecrübe etmek için yapılan otantik seyahat.',
+    example:
+        'Afrika\'nın iç kesimlerindeki yerel kabilelerin günlük yaşamlarını ve geleneksel törenlerini incelemek etnik turizm kapsamına girer.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kutlama Toplantıları',
-    definition: 'Birlikte zaman geçirilmesi, sosyalleşilmesi ve eğlenilmesi amacıyla düzenlenen, resmiyetin daha az olduğu toplantılar.',
-    example: 'Yıl sonu hedeflerine ulaşan acente çalışanları, moral depolamak amacıyla düzenlenen kutlama toplantılarında bir araya geldi.',
+    definition:
+        'Birlikte zaman geçirilmesi, sosyalleşilmesi ve eğlenilmesi amacıyla düzenlenen, resmiyetin daha az olduğu toplantılar.',
+    example:
+        'Yıl sonu hedeflerine ulaşan acente çalışanları, moral depolamak amacıyla düzenlenen kutlama toplantılarında bir araya geldi.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'AIPC',
-    definition: 'Uluslararası Kongre Merkezleri Birliği. Dünyadaki büyük kongre ve sergi merkezlerinin yöneticilerini bir araya getiren ve kalite standartlarını (mükemmelliği) teşvik eden kuruluş.',
-    example: 'AIPC üyeliği, kongre merkezimizin sunduğu hizmet kalitesinin uluslararası standartlarda olduğunu tescil etmektedir.',
+    definition:
+        'Uluslararası Kongre Merkezleri Birliği. Dünyadaki büyük kongre ve sergi merkezlerinin yöneticilerini bir araya getiren ve kalite standartlarını (mükemmelliği) teşvik eden kuruluş.',
+    example:
+        'AIPC üyeliği, kongre merkezimizin sunduğu hizmet kalitesinin uluslararası standartlarda olduğunu tescil etmektedir.',
     category: 'Kültür Mirası ve Rekreasyon',
+    audioPath: 'assets/sounds/terms/AIPC.mp3',
   ),
   Term(
     word: 'Sergi',
-    definition: 'Genellikle ticari bir amaç gütmeden, belli bir temayı, kültürel veya sanatsal eserleri halka sunmak amacıyla düzenlenen etkinlik.',
-    example: 'Geleneksel Türk ebru sanatını tanıtan sergi, kongre merkezinin fuaye alanında ziyaretçilerin beğenisine sunuldu.',
+    definition:
+        'Genellikle ticari bir amaç gütmeden, belli bir temayı, kültürel veya sanatsal eserleri halka sunmak amacıyla düzenlenen etkinlik.',
+    example:
+        'Geleneksel Türk ebru sanatını tanıtan sergi, kongre merkezinin fuaye alanında ziyaretçilerin beğenisine sunuldu.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'EXPO (Büyük Sergi)',
-    definition: 'İşletmecilik tarihinde ilk kez 1851\'de Londra\'da (Crystal Palace) düzenlenen, dünyanın dört bir yanından gelen endüstri ürünlerinin sergilendiği ilk dünya fuarı serisi.',
-    example: 'Türkiye, botanik temalı EXPO (büyük sergi) organizasyonuna ev sahipliği yaparak çevre teknolojilerini dünyaya tanıttı.',
+    definition:
+        'İşletmecilik tarihinde ilk kez 1851\'de Londra\'da (Crystal Palace) düzenlenen, dünyanın dört bir yanından gelen endüstri ürünlerinin sergilendiği ilk dünya fuarı serisi.',
+    example:
+        'Türkiye, botanik temalı EXPO (büyük sergi) organizasyonuna ev sahipliği yaparak çevre teknolojilerini dünyaya tanıttı.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Tiyatro Düzeni',
-    definition: 'Büyük sunum ve konferanslar için, masaların olmadığı sadece sandalye sıralarından oluşan, sahneye odaklı, kapasiteyi maksimize eden oturma düzeni.',
-    example: 'Üç yüz kişinin katılacağı açılış konuşması için ana salon, masa kullanılmadan tiyatro düzenine göre tasarlandı.',
+    definition:
+        'Büyük sunum ve konferanslar için, masaların olmadığı sadece sandalye sıralarından oluşan, sahneye odaklı, kapasiteyi maksimize eden oturma düzeni.',
+    example:
+        'Üç yüz kişinin katılacağı açılış konuşması için ana salon, masa kullanılmadan tiyatro düzenine göre tasarlandı.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kutu (Box Plot) Grafiği',
-    definition: 'Verinin dağılımını dörtte birlik (çeyreklik) dilimler halinde gösteren, medyan değerini ve verideki aşırı (aykırı/uç) değerleri analiz etmek için kullanılan istatistiksel grafik.',
-    example: 'Otel odası fiyatlarındaki dalgalanmaları ve uç fiyat tekliflerini görebilmek için kutu (box plot) grafiği çizildi.',
+    definition:
+        'Verinin dağılımını dörtte birlik (çeyreklik) dilimler halinde gösteren, medyan değerini ve verideki aşırı (aykırı/uç) değerleri analiz etmek için kullanılan istatistiksel grafik.',
+    example:
+        'Otel odası fiyatlarındaki dalgalanmaları ve uç fiyat tekliflerini görebilmek için kutu (box plot) grafiği çizildi.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Ahilik',
-    definition: '13. yüzyılda Anadolu\'da kurulan, esnaf ve sanatkarların ahlaki ve mesleki dayanışmasını sağlayan teşkilat.',
-    example: 'Otelcilikte hizmet kalitesini artırmak için, Ahilik teşkilatının dürüstlük ve usta-çırak ilişkisi ilkelerini temel alan kurum içi eğitim programları düzenledik.',
+    definition:
+        '13. yüzyılda Anadolu\'da kurulan, esnaf ve sanatkarların ahlaki ve mesleki dayanışmasını sağlayan teşkilat.',
+    example:
+        'Otelcilikte hizmet kalitesini artırmak için, Ahilik teşkilatının dürüstlük ve usta-çırak ilişkisi ilkelerini temel alan kurum içi eğitim programları düzenledik.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'UNESCO',
-    definition: 'Birleşmiş Milletler Eğitim, Bilim ve Kültür Örgütü; Dünya Mirası listelerini hazırlayan ve tarihi/kültürel/doğal varlıkları koruyan kurum.',
-    example: 'Otelimiz, UNESCO Dünya Mirası Listesi\'nde yer alan Safranbolu Evleri\'ne yürüyüş mesafesinde konumlanarak kültür turlarına ev sahipliği yapmaktadır.',
+    definition:
+        'Birleşmiş Milletler Eğitim, Bilim ve Kültür Örgütü; Dünya Mirası listelerini hazırlayan ve tarihi/kültürel/doğal varlıkları koruyan kurum.',
+    example:
+        'Otelimiz, UNESCO Dünya Mirası Listesi\'nde yer alan Safranbolu Evleri\'ne yürüyüş mesafesinde konumlanarak kültür turlarına ev sahipliği yapmaktadır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
+    audioPath: 'assets/sounds/terms/UNESCO.mp3',
   ),
   Term(
     word: 'Dünya Miras Listesi',
-    definition: 'UNESCO tarafından belirlenen ve onaylanan, tüm insanlık için evrensel, tarihi ve kültürel değer taşıyan anıtların ve doğal varlıkların listesi.',
-    example: 'Göbeklitepe\'nin UNESCO Dünya Miras Listesi\'ne alınmasıyla birlikte, Şanlıurfa bölgesine gelen kültür turisti sayısında patlama yaşandı.',
+    definition:
+        'UNESCO tarafından belirlenen ve onaylanan, tüm insanlık için evrensel, tarihi ve kültürel değer taşıyan anıtların ve doğal varlıkların listesi.',
+    example:
+        'Göbeklitepe\'nin UNESCO Dünya Miras Listesi\'ne alınmasıyla birlikte, Şanlıurfa bölgesine gelen kültür turisti sayısında patlama yaşandı.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültür',
-    definition: 'Bir toplumun tarihsel süreç içinde ürettiği ve kuşaktan kuşağa aktardığı maddi (mimari, teknoloji) ve manevi (dil, din, gelenek) özelliklerin bütünü.',
-    example: 'Kültür turlarımızda, yerel halkın geleneksel yaşam tarzını ve el sanatlarını yakından inceleme şansı buluyoruz.',
+    definition:
+        'Bir toplumun tarihsel süreç içinde ürettiği ve kuşaktan kuşağa aktardığı maddi (mimari, teknoloji) ve manevi (dil, din, gelenek) özelliklerin bütünü.',
+    example:
+        'Kültür turlarımızda, yerel halkın geleneksel yaşam tarzını ve el sanatlarını yakından inceleme şansı buluyoruz.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Somut Kültürel Miras',
-    definition: 'Geçmişten günümüze ulaşan arkeolojik alanlar, binalar, anıtlar, heykeller, kitaplar ve taşınabilir/taşınmaz tarihi fiziki yapılar.',
-    example: 'Efes Antik Kenti, ülkemizin en önemli somut kültürel miras alanları arasında yer alır.',
+    definition:
+        'Geçmişten günümüze ulaşan arkeolojik alanlar, binalar, anıtlar, heykeller, kitaplar ve taşınabilir/taşınmaz tarihi fiziki yapılar.',
+    example:
+        'Efes Antik Kenti, ülkemizin en önemli somut kültürel miras alanları arasında yer alır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Somut Olmayan Kültürel Miras',
-    definition: 'Toplumların nesilden nesile aktardığı gelenekler, sözlü anlatımlar (masal, ninni), gösteri sanatları, ritüeller, şölenler ve el sanatları becerileri.',
-    example: 'Geleneksel Türk kahvesi ve kültürü, UNESCO Somut Olmayan Kültürel Miras Listesi\'ne dahil edilmiştir.',
+    definition:
+        'Toplumların nesilden nesile aktardığı gelenekler, sözlü anlatımlar (masal, ninni), gösteri sanatları, ritüeller, şölenler ve el sanatları becerileri.',
+    example:
+        'Geleneksel Türk kahvesi ve kültürü, UNESCO Somut Olmayan Kültürel Miras Listesi\'ne dahil edilmiştir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürlenme',
-    definition: 'İnsanın doğumundan ölümüne kadar, içinde yaşadığı toplumun beklentilerine uyacak şekilde etkilenme ve değişme süreci.',
-    example: 'Bireyin küçük yaşlardan itibaren ailesinden görgü kurallarını öğrenmesi, doğal bir kültürlenme sürecidir.',
+    definition:
+        'İnsanın doğumundan ölümüne kadar, içinde yaşadığı toplumun beklentilerine uyacak şekilde etkilenme ve değişme süreci.',
+    example:
+        'Bireyin küçük yaşlardan itibaren ailesinden görgü kurallarını öğrenmesi, doğal bir kültürlenme sürecidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürleşme',
-    definition: 'İki farklı kültürün karşılaşmasıyla başlayan ve karşılıklı etkileşim/uyum ile sonuçlanan kültürel ve psikolojik değişim süreci.',
-    example: 'Gurbetçilerimizin gittikleri ülkenin dili ve bazı alışkanlıklarını benimsemesi kültürleşmeye örnektir.',
+    definition:
+        'İki farklı kültürün karşılaşmasıyla başlayan ve karşılıklı etkileşim/uyum ile sonuçlanan kültürel ve psikolojik değişim süreci.',
+    example:
+        'Gurbetçilerimizin gittikleri ülkenin dili ve bazı alışkanlıklarını benimsemesi kültürleşmeye örnektir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürel Yayılma',
-    definition: 'Bir kültürde ortaya çıkan maddi veya manevi kültür ögesinin (Örn: yoğurt, spagetti) dünyadaki başka kültürlere yayılarak benimsenmesi.',
-    example: 'Türk dönerinin bugün Avrupa genelinde en popüler hızlı yiyeceklerden biri haline gelmesi kültürel yayılma örneğidir.',
+    definition:
+        'Bir kültürde ortaya çıkan maddi veya manevi kültür ögesinin (Örn: yoğurt, spagetti) dünyadaki başka kültürlere yayılarak benimsenmesi.',
+    example:
+        'Türk dönerinin bugün Avrupa genelinde en popüler hızlı yiyeceklerden biri haline gelmesi kültürel yayılma örneğidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürel Gecikme',
-    definition: 'Bir toplumdaki maddi kültür ögelerindeki (teknoloji) hızlı değişime, manevi kültür ögelerinin (ahlak, görgü) aynı hızda ayak uyduramaması sonucu oluşan uyumsuzluk.',
-    example: 'Akıllı telefonların yaygınlaşmasına rağmen internet etiği ve nezaket kurallarının tam oturmaması kültürel gecikmedir.',
+    definition:
+        'Bir toplumdaki maddi kültür ögelerindeki (teknoloji) hızlı değişime, manevi kültür ögelerinin (ahlak, görgü) aynı hızda ayak uyduramaması sonucu oluşan uyumsuzluk.',
+    example:
+        'Akıllı telefonların yaygınlaşmasına rağmen internet etiği ve nezaket kurallarının tam oturmaması kültürel gecikmedir.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Kültür Şoku',
-    definition: 'Bir kültürden başka bir (yabancı) kültüre giden bireylerin, yeni kültüre uyum sağlamakta karşılaştıkları güçlük, sıkıntı ve gösterdikleri tepkiler.',
-    example: 'Uzak Doğu\'ya ilk kez giden Avrupalı turistler, beslenme alışkanlıkları ve sosyal kurallar nedeniyle kültür şoku yaşayabilir.',
+    definition:
+        'Bir kültürden başka bir (yabancı) kültüre giden bireylerin, yeni kültüre uyum sağlamakta karşılaştıkları güçlük, sıkıntı ve gösterdikleri tepkiler.',
+    example:
+        'Uzak Doğu\'ya ilk kez giden Avrupalı turistler, beslenme alışkanlıkları ve sosyal kurallar nedeniyle kültür şoku yaşayabilir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürel Özümseme (Asimilasyon)',
-    definition: 'Baskın bir kültürel sistemin, başka bir kültürel sistemi zamanla kendine benzeterek kendi egemenliği altına alması veya erimesi süreci.',
-    example: 'Tarih boyunca bazı imparatorlukların sınırları içindeki farklı etnik toplulukların, egemen kültürün dilini ve yaşam tarzını zamanla benimseyerek kendi dillerini unutması kültürel özümseme örneğidir.',
+    definition:
+        'Baskın bir kültürel sistemin, başka bir kültürel sistemi zamanla kendine benzeterek kendi egemenliği altına alması veya erimesi süreci.',
+    example:
+        'Tarih boyunca bazı imparatorlukların sınırları içindeki farklı etnik toplulukların, egemen kültürün dilini ve yaşam tarzını zamanla benimseyerek kendi dillerini unutması kültürel özümseme örneğidir.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Kültürel Yozlaşma',
-    definition: 'Bir ülkenin kendi kültür ögelerini kaybederek tamamen yabancı kültürlerin etkisi altına girmesi ve yerli değerlerini yitirmesi.',
-    example: 'Tarihi çarşılardaki dükkan tabelalarında Türkçe kelimeler yerine yabancı kelimelerin kontrolsüzce kullanılması kültürel yozlaşma belirtisidir.',
+    definition:
+        'Bir ülkenin kendi kültür ögelerini kaybederek tamamen yabancı kültürlerin etkisi altına girmesi ve yerli değerlerini yitirmesi.',
+    example:
+        'Tarihi çarşılardaki dükkan tabelalarında Türkçe kelimeler yerine yabancı kelimelerin kontrolsüzce kullanılması kültürel yozlaşma belirtisidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Zorla Kültürlenme',
-    definition: 'Bir topluluğun kendi kültürel değerlerini başka bir baskın kültürün etkisiyle zaman içerisinde değiştirmek durumunda kalması süreci.',
-    example: 'Tarih boyunca göç eden toplulukların yerleştikleri yeni coğrafyalarda karşılaştıkları kültürel değişim baskısı zorla kültürlenmeye örnek gösterilebilir.',
+    definition:
+        'Bir topluluğun kendi kültürel değerlerini başka bir baskın kültürün etkisiyle zaman içerisinde değiştirmek durumunda kalması süreci.',
+    example:
+        'Tarih boyunca göç eden toplulukların yerleştikleri yeni coğrafyalarda karşılaştıkları kültürel değişim baskısı zorla kültürlenmeye örnek gösterilebilir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kültürel Değişme',
-    definition: 'Toplumun bütünüyle veya bazı kurumlarıyla değişmesi ya da değişikliğe uğramasıdır (Örn: ata binmek yerine araba kullanılması).',
-    example: 'Geleneksel mektup yazma alışkanlığının yerini e-posta ve anlık mesajlaşmanın alması bir kültürel değişmedir.',
+    definition:
+        'Toplumun bütünüyle veya bazı kurumlarıyla değişmesi ya da değişikliğe uğramasıdır (Örn: ata binmek yerine araba kullanılması).',
+    example:
+        'Geleneksel mektup yazma alışkanlığının yerini e-posta ve anlık mesajlaşmanın alması bir kültürel değişmedir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Alt Kültür',
-    definition: 'Ulusal kültürün altında yer alan, toplumdaki belirli sınıflara, bölgelere veya yörelere özgü özel kültür biçimleri.',
-    example: 'Karadeniz bölgesindeki yayla şenlikleri ve horon kültürü, ulusal kültürümüz içindeki zengin bir alt kültürdür.',
+    definition:
+        'Ulusal kültürün altında yer alan, toplumdaki belirli sınıflara, bölgelere veya yörelere özgü özel kültür biçimleri.',
+    example:
+        'Karadeniz bölgesindeki yayla şenlikleri ve horon kültürü, ulusal kültürümüz içindeki zengin bir alt kültürdür.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Çok Kültürlülük',
-    definition: 'Farklı kültürlerin birbiri ile asimile olmadan, tek bir ulusal çatı altında beraberce ve ayrı ayrı yaşamasını savunan anlayış.',
-    example: 'Kanada, farklı etnik grupların dillerini ve geleneklerini koruyarak barış içinde yaşadığı çok kültürlülük modeline iyi bir örnektir.',
+    definition:
+        'Farklı kültürlerin birbiri ile asimile olmadan, tek bir ulusal çatı altında beraberce ve ayrı ayrı yaşamasını savunan anlayış.',
+    example:
+        'Kanada, farklı etnik grupların dillerini ve geleneklerini koruyarak barış içinde yaşadığı çok kültürlülük modeline iyi bir örnektir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Nomofobi',
-    definition: 'Akıllı telefondan ayrı kalındığında yaşanan panik, huzursuzluk ve sürekli telefonu kontrol etme ihtiyacı (Telefon bağımlılığı).',
-    example: 'Doğa kamplarımıza katılan bazı misafirlerin telefon çekmediğinde yaşadığı nomofobi belirtileri zamanla azalmaktadır.',
+    definition:
+        'Akıllı telefondan ayrı kalındığında yaşanan panik, huzursuzluk ve sürekli telefonu kontrol etme ihtiyacı (Telefon bağımlılığı).',
+    example:
+        'Doğa kamplarımıza katılan bazı misafirlerin telefon çekmediğinde yaşadığı nomofobi belirtileri zamanla azalmaktadır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Şamanizm',
-    definition: 'Sibirya ve Orta Asya kökenli, dinî törenlerin şamanlar (kam, baksı) tarafından yönetildiği; kurşun dökme, nazar inancı gibi adetlerin günümüze uzandığı eski Türk inancı.',
-    example: 'Nazar boncuğu takma ve gidenin arkasından su dökme gibi adetlerimiz, Şamanizm inancının günümüze kadar gelen uzantılarıdır.',
+    definition:
+        'Sibirya ve Orta Asya kökenli, dinî törenlerin şamanlar (kam, baksı) tarafından yönetildiği; kurşun dökme, nazar inancı gibi adetlerin günümüze uzandığı eski Türk inancı.',
+    example:
+        'Nazar boncuğu takma ve gidenin arkasından su dökme gibi adetlerimiz, Şamanizm inancının günümüze kadar gelen uzantılarıdır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Atalar Kültü',
-    definition: 'Eski Türklerde ölen ataların ruhlarının geride kalanlara iyilik veya kötülük yapabileceğine inanılan, türbe/yatır ziyaretlerinin temelini oluşturan inanç sistemi.',
-    example: 'Kültürümüzde vefat eden büyüklerin mezarlarının bayramlarda ziyaret edilmesi, Atalar Kültü geleneğinin modern bir devamıdır.',
+    definition:
+        'Eski Türklerde ölen ataların ruhlarının geride kalanlara iyilik veya kötülük yapabileceğine inanılan, türbe/yatır ziyaretlerinin temelini oluşturan inanç sistemi.',
+    example:
+        'Kültürümüzde vefat eden büyüklerin mezarlarının bayramlarda ziyaret edilmesi, Atalar Kültü geleneğinin modern bir devamıdır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kut',
-    definition: 'İslamiyet öncesi Türk inanç sistemine göre, Gök Tanrı tarafından Türk hakanına dünyayı idare etmesi için verildiğine inanılan kutsal yönetme yetkisi.',
-    example: 'Kut inancına göre hükümdar halkına adil davranmak ve onları korumakla yükümlüydü.',
+    definition:
+        'İslamiyet öncesi Türk inanç sistemine göre, Gök Tanrı tarafından Türk hakanına dünyayı idare etmesi için verildiğine inanılan kutsal yönetme yetkisi.',
+    example:
+        'Kut inancına göre hükümdar halkına adil davranmak ve onları korumakla yükümlüydü.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kurgan',
-    definition: 'Eski Türklerde, ölen önemli kişilerin şahsi eşyaları (altın, gümüş, silah) ile birlikte gömüldükleri, tepe (höyük) şeklindeki anıt mezarlar (Örn: Pazırık, Esik Kurganı).',
-    example: 'Arkeologlar, kurgan kazılarında buldukları altın elbiseli adam zırhı sayesinde eski Türk sanatına dair önemli bilgilere ulaştılar.',
+    definition:
+        'Eski Türklerde, ölen önemli kişilerin şahsi eşyaları (altın, gümüş, silah) ile birlikte gömüldükleri, tepe (höyük) şeklindeki anıt mezarlar (Örn: Pazırık, Esik Kurganı).',
+    example:
+        'Arkeologlar, kurgan kazılarında buldukları altın elbiseli adam zırhı sayesinde eski Türk sanatına dair önemli bilgilere ulaştılar.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Balbal',
-    definition: 'Eski Türklerde mezarların veya kurganların üzerine dikilen, ölen kişinin yaşarken öldürdüğü düşmanları simgeleyen taş heykeller (mezar taşı geleneğinin atası).',
-    example: 'Orhun Yazıtları çevresinde bulunan balbal taşları, eski Türklerin savaşçı kimliğini ve sanat anlayışını yansıtır.',
+    definition:
+        'Eski Türklerde mezarların veya kurganların üzerine dikilen, ölen kişinin yaşarken öldürdüğü düşmanları simgeleyen taş heykeller (mezar taşı geleneğinin atası).',
+    example:
+        'Orhun Yazıtları çevresinde bulunan balbal taşları, eski Türklerin savaşçı kimliğini ve sanat anlayışını yansıtır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Ayaz Ata',
-    definition: 'Eski Türklerde Nardugan Bayramı\'nda kışı getirdiğine ve insanlara iyilik/hediye dağıttığına inanılan mitolojik Kış Babası.',
-    example: 'Altay mitolojisinde soğuk havaların koruyucusu olan Ayaz Ata, muhtaç kişilere yardım eden bir figür olarak tasvir edilmiştir.',
+    definition:
+        'Eski Türklerde Nardugan Bayramı\'nda kışı getirdiğine ve insanlara iyilik/hediye dağıttığına inanılan mitolojik Kış Babası.',
+    example:
+        'Altay mitolojisinde soğuk havaların koruyucusu olan Ayaz Ata, muhtaç kişilere yardım eden bir figür olarak tasvir edilmiştir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Hıdırellez',
-    definition: '6 Mayıs\'ta kutlanan, darda kalanların yardımcısı Hz. Hızır ile denizlerin hakimi Hz. İlyas\'ın yeryüzünde buluştuğu gün olarak kabul edilen bahar bayramı.',
-    example: 'Hıdırellez gecesi gül ağacının altına kağıtlara çizilen dileklerin bırakılması Anadolu\'da çok yaygın bir gelenektir.',
+    definition:
+        '6 Mayıs\'ta kutlanan, darda kalanların yardımcısı Hz. Hızır ile denizlerin hakimi Hz. İlyas\'ın yeryüzünde buluştuğu gün olarak kabul edilen bahar bayramı.',
+    example:
+        'Hıdırellez gecesi gül ağacının altına kağıtlara çizilen dileklerin bırakılması Anadolu\'da çok yaygın bir gelenektir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Kandil Geceleri',
-    definition: 'İslami inanışta kutlanan, cami ve minarelerde kandiller yakılarak ibadet edilen, Osmanlı döneminde II. Selim ile başlayan kutsal geceler.',
-    example: 'Kandil gecelerinde yapılan özel ibadetler ve komşulara kandil simidi dağıtılması toplumsal dayanışmayı güçlendirir.',
+    definition:
+        'İslami inanışta kutlanan, cami ve minarelerde kandiller yakılarak ibadet edilen, Osmanlı döneminde II. Selim ile başlayan kutsal geceler.',
+    example:
+        'Kandil gecelerinde yapılan özel ibadetler ve komşulara kandil simidi dağıtılması toplumsal dayanışmayı güçlendirir.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Kirvelik',
-    definition: 'Anadolu\'da sünnet olan çocuğun masraflarını karşılayan ve o aileden biri gibi kabul edilen, evlilik bağının bile yasaklandığı köklü sosyal akrabalık rolü.',
-    example: 'Kirvelik müessesesi, Anadolu\'daki aileler arasında ömür boyu sürecek güçlü bir dostluk ve akrabalık köprüsü kurar.',
+    definition:
+        'Anadolu\'da sünnet olan çocuğun masraflarını karşılayan ve o aileden biri gibi kabul edilen, evlilik bağının bile yasaklandığı köklü sosyal akrabalık rolü.',
+    example:
+        'Kirvelik müessesesi, Anadolu\'daki aileler arasında ömür boyu sürecek güçlü bir dostluk ve akrabalık köprüsü kurar.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Bindallı',
-    definition: 'Üzerinde dal, yaprak, çiçek gibi işlemeler bulunan, Türk kadınlarının özellikle kına gecelerinde giydiği gelensenel kaftan benzeri kıyafet.',
-    example: 'Kına gecesinde gelinin giydiği el işlemeli kadife bindallı, davetlilerin büyük beğenisini topladı.',
+    definition:
+        'Üzerinde dal, yaprak, çiçek gibi işlemeler bulunan, Türk kadınlarının özellikle kına gecelerinde giydiği gelensenel kaftan benzeri kıyafet.',
+    example:
+        'Kına gecesinde gelinin giydiği el işlemeli kadife bindallı, davetlilerin büyük beğenisini topladı.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Minyatür',
-    definition: 'Kendine has boyama teknikleri ile çok ince işlenmiş, gölge ve perspektif kullanılmayan, olayları anlatan küçük boyutlu geleneksel resim sanatı (Osmanlı\'da \'nakış\').',
-    example: 'Osmanlı dönemindeki saray hayatını ve törenleri anlatan minyatür eserler, dönemin tarihi açısından önemli birer belgedir.',
+    definition:
+        'Kendine has boyama teknikleri ile çok ince işlenmiş, gölge ve perspektif kullanılmayan, olayları anlatan küçük boyutlu geleneksel resim sanatı (Osmanlı\'da \'nakış\').',
+    example:
+        'Osmanlı dönemindeki saray hayatını ve törenleri anlatan minyatür eserler, dönemin tarihi açısından önemli birer belgedir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Ebru Sanatı',
-    definition: 'Kıvamı artırılmış (sığır ödü katılmış) su üzerine, toprak boyaların serpilip biz adlı aletle şekil verilmesi ve kâğıda aktarılmasına dayanan geleneksel süsleme sanatı.',
-    example: 'Ebru sanatı atölyemizde misafirlerimiz suyun üzerinde renklerin dansına tanıklık ederek kendi tasarımlarını oluşturdular.',
+    definition:
+        'Kıvamı artırılmış (sığır ödü katılmış) su üzerine, toprak boyaların serpilip biz adlı aletle şekil verilmesi ve kâğıda aktarılmasına dayanan geleneksel süsleme sanatı.',
+    example:
+        'Ebru sanatı atölyemizde misafirlerimiz suyun üzerinde renklerin dansına tanıklık ederek kendi tasarımlarını oluşturdular.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Hat Sanatı',
-    definition: 'Arap harfleri kullanılarak, mürekkep, kalem ve hokka ile icra edilen; yazıyı estetik, ahenkli ve hünerli bir biçimde yazma sanatı (Ustasına \'Hattat\' denir).',
-    example: 'Tarihi camilerin kubbelerinde yer alan devasa hat sanatı levhaları, hat sanatının ulaştığı estetik zirveyi gösterir.',
+    definition:
+        'Arap harfleri kullanılarak, mürekkep, kalem ve hokka ile icra edilen; yazıyı estetik, ahenkli ve hünerli bir biçimde yazma sanatı (Ustasına \'Hattat\' denir).',
+    example:
+        'Tarihi camilerin kubbelerinde yer alan devasa hat sanatı levhaları, hat sanatının ulaştığı estetik zirveyi gösterir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Çinicilik',
-    definition: 'Killi topraktan yapılarak fırında pişirilen, bir yüzeyi sırlanmış, çeşitli renk ve motiflerle süslenmiş seramik sanatıdır (Özellikle İznik ve Kütahya\'da yaygındır).',
-    example: 'Mavi cami olarak da bilinen Sultanahmet Camii, duvarlarını süsleyen İznik çinicilik örnekleriyle dünyaca ünlüdür.',
+    definition:
+        'Killi topraktan yapılarak fırında pişirilen, bir yüzeyi sırlanmış, çeşitli renk ve motiflerle süslenmiş seramik sanatıdır (Özellikle İznik ve Kütahya\'da yaygındır).',
+    example:
+        'Mavi cami olarak da bilinen Sultanahmet Camii, duvarlarını süsleyen İznik çinicilik örnekleriyle dünyaca ünlüdür.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Telkâri',
-    definition: 'İnce tel hâline getirilen gümüşün (veya altının) el işçiliği ile örülüp bükülerek takı veya süs eşyası haline getirildiği geleneksel Mardin/Midyat el sanatı.',
-    example: 'Mardin\'i ziyaret eden turistler, ustaların elinde şekillenen gümüş telkâri takılara yoğun ilgi gösteriyor.',
+    definition:
+        'İnce tel hâline getirilen gümüşün (veya altının) el işçiliği ile örülüp bükülerek takı veya süs eşyası haline getirildiği geleneksel Mardin/Midyat el sanatı.',
+    example:
+        'Mardin\'i ziyaret eden turistler, ustaların elinde şekillenen gümüş telkâri takılara yoğun ilgi gösteriyor.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Cirit',
-    definition: 'Türklerin Orta Asya\'dan Anadolu\'ya taşıdığı, iki takım hâlinde at üzerinde oynanan, cesaret ve at hâkimiyeti gerektiren geleneksel bir atlı savaş/spor oyunu.',
-    example: 'Erzurum\'da düzenlenen geleneksel cirit oyunları festivali, yerli ve yabancı turistlerin ilgisini çekmektedir.',
+    definition:
+        'Türklerin Orta Asya\'dan Anadolu\'ya taşıdığı, iki takım hâlinde at üzerinde oynanan, cesaret ve at hâkimiyeti gerektiren geleneksel bir atlı savaş/spor oyunu.',
+    example:
+        'Erzurum\'da düzenlenen geleneksel cirit oyunları festivali, yerli ve yabancı turistlerin ilgisini çekmektedir.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Karakucak Güreşi',
-    definition: 'Orta Asya kaynaklı, Türklerin öz millî güreşidir. Çim zeminlerde pırpıt (kıspet) giyilerek, yağ sürülmeden davul zurna eşliğinde yapılır.',
-    example: 'Yaz şenlikleri kapsamında düzenlenen karakucak güreşi müsabakalarında başpehlivan olmak için sporcular kıyasıya mücadele etti.',
+    definition:
+        'Orta Asya kaynaklı, Türklerin öz millî güreşidir. Çim zeminlerde pırpıt (kıspet) giyilerek, yağ sürülmeden davul zurna eşliğinde yapılır.',
+    example:
+        'Yaz şenlikleri kapsamında düzenlenen karakucak güreşi müsabakalarında başpehlivan olmak için sporcular kıyasıya mücadele etti.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Enderun',
-    definition: 'Osmanlı Devleti\'nde, saray içinde yer alan ve devletin yüksek dereceli memurları ile askerî bürokratlarını yetiştiren özel eğitim kurumu.',
-    example: 'Topkapı Sarayı\'nda yer alan Enderun mektebi, yetenekli gençlerin sadrazamlığa kadar yükselmesini sağlayan bir liyakat sistemiydi.',
+    definition:
+        'Osmanlı Devleti\'nde, saray içinde yer alan ve devletin yüksek dereceli memurları ile askerî bürokratlarını yetiştiren özel eğitim kurumu.',
+    example:
+        'Topkapı Sarayı\'nda yer alan Enderun mektebi, yetenekli gençlerin sadrazamlığa kadar yükselmesini sağlayan bir liyakat sistemiydi.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Flamenko',
-    definition: 'İspanya\'nın Endülüs Bölgesinde yerli İberik, Arap, Yahudi ve Romanların ortaklaşa ortaya çıkardığı ünlü müzik ve dans kültürü.',
-    example: 'Sevilla\'daki geleneksel bir flamenko gösterisinde, dansçıların ayak ritimleri ve gitar melodileri izleyicileri büyüledi.',
+    definition:
+        'İspanya\'nın Endülüs Bölgesinde yerli İberik, Arap, Yahudi ve Romanların ortaklaşa ortaya çıkardığı ünlü müzik ve dans kültürü.',
+    example:
+        'Sevilla\'daki geleneksel bir flamenko gösterisinde, dansçıların ayak ritimleri ve gitar melodileri izleyicileri büyüledi.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Matruşka',
-    definition: 'Anne figürünün içerisinde iç içe yerleştirilmiş ahşap bebeklerden oluşan, Rusya\'nın ünlü kültürel simgesi.',
-    example: 'Rusya turundan dönen arkadaşım, bana el yapımı boyamaları olan geleneksel bir matruşka bebek hediye etti.',
+    definition:
+        'Anne figürünün içerisinde iç içe yerleştirilmiş ahşap bebeklerden oluşan, Rusya\'nın ünlü kültürel simgesi.',
+    example:
+        'Rusya turundan dönen arkadaşım, bana el yapımı boyamaları olan geleneksel bir matruşka bebek hediye etti.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Yin Yang',
-    definition: 'Çin kültüründe doğada var olan iki zıt kutbu (karanlık-aydınlık, iyilik-kötülük) simgeleyen ve birbirini tamamlayan felsefi sembol.',
-    example: 'Geleneksel Çin tıbbı, vücuttaki yin yang dengesini korumayı ve enerjiyi uyumlu hale getirmeyi amaçlar.',
+    definition:
+        'Çin kültüründe doğada var olan iki zıt kutbu (karanlık-aydınlık, iyilik-kötülük) simgeleyen ve birbirini tamamlayan felsefi sembol.',
+    example:
+        'Geleneksel Çin tıbbı, vücuttaki yin yang dengesini korumayı ve enerjiyi uyumlu hale getirmeyi amaçlar.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Kimono',
-    definition: 'Japon kültürünün dünya çapında tanınan, geniş kollu ve kuşaklı (obi) geleneksel giysisi.',
-    example: 'Kyoto\'daki çay törenine katılan ev sahibi kadın, ipekten yapılmış çok şık bir kimono giymişti.',
+    definition:
+        'Japon kültürünün dünya çapında tanınan, geniş kollu ve kuşaklı (obi) geleneksel giysisi.',
+    example:
+        'Kyoto\'daki çay törenine katılan ev sahibi kadın, ipekten yapılmış çok şık bir kimono giymişti.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Hitit Güneşi',
-    definition: 'Anadolu\'da yaşamış Hitit uygarlığı ve sanatının sembolü olup, günümüzde pek çok kurumun simgesi olarak kullanılan kültürel öge.',
-    example: 'Ankara\'nın simgelerinden olan Hitit Güneşi heykeli, Anadolu\'nun köklü tarihini ve sanat mirasını temsil eder.',
+    definition:
+        'Anadolu\'da yaşamış Hitit uygarlığı ve sanatının sembolü olup, günümüzde pek çok kurumun simgesi olarak kullanılan kültürel öge.',
+    example:
+        'Ankara\'nın simgelerinden olan Hitit Güneşi heykeli, Anadolu\'nun köklü tarihini ve sanat mirasını temsil eder.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Avrupa Kültürü',
-    definition: 'Temellerini Antik Yunan (akıl/felsefe), Roma (hukuk/devlet) ve Hristiyanlık (ahlak) inancından alan, Rönesans ve Sanayi Devrimi ile şekillenen rasyonel kültür.',
-    example: 'Modern insan hakları ve demokrasi kavramları, Avrupa kültürü ve aydınlanma döneminin felsefi birikimiyle olgunlaşmıştır.',
+    definition:
+        'Temellerini Antik Yunan (akıl/felsefe), Roma (hukuk/devlet) ve Hristiyanlık (ahlak) inancından alan, Rönesans ve Sanayi Devrimi ile şekillenen rasyonel kültür.',
+    example:
+        'Modern insan hakları ve demokrasi kavramları, Avrupa kültürü ve aydınlanma döneminin felsefi birikimiyle olgunlaşmıştır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Keltler',
-    definition: 'Avrupa\'nın ilk yerleşik kavimlerinden olan, demir işçiliğinde uzmanlaşan ve bugünkü İrlanda, İskoçya, Galler kültürünün (Kelt müziği, mitolojisi) temelini oluşturan halk.',
-    example: 'İskoçya gezimizde dinlediğimiz gayda melodileri ve mitolojik hikayeler, antik Keltler topluluğunun kültürel mirasından izler taşır.',
+    definition:
+        'Avrupa\'nın ilk yerleşik kavimlerinden olan, demir işçiliğinde uzmanlaşan ve bugünkü İrlanda, İskoçya, Galler kültürünün (Kelt müziği, mitolojisi) temelini oluşturan halk.',
+    example:
+        'İskoçya gezimizde dinlediğimiz gayda melodileri ve mitolojik hikayeler, antik Keltler topluluğunun kültürel mirasından izler taşır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'İskandinav Kültürü',
-    definition: 'İsveç, Norveç, Danimarka ve Finlandiya\'yı kapsayan; Viking mitolojisine dayanan, eşitlikçi, doğaya saygılı ve minimalist kuzey kültürü.',
-    example: 'İsveçlilerin ünlü lagom felsefesi, İskandinav kültürü içerisindeki dengeli ve sade yaşam tarzını özetler.',
+    definition:
+        'İsveç, Norveç, Danimarka ve Finlandiya\'yı kapsayan; Viking mitolojisine dayanan, eşitlikçi, doğaya saygılı ve minimalist kuzey kültürü.',
+    example:
+        'İsveçlilerin ünlü lagom felsefesi, İskandinav kültürü içerisindeki dengeli ve sade yaşam tarzını özetler.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Vikingler',
-    definition: '8. ve 11. yüzyıllar arasında İskandinavya\'dan Avrupa\'ya yayılan, savaşçı kimlikleri, üstün gemi yapım teknikleri ve çok tanrılı (Odin, Thor) inançlarıyla bilinen denizci halk.',
-    example: 'Norveç\'teki müzede sergilenen devasa ahşap gemiler, Vikingler topluluğunun denizcilik ve keşif becerilerini gözler önüne seriyor.',
+    definition:
+        '8. ve 11. yüzyıllar arasında İskandinavya\'dan Avrupa\'ya yayılan, savaşçı kimlikleri, üstün gemi yapım teknikleri ve çok tanrılı (Odin, Thor) inançlarıyla bilinen denizci halk.',
+    example:
+        'Norveç\'teki müzede sergilenen devasa ahşap gemiler, Vikingler topluluğunun denizcilik ve keşif becerilerini gözler önüne seriyor.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Aztekler',
-    definition: 'Meksika vadisinde büyük bir imparatorluk kuran, gelişmiş tarım (yüzen bahçeler/chinampa), mimari (piramitler) ve astronomi bilgisine sahip eski bir Mezoamerika uygarlığı.',
-    example: 'Aztekler tarafından bataklıkları tarım alanına dönüştürmek için geliştirilen chinampa sistemi, antik bir mühendislik harikasıdır.',
+    definition:
+        'Meksika vadisinde büyük bir imparatorluk kuran, gelişmiş tarım (yüzen bahçeler/chinampa), mimari (piramitler) ve astronomi bilgisine sahip eski bir Mezoamerika uygarlığı.',
+    example:
+        'Aztekler tarafından bataklıkları tarım alanına dönüştürmek için geliştirilen chinampa sistemi, antik bir mühendislik harikasıdır.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Mayalar',
-    definition: 'Matematik, astronomi ve takvim sistemlerinde (Maya Takvimi) ileri gitmiş, Orta Amerika\'da (Meksika/Guatemala) devasa taş piramitler inşa etmiş yerli halk.',
-    example: 'Meksika\'daki Chichen Itza piramidi, Mayalar topluluğunun astronomi alanındaki gelişmiş bilgisini yansıtan bir takvim gibi inşa edilmiştir.',
+    definition:
+        'Matematik, astronomi ve takvim sistemlerinde (Maya Takvimi) ileri gitmiş, Orta Amerika\'da (Meksika/Guatemala) devasa taş piramitler inşa etmiş yerli halk.',
+    example:
+        'Meksika\'daki Chichen Itza piramidi, Mayalar topluluğunun astronomi alanındaki gelişmiş bilgisini yansıtan bir takvim gibi inşa edilmiştir.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Uzak Doğu Kültürü',
-    definition: 'Çin, Japonya ve Kore\'yi kapsayan; Konfüçyüsçülük (itaat/saygı), Taoizm ve Budizm inançlarıyla şekillenen, uyum, disiplin ve doğa ile bütünleşmeyi savunan kültür.',
-    example: 'Uzak Doğu kültürü içinde çay içmek sadece bir alışkanlık değil, aynı zamanda derin felsefi anlamlar taşıyan bir meditasyon ritüelidir.',
+    definition:
+        'Çin, Japonya ve Kore\'yi kapsayan; Konfüçyüsçülük (itaat/saygı), Taoizm ve Budizm inançlarıyla şekillenen, uyum, disiplin ve doğa ile bütünleşmeyi savunan kültür.',
+    example:
+        'Uzak Doğu kültürü içinde çay içmek sadece bir alışkanlık değil, aynı zamanda derin felsefi anlamlar taşıyan bir meditasyon ritüelidir.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Afrika Kültürü',
-    definition: 'Binlerce farklı dil ve kabilenin bulunduğu, sözlü tarih, maske oymacılığı, ritmik danslar ve kabile inançlarının (animizm/şamanizm) yoğun olduğu etnik çeşitlilik merkezi.',
-    example: 'Afrika kültürü ve sanatının en çarpıcı öğeleri olan ahşap maskeler, kabilelerin geleneksel dini törenlerinde kullanılmaktadır.',
+    definition:
+        'Binlerce farklı dil ve kabilenin bulunduğu, sözlü tarih, maske oymacılığı, ritmik danslar ve kabile inançlarının (animizm/şamanizm) yoğun olduğu etnik çeşitlilik merkezi.',
+    example:
+        'Afrika kültürü ve sanatının en çarpıcı öğeleri olan ahşap maskeler, kabilelerin geleneksel dini törenlerinde kullanılmaktadır.',
     category: 'Kültür Mirası ve Rekreasyon',
     isEnglish: false,
   ),
   Term(
     word: 'Avustralya Aborjinleri',
-    definition: 'Avustralya kıtasının en eski yerlileri olan; doğayla güçlü ruhsal bağları (\'Düş Zamanı\' inancı), bumerang kullanımı ve didgeridoo çalgılarıyla bilinen halk.',
-    example: 'Avustralya Aborjinleri, binlerce yıllık kaya resimleriyle \'Düş Zamanı\' mitolojisini ve kıtanın tarihini bugüne taşımışlardır.',
+    definition:
+        'Avustralya kıtasının en eski yerlileri olan; doğayla güçlü ruhsal bağları (\'Düş Zamanı\' inancı), bumerang kullanımı ve didgeridoo çalgılarıyla bilinen halk.',
+    example:
+        'Avustralya Aborjinleri, binlerce yıllık kaya resimleriyle \'Düş Zamanı\' mitolojisini ve kıtanın tarihini bugüne taşımışlardır.',
     category: 'Kültür Mirası ve Rekreasyon',
   ),
   Term(
     word: 'Maoriler',
-    definition: 'Yeni Zelanda\'nın yerli Polinezyalı halkıdır. Geleneksel dövmeleri (moko), savaş dansları (haka) ve okyanus denizciliği ile tanınırlar.',
-    example: 'Yeni Zelanda milli ragbi takımının maç öncesinde sergilediği Maoriler savaş dansı \'Haka\', tüm dünyada büyük ilgiyle izlenir.',
+    definition:
+        'Yeni Zelanda\'nın polinezya kökenli yerli halkı olup; Haka dansı, özgün ahşap oymacılığı ve geleneksel dövme kültürüyle tanınan topluluktur.',
+    example:
+        'Yeni Zelanda kültür turuna katılan gezginler, Maorilerin geleneksel Haka dansı gösterisini büyülenerek izlemiştir.',
     category: 'Kültür Mirası ve Rekreasyon',
+  ),
+  Term(
+    word: '3S (Sea, Sand, Sun)',
+    definition:
+        'Klasik kıyı turizmini simgeleyen ve İngilizce Deniz, Kum, Güneş kelimelerinin baş harflerinden türetilen kavramdır.',
+    example:
+        'Örnek: Tatil planı yapan bir ailenin özellikle sıcak kumsalları ve güneşiyle meşhur Akdeniz sahillerini tercih ederek 3S turizmine katılmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/3S Sea Sand Sun.mp3',
+  ),
+  Term(
+    word: 'Adjacent Room',
+    definition:
+        'Aynı koridor üzerinde karşılıklı veya yan yana konumlanan, özellikle birbirine yakın olmak isteyen gruplara verilen odalardır.',
+    example:
+        'Örnek: Bir spor kafilesinin otelde kalırken akşamları kolay iletişim kurabilmek için aynı katta birbirine çok yakın olan 5 odaya yerleştirilmesidir.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Adjacent Room.mp3',
+  ),
+  Term(
+    word: 'Adjoining Room',
+    definition:
+        'Aynı koridorda bitişik konumda bulunan ancak içeriden birbirine doğrudan geçiş kapısı olmayan komşu odalardır.',
+    example:
+        'Örnek: İki yakın arkadaşın otelde tatil yaparken 210 ve 211 numaralı bitişik odaları seçmesi, fakat aralarında geçiş kapısı olmamasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Adjoining Room.mp3',
+  ),
+  Term(
+    word: 'Airside / Transit Area',
+    definition:
+        'Havalimanlarında pasaport ve güvenlik kontrollerinden geçildikten sonra ulaşılan, sadece uçuş kartı olan yolcuların girebildiği arındırılmış gümrüksüz bekleme alanıdır.',
+    example:
+        'Örnek: Yolcunun pasaport kontrolünden geçtikten sonra uçağının kalkış saatini beklerken duty-free mağazalarının bulunduğu airside (arındırılmış) bölgede vakit geçirmesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Airside  Transit Area.mp3',
+  ),
+  Term(
+    word: 'Auditorium',
+    definition:
+        'Masa kullanılmadan sandalyelerin sahneye bakacak şekilde sıralandığı, alanın en verimli kullanılarak maksimum dinleyici kapasitesine ulaşıldığı salon düzenidir.',
+    example:
+        'Örnek: Oteldeki büyük bir seminer için salonun, katılımcıların masaya ihtiyaç duymayacağı şekilde sadece sandalyelerle tiyatro düzeninde (auditorium) hazırlanmasıdır.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Auditorium.mp3',
+  ),
+  Term(
+    word: 'Baggage Claim',
+    definition:
+        'Havalimanlarındaki varış terminallerinde, uçaktan indirilen bagajların dönen bant sistemleri (carousel) aracılığıyla yolculara teslim edildiği alandır.',
+    example:
+        'Örnek: Uçaktan inen bir yolcunun havalimanı içindeki Baggage Claim alanına gidip 4 numaralı banttan kendi valizini almasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Baggage Claim.mp3',
+  ),
+  Term(
+    word: 'Ballroom',
+    definition:
+        'Büyük kongrelerden gala yemeklerine kadar geniş çaplı etkinlikler için tasarlanmış, genellikle sütunsuz ve hareketli panellerle bölünebilen büyük salonlardır.',
+    example:
+        'Örnek: Otelin bin kişilik devasa salonunun hareketli duvarlarla ikiye ayrılarak bir tarafında düğün, diğer tarafında kongre resepsiyonu düzenlenmesidir.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Ballroom.mp3',
+  ),
+  Term(
+    word: 'Banquet Event Order (BEO)',
+    definition:
+        'Banket departmanınca hazırlanan; etkinliğin tüm ayrıntılarının (zaman, düzen, yiyecek, teknik ihtiyaçlar vb.) yer aldığı ve ilgili tüm birimlere dağıtılan resmi servis emridir.',
+    example:
+        'Örnek: BEO belgesinde yazan "12:00\'de 50 kişilik U düzeni" notunu gören teknik ekibin salonu buna göre kurması ve mutfak ekibinin ikramları zamanında hazırlamasıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Banquet Event Order BEO.mp3',
+  ),
+  Term(
+    word: 'Bar Chart',
+    definition:
+        'Veriler ve kategoriler arasındaki farkları yatay veya dikey dikdörtgen sütunlar yardımıyla görselleştiren bir grafik türüdür.',
+    example:
+        'Örnek: Ön büro müdürünün, yaz aylarındaki oda doluluk oranlarını aylara göre dikey sütunlar (Bar Chart) şeklinde raporlayarak üst yönetime sunmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Bar Chart.mp3',
+  ),
+  Term(
+    word: 'Bid Book',
+    definition:
+        'Uluslararası bir organizasyonun veya kongrenin belirli bir şehre kazandırılması amacıyla hazırlanan ve şehrin tüm altyapı, otel ve bütçe olanaklarını sunan resmi adaylık dosyasıdır.',
+    example:
+        'Örnek: Antalya\'nın büyük bir uluslararası tıp kongresine ev sahipliği yapmak için otel kapasitelerini ve ulaşım kolaylıklarını detaylandırdığı Bid Book dosyasını komiteye sunmasıdır.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Bid Book.mp3',
+  ),
+  Term(
+    word: 'Big Five',
+    definition:
+        'Afrika safarilerinde görülmesi en prestijli sayılan beş büyük vahşi hayvan grubudur: Aslan, Fil, Leopar, Gergedan ve Bufalo.',
+    example:
+        'Örnek: Kenya\'da safari turlarına katılan bir doğa fotoğrafçısının tüm Big Five (Büyük Beşli) hayvanlarını aynı gün içinde fotoğraflamayı başarmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Big Five.mp3',
+  ),
+  Term(
+    word: 'Blue Flag',
+    definition:
+        'Plaj ve marinalarda deniz suyu temizliği, çevre yönetimi, güvenlik ve donanım standartlarını belgeleyen uluslararası çevre ödülüdür.',
+    example:
+        'Sahil tesisimiz, temiz deniz suyu ve yüksek güvenlik standartları sayesinde bu yıl da Mavi Bayrak ödülüne layık görüldü.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Blue Flag.mp3',
+  ),
+  Term(
+    word: 'Boarding Gate',
+    definition:
+        'Havalimanında yolcuların biniş işlemlerinin tamamlanıp uçağa alındıkları kapıdır; uçağın kalkışına belirli bir süre kala kapanır.',
+    example:
+        'Örnek: Uçuşunu bekleyen bir yolcunun anons üzerine Boarding Gate 214\'e giderek biletini okutup körükten uçağa giriş yapmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Boarding Gate.mp3',
+  ),
+  Term(
+    word: 'Boarding Pass',
+    definition:
+        'Yolculara uçağa biniş esnasında kapı ve koltuk numaralarını gösteren, check-in sonrasında verilen biniş kartıdır.',
+    example:
+        'Örnek: Check-in işlemini bitiren yolcunun biniş kartını (Boarding Pass) alarak üzerinde yazan 12A numaralı koltuğuna doğru ilerlemesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Boarding Pass.mp3',
+  ),
+  Term(
+    word: 'Bounce Rate',
+    definition:
+        'Bir web sitesine giriş yapan kullanıcının, başka bir sayfayı ziyaret etmeden ve herhangi bir işlem yapmadan sayfadan hemen çıkma oranıdır.',
+    example:
+        'Örnek: Otelin internet sitesine giren yüz kullanıcının sekseninin ilk sayfayı görür görmez siteden ayrılması durumunda sitenin Bounce Rate oranının yüksek olmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Bounce Rate.mp3',
+  ),
+  Term(
+    word: 'Brass Polish',
+    definition:
+        'Otelcilikte kat hizmetleri ve genel alan temizliğinde, pirinç ve sarı metallerden yapılmış eşyaların parlatılması işleminde kullanılan özel metal cilasıdır.',
+    example:
+        'Örnek: Lobi görevlisinin, asansör kapılarındaki ve merdiven tırabzanlarındaki pirinç detayları Brass Polish kullanarak ilk günkü gibi parlatmasıdır.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Brass Polish.mp3',
+  ),
+  Term(
+    word: 'Brigade de Cuisine',
+    definition:
+        'Mutfak departmanında, çalışanların uzmanlık alanlarına ve hiyerarşiye (Aşçıbaşı, Kısım Şefleri, Komiler vb.) göre düzenlendiği profesyonel organizasyon yapısıdır.',
+    example:
+        'Örnek: Beş yıldızlı bir otel mutfağının Brigade de Cuisine sistemine göre çalışarak soslardan, sıcaklardan ve soğuklardan sorumlu ayrı şeflerin koordine olmasıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Brigade de Cuisine.mp3',
+  ),
+  Term(
+    word: 'Business Plan',
+    definition:
+        'Bir işletmenin vizyonunu, pazar analizini, pazarlama taktiklerini ve mali öngörülerini kapsayan, kuruluş öncesi hazırlanan yol haritası niteliğindeki iş planıdır.',
+    example:
+        'Örnek: Turizm sektörüne girmek isteyen bir girişimcinin, kuracağı butik otelin maliyet ve gelir tahminlerini içeren detaylı bir Business Plan sunarak bankadan kredi almasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Business Plan.mp3',
+  ),
+  Term(
+    word: 'Carbon Offset',
+    definition:
+        'Turizm işletmelerinin operasyonları sırasında doğaya saldıkları karbon gazını telafi etmek amacıyla fidan dikimi veya temiz enerji gibi projelere yatırım yapmasıdır.',
+    example:
+        'Örnek: Çevre dostu bir otelin konukların uçuşlarından ve konaklamalarından kaynaklanan karbon ayak izini silmek için her yıl bölgeye binlerce ağaç dikerek Carbon Offset sağlamasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Carbon Offset.mp3',
+  ),
+  Term(
+    word: 'Carousel',
+    definition:
+        'Havalimanı varış salonlarında yolcuların valizlerini alabilmeleri için bagajların üzerinde döndüğü dairesel hareketli taşıma bandıdır.',
+    example:
+        'Örnek: Uçaktan inen kafilenin, valizlerini almak için havalimanında 3 numaralı carousel (bagaj dönme bandı) etrafında beklemesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Carousel.mp3',
+  ),
+  Term(
+    word: 'Carrying Capacity',
+    definition:
+        'Bir turizm bölgesinin, doğal çevresine, yerel halkına ve turist memnuniyetine zarar vermeden aynı anda ağırlayabileceği maksimum turist sayısıdır.',
+    example:
+        'Örnek: Küçük bir adanın ekolojik dengesinin bozulmaması için yerel yönetimin günlük ziyaretçi sayısını bin kişiyle sınırlayarak taşıma kapasitesini (Carrying Capacity) korumasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Carrying Capacity.mp3',
+  ),
+  Term(
+    word: 'Cash Float',
+    definition:
+        'Ön büro, bar veya restoran kasalarında gün başında para üstü verebilmek amacıyla önceden bulundurulan belirli miktardaki bozuk para ve nakit avansıdır.',
+    example:
+        'Örnek: Sabah vardiyasını devralan resepsiyonistin kasasında misafirlere bozuk para üstü verebilmesi için önceden bırakılmış 5.000 TL tutarında Cash Float bulundurmasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Cash Float.mp3',
+  ),
+  Term(
+    word: 'Catering',
+    definition:
+        'Otel dışında gerçekleştirilen düğün, davet, toplantı gibi etkinlik mekanlarına yiyecek, içecek ve servis ekipmanı hizmetinin profesyonelce taşınmasıdır.',
+    example:
+        'Örnek: Tarihi bir köşkte yapılan gala yemeği için otelin mutfak ekibinin tüm sıcak ve soğuk yemekleri araçlarla oraya taşıyarak misafirlere catering hizmeti sunmasıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Catering.mp3',
+  ),
+  Term(
+    word: 'Cave Room',
+    definition:
+        'Geleneksel kaya oyma mimarisine sahip, genellikle Kapadokya gibi bölgelerde bulunan, otantik atmosfer sunan doğal veya yapay mağara odalardır.',
+    example:
+        'Örnek: Kapadokya bölgesine gelen turistlerin, yazın doğal serinliği, kışın ise sıcaklığı koruyan taş bloklara oyulmuş bir Cave Room\'da konaklayarak yöresel deneyim yaşamasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Cave Room.mp3',
+  ),
+  Term(
+    word: 'Charter Flight',
+    definition:
+        'Tur operatörleri veya kurumlar tarafından tarifeli uçuş planı dışında, belirli bir grup veya organizasyon için kiralanan özel uçak seferidir.',
+    example:
+        'Tur operatörü, yaz sezonunda tarifesiz charter seferleri düzenleyerek turist kafilesini Antalya\'ya doğrudan ulaştırdı.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Charter Flight.mp3',
+  ),
+  Term(
+    word: 'Check-in Desk',
+    definition:
+        'Havalimanlarında yolcuların biniş işlemlerini yaptıkları, bagajlarını teslim edip biniş kartlarını aldıkları havayolu bankolarıdır.',
+    example:
+        'Örnek: Havalimanına ulaşan yolcunun biletini onaylatıp büyük valizini uçağa verilmek üzere Check-in Desk\'teki görevliye teslim etmesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Check-in Desk.mp3',
+  ),
+  Term(
+    word: 'Chef de Partie',
+    definition:
+        'Büyük otel mutfaklarında sıcak, soğuk veya sos bölümü gibi belirli bir istasyondan (kısımdan) sorumlu olan usta aşçıdır.',
+    example:
+        'Örnek: Mutfağın yoğun olduğu akşam saatlerinde sıcak başlangıçlar istasyonunu tek başına yöneten Kısım Şefinin (Chef de Partie) ekibini yönlendirerek tabakları zamanında çıkarmasıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Chef de Partie.mp3',
+  ),
+  Term(
+    word: 'Classroom (Oturum Düzeni)',
+    definition:
+        'Öğrenme ve eğitim odaklı etkinlikler için hazırlanan, sandalyelerin önünde not almaya veya bilgisayar koymaya uygun uzun çalışma masalarının bulunduğu sınıf tipindeki düzendir.',
+    example:
+        'Örnek: Katılımcıların not almasını gerektiren bir iş güvenliği seminerinde salonun masalı sınız düzeni (Classroom) biçiminde hazırlanmasıdır.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+  ),
+  Term(
+    word: 'Closing',
+    definition:
+        'Satış sürecinin en kritik adımı olan; misafirin aklındaki soru işaretlerinin giderilip ikna edilerek işlemin rezervasyonla veya satışla kesin şekilde sonuçlandırılmasıdır.',
+    example:
+        'Örnek: Resepsiyonistin, kararsız kalan konuğa deniz manzaralı odanın avantajlarını sunduktan sonra "Odanızı hemen hazırlatıyorum, giriş işlemini başlatalım mı?" diyerek satışı kapatmasıdır (Closing).',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Closing.mp3',
+  ),
+  Term(
+    word: 'Coffee Break',
+    definition:
+        'Kongre, seminer ve uzun toplantıların aralarında fuaye alanlarında sunulan; katılımcılara çay, kahve, meyve suyu ve pratik ikramların verildiği kısa mola hizmetidir.',
+    example:
+        'Örnek: Toplantının sabah oturumu bittiğinde salondan çıkan 200 kişilik grubun fuaye alanındaki stantlardan sıcak çay ve tatlı kurabiyeler alarak Coffee Break arasında dinlenmesidir.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Coffee Break.mp3',
+  ),
+  Term(
+    word: 'Community Management',
+    definition:
+        'Markanın sosyal medya mecralarındaki topluluğunu yönetmek, gelen yorumlara ve mesajlara hızlı, samimi ve kurumsal bir dille dönüş yapma sürecidir.',
+    example:
+        'Örnek: Otelin paylaştığı tatil videosunun altına yazılan onlarca soruya ve şikayete, sosyal medya uzmanının çözüm odaklı ve kibar şekilde yanıt vererek topluluk yönetimini (Community Management) sağlamasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Community Management.mp3',
+  ),
+  Term(
+    word: 'Community-Based Tourism',
+    definition:
+        'Turizmden elde edilen gelirin ve yönetimin doğrudan yerel halkın elinde olduğu, yöresel kültürün ziyaretçilere birinci elden sunulduğu sürdürülebilir bir turizm modelidir.',
+    example:
+        'Örnek: Karadeniz\'de bir köydeki ev kadınlarının kendi yaptıkları yöresel yemekleri misafirlere sunarak ve evlerini pansiyona çevirerek Toplum Temelli Turizm\'e doğrudan katılmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Community-Based Tourism.mp3',
+  ),
+  Term(
+    word: 'Connecting Room',
+    definition:
+        'Birbirine içeriden kilitlenebilir bir kapı aracılığıyla bağlı olan, dış koridora çıkmadan odalar arası geçişin sağlanabildiği konaklama birimleridir.',
+    example:
+        'Örnek: Dört kişilik bir ailenin otelde kalırken iki ayrı odayı ayırtıp aradaki ara kapıyı açarak, koridora çıkmaya gerek kalmadan Connecting Room rahatlığıyla tatil yapmasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Connecting Room.mp3',
+  ),
+  Term(
+    word: 'Contactless Check-in',
+    definition:
+        'Konukların otele varmadan önce veya varışta mobil cihazları üzerinden kimlik doğrulayıp resepsiyona uğramadan dijital anahtar ile odalarına geçebildiği temassız giriş sistemidir.',
+    example:
+        'Örnek: Yoğun bir uçuş sonrası otele varan bir iş insanının, akıllı telefonundaki uygulamadan odasının kapısını dijital olarak açıp resepsiyon sırası beklemeden odasına girmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Contactless Check-in.mp3',
+  ),
+  Term(
+    word: 'Content Calendar',
+    definition:
+        'Hangi içeriklerin, fotoğrafların veya kampanyaların yılın hangi günlerinde ve saatlerinde sosyal medyada paylaşılacağını planlayan zaman çizelgesidir.',
+    example:
+        'Örnek: Otel pazarlama ekibinin yaz sezonu boyunca Instagram ve Facebook\'ta her perşembe günü oda indirimlerini paylaşmak üzere bir İçerik Takvimi (Content Calendar) oluşturmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Content Calendar.mp3',
+  ),
+  Term(
+    word: 'Conversion Rate',
+    definition:
+        'Dijital platformları ziyaret eden toplam kullanıcı sayısından, satın alma, form doldurma veya rezervasyon yapma gibi hedeflenen eylemi gerçekleştirenlerin başarı oranıdır.',
+    example:
+        'Örnek: Otel rezervasyon sitesine giren beş yüz kişiden yirmi beş kişinin odasını başarıyla ayırtarak dönüşüm oranının (Conversion Rate) yüzde 5 seviyesinde gerçekleşmesidir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Conversion Rate.mp3',
+  ),
+  Term(
+    word: 'Copyright',
+    definition:
+        'Sanatsal, edebi, bilimsel vb. orijinal fikir veya eserlerin kopyalanmasını, yasadışı dağıtılmasını önleyen ve eseri üretenin haklarını güvence altına alan yasal telif hakkıdır.',
+    example:
+        'Örnek: Otelde konuklara çalınan müzikler veya dağıtılan fotoğraflı broşürlerde kullanılan görseller için eser sahiplerinin meslek birliklerine telif (Copyright) bedelinin ödenmesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Copyright.mp3',
+  ),
+  Term(
+    word: 'Corner Suite Room',
+    definition:
+        'Binanın köşesinde yer alıp çift cepheli manzaraya sahip, genellikle oturma alanı ile yatak odası ayrı olan geniş, konforlu suit odalardır.',
+    example:
+        'Örnek: VIP bir misafirin, koridorun sonunda yer alan ve iki farklı cepheden muhteşem deniz manzarasına hakim Corner Suite Room\'u özel olarak tercih etmesidir.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Corner Suite Room.mp3',
+  ),
+  Term(
+    word: 'Corporate',
+    definition:
+        'Şirketlerin, çalışanlarına, ortaklarına veya basına yönelik motivasyon, tanıtım ve yıllık değerlendirme gibi amaçlarla otellerde düzenledikleri kurumsal etkinliklerdir.',
+    example:
+        'Örnek: Büyük bir teknoloji firmasının yeni çıkardığı ürünün tanıtımı için yüzlerce bayisini davet ederek kurumsal (Corporate) bir lansman organizasyonu düzenlemesidir.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Corporate.mp3',
+  ),
+  Term(
+    word: 'Credit',
+    definition:
+        'Misafir hesaplarında tahsilat yapılması, indirim işlenmesi veya misafirin alacaklandırılması durumunda otomasyon folyosuna işlenen alacak kaydıdır.',
+    example:
+        'Örnek: Misafir oda hesabını nakit olarak ödediğinde, resepsiyonistin bu ödemeyi folyoya Credit (Alacak) olarak girerek hesap bakiyesini sıfırlamasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Credit.mp3',
+  ),
+
+  Term(
+    word: 'CTR (Click Through Rate)',
+    definition:
+        'Dijital pazarlamada tıklanma oranı anlamına gelir. Reklamın gösterim sayısı ile tıklanıp siteye ziyaretçi çekme sayısı arasındaki orandır.',
+    example:
+        'Örnek: Otelin Facebook reklamı on bin kişiye gösterilip yüz kişi reklamı tıklayarak siteye girdiyse, Tıklanma Oranı (CTR) yüzde birdir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/CTR Click Through Rate.mp3',
+  ),
+  Term(
+    word: 'Data Analytics',
+    definition:
+        'Otelin veya destinasyonun elde ettiği büyük miktardaki misafir verilerini analiz ederek, gelecek dönem stratejilerine yön verecek anlamlı sonuçlar çıkarma işlemidir.',
+    example:
+        'Örnek: Önceki yaz sezonundaki doluluk ve şikayet verilerini Data Analytics (Veri Analizi) yöntemleriyle inceleyerek, en çok Alman turistlerin oda manzarasından memnun kaldığı sonucuna varılmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Data Analytics.mp3',
+  ),
+  Term(
+    word: 'Deadline',
+    definition:
+        'Bir işin, projenin veya rezervasyon opsiyonunun tamamlanması ya da onaylanması gereken son teslim tarihi ve saatidir.',
+    example:
+        'Örnek: Kongre organizatörlerinin katılımcılara sunduğu indirimli erken kayıt fırsatı için belirlenen son tarihin (Deadline) 15 Mayıs olarak duyurulmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Deadline.mp3',
+  ),
+  Term(
+    word: 'Debit',
+    definition:
+        'Ön büro muhasebesinde, misafirin otele olan borcunun veya yaptığı harcamanın konaklama hesabına (folyo) borç olarak işlenmesidir.',
+    example:
+        'Örnek: Konuğun restoran harcamasının fişi resepsiyona ulaştığında, görevlinin bu tutarı folyoya Debit (Borç) kaydı olarak girmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Debit.mp3',
+  ),
+  Term(
+    word: 'Demonstration Effect',
+    definition:
+        'Gelişmekte olan ülke halklarının, bölgelerine gelen yabancı turistlerin yaşam tarzlarına, kıyafetlerine ve tüketim alışkanlıklarına özenerek kendi kültürlerini terk edip onları taklit etmesidir.',
+    example:
+        'Örnek: Geleneksel kıyafetler giyen bir ada halkının, sürekli gördükleri Batılı turistlerin giyim tarzına ve beslenme alışkanlıklarına özenerek hızla kendi öz kültürlerinden uzaklaşmasıdır (Demonstration Effect).',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Demonstration Effect.mp3',
+  ),
+  Term(
+    word: 'Dining Etiquette',
+    definition:
+        'Resmi yemeklerde, ziyafetlerde veya restoranlarda uyulması gereken masa düzeni, çatal-bıçak kullanımı ve genel yeme-içme nezaket kurallarıdır.',
+    example:
+        'Örnek: Gala yemeğine katılan misafirlerin masadaki çatal ve bıçakları dıştan içe doğru kullanması ve peçeteyi dizlerine yerleştirmesi Dining Etiquette (Yemek Adabı) kuralıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Dining Etiquette.mp3',
+  ),
+  Term(
+    word: 'DMO (Destination Management Organization)',
+    definition:
+        'Belirli bir turistik bölgenin (destinasyonun) tanıtımını, planlamasını ve gelişimini tek bir çatı altında profesyonelce yürüten Destinasyon Yönetim Örgütü\'dür.',
+    example:
+        'Örnek: Kapadokya bölgesindeki tüm otellerin, müzelerin ve acentelerin birleşerek bölgeyi dünya çapında tanıtmak için tek bir DMO (Destinasyon Yönetim Örgütü) kurmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath:
+        'assets/sounds/terms/DMO Destination Management Organization.mp3',
+  ),
+  Term(
+    word: 'Domestic',
+    definition:
+        'Yurtiçi anlamına gelir; hem yurtiçi uçuşları hem de kendi ülkesi sınırları içinde tatil yapan yerli turistleri tanımlamak için kullanılır.',
+    example:
+        'Örnek: Ankara\'dan kalkan uçağın Antalya\'ya inmesi bir Domestic (İç Hat) uçuşudur ve seyahat edenler yerli (Domestic) turisttir.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Domestic.mp3',
+  ),
+  Term(
+    word: 'Dreamtime',
+    definition:
+        'Avustralya Aborjin kültüründe, dünyanın ve canlıların yaratıldığı ruhsal dönemi anlatan, turistik turlarda da kültürel bir deneyim olarak sunulan mitolojik inanıştır.',
+    example:
+        'Örnek: Avustralya\'ya giden turistlerin, yerel Aborjin rehberlerden doğanın ruhlarıyla ilgili tarihi Düş Zamanı (Dreamtime) hikayelerini dinleyerek otantik bir tecrübe yaşamasıdır.',
+    category: 'Kültür ve Coğrafya',
+    audioPath: 'assets/sounds/terms/Dreamtime.mp3',
+  ),
+  Term(
+    word: 'Early-bird',
+    definition:
+        'Aylar öncesinden otel rezervasyonu yapan veya kongreye kaydolan kişilere sunulan erken rezervasyon indirimi fırsatıdır.',
+    example:
+        'Örnek: Ekim ayında yapılacak olan bir konferans için şubat ayında kayıt yaptıran delegelerin %20 Early-bird (Erken Kayıt) indiriminden faydalanmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Early-bird.mp3',
+  ),
+  Term(
+    word: 'Efficiency Room',
+    definition:
+        'İçerisinde yemek pişirme alanı (mini mutfak), lavabo ve buzdolabı barındıran, özellikle uzun süreli konaklamalar için tasarlanmış odalardır.',
+    example:
+        'Örnek: Bir ay boyunca otelde kalacak olan bir yazarın, kendi yemeğini odasında yapabilmek için mini mutfaklı bir Efficiency Room (Mutfaklı Oda) kiralamasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Efficiency Room.mp3',
+  ),
+  Term(
+    word: 'Energy Saver',
+    definition:
+        'Odalarda elektrik israfını önlemek amacıyla, misafir odaya girip oda kartını yuvaya taktığında elektriği açan, kart çıkarıldığında elektriği kesen sistemdir.',
+    example:
+        'Örnek: Konuk odadan çıkarken anahtar kartını yanına aldığında, Energy Saver yuvası devreye girerek klima ve ışıkları otomatik kapatıp enerji tasarrufu sağlar.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Energy Saver.mp3',
+  ),
+  Term(
+    word: 'Engagement Rate',
+    definition:
+        'Sosyal medya içeriklerinin kullanıcılarla girdiği etkileşimin (beğeni, yorum, paylaşım, kaydetme) toplam takipçi veya gösterim sayısına oranıdır.',
+    example:
+        'Örnek: Otelin paylaştığı tatil çekilişi postunun binlerce yorum ve beğeni alarak o ayki Engagement Rate (Etkileşim Oranı) rekorunu kırmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Engagement Rate.mp3',
+  ),
+  Term(
+    word: 'Excursionist',
+    definition:
+        'Günübirlikçi demektir; bir destinasyonu ziyaret eden ancak orada geceleme yapmadan aynı gün içinde bölgesine geri dönen ziyaretçi tipidir.',
+    example:
+        'Örnek: Sabah kruvaziyer gemisiyle Kuşadası\'na inip Efes Antik Kenti\'ni gezen ve akşam tekrar gemisine dönüp gecelemeyen ziyaretçiler Günübirlikçi (Excursionist) sayılır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Excursionist.mp3',
+  ),
+  Term(
+    word: 'Executive Chef',
+    definition:
+        'Aşçıbaşı; otel mutfağının en üst düzey yöneticisidir. Menü planlaması, bütçe yönetimi ve mutfak personelinin idaresinden tam yetkiyle sorumludur.',
+    example:
+        'Örnek: Beş yıldızlı otelin Executive Chef\'inin (Aşçıbaşı) yeni yaz menüsünü hazırlaması, kullanılacak malzemelerin maliyetini hesaplaması ve tüm aşçıları organize etmesidir.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Executive Chef.mp3',
+  ),
+  Term(
+    word: 'Extra Bed / Rollaway',
+    definition:
+        'Odadaki yatak sayısının yetersiz kaldığı durumlarda (örneğin çocuğa ek yatak talebi) kat hizmetleri tarafından odaya sonradan taşınan tekerlekli, katlanabilir ilave yataktır.',
+    example:
+        'Örnek: İki kişilik standart odaya 12 yaşındaki çocuklarıyla gelen ailenin talebi üzerine odaya Extra Bed (İlave Yatak) kurulmasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Extra Bed  Rollaway.mp3',
+  ),
+  Term(
+    word: 'Fair Tourism',
+    definition:
+        'Turizmden elde edilen kârın sadece büyük şirketlere değil, yerel üreticilere ve halka da adil şekilde dağıtılmasını savunan sürdürülebilir bir turizm yaklaşımıdır.',
+    example:
+        'Örnek: Bir otelin, yemeklerinde kullanacağı malzemeleri büyük toptancılar yerine doğrudan köydeki çiftçiden satın alarak Adil Turizm (Fair Tourism) ilkesini uygulamasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Fair Tourism.mp3',
+  ),
+  Term(
+    word: 'FIFO (First In First Out)',
+    definition:
+        'Mutfak ve depolarda, ilk satın alınan (eski) ürünlerin bozulmasını önlemek için kullanıma ilk olarak onların çıkarılmasını ifade eden İlk Giren İlk Çıkar kuralıdır.',
+    example:
+        'Örnek: Depoya yeni gelen süt kutularının rafların en arkasına dizilerek, kullanım tarihleri daha yakın olan eski sütlerin (FIFO) önce kullanılmasının sağlanmasıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/FIFO First In First Out.mp3',
+  ),
+  Term(
+    word: 'Food Cost',
+    definition:
+        'Bir yemeğin üretilmesi için harcanan hammadde maliyetinin, o yemeğin menüdeki satış fiyatına olan oranıdır (Yiyecek Maliyeti).',
+    example:
+        'Örnek: Şefin mutfakta 30 TL\'ye mal ettiği bir yemeği restoranda 100 TL\'ye satması durumunda, Food Cost (Maliyet) oranının %30 olarak hesaplanmasıdır.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Food Cost.mp3',
+  ),
+  Term(
+    word: 'Forecast',
+    definition:
+        'Ön büro ve satış departmanlarının, geçmiş verileri analiz ederek otelin gelecekteki haftalarda veya aylarda beklenen doluluk ve gelir oranlarını tahmin etmesidir.',
+    example:
+        'Örnek: Ön büro müdürünün, geçmiş yıllara bakarak bu yaz Ağustos ayında doluluğun yüzde 95 olacağına dair Forecast (Doluluk Tahmini) raporunu genel müdüre sunmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Forecast.mp3',
+  ),
+  Term(
+    word: 'Form Finisher',
+    definition:
+        'Çamaşırhanelerde kuru temizleme sonrası, paltolar ve ceketler gibi kıyafetlerin formunu düzeltmek için içinden sıcak buhar üfleyen şişme mankenli ütü sistemidir.',
+    example:
+        'Örnek: VIP misafirin kaşe montunu el ütüsüyle ezmek yerine manken ütüye giydirip içeriden sıcak hava vererek (Form Finisher) kışlık montun formunu korumaktır.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Form Finisher.mp3',
+  ),
+  Term(
+    word: 'Foyer',
+    definition:
+        'Kongre ve toplantı salonlarının girişinde bulunan, katılımcıların dinlendiği, kayıt yaptırdığı ve kahve aralarını değerlendirdiği geniş sosyal bekleme alanıdır (Fuaye).',
+    example:
+        'Örnek: Beş yüz kişilik seminer arasında tüm doktorların salonun dışındaki fuaye (Foyer) alanına çıkarak stantları gezip kahve içmeleridir.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Foyer.mp3',
+  ),
+  Term(
+    word: 'Free Sale',
+    definition:
+        'Serbest Satış; acentenin oteli aramasına veya onay beklemesine gerek kalmadan, belirlenen sözleşme sınırları içinde odaları direkt misafire satabilme yetkisidir.',
+    example:
+        'Örnek: Acentenin yoğun kış sezonunda misafirlerine beklemeden "Otelin müsaitliği var" deyip Free Sale yetkisiyle anında odayı satmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Free Sale.mp3',
+  ),
+  Term(
+    word: 'Front Office',
+    definition:
+        'Otelin "sinir merkezi" olarak anılan; konukların karşılandığı, rezervasyon ve giriş-çıkış işlemlerinin yürütüldüğü Ön Büro birimidir.',
+    example:
+        'Örnek: Resepsiyonist, bellboy ve santral görevlilerinin tüm koordinasyonunun Front Office (Ön Büro) müdürü tarafından sağlanmasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Front Office.mp3',
+  ),
+  Term(
+    word: 'Global Sustainable Tourism Council (GSTC)',
+    definition:
+        'Dünya çapında sürdürülebilir turizm için ortak standartları, çevresel kriterleri belirleyen ve sertifika programlarını onaylayan Birleşmiş Milletler destekli uluslararası konsey.',
+    example:
+        'Örnek: Bir otelin, uluslararası düzeyde çevre dostu sayılabilmek için GSTC (Küresel Sürdürülebilir Turizm Konseyi) kurallarına uyum sağlamaya çalışmasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath:
+        'assets/sounds/terms/Global Sustainable Tourism Council GSTC.mp3',
+  ),
+  Term(
+    word: 'Globalization',
+    definition:
+        'Ülkeler arasındaki ekonomik, kültürel ve ticari engellerin kalkarak dünyanın tek ve devasa bir pazar, tek bir toplumsal iletişim ağı haline gelmesi (Küreselleşme) sürecidir.',
+    example:
+        'Örnek: Globalization (Küreselleşme) sayesinde turistlerin Japonya\'da bir fast food zinciri bulup, kendi ülkelerindeki gibi menülerle karşılaşabilmesidir.',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Globalization.mp3',
+  ),
+  Term(
+    word: 'GPS',
+    definition:
+        'Küresel Konumlama Sistemi; ulaştırma ve transfer araçlarının uydu üzerinden anlık konumlarının, hızlarının ve rotalarının operasyon merkezinden takip edilmesini sağlayan sistemdir.',
+    example:
+        'Örnek: Transfer operasyon merkezindeki yetkilinin, turist grubunu getiren otobüsün GPS sistemi sayesinde tam olarak havalimanına ne zaman varacağını ekrandan izlemesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/GPS.mp3',
+  ),
+  Term(
+    word: 'Green Consumer',
+    definition:
+        'Tatil satın alırken çevreye duyarlı otelleri tercih eden, plastik kullanmayan, karbon ayak izine dikkat eden bilinçli yeşil tüketicidir.',
+    example:
+        'Örnek: Bir turistin, geri dönüşüm yapmayan lüks bir otel yerine, elektriğini güneşten üreten butik bir oteli Green Consumer (Yeşil Tüketici) bilinciyle tercih etmesidir.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Green Consumer.mp3',
+  ),
+  Term(
+    word: 'Green Key',
+    definition:
+        'Çevre Eğitim Vakfı (FEE) tarafından, çevre dostu uygulamalar yapan ve yüksek standartlarda yeşil politikalar izleyen otellere verilen uluslararası çevre ödülüdür.',
+    example:
+        'Örnek: Otel yönetiminin musluklara su tasarruf aparatları takarak ve sıfır atık sistemine geçerek o yıl Yeşil Anahtar (Green Key) ödülünü almasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Green Key.mp3',
+  ),
+  Term(
+    word: 'Hospitality Suite Room',
+    definition:
+        'Genellikle otelde yapılan etkinlik, toplantı veya düğünlerde organizasyon sahiplerinin, gelin-damadın veya konuşmacıların dinlenmesi için tahsis edilen bekleme-hazırlık odalarıdır.',
+    example:
+        'Örnek: Büyük balo salonunun yanındaki odanın, düğün günü yorulan gelin ve damadın dinlenmesi için Hospitality Suite (Ağırlama Süiti) olarak düzenlenmesidir.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Hospitality Suite Room.mp3',
+  ),
+  Term(
+    word: 'Hubs',
+    definition:
+        'Havacılıkta, çok sayıda uçuşun birleştiği, yolcuların aktarma yapmak için yoğun olarak kullandığı Londra Heathrow veya Atlanta gibi devasa merkez havalimanlarıdır.',
+    example:
+        'Örnek: İstanbul Havalimanı\'nın Asya ile Avrupa arasında yüzlerce transit yolcunun uçak değiştirdiği büyük bir aktarma merkezi (Hub) olmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Hubs.mp3',
+  ),
+  Term(
+    word: 'Igloo',
+    definition:
+        'Soğuk kutup bölgelerinde buz bloklarından yapılmış geleneksel evlerin, turizm amacıyla genellikle cam tavanlı modern kubbe şeklindeki otel odalarına dönüştürülmüş konseptidir.',
+    example:
+        'Örnek: Finlandiya\'daki bir turistin gece yatağında yatarken cam tavanlı İglo\'sundan kutup ışıklarını (Aurora) seyrederek uyumasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Igloo.mp3',
+  ),
+  Term(
+    word: 'Impression',
+    definition:
+        'Sosyal medya veya dijital reklamlarda bir içeriğin kullanıcıların ekranında toplamda kaç kez görüntülendiğini gösteren metrik sayıdır.',
+    example:
+        'Örnek: Otelin yayınladığı bir reklamın aynı kişiye iki kez gösterilmesi dahil olmak üzere toplam 10.000 defa ekrana düşmesi Gösterim (Impression) başarısıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Impression.mp3',
+  ),
+  Term(
+    word: 'Incentive',
+    definition:
+        'Firmaların satış kotalarını dolduran personellerini veya en iyi bayilerini motive etmek amacıyla masraflarını karşılayarak düzenledikleri tamamen ücretsiz lüks teşvik gezileridir.',
+    example:
+        'Örnek: Bir kozmetik firmasının yılın en çok satış yapan on personelini teşvik (Incentive) amacıyla dört günlük lüks Dubai seyahatiyle ödüllendirmesidir.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Incentive.mp3',
+  ),
+  Term(
+    word: 'Inseparability',
+    definition:
+        'Ayrılmazlık özelliği; turizm hizmetlerinin üretildiği anda tüketilmesi gerektiğini, hizmeti sunanla alanın aynı anda bir arada bulunma zorunluluğunu ifade eder.',
+    example:
+        'Örnek: Aşçının pişirdiği ve garsonun masaya sunduğu yemeğin o an turist tarafından yenilmesi; üretimin ve tüketimin aynı anda (Ayrılmazlık) gerçekleşmesidir.',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Inseparability.mp3',
+  ),
+  Term(
+    word: 'Intangibility',
+    definition:
+        'Dokunulmazlık (Soyutluk) özelliği; turizm ürünlerinin elle tutulup satın alınmadan önce fiziksel olarak test edilemeyen, deneyime ve anıya dayalı soyut ürünler olmasıdır.',
+    example:
+        'Örnek: Bir otel odasının veya tatil hissinin, süpermarketten alınan bir elma gibi önceden dokunularak (Intangibility) denenememesi, sadece yaşanabilmesidir.',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Intangibility.mp3',
+  ),
+  Term(
+    word: 'International',
+    definition:
+        'Ülkeler arası sınırları aşan, farklı milletleri, kültürleri ve coğrafyaları kapsayan turizm hareketlerini ve standartlarını tanımlamak için kullanılan terimdir.',
+    example:
+        'Örnek: Antalya\'daki beş yıldızlı bir otelin, Alman, Rus ve İngiliz gibi çok sayıda ülkeden gelen turistleri ağırlayarak uluslararası (International) hizmet vermesidir.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/International.mp3',
+  ),
+  Term(
+    word: 'Invisible Export',
+    definition:
+        'Turizm sektörünün, fiziksel bir mal ihraç etmemesine rağmen ülkeye giren yabancı turistlerin döviz bırakması yoluyla yarattığı Görünmez İhracat etkisidir.',
+    example:
+        'Örnek: Türkiye\'nin yurtdışına araba satmadan, sadece Kapadokya\'yı ziyaret eden Japon turistlerden kazandığı dövizlerle ülke ekonomisine Görünmez İhracat (Invisible Export) sağlamasıdır.',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Invisible Export.mp3',
+  ),
+  Term(
+    word: 'Invoice',
+    definition:
+        'Fatura; misafirin otel harcamalarının vergi dairesince onaylanmış yasal standart formatlara dönüştürülüp tahsilat kanıtı olarak sunulan resmi belgesidir.',
+    example:
+        'Örnek: Çıkış işlemleri sırasında hesabını sıfırlayan misafire, şirketine gider gösterebilmesi için resepsiyonistin kaşeli ve imzalı resmi fatura (Invoice) kesmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Invoice.mp3',
+  ),
+  Term(
+    word: 'IoT (Internet of Things)',
+    definition:
+        'Nesnelerin İnterneti; odalardaki cihazların internete bağlanarak birbiriyle haberleştiği, misafirin ışıkları, perdeyi veya klimayı mobil uygulama/sesle kontrol edebildiği akıllı otel teknolojisidir.',
+    example:
+        'Örnek: Misafirin odasına girdiğinde, akıllı telefonundan bir düğmeye basarak perdeleri açması ve televizyonu başlatması IoT teknolojisi sayesinde mümkündür.',
+    category: 'Teknoloji ve İnovasyon',
+    audioPath: 'assets/sounds/terms/IoT Internet of Things.mp3',
+  ),
+
+  Term(
+    word: 'Job Description',
+    definition:
+        'Otellerde ve turizm işletmelerinde çalışan bir personelin yerine getirmekle yükümlü olduğu görevleri, iş tanımını ve sahip olması gereken nitelikleri detaylandıran resmi insan kaynakları belgesidir.',
+    example:
+        'Örnek: Ön büro müdürünün işe alım yaparken adaya "Resepsiyonist Görev Tanımı (Job Description)" belgesini okutup, gece vardiyasında da çalışması gerektiğini en baştan bildirmesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Job Description.mp3',
+  ),
+  Term(
+    word: 'Junior Suite Room',
+    definition:
+        'Standart odalara kıyasla daha geniş olan, içinde yatma bölümüne ek olarak aynı oda hacmi içerisinde küçük bir oturma grubu (salon) barındıran lüks konaklama birimidir.',
+    example:
+        'Örnek: Genç bir çiftin tatil yaparken yatak odası ile oturma alanının zarif bir paravanla birbirinden ayrıldığı Junior Suite (Mini Süit) odayı tercih etmesidir.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Junior Suite Room.mp3',
+  ),
+  Term(
+    word: 'Key Control Log',
+    definition:
+        'Özellikle kat hizmetleri ve teknik serviste çalışan personelin, oteldeki genel (Master/Paspartu) anahtarları alırken ve iade ederken isim, saat ve imza ile kayıt tuttukları güvenlik takip formudur.',
+    example:
+        'Örnek: Kat şefinin sabah vardiyasına başlarken tüm katları açan paspartu anahtarını alırken Anahtar Takip Defterine (Key Control Log) imza atıp, akşam çıkarken iade edip tekrar imzalamasıdır.',
+    category: 'Güvenlik ve Bakım',
+    audioPath: 'assets/sounds/terms/Key Control Log.mp3',
+  ),
+  Term(
+    word: 'Keynote Speaker',
+    definition:
+        'Uluslararası kongre, konferans veya kurumsal etkinliklerde açılış konuşmasını yapan, kendi alanında otorite kabul edilen ve etkinliğin ana temasını belirleyen baş konuşmacıdır.',
+    example:
+        'Örnek: Uluslararası tıp kongresinin ilk gününde, kanser araştırmalarında dünyaca ünlü bir profesörün ana konuşmacı (Keynote Speaker) olarak kürsüye çıkıp delegelere ilham vermesidir.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Keynote Speaker.mp3',
+  ),
+  Term(
+    word: 'KPI (Key Performance Indicator)',
+    definition:
+        'Çalışanların, departmanların veya otelin genel olarak belirlenmiş hedeflerine ulaşma derecesini ölçen ve sayısal verilere dayanan Temel Performans Göstergeleridir.',
+    example:
+        'Örnek: Bir otel müdürünün başarı kriteri (KPI) olarak, misafir memnuniyet puanını 10 üzerinden en az 9 tutmayı ve personel sirkülasyonunu yüzde beşin altına indirmeyi belirlemesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/KPI Key Performance Indicator.mp3',
+  ),
+  Term(
+    word: 'Laundry Tracking',
+    definition:
+        'Otel çamaşırhanesinde misafir kıyafetlerinin ve oda tekstilinin (çarşaf, havlu) yıkanma, kuruma ve teslimat süreçlerinin barkod veya dijital sistemlerle kayıp yaşanmadan takip edilmesidir.',
+    example:
+        'Örnek: Kuru temizlemeye verilen bir VIP misafir ceketinin üzerinde bulunan küçük bir çip sayesinde, Laundry Tracking (Çamaşırhane Takip) ekranından ütü aşamasında olduğunun izlenebilmesidir.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Laundry Tracking.mp3',
+  ),
+  Term(
+    word: 'Line Chart',
+    definition:
+        'Verilerdeki eğilimleri, artış veya azalış trendlerini zaman çizelgesi üzerinde noktaların çizgilerle birleştirilmesiyle görselleştiren Çizgi Grafiği yöntemidir.',
+    example:
+        'Örnek: Bir otelin son altı aylık dönemdeki doluluk oranlarının seyrini görmek için yöneticilerin önündeki raporda dalgalanan bir Line Chart (Çizgi Grafik) kullanılmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Line Chart.mp3',
+  ),
+  Term(
+    word: 'Logbook',
+    definition:
+        'Vardiya değişimi sırasında ön büro veya kat hizmetleri personelinin, bir sonraki vardiyaya aktarılması gereken önemli konuk notlarını, arızaları veya VIP gelişlerini yazdıkları seyir (takip) defteridir.',
+    example:
+        'Örnek: Akşam vardiyası çalışanının, "305 numaralı odanın kliması arızalı, sabah teknik servis kontrol edecek" bilgisini Logbook defterine yazarak gece ekibini bilgilendirmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Logbook.mp3',
+  ),
+  Term(
+    word: 'Lost & Found',
+    definition:
+        'Misafirlerin odada veya genel alanlarda unuttukları kıymetli veya değersiz eşyaların belirli bir prosedürle kaydedilip yasal sürelere uygun olarak güvenle saklandığı Kayıp ve Buluntu Eşya departmanıdır.',
+    example:
+        'Örnek: Kat görevlisinin odada bulduğu altın yüzüğü hemen amirine teslim edip, Lost & Found (Kayıp Eşya) defterine kayıt ettirerek kilitli kasaya aldırmasıdır.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Lost  Found.mp3',
+  ),
+  Term(
+    word: 'Lounge',
+    definition:
+        'Lüks otellerde veya havalimanlarında bulunan; VIP konukların, sık uçan yolcuların veya üst segment misafirlerin dinlenebildiği, içecek servisinin yapıldığı rahatlatıcı ve ayrıcalıklı bekleme/oturma alanıdır.',
+    example:
+        'Örnek: Business Class uçan bir yolcunun, uçağının kalkışını beklerken havalimanındaki özel Lounge (Dinlenme Salonu) alanına girip ücretsiz yeme-içme hizmetinden faydalanmasıdır.',
+    category: 'Konaklama Hizmetleri',
+    audioPath: 'assets/sounds/terms/Lounge.mp3',
+  ),
+  Term(
+    word: 'Loyalty',
+    definition:
+        'Misafirlerin belirli bir otel markasına veya zincirine duyduğu bağlılık ve sadakattir; aynı markayı tekrar tekrar tercih etme eğilimi olarak tanımlanır.',
+    example:
+        'Örnek: Bir iş insanının seyahat ettiği her ülkede bilerek aynı otel zincirinde konaklaması, o markaya olan sadakatini (Loyalty) gösterir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Loyalty.mp3',
+  ),
+  Term(
+    word: 'Loyalty Programs',
+    definition:
+        'Sürekli konaklayan misafirleri ödüllendirmek amacıyla kurulan ve üyelere puan, ücretsiz gece, erken giriş gibi ayrıcalıklar sunan Sadakat (Bağlılık) Programlarıdır.',
+    example:
+        'Örnek: Otelin sadakat programı üyesi olan (Loyalty Program) bir misafirin, biriken puanlarını kullanarak hafta sonu ücretsiz bir tatil kazanması ve kral dairesine yükseltilmesidir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Loyalty Programs.mp3',
+  ),
+  Term(
+    word: 'Luggage Tag',
+    definition:
+        'Konuklar otele veya uçağa geldiğinde valizlerinin karışmasını önlemek için üzerine isim, oda numarası veya uçuş bilgilerinin yazıldığı bagaj etiketleridir.',
+    example:
+        'Örnek: Otel kapısında karşılanan misafirin valizlerine bellboy tarafından üzerinde 405 numarası yazan Luggage Tag (Bagaj Etiketi) bağlanmasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Luggage Tag.mp3',
+  ),
+  Term(
+    word: 'Mass Tourism',
+    definition:
+        'Çok sayıda insanın yoğun sezonlarda popüler destinasyonlara genellikle her şey dahil paket turlarla akın ettiği, yüksek hacimli ancak düşük maliyetli turizm hareketidir.',
+    example:
+        'Örnek: Yaz aylarında binlerce turistin uçaklarla aynı anda sahil şehirlerine inip devasa tatil köylerini doldurarak Kitle Turizmi (Mass Tourism) oluşturmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Mass Tourism.mp3',
+  ),
+  Term(
+    word: 'Meet & Greet',
+    definition:
+        'Turist gruplarının veya VIP konukların havalimanında ya da otel lobisinde güler yüzle, genellikle bir tabela veya çiçek eşliğinde karşılanması ve uğurlanması hizmetidir.',
+    example:
+        'Örnek: Rehberin, terminalden çıkan turist kafilesini üzerinde acente adı yazan bir pano ile karşılama alanında gülümseyerek beklemesi Meet & Greet uygulamasıdır.',
+    category: 'Tur Operasyonu ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Meet  Greet.mp3',
+  ),
+  Term(
+    word: 'Meeting Desk',
+    definition:
+        'Özellikle yoğun kongrelerde veya havalimanlarında tur operatörlerinin gelen delegeleri yönlendirmek ve kayıtlarını almak üzere kurdukları karşılama bankolarıdır.',
+    example:
+        'Örnek: Büyük bir ilaç firması kongresine gelen yüzlerce doktorun, havalimanında ilgili acentenin Meeting Desk\'ine (Karşılama Bankosu) giderek transfer otobüslerini öğrenmesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Meeting Desk.mp3',
+  ),
+  Term(
+    word: 'Millenials',
+    definition:
+        'Y Kuşağı olarak da bilinen, 1981-1996 yılları arasında doğmuş, dijital teknolojilere hakim, deneyim odaklı tatilleri tercih eden, seyahat trendlerini şekillendiren turist profili.',
+    example:
+        'Örnek: Millenials (Y Kuşağı) kategorisindeki genç bir turistin tatilde sadece deniz kenarında yatmak yerine yerel yemek kurslarına katılıp bunları Instagram\'da paylaşmayı tercih etmesidir.',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Millenials.mp3',
+  ),
+  Term(
+    word: 'Multiplier Effect',
+    definition:
+        'Turizm harcamalarının ekonomide yarattığı katlanarak büyüme; bir turistin harcadığı paranın bölgedeki çiftçiden esnafa kadar el değiştirerek genel zenginliği artırması etkisidir (Çarpan Etkisi).',
+    example:
+        'Örnek: Turistin otele ödediği konaklama bedelinin bir kısmıyla otelin çiftçiden domates alması, çiftçinin o parayla çocuğuna ayakkabı almasıyla paranın ekonomiye katlanarak yayılmasıdır (Multiplier Effect).',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Multiplier Effect.mp3',
+  ),
+  Term(
+    word: 'Networking',
+    definition:
+        'İş veya turizm (özellikle kongre turizmi) amaçlı etkinliklerde insanların birbirleriyle tanışarak profesyonel bağlantılar ve ilişkiler ağı kurma sürecidir.',
+    example:
+        'Örnek: Bir sağlık turizmi fuarında, otel müdürünün uluslararası doktorlarla kahve arasında sohbet ederek gelecekteki işbirlikleri için Networking (Ağ Kurma) yapmasıdır.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Networking.mp3',
+  ),
+  Term(
+    word: 'Newsletter',
+    definition:
+        'Otellerin veya acentelerin potansiyel misafirlerine düzenli aralıklarla gönderdikleri, özel teklifleri, yenilikleri ve güncel haberleri içeren dijital bültenlerdir (e-posta vb.).',
+    example:
+        'Örnek: Eski bir otel misafirinin e-posta kutusuna, otelden yaklaşan yaz sezonu erken rezervasyon indirimlerini anlatan şık bir bülten (Newsletter) düşmesidir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Newsletter.mp3',
+  ),
+  Term(
+    word: 'Occupied Clean',
+    definition:
+        'Otel odasının kullanımda (dolu) olduğunu, ancak o günkü rutin temizliğinin kat görevlisi tarafından henüz yapılmış ve tertemiz durumda olduğunu ifade eden durum kodudur.',
+    example:
+        'Örnek: Misafir sabah kahvaltıya indiğinde odasının temizlenip yatağının düzeltilmesiyle birlikte ön büro sisteminde o odanın durumunun Occupied Clean (Dolu Temiz) olarak işaretlenmesidir.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Occupied Clean.mp3',
+  ),
+  Term(
+    word: 'Occupied Dirty',
+    definition:
+        'Odada halen konaklayan bir misafir bulunduğunu, ancak odanın henüz o günkü günlük bakım ve temizliğinin (havlu değişimi, yatak düzeltme) yapılmadığını gösteren statüdür.',
+    example:
+        'Örnek: Sabah uyanıp duş alan misafirin odasında dağınık bir yatak ve ıslak havlular bulunması, görevli gelene kadar odanın Occupied Dirty (Dolu Kirli) statüsünde olması demektir.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Occupied Dirty.mp3',
+  ),
+  Term(
+    word: 'ODO (Occupancy Rate)',
+    definition:
+        'Otelin satışa hazır toplam odalarının yüzde kaçının satıldığını gösteren Oda Doluluk Oranıdır. Satılan oda sayısının satışa hazır oda sayısına bölümüyle bulunur.',
+    example:
+        'Örnek: 100 odalı bir otelde bir gecede 85 oda misafirlerle dolu ise, otelin ODO (Oda Doluluk Oranı) yüzde seksen beştir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/ODO Occupancy Rate.mp3',
+  ),
+  Term(
+    word: 'On-Request',
+    definition:
+        'İsteğe Bağlı Rezervasyon anlamına gelir. Seyahat acentesinin elinde ayrılmış kontenjan olmadığında, misafire onay vermeden önce oteli arayıp müsaitlik sorma durumudur.',
+    example:
+        'Örnek: Bayram tatili yoğunluğunda misafire oda satmak isteyen acentenin, önce oteli arayıp "Boş odanız var mı?" diyerek On-Request (İsteğe Bağlı) işlem başlatmasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/On-Request.mp3',
+  ),
+  Term(
+    word: 'Only Bed (OB)',
+    definition:
+        'Sadece Yatak (OB); otel fiyatlandırmasında hiçbir yemek hizmetinin dahil olmadığı, sadece geceleme bedelinin ücrete tabi olduğu en basit konaklama tipidir.',
+    example:
+        'Örnek: Sürekli dışarıda gezecek olan genç bir sırt çantalı turistin, kahvaltı bile istemeyerek en uygun fiyatlı olan Sadece Yatak (OB) seçeneğini tercih etmesidir.',
+    category: 'Konaklama Hizmetleri',
+    audioPath: 'assets/sounds/terms/Only Bed OB.mp3',
+  ),
+  Term(
+    word: 'OOO (Out of Order)',
+    definition:
+        'Arızalı Oda statüsüdür. Odada su tesisatı arızası, boya badana veya kırık bir eşya olması nedeniyle tamamen kullanıma kapalı olduğunu ve satışa sunulamayacağını belirtir.',
+    example:
+        'Örnek: Tavanı akan 201 numaralı odanın satışa kapatılarak teknik servis tarafından tamir edilene kadar sistemde OOO (Out of Order) olarak işaretlenmesidir.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/OOO Out of Order.mp3',
+  ),
+  Term(
+    word: 'Opportunities',
+    definition:
+        'SWOT analizindeki "Fırsatlar" boyutudur. Otelin kontrolü dışında gelişen ancak doğru stratejilerle işletmeye gelir, yeni misafir veya avantaj sağlayabilecek dış faktörlerdir.',
+    example:
+        'Örnek: Şehrin yakınlarına yeni bir uluslararası havalimanı açılmasının, otel için doluluk oranını artıracak büyük bir fırsat (Opportunity) olarak değerlendirilmesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Opportunities.mp3',
+  ),
+  Term(
+    word: 'Package Tour',
+    definition:
+        'Konaklama, ulaştırma, rehberlik, transfer ve yeme-içme gibi birden fazla turizm hizmetinin birleştirilerek tek bir fiyat üzerinden satıldığı organize gezi paketidir.',
+    example:
+        'Örnek: Bir tur operatörünün misafirlerine uçak, otel ve tüm şehir içi transferleri dahil ederek "3 Gece 4 Gün Her Şey Dahil Kapadokya Paketi" satmasıdır.',
+    category: 'Tur Operasyonu ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Package Tour.mp3',
+  ),
+  Term(
+    word: 'Paid Social',
+    definition:
+        'İşletmelerin sosyal medya platformlarına (Instagram, Facebook vb.) bütçe ayırarak, kendi takipçileri dışındaki geniş hedef kitlelere gösterdikleri ücretli reklamlardır.',
+    example:
+        'Örnek: Otel yönetiminin yeni açılan restoranını tanıtmak için 5.000 TL bütçe ayırarak sosyal medyada Paid Social (Ücretli Sosyal Medya) kampanyası yürütmesidir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Paid Social.mp3',
+  ),
+  Term(
+    word: 'Passenger Manifest (PASS)',
+    definition:
+        'Tur otobüslerinde veya uçaklarda bulunan tüm yolcuların isim, soyisim ve kimlik/pasaport bilgilerinin yazılı olduğu, resmi denetimlerde gösterilmesi zorunlu yolcu taşıma listesidir.',
+    example:
+        'Örnek: Trafik polisi veya jandarma otobüsü durdurduğunda, tur rehberinin yolcu sayısını ve kimlikleri ispatlamak için onaylı Manifesto listesini ibraz etmesidir.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Passenger Manifest PASS.mp3',
+  ),
+  Term(
+    word: 'Petty Cash',
+    definition:
+        'Tur boyunca rehberin veya ofiste bir çalışanın otopark, küçük bahşişler, müze girişi gibi ufak tefek günlük ve acil masrafları karşılaması için kendisine verilen küçük kasa (avans) nakdidir.',
+    example:
+        'Örnek: Tur sabahı yola çıkan rehbere, yol boyu ödenecek otoyol geçiş ücretleri ve acil ihtiyaçlar için muhasebe tarafından küçük bir miktar Petty Cash (Nakit Avans) verilmesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Petty Cash.mp3',
+  ),
+  Term(
+    word: 'Pie Chart',
+    definition:
+        'Bir bütünün yüzdelik veya oransal dağılımını (dilimler şeklinde) göstermek amacıyla kullanılan, görsel olarak pastaya benzeyen daire grafik modelidir.',
+    example:
+        'Örnek: Otelin yıllık pazarlama bütçesinin yüzde kaçının dijital reklamlara, yüzde kaçının basılı materyallere gittiğini yöneticilere sunarken pasta grafiği (Pie Chart) kullanılmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Pie Chart.mp3',
+  ),
+  Term(
+    word: 'PIR (Property Irregularity Report)',
+    definition:
+        'Havalimanında bagajı kaybolan, geciken veya hasar gören yolcunun, durumu resmileştirmek ve takip edebilmek için havayolu şirketinin kayıp eşya ofisine tutturduğu Eşya Düzensizlik Raporudur.',
+    example:
+        'Örnek: Uçaktan inen yolcunun valizi banttan kırık bir tekerlekle çıktığında hemen görevliye giderek hasar tazmini için PIR (Property Irregularity Report) formunu doldurmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/PIR Property Irregularity Report.mp3',
+  ),
+  Term(
+    word: 'PNR (Passenger Name Record)',
+    definition:
+        'Yolcu İsim Kaydı; havayolu ve rezervasyon sistemlerinde bir yolcunun uçuş, koltuk ve iletişim bilgilerini barındıran benzersiz alfanümerik rezervasyon kodudur.',
+    example:
+        'Örnek: Uçağa biniş kartını almak isteyen yolcunun havalimanındaki kioska 6 haneli PNR (Rezervasyon Kodu) numarasını girerek biletini anında yazdırmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/PNR Passenger Name Record.mp3',
+  ),
+  Term(
+    word: 'Point of Sale',
+    definition:
+        'Restoran, bar veya resepsiyon gibi satış noktalarında tahsilatların gerçekleştirildiği, fiş veya fatura kesilen elektronik satış (yazarkasa/POS) cihazları veya yazılımlarıdır.',
+    example:
+        'Örnek: Konuğun otelin barında içtiği kokteylin ücretini kredi kartı ile doğrudan bar tezgahında bulunan POS (Point of Sale) cihazından ödemesidir.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Point of Sale.mp3',
+  ),
+  Term(
+    word: 'Polishing',
+    definition:
+        'Otelcilikte restoran veya genel alanlarda bulunan cam, metal, ahşap eşyaların veya servis takımlarının özel solüsyon ve bezlerle ovularak parlatılması işlemidir.',
+    example:
+        'Örnek: Ziyafet öncesi hazırlık yapan komilerin, şarap kadehleri ve çatal-bıçak takımları üzerinde kalan su lekelerini sıcak buharda ovarak parlatması (Polishing) işlemidir.',
+    category: 'Yiyecek ve İçecek (F&B)',
+    audioPath: 'assets/sounds/terms/Polishing.mp3',
+  ),
+  Term(
+    word: 'Porter',
+    definition:
+        'Havalimanlarında, garlarda veya otellerde konukların bagajlarını taşımakla görevli taşıyıcılardır.',
+    example:
+        'Örnek: Tur rehberinin yaşlı misafir grubunun bagajlarını transfer otobüsünden otel lobisine taşıtmak için profesyonel bagaj taşıyıcılardan (Porter) yardım almasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Porter.mp3',
+  ),
+  Term(
+    word: 'Positioning',
+    definition:
+        'Pazarlamada, otelin rakip markalar arasından sıyrılarak potansiyel misafirin zihninde "hangi özelliği ile hatırlanmak istediğini" belirlediği Konumlandırma stratejisidir.',
+    example:
+        'Örnek: Şehir merkezindeki bir otelin kendisini "İş adamları için en teknolojik toplantı oteli" olarak tanımlayıp zihinlerde bu imajla konumlanmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Positioning.mp3',
+  ),
+  Term(
+    word: 'Predictive Analytics',
+    definition:
+        'Büyük veri, istatistik ve yapay zeka kullanarak geçmişteki rezervasyon alışkanlıklarından gelecekteki turist taleplerini, iptal oranlarını ve optimum oda fiyatlarını tahmin etme teknolojisidir.',
+    example:
+        'Örnek: Otel yazılımının geçmiş yıllardaki hava durumu ve festival verilerini analiz edip (Kestirimci Analitik), gelecek ay için doluluğun yüksek olacağını tahmin ederek fiyatları otomatik artırmasıdır.',
+    category: 'Teknoloji ve İnovasyon',
+    audioPath: 'assets/sounds/terms/Predictive Analytics.mp3',
+  ),
+  Term(
+    word: 'Preventive Maintenance',
+    definition:
+        'Asansör, jeneratör ve klima gibi önemli otel cihazlarının bozulmasını veya arıza vermesini beklemeden, planlı ve periyodik olarak yapılan Önleyici Bakım faaliyetleridir.',
+    example:
+        'Örnek: Teknik servisin klimaların yazın yoğun kullanımda arıza vermemesi için henüz nisan ayındayken tüm odalardaki klimaların filtre ve gaz kontrollerini önceden yapmasıdır.',
+    category: 'Güvenlik ve Bakım',
+    audioPath: 'assets/sounds/terms/Preventive Maintenance.mp3',
+  ),
+
+  Term(
+    word: 'Property Management System (PMS)',
+    definition:
+        'Otellerde tüm ön büro, kat hizmetleri, muhasebe ve rezervasyon süreçlerinin entegre biçimde tek bir veritabanı üzerinden yürütüldüğü kapsamlı Otel Yönetim Sistemidir.',
+    example:
+        'Örnek: Resepsiyon görevlisinin, bilgisayarındaki PMS (Otel Yönetim Sistemi) yazılımına bakarak hangi odanın boş ve temiz olduğunu saniyeler içinde görebilmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Property Management System.mp3',
+  ),
+  Term(
+    word: 'Quadruple Room (Quad)',
+    definition:
+        'Dört kişilik kapasiteye sahip olan ve içerisinde dört misafirin rahatlıkla konaklayabileceği yatak (genellikle dört ayrı tek veya iki çift kişilik) bulunan oda türüdür.',
+    example:
+        'Örnek: Otelde konaklayan dört kişilik bir ailenin, herkesin aynı odada uyuyabilmesi için Quad (Dört Kişilik Oda) rezervasyonu yaptırmasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Quad Room.mp3',
+  ),
+  Term(
+    word: 'Reach',
+    definition:
+        'Sosyal medya içeriklerinin veya dijital reklamların gösterildiği benzersiz (tekil) kişi sayısını ifade eden Erişim metriğidir. Gösterimden farklı olarak, bir kişinin defalarca görmesini saymaz.',
+    example:
+        'Örnek: Otelimizin Instagram hikayesini 500 farklı hesabın görüntülemiş olması, bu hikayenin Erişim (Reach) sayısının 500 olduğu anlamına gelir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Reach.mp3',
+  ),
+  Term(
+    word: 'Reception',
+    definition:
+        'Otele gelen misafirlerin ilk karşılandığı, kayıt (check-in) ve çıkış (check-out) işlemlerinin yapıldığı, bilgi alışverişinin sağlandığı ön büronun fiziksel iletişim merkezidir.',
+    example:
+        'Örnek: Otele yorgun gelen konuğun, bavullarıyla birlikte doğruca Reception (Resepsiyon) bankosuna yönelerek giriş işlemini başlatmasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Reception.mp3',
+  ),
+  Term(
+    word: 'Red Channel',
+    definition:
+        'Havalimanı gümrük noktalarında, ülkeye sokulması izne veya vergiye tabi, yasal sınırın üzerinde ticari ya da değerli eşya taşıyan yolcuların geçmek zorunda olduğu "Gümrüğe Tabi Eşyam Var" hattıdır.',
+    example:
+        'Örnek: Yurt dışından gelirken yanında yüksek miktarda ticari ürün getiren bir yolcunun Kırmızı Hat (Red Channel) üzerinden geçerek gümrük beyanında bulunmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Red Channel.mp3',
+  ),
+  Term(
+    word: 'Reels / Shorts',
+    definition:
+        'Instagram (Reels) ve YouTube (Shorts) gibi platformlarda, yüksek etkileşim potansiyeli taşıyan, dikey formatlı ve genellikle müzik eşliğinde sunulan kısa, dinamik video içerikleridir.',
+    example:
+        'Örnek: Otel sosyal medya uzmanının, barmenin kokteyl yaparken sergilediği şovları 15 saniyelik bir Reels (Kısa Video) olarak paylaşıp binlerce beğeni almasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Reels  Shorts.mp3',
+  ),
+  Term(
+    word: 'Release Periods',
+    definition:
+        'Otellerin seyahat acentelerine blok olarak ayırdıkları odaların, acente tarafından satılamaması halinde otel tarafından serbest piyasada satılabilmesi için geri alındığı Geri İade Süresidir.',
+    example:
+        'Örnek: Acente ile yapılan anlaşmaya göre, Temmuz ayı için ayrılan 10 odanın girişten 14 gün öncesine (Release Period) kadar satılamaması halinde bu odaların otomatik olarak tekrar otelin online satışına açılmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Release Periods.mp3',
+  ),
+  Term(
+    word: 'Room Charge',
+    definition:
+        'Konuğun otelde konaklaması karşılığında hesabına yansıtılan günlük oda konaklama bedeli ile diğer hizmetlerden doğan folyo borçlandırmalarının genel adıdır.',
+    example:
+        'Örnek: Night Audit çalıştırıldıktan sonra sistemdeki her odaya, bir gecelik konaklama tutarının (Room Charge) otomatik olarak borç yansıtılmasıdır.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Room Charge.mp3',
+  ),
+  Term(
+    word: 'Room Posting',
+    definition:
+        'Gece kapanışı (Night Audit) veya gün içi işlemlerde, oda bedelinin, vergilerin veya diğer ekstra harcamaların misafir folyosuna borç veya alacak olarak işlenmesi eylemidir.',
+    example:
+        'Örnek: Gece vardiyası çalışanının, sistem onayıyla oteldeki 120 odanın günlük ücretlerini misafir hesaplarına aktarması işlemidir (Room Posting).',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Room Posting.mp3',
+  ),
+  Term(
+    word: 'Room Status',
+    definition:
+        'Odalardaki temizlik, onarım ve doluluk bilgisini ön büro ve kat hizmetleri arasında senkronize eden, genellikle kısaltmalarla (VD, VC, OOO vb.) ifade edilen oda durum bilgisidir.',
+    example:
+        'Örnek: Kat görevlisi boş odayı temizlediğinde, otomasyon sisteminde odanın durumunu "Vacant Dirty" den "Vacant Clean" (Oda Statüsü) durumuna güncellemesidir.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Room Status.mp3',
+  ),
+  Term(
+    word: 'Scheduled Flight',
+    definition:
+        'Kalkış yeri, varış saati, rotası ve bilet satış fiyatı aylar öncesinden havayolu şirketleri tarafından belirlenip kamuoyuna duyurulan periyodik ve düzenli tarifeli seferlerdir.',
+    example:
+        'Örnek: Her sabah saat 08:00\'de İstanbul\'dan Trabzon\'a düzenli olarak uçan uçağın bir Tarifeli Sefer (Scheduled Flight) olmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Scheduled Flight.mp3',
+  ),
+  Term(
+    word: 'SDG (Sustainable Development Goals)',
+    definition:
+        'Birleşmiş Milletler tarafından kabul edilen, yoksulluğu sona erdirmeyi, gezegeni korumayı ve herkes için refahı sağlamayı hedefleyen 17 maddelik Sürdürülebilir Kalkınma Amaçlarıdır.',
+    example:
+        'Örnek: Küresel bir otel zincirinin karbon sıfır politikası benimseyerek BM\'nin 13. amacı olan "İklim Eylemi" (SDG 13) hedefine katkıda bulunmasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/SDG Sustainable Development Goals.mp3',
+  ),
+  Term(
+    word: 'Senior Tourism',
+    definition:
+        'Emeklilik döneminde olan, genellikle 60-65 yaş üstü bireylerin, daha çok sağlık, dinlenme veya kültürel amaçlı, yavaş tempolu gerçekleştirdikleri turizm hareketidir.',
+    example:
+        'Örnek: Avrupa\'dan gelen emekli kafilelerin, soğuk kış aylarını ılıman iklimi nedeniyle Antalya\'da geçirerek Üçüncü Yaş Turizmi (Senior Tourism) faaliyetine katılmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Senior Tourism.mp3',
+  ),
+  Term(
+    word: 'Shift Logbook',
+    definition:
+        'Vardiya sisteminde çalışan ön büro veya teknik ekiplerin, bir sonraki vardiyaya bilgi aktarmak, takipli sorunları ve konuk isteklerini iletmek için tuttukları kayıt ve devir defteridir.',
+    example:
+        'Örnek: Gündüz çalışan resepsiyonistin deftere, "405 nolu odanın havalimanı taksisi sabah 05:30\'da gelecek" yazarak gece çalışan arkadaşını (Shift Logbook aracılığıyla) bilgilendirmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Shift Logbook.mp3',
+  ),
+  Term(
+    word: 'Shopping (Tourism)',
+    definition:
+        'Seyahatin ana motivasyonunun, ünlü markaların mağazalarını gezmek, indirim festivallerine katılmak veya ucuz ürün almak olduğu turizm çeşididir (Alışveriş Turizmi).',
+    example:
+        'Örnek: Sırf dünyanın en büyük alışveriş festivaline katılmak ve indirimli teknolojik ürünler almak amacıyla Dubai\'ye giden turistlerin yarattığı harekettir.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Shopping Tourism.mp3',
+  ),
+  Term(
+    word: 'Slow Tourism',
+    definition:
+        'Turistlerin, kısıtlı sürede çok fazla yer görme telaşı (kitle turizmi) yerine, tek bir yerde uzun kalarak yerel yaşamı ve doğayı yavaş bir tempoyla derinlemesine hissettiği felsefedir.',
+    example:
+        'Örnek: Turistin Ege\'nin sakin bir kasabasında haftalarca kalıp, her gün yerel balıkçılarla ağ atıp yerel şarapları tadarak Yavaş Turizm (Slow Tourism) felsefesini benimsemesidir.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Slow Tourism.mp3',
+  ),
+  Term(
+    word: 'Smart Destination',
+    definition:
+        'Turist deneyimini teknolojiyle birleştiren, internet altyapısı, sanal rehberlik, dijital bilgi panoları ve çevre dostu ulaşım ağlarıyla entegre edilmiş Akıllı Destinasyonlardır.',
+    example:
+        'Örnek: Barcelona sokaklarında turistin telefonundaki uygulamayla otobüs saatlerini ve müzelerdeki yoğunluğu anında görerek seyahatini optimize etmesi bir Smart Destination (Akıllı Destinasyon) örneğidir.',
+    category: 'Teknoloji ve İnovasyon',
+    audioPath: 'assets/sounds/terms/Smart Destination.mp3',
+  ),
+  Term(
+    word: 'Smart Hotel',
+    definition:
+        'Nesnelerin İnterneti (IoT) ve otomasyon kullanılarak enerji tasarrufu sağlayan, mobil anahtarlar ve akıllı asistanlarla konuk deneyimini dijitalleştiren yenilikçi otellerdir.',
+    example:
+        'Örnek: Konuğun odaya girmeden telefonundan klimayı çalıştırdığı ve akıllı asistan ile ışıkları ayarlayabildiği son teknolojiyle donatılmış Akıllı Otel (Smart Hotel) örneğidir.',
+    category: 'Teknoloji ve İnovasyon',
+    audioPath: 'assets/sounds/terms/Smart Hotel.mp3',
+  ),
+  Term(
+    word: 'Snowmobile',
+    definition:
+        'Kar üstünde hızla ilerlemek üzere tasarlanmış, genellikle kış sporları turizminde safari ve gezinti amaçlı kullanılan motorlu kar taşıtıdır.',
+    example:
+        'Örnek: Erzurum Palandöken\'e tatile gelen bir grubun, karlı dağ eteklerini gezmek için motorlu kar kızakları (Snowmobile) kiralayarak safari turu yapmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Snowmobile.mp3',
+  ),
+  Term(
+    word: 'Special Attention Guests (SPATT)',
+    definition:
+        'Hamileler, tekerlekli sandalye kullanan misafirler, yaşlılar veya bebekli aileler gibi hizmet sunumunda ekstra ilgi, fiziksel yardım ve özen gösterilmesi gereken özel konuk sınıfıdır.',
+    example:
+        'Örnek: Resepsiyonistin, tekerlekli sandalye kullanan SPATT (Özel İlgi İsteyen Konuk) misafire asansöre en yakın katta, rampa ve tutacaklarla donatılmış engelli odasını bloke etmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Special Attention Guests SPATT.mp3',
+  ),
+  Term(
+    word: 'Spotting Table',
+    definition:
+        'Otel çamaşırhanelerinde kullanılan, üzerinde leke çıkarıcı sprey tabancaları ve güçlü vakum motoru bulunan, yıkama öncesi lokal lekelerin çözüldüğü leke çıkarma masasıdır.',
+    example:
+        'Örnek: Şef garsonun üniformasına dökülen şarap lekesinin, yıkamadan önce leke masasında (Spotting Table) kimyasallarla yumuşatılıp vakumlanarak giderilmesidir.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Spotting Table.mp3',
+  ),
+  Term(
+    word: 'Stayover',
+    definition:
+        'Oteline daha önceden giriş yapmış ve gecelemeye halen devam eden, yani konaklaması uzayan (çıkış yapmayan) misafir veya bu durumdaki doluluk statüsüdür.',
+    example:
+        'Örnek: Dört günlük rezervasyonu olan misafirin ikinci gününde de odasında kalmaya devam etmesi ve sabah kat görevlisinin bu odayı Stayover (Kalmaya Devam Eden) olarak temizlemesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Stayover.mp3',
+  ),
+  Term(
+    word: 'Steam Press',
+    definition:
+        'Kuru temizleme ve çamaşırhane ünitelerinde ceket, pantolon gibi kıyafetleri sıcak buhar uygulayarak yüksek basınçla ve kırışıksız ütüleyen sanayi tipi buharlı pres makinesidir.',
+    example:
+        'Örnek: Misafirin takım elbisesinin pantolonunun saniyeler içinde Steam Press (Buharlı Pres Ütü) kullanılarak mükemmel jilet gibi ütü çizgisine kavuşturulmasıdır.',
+    category: 'Kat Hizmetleri (Housekeeping)',
+    audioPath: 'assets/sounds/terms/Steam Press.mp3',
+  ),
+  Term(
+    word: 'Storytelling',
+    definition:
+        'Pazarlama iletişiminde markanın, otelin veya yörenin kültürel mirasını ve değerlerini sayısal veriler yerine duygusal, akılda kalıcı bir hikaye kurgusuyla turistlere anlatmasıdır.',
+    example:
+        'Örnek: Restoran menüsünde yemeğin içeriğini liste halinde vermek yerine "Yüzyıllık Aile Tarfimiz: Yörük Ayşe Teyzenin Mutfağından" başlığıyla anlatarak Hikaye Anlatıcılığı (Storytelling) yapılmasıdır.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Storytelling.mp3',
+  ),
+  Term(
+    word: 'Strengths (SWOT)',
+    definition:
+        'SWOT analizinde işletmenin rakiplerine göre üstün olduğu, rekabet avantajı sağlayan güçlü yönlerini ve yeteneklerini temsil eder.',
+    example:
+        'Örnek: Otelin denize tam sıfır mükemmel konumu ve ödüllü Michelin yıldızlı bir şefe sahip olmasının işletme için büyük bir Güçlü Yön (Strength) olarak analiz edilmesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Strengths SWOT.mp3',
+  ),
+  Term(
+    word: 'Studio Room',
+    definition:
+        'İçinde yatağa dönüşebilen yataklı kanepe veya divan bulunan, gündüzleri sadece oturma odası görünümünde olup geceleri yatak odası olarak da kullanılabilen kompakt odalardır.',
+    example:
+        'Örnek: Uzun süreli konaklama yapan bir iş adamının gündüz toplantı yapabildiği, gece ise kanepesini açtırıp yatağa çevirdiği pratik Studio (Stüdyo) odada konaklamasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Studio Room.mp3',
+  ),
+  Term(
+    word: 'Targeting',
+    definition:
+        'Turizm pazarının belirli bölümlere (segmentlere) ayrılmasından sonra, otelin yapısına, fiyatına ve hizmetine en uygun düşen özel turist kitlesinin Hedef Pazar olarak seçilmesi işlemidir.',
+    example:
+        'Örnek: Sessiz, çocuksuz bir konsept benimseyen butik otelin pazarlama stratejisinde Targeting (Hedefleme) olarak sadece 30 yaş üstü "Balayı ve Romantik Çiftler" segmentini seçmesidir.',
+    category: 'Pazarlama ve Satış',
+    audioPath: 'assets/sounds/terms/Targeting.mp3',
+  ),
+  Term(
+    word: 'Tasting Tour',
+    definition:
+        'Yerel ve otantik gıda ürünlerini, sokak lezzetlerini veya şarapları keşfetmek amacıyla uzman bir rehber eşliğinde durak durağa yapılan Gastronomik Tadım Turudur.',
+    example:
+        'Örnek: Gaziantep\'te gurme turist grubunun rehber eşliğinde sırasıyla kebapçı, baklavacı ve kahveci dükkanlarını gezerek lezzetleri bizzat tatmasıdır (Tasting Tour).',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Tasting Tour.mp3',
+  ),
+  Term(
+    word: 'Threats (SWOT)',
+    definition:
+        'SWOT analizinde işletmenin başarısını veya gelirlerini olumsuz etkileyebilecek, genellikle otelin kontrolü dışında gelişen çevresel riskler ve dış Tehditlerdir.',
+    example:
+        'Örnek: Bulunulan turistik bölgede aniden patlak veren ekonomik krizin veya rakiplerin hemen yan tarafa daha büyük bir lüks otel açmasının bir Tehdit (Threat) olarak raporlanmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Threats SWOT.mp3',
+  ),
+  Term(
+    word: 'Tipping',
+    definition:
+        'Özellikle Amerika gibi ülkelerde hizmet sektörünün yapı taşı olan, verilen servisten memnuniyetin göstergesi olarak faturaya ek bırakılan gönüllü veya bazen zorunlu bahşiş ödemesidir.',
+    example:
+        'Örnek: Londra\'da bir restoranda yemek yiyen turistin masadan kalkarken aldığı kaliteli hizmete karşılık hesabın %15\'i oranında bir meblağı masaya Tipping (Bahşiş) olarak bırakmasıdır.',
+    category: 'Sosyoloji ve Etkileşim',
+    audioPath: 'assets/sounds/terms/Tipping.mp3',
+  ),
+  Term(
+    word: 'Top Executive Room',
+    definition:
+        'Otelde yöneticiler, iş adamları veya üst düzey diplomatlar için hazırlanmış, toplantı olanaklarına sahip, lüks teknolojik donanımlı ve üst düzey yönetici odalarıdır.',
+    example:
+        'Örnek: Yabancı bir CEO\'nun şehre geldiğinde, 15. katta bulunan özel ofis bölümü ve toplantı masası olan Top Executive (Üst Düzey Yönetici) odasını talep etmesidir.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Top Executive Room.mp3',
+  ),
+  Term(
+    word: 'Tour File',
+    definition:
+        'Rehberin tur süresince ihtiyaç duyacağı tüm dokümanların, acil durum iletişim listelerinin, yolcu listesinin (manifesto) ve otel kuponlarının bulunduğu, acentenin hazırladığı tur evrak dosyasıdır.',
+    example:
+        'Örnek: Tur sabahı hareket etmeden önce profesyonel rehberin acenteden içinde otobüs plakası, misafir listesi ve konaklama kuponları bulunan Tur Dosyasını (Tour File) teslim almasıdır.',
+    category: 'Tur Operasyonu ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Tour File.mp3',
+  ),
+  Term(
+    word: 'Tour Operator',
+    definition:
+        'Turizmin toptancılarıdır; uçak, konaklama, transfer ve rehberlik gibi ürünleri çok büyük miktarlarda önceden satın alıp risk üstlenerek paket turlar yaratan büyük seyahat işletmeleridir.',
+    example:
+        'Örnek: Bir Alman firmasının bir havayolundan binlerce koltuk ve otellerden binlerce yatak kapatarak uygun fiyata paket tatiller üretmesi Tur Operatörlüğü faaliyetidir.',
+    category: 'Tur Operasyonu ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Tour Operator.mp3',
+  ),
+  Term(
+    word: 'Tour Report',
+    definition:
+        'Tur bitiminde rehber tarafından hazırlanan; turdaki sorunları, şoförün performansını, otellerin eksiklerini ve misafir memnuniyetini acenteye bildiren resmi değerlendirme raporudur.',
+    example:
+        'Örnek: Rehberin ofise döndüğünde "Fethiye\'deki otelin klimaları bozuktu, misafirler çok şikayet etti" yazılı Tur Raporunu (Tour Report) doldurarak operasyon departmanına teslim etmesidir.',
+    category: 'Tur Operasyonu ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Tour Report.mp3',
+  ),
+  Term(
+    word: 'Trademark',
+    definition:
+        'Turizm işletmelerinin kullandıkları isim, özel logolar veya sembollerin başka firmalarca kullanılmasını engelleyen, Türk Patent Kurumu gibi mercilerce onaylanmış Ticari Marka hakkıdır.',
+    example:
+        'Örnek: Otelimizin ismini ve altın rengi yıldızlı logosunu yasal olarak tescilletip Trademark (Ticari Marka) haklarını güvence altına alarak taklitlerinden korunmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Trademark.mp3',
+  ),
+  Term(
+    word: 'Transfer Report',
+    definition:
+        'Turistleri havalimanından otele götüren transfer görevlisi (transferman) tarafından turun ardından düzenlenen, misafirlerin alındığını ve sorunsuz teslim edildiğini belgeleyen operasyon formudur.',
+    example:
+        'Örnek: Görevlinin havalimanından aldığı 30 yolcuyu otele bıraktıktan sonra "Grup sorunsuz yerleştirildi, kayıp bagaj yok" diyerek acenteye Transfer Raporu sunmasıdır.',
+    category: 'Ulaştırma ve Havacılık',
+    audioPath: 'assets/sounds/terms/Transfer Report.mp3',
+  ),
+  Term(
+    word: 'Trekking',
+    definition:
+        'Özellikle doğada, kanyon veya orman yollarında, uzun mesafeli, efor gerektiren ve sırt çantasıyla gerçekleştirilen günübirlik veya konaklamalı doğa yürüyüşü aktivitesidir.',
+    example:
+        'Örnek: Doğa tutkunu turistlerin hafta sonu özel yürüyüş kıyafetleri giyerek Likya Yolu parkurunda zorlu ama keyifli bir Trekking (Doğa Yürüyüşü) etkinliğine katılmasıdır.',
+    category: 'Turizm Türleri ve Kavramları',
+    audioPath: 'assets/sounds/terms/Trekking.mp3',
+  ),
+  Term(
+    word: 'Triple Bottom Line',
+    definition:
+        'Turizmin tamamen sürdürülebilir olabilmesi için ekonomik, çevresel ve sosyal olmak üzere "Üçlü Sorumluluk" boyutunun aynı anda gözetilmesi gerektiğini ifade eden kavramdır.',
+    example:
+        'Örnek: Sadece kar etmekle kalmayıp (ekonomi), yerel halka adil maaş veren (sosyal) ve çöplerini geri dönüştüren (çevre) bir otel, Triple Bottom Line (Üçlü Sorumluluk) kuralını tam uygulamış olur.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Triple Bottom Line.mp3',
+  ),
+  Term(
+    word: 'UCCN (UNESCO Creative Cities Network)',
+    definition:
+        'UNESCO Yaratıcı Şehirler Ağı; yerel kültürlerin, müziğin, zanaatın ve özellikle gastronominin korunup geliştirilmesi amacıyla dünya çapında seçilmiş, özellikli şehirlerin oluşturduğu organizasyondur.',
+    example:
+        'Örnek: Zengin yöresel mutfağa sahip olan Gaziantep\'in, yaratıcılığını kanıtlayarak UNESCO Gastronomi Şehri ünvanıyla UCCN (Yaratıcı Şehirler Ağı) arasına katılmasıdır.',
+    category: 'Kültür ve Coğrafya',
+    audioPath: 'assets/sounds/terms/UCCN UNESCO Creative Cities Network.mp3',
+  ),
+  Term(
+    word: 'Waitlist',
+    definition:
+        'Otelin veya uçağın tamamen dolu olduğu durumlarda, daha önceden rezervasyon yapmış yolculardan biri iptal ettiğinde yer açılması umuduyla bekleyenlerin oluşturduğu Bekleme Listesi\'dir.',
+    example:
+        'Örnek: Tüm uçak koltukları dolduğunda acentenin misafirin ismini Waitlist (Bekleme Listesi) kaydına alması ve iptal olması durumunda ilk ona haber verileceğini bildirmesidir.',
+    category: 'Ön Büro (Front Office)',
+    audioPath: 'assets/sounds/terms/Waitlist.mp3',
+  ),
+  Term(
+    word: 'Water Bungalow',
+    definition:
+        'Tropikal deniz ve göllerde, suyun içine çakılmış direkler üzerinde ahşaptan inşa edilen ve misafire odadan direkt suya girme imkanı sunan otantik ve lüks konaklama türüdür.',
+    example:
+        'Örnek: Balayı çiftinin Maldivler\'deki tatillerinde, odalarının balkonundan merdivenle doğrudan Hint Okyanusu\'na atlayabildikleri ultra lüks bir Su Bungalovunda (Water Bungalow) konaklamasıdır.',
+    category: 'Oda Tipleri ve Terimleri',
+    audioPath: 'assets/sounds/terms/Water Bungalow.mp3',
+  ),
+  Term(
+    word: 'Weaknesses (SWOT)',
+    definition:
+        'SWOT analizinde otelin kendi içinde zayıf veya yetersiz olduğu, rakiplere karşı dezavantaj yaratan ve geliştirilmesi gereken Zayıf Yönleridir.',
+    example:
+        'Örnek: Bir şehir oteli için personelin yetersiz yabancı dil bilgisinin veya binanın çok eski olmasının kurum için içsel bir Zayıf Yön (Weakness) olarak değerlendirilmesidir.',
+    category: 'Yönetim ve Organizasyon',
+    audioPath: 'assets/sounds/terms/Weaknesses SWOT.mp3',
+  ),
+  Term(
+    word: 'Welcome Board',
+    definition:
+        'Havalimanı veya otel lobisi karşılama işlemlerinde (Meet & Greet), misafirin veya acentenin adının büyük ve okunaklı yazıldığı temiz ve şık tasarımlı Karşılama Tabelasıdır.',
+    example:
+        'Örnek: Transfer görevlisinin dış hatlar terminalinde, elinde "SN. YILMAZ AİLESİ" yazılı kurumsal bir Welcome Board (Karşılama Tabelası) tutarak misafirini beklemesidir.',
+    category: 'Tur Operasyonu ve Rehberlik',
+    audioPath: 'assets/sounds/terms/Welcome Board.mp3',
+  ),
+  Term(
+    word: 'Workshop',
+    definition:
+        'Turistlerin bir süreci sadece dinlemediği; bizzat işin içine girerek, uzmanlar eşliğinde el becerilerini kullanarak kendi üretimlerini yaptıkları uygulamalı atölye veya çalışma gruplarıdır.',
+    example:
+        'Örnek: İtalya turuna katılan ziyaretçilerin bir ustayla birlikte mutfağa girip bizzat kendi elleriyle makarna hamurunu açıp kestiği bir Gastronomi Atölyesine (Workshop) katılmasıdır.',
+    category: 'Kongre ve Etkinlik Yönetimi',
+    audioPath: 'assets/sounds/terms/Workshop.mp3',
+  ),
+  Term(
+    word: 'YDO (Yatak Doluluk Oranı)',
+    definition:
+        'Konaklama işletmelerinde, geceleyen toplam kişi (satılan yatak) sayısının, otelin toplam satışa hazır yatak kapasitesine bölünüp yüzde olarak ifade edildiği yatak bazlı doluluk verisidir.',
+    example:
+        'Örnek: 200 adet yatak kapasitesi olan otelde o gece tam 150 kişinin uyumuş olması durumunda, Yatak Doluluk Oranının (YDO) yüzde 75 olarak hesaplanmasıdır.',
+    category: 'Yönetim ve Organizasyon',
+  ),
+  Term(
+    word: 'Zero Waste',
+    definition:
+        'Atık yönetiminde Sıfır Atık prensibi; turizm işletmelerinin mutfakta veya operasyonlarda hiçbir kaynağı çöpe atmayarak, tamamını yeniden değerlendirdiği veya geri dönüştürdüğü sistemdir.',
+    example:
+        'Örnek: Şefin, mutfakta artan bayat ekmekleri kızartarak kruton yapması, elma kabuklarını da kaynatıp çay olarak servis ederek Sıfır Atık (Zero Waste) hedefine ulaşmasıdır.',
+    category: 'Sürdürülebilir Turizm',
+    audioPath: 'assets/sounds/terms/Zero Waste.mp3',
   ),
 ];

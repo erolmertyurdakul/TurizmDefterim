@@ -40,12 +40,12 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
           "name": "Kat Hizmetleri (Housekeeping) Raporu",
           "desc": "Kat görevlilerinin her sabah odaları dolaşarak fiziki durumu (Dolu-Temiz, Dolu-Kirli, Boş-Temiz, Arızalı) kaydettiği günlük kontrol listesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kat görevlisinin her sabah katları gezerek odaların fiziki durumunu (örneğin 201 nolu odayı 'Dolu-Temiz', 202 nolu odayı 'Boş-Kirli') rapora kaydetmesi ve hazırladığı raporu resepsiyona teslim etmesidir."
+            "Örnekle Pekiştirelim: Kat görevlisi her sabah katları gezerek odaların fiziki durumunu (örnek 201 nolu odayı 'Dolu-Temiz', 202 nolu odayı 'Boş-Kirli') rapora kaydetmesi ve hazırladığı raporu resepsiyona teslim etmiştir."
           ]
         },
         {
-          "name": "Oda Durum Mutabakatı (Housekeeping Discrepancy)",
-          "desc": "Resepsiyon bilgisayarındaki oda durumu ile kat raporundaki fiziki oda durumu uyuşmadığında yapılan fiziki ve sistemsel doğrulama işlemidir.",
+          "name": "Oda Durum Mutabakatı (Housekeeping Discrepancy: Uyuşmazlık)",
+          "desc": "Resepsiyon bilgisayarındaki oda durumu ile kat görevlisinin katlarda tespit ettiği fiziki oda durumu uyuşmadığında (örneğin sistemde boş ama odada misafir var) yapılan doğrulama işlemidir.",
           "examples": [
             "Örnekle Pekiştirelim: Sistemde 304 nolu oda 'Boş' görünürken kat raporunda 'Dolu' görünüyorsa; resepsiyonist uyuşmazlık (Discrepancy) fark edince gece kayıtsız konuk girip girmediğini veya yanlış odaya anahtar verilip verilmediğini araştırır ve mutabakat sağlar."
           ]
@@ -62,7 +62,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
       "definitions": [
         {
           "name": "Günlük Giriş (Check-In) Listesi Kontrolü",
-          "desc": "O gün otele giriş yapacak konukların isimleri, VIP durumları, oda tercihleri ve özel isteklerinin (deniz manzarası, yüksek kat vb.) önceden hazırlanmasıdır.",
+          "desc": "O gün otele giriş yapacak konukların isimleri, VIP durumları, oda tercihleri ve özel isteklerinin (deniz manzarası, yüksek kat vb.) önceden hazırlanması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Resepsiyonist saat 14:30'da sisteme girer; bugün gelecek 30 misafirin oda atamalarını (blokaj) yapar ve balayı çiftinin odasına özel ikram hazırlatır."
           ]
@@ -93,7 +93,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit1 = {
         },
         {
           "name": "Resepsiyon Kasası Devri (Cash Float)",
-          "desc": "Vardiya sonundaki nakit avansın, gün içinde toplanan nakit ve POS adisyonlarının sayılarak tamı tamına sonraki vardiyaya devredilmesidir.",
+          "desc": "Vardiya sonundaki nakit avansın, gün içinde toplanan nakit ve POS adisyonlarının sayılarak tamı tamına sonraki vardiyaya devredilmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Sabah görevlisi kasadaki 4.000 TL bozuk para avansını ve gün boyu toplanan 9.500 TL nakit parayı sayarak akşam görevlisine teslim eder."
           ]
@@ -117,15 +117,15 @@ const Map<String, dynamic> onBuroHizmetleriUnit2 = {
       "microSummary": "Gece resepsiyonisti (Night Auditor), gün sonu çalışmasını (Night Audit) başlatmadan önce sisteme girilmeyen işlemleri ve No-Show odaları denetler.",
       "definitions": [
         {
-          "name": "No-Show (Gelmeyen Konuk) İşlemi",
-          "desc": "Garanti edilmiş rezervasyonu bulunduğu halde otele gelmeyen ve iptal bildirmeyen konukların odasının No-Show konumuna alınıp 1 gecelik cezanın fatura edilmesidir.",
+          "name": "No-Show (Gelmeyen / İptal Bildirmeyen Konuk) İşlemi",
+          "desc": "Garanti edilmiş rezervasyonu bulunduğu halde otele hiç gelmeyen ve önceden iptal bildirmeyen konukların odasının 'Gelmeyen Konuk' (No-Show) konumuna alınıp 1 gecelik ceza ücretinin tahsil edilmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Gece saat 02:00'ye kadar gelmeyen garanti rezervasyonlu misafir için gece denetçisi odasını No-Show yapar ve 1 gecelik ücreti kredi kartından tahsil eder."
           ]
         },
         {
           "name": "Gündüz Giriş / Çıkış Denetimi",
-          "desc": "Gündüz gerçekleştiği halde sisteme 'Check-in' veya 'Check-out' olarak basılması unutulmuş işlemlerin gece tespit edilip kapatılmasıdır.",
+          "desc": "Gündüz gerçekleştiği halde sisteme 'Check-in' veya 'Check-out' olarak basılması unutulmuş işlemlerin gece tespit edilip kapatılması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Gece denetçisi 104 nolu odanın sistemde hâlâ giriş yapmadı göründüğünü fark eder; kayıt kartını inceleyip konuğun saat 19:00'da geldiğini teyit ederek girişi onaylar."
           ]
@@ -142,14 +142,14 @@ const Map<String, dynamic> onBuroHizmetleriUnit2 = {
       "definitions": [
         {
           "name": "Oda Ücretlerinin Otomatik Basılması (Room Posting)",
-          "desc": "Night Audit çalıştırıldığında, oteldeki tüm dolu odaların konaklama bedeli ve vergilerinin (KDV + %2 Konaklama Vergisi) sistem tarafından folyolara otomatik borç yazılmasıdır.",
+          "desc": "Night Audit çalıştırıldığında, oteldeki tüm dolu odaların konaklama bedeli ve vergilerinin (KDV + %2 Konaklama Vergisi) sistem tarafından folyolara otomatik borç yazılması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Night Audit butonuna basıldığında otelde konaklayan 85 odanın günlük ücret ve vergileri tek bir tıkla aynı saniyede hesaplarına aktarılır."
           ]
         },
         {
           "name": "POS ve Yazar Kasa Z Raporu Kapanışı",
-          "desc": "Restoran ve barlardaki POS cihazlarından mali kapanış raporu (Z Raporu) alınarak restoran gelirlerinin ön büro sistemiyle eşitlenmesidir.",
+          "desc": "Restoran ve barlardaki POS cihazlarından mali kapanış raporu (Z Raporu) alınarak restoran gelirlerinin ön büro sistemiyle eşitlenmesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Havuz bar POS cihazından alınan Z raporundaki 28.000 TL'lik toplam ciro ile ön büro sistemindeki harcamalar karşılaştırılarak mali kapanış yapılır."
           ]
@@ -200,14 +200,14 @@ const Map<String, dynamic> onBuroHizmetleriUnit3 = {
           "name": "Seyir Defteri (Shift Logbook)",
           "desc": "Vardiyalar arasında bilgi akışını sağlayan, arızaları, özel istekleri ve takipli işleri içeren dahili iletişim defteridir.",
           "examples": [
-            "Örnekle Pekiştirelim: '405 nolu odanın havaalanı transfer taksisi sabah 06:30 için ayarlandı' notunun Seyir Defterine yazılmasıdır."
+            "Örnekle Pekiştirelim: '405 nolu odanın havaalanı transfer taksisi sabah 06:30 için ayarlandı' notun Seyir Defterine yazılmıştır."
           ]
         },
         {
           "name": "Anahtar Kayıt Defteri (Key Control Log)",
           "desc": "Paspartu (Master) anahtarları ve depo anahtarlarını teslim alan personelin imza karşılığı kaydolduğu güvenlik defteridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kat hizmetleri şefinin sabah kat master anahtarını alırken saat belirterek Anahtar Kayıt Defterini imzalamasıdır."
+            "Örnekle Pekiştirelim: Kat hizmetleri şefi sabah kat master anahtarını alırken saat belirterek Anahtar Kayıt Defterini imzalamıştır."
           ]
         }
       ],
@@ -260,10 +260,10 @@ const Map<String, dynamic> onBuroHizmetleriUnit4 = {
           ]
         },
         {
-          "name": "KDV Dahil Tutardan Matrah Bulma",
-          "desc": "Faturadaki KDV dahil toplam tutardan, vergisiz ham tutarı (matrah) ayrıştırma işlemidir.",
+          "name": "KDV Dahil Tutardan Matrah (Vergisiz Ham Tutar) Bulma",
+          "desc": "Faturadaki KDV dahil toplam tutardan, henüz vergi eklenmemiş olan vergisiz ham tutarı (matrah) ayrıştırma işlemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: KDV Dahil (%10) 1.100 TL olan faturanın matrahını bulmak için tutar (1 + 0,10 = 1,10)'a bölünür: 1.100 / 1,10 = 1.000 TL KDV Hariç Matrah bulunur."
+            "Örnekle Pekiştirelim: KDV Dahil (%10) 1.100 TL olan faturanın matrahını (vergisiz fiyatını) bulmak için tutar (1 + 0,10 = 1,10)'a bölünür: 1.100 / 1,10 = 1.000 TL KDV Hariç Matrah bulunur."
           ]
         }
       ],
@@ -286,7 +286,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit5 = {
       "definitions": [
         {
           "name": "Birim Oda Maliyeti Hesaplaması",
-          "desc": "Bir odanın bir gecelik konaklaması için yapılan doğrudan giderler (çamaşır, şampuan bukleti, temizlik) ile genel giderlerin (elektrik, amortisman) toplanmasıdır.",
+          "desc": "Bir odanın bir gecelik konaklaması için yapılan doğrudan giderler (çamaşır, şampuan bukleti, temizlik) ile genel giderlerin (elektrik, amortisman) toplanması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Bir odanın buklet/çamaşır gideri 150 TL, oda başı elektrik/su 100 TL, personel gideri 250 TL ise toplam birim maliyet 500 TL'dir."
           ]
@@ -309,10 +309,10 @@ const Map<String, dynamic> onBuroHizmetleriUnit5 = {
       "microSummary": "Geciken acente alacaklarına uygulanan basit faiz ile erken ödeme yapan acentelere uygulanan iskonto (indirim) hesaplanır.",
       "definitions": [
         {
-          "name": "Basit Faiz Hesaplaması (F = A × n × t / 100)",
-          "desc": "Geciken alacaklar için anapara (A), faiz oranı (n) ve geçen süre (t) üzerinden hesaplanan gecikme faizi tutarıdır.",
+          "name": "Basit Faiz Hesaplaması (F = A × n × t / 100 veya 1.200 veya 36.000)",
+          "desc": "Geciken alacaklar için anapara (A), faiz oranı (n) ve geçen süre (t) üzerinden hesaplanan gecikme faizi tutarıdır.\n\n💡 PAYDAYA YAZILAN SAYININ MANTIĞI:\n• Süre YIL ise payda 100 olur. (F = A × n × t / 100)\n• Süre AY ise payda 1.200 olur. (1 Yıl = 12 Ay olduğundan 100 × 12 = 1.200)\n• Süre GÜN ise payda 36.000 olur. (1 Ticari Yıl = 360 Gün olduğundan 100 × 360 = 36.000)",
           "examples": [
-            "Örnekle Pekiştirelim: Ödemesini 60 gün geciktiren acentenin 60.000 TL'lik borcuna yıllık %12 gecikme faizi uygulanır: (60.000 × 12 × 60) / 36.000 = 1.200 TL faiz tutarı."
+            "Örnekle Pekiştirelim: Ödemesini 60 GÜN geciktiren acentenin 60.000 TL'lik borcuna yıllık %12 faiz uygulanır. Süre gün cinsinden olduğu için payda 36.000 alınır: (60.000 × 12 × 60) / 36.000 = 1.200 TL faiz tutarı."
           ]
         },
         {
@@ -373,14 +373,14 @@ const Map<String, dynamic> onBuroHizmetleriUnit6 = {
         },
         {
           "name": "Mevcut Oda Başına Gelir (RevPAR - Revenue Per Available Room)",
-          "desc": "Toplam oda gelirinin satılan değil, oteldeki SATIŞA HAZIR TÜM ODALARA bölünmesiyle bulunur (RevPAR = ODO × ADR).",
+          "desc": "Toplam oda gelirinin satılan değil, oteldeki SATIŞA HAZIR TÜM ODALARA bölünmesiyle bulunur (RevPAR = ODO × ADR).\n\n💡 AKILDA KALICI FARK: ADR sadece 'satılan' odaların ortalama fiyatıdır. RevPAR ise oteldeki 'dolu-boş tüm odaların' oda başına düşen ortalama geliridir.",
           "examples": [
             "Örnekle Pekiştirelim: 200 odalı otelde 200.000 TL oda geliri elde edildiyse RevPAR = 200.000 / 200 = 1.000 TL'dir."
           ]
         }
       ],
       "caseStudy": "Örnek Olay: Yüksek Doluluk Düşük Gelir Yanılsaması\n\nOlay: A oteli %90 dolulukla oda başı 600 TL'ye satar (RevPAR = 540 TL). B oteli %60 dolulukla oda başı 1.200 TL'ye satar (RevPAR = 720 TL).\n\nÇözüm: Ön Büro Müdürü B otelinin daha başarılı olduğunu görür. Çünkü RevPAR değeri yüksek olan B oteli daha az yıpranma maliyetiyle daha fazla gelir elde etmiştir.",
-      "tip": "İpucu: Otel başarısı sadece Doluluk Oranına (ODO) bakarak değerlendirilemez; mutlaka ADR ve RevPAR değerleri birlikte analiz edilmelidir."
+      "tip": "İpucu: Otel başarısı sadece Doluluk Oranına (ODO) veya ADR'ye bakarak değerlendirilemez; mutlaka ADR ve RevPAR değerleri birlikte analiz edilmelidir."
     }
   ]
 };
@@ -398,7 +398,7 @@ const Map<String, dynamic> onBuroHizmetleriUnit7 = {
       "definitions": [
         {
           "name": "e-Fatura / e-Arşiv Fatura",
-          "desc": "Satılan hizmet karşılığında Gelir İdaresi Başkanlığı (GİB) standartlarında dijital ortamda düzenlenen resmi faturadır.\n\n📊 TİCARİ BELGELER VUK ZORUNLULUK TABLOSU:\n• e-Fatura / e-Arşiv Fatura: Hizmet Sonrası En Geç 7 Gün İçinde Düzenlenir (Saklama 5 Yıl VUK)\n• Sevk İrsaliyesi: Mal Sevkiyatında Araçta Bulundurma Zorunlu Belge\n• Gider Pusulası: Faturasız Alımlarda ve İadelerde Kesilen Belge\n• Günlük Müşteri Listesi: Resepsiyonda Günlük Asılması Zorunlu Cetvel",
+          "desc": "Satılan hizmet karşılığında Gelir İdaresi Başkanlığı (GİB) standartlarında dijital ortamda düzenlenen resmi faturadır.\n\n📊 TİCARİ BELGELER VUK ZORUNLULUK TABLOSU:\n• e-Fatura / e-Arşiv Fatura: Hizmet Sonrası En Geç 7 Gün İçinde Düzenlenir (Saklama 5 Yıl VUK)\n• Sevk İrsaliyesi: Mal Sevkiyatında Araçta Bulundurma Zorunlu Belge\n• Gider Pusulası: Faturasız Alımlarda ve İadelerde Kesilen Belge\n• Resmî Konuk/Misafir Cetveli (Mevzuattaki Adıyla Günlük Müşteri Listesi): Resepsiyonda Günlük Asılması Zorunlu Cetvel",
           "examples": [
             "Örnekle Pekiştirelim: Otelden ayrılan misafirin folyosundaki konaklama ve restoran harcaması için sisteme T.C. Kimlik numarası girilerek e-Arşiv Fatura oluşturulur ve e-posta ile iletilir."
           ]
@@ -412,6 +412,12 @@ const Map<String, dynamic> onBuroHizmetleriUnit7 = {
         }
       ],
       "caseStudy": "Örnek Olay: Fatura Düzenleme Süresinin Geçirilmesi\n\nOlay: Ayrılan konuk fatura istemediğini söyler. Resepsiyonist faturayı kesmeden işlemi kapatır.\n\nÇözüm: VUK Madde 231/5 uyarınca hizmet bitiminden itibaren en geç 7 gün içinde fatura düzenlenmesi zorunludur. Gece denetçisi durumu fark edip konuk adına e-Arşiv fatura keser ve cezayı engeller.",
+      "extraDetails": [
+        {
+          "title": "📌 OTEL İŞLETMESİNDEKİ VERGİ VE ÖDEMELERİ BİR ÖRNEKLE İNCELEYELİM",
+          "content": "[ MİSAFİR HARCAMA DÖKÜMÜ (NET MATRAHLAR) ]\n💡 MATRAH: Vergiler eklenmeden önceki satış fiyatıdır.\n• 🛏️ Oda Satışı (Geceleme): 10.000 TL (KDV Hariç Net Matrah)\n• 💆 SPA Hizmeti: 1.000 TL (KDV Hariç Net Matrah)\n• 🍽️ Yiyecek ve İçecek (Alkolsüz): 1.000 TL (KDV Hariç Net Matrah)\n• 🍷 Alkollü İçecek Tüketimi: 1.000 TL (KDV Hariç Net Matrah)\n──────────────────────────────────────────────────\n➡️ TOPLAM NET HİZMET MATRAHI: 13.000 TL\n\n🧾 1. FATURAYA YANSITILAN VERGİ HESAPLAMALARI\nA) KDV (KATMA DEĞER VERGİSİ) HESAPLAMALARI:\n• Oda Satışı KDV (%10): 10.000 TL x %10 = 1.000 TL\n• SPA Hizmeti KDV (%10): 1.000 TL x %10 = 100 TL\n• Alkolsüz Yeme-İçme KDV (%10): 1.000 TL x %10 = 100 TL\n• Alkollü İçecek KDV (%20): 1.000 TL x %20 = 200 TL\n──────────────────────────────────────────────────\n➡️ TOPLAM HESAPLANAN KDV: 1.400 TL\n\nB) KONAKLAMA VERGİSİ (%2) HESAPLAMASI:\nMisafir otelde gecelediği için toplam hizmet matrahı (13.000 TL) üzerinden %2 hesaplanır.\n• Hesabı: 13.000 TL x %2 = 260 TL\n\n⚠️ Önemli Not (Günübirlik Misafir Ayrımı):\nOtelde konaklayan misafirin 1.000 TL'lik restoran harcamasından %10 + %2 vergi alınırken, otelde konaklamayan ve dışarıdan yalnızca restorana gelen misafirin 1.000 TL'lik harcamasından %10 vergi alınır. Yani, %2 Konaklama Vergisi sadece otelde konaklayan misafirlerin harcamalarından alınır.\n\n💳 FATURA GENEL TOPLAMI (OTELDE KONAKLAYAN MİSAFİRDEN TAHSİL EDİLECEK TUTAR)\n• Net Hizmet Matrahı Toplamı: 13.000 TL\n• Toplam KDV (%10 ve %20): 1.400 TL\n• Konaklama Vergisi (%2): 260 TL\n──────────────────────────────────────────────────\n👉 MİSAFİRİN ÖDEYECEĞİ GENEL TOPLAM: 14.660 TL\n\n🏢 2. OTELİN KENDİ CİROSUNDAN ÖDEYECEĞİ TGA PAYI (FATURAYA YAZILMAZ)\n• Türkiye Turizm Tanıtım ve Geliştirme Ajansı (TGA) Payı (‰7,5 / %0,75):\nOtelin KDV hariç brüt satış cirosu (net matrah) olan 13.000 TL üzerinden hesaplanır.\n• Hesabı: 13.000 TL x 0,0075 = 97,50 TL\nBu tutar misafir faturasında yer almaz; otel ay sonunda kendi kazandığı 13.000 TL brüt cironun (vergi ve masraflar hariç toplam gelirin) içinden 97,50 TL'yi ajansa öder."
+        }
+      ],
       "tip": "İpucu: VUK gereğince fatura düzenleme süresi hizmet tamamlandıktan sonra azami 7 gündür; 7 günü geçen faturalar hiç düzenlenmemiş sayılır."
     },
     {
@@ -422,16 +428,16 @@ const Map<String, dynamic> onBuroHizmetleriUnit7 = {
       "definitions": [
         {
           "name": "Bono (Emre Yazılı Senet - TTK Madde 776)",
-          "desc": "Borçlunun (keşideci), alacaklıya (lehtar) belirli bir vadede belirli bir parayı kayıtsız şartsız ödeyeceğini taahhüt ettiği kambiyo senedidir.",
+          "desc": "Borçlunun (Keşideci: Senedi yazıp imzalayan borçlu kişi), alacaklıya (Lehtar: Parayı alacak olan kişi) belirli bir vadede belirli bir parayı kayıtsız şartsız ödeyeceğini taahhüt ettiği kambiyo senedidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelin mobilya yenileme alımı için tedarikçi firmaya 90 gün vadeli 150.000 TL'lik senet (bono) imzalayarak vermesidir."
+            "Örnekle Pekiştirelim: Otel mobilya yenileme alımı için tedarikçi firmaya 90 gün vadeli 150.000 TL'lik senet (bono) imzalayarak vermiştir."
           ]
         },
         {
           "name": "Çek (Ödeme Aracı)",
           "desc": "Banka üzerine yazılan ve görüldüğünde ödenmesi gereken nakit para yerine geçen bir ödeme aracıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Acentenin otel rezervasyon ödemesi için otel adına 100.000 TL tutarında banka çeki teslim etmesidir."
+            "Örnekle Pekiştirelim: Acenten otel rezervasyon ödemesi için otel adına 100.000 TL tutarında banka çeki teslim etmiştir."
           ]
         }
       ],
@@ -461,9 +467,9 @@ const Map<String, dynamic> onBuroHizmetleriUnit8 = {
         },
         {
           "name": "Çift Taraflı Kayıt Usulü (Borç / Alacak)",
-          "desc": "Her mali işlemin en az bir hesabın Borç (sol) tarafına, bir başka hesabın Alacak (sağ) tarafına eşit tutarlarla yazılması kuralıdır.",
+          "desc": "Her mali işlemin en az bir hesabın Borç (sol) tarafına, bir başka hesabın Alacak (sağ) tarafına eşit tutarlarla yazılması kuralıdır.\n\n💡 ALTIN KURAL: Muhasebede 'BORÇ' demek birinden borç almak değildir; varlığın girdiği SOL TARAF demektir. 'ALACAK' ise varlığın çıktığı SAĞ TARAF demektir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bankadan 15.000 TL nakit çekildiğinde: 100 Kasa Hesabı (Borçlu) 15.000 TL, 102 Bankalar Hesabı (Alacaklı) 15.000 TL olarak kaydedilir."
+            "Örnekle Pekiştirelim: Bankadan 15.000 TL nakit çekildiğinde: 100 Kasa Hesabı (Borçlu / Sol Taraf) 15.000 TL, 102 Bankalar Hesabı (Alacaklı / Sağ Taraf) 15.000 TL olarak kaydedilir."
           ]
         }
       ],
@@ -480,12 +486,19 @@ const Map<String, dynamic> onBuroHizmetleriUnit8 = {
           "name": "Yevmiye Defteri (Günlük Defter)",
           "desc": "Mali işlemlerin belgelerine dayanarak tarih sırasıyla madde maddeler halinde yazıldığı resmi yasal defterdir.",
           "examples": [
-            "Örnekle Pekiştirelim: 15/04/2026 tarihinde 3.000 TL'lik temizlik malzemesi peşin alındığında 1. madde olarak Yevmiye Defterine işlenmesidir."
+            "Örnekle Pekiştirelim: 15/04/2026 tarihinde 3.000 TL'lik temizlik malzemesi peşin alındığında 1. madde olarak Yevmiye Defterine işlenmiştir."
           ]
         },
         {
-          "name": "Mizan (Geçici ve Kesin Mizan)",
-          "desc": "Yevmiye defterindeki borç ve alacak kayıtlarının Büyük Defter hesaplarına doğru aktarılıp aktarılmadığını gösteren kontrol tablosudur.",
+          "name": "Defter-i Kebir (Büyük Defter)",
+          "desc": "Yevmiye defterindeki tarih sırasıyla karışık yazılan tüm işlemleri '100 Kasa', '102 Banka' gibi hesap bazında ayıran defterdir. Her hesap için ayrı bir 'T' sayfası açılır; sol tarafa giren paralar, sağ tarafa çıkan paralar yazılır.\n\n💡 UYGULAMA VE İŞLEYİŞ MANTIĞI:\n• Günlük İşleme: Her gün yeni sayfaya geçilmez! O hesabın kendi T sayfasında dün yazılan satırın hemen altına yeni tarihle ekleme yapılır.",
+          "examples": [
+            "Örnekle Pekiştirelim: 15 Nisan'da misafir kasaya 5.000 TL öder, 16 Nisan'da manava 1.000 TL nakit ödenir. Bu işlemler Yevmiye defterinde elektrik faturası ve diğer giderlerle karışık dururken; muhasebeci Defter-i Kebir'deki sadece '100 Kasa' T sayfasına gider. 15 Nisan'daki 5.000 TL giren parayı Kasa sayfasının BORÇ (sol) tarafına yazar. 16 Nisan'daki 1.000 TL çıkan parayı ise ALACAK (sağ) tarafına yazar. Otel müdürü 'Kasada kaç para var?' dediğinde Yevmiye'yi tek tek aramadan, Kasa T sayfasındaki Borç ve Alacak farkından 5.000 - 1.000 = 4.000 TL net parayı anında söyler. Yani Defter-i Kebir, Yevmiye defterindeki ayrı ayrı tutulmuş tüm kayıtları tek bir defterde kategorilendirilmiş (Kasa hesabı, Banka hesabı vb.) olarak görmemizi sağlar."
+          ]
+        },
+        {
+          "name": "Mizan (Hesap Sağlama ve Kontrol Cetveli)",
+          "desc": "Yevmiye defterindeki borç ve alacak kayıtlarının Büyük Defter hesaplarına eksiksiz ve hatasız aktarılıp aktarılmadığını gösteren terazi kontrol tablosudur.",
           "examples": [
             "Örnekle Pekiştirelim: Ay sonunda düzenlenen geçici mizanda toplam borç sütunu ile toplam alacak sütununun kuruşu kuruşuna eşit olduğu doğrulanır."
           ]
@@ -540,10 +553,10 @@ const Map<String, dynamic> onBuroHizmetleriUnit9 = {
           ]
         },
         {
-          "name": "257 Birikmiş Amortismanlar (-) Hesabı",
-          "desc": "Duran varlıkların aşınma ve yıpranma paylarının (amortisman) biriktirildiği ve bilançoda varlık değerini düşüren pasif karakterli düzenleyici hesaptır.",
+          "name": "257 Birikmiş Amortismanlar (-) Hesabı (Eskime ve Yıpranma Payı)",
+          "desc": "Duran varlıkların kullanım süresince oluşan eskime ve yıpranma paylarının (amortisman) biriktirildiği ve bilançoda varlık değerini düşüren pasif karakterli düzenleyici hesaptır.",
           "examples": [
-            "Örnekle Pekiştirelim: 100.000 TL'lik otel aracının yıllık %20 amortisman payı olan 20.000 TL 257 Birikmiş Amortismanlar hesabının alacağına yazılır."
+            "Örnekle Pekiştirelim: 100.000 TL'ye alınan otel servis aracının 1 yıl kullanım sonrası %20 eskime (amortisman) payı olan 20.000 TL, 257 Birikmiş Amortismanlar hesabının alacağına yazılır. Aracın bilançodaki net değeri 80.000 TL'ye düşer."
           ]
         }
       ],
@@ -645,6 +658,13 @@ const Map<String, dynamic> onBuroHizmetleriUnit11 = {
       "microSummary": "Maliyetler (621) ve Yönetim Giderleri (632) BORÇ kaydedilir. Dönem sonunda tüm gelir ve giderler 690 hesabında toplanarak net sonuç bilançoya devredilir.",
       "definitions": [
         {
+          "name": "621 Satılan Ticari Mallar Maliyeti Hesabı (STMM)",
+          "desc": "Misafire satılan ürün veya malların (meşrubat, hediyelik eşya vb.) otele olan doğrudan alış maliyetinin kaydedıldığı borç taraflı gider hesabıdır.",
+          "examples": [
+            "Örnekle Pekiştirelim: Otel minibarındaki sodayı 10 TL'ye alıp misafire 30 TL'ye sattığımızda; elde edilen 30 TL gelirdir (600 Yurt İçi Satışlar Hesabı), sodanın otele geliş fiyatı olan 10 TL ise 621 STMM (Maliyet) hesabının borcuna yazılır."
+          ]
+        },
+        {
           "name": "632 Genel Yönetim Giderleri Hesabı",
           "desc": "Otel yönetimi, personel maaşları, elektrik, su, internet ve büro giderlerinin kaydedildiği borç taraflı gider hesabıdır.",
           "examples": [
@@ -652,8 +672,8 @@ const Map<String, dynamic> onBuroHizmetleriUnit11 = {
           ]
         },
         {
-          "name": "690 Dönem Kârı veya Zararı Hesabı (Kapanış Devir Kaydı)",
-          "desc": "Yıl sonunda tüm 6 ile başlayan Gelir hesaplarının borçlandırılarak, tüm Gider hesaplarının alacaklandırılarak aktarıldığı ana özet hesaptır.",
+          "name": "690 Dönem Kârı veya Zararı Hesabı (Yıl Sonu Kapanış Özet Havuzu)",
+          "desc": "Yıl sonunda tüm 6 ile başlayan Gelir hesaplarının (borçlandırılarak) ve Gider hesaplarının (alacaklandırılarak) sıfırlandığı ve toplandığı ana kapanış havuzudur. Gelir fazla ise net kâr (590), gider fazla ise net zarar (591) bilançoya devredilir.",
           "examples": [
             "Örnekle Pekiştirelim: Yıl sonunda 600 Gelir hesabı (800.000 TL) borçlandırılıp 690'a devredilir; 632 Gider hesabı (500.000 TL) alacaklandırılıp 690'a devredilir. Aradaki 300.000 TL Kâr 590 Bilanço hesabına aktarılır."
           ]

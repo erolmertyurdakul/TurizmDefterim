@@ -116,11 +116,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
     try {
       final player = AudioPlayer();
       await player.play(BytesSource(SfxSynthesizer.getChime()));
-      player.onPlayerStateChanged.listen((state) {
-        if (state == PlayerState.completed || state == PlayerState.stopped) {
-          player.dispose();
-        }
-      });
     } catch (_) {}
   }
 

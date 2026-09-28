@@ -13,7 +13,7 @@ const Map<String, dynamic> dunyaCografyasiUnit1 = {
           "name": "Turizm Coğrafyası",
           "desc": "Turizm faaliyetlerinin yeryüzündeki dağılışını, nedenlerini ve bu seyahatlerin yapıldığı bölgelerde yarattığı değişimleri inceleyen bilim dalıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir coğrafyacının Kapadokya'nın tüf yapısı nedeniyle neden balon turizminin orada geliştiğini ve bunun bölgedeki nüfus dağılışını nasıl etkilediğini araştırmasıdır."
+            "Örnekle Pekiştirelim: Bir coğrafyacının Kapadokya'nın tüf yapısı nedeniyle neden balon turizminin orada geliştiğini ve bunun bölgedeki nüfus dağılışını nasıl etkilediğini araştırmıştır."
           ]
         },
         {
@@ -27,7 +27,7 @@ const Map<String, dynamic> dunyaCografyasiUnit1 = {
           "name": "Beşerî Coğrafya Unsurları",
           "desc": "Tarihi saraylar, antik kentler, köprüler, yerel festivaller ve müzeler gibi insan eliyle yapılmış ve turist çeken kültürel değerlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul'daki tarihi Topkapı Sarayı'nı veya Edirne'deki Selimiye Camii'ni görmek için seyahat eden turistlerin insan yapımı kültürel eserleri incelemesidir."
+            "Örnekle Pekiştirelim: İstanbul'daki tarihi Topkapı Sarayı'nı veya Edirne'deki Selimiye Camii'ni görmek için seyahat eden turistler insan yapımı kültürel eserleri incelemiştir."
           ]
         }
       ],
@@ -43,7 +43,7 @@ const Map<String, dynamic> dunyaCografyasiUnit1 = {
           "name": "Turist Gönderen Bölge (Çıkış Noktası)",
           "desc": "Genellikle sanayileşmiş, havası kapalı/yağışlı ve insanların tatil yapma ihtiyacı duyduğu gelir düzeyi yüksek bölgelerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kış aylarında havası sürekli bulutlu ve soğuk olan Almanya ve İngiltere gibi kuzey ülkelerinin, her yaz Akdeniz kıyılarına milyonlarca turist göndermesidir."
+            "Örnekle Pekiştirelim: Kış aylarında havası sürekli bulutlu ve soğuk olan Almanya ve İngiltere gibi kuzey ülkeleri, her yaz Akdeniz kıyılarına milyonlarca turist göndermiştir."
           ]
         },
         {
@@ -57,14 +57,14 @@ const Map<String, dynamic> dunyaCografyasiUnit1 = {
           "name": "Aktarma Merkezi (Hub Havalimanı)",
           "desc": "Kıtalar arası uçuşların düğüm noktası niteliğinde olan, çok sayıda havayolu şirketinin bağlantı merkezi olarak kullandığı dev aktarma havalimanlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Amerika'dan yola çıkan bir turistin Tayland'a giderken coğrafi konumu sebebiyle İstanbul Havalimanı'nda aktarma yapıp seyahatine devam etmesidir."
+            "Örnekle Pekiştirelim: Amerika'dan yola çıkan bir turist Tayland'a giderken coğrafi konumu sebebiyle İstanbul Havalimanı'nda aktarma yapıp seyahatine devam etmiştir."
           ]
         },
         {
           "name": "Kruvaziyer (Gemi) Limanı",
           "desc": "Devasa yolcu gemilerinin (kruvaziyer) yanaştığı, pasaport kontrolü, alışveriş ve yerel turların organize edildiği büyük deniz turizm kapılarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Akdeniz turuna çıkan 5000 yolculu bir kruvaziyer gemisinin Ege'de Kuşadası Limanı'na yanaşması ve yolcuların Efes Antik Kenti'ne günübirlik tura çıkmasıdır."
+            "Örnekle Pekiştirelim: 5.000 yolculu bir kruvaziyer gemisi Ege'de Kuşadası Limanı'na yanaşmış; yolcular Efes Antik Kenti'ne günübirlik tura çıkmıştır."
           ]
         }
       ],
@@ -80,14 +80,14 @@ const Map<String, dynamic> dunyaCografyasiUnit1 = {
           "name": "Fiziksel Taşıma Kapasitesi",
           "desc": "Bir otoparkın alabileceği araç sayısı veya bir plajın alabileceği şezlong sayısı gibi tamamen fiziksel alan sınırlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'daki küçük bir yeraltı şehrine, dar geçitler nedeniyle aynı anda en fazla 100 ziyaretçinin alınabilmesi ve kapıda kuyruk oluşmasıdır."
+            "Örnekle Pekiştirelim: Kapadokya'daki küçük bir yeraltı şehrine, dar geçitler nedeniyle aynı anda en fazla 100 ziyaretçi alınabilmiş; kapıda kuyruk oluşmuştur."
           ]
         },
         {
           "name": "Ekolojik Taşıma Kapasitesi",
           "desc": "Doğal yaşamın, temiz su kaynaklarının ve ormanların zarar görmeden kabul edebileceği maksimum ziyaretçi sınırıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Çok güzel bir koyu aynı anda binlerce turist ziyaret ederse, çöpler birikir, su kirlenir ve doğa geri dönülemez şekilde zarar görür. İşte bu durum ekolojik taşıma kapasitesinin aşılmasıdır."
+            "Örnekle Pekiştirelim: Çok güzel bir koyu aynı anda binlerce turist ziyaret ederse, çöpler birikir, su kirlenir ve doğa geri dönülemez şekilde zarar görür. İşte bu durum ekolojik taşıma kapasitesin aşılmıştır."
           ]
         }
       ],
@@ -111,7 +111,7 @@ const Map<String, dynamic> dunyaCografyasiUnit2 = {
           "name": "3S Kavramı",
           "desc": "İngilizce Sea (Deniz), Sand (Kum) ve Sun (Güneş) kelimelerinin baş harflerinden oluşan klasik kıyı turizmi sembolüdür.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir ailenin yaz tatili için otel rezervasyonu yaparken özellikle kumlu plajı olan, denizi sığ ve bol güneşli Akdeniz otellerini tercih etmesidir."
+            "Örnekle Pekiştirelim: Bir aile yaz tatili için otel rezervasyonu yaparken özellikle kumlu plajı olan, denizi sığ ve bol güneşli Akdeniz otellerini tercih etmiştir."
           ]
         },
         {
@@ -134,7 +134,7 @@ const Map<String, dynamic> dunyaCografyasiUnit2 = {
           "name": "Akarsu Turizmi (Rafting)",
           "desc": "Debisi ve akış hızı yüksek olan nehirlerde, botlarla (raft) yapılan heyecan dolu ve eğlenceli bir doğa sporudur.",
           "examples": [
-            "Örnekle Pekiştirelim: Adrenalin seven bir turistin, Rize Fırtına Deresi'nin gürül gürül akan sularında bota binip kürek çekerek nehirde rafting yapmasıdır."
+            "Örnekle Pekiştirelim: Adrenalin seven bir turistin, Rize Fırtına Deresi'nin gürül gürül akan sularında bota binip kürek çekerek nehirde rafting yapmıştır."
           ]
         },
         {
@@ -162,9 +162,9 @@ const Map<String, dynamic> dunyaCografyasiUnit2 = {
         },
         {
           "name": "Çevre Bilinci",
-          "desc": "Turistlerin tatil yaparken doğayı kirletmemesi, su kaynaklarını koruması ve sürdürülebilirliğe katkıda bulunmasıdır.",
+          "desc": "Turistlerin tatil yaparken doğayı kirletmemesi, su kaynaklarını koruması ve sürdürülebilirliğe katkıda bulunması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir turistin plajda geçirdiği günün sonunda çöplerini yerdeki geri dönüşüm kutularına atması ve sahilde hiçbir atık bırakmamasıdır."
+            "Örnekle Pekiştirelim: Bir turistin plajda geçirdiği günün sonunda çöplerini yerdeki geri dönüşüm kutularına atması ve sahilde hiçbir atık bırakmamıştır."
           ]
         }
       ],
@@ -218,7 +218,7 @@ const Map<String, dynamic> dunyaCografyasiUnit3 = {
           "name": "Büyük Beşli (Big Five)",
           "desc": "Safari esnasında görülmesi en çok heyecan yaratan beş büyük hayvanı temsil eder: Aslan, Fil, Leopar, Gergedan ve Bufalo.",
           "examples": [
-            "Örnekle Pekiştirelim: Tanzanya'da safari yapan bir fotoğrafçının, gün boyu sabırla bekledikten sonra bir ağacın dalında uzanan benekli leoparı (Büyük Beşli'den biri) görüntülemeyi başarmasıdır."
+            "Örnekle Pekiştirelim: Tanzanya'da safari yapan bir fotoğrafçının, gün boyu sabırla bekledikten sonra bir ağaç dalında uzanan benekli leoparı (Büyük Beşli'den biri) görüntülemeyi başarmıştır."
           ]
         }
       ],
@@ -241,7 +241,7 @@ const Map<String, dynamic> dunyaCografyasiUnit3 = {
           "name": "Doğa Yürüyüşü (Trekking)",
           "desc": "Özel doğa parkurlarında, temiz havada belirli kurallarla yapılan sağlıklı yürüyüş aktivitesidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Likya Yolu parkurunda sırt çantalarıyla doğaya çıkan bir grubun, çam ağaçları kokuları arasında antik işaretleri takip ederek saatlerce yürüyüş yapmasıdır."
+            "Örnekle Pekiştirelim: Likya Yolu parkurunda sırt çantalarıyla doğaya çıkan bir grup çam ağaçları kokuları arasında antik işaretleri takip ederek saatlerce yürüyüş yapmıştır."
           ]
         }
       ],
@@ -311,7 +311,7 @@ const Map<String, dynamic> dunyaCografyasiUnit4 = {
           "name": "Tarihi Ticaret Yolu",
           "desc": "Çin'den veya Hindistan'dan başlayıp Anadolu üzerinden Avrupa'ya uzanan, kültürel etkileşimi sağlayan eski kervan rotalarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: İpek Yolu turlarına katılan turistlerin, Çin'den başlayıp Orta Asya üzerinden Türkiye'ye uzanan kervan yollarını tarihi izleriyle incelemesidir."
+            "Örnekle Pekiştirelim: İpek Yolu turlarına katılan turistler Çin'den başlayıp Orta Asya üzerinden Türkiye'ye uzanan kervan yollarını tarihi izleriyle incelemiştir."
           ]
         },
         {
@@ -388,7 +388,7 @@ const Map<String, dynamic> dunyaCografyasiUnit5 = {
           "name": "Tema Parkı (Eğlence Parkı)",
           "desc": "Belirli bir konsept etrafında (masal kahramanları, film karakterleri) kurulmuş, devasa oyuncakların ve trenlerin yer aldığı eğlence alanlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Disneyland parkına giren bir ailenin, çizgi film kahramanlarının kortej geçişlerini izlemesi ve korku tünellerine binerek eğlenmesidir."
+            "Örnekle Pekiştirelim: Disneyland parkına giren bir ailenin, çizgi film kahramanların kortej geçişlerini izlemesi ve korku tünellerine binerek eğlenmiştir."
           ]
         },
         {
@@ -419,7 +419,7 @@ const Map<String, dynamic> dunyaCografyasiUnit6 = {
           "name": "İnanç Turizmi",
           "desc": "İnsanların kendi dinlerince kutsal sayılan ibadet yerlerini (cami, kilise, sinagog, tapınak) ziyaret etmek amacıyla yaptığı kutsal seyahatlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Hristiyan turistlerin, İzmir Selçuk'taki Meryem Ana Evi'ni kutsal kabul edip orayı hacı olmak ve dua etmek için ziyaret etmesidir."
+            "Örnekle Pekiştirelim: Hristiyan turistler İzmir Selçuk'taki Meryem Ana Evi'ni kutsal kabul edip orayı hacı olmak ve dua etmek için ziyaret etmiştir."
           ]
         },
         {
@@ -519,7 +519,7 @@ const Map<String, dynamic> dunyaCografyasiUnit7 = {
           "name": "Kış Turizmi",
           "desc": "Kar kalınlığının ve kalitesinin kayak yapmaya uygun olduğu, dağlık alanlarda kurulan tesislerde yapılan turizm çeşididir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kış tatilinde Erzurum Palandöken'deki karlı dağlarda snowboard yapmak için kayak takımlarıyla dağa çıkan bir turistin gezisidir."
+            "Örnekle Pekiştirelim: Kış tatilinde Erzurum Palandöken'deki karlı dağlarda snowboard yapmak için kayak takımlarıyla dağa çıkan bir turistin gezisini ifade eder."
           ]
         },
         {

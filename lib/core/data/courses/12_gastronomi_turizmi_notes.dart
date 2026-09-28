@@ -13,14 +13,14 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
           "name": "Gastronomi",
           "desc": "Yemeklerin hazırlanması, sunulması, lezzet özellikleri ve gıdaların insan sağlığı/kültürüyle olan ilişkisini inceleyen yemek yapma sanatı ve bilimidir. Yunanca 'Gaster' (mide) ve 'Nomos' (yasa) kelimelerinden türemiştir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir şefin Hatay'a gidip oradaki yemeklerin yapılış yöntemlerini, kullanılan baharatların tarihteki yerini ve lezzet kültürüyle olan ilişkisini incelemesidir."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Bir şefin Hatay'a gidip oradaki yemeklerin yapılış yöntemlerini, kullanılan baharatlar tarihteki yerini ve lezzet kültürüyle olan ilişkisini incelemiştir."
           ]
         },
         {
           "name": "Gastronomi Turizmi",
           "desc": "Bir bölgenin özgün yiyecek ve içeceklerini tatmak, üretim süreçlerini yerinde görmek ve o yörenin yemek kültürünü deneyimlemek amacıyla yapılan seyahatlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir çiftin sadece Gaziantep'in yöresel lezzetlerini (kebap, baklava, beyran) yerinde tatmak ve yemek kültürünü öğrenmek amacıyla o şehre seyahat düzenlemesidir."
+            "Örnekle Pekiştirelim: Bir çiftin sadece Gaziantep' yöresel lezzetlerini (kebap, baklava, beyran) yerinde tatmak ve yemek kültürünü öğrenmek amacıyla o şehre seyahat düzenlemiştir."
           ]
         },
         {
@@ -41,9 +41,9 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
       "definitions": [
         {
           "name": "Bölgesel Kalkınma (Yerel Ekonomi)",
-          "desc": "Turizm gelirlerinin sadece büyük otellere değil, köydeki çiftçiye, yöresel restoran işleten esnafa ve yerel üreticilere doğrudan dağılmasıdır.",
+          "desc": "Turizm gelirlerinin sadece büyük otellere değil, köydeki çiftçiye, yöresel restoran işleten esnafa ve yerel üreticilere doğrudan dağılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kars'taki bir köyün, ürettiği meşhur gravyer peynirini tatmaya gelen gurme grupları sayesinde göç vermeyi durdurup ekonomik olarak zenginleşmesidir."
+            "Örnekle Pekiştirelim: Kars'taki bir köy ürettiği meşhur gravyer peynirini tatmaya gelen gurme grupları sayesinde göç vermeyi durdurup ekonomik olarak zenginleşmiştir."
           ]
         },
         {
@@ -57,21 +57,21 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
           "name": "Menşe Adı",
           "desc": "Coğrafi sınırları belirlenmiş bir yöre, bölge veya istisnai durumlarda ülkeden kaynaklanan, tüm üretim, işleme ve hazırlama aşamaları tamamen bu coğrafi sınır içinde gerçekleşen ürün tescilidir.",
           "examples": [
-            "Örnekle Pekiştirelim: 'Malatya Kayısısı' tescilinin alınabilmesi için kayısının Malatya'da yetiştirilmesi, hasat edilmesi ve kurutulması aşamalarının tamamının Malatya sınırları içinde yapılmasının zorunlu olmasıdır."
+            "Örnekle Pekiştirelim: 'Malatya Kayısısı' tescilinin alınabilmesi için kayısının Malatya'da yetiştirilmesi, hasat edilmesi ve kurutulması aşamalarının tamamının Malatya sınırları içinde yapılmasın zorunlu olmuştur."
           ]
         },
         {
           "name": "Mahreç İşareti",
           "desc": "Belirli bir coğrafi sınır içinde üretilmesi şart olmayan ancak o yöreye has geleneksel hammadde veya üretim tekniklerine göre üretilen, en az bir aşaması o sınırda gerçekleşen tescildir.",
           "examples": [
-            "Örnekle Pekiştirelim: 'Kahramanmaraş Dondurması' tescilinde, dondurmada kullanılan keçi sütünün dışarıdan gelebilmesi ancak Maraş dondurma ustalarının geleneksel dövme ve hazırlama tekniğinin Maraş'ta uygulanmasının şart olmasıdır."
+            "Örnekle Pekiştirelim: 'Kahramanmaraş Dondurması' tescilinde, dondurmada kullanılan keçi sütünün dışarıdan gelebilmesi ancak Maraş dondurma ustalarının geleneksel dövme ve hazırlama tekniğinin Maraş'ta uygulanmasın şart olmuştur."
           ]
         },
         {
           "name": "Gastronomik Çekim Gücü",
           "desc": "Bir yiyeceğin veya içeceğin, tek başına bir şehri veya ülkeyi milyonlarca turist için çekim merkezi haline getirebilme yeteneğidir.",
           "examples": [
-            "Örnekle Pekiştirelim: İtalya Napoli'nin, sadece dünyaca ünlü taş fırında pişen orijinal pizzası sayesinde her yıl milyonlarca turisti kendine çekmesidir."
+            "Örnekle Pekiştirelim: İtalya Napoli'nin sadece dünyaca ünlü taş fırında pişen orijinal pizzası sayesinde her yıl milyonlarca turisti kendine çekmiştir."
           ]
         }
       ],
@@ -87,21 +87,21 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
           "name": "Ateşin Keşfi ve Pişirme",
           "desc": "İnsanoğlunun gıdaları ateşle buluşturarak yumuşatması, sindirimi kolaylaştırması ve lezzet moleküllerini açığa çıkarmasıyla başlayan gastronominin ilk adımıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: İlk çağlarda insanların avladıkları etleri çiğ yemek yerine odun ateşinde pişirerek daha lezzetli ve sindirimi kolay hale getirmesidir."
+            "Örnekle Pekiştirelim: İlk çağlarda insanlar avladıkları etleri çiğ yemek yerine odun ateşinde pişirerek daha lezzetli ve sindirimi kolay hale getirmiştir."
           ]
         },
         {
           "name": "Endüstri Devrimi ve Konserveleme",
           "desc": "Makineli üretime geçişle birlikte gıdaların uzun süre bozulmadan saklanması, ambalajlanması ve uzak mesafelere güvenle taşınması sürecidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Fabrikalaşma ile birlikte bezelye veya mısır gibi gıdaların teneke kutularda konserve edilerek uzak mesafelere bozulmadan taşınabilmesidir."
+            "Örnekle Pekiştirelim: Fabrikalaşma ile birlikte bezelye veya mısır gibi gıdalar teneke kutularda konserve edilerek uzak mesafelere bozulmadan taşınabilmiştir."
           ]
         },
         {
           "name": "Modern Mutfak Akımları",
           "desc": "Yemek sunumlarının hafiflediği, taze ve doğal ürünlerin ön plana çıktığı, porsiyonların küçülüp estetiğin arttığı şef akımlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Fransız mutfak şeflerinin ağır soslar yerine, tabakta az ama taze malzemelerin estetikle sunulduğu 'Nouvelle Cuisine' (Yeni Mutfak) akımını başlatmasıdır."
+            "Örnekle Pekiştirelim: Fransız mutfak şeflerinin ağır soslar yerine, tabakta az ama taze malzemeler estetikle sunulduğu 'Nouvelle Cuisine' (Yeni Mutfak) akımını başlatmıştır."
           ]
         }
       ],
@@ -117,21 +117,21 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
           "name": "Tadım Turu (Tasting Tour)",
           "desc": "Profesyonel rehberler eşliğinde, bir şehrin tarihi çarşılarında veya özel mekanlarında sırayla en ünlü yöresel lezzetlerin tadılması yürüyüşleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir rehber eşliğinde İzmir Kemeraltı Çarşısı'na gidip sırasıyla sıcak boyoz, söğüş dürüm, şambali tatlısı ve karadut şerbeti tadarak gezilmesidir."
+            "Örnekle Pekiştirelim: Bir rehber eşliğinde İzmir Kemeraltı Çarşısı'na gidip sırasıyla sıcak boyoz, söğüş dürüm, şambali tatlısı ve karadut şerbeti tadarak gezilmiştir."
           ]
         },
         {
           "name": "Mutfak Atölyesi (Workshop)",
           "desc": "Turistlerin bizzat mutfağa girerek, profesyonel bir şef eşliğinde yerel bir yemeğin pişirme aşamalarını uygulamalı olarak öğrendiği etkinliktir.",
           "examples": [
-            "Örnekle Pekiştirelim: Turistlerin bir İtalyan şefin mutfağına girerek kendi elleriyle makarna hamuru açıp pişirmeyi ve sos yapmayı uygulamalı olarak öğrenmesidir."
+            "Örnekle Pekiştirelim: Turistlerin bir İtalyan şef mutfağına girerek kendi elleriyle makarna hamuru açıp pişirmeyi ve sos yapmayı uygulamalı olarak öğrenmiştir."
           ]
         },
         {
           "name": "Yerel Pazarlar (Üretici Pazarları)",
           "desc": "Çiftçilerin kendi tarlalarında yetiştirdiği doğal ürünleri doğrudan tüketiciye sunduğu, turistlerin yöresel otları ve sebzeleri tanıdığı alanlardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Muğla Tire pazarına giden yabancı turistlerin, orada satılan yerel otları (şevketi bostan, radika) inceleyip köylülerden doğrudan satın almasıdır."
+            "Örnekle Pekiştirelim: Muğla Tire pazarına giden yabancı turistlerin, orada satılan yerel otları (şevketi bostan, radika) inceleyip köylülerden doğrudan satın almıştır."
           ]
         }
       ],
@@ -148,21 +148,21 @@ const Map<String, dynamic> gastronomiTurizmiUnit1 = {
           "name": "Slow Food (Yavaş Gıda)",
           "desc": "Hızlı tüketim (Fast-food) kültürüne karşı doğan; yerel tohumları, temiz üretimi, geleneksel yemek tariflerini ve keyifle yavaş yemeyi savunan uluslararası harekettir. Salyangoz logosuyla temsil edilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Fast-food zincirlerinin tek tip dondurulmuş gıdalarına tepki olarak, ata tohumlarıyla yetiştirilen organik sebzelerle geleneksel tencere yemekleri pişirilmesidir."
+            "Örnekle Pekiştirelim: Fast-food zincirlerin tek tip dondurulmuş gıdalarına tepki olarak, ata tohumlarıyla yetiştirilen organik sebzelerle geleneksel tencere yemekleri pişirilmiştir."
           ]
         },
         {
           "name": "Karbon Ayak İzi ve Yerel Üretim",
           "desc": "Yemekte kullanılan malzemelerin üretim yerinden mutfağa gelene kadar havaya saldığı sera gazı miktarıdır. Malzeme ne kadar uzaktan gelirse çevreye o kadar zarar verir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otel mutfağının muzu binlerce kilometre uzaktaki Ekvador'dan uçakla getirtmek yerine, yerli üretimi desteklemek için Anamur'dan satın alarak taşıma kirliliğini önlemesidir."
+            "Örnekle Pekiştirelim: Otel mutfağının muzu binlerce kilometre uzaktaki Ekvador'dan uçakla getirtmek yerine, yerli üretimi desteklemek için Anamur'dan satın alarak taşıma kirliliğini önlemiştir."
           ]
         },
         {
           "name": "Sıfır Atık (Zero Waste) Mutfak",
           "desc": "Mutfaktaki hiçbir gıda malzemesinin çöpe atılmadan, kabuklarından çekirdeklerine kadar farklı tariflerde değerlendirilmesi sanatıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Mutfakta artan bayat ekmeklerin çöpe atılmayıp fırınlanarak köfte harcında kullanılması veya elma kabuklarından organik sirke yapılarak değerlendirilmesidir."
+            "Örnekle Pekiştirelim: Mutfakta artan bayat ekmekler çöpe atılmayıp fırınlanarak köfte harcında kullanılması veya elma kabuklarından organik sirke yapılarak değerlendirilmiştir."
           ]
         }
       ],
@@ -186,21 +186,21 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "UNESCO Yaratıcı Şehirler Ağı (UCCN)",
           "desc": "UNESCO tarafından şehirlerin kültürel kimliklerini (Gastronomi, Müzik, Tasarım vb.) küresel düzeyde korumak ve tanıtmak için oluşturulan ağdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Gaziantep'in zengin mutfak kültürü sayesinde UNESCO tarafından 'Gastronomi Şehri' tescili alarak dünya genelinde resmi koruma ve tanıtım kazanmasıdır."
+            "Örnekle Pekiştirelim: Gaziantep' zengin mutfak kültürü sayesinde UNESCO tarafından 'Gastronomi Şehri' tescili alarak dünya genelinde resmi koruma ve tanıtım kazanmıştır."
           ]
         },
         {
           "name": "Anadolu Mutfak Kültürü",
           "desc": "Selçuklu, Osmanlı ve saray mutfağının harmanlandığı, imece (birlikte yapma) kültürünün, şerbetlerin ve kazan yemeklerinin hakim olduğu kadim mutfaktır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yüzyıllardır süregelen köy düğünlerinde dev bakır kazanlarda keşkek dövülmesi ve tüm köy halkına ortaklaşa ikram edilmesidir."
+            "Örnekle Pekiştirelim: Yüzyıllardır süregelen köy düğünlerinde dev bakır kazanlarda keşkek dövülmesi ve tüm köy halkına ortaklaşa ikram edilmiştir."
           ]
         },
         {
           "name": "Gastronomik Destinasyon",
           "desc": "Yemekleri o kadar ünlü olan ve çekim gücü yaratan yerlerdir ki, turistler sadece oradaki bir yemeği yemek için seyahat planı yaparlar.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir gurubun hafta sonunu sadece Hatay'ın meşhur tepsi kebabını ve közde pişen sıcak künefesini yemek için Hatay'da geçirmesidir."
+            "Örnekle Pekiştirelim: Bir gurubun hafta sonunu sadece Hatay' meşhur tepsi kebabını ve közde pişen sıcak künefesini yemek için Hatay'da geçirmiştir."
           ]
         }
       ],
@@ -216,21 +216,21 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "Zeytinyağlılar Kültürü",
           "desc": "Dünya mutfaklarında eşi benzeri olmayan, sebzelerin soğuk sıkım sızma zeytinyağıyla pişirilip soğuk olarak servis edildiği Türk mutfağının sağlıklı yüzüdür.",
           "examples": [
-            "Örnekle Pekiştirelim: Ege bölgesinde yetişen taze taze enginarların sızma zeytinyağı, limon, bezelye ve dereotuyla pişirilerek yaz aylarında soğuk olarak servis edilmesidir."
+            "Örnekle Pekiştirelim: Ege bölgesinde yetişen taze taze enginarlar sızma zeytinyağı, limon, bezelye ve dereotuyla pişirilerek yaz aylarında soğuk olarak servis edilmiştir."
           ]
         },
         {
           "name": "Sokak Lezzetleri Kültürü",
           "desc": "Hızlı, ekonomik ve son derece lezzetli olan, ayaküstü tüketilen yerel yeme-içme kültürüdür (Simit, kokoreç, balık-ekmek vb.).",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul Eminönü'nde tekne kenarında pişirilen taze uskumru balığının ekmek arası yapılarak yanında kırmızı turşu suyuyla ayaküstü keyifle yenmesidir."
+            "Örnekle Pekiştirelim: İstanbul Eminönü'nde tekne kenarında pişirilen taze uskumru balığın ekmek arası yapılarak yanında kırmızı turşu suyuyla ayaküstü keyifle yenmiştir."
           ]
         },
         {
           "name": "Türk Kahvesi ve Çay Ritüeli",
           "desc": "Sadece birer içecek değil; sunum şekli, fal bakma geleneği, ince belli bardağı ve 'bir fincan kahvenin 40 yıl hatırı vardır' sözüyle en büyük misafirperverlik sembolümüzdür.",
           "examples": [
-            "Örnekle Pekiştirelim: Yemekten sonra ince belli bardakta tavşan kanı demli çay ikram edilmesi veya köpüklü Türk kahvesinin yanında bir bardak su ve lokumla servis edilerek sohbet edilmesidir."
+            "Örnekle Pekiştirelim: Yemekten sonra ince belli bardakta tavşan kanı demli çay ikram edilmesi veya köpüklü Türk kahvesin yanında bir bardak su ve lokumla servis edilerek sohbet edilmiştir."
           ]
         }
       ],
@@ -246,7 +246,7 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "Fransız Mutfağı ve Michelin Yıldızı",
           "desc": "Dünya gastronomi eğitiminin temelidir. Sosları ve teknikleriyle ünlüdür. Michelin Yıldızı ise dünyadaki en kaliteli ve prestijli restoran tescil sistemidir (1, 2 veya 3 yıldız verilir).",
           "examples": [
-            "Örnekle Pekiştirelim: Paris'teki lüks bir restorana, yemeklerin olağanüstü lezzeti, şefin yaratıcılığı ve servis kalitesi nedeniyle en yüksek tescil olan '3 Michelin Yıldızı' verilmesidir."
+            "Örnekle Pekiştirelim: Paris'teki lüks bir restorana, yemeklerin olağanüstü lezzeti, şefin yaratıcılığı ve servis kalitesi nedeniyle en yüksek tescil olan '3 Michel Yıldızı' verilmiştir."
           ]
         },
         {
@@ -260,7 +260,7 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "Uzak Doğu (Asya) Mutfağı",
           "desc": "Çin, Japon, Tayland mutfaklarını kapsayan; soya sosu, zencefil, deniz ürünleri, pirinç ve buharda/wok tavada hızlı pişirme tekniklerine dayalı mistik mutfaktır.",
           "examples": [
-            "Örnekle Pekiştirelim: Japon mutfağında taze deniz ürünlerinin, soya sosu ve zencefil eşliğinde çiğ olarak (Suşi) hazırlanıp özel bambu çubuklar (chopsticks) ile yenmesidir."
+            "Örnekle Pekiştirelim: Japon mutfağında taze deniz ürünlerin soya sosu ve zencefil eşliğinde çiğ olarak (Suşi) hazırlanıp özel bambu çubuklar (chopsticks) ile yenmiştir."
           ]
         }
       ],
@@ -283,14 +283,14 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "Gastronomi Festivali",
           "desc": "Bir şehrin mutfak değerlerini dünyaya tanıtmak, ünlü şefleri ve gurmeleri bir araya getirmek için düzenlenen büyük çaplı şenlikli etkinliklerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Her yıl düzenlenen Adana Lezzet Festivali'ne katılan binlerce turistin, kurulan stantlarda dumanı tüten kebapları yerinde tatmasıdır."
+            "Örnekle Pekiştirelim: Her yıl düzenlenen Adana Lezzet Festivali'ne katılan binlerce turist kurulan stantlarda dumanı tüten kebapları yerinde tatmıştır."
           ]
         },
         {
           "name": "Gurme Gezgin (Gastronom)",
           "desc": "Yemek tadımı konusunda uzmanlaşmış, yediği yemeğin kalitesini, malzemesini ve sunumunu profesyonelce analiz eden lezzet kaşifidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Gurme Vedat Bey'in, sadece en iyi zeytinyağlı yaprak sarmasını kimin yaptığını bulmak için Ege köylerini tek tek gezip yazılar yazmasıdır."
+            "Örnekle Pekiştirelim: Gurme Vedat Bey'in, sadece en iyi zeytinyağlı yaprak sarmasını kimin yaptığını bulmak için Ege köylerini tek tek gezip yazılar yazmıştır."
           ]
         }
       ],
@@ -306,7 +306,7 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "Moleküler Gastronomi",
           "desc": "Fizik ve kimya biliminin yemek pişirme tekniklerine uygulanmasıdır. Gıdaların formları değiştirilerek (köpükler, jeller, küreler) şaşırtıcı sunumlar yapılır.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir şefin çilek suyunu kimyasal tekniklerle küçük boncuk jeller haline getirerek tabağa 'çilek havyarı' şeklinde estetikle sunmasıdır."
+            "Örnekle Pekiştirelim: Bir şef çilek suyunu kimyasal tekniklerle küçük boncuk jeller haline getirerek tabağa 'çilek havyarı' şeklinde estetikle sunmuştur."
           ]
         },
         {
@@ -320,7 +320,7 @@ const Map<String, dynamic> gastronomiTurizmiUnit2 = {
           "name": "Dijital Gurmelik (Yemek Bloggerlığı)",
           "desc": "Sosyal medya platformlarında (Instagram, YouTube, TikTok) yemek videoları çekerek lezzet analizleri yapan ve takipçilerini yönlendiren yeni nesil gurmeliktir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir gurmenin gittiği lokantadaki sac tavasını akıllı telefonuyla video çekip sosyal medyada 'lezzet analizi' notlarıyla milyonlarca takipçisiyle paylaşmasıdır."
+            "Örnekle Pekiştirelim: Bir gurmen gittiği lokantadaki sac tavasını akıllı telefonuyla video çekip sosyal medyada 'lezzet analizi' notlarıyla milyonlarca takipçisiyle paylaşmıştır."
           ]
         }
       ],

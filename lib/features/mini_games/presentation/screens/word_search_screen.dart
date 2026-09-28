@@ -126,6 +126,8 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
       }
     });
 
+    final isWide = MediaQuery.of(context).size.width >= 768;
+
     return Scaffold(
       backgroundColor: const Color(0xFF1E1B4B), // Koyu mor/lacivert tema
       appBar: AppBar(
@@ -133,7 +135,9 @@ class _WordSearchScreenState extends ConsumerState<WordSearchScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.close_rounded, color: Colors.white),
+          icon: Icon(Icons.close_rounded, color: Colors.white, size: isWide ? 34 : 24),
+          tooltip: 'Kapat',
+          splashRadius: isWide ? 28 : 22,
           onPressed: () {
             notifier.endGame();
             Navigator.pop(context);

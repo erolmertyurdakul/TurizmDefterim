@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background-color: #030F26 !important; height: 100%;">
+<html lang="tr" style="background-color: #030F26 !important; height: 100%;">
 <head>
   <base href="$FLUTTER_BASE_HREF">
   <meta charset="UTF-8">
@@ -20,6 +20,58 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Web Audio Booster (Volume Booster for PC / Akıllı Tahta) -->
+  <script>
+    window.__audioBoostElements = [];
+    const _origCreateElement = document.createElement;
+    document.createElement = function(tagName, options) {
+      const el = _origCreateElement.call(document, tagName, options);
+      if (tagName && tagName.toLowerCase() === 'audio') {
+        window.__audioBoostElements.push(el);
+      }
+      return el;
+    };
+
+    let _boostAudioCtx = null;
+    const _boostGainNodes = new WeakMap();
+
+    window.setWebVolumeBoost = function(multiplier) {
+      try {
+        if (!_boostAudioCtx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) _boostAudioCtx = new AudioCtx();
+        }
+        if (_boostAudioCtx && _boostAudioCtx.state === 'suspended') {
+          _boostAudioCtx.resume();
+        }
+
+        const elements = window.__audioBoostElements || [];
+        const domElements = Array.from(document.querySelectorAll('audio'));
+        const all = Array.from(new Set([...elements, ...domElements]));
+
+        all.forEach(function(audio) {
+          let gainNode = _boostGainNodes.get(audio);
+          if (!gainNode && _boostAudioCtx) {
+            try {
+              const source = _boostAudioCtx.createMediaElementSource(audio);
+              gainNode = _boostAudioCtx.createGain();
+              source.connect(gainNode);
+              gainNode.connect(_boostAudioCtx.destination);
+              _boostGainNodes.set(audio, gainNode);
+            } catch (e) {
+              console.warn("[VolumeBooster] createMediaElementSource warning:", e);
+            }
+          }
+          if (gainNode && _boostAudioCtx) {
+            gainNode.gain.setValueAtTime(multiplier, _boostAudioCtx.currentTime);
+          }
+        });
+      } catch (err) {
+        console.error("[VolumeBooster] Error:", err);
+      }
+    };
+  </script>
 
   <style>
     html, body {
@@ -233,5 +285,10 @@
     });
     splashObserver.observe(document.body, { childList: true, subtree: true });
   </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "42864e1c97d94e9ab5f92a7f214a93e3"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
+

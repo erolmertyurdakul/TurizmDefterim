@@ -9,12 +9,38 @@ final coursesProvider = Provider.family<List<Course>, String>((ref, grade) {
         title: 'Mesleki Gelişim Atölyesi',
         icon: Icons.work_history_rounded,
         learningUnits: [
-          LearningUnit(title: 'Meslek Etiği ve Ahilik', lessonCount: 6, quizCount: 2),
-          LearningUnit(title: 'İş Sağlığı ve Güvenliği', lessonCount: 8, quizCount: 3),
-          LearningUnit(title: 'Teknolojik Gelişmeler ve Endüstriyel Dönüşüm', lessonCount: 5, quizCount: 2),
-          LearningUnit(title: 'Çevre Koruma', lessonCount: 7, quizCount: 3),
-          LearningUnit(title: 'Girişimci Fikirler, İş Kurma ve Yürütme', lessonCount: 8, quizCount: 3),
-          LearningUnit(title: 'Fikri ve Sınai Mülkiyet Hakları', lessonCount: 6, quizCount: 2),
+          LearningUnit(title: 'İletişimin Gücü', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Meslek Etiği ve Ahilik Kültürü', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'İş Sağlığı ve Güvenliği', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Çevre Koruma', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Girişimcilik: Fikirler, İş Kurma ve Yürütme', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Fikrî ve Sınai Mülkiyet Hakları', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Teknolojik Gelişmeler ve Endüstriyel Dönüşüm', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'İnovasyonla Öğrenme Alışkanlıklarını Dönüştürme', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Yeşil Dönüşüm, Dijital Dönüşüm ve İkiz Dönüşüm', lessonCount: 5, quizCount: 16),
+          LearningUnit(title: 'Finansal Okuryazarlık', lessonCount: 5, quizCount: 16),
+        ],
+      ),
+      const Course(
+        title: 'Genel Turizm',
+        icon: Icons.public_rounded,
+        learningUnits: [
+          LearningUnit(title: 'Turizmle İlgili Temel Unsurlar', lessonCount: 6, quizCount: 15),
+          LearningUnit(title: 'Turizm Endüstrisi', lessonCount: 6, quizCount: 15),
+          LearningUnit(title: 'Türkiye\'nin Turistik Merkezleri', lessonCount: 7, quizCount: 15),
+          LearningUnit(title: 'Turizmle İlgili Çevre Dostu Uygulamalar', lessonCount: 6, quizCount: 15),
+        ],
+      ),
+      const Course(
+        title: 'Otelcilik ve Seyahat Hizmetleri',
+        icon: Icons.hotel_rounded,
+        learningUnits: [
+          LearningUnit(title: 'Kişisel Hijyen Kuralları', lessonCount: 6, quizCount: 15),
+          LearningUnit(title: 'İletişim Teknikleri', lessonCount: 6, quizCount: 15),
+          LearningUnit(title: 'Temel Konaklama Hizmetleri', lessonCount: 8, quizCount: 15),
+          LearningUnit(title: 'Seyahat Acenteliği Hizmetleri', lessonCount: 6, quizCount: 15),
+          LearningUnit(title: 'Konuk İlişkileri', lessonCount: 6, quizCount: 15),
+          LearningUnit(title: 'Astlarla İlgili Çalışmalar', lessonCount: 5, quizCount: 15),
         ],
       ),
     ];
@@ -50,6 +76,11 @@ final coursesProvider = Provider.family<List<Course>, String>((ref, grade) {
           LearningUnit(title: 'Banyo Temizlik İşlemleri', lessonCount: 7, quizCount: 3),
           LearningUnit(title: 'Genel Alan Temizliği', lessonCount: 6, quizCount: 2),
         ],
+      ),
+      const Course(
+        title: 'Ön Büro Hizmetleri Atölyesi',
+        icon: Icons.computer_rounded,
+        learningUnits: [],
       ),
     ];
   } else if (grade == '11') {

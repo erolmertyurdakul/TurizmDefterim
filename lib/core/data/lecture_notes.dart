@@ -16,6 +16,9 @@ import 'courses/11_on_buro_hizmetleri_notes.dart';
 import 'courses/10_konuk_giris_cikis_notes.dart';
 import 'courses/10_kat_hizmetleri_notes.dart';
 import 'courses/9_mesleki_gelisim_notes.dart';
+import 'courses/9_genel_turizm_notes.dart';
+import 'courses/9_otelcilik_notes.dart';
+
 
 
 // 1. Öğrenme Birimi Notları
@@ -34,84 +37,84 @@ const Map<String, dynamic> unit1Notes = {
           "name": "Süit Oda (Suite Room)",
           "desc": "Bir salon veya oturma odasına bağlanan bir veya daha fazla yatak odasına sahip, geniş ve lüks odalardır. VIP konuklar tercih eder, ücreti yüksektir.",
           "examples": [
-            "Örnekle Pekiştirelim: Geniş bir oturma odası ve buna kapıyla bağlanan büyük yatak odası olan 702 nolu süit odayı iş seyahatindeki VIP konuğun kiralamasıdır."
+            "Örnekle Pekiştirelim: VIP bir konuk, geniş bir oturma odası ve buna iç kapıyla bağlanan büyük bir yatak odası bulunan 702 nolu süit odada konaklamıştır. Oturma salonu ile yatak odasının kapıyla tamamen ayrılmış olması süit odanın ayırt edici özelliğidir."
           ]
         },
         {
           "name": "Mini Süit Oda (Junior Suite Room)",
           "desc": "Oturma bölümü ile yatak bölümünün bir paravan ile ayrıldığı odalardır. Standart odalardan daha geniştir.",
           "examples": [
-            "Örnekle Pekiştirelim: Tek bir geniş odanın içerisinde, yatak bölümü ile koltuk takımının şık bir ahşap paravanla ayrıldığı mini süit (junior suite) odada genç bir çiftin kalmasıdır."
+            "Örnekle Pekiştirelim: Genç bir çift, yatak bölümü ile oturma alanının şık bir ahşap paravanla bölündüğü geniş bir odada konaklamıştır. Ayrı bir salonu olmayan, tek mekanda paravanla ayrılan bu düzen mini süit odanın temel özelliğidir."
           ]
         },
         {
           "name": "Köşe Süit Oda (Corner Suite Room)",
           "desc": "Koridor sonunda bulunan, iki ya da üç cepheli, salon ve yatak odasından oluşan geniş odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Koridorun en ucunda, hem orman hem deniz manzarasını gören geniş iki cepheli köşe süit (corner suite) odada bir yazarın ilham bulmak için kalmasıdır."
+            "Örnekle Pekiştirelim: Bir yazar, koridorun en ucunda yer alan, hem orman hem deniz manzarasını gören iki cepheli köşe süit odada kalmıştır. Binanın köşe konumunda iki farklı cepheye ve manzaraya sahip olması bu oda tipinin özelliğidir."
           ]
         },
         {
-          "name": "Kral Dairesi (Presidential Suite Room / Başkanlık Süiti)",
+          "name": "Kral Dairesi (Presidential Suite Room)",
           "desc": "Salon, bir veya birkaç yatak odası, banyo, yemek odası, mutfak ve servis/içecek üniteleri bulunan, ekstra lüks döşenmiş tam bir dairedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Ülke liderinin ziyareti öncesi, içinde özel toplantı masası, içecek ünitesi, mini mutfağı ve jakuzisi olan en üst kattaki devasa dairesinin rezerve edilmesidir."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Ülke liderinin ziyareti öncesi, içinde özel toplantı masası, içecek ünitesi, mini mutfağı ve jakuzisi olan en üst kattaki kral dairesi rezerve edilmiştir."
           ]
         },
         {
           "name": "Bitişik Oda (Adjoining Room)",
           "desc": "Aynı koridorda yan yana yer alan, birbirine komşu ama içeriden kapısı olmayan odalardır. Aynı gruptaki konuklar için tercih edilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Aynı şirkette çalışan iki mühendisin, koridorda 204 ve 205 nolu yan yana odalarda kalması ama odalar arasında içeriden kapı olmamasıdır."
+            "Örnekle Pekiştirelim: Aynı şirkette çalışan iki mühendis, koridorda yan yana bulunan 204 ve 205 nolu odalarda kalmıştır. Bu odalar yan yanadır ancak aralarında içeriden geçiş kapısı yoktur; bitişik oda tam olarak bu kapısız yan yana yapıyı ifade eder."
           ]
         },
         {
           "name": "Bağlantılı Oda (Connecting Room)",
           "desc": "Yan yana iki ya da daha fazla odanın içeriden bir kapı ile birbirine bağlandığı, koridora çıkmadan geçiş sağlayan odalardır. Genellikle çocuklu aileler tercih eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Anne ve babanın 101 nolu odada, çocukların ise 102 nolu odada kaldığı ve koridora çıkmadan aradaki gizli kapıdan birbirlerinin odasına geçebilmesidir."
+            "Örnekle Pekiştirelim: Anne ve baba 101 nolu odada, çocukları ise yanlarındaki 102 nolu odada kalmıştır. Aile koridora hiç çıkmadan odaların arasındaki iç kapıdan birbirlerinin odasına geçebilmektedir; bağlantılı odanın farkı bu iç kapıdır."
           ]
         },
         {
           "name": "Ağırlama Odası (Hospitality Suite Room)",
           "desc": "Toplantı, düğün ve davet salonlarıyla bağlantısı olan, bu etkinliklere gelen konukların dinlenmesi amacıyla kullanılan odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Oteldeki düğün sırasında yorulan gelinin dinlenmesi ve makyajını tazelemesi için balo salonunun yanındaki odanın gelin odası olarak açılmasıdır."
+            "Örnekle Pekiştirelim: Oteldeki düğün sırasında yorulan gelinin dinlenmesi ve makyaj tazelemesi için balo salonunun yanındaki oda tahsis edilmiştir. Etkinlik sahiplerinin kısa süreli kullanımı için ayrılan bu alan ağırlama odasının işlevidir."
           ]
         },
         {
           "name": "Stüdyo Oda (Studio Room)",
           "desc": "Kullanılmadığı zamanlarda yatağın katlanarak kanepeye dönüştüğü, oturma odası olarak da kullanılabilen odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Gündüz oturma odası gibi duran, gece ise koltuğunun altından yatak çekilerek yatak odasına dönüştürülen pratik stüdyo dairede tek bir öğrencinin kalmasıdır."
+            "Örnekle Pekiştirelim: Tek bir öğrenci, gündüz oturma odası gibi duran, gece ise koltuğun altından yatak çekilerek yatak odasına dönüştürülen stüdyo odada kalmıştır. Gündüz oturma yeri, gece yatak haline gelen bu çift işlevli yapı stüdyo odanın özelliğidir."
           ]
         },
         {
           "name": "Top Executive Room",
           "desc": "Genellikle üst katlarda yer alan, iş insanlarının veya yöneticilerin konakladığı, iş yemeği ve toplantı hizmeti de sunan lüks odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelin 12. katında yer alan, içinde özel çalışma masası ve yüksek hızlı interneti olan odada uluslararası bir banka yöneticisinin konaklamasıdır."
+            "Örnekle Pekiştirelim: Uluslararası bir şirket yöneticisi, otelin üst katlarında yer alan, içinde özel çalışma masası ve yüksek hızlı interneti bulunan executive odada konaklamıştır. İş insanlarına özel çalışma alanı ve ayrıcalıklı hizmet sunulması bu oda tipinin özelliğidir."
           ]
         },
         {
           "name": "Birbirine Yakın Odalar (Adjacent Room)",
-          "desc": "Düğün davetlileri veya futbol takımı gibi grupların aynı katta veya koridorda yan yana ya da karşı karşıya kaldığı odalardır.",
+          "desc": "Düğün davetlileri veya futbol takımı gibi grupların konakladığı; aynı katta veya koridorda bulunan odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: 15 kişilik bir tur grubunun, akşamları kolayca buluşabilmesi için 3. kattaki asansöre yakın 5 odada dağınık ama birbirine yakın konaklatılmasıdır."
+            "Örnekle Pekiştirelim: 15 kişilik tur grubunun akşamları kolayca buluşabilmesi için 3. katta birbirine yakın 5 oda bu gruba tahsis edilmiştir. Aynı katta veya koridorda yakın mesafedeki odaların verilmesi bu düzenin özelliğidir."
           ]
         },
         {
           "name": "Mutfak Bölmeli Oda (Efficiency Room)",
           "desc": "Yemek pişirme imkanına sahip, küçük bir daire şeklindeki odalardır. Apart otel odaları genellikle bu şekildedir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bebeği olan bir ailenin, bebek maması hazırlayabilmek için içinde mini ocak, mikrodalga fırın ve buzdolabı olan apart otel odasını seçmesidir."
+            "Örnekle Pekiştirelim: Bebeği olan bir aile, mamaları kolayca hazırlayabilmek için içinde mini ocak, mikrodalga fırın ve buzdolabı bulunan apart otel odasını seçmiştir. Oda içerisinde mini mutfak donanımının yer alması mutfak bölmeli odanın özelliğidir."
           ]
         },
         {
           "name": "Özel Gereksinimli Birey Odası (Handicapped Room)",
           "desc": "Giriş katında bulunan, basamaksız, tekerlekli sandalyeye uygun genişlikte, banyo ve lavaboları özel tasarlanmış odalardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Tekerlekli sandalye kullanan bir misafirin, banyosunda tutunma demirleri olan, eşiksiz ve geniş kapılı özel zemin odasında rahatça kalmasıdır."
+            "Örnekle Pekiştirelim: Tekerlekli sandalye kullanan bir misafir, banyosunda tutunma demirleri bulunan, eşiksiz ve geniş kapılı odasında rahatça konaklamıştır. Özel gereksinimli misafirlerin erişimine uygun özel mimari düzenlemeler bu odanın temel özelliğidir."
           ]
         },
         {
@@ -141,42 +144,42 @@ const Map<String, dynamic> unit1Notes = {
           "name": "Sadece Yatak (Only Bed - OB)",
           "desc": "Ücrete sadece oda dahildir. Tüm yeme-içme hizmetleri ekstra ücrete tabidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Sadece geceyi geçirmek için otele gelen bir iş insanının, yeme-içme istemediği için en ucuz Only Bed (OB) tarifesinden kalmasıdır."
+            "Örnekle Pekiştirelim: Geceyi geçirmek için otele gelen bir misafir, yeme-içme istemediği için en ucuz Only Bed tarifesinden yararlanmıştır. Konaklama ücretine hiçbir yeme-içme hizmetinin dahil olmaması bu pansiyon türünün özelliğidir."
           ]
         },
         {
           "name": "Oda Kahvaltı (Bed and Breakfast - BB)",
           "desc": "Bir gecelik konaklama ile sabah kahvaltısının ücrete dahil olduğu sistemdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Gündüz şehri gezecek olan turistin, sabah otelde kahvaltısını yapıp çıkması ve akşam yemeğini dışarıdaki restoranlarda yemeyi seçmesidir."
+            "Örnekle Pekiştirelim: Gündüz şehri gezecek olan turist, sabah otelde kahvaltısını yapıp çıkmış, akşam yemeğini dışarıda yemeyi seçmiştir. Konaklama ücretine sadece sabah kahvaltısının dahil olması bu pansiyon türünün özelliğidir."
           ]
         },
         {
           "name": "Yarım Pansiyon (Half Board - HB)",
           "desc": "Konaklama ücretine kahvaltı ve bir ana öğün yemek (öğle veya akşam) ücretinin dahil olduğu pansiyon şeklidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'da gündüz tura çıkan turistlerin, sabah kahvaltısını ve akşam yemeğini otelde ücretsiz yemesi, öğle yemeğini ise turda ödemesidir."
+            "Örnekle Pekiştirelim: Kapadokya'da gündüz tura çıkan turistler, sabah kahvaltısını ve akşam yemeğini otelde yemiş, öğle yemeğini ise turda ödemiştir. Konaklamaya kahvaltı ile akşam yemeğinin dahil olması yarım pansiyonun özelliğidir."
           ]
         },
         {
           "name": "Tam Pansiyon (Full Board - FB)",
           "desc": "Konaklama ücretine kahvaltı, öğle yemeği ve akşam yemeğinin dahil olduğu pansiyon şeklidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelden hiç çıkmak istemeyen yaşlı bir çiftin, sabah, öğle ve akşam yemeklerini otel büfesinde ücretsiz yiyip, gün içi içecekleri ekstra ödemesidir."
+            "Örnekle Pekiştirelim: Otelden hiç çıkmak istemeyen yaşlı bir çift, sabah, öğle ve akşam yemeklerini otel büfesinde yemiş, gün içi ekstra içecekleri kendisi ödemiştir. 3 ana öğünün fiyata dahil olması tam pansiyonun özelliğidir."
           ]
         },
         {
           "name": "Her Şey Dahil (All Inclusive - AI)",
           "desc": "Kahvaltı, ana yemekler, tüm yiyecekler ve yerli içeceklerin ücretsiz sunulduğu pansiyon şeklidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yaz tatiline gelen bir ailenin, gün boyu dondurma, atıştırmalık, gözleme ve yerli içecekleri hiçbir ücret ödemeden sınırsızca tüketmesidir."
+            "Örnekle Pekiştirelim: Tatil yapan bir aile, gün boyu dondurma, atıştırmalık ve yerli içecekleri ekstra ücret ödemeden tüketmiştir. Ana öğünlerin yanı sıra gün içi ikramların da fiyata dahil olması bu sistemin özelliğidir."
           ]
         },
         {
           "name": "Ultra Her Şey Dahil (Ultra All Inclusive - UAI)",
           "desc": "AI sistemine ek olarak tüm yabancı içecekler, mini bar ve saat sınırlaması olmaksızın 7/24 yiyecek-içecek hizmetinin dahil olduğu lüks pansiyondur.",
           "examples": [
-            "Örnekle Pekiştirelim: Gece 02:00'de acıkan bir misafirin, oda servisinden ücretsiz hamburger istemesi ve minibarındaki ithal içecekleri hiçbir ücret ödemeden tüketmesidir."
+            "Örnekle Pekiştirelim: Gece acıkan bir misafir, oda servisinden ücretsiz hamburger istemiş ve minibarındaki ithal içecekleri ücret ödemeden tüketmiştir. 24 saat kesintisiz hizmet ve ithal ürünlerin dahil olması ultra her şey dahil sisteminin özelliğidir."
           ]
         }
       ],
@@ -203,35 +206,35 @@ const Map<String, dynamic> unit1Notes = {
           "name": "Münferit Rezervasyon",
           "desc": "Bireysel olarak seyahat eden ve talepte bulunan 11 kişiye kadar olan konuk rezervasyonlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Ahmet Bey'in, eşi ve çocuğu için otelin web sitesinden doğrudan 1 odalık bireysel rezervasyon kaydı açtırmasıdır."
+            "Örnekle Pekiştirelim: Ahmet Bey'in, eşi ve çocuğu için otel web sitesinden doğrudan 1 odalık bireysel rezervasyon kaydı açtırmıştır."
           ]
         },
         {
           "name": "Grup Rezervasyon",
           "desc": "Birlikte hareket eden 11 kişi ve üzeri topluluklardır (Seyahat acentesi grupları, şirket grupları, bağımsız gruplar).",
           "examples": [
-            "Örnekle Pekiştirelim: Bir seyahat acentesinin, 40 kişilik İtalyan turist kafilesi için otelde topluca 20 adet standart oda ayırtmasıdır."
+            "Örnekle Pekiştirelim: Bir seyahat acentesi, 40 kişilik İtalyan turist kafilesi için otelde topluca 20 adet standart oda ayırtmıştır."
           ]
         },
         {
           "name": "Geliş Saati ve Ödeme Garantisi Olmayan Rezervasyon",
           "desc": "Kapora alınmamıştır. Uluslararası kurallara göre oda, sayfiye otellerinde saat 16.00'ya, şehir otellerinde saat 18.00'e kadar bekletilir. Misafir gelmezse iptal edilir ve başkasına satılır. Misafir hak talep edemez.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapora ödemeyen Can Bey’in odasının, saat 18:00'i geçtiği halde gelmediği için iptal edilerek lobide bekleyen walk-in misafire satılmasıdır."
+            "Örnekle Pekiştirelim: Kapora ödemeyen Can Bey’in odası saat 18:00'i geçtiği halde gelmediği için iptal edilerek lobide bekleyen walk-in misafire satılmıştır."
           ]
         },
         {
           "name": "Geliş Saati Kesin Olan Rezervasyon",
           "desc": "Kapora yoktur ama formda varış saati yazılıdır. İşletme o saate kadar odayı tutmak zorundadır, saat geçince odayı satma hakkı doğar.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapora vermeyen ama 'Akşam saat 21:00'de kesin otelde olacağım' diyen iş adamının odasının saat 21:00'e kadar sistemde tutulmasıdır."
+            "Örnekle Pekiştirelim: Kapora vermeyen ama 'Akşam saat 21:00'de kesin otelde olacağım' diyen iş adamının odası saat 21:00'e kadar sistemde tutulmuştur."
           ]
         },
         {
           "name": "Garantisi Olan (Kesin) Rezervasyon",
           "desc": "Kaporası ödenmiş veya kredi kartı güvencesi alınmış odalardır. Misafir sabaha karşı gelse veya gecikse bile oda KESİNLİKLE başkasına satılamaz.",
           "examples": [
-            "Örnekle Pekiştirelim: Kredi kartından ilk gece ücreti bloke edilen misafirin uçağı rötar yapıp sabah 04:00'te gelse bile odasının jilet gibi hazır beklemesidir."
+            "Örnekle Pekiştirelim: Kredi kartından ilk gece ücreti bloke edilen misafirin uçağı rötar yapıp sabah 04:00'te gelse bile odası hazır beklemiştir."
           ]
         },
         {
@@ -255,21 +258,21 @@ const Map<String, dynamic> unit1Notes = {
           "name": "Doğrudan Rezervasyon Kaynakları",
           "desc": "Konuğun otele telefon, e-posta, web sitesi veya yüz yüze görüşme aracılığıyla doğrudan ulaşıp rezervasyon yaptırmasıdır. Acente komisyonu ödenmediği için otel için en yüksek karlı kanaldır.",
           "examples": [
-            "Örnekle Pekiştirelim: Ahmet Bey'in, otelin kendi resmi web sitesine girerek kredi kartıyla doğrudan 3 gecelik oda satın alması ve otelin bu satıştan hiç komisyon ödememesidir."
+            "Örnekle Pekiştirelim: Ahmet Bey, otelin kendi resmi web sitesine girerek kredi kartıyla doğrudan 3 gecelik oda satın almış ve otel bu satıştan hiç komisyon ödememiştir."
           ]
         },
         {
           "name": "Dolaylı Rezervasyon Kanalları",
           "desc": "Seyahat acenteleri, tur operatörleri, OTA (Online Travel Agency - Çevrim içi Seyahat Acenteleri) ve GDS (Global Distribution System - Küresel Dağıtım Sistemleri) gibi aracı kanallardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Yabancı bir turistin, uluslararası bir online rezervasyon portalı üzerinden otelimizden oda ayırtması ve otelin bu portal firmasına %15 komisyon ödemesidir."
+            "Örnekle Pekiştirelim: Yabancı bir turist, uluslararası bir online rezervasyon portalı üzerinden otelimizden oda ayırtmış ve otel bu portal firmasına %15 komisyon ödemiştir."
           ]
         },
         {
           "name": "GDS (Global Dağıtım Sistemleri)",
           "desc": "Havayolları, oteller ve seyahat acentelerini dünya çapında birbirine bağlayan, seyahat profesyonellerinin kullandığı küresel rezervasyon ağlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Tokyo'daki bir seyahat acentesinin, iş insanı konuğu için Amadeus sistemi üzerinden otelimizden uçak biletiyle birlikte oda rezervasyonu yapmasıdır."
+            "Örnekle Pekiştirelim: Tokyo'daki bir seyahat acentesi, iş insanı konuğu için Amadeus sistemi üzerinden otelimizden uçak biletiyle birlikte oda rezervasyonu yapmıştır."
           ]
         }
       ],
@@ -392,14 +395,14 @@ const Map<String, dynamic> unit2Notes = {
         },
         {
           "name": "City Ledger (Siti Lecır)",
-          "desc": "Otel ile acente/şirket arasındaki kredili hesaptır. Acentenin misafir harcamalarının sadece \"bir kısmını\" ödemesidir.",
+          "desc": "Otel ile acente/şirket arasındaki kredili hesaptır. Acentenin misafir harcamalarının sadece \"bir kısmını\" ödemesi anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: X Acentesi ile gelen grubun sadece oda ücretleri acentenin kredili hesabına (City Ledger) kaydedilmiş, ekstra akşam yemeklerini misafirler kendileri ödemiştir."
           ]
         },
         {
           "name": "Full City Ledger",
-          "desc": "Anlaşmalı kurumun misafirin oteldeki \"tüm\" harcamalarını üstlenip ödemesidir.",
+          "desc": "Sadece oda ve kahvaltıyı karşılayan standart kredili hesabın aksine; Full City Ledger sisteminde minibar ve ekstra harcamalar dahil tüm fatura kuruma kesilir, misafir çıkışta ödeme yapmaz.",
           "examples": [
             "Örnekle Pekiştirelim: Büyük bir holdingin yönetim kurulu başkanı otelde konaklamış; yeme-içme dahil tüm faturası holdingin tam kredili hesabına (Full City Ledger) aktarılmıştır."
           ]
@@ -449,21 +452,21 @@ const Map<String, dynamic> unit2Notes = {
           "name": "Stop-Sale (Satış Durdurma)",
           "desc": "Otelin belirli bir tarih aralığında tamamen dolması veya teknik/operasyonel bir durum nedeniyle yeni rezervasyon kabulünü kapatması işlemidir. Acentelere ve online kanallara satış durdurma yazısı gönderilir.",
           "examples": [
-            "Örnekle Pekiştirelim: Bayram tatilinde tüm odaları dolan otelin, rezervasyon şefinin online satış kanallarına 'Stop-Sale' (Satış Kapatma) komutu göndermesi ve yeni girişleri engellemesidir."
+            "Örnekle Pekiştirelim: Bayram tatilinde tüm odaları dolan otelin rezervasyon şefi online satış kanallarına 'Stop-Sale' (Satış Kapatma) komutu göndererek yeni girişleri engellemiştir."
           ]
         },
         {
           "name": "Closed-Out (Kapanış)",
-          "desc": "Belirli bir pazar segmentine (örneğin sadece yerli pazara veya belirli bir acenteye) satışların durdurulması, diğer kanalların açık tutulmasıdır.",
+          "desc": "Belirli bir pazar segmentine (örneğin sadece yerli pazara veya belirli bir acenteye) satışların durdurulması, diğer kanalların açık tutulması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelde yabancı turist yoğunluğunu dengede tutmak için, iç pazara yönelik satışların 'Closed-Out' yapılarak sadece dış pazar acentelerine açık bırakılmasıdır."
+            "Örnekle Pekiştirelim: Otelde yabancı turist yoğunluğunu dengede tutmak için, iç pazara yönelik satışlar 'Closed-Out' yapılarak sadece dış pazar acentelerine açık bırakılmıştır."
           ]
         },
         {
           "name": "Minimum Stay (Asgari Konaklama Sınırı)",
           "desc": "Yılbaşı, bayram veya festival gibi yoğun dönemlerde, otelde kalış süresini uzatmak için konuklara uygulanan 'en az konaklama günü' şartıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Otelin Kurban Bayramı dönemi için 'Minimum Stay' (en az 4 gece) kuralı koyması ve 2 gecelik rezervasyon yapmak isteyen konukları reddetmesidir."
+            "Örnekle Pekiştirelim: otel, Kurban Bayramı dönemi için 'Minimum Stay' (en az 4 gece) kuralı koyarak 2 gecelik rezervasyon yapmak isteyen konukları reddetmiştir."
           ]
         }
       ],
@@ -487,9 +490,9 @@ const Map<String, dynamic> unit3Notes = {
       "definitions": [
         {
           "name": "Satılabilir Oda",
-          "desc": "İşletmenin o güne ait ne kadar yeni rezervasyon alabileceğini gösteren oda sayısıdır.",
+          "desc": "İşletmenin o güne ait ne kadar yeni rezervasyon alabileceğini gösteren oda sayısını ifade eder.",
           "examples": [
-            "Örnekle Pekiştirelim: Rezervasyon şefinin o güne ait tüm çıkış ve girişleri hesaplayarak, satış ekibine 'Bugün en fazla 15 oda satabilirsiniz' talimatı vermesidir."
+            "Örnekle Pekiştirelim: Rezervasyon şefi o güne ait tüm çıkış ve girişleri hesaplayarak satış ekibine 'Bugün en fazla 15 oda satabilirsiniz' talimatını vermiştir."
           ]
         },
         {
@@ -518,7 +521,7 @@ const Map<String, dynamic> unit3Notes = {
         },
         {
           "name": "Shorta Düşmek (Şorta Düşmek)",
-          "desc": "Fazla alınan rezervasyonların hepsinin gelmesi sonucu oda kalmaması ve kriz çıkmasıdır.",
+          "desc": "Fazla alınan rezervasyonların hepsinin gelmesi sonucu oda kalmaması ve kriz çıkması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Overbooking yapılan otele tüm misafirler gelince Hans Bey odasız kalmıştır. Otel, Hans Bey'i yandaki otele transfer edip ücretini kendi ödemek zorunda kalmıştır."
           ]
@@ -542,7 +545,7 @@ const Map<String, dynamic> unit3Notes = {
         },
         {
           "name": "Closed Out (Kapanış)",
-          "desc": "Festival veya bayram gibi günlerde rezervasyonun önceden durdurulmasıdır.",
+          "desc": "Festival veya bayram gibi günlerde rezervasyonun önceden durdurulması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Antalya'daki büyük spor festivalinde otel \"Closed Out\" olmuş, sadece eski sadık misafirlere yer açılmıştır."
           ]
@@ -567,7 +570,7 @@ const Map<String, dynamic> unit3Notes = {
           "name": "Walk-In",
           "desc": "Kapıdan doğrudan giriş yapan, rezervasyonsuz konuktur. En yüksek fiyattan konaklar.",
           "examples": [
-            "Örnekle Pekiştirelim: Yolda arabası bozulan bir gezginin, rezervasyonu olmadığı halde gece yarısı otel resepsiyonuna gelip kapı fiyatından (Rack Rate) oda kiralamasıdır."
+            "Örnekle Pekiştirelim: Yolda arabası bozulan bir gezgin rezervasyonu olmadığı halde gece yarısı otel resepsiyonuna gelip kapı fiyatından (Rack Rate) oda kiralamıştır."
           ]
         },
         {
@@ -581,7 +584,7 @@ const Map<String, dynamic> unit3Notes = {
           "name": "Forecast Çeşitleri",
           "desc": "• Three Days (3 Günlük): En güncel tahmindir.\n• Seven Days (Haftalık): Personel çalışma çizelgesini belirler.\n• Monthly (Aylık): Bayram, fuar ve hava durumu gibi dış etkenleri de içeren rapordur.",
           "examples": [
-            "Örnekle Pekiştirelim: Rezervasyon müdürünün haftalık forecast raporuna bakarak, önümüzdeki cumartesi yoğunluk olacağını görüp ek garson ve resepsiyonist vardiyası yazmasıdır."
+            "Örnekle Pekiştirelim: Rezervasyon müdürü haftalık forecast raporuna bakarak, önümüzdeki cumartesi yoğunluk olacağını görüp ek garson ve resepsiyonist vardiyası yazmıştır."
           ]
         }
       ],
@@ -601,7 +604,7 @@ const Map<String, dynamic> unit4Notes = {
       "id": 1,
       "tag": "SPA",
       "title": "SPA VE SAĞLIK TURİZMİ",
-      "microSummary": "Sağlık turizmi, insanların şifa bulmak veya dinlenmek amacıyla seyahat etmesidir.",
+      "microSummary": "Sağlık turizmi, insanların şifa bulmak veya dinlenmek amacıyla seyahat etmesi anlamına gelir.",
       "definitions": [
         {
           "name": "SPA (Selus Per Aqua)",
@@ -656,16 +659,16 @@ const Map<String, dynamic> unit4Notes = {
       "definitions": [
         {
           "name": "Rekreasyonel Aktivite Rezervasyonları",
-          "desc": "Konukların otel içinde veya çevresinde katılabilecekleri eğlenceli ve dinlendirici aktivitelerin (balon turları, tekne turları, rehberli ören yeri gezileri vb.) ön büro veya concierge aracılığıyla ayırtılmasıdır.",
+          "desc": "Konukların otel içinde veya çevresinde katılabilecekleri eğlenceli ve dinlendirici aktivitelerin (balon turları, tekne turları, rehberli ören yeri gezileri vb.) ön büro veya concierge aracılığıyla ayırtılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Kapadokya'daki otelde konaklayan yabancı bir ailenin talebi üzerine resepsiyonistin sabah balon uçuşu ve öğleden sonra at binme turunu yetkili yerel acenteden ayırtmasıdır."
+            "Örnekle Pekiştirelim: Kapadokya'daki otelde konaklayan yabancı bir ailenin talebi üzerine resepsiyonist sabah balon uçuşu ve öğleden sonra at binme turunu yetkili yerel acenteden ayırtmıştır."
           ]
         },
         {
           "name": "Transfer Rezervasyonları",
           "desc": "Konukların havalimanından otele veya otelden havalimanına güvenli bir şekilde ulaşımlarını sağlamak için yapılan özel araç veya servis rezervasyonlarıdır.",
           "examples": [
-            "Örnekle Pekiştirelim: Misafirin uçuş kodunu (Flight Code) sisteme kaydedip, havalimanında karşılanması için otel şoförüne 'Özel transfer aracıyla saat 15:30'da misafiri karşılayın' emrinin verilmesidir."
+            "Örnekle Pekiştirelim: Misafirin uçuş kodunu (Flight Code) sisteme kaydedip, havalimanında karşılanması için otel şoförüne 'Özel transfer aracıyla saat 15:30'da misafiri karşılayın' emrin verilmiştir."
           ]
         }
       ],
@@ -707,4 +710,8 @@ const Map<String, List<Map<String, dynamic>>> allCoursesNotes = {
   'Konuk Giriş Çıkış İşlemleri': konukGirisCikisNotes,
   'Mesleki Gelişim Atölyesi': meslekiGelisimNotes,
   '9-Mesleki Gelişim Atölyesi': meslekiGelisimNotes,
+  'Genel Turizm': genelTurizmNotes,
+  '9-Genel Turizm': genelTurizmNotes,
+  'Otelcilik ve Seyahat Hizmetleri': otelcilikNotes,
+  '9-Otelcilik ve Seyahat Hizmetleri': otelcilikNotes,
 };

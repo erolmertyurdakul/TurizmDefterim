@@ -14,6 +14,7 @@ import '../../core/providers/shell_tab_provider.dart';
 import 'package:just_audio/just_audio.dart';
 import '../../app.dart';
 import '../../core/presentation/widgets/podcast_speed_control.dart';
+import '../../features/badges/providers/badge_provider.dart';
 
 class MainShell extends ConsumerStatefulWidget {
   const MainShell({super.key});
@@ -39,6 +40,13 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: ref.read(shellTabProvider));
+
+    // Podcast dinleme dakikalarını rozet sistemine canlı senkronize et
+    PodcastService().onMinuteListened = (minutes) {
+      if (mounted) {
+        ref.read(badgeProgressProvider.notifier).syncPodcastMinutes(minutes);
+      }
+    };
     
     // Sürekli canlı nefes alma/süzülme animasyonu için controller
     _breathingController = AnimationController(
@@ -70,17 +78,23 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
 
   @override
   void didPush() {
-    PodcastService().isMainShellVisible = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) PodcastService().isMainShellVisible = true;
+    });
   }
 
   @override
   void didPushNext() {
-    PodcastService().isMainShellVisible = false;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) PodcastService().isMainShellVisible = false;
+    });
   }
 
   @override
   void didPopNext() {
-    PodcastService().isMainShellVisible = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) PodcastService().isMainShellVisible = true;
+    });
   }
 
   Widget _buildMiniSeekBar(BuildContext context) {
@@ -276,18 +290,22 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
             left: 0,
             right: 0,
             bottom: 0,
-            child: Container(
-              color: Colors.transparent,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  _buildGlobalMiniPlayer(),
-                  
-                  // Saran Kavisli Şeffaf Cam Gövde (Glassmorphic Navigation Bar)
-                  AnimatedBuilder(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width >= 768 ? 760 : 640),
+                child: Container(
+                  color: Colors.transparent,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _buildGlobalMiniPlayer(),
+                      
+                      // Saran Kavisli Şeffaf Cam Gövde (Glassmorphic Navigation Bar)
+                      AnimatedBuilder(
                     animation: _breathingController,
                     builder: (context, child) {
                       final breathingVal = _breathingController.value;
+                      final isWide = MediaQuery.of(context).size.width >= 768;
                       
                       // Aktif sekmeye göre gövdenin neon parıltı rengini belirle
                       Color activeColor;
@@ -309,18 +327,18 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                       }
 
                       return Container(
-                        margin: EdgeInsets.fromLTRB(16, 8, 16, bottomPadding > 0 ? bottomPadding + 10 : 20),
+                        margin: EdgeInsets.fromLTRB(16, 8, 16, bottomPadding > 0 ? bottomPadding + 10 : (isWide ? 24 : 20)),
                         decoration: BoxDecoration(
                           // Aktif sekmeyle harmanlanmış ultra premium derin lacivert cam rengi
                           color: Color.lerp(const Color(0xFF030914), activeColor, 0.05)!.withOpacity(0.80),
-                          borderRadius: BorderRadius.circular(24),
+                          borderRadius: BorderRadius.circular(isWide ? 28 : 24),
                           border: Border.all(
                             color: activeColor.withOpacity(0.18), // Aktif sekmeye göre parıldayan neon sınır çizgisi
                             width: 1.2,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: activeColor.withOpacity(kIsWeb ? 0.16 : (0.14 + breathingVal * 0.06)), // Nefes alan neon gölge (web'de sabit)
+                              color: activeColor.withOpacity(kIsWeb ? 0.16 : (0.14 + breathingVal * 0.06)),
                               blurRadius: kIsWeb ? 22 : (20 + (breathingVal * 6)),
                               spreadRadius: 1,
                               offset: const Offset(0, 8),
@@ -333,19 +351,19 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                           ],
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(24),
+                          borderRadius: BorderRadius.circular(isWide ? 28 : 24),
                           child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                              padding: EdgeInsets.symmetric(vertical: isWide ? 10 : 8, horizontal: isWide ? 14 : 10),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  _buildNavItem(index: 0, icon: Icons.school_rounded, label: 'Sınıflar', currentIndex: currentIndex),
-                                  _buildNavItem(index: 1, icon: Icons.sports_esports_rounded, label: 'Uygulamalar', currentIndex: currentIndex),
-                                  _buildNavItem(index: 2, icon: Icons.emoji_events_rounded, label: 'Rozetler', currentIndex: currentIndex),
-                                  _buildNavItem(index: 3, icon: Icons.person_rounded, label: 'Profil', currentIndex: currentIndex),
+                                  _buildNavItem(index: 0, icon: Icons.school_rounded, label: 'Sınıflar', currentIndex: currentIndex, isWide: isWide),
+                                  _buildNavItem(index: 1, icon: Icons.sports_esports_rounded, label: 'Uygulamalar', currentIndex: currentIndex, isWide: isWide),
+                                  _buildNavItem(index: 2, icon: Icons.emoji_events_rounded, label: 'Rozetler', currentIndex: currentIndex, isWide: isWide),
+                                  _buildNavItem(index: 3, icon: Icons.person_rounded, label: 'Profil', currentIndex: currentIndex, isWide: isWide),
                                 ],
                               ),
                             ),
@@ -358,7 +376,9 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
               ),
             ),
           ),
-        ],
+        ),
+      ),
+    ],
       ),
     );
   }
@@ -368,6 +388,7 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
     required IconData icon,
     required String label,
     required int currentIndex,
+    bool isWide = false,
   }) {
     final isSelected = currentIndex == index;
     
@@ -395,16 +416,12 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
     return AnimatedBuilder(
       animation: Listenable.merge([_breathingController, _gradientController]),
       builder: (context, child) {
-        final breathingVal = _breathingController.value; // 0.0 -> 1.0 -> 0.0
-        final gradientVal = _gradientController.value;   // 0.0 -> 1.0
+        final breathingVal = _breathingController.value;
+        final gradientVal = _gradientController.value;
         
-        // Degrade dönme açısı (Dalgalanma hissi yaratır)
         final angle = gradientVal * 2 * 3.14159265;
-        
-        // Seçiliyse hafif süzülme (-4px)
         final floatY = isSelected ? -4.0 + (breathingVal * -1.5) : 0.0;
 
-        // Seçili butondaki parıltı (glow)
         final List<BoxShadow> shadows = [];
         if (isSelected) {
           shadows.add(
@@ -425,13 +442,13 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 250),
               curve: Curves.easeOutCubic,
-              width: isSelected ? 80 : 66,
-              height: 56,
+              width: isSelected ? (isWide ? 104 : 80) : (isWide ? 88 : 66),
+              height: isWide ? 62 : 56,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
                   color: isSelected
-                      ? activeColor.withOpacity(0.8) // Canlı parıldayan çerçeve
+                      ? activeColor.withOpacity(0.8)
                       : Colors.white.withOpacity(0.08),
                   width: isSelected ? 1.8 : 1.0,
                 ),
@@ -441,7 +458,6 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                 borderRadius: BorderRadius.circular(15),
                 child: Container(
                   decoration: BoxDecoration(
-                    // Buton içinde yavaşça dönen/dalgalanan degrade arka plan
                     gradient: LinearGradient(
                       begin: Alignment(cos(angle), sin(angle)),
                       end: Alignment(-cos(angle), -sin(angle)),
@@ -463,20 +479,20 @@ class _MainShellState extends ConsumerState<MainShell> with RouteAware, TickerPr
                     children: [
                       AnimatedScale(
                         duration: const Duration(milliseconds: 250),
-                        scale: isSelected ? 1.12 : 1.0, // Seçildiğinde ikon büyür
+                        scale: isSelected ? 1.12 : 1.0,
                         child: Icon(
                           icon,
-                          size: 20,
+                          size: isWide ? 24 : 20,
                           color: isSelected ? Colors.white : inactiveColor,
                         ),
                       ),
-                      const SizedBox(height: 3),
+                      SizedBox(height: isWide ? 4 : 3),
                       Text(
                         label,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.outfit(
-                          fontSize: 9.5,
+                          fontSize: isWide ? 12.0 : 9.5,
                           fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
                           color: isSelected ? Colors.white : inactiveColor.withOpacity(0.8),
                           letterSpacing: 0.3,

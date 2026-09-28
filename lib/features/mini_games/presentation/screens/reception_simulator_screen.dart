@@ -43,6 +43,7 @@ class _ReceptionSimulatorScreenState
   final AudioPlayer _bgmPlayer = AudioPlayer();
   final AudioPlayer _sfxPlayer = AudioPlayer();
   bool _isBgmPlaying = false;
+  bool _isDisposed = false;
   bool _isCheckInPressed = false; // Check-In butonu tıklama animasyon takibi
 
   Timer? _timePointsTimer;
@@ -101,6 +102,7 @@ class _ReceptionSimulatorScreenState
 
   @override
   void dispose() {
+    _isDisposed = true;
     _timePointsTimer?.cancel();
     // Cancel timer safely — pauseGameTimer does NOT modify provider state
     ref.read(receptionSimulatorProvider.notifier).pauseGameTimer();
@@ -108,8 +110,12 @@ class _ReceptionSimulatorScreenState
     _shakeController.dispose();
     _feedbackController.dispose();
     _pulseController.dispose();
-    _bgmPlayer.dispose();
-    _sfxPlayer.dispose();
+    try {
+      _bgmPlayer.stop();
+      _bgmPlayer.dispose();
+      _sfxPlayer.stop();
+      _sfxPlayer.dispose();
+    } catch (_) {}
     super.dispose();
   }
 
@@ -117,12 +123,15 @@ class _ReceptionSimulatorScreenState
   bool get _isMuted => !ref.read(soundSettingsProvider);
 
   Future<void> _startBGMMusic() async {
-    if (_isBgmPlaying) return;
+    if (_isBgmPlaying || _isDisposed) return;
     _isBgmPlaying = true;
     try {
       await _bgmPlayer.stop();
+      if (_isDisposed) return;
       await _bgmPlayer.setReleaseMode(ReleaseMode.loop);
+      if (_isDisposed) return;
       await _bgmPlayer.play(UrlSource('https://freepd.com/music/Lobby%20Time.mp3'));
+      if (_isDisposed) return;
       await _bgmPlayer.setVolume(_isMuted ? 0.0 : 0.18);
     } catch (e) {
       debugPrint("Error starting Reception BGM: $e");
@@ -741,6 +750,7 @@ class _ReceptionSimulatorScreenState
   Widget _buildGameScreen(
       ReceptionSimulatorState state, ReceptionSimulatorNotifier notifier) {
     final config = LevelConfig.levels[state.currentLevel];
+    final isPc = MediaQuery.of(context).size.width >= 960;
 
     return Stack(
       children: [
@@ -748,34 +758,66 @@ class _ReceptionSimulatorScreenState
           children: [
             _buildTopBar(state),
             Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 12),
-                    _buildGuestCard(state),
-                    const SizedBox(height: 18),
-                    _buildSectionTitle(Icons.bed_outlined, 'Oda Tipi Seçin'),
-                    const SizedBox(height: 10),
-                    _buildRoomSelection(state, notifier, config),
-                    const SizedBox(height: 18),
-                    _buildSectionTitle(Icons.restaurant_outlined, 'Pansiyon Durumu Seçin'),
-                    const SizedBox(height: 10),
-                    _buildBoardSelection(state, notifier, config),
-                    if (state.requestOptions.isNotEmpty) ...[
-                      const SizedBox(height: 18),
-                      _buildSectionTitle(Icons.assignment_turned_in_outlined, 'Özel İstekleri Karşılayın'),
-                      const SizedBox(height: 10),
-                      _buildSpecialRequests(state, notifier),
-                    ],
-                    const SizedBox(height: 18),
-                    _buildPowerUpBar(state, notifier),
-                    const SizedBox(height: 20),
-                    _buildCheckInButton(state, notifier),
-                    const SizedBox(height: 24),
-                  ],
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: isPc
+                        ? 1360
+                        : (MediaQuery.of(context).size.width >= 768 ? 920 : double.infinity),
+                  ),
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isPc ? 28 : (MediaQuery.of(context).size.width >= 768 ? 24 : 16),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 12),
+                        _buildGuestCard(state),
+                        const SizedBox(height: 14),
+                        if (isPc) ...[
+                          // PC MODU: Seçenekler yan yana şık kartlar halinde dizilir, ekrana tam sığar
+                          _buildDesktopSelectionColumns(state, notifier, config),
+                          const SizedBox(height: 14),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                flex: 5,
+                                child: _buildPowerUpBar(state, notifier),
+                              ),
+                              const SizedBox(width: 16),
+                              Expanded(
+                                flex: 6,
+                                child: _buildCheckInButton(state, notifier),
+                              ),
+                            ],
+                          ),
+                        ] else ...[
+                          // MOBİL MOD: Standart dikey akış
+                          _buildSectionTitle(Icons.bed_outlined, 'Oda Tipi Seçin'),
+                          const SizedBox(height: 10),
+                          _buildRoomSelection(state, notifier, config),
+                          const SizedBox(height: 18),
+                          _buildSectionTitle(Icons.restaurant_outlined, 'Pansiyon Durumu Seçin'),
+                          const SizedBox(height: 10),
+                          _buildBoardSelection(state, notifier, config),
+                          if (state.requestOptions.isNotEmpty) ...[
+                            const SizedBox(height: 18),
+                            _buildSectionTitle(Icons.assignment_turned_in_outlined, 'Özel İstekleri Karşılayın'),
+                            const SizedBox(height: 10),
+                            _buildSpecialRequests(state, notifier),
+                          ],
+                          const SizedBox(height: 18),
+                          _buildPowerUpBar(state, notifier),
+                          const SizedBox(height: 20),
+                          _buildCheckInButton(state, notifier),
+                        ],
+                        const SizedBox(height: 20),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -1034,6 +1076,8 @@ class _ReceptionSimulatorScreenState
 
     final isVip = guest.type == GuestType.vip;
 
+    final isWide = MediaQuery.of(context).size.width >= 768;
+
     return AnimatedBuilder(
       animation: _shakeAnimation,
       builder: (context, child) {
@@ -1047,10 +1091,10 @@ class _ReceptionSimulatorScreenState
       child: SlideTransition(
         position: _guestSlideIn,
         child: Container(
-          padding: const EdgeInsets.all(18),
+          padding: EdgeInsets.all(isWide ? 24 : 18),
           decoration: BoxDecoration(
             color: Colors.white.withValues(alpha: 0.07),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(isWide ? 24 : 20),
             border: Border.all(
               color: isVip
                   ? const Color(0xFFE8AA42).withValues(alpha: 0.5)
@@ -1073,8 +1117,8 @@ class _ReceptionSimulatorScreenState
               Row(
                 children: [
                   Container(
-                    width: 52,
-                    height: 52,
+                    width: isWide ? 66 : 52,
+                    height: isWide ? 66 : 52,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: isVip
@@ -1083,7 +1127,7 @@ class _ReceptionSimulatorScreenState
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(isWide ? 20 : 16),
                       boxShadow: [
                         BoxShadow(
                           color: (isVip ? const Color(0xFFE8AA42) : const Color(0xFF0E918C))
@@ -1095,11 +1139,11 @@ class _ReceptionSimulatorScreenState
                     ),
                     child: Icon(
                       _getGuestIcon(guest.type),
-                      size: 28,
+                      size: isWide ? 36 : 28,
                       color: Colors.white,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: isWide ? 16 : 12),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1107,13 +1151,13 @@ class _ReceptionSimulatorScreenState
                         Row(
                           children: [
                             Text(guest.flag,
-                                style: const TextStyle(fontSize: 16)),
-                            const SizedBox(width: 6),
+                                style: TextStyle(fontSize: isWide ? 22 : 16)),
+                            const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 guest.name,
                                 style: GoogleFonts.outfit(
-                                  fontSize: 16,
+                                  fontSize: isWide ? 22 : 16,
                                   fontWeight: FontWeight.w800,
                                   color: Colors.white,
                                 ),
@@ -1122,10 +1166,10 @@ class _ReceptionSimulatorScreenState
                             ),
                           ],
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 6),
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 2),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: isWide ? 12 : 8, vertical: isWide ? 4 : 2),
                           decoration: BoxDecoration(
                             color: isVip
                                 ? const Color(0xFFE8AA42).withValues(alpha: 0.2)
@@ -1135,7 +1179,7 @@ class _ReceptionSimulatorScreenState
                           child: Text(
                             guest.type.displayName.toUpperCase(),
                             style: GoogleFonts.inter(
-                              fontSize: 9,
+                              fontSize: isWide ? 11 : 9,
                               fontWeight: FontWeight.w800,
                               color: isVip
                                   ? const Color(0xFFE8AA42)
@@ -1156,20 +1200,20 @@ class _ReceptionSimulatorScreenState
                           child: child,
                         );
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.star_rounded,
-                        size: 32,
-                        color: Color(0xFFE8AA42),
+                        size: isWide ? 40 : 32,
+                        color: const Color(0xFFE8AA42),
                       ),
                     ),
                 ],
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: isWide ? 18 : 14),
 
               // Diyalog balonu
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                padding: EdgeInsets.symmetric(horizontal: isWide ? 20 : 16, vertical: isWide ? 18 : 14),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -1193,17 +1237,17 @@ class _ReceptionSimulatorScreenState
                   children: [
                     Icon(
                       Icons.chat_bubble_outline_rounded,
-                      size: 16,
+                      size: isWide ? 22 : 16,
                       color: isVip ? const Color(0xFFE8AA42) : const Color(0xFF17B5B0),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: isWide ? 14 : 10),
                     Expanded(
                       child: Text(
                         guest.dialogue,
                         style: GoogleFonts.inter(
-                          fontSize: 13,
+                          fontSize: isWide ? 17.5 : 13,
                           color: Colors.white.withValues(alpha: 0.95),
-                          height: 1.5,
+                          height: 1.55,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -1211,7 +1255,7 @@ class _ReceptionSimulatorScreenState
                   ],
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: isWide ? 16 : 12),
 
               // Sabır çubuğu
               Row(
@@ -1273,19 +1317,156 @@ class _ReceptionSimulatorScreenState
     );
   }
 
+  // ── PC İçin Yan Yana Kategoriler ──
+
+  Widget _buildDesktopSelectionColumns(
+    ReceptionSimulatorState state,
+    ReceptionSimulatorNotifier notifier,
+    LevelConfig config,
+  ) {
+    final hasSpecialRequests = state.requestOptions.isNotEmpty;
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // 1. Oda Tipi Sütunu
+        Expanded(
+          flex: 10,
+          child: _buildCategoryCard(
+            icon: Icons.bed_outlined,
+            title: 'Oda Tipi',
+            accentColor: const Color(0xFF17B5B0),
+            statusText: state.selectedRoom?.displayName,
+            child: _buildRoomSelection(state, notifier, config),
+          ),
+        ),
+        const SizedBox(width: 14),
+
+        // 2. Pansiyon Durumu Sütunu
+        Expanded(
+          flex: 9,
+          child: _buildCategoryCard(
+            icon: Icons.restaurant_outlined,
+            title: 'Pansiyon Durumu',
+            accentColor: const Color(0xFFE8AA42),
+            statusText: state.selectedBoard?.displayName,
+            child: _buildBoardSelection(state, notifier, config),
+          ),
+        ),
+
+        // 3. Özel İstekler Sütunu (Yeni seçenek belirdiğinde yan tarafında şık biçimde yer alır)
+        if (hasSpecialRequests) ...[
+          const SizedBox(width: 14),
+          Expanded(
+            flex: 9,
+            child: _buildCategoryCard(
+              icon: Icons.assignment_turned_in_outlined,
+              title: 'Özel İstekler',
+              accentColor: const Color(0xFF8B5CF6),
+              statusText: state.selectedRequests.isNotEmpty
+                  ? '${state.selectedRequests.length} Seçildi'
+                  : 'İsteğe Bağlı',
+              child: _buildSpecialRequests(state, notifier),
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildCategoryCard({
+    required IconData icon,
+    required String title,
+    required Color accentColor,
+    String? statusText,
+    required Widget child,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: const Color(0xFF0F1E36).withValues(alpha: 0.55),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: accentColor.withValues(alpha: 0.3),
+          width: 1.4,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withValues(alpha: 0.06),
+            blurRadius: 14,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: accentColor.withValues(alpha: 0.16),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, size: 17, color: accentColor),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  title,
+                  style: GoogleFonts.outfit(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                    letterSpacing: 0.2,
+                  ),
+                ),
+              ),
+              if (statusText != null)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2.5),
+                  decoration: BoxDecoration(
+                    color: accentColor.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: accentColor.withValues(alpha: 0.4),
+                      width: 1,
+                    ),
+                  ),
+                  child: Text(
+                    statusText,
+                    style: GoogleFonts.inter(
+                      fontSize: 10.5,
+                      fontWeight: FontWeight.w700,
+                      color: accentColor,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          child,
+        ],
+      ),
+    );
+  }
+
   // ── Bölüm Başlığı ──
 
   Widget _buildSectionTitle(IconData icon, String title) {
+    final isWide = MediaQuery.of(context).size.width >= 768;
     return Row(
       children: [
-        Icon(icon, size: 16, color: const Color(0xFF17B5B0)),
+        Icon(icon, size: isWide ? 22 : 16, color: const Color(0xFF17B5B0)),
         const SizedBox(width: 8),
         Text(
           title,
           style: GoogleFonts.outfit(
-            fontSize: 14,
+            fontSize: isWide ? 18 : 14,
             fontWeight: FontWeight.w800,
-            color: Colors.white.withValues(alpha: 0.75),
+            color: Colors.white.withValues(alpha: 0.85),
           ),
         ),
       ],
@@ -1472,9 +1653,11 @@ class _ReceptionSimulatorScreenState
     
     final accentColor = const Color(0xFF17B5B0);
 
+    final isWide = MediaQuery.of(context).size.width >= 768;
+
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: isWide ? 66 : 56,
       child: AnimatedBuilder(
         animation: _pulseController,
         builder: (context, child) {
@@ -1484,7 +1667,7 @@ class _ReceptionSimulatorScreenState
 
           return Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(isWide ? 20 : 16),
               border: Border.all(
                 color: isEnabled
                     ? accentColor.withOpacity(0.5)
@@ -1527,7 +1710,7 @@ class _ReceptionSimulatorScreenState
               duration: const Duration(milliseconds: 200),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(isWide ? 20 : 16),
                 color: isEnabled ? null : Colors.white.withValues(alpha: 0.04),
                 gradient: isEnabled
                     ? const LinearGradient(
@@ -1542,14 +1725,14 @@ class _ReceptionSimulatorScreenState
                 children: [
                   Icon(
                     Icons.how_to_reg_rounded,
-                    size: 22,
+                    size: isWide ? 26 : 22,
                     color: isEnabled ? Colors.white : Colors.white24,
                   ),
                   const SizedBox(width: 10),
                   Text(
                     'CHECK-IN',
                     style: GoogleFonts.outfit(
-                      fontSize: 18,
+                      fontSize: isWide ? 22 : 18,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 1.5,
                       color: isEnabled ? Colors.white : Colors.white24,
@@ -1671,133 +1854,137 @@ class _ReceptionSimulatorScreenState
       ReceptionSimulatorState state, ReceptionSimulatorNotifier notifier) {
     final nextLevel = state.currentLevel + 1;
     final nextConfig = LevelConfig.levels[nextLevel];
+    final isWide = MediaQuery.of(context).size.width >= 768;
 
     return Container(
-      color: Colors.black.withValues(alpha: 0.85),
+      color: Colors.black.withValues(alpha: 0.88),
       child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFE8AA42).withValues(alpha: 0.15),
-                  shape: BoxShape.circle,
-                  border: Border.all(color: const Color(0xFFE8AA42), width: 1.5),
-                ),
-                child: const Icon(
-                  Icons.workspace_premium_rounded,
-                  size: 44,
-                  color: Color(0xFFE8AA42),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'Terfi Aldınız!',
-                style: GoogleFonts.outfit(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: const Color(0xFF17B5B0),
-                  letterSpacing: 1.5,
-                ),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                'Seviye ${nextLevel + 1}',
-                style: GoogleFonts.outfit(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFE8AA42), Color(0xFFF0C36D)],
-                  ),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Text(
-                  nextConfig.title.toUpperCase(),
-                  style: GoogleFonts.outfit(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black87,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-
-              // Yeni açılan özellikler (Tek Panelde Kompakt Liste)
-              if (state.newUnlocks.isNotEmpty) ...[
-                Text(
-                  'YENİ AÇILAN ÖZELLİKLER',
-                  style: GoogleFonts.outfit(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white38,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-                const SizedBox(height: 8),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: isWide ? 580 : 380),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: isWide ? 32 : 24, vertical: isWide ? 24 : 12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
                 Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  padding: EdgeInsets.all(isWide ? 18 : 10),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.04),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+                    color: const Color(0xFFE8AA42).withValues(alpha: 0.15),
+                    shape: BoxShape.circle,
+                    border: Border.all(color: const Color(0xFFE8AA42), width: isWide ? 2.5 : 1.5),
                   ),
-                  child: Column(
-                    children: state.newUnlocks.map((unlock) => Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 3),
-                      child: Text(
-                        '✔️ $unlock',
-                        style: GoogleFonts.inter(
-                          fontSize: 12,
-                          color: const Color(0xFF2ED573),
-                          fontWeight: FontWeight.w600,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    )).toList(),
+                  child: Icon(
+                    Icons.workspace_premium_rounded,
+                    size: isWide ? 64 : 44,
+                    color: const Color(0xFFE8AA42),
                   ),
                 ),
-                const SizedBox(height: 16),
-              ],
-
-              SizedBox(
-                width: double.infinity,
-                height: 42,
-                child: ElevatedButton(
-                  onPressed: () => notifier.continueAfterLevelUp(),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF0E918C),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                SizedBox(height: isWide ? 18 : 12),
+                Text(
+                  'Terfi Aldınız!',
+                  style: GoogleFonts.outfit(
+                    fontSize: isWide ? 20 : 14,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF17B5B0),
+                    letterSpacing: 1.5,
+                  ),
+                ),
+                SizedBox(height: isWide ? 8 : 4),
+                Text(
+                  'Seviye ${nextLevel + 1}',
+                  style: GoogleFonts.outfit(
+                    fontSize: isWide ? 38 : 24,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: isWide ? 12 : 8),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: isWide ? 22 : 14, vertical: isWide ? 10 : 6),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFE8AA42), Color(0xFFF0C36D)],
+                    ),
+                    borderRadius: BorderRadius.circular(isWide ? 20 : 16),
+                  ),
+                  child: Text(
+                    nextConfig.title.toUpperCase(),
+                    style: GoogleFonts.outfit(
+                      fontSize: isWide ? 18 : 13,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black87,
+                      letterSpacing: 1.0,
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Devam Et',
-                        style: GoogleFonts.outfit(
-                            fontSize: 15, fontWeight: FontWeight.w800),
+                ),
+                SizedBox(height: isWide ? 22 : 16),
+
+                // Yeni açılan özellikler (Tek Panelde Kompakt Liste)
+                if (state.newUnlocks.isNotEmpty) ...[
+                  Text(
+                    'YENİ AÇILAN ÖZELLİKLER',
+                    style: GoogleFonts.outfit(
+                      fontSize: isWide ? 15 : 11,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white38,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                  SizedBox(height: isWide ? 12 : 8),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(horizontal: isWide ? 20 : 16, vertical: isWide ? 14 : 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.04),
+                      borderRadius: BorderRadius.circular(isWide ? 16 : 12),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
+                    ),
+                    child: Column(
+                      children: state.newUnlocks.map((unlock) => Padding(
+                        padding: EdgeInsets.symmetric(vertical: isWide ? 5 : 3),
+                        child: Text(
+                          '✔️ $unlock',
+                          style: GoogleFonts.inter(
+                            fontSize: isWide ? 16 : 12,
+                            color: const Color(0xFF2ED573),
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      )).toList(),
+                    ),
+                  ),
+                  SizedBox(height: isWide ? 22 : 16),
+                ],
+
+                SizedBox(
+                  width: double.infinity,
+                  height: isWide ? 56 : 42,
+                  child: ElevatedButton(
+                    onPressed: () => notifier.continueAfterLevelUp(),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF0E918C),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(isWide ? 16 : 12),
                       ),
-                      const SizedBox(width: 6),
-                      const Icon(Icons.arrow_forward_rounded, size: 18),
-                    ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Devam Et',
+                          style: GoogleFonts.outfit(
+                              fontSize: isWide ? 19 : 15, fontWeight: FontWeight.w800),
+                        ),
+                        SizedBox(width: isWide ? 10 : 6),
+                        Icon(Icons.arrow_forward_rounded, size: isWide ? 24 : 18),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -1823,22 +2010,26 @@ class _ReceptionSimulatorScreenState
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: const Color(0xFF17B5B0).withValues(alpha: 0.1),
+                color: (state.reputation <= 0 ? Colors.redAccent : const Color(0xFF17B5B0)).withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(
-                Icons.domain_verification_rounded,
+              child: Icon(
+                state.reputation <= 0 ? Icons.cancel_rounded : Icons.domain_verification_rounded,
                 size: 40,
-                color: Color(0xFF17B5B0),
+                color: state.reputation <= 0 ? Colors.redAccent : const Color(0xFF17B5B0),
               ),
             ),
             const SizedBox(height: 8),
             Text(
-              'Gün Sonu Raporu',
+              state.reputation <= 0 
+                  ? 'Otel İflas Etti!' 
+                  : (state.currentLevel >= 7 && state.guestsRemainingInLevel <= 0) 
+                      ? 'Simülasyon Bitti!' 
+                      : 'Gün Sonu Raporu',
               style: GoogleFonts.outfit(
                 fontSize: 22,
                 fontWeight: FontWeight.w900,
-                color: Colors.white,
+                color: state.reputation <= 0 ? Colors.redAccent : Colors.white,
               ),
             ),
             const SizedBox(height: 4),
@@ -2079,6 +2270,16 @@ class _InteractiveSelectionChipState extends State<_InteractiveSelectionChip> {
     final isSelected = widget.isSelected;
     final accentColor = widget.accentColor;
 
+    final isPc = MediaQuery.of(context).size.width >= 960;
+    final isTablet = MediaQuery.of(context).size.width >= 768;
+    final hPad = isPc ? 10.0 : (isTablet ? 14.0 : 10.0);
+    final vPad = isPc ? 9.0 : (isTablet ? 12.0 : 9.0);
+    final labelFontSize = isPc ? 12.5 : (isTablet ? 14.5 : 11.5);
+    final iconBoxPad = isPc ? 6.0 : (isTablet ? 7.0 : 5.0);
+    final iconSize = isPc ? 15.0 : (isTablet ? 16.0 : 13.0);
+    final emojiSize = isPc ? 17.0 : (isTablet ? 18.0 : 15.0);
+    final checkSize = isPc ? 15.0 : (isTablet ? 16.0 : 14.0);
+
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -2129,12 +2330,15 @@ class _InteractiveSelectionChipState extends State<_InteractiveSelectionChip> {
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: hPad,
+                    vertical: vPad,
+                  ),
                   child: Row(
                     children: [
                       if (widget.icon != null)
                         Container(
-                          padding: const EdgeInsets.all(5),
+                          padding: EdgeInsets.all(iconBoxPad),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? accentColor.withValues(alpha: 0.28)
@@ -2143,18 +2347,18 @@ class _InteractiveSelectionChipState extends State<_InteractiveSelectionChip> {
                           ),
                           child: Icon(
                             widget.icon,
-                            size: 13,
+                            size: iconSize,
                             color: isSelected ? Colors.white : Colors.white60,
                           ),
                         )
                       else if (widget.emoji != null)
-                        Text(widget.emoji!, style: const TextStyle(fontSize: 15)),
+                        Text(widget.emoji!, style: TextStyle(fontSize: emojiSize)),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           widget.label,
                           style: GoogleFonts.outfit(
-                            fontSize: 11.5,
+                            fontSize: labelFontSize,
                             fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
                             color: isSelected ? Colors.white : Colors.white70,
                             letterSpacing: 0.3,
@@ -2166,7 +2370,7 @@ class _InteractiveSelectionChipState extends State<_InteractiveSelectionChip> {
                         const SizedBox(width: 6),
                         Icon(
                           Icons.check_circle_rounded,
-                          size: 14,
+                          size: checkSize,
                           color: accentColor,
                         ),
                       ],

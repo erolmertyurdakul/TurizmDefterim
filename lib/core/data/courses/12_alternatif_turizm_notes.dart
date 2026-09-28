@@ -57,7 +57,7 @@ const Map<String, dynamic> alternatifTurizmUnit1 = {
           "name": "Maliyet ve Ekonomi",
           "desc": "Kitle turizmi grup bazlı olduğu için turist açısından daha ucuza mal olur ama gelirin %80'i uluslararası şirketlere gider. Alternatif turizm bireye yönelik olduğu için maliyetlidir ama turist daha çok harcama yapar ve gelirin %90'ı yerel ekonomiye kalır.",
           "examples": [
-            "Örnekle Pekiştirelim: Dev gemilerle (kruvaziyer) limana inen turistlerin sadece hediyelik alması kitle turizmidir. Bir köye gidip orada rehber tutup köy evinde kalan alternatif turist ise parasını doğrudan halka bırakır."
+            "Örnekle Pekiştirelim: Bir şefin Hatay'a gidip oradaki yemeklerin yapılış yöntemlerini, kullanılan baharatlar tarihteki yerini ve lezzet kültürüyle olan ilişkisini incelemiştir."
           ]
         }
       ],
@@ -84,23 +84,23 @@ const Map<String, dynamic> alternatifTurizmUnit1 = {
         },
         {
           "name": "İş Gücü Çarpanı Etkisi",
-          "desc": "Turizm sektöründeki büyümenin, tarım, ulaşım, inşaat gibi bağlı diğer tam 41 alt sektörü de hareketlendirerek ülke genelinde işsizliği azaltmasıdır.",
+          "desc": "Turizm sektöründeki büyümenin, tarım, ulaşım, inşaat gibi bağlı diğer tam 41 alt sektörü de hareketlendirerek ülke genelinde işsizliği azaltması anlamına gelir.",
           "examples": [
             "Örnekle Pekiştirelim: Otele gelen turist sadece otelciye para kazandırmaz. Otelin yemek aldığı çiftçi, yatak örtüsü aldığı tekstilci ve transferi yapan şoför de kazanır. Buna çarpan etkisi denir."
           ]
         },
         {
           "name": "Gelir Dağılımını Düzenleyici Etkisi",
-          "desc": "Geri kalmış ancak doğal güzelliğe sahip kırsal bölgelerin turizm sayesinde gelişerek zenginleşmesi ve kentle arasındaki refah farkının azalmasıdır.",
+          "desc": "Doğal güzelliğe sahip kırsal bölgeler turizm sayesinde gelişerek zenginleşir ve kentle arasındaki refah farkı azalır.",
           "examples": [
-            "Örnekle Pekiştirelim: Rize'nin küçük bir köyünde yaşayan köylülerin, yayla turizmi sayesinde evlerini butik otele çevirip şehre göç etmek yerine kendi köylerinde refah içinde yaşamasıdır."
+            "Örnekle Pekiştirelim: Rize'nin küçük bir köyünde yaşayan köylüler yayla turizmi sayesinde evlerini butik otele çevirip şehre göç etmek yerine kendi köylerinde refah içinde yaşamıştır."
           ]
         },
         {
           "name": "İstihdam Artışı",
           "desc": "Turizm, otomasyonun (robotlaşmanın) zor olduğu 'emek yoğun' bir sektördür. Bu yüzden her zaman insan gücüne ihtiyaç duyar.",
           "examples": [
-            "Örnekle Pekiştirelim: Bir fabrikada yüzlerce robot üretim yapabilirken, bir restoranda garsonluk veya otelde kat görevlisi hizmetinin mutlaka insan eliyle ve samimiyetle yapılmasıdır."
+            "Örnekle Pekiştirelim: Bir fabrikada yüzlerce robot üretim yapabilirken, bir restoranda garsonluk veya otelde kat görevlisi hizmeti mutlaka insan eliyle ve samimiyetle yapılmıştır."
           ]
         }
       ],
@@ -130,33 +130,26 @@ const Map<String, dynamic> alternatifTurizmUnit1 = {
           "name": "İnanç Turizmi Koridoru",
           "desc": "Tarsus, Hatay, Gaziantep, Şanlıurfa ve Mardin yörelerini kapsayan, dini ve tarihi yapıların restore edilerek değerlendirildiği hattır.",
           "examples": [
-            "Örnekle Pekiştirelim: Şanlıurfa'daki Balıklıgöl veya Hatay'daki St. Pierre Kilisesi inanç koridoru için turist çeken en önemli cazibe merkezleridir."
-          ]
-        },
-        {
-          "name": "İpek Yolu Turizm Koridoru",
-          "desc": "Ayaş-Sapanca, Adapazarı, Bolu ve Ankara illerini kapsayan tarihî ticaret yolunun canlandırılmasıdır.",
-          "examples": [
-            "Örnekle Pekiştirelim: Bolu Göynük ve Ankara Beypazarı'ndaki tarihi Osmanlı konaklarının restore edilip butik otellere çevrilerek kültür turlarının buraya yönlendirilmesidir."
+            "Örnekle Pekiştirelim: Hristiyan turistler İzmir Selçuk'taki Meryem Ana Evi'ni kutsal kabul edip orayı hacı olmak ve dua etmek için ziyaret etmiştir."
           ]
         },
         {
           "name": "Batı Karadeniz Kıyı Koridoru",
           "desc": "Şile-Sinop arasında uzanan, Ankara ve İstanbul gibi metropollere hizmet edecek kültür, kıyı ve doğa turizmi şerididir.",
           "examples": [
-            "Örnekle Pekiştirelim: Amasra veya Safranbolu'ya günübirlik ya da hafta sonu için giden İstanbullu turistlerin oradaki balıkçıları ve tarihi konakları ziyaret etmesidir."
+            "Örnekle Pekiştirelim: Amasra veya Safranbolu'ya günübirlik ya da hafta sonu için giden İstanbullu turistler oradaki balıkçıları ve tarihi konakları ziyaret etmiştir."
           ]
         },
         {
           "name": "Yayla Koridoru",
           "desc": "Samsun'dan Hopa'ya kadar uzanan Karadeniz doğa ve yayla turizmi şerididir.",
           "examples": [
-            "Örnekle Pekiştirelim: Trabzon Uzungöl, Rize Ayder ve Artvin Kafkasör yaylalarının birbirine entegre yollarla bağlanıp büyük doğa turlarına ev sahipliği yapmasıdır."
+            "Örnekle Pekiştirelim: Trabzon Uzungöl, Rize Ayder ve Artvin Kafkasör yaylalarının birbirine entegre yollarla bağlanıp büyük doğa turlarına ev sahipliği yapmıştır."
           ]
         },
         {
           "name": "Trakya Kültür Koridoru",
-          "desc": "Edirne, Kırklareli ve Tekirdağ illerini kapsayan, özellikle Edirne evlerinin butik otellere çevrildiği kültür turizmi projesidir.",
+          "desc": "Edirne, Kırklareli ve Tekirdağ illerini kapsayan, özellikle Edirne evlerinin butik otellere çevrildiği kültür turizmi projesini ifade eder.",
           "examples": [
             "Örnekle Pekiştirelim: Edirne'deki Selimiye Camii'ni görmek, Kırkpınar güreşlerini izlemek ve meşhur Edirne tava ciğerini yemek için Trakya'ya düzenlenen turlardır."
           ]
@@ -189,42 +182,42 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Termal Turizm",
           "desc": "Termomineral su (kaplıca), çamur banyosu ve iklim kürü kullanılarak yapılan doğal tedavilerdir. Türkiye Avrupa'da 1., Dünyada 7. sıradadır (Örn: Afyon, Denizli, Yalova).",
           "examples": [
-            "Örnekle Pekiştirelim: Romatizma hastası bir yaşlının, şifa bulmak ve doktor kontrolünde çamur banyosu yapmak için Afyonkarahisar'daki 5 yıldızlı bir termal otele gitmesidir."
+            "Örnekle Pekiştirelim: Romatizma hastası bir yaşlı şifa bulmak ve doktor kontrolünde çamur banyosu yapmak için Afyonkarahisar'daki 5 yıldızlı bir termal otele gitmiştir."
           ]
         },
         {
           "name": "Balneoterapi",
           "desc": "Termomineral sular, şifalı çamurlar veya gazların belirli kürler halinde (genellikle 14-21 gün, günde 1 veya 2 banyo şeklinde) vücuda banyo veya içme şeklinde uygulanmasıyla yapılan yasal kaplıca tedavi yöntemidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Doktor kontrolündeki bir misafirin, 15 gün boyunca her sabah termal havuzda 20 dakika kalıp mineral emilimini sağlaması ve su içme kürü uygulamasıdır."
+            "Örnekle Pekiştirelim: Doktor kontrolündeki bir misafir, 15 gün boyunca her sabah termal havuzda 20 dakika kalarak mineral emilimini sağlamış ve su içme kürü uygulamıştır."
           ]
         },
         {
           "name": "Klimatizm ve İklim Kürleri",
-          "desc": "Temiz hava, güneş ışığı ve deniz havası gibi iklim faktörlerinin, doktor gözetiminde solunum, dolaşım ve deri hastalıklarının tedavisi amacıyla hedeflenen bölgede kullanılmasıdır.",
+          "desc": "Temiz hava, güneş ışığı ve deniz havası gibi iklim faktörlerinin, doktor gözetiminde solunum, dolaşım ve deri hastalıklarının tedavisi amacıyla hedeflenen bölgede kullanılması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Astım hastası bir misafirin, havası nemsiz ve oksijeni bol olan Kaz Dağları'nda doktor tavsiyesiyle 3 hafta kalarak solunum kürü yapmasıdır."
+            "Örnekle Pekiştirelim: Astım hastası bir misafir, havası nemsiz ve oksijeni bol olan Kaz Dağları'nda doktor tavsiyesiyle 3 hafta kalarak solunum kürü yapmıştır."
           ]
         },
         {
           "name": "Peloidoterapi (Çamur Tedavisi)",
-          "desc": "Organik ve inorganik maddeler içeren şifalı doğal çamurların (peloid) lokal olarak ısıtılarak (genellikle 40-45 derece sıcaklıkta) vücuda bölgesel sarılması veya banyo şeklinde uygulanmasıdır.",
+          "desc": "Organik ve inorganik maddeler içeren şifalı doğal çamurların (peloid) lokal olarak ısıtılarak (genellikle 40-45 derece sıcaklıkta) vücuda bölgesel sarılması veya banyo şeklinde uygulanması anlamına gelir.",
           "examples": [
-            "Örnekle Pekiştirelim: Eklem ağrısı olan misafirin, kaplıca tesisindeki peloidoterapi ünitesinde dizlerine sıcak çamur sürdürüp 30 dakika sargıda bekleterek şifa aramasıdır."
+            "Örnekle Pekiştirelim: Eklem ağrısı olan misafir, kaplıca tesisindeki peloidoterapi ünitesinde dizlerine sıcak çamur sürdürüp 30 dakika sargıda bekleterek şifa aramıştır."
           ]
         },
         {
           "name": "SPA & Wellness Turizmi",
           "desc": "SPA (Sudan gelen sağlık) ve Wellness (iyilik hali, zindelik). Cilt bakımı, masaj, yosun banyosu gibi bedeni ve ruhu dinlendiren hizmetlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Yoğun iş temposunda çalışan bir yöneticinin, hafta sonu zihnini dinlendirmek için Sapanca'daki bir otele gidip masaj yaptırması ve sauna kullanmasıdır."
+            "Örnekle Pekiştirelim: Yoğun iş temposunda çalışan bir yönetici, hafta sonu zihnini dinlendirmek için Sapanca'daki bir otele gidip masaj yaptırmış ve sauna kullanmıştır."
           ]
         },
         {
           "name": "Yaşlı ve Engelli Turizmi (Geriatri Turizmi)",
           "desc": "İleri yaş bireylerin ve engelli bireylerin bakımı, rehabilitasyonu için yapılan seyahatlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: İskandinav ülkelerindeki emekli ve engelli derneklerinin, üyelerini fizyoterapi ve tekerlekli sandalye dostu otellere sahip Antalya'ya tatile göndermesidir."
+            "Örnekle Pekiştirelim: İskandinav ülkelerindeki emekli ve engelli dernekleri, üyelerini fizyoterapi ve tekerlekli sandalye dostu otellere sahip Antalya'ya tatile göndermiştir."
           ]
         }
       ],
@@ -247,7 +240,7 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Kayak Pisti Zorluk Dereceleri",
           "desc": "Kayak pistlerinin eğimlerine ve zorluklarına göre dünya standartlarında renklendirilmesidir: Yeşil Pist (%10'dan az eğim, yeni başlayanlar), Mavi Pist (%10-25 eğim, orta düzey), Kırmızı Pist (%25-40 eğim, iyi düzey) ve Siyah Pist (%40'tan fazla dik eğim, uzman kayakçılar).",
           "examples": [
-            "Örnekle Pekiştirelim: Hayatında ilk kez kayak yapacak olan Ahmet'in, eğitmen eşliğinde en güvenli ve düz olan Yeşil Pist'te alıştırmalar yapması; deneyimli abisinin ise dik ve engebeli olan Kırmızı veya Siyah Pist'i tercih etmesidir."
+            "Örnekle Pekiştirelim: Hayatında ilk kez kayak yapacak olan Ahmet, eğitmen eşliğinde en güvenli ve düz olan Yeşil Pist'te alıştırmalar yapmış; deneyimli abisi ise dik ve engebeli olan Kırmızı veya Siyah Pist'i tercih etmiştir."
           ]
         },
         {
@@ -275,7 +268,7 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Akarsu Turizmi",
           "desc": "Rafting, kano ve nehir kayağı. Çoruh Nehri (Artvin), Köprüçay (Antalya), Dalaman Çayı ve Fırtına Deresi (Rize) rafting merkezleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Rize Fırtına Deresi'nin azgın ve hızlı sularında, 6 kişilik şişme bota binip kürek çekerek dalgalarla mücadele eden bir arkadaş grubunun macerasıdır."
+            "Örnekle Pekiştirelim: Rize Fırtına Deresi'nin azgın ve hızlı sularında, 6 kişilik şişme bota binip kürek çekerek dalgalarla mücadele eden bir arkadaş grubunun macerasını ifade eder."
           ]
         }
       ],
@@ -291,7 +284,7 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Kültür Turizmi",
           "desc": "Tarihi eserler, arkeolojik sit alanları, müzeler, yerel mimari ve el sanatlarını görmek için yapılan gezilerdir. Göbeklitepe, Zeugma, Efes Antik Kenti ve Çatalhöyük en güzel örnekleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Şanlıurfa'ya gidip Göbeklitepe tapınak kalıntılarını gezen ve ardından Zeugma Mozaik Müzesi'ndeki 'Çingene Kızı' mozaiğini inceleyen bir turistin gezisidir."
+            "Örnekle Pekiştirelim: Yabancı bir turist Kars'a giderek tarihi Rus evlerini incelemiş, aşık atışmalarını dinlemiş ve kaz eti yiyerek yöre kültürünü yakından tanımıştır."
           ]
         },
         {
@@ -305,14 +298,14 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "İpek Yolu Turizmi",
           "desc": "Tarihî İpek Yolu güzergâhında bulunan han ve kervansarayların restore edilerek turizme kazandırılmasıdır (Örn: Nevşehir Sarı Han, Aksaray Sultan Hanı).",
           "examples": [
-            "Örnekle Pekiştirelim: Aksaray'daki devasa Sultanhanı Kervansarayı'nı gezen turistlerin, Selçuklu mimarisini ve kervanların konaklama tarihini öğrenmesidir."
+            "Örnekle Pekiştirelim: Aksaray'daki devasa Sultanhanı Kervansarayı'nı gezen turistler, Selçuklu mimarisini ve kervanların konaklama tarihini öğrenmiştir."
           ]
         },
         {
           "name": "Diaspora (Kopuntu) Turizmi",
           "desc": "Savaş, göç veya ekonomik nedenlerle vatanından kopmuş insanların, yıllar sonra kökenlerini bulmak ve akrabalarını ziyaret etmek için ana vatanlarına yaptıkları turizmdir.",
           "examples": [
-            "Örnekle Pekiştirelim: 1960'larda Almanya'ya işçi olarak giden gurbetçilerin çocuklarının, her yaz memleketleri Sivas'a gelerek akrabalarını ziyaret edip hasret gidermesidir."
+            "Örnekle Pekiştirelim: 1960'larda Almanya'ya işçi olarak giden gurbetçilerin çocukları her yaz memleketleri Sivas'a gelerek akrabalarını ziyaret edip hasret gidermiştir."
           ]
         }
       ],
@@ -328,28 +321,28 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Kırsal Turizm",
           "desc": "Şehir hayatının stresinden kaçarak kırsal bölgelerdeki köy ve çiftlik evlerinde kalıp, tarımsal yaşama dâhil olmaktır.",
           "examples": [
-            "Örnekle Pekiştirelim: İstanbul'un kalabalığından kaçan bir ailenin, Kırklareli'nin bir köyündeki kerpiç evde kalıp, sabah yerel halkla birlikte köy ekmeği pişirmesidir."
+            "Örnekle Pekiştirelim: İstanbul'un kalabalığından kaçan bir ailenin, Kırklareli'nin bir köyündeki kerpiç evde kalıp, sabah yerel halkla birlikte köy ekmeği pişirmiştir."
           ]
         },
         {
           "name": "Çiftlik (Agro) Turizmi",
           "desc": "Turistlerin çiftliklerde konaklayıp salça yapımı, meyve toplama, inek sağma gibi tarımsal faaliyetlere fiilen katılıp yardım etmeleridir (TaTuTa Projesi).",
           "examples": [
-            "Örnekle Pekiştirelim: Muğla'daki ekolojik bir çiftliğe giden turistin, sabah erkenden kalkıp domates toplaması, inek sağması ve kendi topladığı ürünlerle kahvaltı hazırlamasıdır."
+            "Örnekle Pekiştirelim: Muğla'daki ekolojik bir çiftliğe giden turist, sabah erkenden kalkıp domates toplamış, inek sağmış ve kendi topladığı ürünlerle kahvaltı hazırlamıştır."
           ]
         },
         {
           "name": "Ekoturizm",
           "desc": "Doğal alanlara, çevreye ve yerel halkın refahına zarar vermeden sorumluluk bilinciyle yapılan doğa seyahatleridir.",
           "examples": [
-            "Örnekle Pekiştirelim: Doğa koruma altındaki bir sulak alana giden turistlerin, kuş gözlem kulelerinden dürbünle göçmen kuşları rahatsız etmeden izlemesi ve sadece patikalarda yürümesidir."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: Doğa koruma altındaki bir sulak alana giden turistler kuş gözlem kulelerinden dürbünle göçmen kuşları rahatsız etmeden izlemesi ve sadece patikalarda yürümüştür."
           ]
         },
         {
           "name": "Yayla Turizmi",
           "desc": "Özellikle Karadeniz bölgesinde serin hava, temiz su ve doğa ile iç içe yaşamak için yaylalara yapılan seyahatlerdir (Örn: Ayder, Pokut, Kafkasör).",
           "examples": [
-            "Örnekle Pekiştirelim: Rize Çamlıhemşin'deki Pokut Yaylası'na bulut denizi manzarasını izlemek ve geleneksel ahşap yayla evlerinde konaklamak için çıkan turistlerin gezisidir."
+            "Örnekle Pekiştirelim: Rize Çamlıhemşin'deki Pokut Yaylası'na bulut denizi manzarasını izlemek ve geleneksel ahşap yayla evlerinde konaklamak için çıkan turistlerin gezisini ifade eder."
           ]
         }
       ],
@@ -386,21 +379,21 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Yavaş Turizm",
           "desc": "Hayatın hızına ve tüketim çılgınlığına tepki olarak ortaya çıkan; yavaş yemeği, yerelliği ve sakinliği savunan turizmdir. 'Cittaslow' (Sakin Şehir) unvanı alan yerlerde (Örn: Seferihisar) yapılır.",
           "examples": [
-            "Örnekle Pekiştirelim: İzmir Seferihisar'a giden bir turistin, arabasını park edip sokaklarda yürüyerek yerel kadınların kooperatifte sattığı el açması börekleri yavaşça tatmasıdır."
+            "Örnekle Pekiştirelim: Örnekle Pekiştirelim: İzmir Seferihisar'a giden bir turist, arabasını park edip sokaklarda yürüyerek yerel kadınların kooperatifte sattığı el açması börekleri yavaşça tatmıştır."
           ]
         },
         {
           "name": "Y Kuşağı Turizmi",
           "desc": "1980-2000 arası doğan teknolojiye hâkim Y kuşağının (Millenials) klasik deniz tatili yerine, otantik, sırt çantalı ve dijital deneyimler aradığı turizm şeklidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Genç bir yazılımcının sırt çantasını alıp Likya Yolu'nda yürürken, akşam kaldığı çadırda cep telefonuyla sosyal medyada canlı yayın yapmasıdır."
+            "Örnekle Pekiştirelim: Genç bir yazılımcı sırt çantasını alıp Likya Yolu'nda yürürken, akşam kaldığı çadırda cep telefonuyla sosyal medyada canlı yayın yapmıştır."
           ]
         },
         {
           "name": "Uzay Turizmi",
           "desc": "Çok yüksek bütçeli, yörünge altı veya uzay istasyonlarına yapılan ticari ve turistik amaçlı sıradışı yolculuklardır.",
           "examples": [
-            "Örnekle Pekiştirelim: Milyarder bir iş insanının özel bir uzay şirketiyle (SpaceX) anlaşarak, yer çekimsiz ortamı deneyimlemek üzere yörünge dışına uçmasıdır."
+            "Örnekle Pekiştirelim: Milyarder bir iş insanı özel bir uzay şirketiyle (SpaceX) anlaşarak, yer çekimsiz ortamı deneyimlemek üzere yörünge dışına uçmuştur."
           ]
         }
       ]
@@ -415,7 +408,7 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Gastronomi Turizmi",
           "desc": "Sadece bir yörenin özgün yeme-içme kültürünü tatmak (Gurme, Gastronom) amacıyla yapılan seyahatlerdir. Türk mutfağı dünyada büyük bir çekim merkezidir.",
           "examples": [
-            "Örnekle Pekiştirelim: Gaziantep'e sadece sabah meşhur Beyran çorbası içmek, öğlen Ali Nazik kebabı yemek ve akşam fıstıklı baklava tatmak için düzenlenen lezzet turudur."
+            "Örnekle Pekiştirelim: Bir çiftin sadece Gaziantep' yöresel lezzetlerini (kebap, baklava, beyran) yerinde tatmak ve yemek kültürünü öğrenmek amacıyla o şehre seyahat düzenlemiştir."
           ]
         },
         {
@@ -436,7 +429,7 @@ const Map<String, dynamic> alternatifTurizmUnit2 = {
           "name": "Helal Turizm",
           "desc": "İslami kurallara uygun hizmet (helal gıda standartları, kadın/erkek ayrı havuzlar) veren tesislere yapılan seyahatlerdir.",
           "examples": [
-            "Örnekle Pekiştirelim: Muhafazakar bir ailenin, helal gıda sertifikalı restoranları ve kadınlara özel korunaklı plajları olan Alanya'daki bir tatil köyünde konaklamasıdır."
+            "Örnekle Pekiştirelim: Muhafazakar bir aile helal gıda sertifikalı restoranları ve kadınlara özel korunaklı plajları olan Alanya'daki bir tatil köyünde konaklamıştır."
           ]
         }
       ]
